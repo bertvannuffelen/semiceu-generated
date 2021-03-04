@@ -1,0 +1,267 @@
+{
+  "@context": {
+    "Adresse": "https://sdg.semic.eu/education#Address",
+    "Adresse.adresse": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#Address.address",
+      "@type": "@id"
+    },
+    "Adresse.eingetrageneAdresse": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#Address.registeredAddress",
+      "@type": "@id"
+    },
+    "Adresse.verwaltungseinheitEbene1": {
+      "@id": "https://sdg.semic.eu/education#adminUnitL1",
+      "@type": "@id"
+    },
+    "Adresse.verwaltungseinheitEbene2": {
+      "@id": "https://sdg.semic.eu/education#adminUnitL2",
+      "@type": ""
+    },
+    "Adresse.vollständigeAdresse": {
+      "@id": "https://sdg.semic.eu/education#fullAddress",
+      "@type": ""
+    },
+    "Bildungseinrichtung": "https://sdg.semic.eu/education#EducationInstitution",
+    "Bildungseinrichtung.erhaltenBei": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#EducationInstitution.obtainedAt",
+      "@type": "@id"
+    },
+    "Ergebnisnachweis": "https://sdg.semic.eu/education#RecordOfResultsEvidence",
+    "Ergebnisnachweis.enthält": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#contains",
+      "@type": "@id"
+    },
+    "Ergebnisnachweis.gesamteLeistungspunkte": {
+      "@id": "https://sdg.semic.eu/education#totalCredits",
+      "@type": ""
+    },
+    "Ergebnisnachweis.hatRekordVonErgebnissen": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#RecordOfResultsEvidence.hasRecordofResults",
+      "@type": "@id"
+    },
+    "Ergebnisnachweis.studienjahr": {
+      "@id": "https://sdg.semic.eu/education#academicYear",
+      "@type": ""
+    },
+    "Kursergebnis": "https://sdg.semic.eu/education#CourseResult",
+    "Kursergebnis.fachgebietDesKurses": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#courseFieldOfStudy",
+      "@type": "@id"
+    },
+    "Kursergebnis.kursguthabenbetrag": {
+      "@id": "https://sdg.semic.eu/education#courseCreditsAmount",
+      "@type": ""
+    },
+    "Kursergebnis.kursname": {
+      "@id": "https://sdg.semic.eu/education#courseName",
+      "@type": ""
+    },
+    "Kursergebnis.kursnote": {
+      "@id": "https://sdg.semic.eu/education#courseGrade",
+      "@type": "@id"
+    },
+    "Kursergebnis.kurssprache": {
+      "@id": "https://sdg.semic.eu/education#courseLanguage",
+      "@type": "@id"
+    },
+    "Kursergebnis.studienjahr": {
+      "@id": "https://sdg.semic.eu/education#courseAcademicYear",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "Kursergebnis.zeitraumDesAkademischenJahres": {
+      "@id": "https://sdg.semic.eu/education#courseAcademicPeriod",
+      "@type": ""
+    },
+    "NachweisDerHochschulausbildung": "https://sdg.semic.eu/education#TertiaryEducationEvidence",
+    "NachweisDerHochschulausbildung.anordnungsbehörde": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#issuingAuthority",
+      "@type": "@id"
+    },
+    "NachweisDerHochschulausbildung.ausgabedatum": {
+      "@id": "https://sdg.semic.eu/education#issuingDate",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "NachweisDerHochschulausbildung.ausgabestelle": {
+      "@id": "https://sdg.semic.eu/education#issuingPlace",
+      "@type": "@id"
+    },
+    "NachweisDerHochschulausbildung.bezeichner": {
+      "@id": "https://sdg.semic.eu/education#identifier",
+      "@type": ""
+    },
+    "NachweisDerHochschulausbildung.gehörtZu": {
+      "@id": "https://sdg.semic.eu/education#belongsTo",
+      "@type": "@id"
+    },
+    "NachweisDerHochschulausbildung.qualifikationsname": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#qualificationName",
+      "@type": ""
+    },
+    "NachweisDerHochschulausbildung.sprache": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#language",
+      "@type": "@id"
+    },
+    "NachweisDesHochschuldiploms": "https://sdg.semic.eu/education#TertiaryEducationDiplomaEvidence",
+    "NachweisDesHochschuldiploms.akademischesProgramm": {
+      "@id": "https://sdg.semic.eu/education#academicProgramme",
+      "@type": ""
+    },
+    "NachweisDesHochschuldiploms.gesamtnote": {
+      "@id": "https://sdg.semic.eu/education#overallGrade",
+      "@type": "@id"
+    },
+    "NachweisDesHochschuldiploms.gradDerUnterscheidung": {
+      "@id": "https://sdg.semic.eu/education#levelOfDistinction",
+      "@type": "@id"
+    },
+    "NachweisDesHochschuldiploms.hatErgänzung": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#TertiaryEducationDiplomaEvidence.hasSupplement",
+      "@type": "@id"
+    },
+    "NachweisDesHochschuldiploms.titelDerDissertation": {
+      "@id": "https://sdg.semic.eu/education#thesisTitle",
+      "@type": ""
+    },
+    "NachweisDesHochschuldiploms.zugangZuWeiterenStudien": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#accessToFurtherStudy",
+      "@type": "@id"
+    },
+    "NachweisDesHochschuldiploms.zugangZumReglementiertenBeruf": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#accessToRegulatedProfession",
+      "@type": ""
+    },
+    "Note": "https://sdg.semic.eu/education#Grade",
+    "Note.benotungsschema": {
+      "@id": "https://sdg.semic.eu/education#gradingScheme",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Note.status": {
+      "@id": "https://sdg.semic.eu/education#status",
+      "@type": "@id"
+    },
+    "Note.verteilung": {
+      "@id": "https://sdg.semic.eu/education#distribution",
+      "@type": ""
+    },
+    "Note.wert": {
+      "@id": "https://sdg.semic.eu/education#value",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Organisation": "https://sdg.semic.eu/education#Organisation",
+    "Organisation.bevorzugteBezeichnung": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#prefLabel",
+      "@type": ""
+    },
+    "Organisation.identifikator": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#identifier",
+      "@type": ""
+    },
+    "Organisation.registrierterStandort": {
+      "@id": "https://sdg.semic.eu/education#registeredLocation",
+      "@type": "@id"
+    },
+    "Person": "https://sdg.semic.eu/education#Person",
+    "Person.biologischesGeschlecht": {
+      "@id": "https://sdg.semic.eu/education#sex",
+      "@type": "@id"
+    },
+    "Person.familienname": {
+      "@id": "https://sdg.semic.eu/education#familyName",
+      "@type": ""
+    },
+    "Person.geburtsdatum": {
+      "@id": "https://sdg.semic.eu/education#dateOfBirth",
+      "@type": "http://www.w3.org/2001/XMLSchema#date"
+    },
+    "Person.geburtsort": {
+      "@id": "https://sdg.semic.eu/education#placeOfBirth",
+      "@type": "@id"
+    },
+    "Person.identifikator": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#identifier",
+      "@type": ""
+    },
+    "Person.vorname": {
+      "@id": "https://sdg.semic.eu/education#givenName",
+      "@type": ""
+    },
+    "Standort": "https://sdg.semic.eu/education#Location",
+    "Standort.geografischerIdentifikator": {
+      "@id": "https://sdg.semic.eu/education#geographicIdentifier",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Standort.geografischerName": {
+      "@id": "https://sdg.semic.eu/education#geographicName",
+      "@type": ""
+    },
+    "Student*in": "https://sdg.semic.eu/education#Student",
+    "Student*in.studentenausweis": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#studentID",
+      "@type": ""
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis": "https://sdg.semic.eu/education#TertiaryEducationDiplomaSupplementEvidence",
+    "TertiärBildungsdiplomErgänzungsnachweis.academicYear": {
+      "@id": "https://sdg.semic.eu/education#academicYear",
+      "@type": ""
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.akademischeProgrammsprache": {
+      "@id": "https://sdg.semic.eu/education#academicProgrammeLanguage",
+      "@type": "@id"
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.artDesStudiums": {
+      "@id": "https://sdg.semic.eu/education#modeOfStudy",
+      "@type": "@id"
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.gesamteLeistungspunkte": {
+      "@id": "https://sdg.semic.eu/education#totalCredits",
+      "@type": ""
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.lernergebnisseDesProgramms": {
+      "@id": "https://sdg.semic.eu/education#programmeLearningOutcomes",
+      "@type": ""
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.notendurchschnitt": {
+      "@id": "https://sdg.semic.eu/education#gradePointAverage",
+      "@type": "@id"
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.qualifikationsniveau": {
+      "@id": "https://sdg.semic.eu/education#qualificationLevel",
+      "@type": "@id"
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.studiendauer": {
+      "@id": "https://sdg.semic.eu/education#studyDuration",
+      "@type": ""
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.studienrichtung": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#mainFieldOfStudy",
+      "@type": "@id"
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.unterrichtssprache": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#languageOfInstruction",
+      "@type": "@id"
+    },
+    "TertiärBildungsdiplomErgänzungsnachweis.zugriffsanforderung": {
+      "@container": "@set",
+      "@id": "https://sdg.semic.eu/education#accessRequirement",
+      "@type": "@id"
+    }
+  }
+}

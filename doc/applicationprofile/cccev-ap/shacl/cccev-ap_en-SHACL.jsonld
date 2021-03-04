@@ -1,0 +1,506 @@
+{
+  "@context": {
+    "@vocab": "https://semiceu.github.io/shacl/cccev-ap_en",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://semiceu.github.io/shacl/cccev-ap_en",
+  "shapes": [
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#ConceptShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the RequirementConcept being instantiated."
+          },
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "An unambiguous reference to RequirementConcept"
+          },
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A name to identify in common language the RequirementConcept"
+          },
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "a classification of the RequirementConcept"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#ConstraintShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Concept",
+          "sh:definition": {
+            "en": "the information concept which a Constaint expresses a limitation about"
+          },
+          "sh:name": {
+            "en": "constraints"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#constraints"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#Constraint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#CriterionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Additional parameter used to adjust the evaluation of the criterion composed of multiple sub-criteria."
+          },
+          "sh:name": {
+            "en": "bias"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#bias"
+        },
+        {
+          "sh:definition": {
+            "en": "Relative importance assigned to a given criterion."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "weight"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#weight"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "The explanation of how the weighting of a Criterion is to be used at evaluation time."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "weighting consideration description"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#weightingConsiderationDescription"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "The numeric form used to weight."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "weighting type"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#weightingType"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#Criterion"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#EvidenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "The security classification assigned to an Evidence or, in general, to a content."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "confidentiality level type"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#confidentionalityLevelType"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "The agent that is the main actor in the provided evidence"
+          },
+          "sh:name": {
+            "en": "is about"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#isAbout"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceType",
+          "sh:definition": {
+            "en": "A reference to one or more types of evidence where the content and, possibly, the layout or configuration of the evidence is specified."
+          },
+          "sh:name": {
+            "en": "is Conformant"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#isComformantWith"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Concept",
+          "sh:definition": {
+            "en": "the supported concept by the evidence"
+          },
+          "sh:name": {
+            "en": "supports concept"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#supportsConcept"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#SupportedValue",
+          "sh:definition": {
+            "en": "the Supporting value for which an evidence has information"
+          },
+          "sh:name": {
+            "en": "supports value"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#supportsValue"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#Evidence"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#EvidenceTypeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "A classification code use to specify the machine-readability of a content."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "dataset type"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#datasetType"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "A classification code to specify the layout and content expected for an evidence."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "evidence type classification"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#evidenceTypeClassification"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
+          "sh:definition": {
+            "en": "Indicates one type of evidence included in a list of evidence types."
+          },
+          "sh:name": {
+            "en": "specifies evidence type"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#isSpecifiedIn"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
+          "sh:definition": {
+            "en": "Indicates one type of evidence included in a list of evidence types."
+          },
+          "sh:name": {
+            "en": "specifies evidence type"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#isSpecifiedIn"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#EvidenceType"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#EvidenceTypeListShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Evidence Type  being instantiated."
+          },
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "An unambiguous reference to an Evidence Type List"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A name to identify in common language the Evidence Type List"
+          },
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#EvidenceTypeList"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#InformationRequirementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#InformationRequirement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#ReferenceFrameworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#ReferenceFramework"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#RequirementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Concept",
+          "sh:definition": {
+            "en": "the requirement concept for which the requirement expects an support in the supporting evidence"
+          },
+          "sh:name": {
+            "en": "has concept"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#hasConcept"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
+          "sh:definition": {
+            "en": "A combination of types of evidences of which one of them must be satisfied by the response to the requirement"
+          },
+          "sh:name": {
+            "en": "has evidence type combination"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#hasEvidenceTypeCombination"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Requirement",
+          "sh:definition": {
+            "en": "A reference to the parent requirement a sub-requirement is part of."
+          },
+          "sh:name": {
+            "en": "is requirement of"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#hasRequirement"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Requirement",
+          "sh:definition": {
+            "en": "A reference to the parent requirement a sub-requirement is part of."
+          },
+          "sh:name": {
+            "en": "is requirement of"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#hasRequirement"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Evidence",
+          "sh:definition": {
+            "en": "the supported requirement by the evidence"
+          },
+          "sh:name": {
+            "en": "supports requirement"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Evidence",
+          "sh:definition": {
+            "en": "the supported requirement by the evidence"
+          },
+          "sh:name": {
+            "en": "supports requirement"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#ReferenceFramework",
+          "sh:definition": {
+            "en": "the reference framework that is responsible for the creation/initiation of the requirement"
+          },
+          "sh:name": {
+            "en": "is derived from"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#isDerivedFrom"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "This agent that has issued the requirement"
+          },
+          "sh:name": {
+            "en": "issued by"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#issuedBy"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Requirement  being instantiated."
+          },
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "An unambiguous reference"
+          },
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A name to identify in common language the Requirement"
+          },
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "the category or type to which the requirement belongs"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#Requirement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#cccev:SupportedValueShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Concept",
+          "sh:definition": {
+            "en": "The information concept it is providing a value for."
+          },
+          "sh:name": {
+            "en": "provides value for"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#providesValueFor"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The query which which the value for the information concept can be retrieved. The query must be executed on the business data provided by the supporting evidence."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "query"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#query"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The value for the information concept that the evidence is supporting."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#value"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/cccev#SupportedValue"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#DatasetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/dcat#Dataset"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
+    }
+  ]
+}
