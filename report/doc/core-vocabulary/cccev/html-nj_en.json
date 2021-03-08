@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/c5832c2065614c53627440722de6089404059660",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/c5832c2065614c53627440722de6089404059660/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/defb05f93e8a3109c8c14ccfd59602e3c07f4bfb",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/defb05f93e8a3109c8c14ccfd59602e3c07f4bfb/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/CCCEV/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -281,6 +281,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://data.europa.eu/m8g/cccev#supportsRequirement",
+          "name": "supports requirement",
+          "sort": "supports requirement",
+          "label": {
+            "en": "supports requirement"
+          },
+          "description": {
+            "en": "The Requirement for which the Evidence provides information (proof, support)."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Requirement",
+              "range_uri": "http://data.europa.eu/m8g/cccev#Requirement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Requirement",
+              "range_puri": "http://data.europa.eu/m8g/cccev#Requirement",
+              "range_label": {
+                "en": "Requirement"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://data.europa.eu/m8g/cccev#supportsValue",
           "name": "supports value",
           "sort": "supports value",
@@ -480,48 +515,13 @@
         },
         {
           "uri": "http://data.europa.eu/m8g/cccev#isSpecifiedIn",
-          "name": "specifies evidence type",
-          "sort": "specifies evidence type",
+          "name": "is specified in",
+          "sort": "is specified in",
           "label": {
-            "en": "specifies evidence type"
+            "en": "is specified in"
           },
           "description": {
-            "en": "Indicates one Type of Evidence included in a List of Evidence Types."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "EvidenceType",
-              "uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "EvidenceTypeList",
-              "range_uri": "http://data.europa.eu/m8g/cccev#EvidenceTypeList"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Evidence Type List",
-              "range_puri": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
-              "range_label": {
-                "en": "Evidence Type List"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/cccev#isSpecifiedIn",
-          "name": "specifies evidence type",
-          "sort": "specifies evidence type",
-          "label": {
-            "en": "specifies evidence type"
-          },
-          "description": {
-            "en": "Indicates one Type of Evidence included in a List of Evidence Types."
+            "en": "Indicates one of the Evidence Types included in the list."
           },
           "usage": {},
           "domain": [
@@ -565,6 +565,41 @@
       },
       "parents": [],
       "properties": [
+        {
+          "uri": "http://data.europa.eu/m8g/cccev#specifiesEvidenceType",
+          "name": "specifies evidence type",
+          "sort": "specifies evidence type",
+          "label": {
+            "en": "specifies evidence type"
+          },
+          "description": {
+            "en": "Indicates one Type of Evidence included in a List of Evidence Types."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "EvidenceTypeList",
+              "uri": "http://data.europa.eu/m8g/cccev#EvidenceTypeList"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "EvidenceType",
+              "range_uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Evidence Type",
+              "range_puri": "http://data.europa.eu/m8g/cccev#EvidenceType",
+              "range_label": {
+                "en": "Evidence Type"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://purl.org/dc/terms/description",
           "name": "description",
@@ -921,17 +956,15 @@
         },
         {
           "uri": "http://data.europa.eu/m8g/cccev#hasRequirement",
-          "name": "is requirement of",
-          "sort": "is requirement of",
+          "name": "has requirement",
+          "sort": "has requirement",
           "label": {
-            "en": "is requirement of"
+            "en": "has requirement"
           },
           "description": {
-            "en": "A reference between a sub-Requirement and its parent, more general, Requirement."
+            "en": "A sub-Requirement."
           },
-          "usage": {
-            "en": "Inverse relation from hasRequirement. If there is no hierarchy then this relationship is not needed."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Requirement",
@@ -957,12 +990,10 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/cccev#hasRequirement",
-          "name": "is requirement of",
-          "sort": "is requirement of",
-          "label": {
-            "en": "is requirement of"
-          },
+          "uri": "http://data.europa.eu/m8g/cccev#isRequirementOf",
+          "name": "",
+          "sort": "",
+          "label": {},
           "description": {
             "en": "A reference between a sub-Requirement and its parent, more general, Requirement."
           },
@@ -1069,13 +1100,13 @@
         },
         {
           "uri": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence",
-          "name": "supports requirement",
-          "sort": "supports requirement",
+          "name": "has supporting evidence",
+          "sort": "has supporting evidence",
           "label": {
-            "en": "supports requirement"
+            "en": "has supporting evidence"
           },
           "description": {
-            "en": "The Requirement for which the Evidence provides information (proof, support)."
+            "en": "The Evidence that supplies information (proof, support) for this Requirement."
           },
           "usage": {},
           "domain": [
@@ -1168,41 +1199,6 @@
               "range_puri": "http://xmlns.com/foaf/0.1/Agent",
               "range_label": {
                 "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence",
-          "name": "supports requirement",
-          "sort": "supports requirement",
-          "label": {
-            "en": "supports requirement"
-          },
-          "description": {
-            "en": "The Requirement for which the Evidence provides information (proof, support)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/cccev#Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Evidence",
-              "range_uri": "http://data.europa.eu/m8g/cccev#Evidence"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Evidence",
-              "range_puri": "http://data.europa.eu/m8g/cccev#Evidence",
-              "range_label": {
-                "en": "Evidence"
               }
             }
           ],
@@ -1555,8 +1551,8 @@
     {
       "uri": "http://data.europa.eu/m8g/cccev#hasRequirement",
       "name": {
-        "en": "is requirement of",
-        "undefined": "is requirement of"
+        "en": "has requirement",
+        "undefined": "has requirement"
       },
       "description": {},
       "domain": [
@@ -1568,10 +1564,9 @@
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/cccev#hasRequirement",
+      "uri": "http://data.europa.eu/m8g/cccev#isRequirementOf",
       "name": {
-        "en": "is requirement of",
-        "undefined": "is requirement of"
+        "undefined": ""
       },
       "description": {},
       "domain": [
@@ -1585,8 +1580,8 @@
     {
       "uri": "http://data.europa.eu/m8g/cccev#isSpecifiedIn",
       "name": {
-        "en": "specifies evidence type",
-        "undefined": "specifies evidence type"
+        "en": "is specified in",
+        "undefined": "is specified in"
       },
       "description": {},
       "domain": [
@@ -1613,10 +1608,25 @@
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/cccev#isSpecifiedIn",
+      "uri": "http://data.europa.eu/m8g/cccev#specifiesEvidenceType",
       "name": {
         "en": "specifies evidence type",
         "undefined": "specifies evidence type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/cccev#supportsRequirement",
+      "name": {
+        "en": "supports requirement",
+        "undefined": "supports requirement"
       },
       "description": {},
       "domain": [
@@ -1661,18 +1671,15 @@
   "contributors": [
     {
       "role": "A",
-      "first_name": "Pavlina",
-      "last_name": "Fragkou",
-      "affiliation": {
-        "name": "DG DIGIT"
-      }
+      "first_name": "Core Vocabularies Working Group",
+      "affiliation": {}
     },
     {
-      "role": "A",
-      "first_name": "Seth",
-      "last_name": "van Hooland",
+      "role": "E",
+      "first_name": "Florian",
+      "last_name": "Barthelemy",
       "affiliation": {
-        "name": "DG DIGIT"
+        "name": "PwC"
       }
     },
     {
@@ -1681,6 +1688,14 @@
       "last_name": "De Keyzer",
       "affiliation": {
         "name": "PwC"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Pavlina",
+      "last_name": "Fragkou",
+      "affiliation": {
+        "name": "European Commission"
       }
     },
     {
@@ -1701,10 +1716,10 @@
     },
     {
       "role": "C",
-      "first_name": "Florian",
-      "last_name": "Barthelemy",
+      "first_name": "Seth",
+      "last_name": "van Hooland",
       "affiliation": {
-        "name": "PwC"
+        "name": "European Commission"
       }
     }
   ],

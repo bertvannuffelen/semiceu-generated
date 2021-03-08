@@ -159,6 +159,16 @@
           "sh:path": "http://data.europa.eu/m8g/cccev#supportsConcept"
         },
         {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Requirement",
+          "sh:definition": {
+            "en": "The Requirement for which the Evidence provides information (proof, support)."
+          },
+          "sh:name": {
+            "en": "supports requirement"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#supportsRequirement"
+        },
+        {
           "sh:class": "http://data.europa.eu/m8g/cccev#SupportedValue",
           "sh:definition": {
             "en": "\tThe Supported Value for which an Evidence holds information."
@@ -191,20 +201,10 @@
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
           "sh:definition": {
-            "en": "Indicates one Type of Evidence included in a List of Evidence Types."
+            "en": "Indicates one of the Evidence Types included in the list."
           },
           "sh:name": {
-            "en": "specifies evidence type"
-          },
-          "sh:path": "http://data.europa.eu/m8g/cccev#isSpecifiedIn"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
-          "sh:definition": {
-            "en": "Indicates one Type of Evidence included in a List of Evidence Types."
-          },
-          "sh:name": {
-            "en": "specifies evidence type"
+            "en": "is specified in"
           },
           "sh:path": "http://data.europa.eu/m8g/cccev#isSpecifiedIn"
         }
@@ -251,6 +251,16 @@
             "en": "name"
           },
           "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceType",
+          "sh:definition": {
+            "en": "Indicates one Type of Evidence included in a List of Evidence Types."
+          },
+          "sh:name": {
+            "en": "specifies evidence type"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#specifiesEvidenceType"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/cccev#EvidenceTypeList"
@@ -375,40 +385,20 @@
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#Requirement",
           "sh:definition": {
-            "en": "A reference between a sub-Requirement and its parent, more general, Requirement."
+            "en": "A sub-Requirement."
           },
           "sh:name": {
-            "en": "is requirement of"
-          },
-          "sh:path": "http://data.europa.eu/m8g/cccev#hasRequirement"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/cccev#Requirement",
-          "sh:definition": {
-            "en": "A reference between a sub-Requirement and its parent, more general, Requirement."
-          },
-          "sh:name": {
-            "en": "is requirement of"
+            "en": "has requirement"
           },
           "sh:path": "http://data.europa.eu/m8g/cccev#hasRequirement"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#Evidence",
           "sh:definition": {
-            "en": "The Requirement for which the Evidence provides information (proof, support)."
+            "en": "The Evidence that supplies information (proof, support) for this Requirement."
           },
           "sh:name": {
-            "en": "supports requirement"
-          },
-          "sh:path": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/cccev#Evidence",
-          "sh:definition": {
-            "en": "The Requirement for which the Evidence provides information (proof, support)."
-          },
-          "sh:name": {
-            "en": "supports requirement"
+            "en": "has supporting evidence"
           },
           "sh:path": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence"
         },
@@ -433,6 +423,13 @@
             "en": "is derived from"
           },
           "sh:path": "http://data.europa.eu/m8g/cccev#isDerivedFrom"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/cccev#Requirement",
+          "sh:definition": {
+            "en": "A reference between a sub-Requirement and its parent, more general, Requirement."
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#isRequirementOf"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
