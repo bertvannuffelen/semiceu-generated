@@ -76,10 +76,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#Constraint",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A limitation applied to Requirement(s) or to the Information Concept(s) the Requirement is about."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "Constraints are requirements in themselves, since they impose prerequisites which influence the definition, use and/or fulfilment of the requirement.\nThey represent hard conditions such as minimum or maximum expressions which can be used to evaluate pieces of information, the required age, income, involvement in activities, etc. \n\nAn example from the eProcurement domain is a threshold as the minimum turnover required by the buying organisation to select the candidates. \n\nNote that CCCEV does not provide any specific guidance on when which kind of Requirement should be used. Users of this vocabulary should make decisions on this topic in their specific context."
       },
       "parents": [
         "http://data.europa.eu/m8g/cccev#Requirement"
@@ -89,10 +89,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#Criterion",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A condition for evaluation or assessment."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "In general, Criteria are used for comparison, filtering or selection purposes. Criteria usually set minimum conditions (e.g. limits, intervals, thresholds, etc.) that need to be met in order to pass the requirements or to fulfil them to a certain degree or quality. The concept of Criteria is broader than the concept of Constraint since it covers more usages. The evaluation of the fulfilment is usually supported by the provision of Evidence. \nIn the eProcurement domain, the eProcurement Ontology defines different subclasses of Criterion such as exclusion grounds, selection criteria or award criteria. \n\nA concrete example of a Criterion is 'participation in a criminal organisation' which could also be considered as an exclusion ground criterion in the procurement domain or for requiring a public service."
       },
       "parents": [
         "http://data.europa.eu/m8g/cccev#Requirement"
@@ -102,10 +102,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#Evidence",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The data proving that a Requirement is met or has been fulfilled."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "The term data used in the definition of Evidence must be understood in its broadest sense as any type of data, independently from its structure, format or medium used to exchange it: a pdf document, a video, a recording, etc. are all considered as data. The class Evidence provides the means to support responses to Criteria or to a concrete Information Requirement or to a granular Information Concept inside an Information Requirement. \r\n"
       },
       "parents": [
         "http://www.w3.org/ns/dcat#Dataset"
@@ -115,10 +115,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#EvidenceType",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "Information about the characteristics of an expected Evidence."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "These are not concrete individual responses to a Requirement (Evidences), but descriptions about the desired form, content, source, etc. that an actual response should have and provide. Such information can be described as part of specific models, e.g. a birth certificate model.\r\n\r\nEvidence Types express conditions for an acceptable response at two levels: the concrete information that is being requested, and the metadata about how this concrete information is being obtained. For a specific Requirement, the requester can define the List of Evidence Types which would be accepted and, for each Evidence Type in this list, the specific information and form that should be part of the Evidence actually provided in order to answer the Requirement. \r\n\r\nExamples of Evidence Types include birth certificates, marriage evidences, university diploma's, etc. The Evidence Type can also capture specific characteristics such as a specific format or source of the Evidence as such characteristics may be strictly required depending on the Requirement.\r\n"
       },
       "parents": []
     },
@@ -126,10 +126,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A combination of Evidence Types for each of which a conforming Evidence must be provided."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "An Evidence Type List is satisfied if and only if for all included Evidence Types a corresponding conformant Evidence is supporting the Requirement having this List. The Evidence Type List describes thus an AND condition on the different Evidence Types within the list and an OR condition between two or more Evidence Type Lists. Combinations of alternative Lists can be provided for a respondent of a Requirement to choose amongst them.\r\n"
       },
       "parents": []
     },
@@ -137,10 +137,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#InformationConcept",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A reference to an entity, i.e. a class or a property, which is used to describe information in the Evidence to be provided for the Requirement specified."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "An Information Concept is a piece of information that the Evidence provides in the context of a Requirement (or from the perspective of a Requirement: a piece of information that a Requirement needs), e.g. a person's age. The CCCEV modeling of Information Concepts and Supported Values exists, however, to provide a machine-processable way to connect information that an Evidence provides with the information a Requirement requires to make a decision."
       },
       "parents": []
     },
@@ -148,10 +148,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#InformationRequirement",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A request for data that is proof of Evidence or that leads to the source of such a proof."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "Information Requirements are the most neutral kind of Requirements. They aim to request information in any form, e.g. a person's date of birth or a company's turnover.\r\nThey represent requests for data that proves one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as requests for Evidences. \r\n\r\nThe response to an Information Requirement is an Evidence when the issuer of the response is an authoritative source (e.g. a Civil Registry providing data about a natural person for the provision of public service through the Single Digital Gateway). In other cases, the responses might not be issued by an authoritative source, but the issuer supports the responses with Evidences (or commits to support them timely, e.g. a self-declaration or a declaration of oath). \r\n\r\nThe Information Requirement can require structured data or documents of any form. For structured data, the Requirement can use 'Concepts' to specify the structure and type of the data expected in the response. For both structured and unstructured data, the Information Requirement can indicate the expected Type of Evidence, its format, source, and other properties related to the Evidence.\r\n"
       },
       "parents": [
         "http://data.europa.eu/m8g/cccev#Requirement"
@@ -161,10 +161,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#ReferenceFramework",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A source from where requirements are identified and derived."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc."
       },
       "parents": []
     },
@@ -172,10 +172,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#Requirement",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A condition or prerequisite that someone requests and someone else has to meet."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "Requirement is a generic class representing any type of prerequisite that may be desired, needed or imposed as an obligation. \n\nCCCEV recommends to not use the Requirement class directly, but rather a more semanticall-enriched subclass such as Criterion, InformationRequirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent."
       },
       "parents": []
     },
@@ -183,10 +183,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#SupportedValue",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A value for an Information Concept that is supported by an Evidence."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "The notion of Supported Value is closely related to actual data exchange between two parties: (a) the Requirement processor, i.e. the Agent setting out Requirements for an objective and processing the supplied Evidences in the context of the Requirements, and (b) the Evidence provider, i.e. the Agent supplying information to an information request expressed as Requirements.\n\nObtaining the actual Value for an Information Concept carried by an Evidence is the result of an information retrieval process on the business information of the Evidence. This process can be executed by the Evidence provider. In that case the Evidence provider can supply the Value as is. But it can also be executed by the Requirement processor. If the Requirement processor can process the business information of the supplied Evidence then the Requirement processor can query for the information itself. In CCCEV, the latter case is supported by the query attribute for a Supported Value. So instead of providing a Value, a query on the data is supplied.\n\nAs described in the Evidence class, CCCEV does not impose how the actual information contained in an Evidence must be exchanged and processed in order to fulfill a Requirement. The combination of Supported Value and Information Concept, is one of the approaches that CCCEV supports."
       },
       "parents": []
     }
@@ -248,10 +248,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#bias",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "Additional parameter(s) used to adjust the evaluation of the Criterion composed of multiple sub-Criteria and their respective weights."
       },
       "usage": {
-        "de": "A translation has yet to be added"
+        "en": "In neural networks, the bias is equivalent to an intercept added in a linear equation used to shift the activation function to either right or left. It can be also used to manually adjust the pass/fail calculation of a weighted criterion."
       },
       "domain": [
         {
@@ -265,7 +265,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#confidentionalityLevelType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The security classification assigned to an Evidence or, in general, to a content."
       },
       "domain": [
         {
@@ -283,7 +283,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#evidenceTypeClassification",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A classification code to specify the layout and content expected for an Evidence."
+      },
+      "usage": {
+        "en": "This classification could be used for example for providing a common list of Evidence Types accepted within a specific domain."
       },
       "domain": [
         {
@@ -301,7 +304,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#hasQualifiedRelation",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "A described and/or categorised relation to the instance of another Requirement class or subclass."
       },
       "domain": [
         {
@@ -319,7 +322,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#providesValueFor",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The Information Concept for which the Supported Value is providing a value."
       },
       "domain": [
         {
@@ -337,7 +340,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#query",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The query via which the value for the Information Concept can be retrieved. The query must be executed on the business data provided by the supporting Evidence."
       },
       "domain": [
         {
@@ -355,7 +358,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#supportsValue",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The Supported Value for which an Evidence holds information."
       },
       "domain": [
         {
@@ -373,7 +376,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#value",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The value for the Information Concept that the Evidence is supporting."
       },
       "domain": [
         {
@@ -391,7 +394,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#weight",
       "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "Relative importance assigned to a given Criterion."
       },
       "domain": [
         {
@@ -405,7 +408,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#weightingConsiderationDescription",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The explanation of how the weighting of a Criterion is to be used at evaluation time."
       },
       "domain": [
         {
@@ -423,7 +426,7 @@
       "@id": "http://data.europa.eu/m8g/cccev#weightingType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "de": "A translation has yet to be added"
+        "en": "The numeric form used to weight."
       },
       "domain": [
         {
