@@ -157,8 +157,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/tree/63cda8d3b3ed986088e35a8bf0ce943750266342">https://github.com/bertvannuffelen/semiceuthema/tree/63cda8d3b3ed986088e35a8bf0ce943750266342</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/63cda8d3b3ed986088e35a8bf0ce943750266342/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/63cda8d3b3ed986088e35a8bf0ce943750266342/CHANGELOG</a></dd>-->
+              <dt>Source</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/tree/41651ae1959a51c604d9e428a7cfdd4c3d38ece0">https://github.com/bertvannuffelen/semiceuthema/tree/41651ae1959a51c604d9e428a7cfdd4c3d38ece0</a></dd>
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/41651ae1959a51c604d9e428a7cfdd4c3d38ece0/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/41651ae1959a51c604d9e428a7cfdd4c3d38ece0/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/CCCEV/issues">https://github.com/SEMICeu/CCCEV/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -953,7 +953,7 @@ Examples of Evidence Types include birth certificates, marriage evidences, unive
                     <dt>Description</dt><dd>A request for data that is proof of Evidence or that leads to the source of such a proof.</dd>
                     
                     <dt>Usage</dt><dd>Information Requirements are the most neutral kind of Requirements. They aim to request information in any form, e.g. a person's date of birth or a company's turnover.
-They represent requests for data that proves one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as requests for Evidences. 
+They represent requests for data that proves one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as 'requests for Evidences'. 
 
 The response to an Information Requirement is an Evidence when the issuer of the response is an authoritative source (e.g. a Civil Registry providing data about a natural person for the provision of public service through the Single Digital Gateway). In other cases, the responses might not be issued by an authoritative source, but the issuer supports the responses with Evidences (or commits to support them timely, e.g. a self-declaration or a declaration of oath). 
 
@@ -1000,7 +1000,7 @@ The Information Requirement can require structured data or documents of any form
                     
                     <dt>Usage</dt><dd>Requirement is a generic class representing any type of prerequisite that may be desired, needed or imposed as an obligation. 
 
-CCCEV recommends to not use the Requirement class directly, but rather a more semanticall-enriched subclass such as Criterion, InformationRequirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent.</dd>
+CCCEV recommends to not use the Requirement class directly, but rather a more semanticall-enriched subclass such as Criterion, Information Requirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -1090,7 +1090,7 @@ CCCEV recommends to not use the Requirement class directly, but rather a more se
                           
                         </td>
                         <td property="rdfs:comment">The single or various combinations of Evidence Types for supporting a Requirement.Out of the different Lists, one of them must be satisfied by the response to the Requirement.</td>
-                        <td property="skos:scopeNote">Often a single kind of response is sufficient, but in many cases different responses can be accepted. For instance, to prove ones identity, a bankcard, social security token, driving license or ID card could be accepted as Evidence. To satisfy this combination, one of the Evidence Type Lists, each containing one of the examples above, must be satisfied: this is thus an OR condition.</td>
+                        <td property="skos:scopeNote">Often a single kind of response is sufficient, but in many cases different responses can be accepted. For instance, to prove one's identity, a bankcard, social security token, driving license or ID card could be accepted as Evidence. To satisfy this combination, one of the Evidence Type Lists, each containing one of the examples above, must be satisfied: this is thus an OR condition.</td>
                         <td></td>
                       </tr>
                     
@@ -1203,7 +1203,7 @@ CCCEV recommends to not use the Requirement class directly, but rather a more se
 			    
                           
                         </td>
-                        <td property="rdfs:comment">This agent that has issued the requirement</td>
+                        <td property="rdfs:comment">The Agent that has issued the Requirement.</td>
                         <td property="skos:scopeNote">Note: Instead of creating a new URI in the cccev domain, dct:publisher could be considered.</td>
                         <td></td>
                       </tr>
@@ -1401,11 +1401,11 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 </p>
 </br>
 <p>
-  CCCEV provides a framework for the implementers to define the actual information models and metadata models an Evidence should comply to. For example, a Birth Certificate model could be defined as a particular Evidence Type to which the Evidence shared by the competent authority should conform to. This information model would make use of metadata models existing. The implementer can define one or several domain specific models for defining the information acceptable or required within an Evidence.
+  CCCEV provides a framework for the implementers to define the actual information models and metadata models an Evidence should comply to. For example, a Birth Certificate model could be defined as a particular Evidence Type to which the Evidence shared by the competent authority should conform to. This information model would make use of existing metadata models. The implementer can define one or several domain specific models for defining the information acceptable or required within an Evidence.
 </p>
 </br>
 <p>
-  In practice, an Evidence (from the perspective of being a document) often provides more information than is required for the decision making process. Despite that it might be possible to express all these information pieces as Information Concepts, this remains a choice for the implementer. It is not the intent of CCCEV to provide a full fledged data modeling framework with the notion of Information Concept and Supported Value. Usages such as creating Information Concepts independent from Requirements or providing Values for Information Concepts that are not requested by a Requirement should be considered as unintended usages, beyond the scope of CCCEV.
+  In practice, an Evidence (from the perspective of being a document) often provides more information than is required for the decision making process. Despite that it might be possible to express all these information pieces as Information Concepts, this remains a choice for the implementer. It is not the intent of CCCEV to provide a full-fledged data modeling framework with the notion of Information Concept and Supported Value. Usages such as creating Information Concepts independent from Requirements or providing Values for Information Concepts that are not requested by a Requirement should be considered as unintended usages, beyond the scope of CCCEV.
 </p>
 
             </div>
@@ -1413,6 +1413,12 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
                 <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Changelog w.r.t. latest version</h2>
                 (non-normative)
                 
+<p>
+  In this section, we list the major changes of this version of CCCEV compared to the <a href="https://github.com/SEMICeu/CCCEV/tree/CV-2.0.0/cccev/2.0.0">previous proposal (v2.0.0)</a> that was published on GitHub.
+</p>
+</br>
+</br>
+
 <h3 class="h3" aria-level="1" role="heading">
   Decouple CCCEV from other vocabularies, in particular DCAT-AP
 </h3>
@@ -1423,11 +1429,13 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 <ul>
   <li>
    Coupling entities to existing vocabularies (e.g. by subclassing) is enforcing the superclass view on the entities.
-    Often this coupling did not contributed to clarify the intended semantics of the CCCEV entities. The impact
+    Often this coupling did not contribute to clarify the intended semantics of the CCCEV entities. The impact
     was more restrictive than necessary.
   </li>
 </ul>
 </p>
+</br>
+</br>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
@@ -1441,6 +1449,8 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
   </li>
 </ul>
 </p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
   Align CCCEV with other Core Vocabularies
@@ -1450,7 +1460,7 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 </h4>
 <p>
   <ul>
-    The SEMIC Core Vocabularies are build around a few external vocabularies. In particular for meta data aspects
+    The SEMIC Core Vocabularies are built around a few external vocabularies. In particular for metadata aspects
     dcterms is the base reference.
   </ul>
 </p>
@@ -1467,6 +1477,8 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
   </li>
 </ul>
 </p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
   Semantical clarifications
@@ -1490,6 +1502,8 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
   </li>
 </ul>
 </p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
   Disentangling the semantics from (XML) serialization needs
@@ -1500,12 +1514,12 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 <p>
 <ul>
   <li>
-    Part of the modeling and uri mappings were heavily inspired from the perspective of the best practices for
+    Part of the modeling and URI mappings were heavily inspired from the perspective of the best practices for
     XML payload creation that are applied by the parties around the table.
   </li>
   <li>
     Despite that usable XML payloads for the parties around the table was probably the main objective, this
-    creates a data model were payload technicalities are mixed with a highlevel context. This conflicts with the
+    creates a data model were payload technicalities are mixed with a high-level context. This conflicts with the
     objective of a Core Vocabulary which is as much as possible implementation neutral. 
   </li>
 </ul>
@@ -1519,60 +1533,71 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
     The whole structure around concept and value has been severely reduced to minimal aspects to capture the semantics.
   </li>
   <li>
-    Value has been renamed to Supported Value and is now a response to an request instead of a dangling entity.
+    Value has been renamed to Supported Value and is now a response to a request instead of a dangling entity.
   </li>
 </ul>
-
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Removal of not-motivated entities such as cccev:DocumentReference
+  Removal of non-motivated entities such as cccev:DocumentReference
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
+<p>
 <ul>
   <li>
     No clear semantics were provided. On the extended view of the proposal many explicit properties of DCAT are
     listed. Probably they result from discussions on describing discussed information items that the parties around
-    the table would like to have covered. By listing them explicitly the proof has given that the CCCEV model is
-    capable to capture the required notions. To introduce them in the CCCEV context the definitions and
-    terminology of those properties should be contextualized to the CCCEV setting. Note that this contexualiation
-    is anyhow a non trivial process as DCAT is an application profile for cataloguing entities. So the catalog is a key
-    context setting for a dcat:dataset while CCCEV is not about cataloging. 
+    the table would like to have covered. By listing them explicitly, the proof has given that the CCCEV model is
+    capable to capture the required notions. To introduce them in the CCCEV context, the definitions and
+    terminology of those properties should be contextualized to the CCCEV setting. Note that this contextualization
+    is anyhow a non-trivial process, as DCAT is an application profile for cataloguing entities. So the catalog is a key
+    context setting for a dcat:Dataset while CCCEV is not about cataloging. 
   </li>
   <li>
-    However non of the properties have been motivated or explained that they form an integral part of the CCCEV.
-    Lacking this motivation means that is not critical information that must be part of the Core Vocabulary level. It
-    however means those properties will arise during implementation discussions.
+    However, none of the properties have been motivated or explained how they form an integral part of CCCEV.
+    Lacking this motivation means that it is non-critical information that must be part of the Core Vocabulary level. It
+    however means that those properties will arise during implementation discussions.
   </li>
   <li>
     Note that by subclassing Evidence to dcat:Dataset all the removed aspects are implicitly included. This implicit
-    approach essentially creates a lot of freedom. And that makes that CCCEV is not usuable out-of-the box. 
+    approach essentially creates a lot of freedom, which makes CCCEV not usuable out-of-the-box. 
   </li>
 </ul>
+</p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
+<p>
 <ul>
   <li>
     Removing all non-motivated properties. This has mostly as consequence that all dcat properties have disappeared.
   </li>
 </ul>
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Changes in the preferred directionality of the relationships.
+  Changes in the preferred directionality of the relationships
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
+<p>
 <ul>
   <li>
-    Some relationships had a counter intuitive preferred relationship. 
+    Some relationships had a counter-intuitive preferred relationship. 
   </li>
 </ul>
+</p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
+<p>
 <ul>
   <li>
     cccev:hasConstraint -> cccev:constrains
@@ -1581,6 +1606,9 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
     cccev:isValueOf -> cccev :providesValueFor (name change + maintain only one direction)
   </li>
 </ul>
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
   Added properties
@@ -1588,14 +1616,17 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
+<p>
 <ul>
   <li>
     New properties that enhance the application of CCCEV.
   </li>
 </ul>
+</p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
+<p>
 <ul>
   <li>
     cccev:issuedBy: Requirement -> Agent
@@ -1604,6 +1635,9 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
     cccev:supportsValue: Evidence -> SupportedValue 
   </li>
 </ul>
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
   Renaming
@@ -1611,30 +1645,33 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
+<p>
 <ul>
   <li>
-    Some entities or relationships do not use labels that immediately guides a reader into the desired semantics.
+    Some entities or relationships do not use labels that immediately guide a reader into the desired semantics.
     Some even create confusion.
   </li>
 </ul>
-
+</p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
+<p>
 <ul>
   <li>
-    Concept: confusion with skos:Concept. Maybe better Information Concept.
+    Concept: confusion with skos:Concept. Better to use Information Concept.
   </li>
   <li>
     Value: reads as if it is something very generic. Changed to SupportedValue.
   </li>
   <li>
-    EvidenceTypeList: it is not a list, but actually an And-condition that should be fulfilled. (TODO: ongoing search for an improved name).
-  </li>
-  <li>
-    Cccev:isSpecifiedIn: should be optional (not mandatory), but also the existence of an Evidencetype is not dependent on participating is a combination.
+    EvidenceTypeList: it is not a list, but actually an AND-condition that should be fulfilled. (TODO: ongoing search for an improved name).
   </li>
 </ul>
+</p>
+</br>
+</br>
+
 
             </div>
 	    <!--
