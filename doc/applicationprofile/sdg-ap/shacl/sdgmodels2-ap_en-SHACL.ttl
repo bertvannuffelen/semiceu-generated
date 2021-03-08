@@ -4,22 +4,50 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdgmodels2-ap_en> <https://semiceu.github.io/shacl/sdgmodels2-ap_enshapes> <https://semiceu.github.io/shacl/sdgmodels2-ap_en#AddressShape>,
-    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#LocationShape>,
-    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#CourseResultShape>,
-    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#TertiaryEducationDiplomaSupplementEvidenceShape>,
+<https://semiceu.github.io/shacl/sdgmodels2-ap_en> <https://semiceu.github.io/shacl/sdgmodels2-ap_enshapes> <https://semiceu.github.io/shacl/sdgmodels2-ap_en#TertiaryEducationEvidenceShape>,
     <https://semiceu.github.io/shacl/sdgmodels2-ap_en#PersonShape>,
+    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#LocationShape>,
+    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#AddressShape>,
     <https://semiceu.github.io/shacl/sdgmodels2-ap_en#EducationInstitutionShape>,
     <https://semiceu.github.io/shacl/sdgmodels2-ap_en#TertiaryEducationDiplomaEvidenceShape>,
-    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#GradeShape>,
-    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#StudentShape>,
     <https://semiceu.github.io/shacl/sdgmodels2-ap_en#RecordOfResultsEvidenceShape>,
-    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#TertiaryEducationEvidenceShape>,
-    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#OrganisationShape> .
+    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#TertiaryEducationDiplomaSupplementEvidenceShape>,
+    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#OrganisationShape>,
+    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#CourseResultShape>,
+    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#StudentShape>,
+    <https://semiceu.github.io/shacl/sdgmodels2-ap_en#GradeShape> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#AddressShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:definition """	The complete address written as a string, with or without formatting."""@en;
+    shacl:maxCount 1;
+    shacl:name "full address"@en;
+    shacl:path <https://sdg.semic.eu/education#fullAddress>
+  ], [
+    <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/country>;
+    shacl:class skos:Concept;
+    shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Admin unit Level 1"@en;
+    shacl:path <https://sdg.semic.eu/education#adminUnitL1>
+  ], [
+    shacl:class <https://sdg.semic.eu/education#Location>;
+    shacl:definition "The address property relationship associates a Location with the Address entity."@en;
+    shacl:name "address"@en;
+    shacl:path <https://sdg.semic.eu/education#Address.address>
+  ], [
+    shacl:class <https://sdg.semic.eu/education#Person>;
+    shacl:definition "The registered address of the Person."@en;
+    shacl:name "registered address"@en;
+    shacl:path <https://sdg.semic.eu/education#Address.registeredAddress>
+  ], [
+    shacl:class <https://sdg.semic.eu/education#Person>;
+    shacl:definition "The registered address of the Person."@en;
+    shacl:name "registered address"@en;
+    shacl:path <https://sdg.semic.eu/education#Address.registeredAddress>
+  ], [
     shacl:class <https://sdg.semic.eu/education#Location>;
     shacl:definition "The address property relationship associates a Location with the Address entity."@en;
     shacl:name "address"@en;
@@ -29,58 +57,27 @@
     shacl:maxCount 1;
     shacl:name "admin unit Level 2"@en;
     shacl:path <https://sdg.semic.eu/education#adminUnitL2>
-  ], [
-    shacl:definition """	The complete address written as a string, with or without formatting."""@en;
-    shacl:maxCount 1;
-    shacl:name "full address"@en;
-    shacl:path <https://sdg.semic.eu/education#fullAddress>
-  ], [
-    shacl:class <https://sdg.semic.eu/education#Location>;
-    shacl:definition "The address property relationship associates a Location with the Address entity."@en;
-    shacl:name "address"@en;
-    shacl:path <https://sdg.semic.eu/education#Address.address>
-  ], [
-    shacl:class <https://sdg.semic.eu/education#Person>;
-    shacl:definition "The registered address of the Person."@en;
-    shacl:name "registered address"@en;
-    shacl:path <https://sdg.semic.eu/education#Address.registeredAddress>
-  ], [
-    shacl:class <https://sdg.semic.eu/education#Person>;
-    shacl:definition "The registered address of the Person."@en;
-    shacl:name "registered address"@en;
-    shacl:path <https://sdg.semic.eu/education#Address.registeredAddress>
-  ], [
-    <http://purl.org/linked-data/cube#codeList> <http://publications.europa.eu/resource/authority/country>;
-    shacl:class skos:Concept;
-    shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Admin unit Level 1"@en;
-    shacl:path <https://sdg.semic.eu/education#adminUnitL1>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#Address> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#CourseResultShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://sdg.semic.eu/education#Grade>;
-    shacl:definition "A mark indicating a degree of accomplishment for a particular course."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "course grade"@en;
-    shacl:path <https://sdg.semic.eu/education#courseGrade>
-  ], [
     shacl:definition "Name given to a number of lectures or other matters dealing with a subject, i.e. the course."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "course name"@en;
     shacl:path <https://sdg.semic.eu/education#courseName>
   ], [
-    shacl:definition "The number of ECTS credits for the course, expressing the volume of learning based on the defined learning outcomes and their associated workload."@en;
+    shacl:definition "Period of the academic year when the course took place, e.g. first semester, second trimester, etc."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "course credits amount"@en;
-    shacl:path <https://sdg.semic.eu/education#courseCreditsAmount>
+    shacl:name "course academic period"@en;
+    shacl:path <https://sdg.semic.eu/education#courseAcademicPeriod>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "The discipline or subject area of a course."@en;
+    shacl:name "course field of study"@en;
+    shacl:path <https://sdg.semic.eu/education#courseFieldOfStudy>
   ], [
     shacl:datatype xsd:date;
     shacl:definition "The annual period of sessions of an educational programme usually beginning in September and ending in June."@en;
@@ -88,21 +85,24 @@
     shacl:name "course academic year"@en;
     shacl:path <https://sdg.semic.eu/education#courseAcademicYear>
   ], [
+    shacl:definition "The number of ECTS credits for the course, expressing the volume of learning based on the defined learning outcomes and their associated workload."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "course credits amount"@en;
+    shacl:path <https://sdg.semic.eu/education#courseCreditsAmount>
+  ], [
     shacl:class skos:Concept;
     shacl:definition "Main language in which the course was taught."@en;
     shacl:maxCount 1;
     shacl:name "course language"@en;
     shacl:path <https://sdg.semic.eu/education#courseLanguage>
   ], [
-    shacl:class skos:Concept;
-    shacl:definition "The discipline or subject area of a course."@en;
-    shacl:name "course field of study"@en;
-    shacl:path <https://sdg.semic.eu/education#courseFieldOfStudy>
-  ], [
-    shacl:definition "Period of the academic year when the course took place, e.g. first semester, second trimester, etc."@en;
+    shacl:class <https://sdg.semic.eu/education#Grade>;
+    shacl:definition "A mark indicating a degree of accomplishment for a particular course."@en;
     shacl:maxCount 1;
-    shacl:name "course academic period"@en;
-    shacl:path <https://sdg.semic.eu/education#courseAcademicPeriod>
+    shacl:minCount 1;
+    shacl:name "course grade"@en;
+    shacl:path <https://sdg.semic.eu/education#courseGrade>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#CourseResult> .
 
@@ -124,6 +124,18 @@
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#GradeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "A (quantitative or qualitative) value according to the definition in the grading scheme."@en;
+    shacl:maxCount 1;
+    shacl:name "value"@en;
+    shacl:path <https://sdg.semic.eu/education#value>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Dereferenceable identifier to the grading system that was used to give the grade."@en;
+    shacl:maxCount 1;
+    shacl:name "grading scheme"@en;
+    shacl:path <https://sdg.semic.eu/education#gradingScheme>
+  ], [
     shacl:definition "Statistical distribution of grades over the number of students that obtained the respective grade."@en;
     shacl:maxCount 1;
     shacl:name "distribution"@en;
@@ -135,45 +147,28 @@
     shacl:minCount 1;
     shacl:name "status"@en;
     shacl:path <https://sdg.semic.eu/education#status>
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Dereferenceable identifier to the grading system that was used to give the grade."@en;
-    shacl:maxCount 1;
-    shacl:name "grading scheme"@en;
-    shacl:path <https://sdg.semic.eu/education#gradingScheme>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "A (quantitative or qualitative) value according to the definition in the grading scheme."@en;
-    shacl:maxCount 1;
-    shacl:name "value"@en;
-    shacl:path <https://sdg.semic.eu/education#value>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#Grade> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#LocationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:definition "A geographic name is a proper noun applied to a spatial object. The INSPIRE Data Specification on Geographical Names [INGN] provides a detailed model for describing a 'named place', including methods for providing multiple names in multiple scripts."@en;
+    shacl:maxCount 1;
+    shacl:name "geographic name"@en;
+    shacl:path <https://sdg.semic.eu/education#geographicName>
+  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "A URI that identifies the Location."@en;
     shacl:maxCount 1;
     shacl:name "geographic identifier"@en;
     shacl:path <https://sdg.semic.eu/education#geographicIdentifier>
-  ], [
-    shacl:definition "A geographic name is a proper noun applied to a spatial object. The INSPIRE Data Specification on Geographical Names [INGN] provides a detailed model for describing a 'named place', including methods for providing multiple names in multiple scripts."@en;
-    shacl:maxCount 1;
-    shacl:name "geographic name"@en;
-    shacl:path <https://sdg.semic.eu/education#geographicName>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#Location> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#OrganisationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:definition "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organisation. An organisation may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property."@en;
-    shacl:minCount 1;
-    shacl:name "preferred label"@en;
-    shacl:path <https://sdg.semic.eu/education#prefLabel>
-  ], [
     shacl:class <https://sdg.semic.eu/education#Location>;
     shacl:definition "The registered location of the Organisation."@en;
     shacl:maxCount 1;
@@ -184,12 +179,34 @@
     shacl:minCount 1;
     shacl:name "identifier"@en;
     shacl:path <https://sdg.semic.eu/education#identifier>
+  ], [
+    shacl:definition "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organisation. An organisation may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property."@en;
+    shacl:minCount 1;
+    shacl:name "preferred label"@en;
+    shacl:path <https://sdg.semic.eu/education#prefLabel>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#Organisation> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#PersonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "The chromosomal state, and reproductive organs and structures of a Person that allows them to be distinguished as female or male."@en;
+    shacl:maxCount 1;
+    shacl:name "sex"@en;
+    shacl:path <https://sdg.semic.eu/education#sex>
+  ], [
+    shacl:definition "The identifier relation is used to link a Person to any formally issued Identifier for that Person."@en;
+    shacl:name "identifier"@en;
+    shacl:path <https://sdg.semic.eu/education#identifier>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:definition "A date that specifies the birth date of a Person."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "date of birth"@en;
+    shacl:path <https://sdg.semic.eu/education#dateOfBirth>
+  ], [
     shacl:class <https://sdg.semic.eu/education#Location>;
     shacl:definition "The Location where a Person was born."@en;
     shacl:maxCount 1;
@@ -207,39 +224,22 @@
     shacl:minCount 1;
     shacl:name "given name"@en;
     shacl:path <https://sdg.semic.eu/education#givenName>
-  ], [
-    shacl:datatype xsd:date;
-    shacl:definition "A date that specifies the birth date of a Person."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "date of birth"@en;
-    shacl:path <https://sdg.semic.eu/education#dateOfBirth>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "The chromosomal state, and reproductive organs and structures of a Person that allows them to be distinguished as female or male."@en;
-    shacl:maxCount 1;
-    shacl:name "sex"@en;
-    shacl:path <https://sdg.semic.eu/education#sex>
-  ], [
-    shacl:definition "The identifier relation is used to link a Person to any formally issued Identifier for that Person."@en;
-    shacl:name "identifier"@en;
-    shacl:path <https://sdg.semic.eu/education#identifier>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#Person> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#RecordOfResultsEvidenceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://sdg.semic.eu/education#CourseResult>;
+    shacl:definition "The specific course results that together make up the Record of Results Evidence."@en;
+    shacl:name "contains"@en;
+    shacl:path <https://sdg.semic.eu/education#contains>
+  ], [
     shacl:definition "The period during which the courses and exams took place."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "academic year"@en;
     shacl:path <https://sdg.semic.eu/education#academicYear>
-  ], [
-    shacl:class <https://sdg.semic.eu/education#TertiaryEducationDiplomaSupplementEvidence>;
-    shacl:definition "The Record of Results Evidence that is complementary to the Tertiary Education Diploma Supplement Evidence."@en;
-    shacl:name "has record of results"@en;
-    shacl:path <https://sdg.semic.eu/education#RecordOfResultsEvidence.hasRecordofResults>
   ], [
     shacl:definition "The total number of ECTS credits of the courses contained within the Record of Results."@en;
     shacl:maxCount 1;
@@ -252,10 +252,10 @@
     shacl:name "has record of results"@en;
     shacl:path <https://sdg.semic.eu/education#RecordOfResultsEvidence.hasRecordofResults>
   ], [
-    shacl:class <https://sdg.semic.eu/education#CourseResult>;
-    shacl:definition "The specific course results that together make up the Record of Results Evidence."@en;
-    shacl:name "contains"@en;
-    shacl:path <https://sdg.semic.eu/education#contains>
+    shacl:class <https://sdg.semic.eu/education#TertiaryEducationDiplomaSupplementEvidence>;
+    shacl:definition "The Record of Results Evidence that is complementary to the Tertiary Education Diploma Supplement Evidence."@en;
+    shacl:name "has record of results"@en;
+    shacl:path <https://sdg.semic.eu/education#RecordOfResultsEvidence.hasRecordofResults>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#RecordOfResultsEvidence> .
 
@@ -276,26 +276,6 @@
     shacl:name "has supplement"@en;
     shacl:path <https://sdg.semic.eu/education#TertiaryEducationDiplomaEvidence.hasSupplement>
   ], [
-    shacl:definition "Details of any rights to practise, or professional title, accorded to the holder of the qualification, in accordance with national legislation or requirements by a competent authority."@en;
-    shacl:name "access to regulated profession"@en;
-    shacl:path <https://sdg.semic.eu/education#accessToRegulatedProfession>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Indication of the level of distinction with which an academic degree has been earned, e.g. First Class Honors Degree, Summa Cum Laude, Merit, Avec Distinction, Avec mention, etc."@en;
-    shacl:maxCount 1;
-    shacl:name "level of distinction"@en;
-    shacl:path <https://sdg.semic.eu/education#levelOfDistinction>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Details of access to further academic and/or professional studies the qualification provides, especially to specific qualifications, or levels of study, e.g.: access to Doctoral studies in the country or institution."@en;
-    shacl:name "access to further study"@en;
-    shacl:path <https://sdg.semic.eu/education#accessToFurtherStudy>
-  ], [
-    shacl:class <https://sdg.semic.eu/education#TertiaryEducationDiplomaSupplementEvidence>;
-    shacl:definition "Supplementary document that serves as an annex, with additional information related to the Tertiary Education Diploma Evidence."@en;
-    shacl:name "has supplement"@en;
-    shacl:path <https://sdg.semic.eu/education#TertiaryEducationDiplomaEvidence.hasSupplement>
-  ], [
     shacl:class <https://sdg.semic.eu/education#Grade>;
     shacl:definition "A mark indicating a degree of accomplishment."@en;
     shacl:maxCount 1;
@@ -303,27 +283,75 @@
     shacl:name "overall grade"@en;
     shacl:path <https://sdg.semic.eu/education#overallGrade>
   ], [
+    shacl:class <https://sdg.semic.eu/education#TertiaryEducationDiplomaSupplementEvidence>;
+    shacl:definition "Supplementary document that serves as an annex, with additional information related to the Tertiary Education Diploma Evidence."@en;
+    shacl:name "has supplement"@en;
+    shacl:path <https://sdg.semic.eu/education#TertiaryEducationDiplomaEvidence.hasSupplement>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Indication of the level of distinction with which an academic degree has been earned, e.g. First Class Honors Degree, Summa Cum Laude, Merit, Avec Distinction, Avec mention, etc."@en;
+    shacl:maxCount 1;
+    shacl:name "level of distinction"@en;
+    shacl:path <https://sdg.semic.eu/education#levelOfDistinction>
+  ], [
+    shacl:definition "Title of the dissertation completed by a student as part of a tertiary education degree."@en;
+    shacl:maxCount 1;
+    shacl:name "thesis title"@en;
+    shacl:path <https://sdg.semic.eu/education#thesisTitle>
+  ], [
     shacl:definition "The set of course units, the various components of which complement and build on each other in order to provide the student with a higher education qualification."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "academic programme"@en;
     shacl:path <https://sdg.semic.eu/education#academicProgramme>
   ], [
-    shacl:definition "Title of the dissertation completed by a student as part of a tertiary education degree."@en;
-    shacl:maxCount 1;
-    shacl:name "thesis title"@en;
-    shacl:path <https://sdg.semic.eu/education#thesisTitle>
+    shacl:definition "Details of any rights to practise, or professional title, accorded to the holder of the qualification, in accordance with national legislation or requirements by a competent authority."@en;
+    shacl:name "access to regulated profession"@en;
+    shacl:path <https://sdg.semic.eu/education#accessToRegulatedProfession>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Details of access to further academic and/or professional studies the qualification provides, especially to specific qualifications, or levels of study, e.g.: access to Doctoral studies in the country or institution."@en;
+    shacl:name "access to further study"@en;
+    shacl:path <https://sdg.semic.eu/education#accessToFurtherStudy>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#TertiaryEducationDiplomaEvidence> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#TertiaryEducationDiplomaSupplementEvidenceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <https://sdg.semic.eu/education#Grade>;
+    shacl:definition "The grade point average of the course results, i.e. grades weighted based on the number of credits."@en;
+    shacl:maxCount 1;
+    shacl:name "grade point average"@en;
+    shacl:path <https://sdg.semic.eu/education#gradePointAverage>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "The language in which the qualification was officially delivered and examined."@en;
+    shacl:maxCount 1;
+    shacl:name "academic programme language"@en;
+    shacl:path <https://sdg.semic.eu/education#academicProgrammeLanguage>
+  ], [
     shacl:class skos:Concept;
     shacl:definition "Level of the obtained qualification."@en;
     shacl:maxCount 1;
     shacl:name "qualification level"@en;
     shacl:path <https://sdg.semic.eu/education#qualificationLevel>
+  ], [
+    shacl:definition "The period during which the courses and exams took place."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://sdg.semic.eu/education#academicYear>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "The way the programme was undertaken, e.g. full-time, part-time, intermittent/sandwich, e-learning, distance, etc."@en;
+    shacl:maxCount 1;
+    shacl:name "mode of study"@en;
+    shacl:path <https://sdg.semic.eu/education#modeOfStudy>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Qualification(s) or periods of study required for access to the programme."@en;
+    shacl:name "access requirement"@en;
+    shacl:path <https://sdg.semic.eu/education#accessRequirement>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The different languages in which the programme was given."@en;
@@ -335,71 +363,52 @@
     shacl:name "study duration"@en;
     shacl:path <https://sdg.semic.eu/education#studyDuration>
   ], [
-    shacl:class skos:Concept;
-    shacl:definition "Qualification(s) or periods of study required for access to the programme."@en;
-    shacl:name "access requirement"@en;
-    shacl:path <https://sdg.semic.eu/education#accessRequirement>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "The language in which the qualification was officially delivered and examined."@en;
-    shacl:maxCount 1;
-    shacl:name "academic programme language"@en;
-    shacl:path <https://sdg.semic.eu/education#academicProgrammeLanguage>
-  ], [
-    shacl:definition "Statements of what the Student knows, understands and is able to do after completing his/her studies and receiving the qualification (knowledge, skills, competencies). Learning outcomes should be expressed in the present tense, e.g.: The graduate can analyse consumer behaviour trends and apply them in a given consumer market."@en;
-    shacl:maxCount 1;
-    shacl:name "programme learning outcomes"@en;
-    shacl:path <https://sdg.semic.eu/education#programmeLearningOutcomes>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "The way the programme was undertaken, e.g. full-time, part-time, intermittent/sandwich, e-learning, distance, etc."@en;
-    shacl:maxCount 1;
-    shacl:name "mode of study"@en;
-    shacl:path <https://sdg.semic.eu/education#modeOfStudy>
-  ], [
-    shacl:class <https://sdg.semic.eu/education#Grade>;
-    shacl:definition "The grade point average of the course results, i.e. grades weighted based on the number of credits."@en;
-    shacl:maxCount 1;
-    shacl:name "grade point average"@en;
-    shacl:path <https://sdg.semic.eu/education#gradePointAverage>
-  ], [
-    shacl:definition "The period during which the courses and exams took place."@en;
+    shacl:definition "Total student workload required, described in terms of ECTS credits."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:path <https://sdg.semic.eu/education#academicYear>
+    shacl:name "total credits"@en;
+    shacl:path <https://sdg.semic.eu/education#totalCredits>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The main disciplines or subject areas of a qualification."@en;
     shacl:name "main field of study"@en;
     shacl:path <https://sdg.semic.eu/education#mainFieldOfStudy>
   ], [
-    shacl:definition "Total student workload required, described in terms of ECTS credits."@en;
+    shacl:definition "Statements of what the Student knows, understands and is able to do after completing his/her studies and receiving the qualification (knowledge, skills, competencies). Learning outcomes should be expressed in the present tense, e.g.: The graduate can analyse consumer behaviour trends and apply them in a given consumer market."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "total credits"@en;
-    shacl:path <https://sdg.semic.eu/education#totalCredits>
+    shacl:name "programme learning outcomes"@en;
+    shacl:path <https://sdg.semic.eu/education#programmeLearningOutcomes>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#TertiaryEducationDiplomaSupplementEvidence> .
 
 <https://semiceu.github.io/shacl/sdgmodels2-ap_en#TertiaryEducationEvidenceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://sdg.semic.eu/education#Organisation>;
-    shacl:definition "The Organisation that issued the Tertiary Education Evidence."@en;
-    shacl:minCount 1;
-    shacl:name "issuing authority"@en;
-    shacl:path <https://sdg.semic.eu/education#issuingAuthority>
-  ], [
     shacl:class skos:Concept;
     shacl:definition "The language in which the Tertiary Education Evidence is issued."@en;
     shacl:minCount 1;
     shacl:name "language"@en;
     shacl:path <https://sdg.semic.eu/education#language>
   ], [
-    shacl:definition "Full name of the qualification, at least in the original language(s) as it is styled in the original qualification, e.g. Master of Science, Kandidat nauk, Maîtrise, Diplom, etc."@en;
+    shacl:class <https://sdg.semic.eu/education#Organisation>;
+    shacl:definition "The Organisation that issued the Tertiary Education Evidence."@en;
     shacl:minCount 1;
-    shacl:name "qualification name"@en;
-    shacl:path <https://sdg.semic.eu/education#qualificationName>
+    shacl:name "issuing authority"@en;
+    shacl:path <https://sdg.semic.eu/education#issuingAuthority>
+  ], [
+    shacl:class <https://sdg.semic.eu/education#Location>;
+    shacl:definition "The Location where the Tertiary Education Evidence was issued."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "issuing place"@en;
+    shacl:path <https://sdg.semic.eu/education#issuingPlace>
+  ], [
+    shacl:datatype xsd:date;
+    shacl:definition "The date on which the Tertiary Education Evidence was issued."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "issuing date"@en;
+    shacl:path <https://sdg.semic.eu/education#issuingDate>
   ], [
     shacl:class <https://sdg.semic.eu/education#Student>;
     shacl:definition "The Student that is the holder of the Tertiary Education Evidence."@en;
@@ -414,18 +423,9 @@
     shacl:name "identifier"@en;
     shacl:path <https://sdg.semic.eu/education#identifier>
   ], [
-    shacl:datatype xsd:date;
-    shacl:definition "The date on which the Tertiary Education Evidence was issued."@en;
-    shacl:maxCount 1;
+    shacl:definition "Full name of the qualification, at least in the original language(s) as it is styled in the original qualification, e.g. Master of Science, Kandidat nauk, Maîtrise, Diplom, etc."@en;
     shacl:minCount 1;
-    shacl:name "issuing date"@en;
-    shacl:path <https://sdg.semic.eu/education#issuingDate>
-  ], [
-    shacl:class <https://sdg.semic.eu/education#Location>;
-    shacl:definition "The Location where the Tertiary Education Evidence was issued."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "issuing place"@en;
-    shacl:path <https://sdg.semic.eu/education#issuingPlace>
+    shacl:name "qualification name"@en;
+    shacl:path <https://sdg.semic.eu/education#qualificationName>
   ];
   shacl:targetClass <https://sdg.semic.eu/education#TertiaryEducationEvidence> .
