@@ -1,0 +1,699 @@
+{
+  "baseURI": "http://data.europa.eu/m8g/cccev#",
+  "classes": [
+    {
+      "EA-Guid": "{D5E840D1-63A4-42a8-B3B6-376316BF956F}",
+      "name": "Constraint",
+      "label": {
+        "en": "Constraint",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A limitation applied to Requirement(s) or to the Information Concept(s) the Requirement is about.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Constraints are requirements in themselves, since they impose prerequisites which influence the definition, use and/or fulfilment of the requirement.\nThey represent hard conditions such as minimum or maximum expressions which can be used to evaluate pieces of information, the required age, income, involvement in activities, etc. \n\nAn example from the eProcurement domain is a threshold as the minimum turnover required by the buying organisation to select the candidates. \n\nNote that CCCEV does not provide any specific guidance on when which kind of Requirement should be used. Users of this vocabulary should make decisions on this topic in their specific context.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{5AEB1932-C1D2-4ffe-A2E3-02C365A23074}",
+      "name": "Criterion",
+      "label": {
+        "en": "Criterion",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A condition for evaluation or assessment.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In general, Criteria are used for comparison, filtering or selection purposes. Criteria usually set minimum conditions (e.g. limits, intervals, thresholds, etc.) that need to be met in order to pass the requirements or to fulfil them to a certain degree or quality. The concept of Criteria is broader than the concept of Constraint since it covers more usages. The evaluation of the fulfilment is usually supported by the provision of Evidence. \nIn the eProcurement domain, the eProcurement Ontology defines different subclasses of Criterion such as exclusion grounds, selection criteria or award criteria.\n\nA concrete example of a Criterion is participation in a criminal organisation which could also be considered as an exclusion ground criterion in the procurement domain or for requiring a public service.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{0D2F3FDD-683F-4121-868E-6F502993AD54}",
+      "name": "Evidence",
+      "label": {
+        "en": "Evidence",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The data proving that a Requirement is met or has been fulfilled.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The term data used in the definition of Evidence must be understood in its broadest sense as any type of data, independently from its structure, format or medium used to exchange it. From this perspective, the definition of evidence in the Single Digital Gateway regulation is a CCCEV Evidence class: any document or data, including text or sound, visual or audiovisual recording, irrespective of the medium used, required by a competent authority to prove facts or compliance with procedural requirements.\nThe class Evidence provides the means to support responses to Criteria or in response to a concrete Information Requirement or to a granular Information Concept, inside the Information Requirement.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2BDD1056-48D0-4362-B49E-07E7B5E306A0}",
+      "name": "Evidence Type",
+      "label": {
+        "en": "Evidence Type",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Information about the characteristics of an expected Evidence, such as the desired content, format, source, etc.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "These are not concrete individual responses to a Requirement (Evidences), but descriptions about the form and information that an actual response should have and provide.\nEvidence Types express conditions for an acceptable response at two levels: the concrete information that is being requested, and the metadata about how this concrete information is being obtained. For a specific Requirement, the requester can define the List of Evidence Types which would be accepted and, for each Evidence Type in this list, the specific information and form that should be part of the Evidence actually provided in order to answer the Requirement. \nExamples of Evidence Types include birth certificates, marriage evidences, university diploma's, etc. The Evidence Type can also capture specific characteristics such as a specific format or source of the Evidence as such characteristics may be strictly required depending on the Requirement.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{656C4155-7FD3-465e-AB71-F34F7F066D5F}",
+      "name": "Evidence Type List",
+      "label": {
+        "en": "Evidence Type List",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A combination of evidence types that must be satisfied all together.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "An Evidence Type List is satisfied if and only if for all included Evidence Types a corresponding conformant Evidence is supporting the Requirement having this List. The Evidence Type List describes thus an AND condition on the different Evidence Types.\nCombinations of alternative Lists can be provided for a respondent of a Requirement to choose amongst them.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{23EF31EA-2FE3-47d8-B5F4-7EEC6759C173}",
+      "name": "Information Concept",
+      "label": {
+        "en": "Information Concept",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A reference to an entity, i.e. a class or a property, which is used to describe information in the Evidence to be provided for the Requirement specified.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "An Information Concept is a piece of information that the Evidence provides in the context of a Requirement (or from the perspective of a Requirement: a piece of information that a Requirement needs), e.g. a person's age. The CCCEV modeling of Information Concepts and Supported Values exists, however, to provide a machine-processable way to connect information that an Evidence provides with the information a Requirement requires to make a decision.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2A688AB9-5233-4408-BEBF-E8344D7ADDA1}",
+      "name": "Information Requirement",
+      "label": {
+        "en": "Information Requirement",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A request for data that is proof of Evidence or leads to the source of such a proof.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Information Requirements are the most neutral kind of Requirements. They aim to request information in any form, e.g. a person's date of birth or a company's turnover.\nThey represent requests for data that proves one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as requests for evidences. \n\nThe response to an information requirement is an evidence when the issuer of the response is an authoritative source (a.k.a. source of truth, e.g. a Civil Registry providing data about a natural person for the provision of public service through the Single Digital Gateway). In other cases, the responses might not be issued by an authoritative source, but the issuer supports the responses with evidences (or commits to support them timely, e.g. a self-declaration or a declaration of oath). \n\nThe information requirement can require structured data or documents of any form. For structured data, the requirement can use Concepts to specify the structure and type of the data expected in the response. For both structured and unstructured data, the information requirement can indicate the expected type of evidence, its format, source, and other properties related to the evidence.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{785686A1-4364-47dc-8B5C-2DEE9760958E}",
+      "name": "Reference Framework",
+      "label": {
+        "en": "Reference Framework",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A source from where requirements are identified and derived.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D0F60B4B-30F4-4fe4-8362-172989F74286}",
+      "name": "Requirement",
+      "label": {
+        "en": "Requirement",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A condition or prerequisite that someone requests and someone else has to meet.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Requirement is a generic class representing any type of prerequisite that may be desired, needed or imposed as an obligation.\n\nCCCEV recommends to not use the Requirement class directly, but rather one of its three subclasses: Criterion, InformationRequirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C8C56DAC-1A06-4ad4-9ADE-DE143451B0F2}",
+      "name": "Supported Value",
+      "label": {
+        "en": "Supported Value",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A value for an Information Concept that is supported by an Evidence.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The notion of Supported Value is closely related to actual data exchange between two parties: (a) the Requirement processor, i.e. the Agent setting out Requirements for an objective and processing the supplied Evidences in the context of the Requirements, and (b) the Evidence provider, i.e. the Agent supplying information to an information request expressed as Requirements.\n\nObtaining the actual Value for an Information Concept carried by an Evidence is the result of an information retrieval process on the business information of the Evidence. This process can be executed by the Evidence provider. In that case the Evidence provider can supply the Value as is. But it can also be executed by the Requirement processor. If the Requirement processor can process the business information of the supplied Evidence then the Requirement processor can query for the information itself. In CCCEV, the latter case is supported by the query attribute for a Supported Value. So instead of providing a Value, a query on the data is supplied.\n\nAs described in the Evidence class, CCCEV does not impose how the actual information contained in an Evidence must be exchanged and processed in order to fulfill a Requirement. The combination of Supported Value and Information Concept, is one of the approaches that CCCEV supports.",
+        "de": "Enter your translation here"
+      }
+    }
+  ],
+  "properties": [
+    {
+      "EA-Guid": "{ADD114A6-1007-4f52-8573-2CCDF832D5B8}",
+      "name": "bias",
+      "label": {
+        "en": "bias",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Additional parameter(s) used to adjust the evaluation of the Criterion composed of multiple sub-Criteria and their respective weights.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In neural networks, the bias is equivalent to an intercept added in a linear equation used to shift the activation function to either right or left. It can be also used to manually adjust the pass/fail calculation of a weighted criterion.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{44E7189D-9BB0-40d2-B88A-60EDD388FBCF}",
+      "name": "confidentiality level type",
+      "label": {
+        "en": "confidentiality level type",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The security classification assigned to an Evidence or, in general, to a content.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{CECCCA0A-9A1F-4ee2-A7DC-8E367C11EE6D}",
+      "name": "evidence type classification",
+      "label": {
+        "en": "evidence type classification",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A classification code to specify the layout and content expected for an Evidence.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{76F44D73-518B-4cf8-AF9C-13D7924D9BB4}",
+      "name": "has qualified relation",
+      "label": {
+        "en": "has qualified relation",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A described and/or categorised relation to the instance of another Requirement class or subclass.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{DFE4231F-E6B4-497f-B735-2AE07EBAC4F9}",
+      "name": "provides value for",
+      "label": {
+        "en": "provides value for",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Information Concept for which the Supported Value is providing a value.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F50D3CD0-C630-45b5-90FB-9CBE94D9A998}",
+      "name": "query",
+      "label": {
+        "en": "query",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The query via which the value for the Information Concept can be retrieved. The query must be executed on the business data provided by the supporting Evidence.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{64815ED7-A5A0-425c-AB65-DAE0814AC7EE}",
+      "name": "supports value",
+      "label": {
+        "en": "supports value",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Supported Value for which an Evidence holds information.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{24F245A1-73C9-4848-BCF0-8A06733D958A}",
+      "name": "value",
+      "label": {
+        "en": "value",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The value for the Information Concept that the Evidence is supporting.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9E15D586-5D1B-4852-99A7-32047A7EE928}",
+      "name": "weight",
+      "label": {
+        "en": "weight",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Relative importance assigned to a given Criterion.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D86B66C4-7DF4-46fe-933D-FBD20D52E9BD}",
+      "name": "weighting consideration description",
+      "label": {
+        "en": "weighting consideration description",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The explanation of how the weighting of a Criterion is to be used at evaluation time.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C8F3A5F7-9753-462a-9A9B-235AB5F03516}",
+      "name": "weighting type",
+      "label": {
+        "en": "weighting type",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The numeric form used to weight.",
+        "de": "Enter your translation here"
+      }
+    }
+  ],
+  "externals": [
+    {
+      "EA-Guid": "{53F59CE9-8044-4e39-A343-A35AAA542A46}",
+      "name": "Dataset",
+      "label": {
+        "en": "Dataset",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A collection of data.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "To share metadata about an Evidence, CCCEV relies on DCAT, a vocabulary for cataloging datasets and services. This is justified by the fact that a lot of the information needed for describing Evidences is described in DCAT, such as the issue date, creator, title, distribution, etc.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{3C4A571F-B0FB-4506-902F-80FC1505C3A1}",
+      "name": "Agent",
+      "label": {
+        "en": "Agent",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Any entity that is able to carry out actions.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In compliance with the description from FOAF, an Agent is considered as any entity that is able to carry out actions. The Agent class acts as a generic element which can be further specified by implementers for their usages, for example by defining the Person class from the Core Person Vocabulary or Organization from W3C's Organization Ontology as subclasses of Agent. This Person or Organization can then issue a certain Requirement or be concerned by an Evidence provided.",
+        "de": "Enter your translation here"
+      }
+    }
+  ],
+  "externalproperties": [
+    {
+      "EA-Guid": "{E31F1B11-78E4-4824-8A2B-C15EE1B388EC}",
+      "name": "constrains",
+      "label": {
+        "en": "constrains",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Information Concept about which a Constraint expresses a limitation.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Information Concepts are tools to make Requirements more machine processable: they allow to provide more detail about a Requirement. This way, Constraints can be made very precise, namely the limit that must be achieved, is a limit on the value for the associated Information Concept. For example, the Information Concept would be the age of a person and the Constraint would be the required age in the context of a specific evaluation.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{939FB7ED-5B1D-4ce8-98B6-D451CA7F40F3}",
+      "name": "has concept",
+      "label": {
+        "en": "has concept",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Information Concept for which the Requirement expects a support in the supporting Evidence.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Information Concepts are tools to make Requirements more machine processable: they allow the user to provide more detail about a Requirement. Information Requirements are a request for information. Instead of writing this expectation down as a textual description, associating an Information Concept with the Information Requirement makes the expectation more formal.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9017007F-FC42-48b2-8FE4-637F041B5403}",
+      "name": "has evidence type list",
+      "label": {
+        "en": "has evidence type list",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The single or various combinations of Evidence Types for supporting a Requirement.Out of the different Lists, one of them must be satisfied by the response to the Requirement.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Often a single kind of response is sufficient, but in many cases different responses can be accepted. For instance, to prove ones identity, a bankcard, social security token, driving license or ID card could be accepted as Evidence. To satisfy this combination, one of the Evidence Type lists must be satisfied: this is thus an OR condition.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{1514CDA7-A024-4a11-A821-F665EA0857A7}",
+      "name": "has requirement",
+      "label": {
+        "en": "has requirement",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A sub-Requirement.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{0F444C86-03A8-411d-8A8B-0332A55254FB}",
+      "name": "has supporting evidence",
+      "label": {
+        "en": "has supporting evidence",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "TODO",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "NOTE: label should be change",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{E24C981E-0469-450d-9FF6-D08ADE3DB094}",
+      "name": "is about",
+      "label": {
+        "en": "is about",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Agent that is the main actor in the provided Evidence.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{0A67E1ED-D430-4f70-BCA1-84C478AB5B43}",
+      "name": "is conformant to",
+      "label": {
+        "en": "is conformant to",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A reference to one or more types of Evidence where the content and, possibly, the layout or configuration of the Evidence is specified.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This property can be fulfilled with the dcat property dct:conformsTo. The definition should reflect the need for another property and the usage note should make the distinction clear.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{8CBB451D-0E14-46a2-860C-95A0CF93288A}",
+      "name": "is derived from",
+      "label": {
+        "en": "is derived from",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Reference Framework that is responsible for the creation/initiation of the Requirement.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{1514CDA7-A024-4a11-A821-F665EA0857A7}",
+      "name": "is requirement of",
+      "label": {
+        "en": "is requirement of",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A reference between a sub-Requirement and its parent, more general, Requirement.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Inverse relation from hasRequirement. If there is no hierarchy then this relationship is not needed.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{AF9ACB34-337F-4da0-92FD-243627E9A0FB}",
+      "name": "is specified in",
+      "label": {
+        "en": "is specified in",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Refers to the List(s) in which the Evidence Type is included.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{EC3F97CA-851C-4c42-BE9B-B76B21220632}",
+      "name": "issued by",
+      "label": {
+        "en": "issued by",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This agent that has issued the requirement",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Note: Instead of creating a new URI in the cccev domain, dct:publisher could be considered.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{DFE4231F-E6B4-497f-B735-2AE07EBAC4F9}",
+      "name": "provides value for",
+      "label": {
+        "en": "provides value for",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The information concept it is providing a value for.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{AF9ACB34-337F-4da0-92FD-243627E9A0FB}",
+      "name": "specifies evidence type",
+      "label": {
+        "en": "specifies evidence type",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Indicates one of the Evidence Types included in the list.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{00D4A77C-A66E-4ea7-98FE-AF553E4CFDBF}",
+      "name": "supports concept",
+      "label": {
+        "en": "supports concept",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Information Concept that is supported by the Evidence.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Used to express details about the information that is provided by the Evidence.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{0F444C86-03A8-411d-8A8B-0332A55254FB}",
+      "name": "supports requirement",
+      "label": {
+        "en": "supports requirement",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "TODO",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Used to express details about the information requested by the Requirement.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{64815ED7-A5A0-425c-AB65-DAE0814AC7EE}",
+      "name": "supports value",
+      "label": {
+        "en": "supports value",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "the Supporting value for which an evidence has information",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{03FFDF35-FAE3-479d-9A6E-85A015F65608}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Evidence Type being instantiated.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{07F6D632-DF1E-4ac9-906B-F19EBBA9F41D}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Information Concept being instantiated.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{FA80822E-4340-4e3e-8AC3-C772BEC82A93}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Requirement being instantiated.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F225C3B8-CA9E-4103-B9AF-C1D547A1056E}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An unambiguous reference to an Evidence Type List.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F925D12E-59B0-4789-97E0-22CAF715A8A3}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An unambiguous reference to the Information Concept.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BB04D974-9F22-47e4-AE9B-AB9393B7AE46}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An unambiguous reference to a Requirement.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{1CB00BFA-4342-4e8a-9EB1-6080BB6B62C2}",
+      "name": "type",
+      "label": {
+        "en": "type",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A classification of the Information Concept.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{61EFAA9B-EF81-4202-BEC9-5410B35594C6}",
+      "name": "type",
+      "label": {
+        "en": "type",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The category or type to which the requirement belongs.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A9719DCB-5174-499e-B0F2-F996E9D8FE9E}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name of  the Evidence Type List.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C509B891-2690-4f07-BA43-940D3B53EE93}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A name of the Information Concept.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{7D895646-4132-489c-BF85-A082A1977DFC}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A name to identify in common language the Requirement.",
+        "de": "Enter your translation here"
+      }
+    }
+  ]
+}

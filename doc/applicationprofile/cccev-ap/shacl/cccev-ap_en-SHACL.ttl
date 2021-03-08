@@ -7,18 +7,18 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/cccev-ap_en> <https://semiceu.github.io/shacl/cccev-ap_enshapes> <https://semiceu.github.io/shacl/cccev-ap_en#InformationRequirementShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceShape>,
+<https://semiceu.github.io/shacl/cccev-ap_en> <https://semiceu.github.io/shacl/cccev-ap_enshapes> <https://semiceu.github.io/shacl/cccev-ap_en#ConceptShape>,
     <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceTypeListShape>,
     <https://semiceu.github.io/shacl/cccev-ap_en#AgentShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_en#DatasetShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceTypeShape>,
     <https://semiceu.github.io/shacl/cccev-ap_en#ConstraintShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_en#cccev:SupportedValueShape>,
     <https://semiceu.github.io/shacl/cccev-ap_en#RequirementShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_en#ConceptShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_en#cccev:SupportedValueShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceShape>,
     <https://semiceu.github.io/shacl/cccev-ap_en#ReferenceFrameworkShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_en#CriterionShape> .
+    <https://semiceu.github.io/shacl/cccev-ap_en#InformationRequirementShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceTypeShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_en#CriterionShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_en#DatasetShape> .
 
 <https://semiceu.github.io/shacl/cccev-ap_en#AgentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -28,14 +28,14 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:string;
-    shacl:definition "A name to identify in common language the RequirementConcept"@en;
-    shacl:name "name"@en;
-    shacl:path skos:prefLabel
-  ], [
-    shacl:datatype xsd:string;
     shacl:definition "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the RequirementConcept being instantiated."@en;
     shacl:name "description"@en;
     shacl:path dc:description
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A name to identify in common language the RequirementConcept"@en;
+    shacl:name "name"@en;
+    shacl:path skos:prefLabel
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "An unambiguous reference to RequirementConcept"@en;
@@ -63,16 +63,6 @@
 <https://semiceu.github.io/shacl/cccev-ap_en#CriterionShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "The numeric form used to weight."@en;
-    shacl:maxCount 1;
-    shacl:name "weighting type"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#weightingType>
-  ], [
-    shacl:definition "Additional parameter used to adjust the evaluation of the criterion composed of multiple sub-criteria."@en;
-    shacl:name "bias"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#bias>
-  ], [
     shacl:definition "Relative importance assigned to a given criterion."@en;
     shacl:maxCount 1;
     shacl:name "weight"@en;
@@ -83,6 +73,16 @@
     shacl:maxCount 1;
     shacl:name "weighting consideration description"@en;
     shacl:path <http://data.europa.eu/m8g/cccev#weightingConsiderationDescription>
+  ], [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "The numeric form used to weight."@en;
+    shacl:maxCount 1;
+    shacl:name "weighting type"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#weightingType>
+  ], [
+    shacl:definition "Additional parameter used to adjust the evaluation of the criterion composed of multiple sub-criteria."@en;
+    shacl:name "bias"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#bias>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#Criterion> .
 
@@ -93,37 +93,42 @@
 <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class foaf:Agent;
-    shacl:definition "The agent that is the main actor in the provided evidence"@en;
-    shacl:name "is about"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#isAbout>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceType>;
-    shacl:definition "A reference to one or more types of evidence where the content and, possibly, the layout or configuration of the evidence is specified."@en;
-    shacl:name "is Conformant"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#isComformantWith>
+    shacl:class <http://data.europa.eu/m8g/cccev#SupportedValue>;
+    shacl:definition "the Supporting value for which an evidence has information"@en;
+    shacl:name "supports value"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#supportsValue>
   ], [
     shacl:class <http://data.europa.eu/m8g/cccev#Concept>;
     shacl:definition "the supported concept by the evidence"@en;
     shacl:name "supports concept"@en;
     shacl:path <http://data.europa.eu/m8g/cccev#supportsConcept>
   ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceType>;
+    shacl:definition "A reference to one or more types of evidence where the content and, possibly, the layout or configuration of the evidence is specified."@en;
+    shacl:name "is Conformant"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#isComformantWith>
+  ], [
+    shacl:class foaf:Agent;
+    shacl:definition "The agent that is the main actor in the provided evidence"@en;
+    shacl:name "is about"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#isAbout>
+  ], [
     shacl:class <http://fixme.com#Code>;
     shacl:definition "The security classification assigned to an Evidence or, in general, to a content."@en;
     shacl:maxCount 1;
     shacl:name "confidentiality level type"@en;
     shacl:path <http://data.europa.eu/m8g/cccev#confidentionalityLevelType>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#SupportedValue>;
-    shacl:definition "the Supporting value for which an evidence has information"@en;
-    shacl:name "supports value"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#supportsValue>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#Evidence> .
 
 <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceTypeListShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:string;
+    shacl:definition "A name to identify in common language the Evidence Type List"@en;
+    shacl:name "name"@en;
+    shacl:path skos:prefLabel
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Evidence Type  being instantiated."@en;
     shacl:name "description"@en;
@@ -134,22 +139,12 @@
     shacl:maxCount 1;
     shacl:name "identifier"@en;
     shacl:path dc:identifier
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "A name to identify in common language the Evidence Type List"@en;
-    shacl:name "name"@en;
-    shacl:path skos:prefLabel
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#EvidenceTypeList> .
 
 <https://semiceu.github.io/shacl/cccev-ap_en#EvidenceTypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceTypeList>;
-    shacl:definition "Indicates one type of evidence included in a list of evidence types."@en;
-    shacl:name "specifies evidence type"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#isSpecifiedIn>
-  ], [
     shacl:class <http://fixme.com#Code>;
     shacl:definition "A classification code use to specify the machine-readability of a content."@en;
     shacl:maxCount 1;
@@ -166,6 +161,11 @@
     shacl:maxCount 1;
     shacl:name "evidence type classification"@en;
     shacl:path <http://data.europa.eu/m8g/cccev#evidenceTypeClassification>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceTypeList>;
+    shacl:definition "Indicates one type of evidence included in a list of evidence types."@en;
+    shacl:name "specifies evidence type"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#isSpecifiedIn>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#EvidenceType> .
 
@@ -180,10 +180,55 @@
 <https://semiceu.github.io/shacl/cccev-ap_en#RequirementShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
+    shacl:definition "A reference to the parent requirement a sub-requirement is part of."@en;
+    shacl:name "is requirement of"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasRequirement>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#Concept>;
+    shacl:definition "the requirement concept for which the requirement expects an support in the supporting evidence"@en;
+    shacl:name "has concept"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasConcept>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
+    shacl:definition "A reference to the parent requirement a sub-requirement is part of."@en;
+    shacl:name "is requirement of"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasRequirement>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A name to identify in common language the Requirement"@en;
+    shacl:name "name"@en;
+    shacl:path skos:prefLabel
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#ReferenceFramework>;
+    shacl:definition "the reference framework that is responsible for the creation/initiation of the requirement"@en;
+    shacl:name "is derived from"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#isDerivedFrom>
+  ], [
+    shacl:class foaf:Agent;
+    shacl:definition "This agent that has issued the requirement"@en;
+    shacl:name "issued by"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#issuedBy>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#Evidence>;
+    shacl:definition "the supported requirement by the evidence"@en;
+    shacl:name "supports requirement"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasSupportingEvidence>
+  ], [
     shacl:class <http://data.europa.eu/m8g/cccev#EvidenceTypeList>;
     shacl:definition "A combination of types of evidences of which one of them must be satisfied by the response to the requirement"@en;
     shacl:name "has evidence type combination"@en;
     shacl:path <http://data.europa.eu/m8g/cccev#hasEvidenceTypeCombination>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Requirement  being instantiated."@en;
+    shacl:name "description"@en;
+    shacl:path dc:description
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#Evidence>;
+    shacl:definition "the supported requirement by the evidence"@en;
+    shacl:name "supports requirement"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasSupportingEvidence>
   ], [
     shacl:class <http://fixme.com#Code>;
     shacl:definition "the category or type to which the requirement belongs"@en;
@@ -195,61 +240,18 @@
     shacl:definition "An unambiguous reference"@en;
     shacl:name "identifier"@en;
     shacl:path dc:identifier
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#Concept>;
-    shacl:definition "the requirement concept for which the requirement expects an support in the supporting evidence"@en;
-    shacl:name "has concept"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasConcept>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "A name to identify in common language the Requirement"@en;
-    shacl:name "name"@en;
-    shacl:path skos:prefLabel
-  ], [
-    shacl:class foaf:Agent;
-    shacl:definition "This agent that has issued the requirement"@en;
-    shacl:name "issued by"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#issuedBy>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Requirement  being instantiated."@en;
-    shacl:name "description"@en;
-    shacl:path dc:description
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
-    shacl:definition "A reference to the parent requirement a sub-requirement is part of."@en;
-    shacl:name "is requirement of"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasRequirement>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#Evidence>;
-    shacl:definition "the supported requirement by the evidence"@en;
-    shacl:name "supports requirement"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasSupportingEvidence>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#Evidence>;
-    shacl:definition "the supported requirement by the evidence"@en;
-    shacl:name "supports requirement"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasSupportingEvidence>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#ReferenceFramework>;
-    shacl:definition "the reference framework that is responsible for the creation/initiation of the requirement"@en;
-    shacl:name "is derived from"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#isDerivedFrom>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
-    shacl:definition "A reference to the parent requirement a sub-requirement is part of."@en;
-    shacl:name "is requirement of"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasRequirement>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#Requirement> .
 
 <https://semiceu.github.io/shacl/cccev-ap_en#cccev:SupportedValueShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/cccev#Concept>;
-    shacl:definition "The information concept it is providing a value for."@en;
-    shacl:name "provides value for"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#providesValueFor>
+    shacl:datatype rdfs:Literal;
+    shacl:definition "The query which which the value for the information concept can be retrieved. The query must be executed on the business data provided by the supporting evidence."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "query"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#query>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "The value for the information concept that the evidence is supporting."@en;
@@ -258,11 +260,9 @@
     shacl:name "value"@en;
     shacl:path <http://data.europa.eu/m8g/cccev#value>
   ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "The query which which the value for the information concept can be retrieved. The query must be executed on the business data provided by the supporting evidence."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "query"@en;
-    shacl:path <http://data.europa.eu/m8g/cccev#query>
+    shacl:class <http://data.europa.eu/m8g/cccev#Concept>;
+    shacl:definition "The information concept it is providing a value for."@en;
+    shacl:name "provides value for"@en;
+    shacl:path <http://data.europa.eu/m8g/cccev#providesValueFor>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#SupportedValue> .
