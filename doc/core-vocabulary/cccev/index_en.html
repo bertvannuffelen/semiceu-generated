@@ -1434,120 +1434,190 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 <p>
   Mostly a removal of dependencies of DCAT(-AP) except for Evidence.
 </p>
+</br>
 <p>
   Such dependencies are now part of discussions at the level of implementations.
 </p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Decouple CCCEV from other vocabularies, in particular DCAT-AP
+  Align CCCEV with other Core Vocabularies
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
 <p>
-  TODO
+  The SEMIC Core Vocabularies are build around a few external vocabularies. In particular for meta data aspects
+  dcterms is the base reference.
 </p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
 <p>
-  TODO
+  Replacement of uri mapping from cbc to dcterms. 
 </p>
+</br>
+<p>
+  This additionally reduces the mapping ambiguity that would arise from subclassing from dcat:Dataset 
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Decouple CCCEV from other vocabularies, in particular DCAT-AP
+  Semantical clarifications
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
 <p>
-  TODO
+  Many of the entities in the proposal did not had a formal definition, nor even an informal motivation for their
+  appearance in the CCCEV data model.
 </p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
 <p>
-  TODO
+  Ensure that every term has a label/definition/mapped to an URI.
 </p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Decouple CCCEV from other vocabularies, in particular DCAT-AP
+  Disentangling the semantics from (XML) serialization needs
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
 <p>
-  TODO
+  Part of the modeling and uri mappings were heavily inspired from the perspective of the best practices for
+  XML payload creation that are applied by the parties around the table.
+</p>
+</br>
+<p>
+  Despite that usable XML payloads for the parties around the table was probably the main objective, this
+  creates a data model were payload technicalities are mixed with a highlevel context. This conflicts with the
+  objective of a Core Vocabulary which is as much as possible implementation neutral. 
 </p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
 <p>
-  TODO
+  The whole structure around concept and value has been severely reduced to minimal aspects to capture the semantics.
 </p>
+</br>
+<p>
+  Value has been renamed to Supported Value and is now a response to an request instead of a dangling entity.
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Decouple CCCEV from other vocabularies, in particular DCAT-AP
+  Removal of not-motivated entities such as cccev:DocumentReference
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
 <p>
-  TODO
+  No clear semantics were provided. On the extended view of the proposal many explicit properties of DCAT are
+  listed. Probably they result from discussions on describing discussed information items that the parties around
+  the table would like to have covered. By listing them explicitly the proof has given that the CCCEV model is
+  capable to capture the required notions. To introduce them in the CCCEV context the definitions and
+  terminology of those properties should be contextualized to the CCCEV setting. Note that this contexualiation
+  is anyhow a non trivial process as DCAT is an application profile for cataloguing entities. So the catalog is a key
+  context setting for a dcat:dataset while CCCEV is not about cataloging. 
+</p>
+</br>
+<p>
+  However non of the properties have been motivated or explained that they form an integral part of the CCCEV.
+  Lacking this motivation means that is not critical information that must be part of the Core Vocabulary level. It
+  however means those properties will arise during implementation discussions. 
+</p>
+<p>
+  Note that by subclassing Evidence to dcat:Dataset all the removed aspects are implicitly included. This implicit
+  approach essentially creates a lot of freedom. And that makes that CCCEV is not usuable out-of-the box. 
 </p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
 <p>
-  TODO
+  Removing all non motivated properties. This has mostly as consequence that all dcat properties have
+  disappeared.
 </p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Decouple CCCEV from other vocabularies, in particular DCAT-AP
+  Changes in the preferred directionality of the relationships
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
 <p>
-  TODO
+  Some relationships had a counter intuitive preferred relationship. 
 </p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
 <p>
-  TODO
+  cccev:hasConstraint -> cccev:constrains
 </p>
+</br>
+<p>
+  cccev:isValueOf -> cccev :providesValueFor (name change + maintain only one direction)
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Decouple CCCEV from other vocabularies, in particular DCAT-AP
+  Added properties
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
 <p>
-  TODO
+  New properties that enhance the application of CCCEV.
 </p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
 <p>
-  TODO
+  cccev:issuedBy: Requirement -> Agent
 </p>
+</br>
+<p>
+  cccev:supportsValue: Evidence -> SupportedValue 
+</p>
+</br>
+</br>
 
 <h3 class="h3" aria-level="1" role="heading">
-  Decouple CCCEV from other vocabularies, in particular DCAT-AP
+  Renaming
 </h3>
 <h4 class="h4" aria-level="1" role="heading">
   Motivation
 </h4>
 <p>
-  TODO
+  Some entities or relationships do not use labels that immediately guides a reader into the desired semantics.
+  Some even create confusion.
 </p>
 <h4 class="h4" aria-level="1" role="heading">
   Activities
 </h4>
 <p>
-  TODO
+  Concept: confusion with skos:Concept. Maybe better Information Concept.
+</p>
+</br>
+<p>
+  Value: reads as if it is something very generic. Changed to SupportedValue.
+</p>
+</br>
+<p>
+  EvidenceTypeList: it is not a list, but actually an And-condition that should be fulfilled. (TODO: ongoing search for an improved name).
+</p>
+</br>
+<p>
+  Cccev:isSpecifiedIn: should be optional (not mandatory), but also the existence of an Evidencetype is not dependent on participating is a combination.
 </p>
 
 
