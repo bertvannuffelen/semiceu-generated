@@ -1,0 +1,342 @@
+{
+  "@context": {
+    "@vocab": "https://semiceu.github.io/shacl/core-person-ap_en",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://semiceu.github.io/shacl/core-person-ap_en",
+  "shapes": [
+    {
+      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://fixme.com#Change"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "id"
+          },
+          "sh:path": "http://fixme.com#id"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "The name is simply a string that identifies the jurisdiction, typically a country, with or without a language tag."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/name"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Jurisdiction"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#LocationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "A URI that identifies the location."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "geographic identifier"
+          },
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "A geographic name is a proper noun applied to a spatial object."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "geographic name"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#geographicName"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The date on which the identifier was assigned."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "date of issue"
+          },
+          "sh:path": "http://purl.org/dc/terms/created"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "The value of this property is the identifier itself."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Type of the identifier."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        },
+        {
+          "sh:class": "http://www.w3.orgn/ns/Person",
+          "sh:definition": {
+            "en": "The identifies relationship links an Identifier class to the resource it identifies."
+          },
+          "sh:name": {
+            "en": "identifies"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#identifies"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "The name of the agency responsible for issuing the identifier."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "issuing authority"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#schemeAgency"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "The URI of the issuing authority."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "issuing authority uri"
+          },
+          "sh:path": "http://purl.org/dc/terms/creator"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#PersonShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "Any name by which an individual is known other than their full name."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "alternative name"
+          },
+          "sh:path": "http://purl.org/dc/terms/alternative"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Full name of the Person given upon their birth."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "birth name"
+          },
+          "sh:path": "http://www.w3.org/ns/person#birthName"
+        },
+        {
+          "sh:class": "http://fixme.com#Change",
+          "sh:name": {
+            "en": "change"
+          },
+          "sh:path": "http://fixme.com#change"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Jurisdiction",
+          "sh:definition": {
+            "en": "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."
+          },
+          "sh:name": {
+            "en": "citizenship"
+          },
+          "sh:path": "http://purl.org/dc/terms/citizenship"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "A date that specifies the birth date of a Person."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "date of birth"
+          },
+          "sh:path": "http://schema.org/birthDate"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "A date that specifies the death date of a Person."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "date of death"
+          },
+          "sh:path": "http://schema.org/deathDate"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A family name is usually shared by members of a family."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "family name"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/familyName"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The full name contains the complete name of a person as one string."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "full name"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/name"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "Gender of the Person."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "gender"
+          },
+          "sh:path": "http://schema.org/gender"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A given name, or multiple given names, are the denominator(s) that identify an individual within\na family."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "given name"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/givenName"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "An identifier for the Person."
+          },
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Name based on the Person's father's given name."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "patronymic name"
+          },
+          "sh:path": "http://www.w3.org/ns/person#patronymicName"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.orgn/ns/Person"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
+    }
+  ]
+}
