@@ -1,8 +1,9 @@
 {
   "metadata": {
     "title": "Core Person Vocabulary",
-    "uri": "http://fixme.com",
+    "uri": "https://data.europa.eu/m8g",
     "issued": "2021-03-23",
+    "baseURI": "https://data.europa.eu/m8g/",
     "filename": "core-person-ap",
     "navigation": {
       "self": "https://semiceu.github.io/doc/core-vocabulary/core-person"
@@ -10,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/732a4cf7afa6ad296b8e31363f65a311cdf077fa",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/732a4cf7afa6ad296b8e31363f65a311cdf077fa/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/adc75d313f0161556b70dfa423b9486fe74ce486",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/adc75d313f0161556b70dfa423b9486fe74ce486/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/Core-Person-Vocabulary/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -19,39 +20,27 @@
   },
   "classes": [
     {
-      "uri": "http://fixme.com#Change",
-      "name": "Change",
-      "label": {
-        "en": "Change"
-      },
-      "sort": "Change",
-      "description": {
-        "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://purl.org/dc/terms/Jurisdiction",
       "name": "Jurisdiction",
       "label": {
         "en": "Jurisdiction"
       },
       "sort": "Jurisdiction",
-      "description": {},
+      "description": {
+        "en": "The extent or range of judicial, law enforcement, or other authority."
+      },
       "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#id",
+          "uri": "http://purl.org/dc/terms/identifier",
           "name": "id",
           "sort": "id",
           "label": {
             "en": "id"
           },
           "description": {
-            "en": "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."
+            "en": "The value for the id property is a URI for that Jurisdiction."
           },
           "usage": {},
           "domain": [
@@ -79,14 +68,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://xmlns.com/foaf/0.1/name",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#label",
           "name": "name",
           "sort": "name",
           "label": {
             "en": "name"
           },
           "description": {
-            "en": "The name is simply a string that identifies the jurisdiction, typically a country, with or without a language tag."
+            "en": "The name is simply a string that identifies the Jurisdiction, typically a country, with or without a language tag."
           },
           "usage": {},
           "domain": [
@@ -98,13 +87,13 @@
           "range": [
             {
               "range_label": "Text",
-              "range_uri": "http://fixme.com#Text"
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Text",
-              "range_puri": "http://fixme.com#Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "en": "Text"
               }
@@ -123,7 +112,7 @@
       },
       "sort": "Location",
       "description": {
-        "en": "Locations can be described in three principal ways: by using a place name, a geometry or an address. The specific context will determine which method of describing a location is most appropriate."
+        "en": "A spatial region or named place."
       },
       "usage": {},
       "parents": [],
@@ -136,9 +125,11 @@
             "en": "geographic identifier"
           },
           "description": {
-            "en": "A URI that identifies the location."
+            "en": "A URI that identifies the Location."
           },
-          "usage": {},
+          "usage": {
+            "en": "<p>\r\nGeoNames.org provides stable, widely recognised identifiers for more than 10 million geographical names that can be used as links to further information. For example, http://sws.geonames.org/593116/ identifies the Lithuanian capital Vilnius. Unfortunately these URIs cannot easily be automatically deduced since the URI scheme uses simple numeric codes. Finding a GeoNames identifier for a Location is almost always a manual process. Where such identifiers are known or can be found, however, it is recommended that they be used.\r\n</p></br>\r\n\r\n<p>\r\nWhere the Location Class is used to identify a country, if the geonames URI is not known, the recommendation is to use DBpedia URIs of the form http://dbpedia.org/resource/ISO_3166-1:XX where XX is the ISO 3166 two character code for the country.\r\n</p></br>\r\n\r\n<p>\r\nThe EU's Publication Office diverges from ISO 3166-1 and uses EL and UK for Greece and the United Kingdom respectively. DBpedia sticks to\r\nthe ISO codes and so the correct URIs for these countries are:\r\n<ul>\r\n  <li>http://dbpedia.org/resource/ISO_3166-1:GR</li>\r\n  <li>http://dbpedia.org/resource/ISO_3166-1:GB</li>\r\n<ul>\r\neven when the geographic name is given as EL or UK.\r\n</p></br>\r\n\r\n<p>\r\nThe use of a URIs has added advantages:\r\n<ul>\r\n  <li>it can be used by automated systems to look up additional data (linked data);</li>\r\n  <li>a triple store may store only one copy of the URI, whereas if a string is used, a copy of that string is always stored for each and every person in the database. Thus, in large data sets, the saving on memory capacity and the improvement in transmission efficiency can be substantial.</li>\r\n</ul>\r\n</p>"
+          },
           "domain": [
             {
               "EA-Name": "Location",
@@ -173,7 +164,9 @@
           "description": {
             "en": "A geographic name is a proper noun applied to a spatial object."
           },
-          "usage": {},
+          "usage": {
+            "en": "<p>The INSPIRE Data Specification on Geographical Names provides a detailed model for describing a 'named place', including methods for providing multiple names in multiple scripts. This is beyond what is necessary for the Core Location Vocabulary but, importantly, the concept of a geographic name used here is consistent.</p></br>\r\n\r\n<p>\r\nA geographic name is a proper noun applied to a spatial object. Taking the example used in the INSPIRE document (page 18), the following are all valid geographic names for the Greek capital:\r\n<ul>\r\n  <li>A?n?a (the Greek endonym written in the Greek script)</li>\r\n  <li>Athína (the standard Romanisation of the endonym)</li>\r\n  <li>Athens (the English language exonym)</li>\r\n</ul>\r\nINSPIRE has a detailed (XML-based) method of providing metadata about a geographic name and in XML-data sets that may be the most appropriate method to follow. When using the Core Location Vocabulary in data sets that are not focussed on environmental/geographical\r\ndata (the use case for INSPIRE), the Code datatype or a simple language identifier may be used to provide such metadata.\r\n</p></br>\r\n\r\n<p>\r\nThe country codes defined in ISO 3166 may be used as geographic names and these are generally preferred over either the long form or short form of a country's name (as they are less error prone). The Publications Office of the European Union recommends the use of ISO 3166-1 codes for countries in all cases except two:\r\n<ul>\r\n  <li>use 'UK' in preference to the ISO 3166 code GB for the United Kingdom;</li>\r\n  <li>use 'EL' in preference to the ISO 3166 code GR for Greece.</li>\r\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code.\r\n</p>\r"
+          },
           "domain": [
             {
               "EA-Name": "Location",
@@ -182,16 +175,16 @@
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "Literal"
+                "en": "Text"
               }
             }
           ],
@@ -293,7 +286,7 @@
             "en": "identifier type"
           },
           "description": {
-            "en": "Type of the identifier."
+            "en": "The type of the identifier."
           },
           "usage": {},
           "domain": [
@@ -375,13 +368,13 @@
           "range": [
             {
               "range_label": "Person",
-              "range_uri": "http://www.w3.orgn/ns/Person"
+              "range_uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Person",
-              "range_puri": "http://www.w3.orgn/ns/Person",
+              "range_puri": "http://www.w3.org/ns/person#Person",
               "range_label": {
                 "en": "Person"
               }
@@ -428,7 +421,7 @@
       ]
     },
     {
-      "uri": "http://www.w3.orgn/ns/Person",
+      "uri": "http://www.w3.org/ns/person#Person",
       "name": "Person",
       "label": {
         "en": "Person"
@@ -442,47 +435,21 @@
       },
       "parents": [
         {
-          "label": "Agent",
-          "name": "Agent",
+          "label": "Person",
+          "name": "Person",
+          "package": "schema",
+          "uri": "https://schema.org/Person",
+          "scoped_uri": "#Person"
+        },
+        {
+          "label": "Person",
+          "name": "Person",
           "package": "foaf",
-          "uri": "http://xmlns.com/foaf/0.1/Agent",
-          "scoped_uri": "#Agent"
+          "uri": "http://xmlns.com/foaf/0.1/Person",
+          "scoped_uri": "#Person"
         }
       ],
       "properties": [
-        {
-          "uri": "http://fixme.com#change",
-          "name": "change",
-          "sort": "change",
-          "label": {
-            "en": "change"
-          },
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Change",
-              "range_uri": "http://fixme.com#Change"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Change",
-              "range_puri": "http://fixme.com#Change",
-              "range_label": {
-                "en": "Change"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://purl.org/dc/terms/alternative",
           "name": "alternative name",
@@ -499,21 +466,21 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "Literal"
+                "en": "String"
               }
             }
           ],
@@ -536,7 +503,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -571,7 +538,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -606,7 +573,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -641,7 +608,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -678,19 +645,19 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
               "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Code"
               }
@@ -715,7 +682,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -752,7 +719,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -789,7 +756,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -826,7 +793,7 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
@@ -863,21 +830,21 @@
           "domain": [
             {
               "EA-Name": "Person",
-              "uri": "http://www.w3.orgn/ns/Person"
+              "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "Literal"
+                "en": "String"
               }
             }
           ],
@@ -887,37 +854,21 @@
       ]
     },
     {
-      "uri": "http://xmlns.com/foaf/0.1/Agent",
-      "name": "Agent",
+      "uri": "https://data.europa.eu/m8g/Change",
+      "name": "Change",
       "label": {
-        "en": "Agent"
+        "en": "Change"
       },
-      "sort": "Agent",
+      "sort": "Change",
       "description": {
-        "en": "The Agent class is any resource that acts or has the power to act. This includes people, organisations and groups."
+        "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
       },
       "usage": {},
       "parents": [],
       "properties": []
     }
   ],
-  "properties": [
-    {
-      "uri": "http://fixme.com#change",
-      "name": {
-        "en": "change",
-        "undefined": "change"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    }
-  ],
+  "properties": [],
   "contributors": [
     {
       "role": "A",

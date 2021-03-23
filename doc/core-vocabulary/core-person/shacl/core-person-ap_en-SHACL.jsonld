@@ -40,13 +40,6 @@
   "@id": "https://semiceu.github.io/shacl/core-person-ap_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Change"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -54,26 +47,26 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:definition": {
-            "en": "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."
+            "en": "The value for the id property is a URI for that Jurisdiction."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "id"
           },
-          "sh:path": "http://fixme.com#id"
+          "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:class": "http://fixme.com#Text",
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "The name is simply a string that identifies the jurisdiction, typically a country, with or without a language tag."
+            "en": "The name is simply a string that identifies the Jurisdiction, typically a country, with or without a language tag."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "name"
           },
-          "sh:path": "http://xmlns.com/foaf/0.1/name"
+          "sh:path": "http://www.w3.org/2000/01/rdf-schema#label"
         }
       ],
       "sh:targetClass": "http://purl.org/dc/terms/Jurisdiction"
@@ -86,7 +79,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
           "sh:definition": {
-            "en": "A URI that identifies the location."
+            "en": "A URI that identifies the Location."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -96,7 +89,7 @@
           "sh:path": "http://www.w3.org/2000/01/rdf-schema#seeAlso"
         },
         {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "A geographic name is a proper noun applied to a spatial object."
           },
@@ -142,7 +135,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "Type of the identifier."
+            "en": "The type of the identifier."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -152,7 +145,7 @@
           "sh:path": "http://purl.org/dc/terms/type"
         },
         {
-          "sh:class": "http://www.w3.orgn/ns/Person",
+          "sh:class": "http://www.w3.org/ns/person#Person",
           "sh:definition": {
             "en": "The identifies relationship links an Identifier class to the resource it identifies."
           },
@@ -194,7 +187,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "Any name by which an individual is known other than their full name."
           },
@@ -216,13 +209,6 @@
             "en": "birth name"
           },
           "sh:path": "http://www.w3.org/ns/person#birthName"
-        },
-        {
-          "sh:class": "http://fixme.com#Change",
-          "sh:name": {
-            "en": "change"
-          },
-          "sh:path": "http://fixme.com#change"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Jurisdiction",
@@ -271,7 +257,7 @@
           "sh:path": "http://xmlns.com/foaf/0.1/familyName"
         },
         {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "The full name contains the complete name of a person as one string."
           },
@@ -283,7 +269,7 @@
           "sh:path": "http://xmlns.com/foaf/0.1/name"
         },
         {
-          "sh:class": "http://fixme.com#Code",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Gender of the Person."
           },
@@ -329,14 +315,14 @@
           "sh:path": "http://www.w3.org/ns/person#patronymicName"
         }
       ],
-      "sh:targetClass": "http://www.w3.orgn/ns/Person"
+      "sh:targetClass": "http://www.w3.org/ns/person#Person"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#AgentShape",
+      "@id": "https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
+      "sh:targetClass": "https://data.europa.eu/m8g/Change"
     }
   ]
 }

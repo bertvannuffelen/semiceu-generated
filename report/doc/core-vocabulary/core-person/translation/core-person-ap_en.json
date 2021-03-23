@@ -1,31 +1,16 @@
 {
-  "classes": [
-    {
-      "EA-Guid": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
-      "name": "Change",
-      "label": {
-        "en": "Change"
-      },
-      "definition": {
-        "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-      }
-    }
-  ],
-  "properties": [
-    {
-      "EA-Guid": "{5D4ED4E7-B851-4f68-95DF-A8B575F3D3DA}",
-      "name": "change",
-      "label": {
-        "en": "change"
-      }
-    }
-  ],
+  "baseURI": "https://data.europa.eu/m8g/",
+  "classes": [],
+  "properties": [],
   "externals": [
     {
       "EA-Guid": "{1F35C0ED-487E-44cf-B155-FAA631266668}",
       "name": "Jurisdiction",
       "label": {
         "en": "Jurisdiction"
+      },
+      "definition": {
+        "en": "The extent or range of judicial, law enforcement, or other authority."
       }
     },
     {
@@ -35,7 +20,7 @@
         "en": "Location"
       },
       "definition": {
-        "en": "Locations can be described in three principal ways: by using a place name, a geometry or an address. The specific context will determine which method of describing a location is most appropriate."
+        "en": "A spatial region or named place."
       }
     },
     {
@@ -65,27 +50,17 @@
       }
     },
     {
-      "EA-Guid": "{F41DDB41-25B4-4b39-88FD-7B1D1D8D373A}",
-      "name": "Agent",
+      "EA-Guid": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
+      "name": "Change",
       "label": {
-        "en": "Agent"
+        "en": "Change"
       },
       "definition": {
-        "en": "The Agent class is any resource that acts or has the power to act. This includes people, organisations and groups."
+        "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
       }
     }
   ],
   "externalproperties": [
-    {
-      "EA-Guid": "{21E06F91-BEE4-4ce8-BE8F-2A3D3AC2A367}",
-      "name": "id",
-      "label": {
-        "en": "id"
-      },
-      "definition": {
-        "en": "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."
-      }
-    },
     {
       "EA-Guid": "{66096EA6-6E71-4645-B320-B2CA36192ACE}",
       "name": "alternative name",
@@ -143,13 +118,23 @@
       }
     },
     {
+      "EA-Guid": "{21E06F91-BEE4-4ce8-BE8F-2A3D3AC2A367}",
+      "name": "id",
+      "label": {
+        "en": "id"
+      },
+      "definition": {
+        "en": "The value for the id property is a URI for that Jurisdiction."
+      }
+    },
+    {
       "EA-Guid": "{F0D1048C-7438-47ab-8CEE-617CE01EA1E0}",
       "name": "identifier type",
       "label": {
         "en": "identifier type"
       },
       "definition": {
-        "en": "Type of the identifier."
+        "en": "The type of the identifier."
       }
     },
     {
@@ -186,13 +171,26 @@
       }
     },
     {
+      "EA-Guid": "{2396D9EF-E00E-42ad-9F3F-BCD5B7112D5B}",
+      "name": "name",
+      "label": {
+        "en": "name"
+      },
+      "definition": {
+        "en": "The name is simply a string that identifies the Jurisdiction, typically a country, with or without a language tag."
+      }
+    },
+    {
       "EA-Guid": "{18B1572F-CC98-472c-8363-43739E1F52DA}",
       "name": "geographic identifier",
       "label": {
         "en": "geographic identifier"
       },
       "definition": {
-        "en": "A URI that identifies the location."
+        "en": "A URI that identifies the Location."
+      },
+      "usage": {
+        "en": "<p>\r\nGeoNames.org provides stable, widely recognised identifiers for more than 10 million geographical names that can be used as links to further information. For example, http://sws.geonames.org/593116/ identifies the Lithuanian capital Vilnius. Unfortunately these URIs cannot easily be automatically deduced since the URI scheme uses simple numeric codes. Finding a GeoNames identifier for a Location is almost always a manual process. Where such identifiers are known or can be found, however, it is recommended that they be used.\r\n</p></br>\r\n\r\n<p>\r\nWhere the Location Class is used to identify a country, if the geonames URI is not known, the recommendation is to use DBpedia URIs of the form http://dbpedia.org/resource/ISO_3166-1:XX where XX is the ISO 3166 two character code for the country.\r\n</p></br>\r\n\r\n<p>\r\nThe EU's Publication Office diverges from ISO 3166-1 and uses EL and UK for Greece and the United Kingdom respectively. DBpedia sticks to\r\nthe ISO codes and so the correct URIs for these countries are:\r\n<ul>\r\n  <li>http://dbpedia.org/resource/ISO_3166-1:GR</li>\r\n  <li>http://dbpedia.org/resource/ISO_3166-1:GB</li>\r\n<ul>\r\neven when the geographic name is given as EL or UK.\r\n</p></br>\r\n\r\n<p>\r\nThe use of a URIs has added advantages:\r\n<ul>\r\n  <li>it can be used by automated systems to look up additional data (linked data);</li>\r\n  <li>a triple store may store only one copy of the URI, whereas if a string is used, a copy of that string is always stored for each and every person in the database. Thus, in large data sets, the saving on memory capacity and the improvement in transmission efficiency can be substantial.</li>\r\n</ul>\r\n</p>"
       }
     },
     {
@@ -233,6 +231,9 @@
       },
       "definition": {
         "en": "A geographic name is a proper noun applied to a spatial object."
+      },
+      "usage": {
+        "en": "<p>The INSPIRE Data Specification on Geographical Names provides a detailed model for describing a 'named place', including methods for providing multiple names in multiple scripts. This is beyond what is necessary for the Core Location Vocabulary but, importantly, the concept of a geographic name used here is consistent.</p></br>\r\n\r\n<p>\r\nA geographic name is a proper noun applied to a spatial object. Taking the example used in the INSPIRE document (page 18), the following are all valid geographic names for the Greek capital:\r\n<ul>\r\n  <li>A?n?a (the Greek endonym written in the Greek script)</li>\r\n  <li>Athína (the standard Romanisation of the endonym)</li>\r\n  <li>Athens (the English language exonym)</li>\r\n</ul>\r\nINSPIRE has a detailed (XML-based) method of providing metadata about a geographic name and in XML-data sets that may be the most appropriate method to follow. When using the Core Location Vocabulary in data sets that are not focussed on environmental/geographical\r\ndata (the use case for INSPIRE), the Code datatype or a simple language identifier may be used to provide such metadata.\r\n</p></br>\r\n\r\n<p>\r\nThe country codes defined in ISO 3166 may be used as geographic names and these are generally preferred over either the long form or short form of a country's name (as they are less error prone). The Publications Office of the European Union recommends the use of ISO 3166-1 codes for countries in all cases except two:\r\n<ul>\r\n  <li>use 'UK' in preference to the ISO 3166 code GB for the United Kingdom;</li>\r\n  <li>use 'EL' in preference to the ISO 3166 code GR for Greece.</li>\r\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code.\r\n</p>\r"
       }
     },
     {
@@ -298,16 +299,6 @@
       },
       "usage": {
         "en": "In addition to the content of given name, family name and, in some systems, patronymic name, this can carry additional parts of a person's name such as titles, middle names or suffixes like \"the third\" or names which are neither a given nor a family name.\nThe Full Name is the most reliable label for an individual and as such its use is strongly encouraged, irrespective of whether that name is broken down using the more granular elements. It is anticipated that some systems will only provide or process the full name of a person. Where an individual has more than one full legal name (a relatively rare but not unknown phenomenon), the full name property can be used more than once. In this case, however, the granular name elements should not be used since the intention is that these provide a breakdown of the full name and it will not be clear of which full name this is true. \nNote that the vocabulary provides an alternative name property. This allows name(s) to be recorded that have no legal status but that nevertheless are the names by which an individual is generally known.\nA name usually sticks with a person for a long time period. In some European countries a name may only be changed according to certain laws and life events, e.g. marriage. The name denominates a natural person even if he/she changes their address. Documents like birth certificate or diploma usually dont carry an address but always the name. Thus the name is one of the core attributes. However it is not sufficient to identify a person since there are combinations of very common names like Smith in the UK, Meier in Germany, or Li in China."
-      }
-    },
-    {
-      "EA-Guid": "{2396D9EF-E00E-42ad-9F3F-BCD5B7112D5B}",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "definition": {
-        "en": "The name is simply a string that identifies the jurisdiction, typically a country, with or without a language tag."
       }
     }
   ]
