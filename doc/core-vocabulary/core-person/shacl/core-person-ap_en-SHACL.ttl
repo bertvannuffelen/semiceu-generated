@@ -9,10 +9,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape> .
+    <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -21,12 +21,12 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "The name of the agency responsible for issuing the identifier."@en;
+    shacl:datatype xsd:anyURI;
+    shacl:definition "The URI of the issuing authority."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "issuing authority"@en;
-    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
+    shacl:name "issuing authority uri"@en;
+    shacl:path dc:creator
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The type of the identifier."@en;
@@ -40,12 +40,12 @@
     shacl:name "identifies"@en;
     shacl:path <http://www.w3.org/ns/adms#identifies>
   ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "The URI of the issuing authority."@en;
+    shacl:datatype xsd:string;
+    shacl:definition "The name of the agency responsible for issuing the identifier."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "issuing authority uri"@en;
-    shacl:path dc:creator
+    shacl:name "issuing authority"@en;
+    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The value of this property is the identifier itself."@en;
@@ -104,19 +104,26 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "A date that specifies the birth date of a Person."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "date of birth"@en;
-    shacl:path schema:birthDate
-  ], [
     shacl:class skos:Concept;
     shacl:definition "Gender of the Person."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "gender"@en;
     shacl:path schema:gender
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The full name contains the complete name of a person as one string."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "full name"@en;
+    shacl:path foaf:name
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "A date that specifies the birth date of a Person."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "date of birth"@en;
+    shacl:path schema:birthDate
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "A date that specifies the death date of a Person."@en;
@@ -126,19 +133,18 @@
     shacl:path schema:deathDate
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "Name based on the Person's father's given name."@en;
+    shacl:definition "Any name by which an individual is known other than their full name."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "patronymic name"@en;
-    shacl:path <http://www.w3.org/ns/person#patronymicName>
+    shacl:name "alternative name"@en;
+    shacl:path dc:alternative
   ], [
     shacl:datatype xsd:string;
-    shacl:definition """A given name, or multiple given names, are the denominator(s) that identify an individual within
-a family."""@en;
+    shacl:definition "A family name is usually shared by members of a family."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "given name"@en;
-    shacl:path foaf:givenName
+    shacl:name "family name"@en;
+    shacl:path foaf:familyName
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "An identifier for the Person."@en;
@@ -146,16 +152,11 @@ a family."""@en;
     shacl:path dc:identifier
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "Any name by which an individual is known other than their full name."@en;
+    shacl:definition "Name based on the Person's father's given name."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "alternative name"@en;
-    shacl:path dc:alternative
-  ], [
-    shacl:class dc:Jurisdiction;
-    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
-    shacl:name "citizenship"@en;
-    shacl:path dc:citizenship
+    shacl:name "patronymic name"@en;
+    shacl:path <http://www.w3.org/ns/person#patronymicName>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Full name of the Person given upon their birth."@en;
@@ -164,18 +165,17 @@ a family."""@en;
     shacl:name "birth name"@en;
     shacl:path <http://www.w3.org/ns/person#birthName>
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The full name contains the complete name of a person as one string."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "full name"@en;
-    shacl:path foaf:name
+    shacl:class dc:Jurisdiction;
+    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
+    shacl:name "citizenship"@en;
+    shacl:path dc:citizenship
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "A family name is usually shared by members of a family."@en;
+    shacl:definition """A given name, or multiple given names, are the denominator(s) that identify an individual within
+a family."""@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "family name"@en;
-    shacl:path foaf:familyName
+    shacl:name "given name"@en;
+    shacl:path foaf:givenName
   ];
   shacl:targetClass schemas:Person .

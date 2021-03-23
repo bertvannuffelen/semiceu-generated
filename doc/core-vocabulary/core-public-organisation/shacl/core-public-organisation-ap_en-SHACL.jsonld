@@ -91,20 +91,10 @@
         {
           "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
           "sh:definition": {
-            "en": "The original organization property links a Change Event to the Organization that existed before the change. Although the Foundation Event class is defined as a subclass of Change Event, it is inappropriate to use the original organization property with the Foundation Event class."
+            "en": "The changed by organization property links an Organization to the Change Event that changed the Organization."
           },
           "sh:name": {
-            "en": "original organization"
-          },
-          "sh:path": "http://www.w3.org/ns/org#changedBy"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
-          "sh:definition": {
-            "en": "The original organization property links a Change Event to the Organization that existed before the change. Although the Foundation Event class is defined as a subclass of Change Event, it is inappropriate to use the original organization property with the Foundation Event class."
-          },
-          "sh:name": {
-            "en": "original organization"
+            "en": "changed by"
           },
           "sh:path": "http://www.w3.org/ns/org#changedBy"
         },
@@ -146,17 +136,7 @@
             "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
           },
           "sh:name": {
-            "en": "member of"
-          },
-          "sh:path": "http://www.w3.org/ns/org#hasMember"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
-          "sh:definition": {
-            "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
-          },
-          "sh:name": {
-            "en": "member of"
+            "en": "has member"
           },
           "sh:path": "http://www.w3.org/ns/org#hasMember"
         },
@@ -166,17 +146,7 @@
             "en": "Public Organizations are often large and complex and may be a collection of smaller\r\nOrganizations, each of which has a specific identity that may be legally defined. The\r\nhasSubOrganization and subOrganizationOf properties express the relationships\r\nbetween Organizations in a hierarchical structure. "
           },
           "sh:name": {
-            "en": "sub organization of"
-          },
-          "sh:path": "http://www.w3.org/ns/org#hasSubOrganization"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
-          "sh:definition": {
-            "en": "Public Organizations are often large and complex and may be a collection of smaller\r\nOrganizations, each of which has a specific identity that may be legally defined. The\r\nhasSubOrganization and subOrganizationOf properties express the relationships\r\nbetween Organizations in a hierarchical structure. "
-          },
-          "sh:name": {
-            "en": "sub organization of"
+            "en": "has sub organization"
           },
           "sh:path": "http://www.w3.org/ns/org#hasSubOrganization"
         },
@@ -186,17 +156,7 @@
             "en": "The properties hasUnit and unitOf are used to link to operational departments within an Organization that may not generally exist in their own right."
           },
           "sh:name": {
-            "en": "unit of"
-          },
-          "sh:path": "http://www.w3.org/ns/org#hasUnit"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#hasUnit",
-          "sh:definition": {
-            "en": "The properties hasUnit and unitOf are used to link to operational departments within an Organization that may not generally exist in their own right."
-          },
-          "sh:name": {
-            "en": "unit of"
+            "en": "has unit"
           },
           "sh:path": "http://www.w3.org/ns/org#hasUnit"
         },
@@ -235,12 +195,12 @@
         {
           "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
           "sh:definition": {
-            "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
+            "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
           },
           "sh:name": {
-            "en": "prev"
+            "en": "member of"
           },
-          "sh:path": "http://www.w3.org/1999/xhtml/vocab#next"
+          "sh:path": "http://www.w3.org/ns/org#memberOf"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
@@ -248,7 +208,7 @@
             "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
           },
           "sh:name": {
-            "en": "prev"
+            "en": "next"
           },
           "sh:path": "http://www.w3.org/1999/xhtml/vocab#next"
         },
@@ -265,6 +225,16 @@
           "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
         },
         {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
+          },
+          "sh:name": {
+            "en": "prev"
+          },
+          "sh:path": "http://www.w3.org/1999/xhtml/vocab#prev"
+        },
+        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "This property links an organization to its function(s) which are expressed as a SKOS\r\nConcept Scheme. The ORG ontology suggests that this property can also be thought\r\nof as meaning 'remit' or 'responsibility.' Ideally this will link to a COFOG code but\r\nwhere this isn't possible or appropriate, other controlled vocabularies may be used."
@@ -277,20 +247,10 @@
         {
           "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
           "sh:definition": {
-            "en": "This property links a Change Event or a Foundation Event to the Organization that resulted from it."
+            "en": "This property link an Organization to the Change Event it resulted from."
           },
           "sh:name": {
-            "en": "resulting organization"
-          },
-          "sh:path": "http://www.w3.org/ns/org#resultedFrom"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
-          "sh:definition": {
-            "en": "This property links a Change Event or a Foundation Event to the Organization that resulted from it."
-          },
-          "sh:name": {
-            "en": "resulting organization"
+            "en": "resulted from"
           },
           "sh:path": "http://www.w3.org/ns/org#resultedFrom"
         },
@@ -303,6 +263,16 @@
             "en": "spatial"
           },
           "sh:path": "http://purl.org/dc/terms/spatial"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "en": "Public Organizations are often large and complex and may be a collection of smaller\r\nOrganizations, each of which has a specific identity that may be legally defined. The\r\nhasSubOrganization and subOrganizationOf properties express the relationships\r\nbetween Organizations in a hierarchical structure. "
+          },
+          "sh:name": {
+            "en": "sub organization of"
+          },
+          "sh:path": "http://www.w3.org/ns/org#subOrganizationOf"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
@@ -323,6 +293,16 @@
             "en": "identifier"
           },
           "sh:path": "http://www.w3.org/ns/org#identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
+          "sh:definition": {
+            "en": "The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined."
+          },
+          "sh:name": {
+            "en": "implements"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#implements"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -549,22 +529,32 @@
         {
           "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
           "sh:definition": {
-            "en": "The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined."
+            "en": "The property hasFormalFramework links a Change Event or Foundation Event to a piece of legislation or a policy document that prompted the change."
           },
           "sh:name": {
-            "en": "implements"
+            "en": "has formal framework"
           },
           "sh:path": "http://data.europa.eu/m8g/hasFormalFramework"
         },
         {
-          "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
           "sh:definition": {
-            "en": "The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined."
+            "en": "The original organization property links a Change Event to the Organization that existed before the change. Although the Foundation Event class is defined as a subclass of Change Event, it is inappropriate to use the original organization property with the Foundation Event class."
           },
           "sh:name": {
-            "en": "implements"
+            "en": "original organization"
           },
-          "sh:path": "http://data.europa.eu/m8g/hasFormalFramework"
+          "sh:path": "http://www.w3.org/ns/org#originalOrganization"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "en": "This property links a Change Event or a Foundation Event to the Organization that resulted from it."
+          },
+          "sh:name": {
+            "en": "resulting organization"
+          },
+          "sh:path": "http://www.w3.org/ns/org#resultingOrganization"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/org#ChangeEvent"
@@ -573,7 +563,18 @@
       "@id": "https://semiceu.github.io/shacl/core-public-organisation-ap_en#Organizational UnitShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
+          "sh:definition": {
+            "en": "The properties hasUnit and unitOf are used to link to operational departments within an Organization that may not generally exist in their own right."
+          },
+          "sh:name": {
+            "en": "unit of"
+          },
+          "sh:path": "http://www.w3.org/ns/org#unitOf"
+        }
+      ],
       "sh:targetClass": "http://www.w3.org/ns/org#hasUnit"
     },
     {

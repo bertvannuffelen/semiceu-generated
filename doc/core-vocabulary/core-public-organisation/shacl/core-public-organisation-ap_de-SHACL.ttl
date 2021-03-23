@@ -10,19 +10,19 @@
 @prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/core-public-organisation-ap_de> <https://semiceu.github.io/shacl/core-public-organisation-ap_deshapes> <https://semiceu.github.io/shacl/core-public-organisation-ap_de#ChangeEventShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#AdministrativeTerritorialUnitsShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#OrganizationShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#GeometryShape>,
+<https://semiceu.github.io/shacl/core-public-organisation-ap_de> <https://semiceu.github.io/shacl/core-public-organisation-ap_deshapes> <https://semiceu.github.io/shacl/core-public-organisation-ap_de#PublicOrganizationShape>,
     <https://semiceu.github.io/shacl/core-public-organisation-ap_de#cpsv:FormalFrameworkShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#ConceptShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#PublicOrganizationShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#ImageObjectShape>,
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#AdministrativeTerritorialUnitsShape>,
     <https://semiceu.github.io/shacl/core-public-organisation-ap_de#FoundationEventShape>,
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#ConceptShape>,
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#ChangeEventShape>,
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#OrganizationShape>,
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#DocumentShape>,
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#GeometryShape>,
     <https://semiceu.github.io/shacl/core-public-organisation-ap_de#ContactPointShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#AddressShape>,
     <https://semiceu.github.io/shacl/core-public-organisation-ap_de#OpeningHoursSpecificationShape>,
-    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#DocumentShape> .
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#AddressShape>,
+    <https://semiceu.github.io/shacl/core-public-organisation-ap_de#ImageObjectShape> .
 
 <https://semiceu.github.io/shacl/core-public-organisation-ap_de#AddressShape> a shacl:NodeShape;
   shacl:closed false;
@@ -32,7 +32,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#locatorName>
+    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -53,14 +53,14 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#poBox>
+    shacl:path <http://www.w3.org/ns/locn#locatorName>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
+    shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -74,7 +74,14 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
+    shacl:path <http://www.w3.org/ns/locn#addressArea>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/locn#poBox>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -88,14 +95,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#addressArea>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#postCode>
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -123,10 +123,15 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/hasFormalFramework>
   ], [
-    shacl:class <http://purl.org/vocab/cpsv#FormalFramework>;
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/hasFormalFramework>
+    shacl:path org:resultingOrganization
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:originalOrganization
   ];
   shacl:targetClass org:ChangeEvent .
 
@@ -144,6 +149,13 @@
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:email
   ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path schemas:openingHours
+  ], [
     shacl:class schemas:OpeningHoursSpecification;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
@@ -155,13 +167,6 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:telephone
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path schemas:openingHours
   ];
   shacl:targetClass schemas:ContactPoint .
 
@@ -176,18 +181,18 @@
 <https://semiceu.github.io/shacl/core-public-organisation-ap_de#GeometryShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.opengis.net/ont/geosparql#wktLiteral>
-  ], [
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <https://data.europa.eu/m8g/xmlGeometry>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path schema:latitude
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -201,7 +206,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path schema:latitude
+    shacl:path <http://www.opengis.net/ont/geosparql#wktLiteral>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Geometry> .
 
@@ -212,13 +217,6 @@
 <https://semiceu.github.io/shacl/core-public-organisation-ap_de#OpeningHoursSpecificationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path schemas:dayOfWeek
-  ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -232,6 +230,13 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:validThrough
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path schemas:dayOfWeek
   ];
   shacl:targetClass schemas:OpeningHoursSpecification .
 
@@ -242,32 +247,10 @@
 <https://semiceu.github.io/shacl/core-public-organisation-ap_de#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class org:ChangeEvent;
+    shacl:class schemas:ImageObject;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path org:changedBy
-  ], [
-    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasSubOrganization
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:classification
-  ], [
-    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasMember
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:identifier
+    shacl:path schemas:logo
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -276,15 +259,86 @@
     shacl:name "Enter your translation here"@de;
     shacl:path skos:altLabel
   ], [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path skos:prefLabel
+  ], [
+    shacl:class <http://data.europa.eu/88u/dataset/atu-type>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:spatial
+  ], [
+    shacl:class org:ChangeEvent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:changedBy
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:hasMember
+  ], [
     shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path xhv:next
   ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:identifier
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:purpose
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:classification
+  ], [
+    shacl:class org:hasUnit;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:hasUnit
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:hasSubOrganization
+  ], [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://w3.org/ns/locn#address>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:memberOf
+  ], [
+    shacl:class foaf:Document;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path foaf:homepage
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:description
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:subOrganizationOf
   ], [
     shacl:class schemas:ContactPoint;
     shacl:definition "Enter your translation here"@de;
@@ -299,89 +353,37 @@
     shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path org:hasSubOrganization
-  ], [
-    shacl:class org:hasUnit;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasUnit
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:purpose
-  ], [
-    shacl:class org:ChangeEvent;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:changedBy
-  ], [
-    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path xhv:next
-  ], [
-    shacl:class schemas:ImageObject;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path schemas:logo
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
-  ], [
-    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasMember
-  ], [
-    shacl:class <http://data.europa.eu/88u/dataset/atu-type>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:spatial
-  ], [
-    shacl:class org:hasUnit;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasUnit
-  ], [
-    shacl:class foaf:Document;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path foaf:homepage
-  ], [
-    shacl:class org:ChangeEvent;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:resultedFrom
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path skos:prefLabel
+    shacl:path xhv:prev
   ];
   shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
 
 <https://semiceu.github.io/shacl/core-public-organisation-ap_de#cpsv:FormalFrameworkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path foaf:name
-  ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path org:identifier
+  ], [
+    shacl:class org:ChangeEvent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://purl.org/vocab/cpsv#implements>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path foaf:name
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#FormalFramework> .
+
+ [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:unitOf
+  ] .
