@@ -8,11 +8,11 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#AgentShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape> .
+    <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#AgentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -25,24 +25,17 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "The URI of the issuing authority."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "issuing authority uri"@en;
-    shacl:path dc:creator
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The value of this property is the identifier itself."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "identifier"@en;
-    shacl:path skos:notation
-  ], [
     shacl:class <http://www.w3.orgn/ns/Person>;
     shacl:definition "The identifies relationship links an Identifier class to the resource it identifies."@en;
     shacl:name "identifies"@en;
     shacl:path <http://www.w3.org/ns/adms#identifies>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Type of the identifier."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identifier type"@en;
+    shacl:path dc:type
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "The date on which the identifier was assigned."@en;
@@ -52,37 +45,44 @@
     shacl:path dc:created
   ], [
     shacl:datatype xsd:string;
+    shacl:definition "The value of this property is the identifier itself."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identifier"@en;
+    shacl:path skos:notation
+  ], [
+    shacl:datatype xsd:string;
     shacl:definition "The name of the agency responsible for issuing the identifier."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "issuing authority"@en;
     shacl:path <http://www.w3.org/ns/adms#schemeAgency>
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Type of the identifier."@en;
+    shacl:datatype xsd:anyURI;
+    shacl:definition "The URI of the issuing authority."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "identifier type"@en;
-    shacl:path dc:type
+    shacl:name "issuing authority uri"@en;
+    shacl:path dc:creator
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "id"@en;
-    shacl:path <http://fixme.com#id>
-  ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "The name is simply a string that identifies the jurisdiction, typically a country, with or without a language tag."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "name"@en;
     shacl:path foaf:name
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "id"@en;
+    shacl:path <http://fixme.com#id>
   ];
   shacl:targetClass dc:Jurisdiction .
 
@@ -108,6 +108,25 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:string;
+    shacl:definition """A given name, or multiple given names, are the denominator(s) that identify an individual within
+a family."""@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "given name"@en;
+    shacl:path foaf:givenName
+  ], [
+    shacl:class <http://fixme.com#Change>;
+    shacl:name "change"@en;
+    shacl:path <http://fixme.com#change>
+  ], [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "Gender of the Person."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gender"@en;
+    shacl:path schema:gender
+  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "The full name contains the complete name of a person as one string."@en;
     shacl:maxCount 1;
@@ -116,18 +135,11 @@
     shacl:path foaf:name
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "Name based on the Person's father's given name."@en;
+    shacl:definition "Full name of the Person given upon their birth."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "patronymic name"@en;
-    shacl:path <http://www.w3.org/ns/person#patronymicName>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "A date that specifies the death date of a Person."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "date of death"@en;
-    shacl:path schema:deathDate
+    shacl:name "birth name"@en;
+    shacl:path <http://www.w3.org/ns/person#birthName>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Any name by which an individual is known other than their full name."@en;
@@ -143,24 +155,17 @@
     shacl:name "family name"@en;
     shacl:path foaf:familyName
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Full name of the Person given upon their birth."@en;
+    shacl:datatype xsd:dateTime;
+    shacl:definition "A date that specifies the death date of a Person."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "birth name"@en;
-    shacl:path <http://www.w3.org/ns/person#birthName>
+    shacl:name "date of death"@en;
+    shacl:path schema:deathDate
   ], [
-    shacl:class <http://fixme.com#Change>;
-    shacl:name "change"@en;
-    shacl:path <http://fixme.com#change>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition """A given name, or multiple given names, are the denominator(s) that identify an individual within
-a family."""@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "given name"@en;
-    shacl:path foaf:givenName
+    shacl:class dc:Jurisdiction;
+    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
+    shacl:name "citizenship"@en;
+    shacl:path dc:citizenship
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "A date that specifies the birth date of a Person."@en;
@@ -169,21 +174,16 @@ a family."""@en;
     shacl:name "date of birth"@en;
     shacl:path schema:birthDate
   ], [
-    shacl:class dc:Jurisdiction;
-    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
-    shacl:name "citizenship"@en;
-    shacl:path dc:citizenship
-  ], [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Gender of the Person."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "gender"@en;
-    shacl:path schema:gender
-  ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "An identifier for the Person."@en;
     shacl:name "identifier"@en;
     shacl:path dc:identifier
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Name based on the Person's father's given name."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "patronymic name"@en;
+    shacl:path <http://www.w3.org/ns/person#patronymicName>
   ];
   shacl:targetClass <http://www.w3.orgn/ns/Person> .

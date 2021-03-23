@@ -10,8 +10,8 @@
 <https://semiceu.github.io/shacl/core-person-ap_de> <https://semiceu.github.io/shacl/core-person-ap_deshapes> <https://semiceu.github.io/shacl/core-person-ap_de#JurisdictionShape>,
     <https://semiceu.github.io/shacl/core-person-ap_de#IdentifierShape>,
     <https://semiceu.github.io/shacl/core-person-ap_de#LocationShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_de#ChangeShape>,
     <https://semiceu.github.io/shacl/core-person-ap_de#PersonShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_de#ChangeShape>,
     <https://semiceu.github.io/shacl/core-person-ap_de#AgentShape> .
 
 <https://semiceu.github.io/shacl/core-person-ap_de#AgentShape> a shacl:NodeShape;
@@ -25,6 +25,25 @@
 <https://semiceu.github.io/shacl/core-person-ap_de#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:created
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
+  ], [
+    shacl:class <http://www.w3.orgn/ns/Person>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/adms#identifies>
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -45,63 +64,44 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:creator
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:created
-  ], [
-    shacl:class <http://www.w3.orgn/ns/Person>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/adms#identifies>
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://semiceu.github.io/shacl/core-person-ap_de#JurisdictionShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Text>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path foaf:name
-  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#id>
+  ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path foaf:name
   ];
   shacl:targetClass dc:Jurisdiction .
 
 <https://semiceu.github.io/shacl/core-person-ap_de#LocationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path rdfs:seeAlso
-  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/locn#geographicName>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path rdfs:seeAlso
   ];
   shacl:targetClass dc:Location .
 
@@ -113,44 +113,16 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
   ], [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path schema:gender
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/person#birthName>
-  ], [
     shacl:class <http://fixme.com#Change>;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#change>
   ], [
-    shacl:datatype xsd:string;
+    shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/person#patronymicName>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:alternative
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path foaf:givenName
+    shacl:path schema:birthDate
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
@@ -159,17 +131,26 @@
     shacl:name "Enter your translation here"@de;
     shacl:path foaf:name
   ], [
-    shacl:class dc:Jurisdiction;
+    shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:citizenship
+    shacl:path <http://www.w3.org/ns/person#birthName>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path foaf:familyName
+    shacl:path foaf:givenName
+  ], [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path schema:gender
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
@@ -178,11 +159,30 @@
     shacl:name "Enter your translation here"@de;
     shacl:path schema:deathDate
   ], [
-    shacl:datatype xsd:dateTime;
+    shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path schema:birthDate
+    shacl:path <http://www.w3.org/ns/person#patronymicName>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path foaf:familyName
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:alternative
+  ], [
+    shacl:class dc:Jurisdiction;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:citizenship
   ];
   shacl:targetClass <http://www.w3.orgn/ns/Person> .
