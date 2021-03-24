@@ -121,17 +121,42 @@
       "generalization": []
     },
     {
-      "@id": "https://data.europa.eu/m8g/xmlGeometry",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@id": "https://data.europa.eu/m8g/gml",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "en": "The XML geometry."
+        "en": "The geometry written in Geography Markup Language."
       },
       "domain": [
         {
           "uri": "http://www.w3.org/ns/locn#Geometry"
         }
       ],
-      "range": [],
+      "range": [
+        {
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.europa.eu/m8g/location",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The location relationship associates any Resource with the Location class."
+      },
+      "usage": {
+        "en": "Asserting the location relationship implies only that the domain has some connection to a Location in time or space. It does not imply that the \r\nResource is necessarily at that Location at the time when the assertion is made."
+      },
+      "domain": [
+        {
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://purl.org/dc/terms/Location"
+        }
+      ],
       "generalization": []
     }
   ],
@@ -153,7 +178,12 @@
     },
     {
       "name": null,
-      "@id": "https://data.europa.eu/m8g/xmlGeometry",
+      "@id": "https://data.europa.eu/m8g/gml",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://data.europa.eu/m8g/location",
       "@type": "rdf:Property"
     }
   ],

@@ -95,7 +95,18 @@
       "@id": "https://semiceu.github.io/shacl/core-location-ap_en#ResourceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "en": "The location relationship associates any Resource with the Location class."
+          },
+          "sh:name": {
+            "en": "location"
+          },
+          "sh:path": "https://data.europa.eu/m8g/location"
+        }
+      ],
       "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Resource"
     },
     {
@@ -244,6 +255,18 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The geometry written in Geography Markup Language."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "gml"
+          },
+          "sh:path": "https://data.europa.eu/m8g/gml"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "The latitude."
@@ -268,27 +291,16 @@
           "sh:path": "http://schema.org/longitude"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "The WKT string describing the point, line or polygon."
+            "en": "The well-known text representation string describing the point, line or polygon."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "well-known text representation"
+            "en": "wkt"
           },
           "sh:path": "http://www.opengis.net/ont/geosparql#wktLiteral"
-        },
-        {
-          "sh:definition": {
-            "en": "The XML geometry."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "XML geometry"
-          },
-          "sh:path": "https://data.europa.eu/m8g/xmlGeometry"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"

@@ -167,7 +167,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/CPOV/tree/master/releases/2.00">https://github.com/SEMICeu/CPOV/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/817ef9306d1290cace16096e6b217c733a62642f/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/817ef9306d1290cace16096e6b217c733a62642f/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/def5e2fd3a417c9900515e35270a3dbdb9b7aba8/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/def5e2fd3a417c9900515e35270a3dbdb9b7aba8/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/CPOV/issues">https://github.com/SEMICeu/CPOV/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="CPOV">CPOV</a></dd>-->
 
@@ -307,24 +307,29 @@
               <h3 class="h3" id="Address"><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">Address</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>An &quot;address representation&quot; as conceptually defined by the INSPIRE Address Representation data type.</dd>
+                    <dt>Description</dt><dd>Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.</dd>
                     
                     <dt>Usage</dt><dd><p>
-The representation of addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of addresses that do not conform to the stated national standard. At the time of publication, work is progressing on ISO 19160-1 that defines a method through which different addresses can be converted from one conceptual model to another.
+An "address representation" as conceptually defined by the <a href="https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353
+">INSPIRE Address Representation data type</a>.
 </p></br>
 
 <p>
-For this specification we have drawn heavily on the INSPIRE Address Representation data type. It is noteworthy that if an address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of
-properties we add two further properties:
+The representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href="https://www.iso.org/standard/61710.html">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.
+</p></br>
+
+<p>
+This specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of
+properties, we add two further properties:
 <ul>
   <li>full address (the complete address as a formatted string)</li>
   <li>addressID (a unique identifier for the address)</li>
 </ul>
-The first of these allows publishers to simply provide the complete address as one string, with or without formatting. This is analogous to vCard's label property.
+The first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href="http://www.w3.org/2006/vcard/ns#label">vCard's label property</a>.
 </p></br>
 
 <p>
-The addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the address to an alternative representation, such as vCard or OASIS xAL.
+The addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.
 </p></dd>
                     
 		    
@@ -394,8 +399,19 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                           
                         </td>
                         <td property="rdfs:comment">A globally unique identifier for each instance of an Address.</td>
-                        <td property="skos:scopeNote">The concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an
-address identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary. </td>
+                        <td property="skos:scopeNote"><p>
+The concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an
+address identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.
+</p></br>
+<p>
+The INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.
+</p></br>
+<p>
+Many datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.
+</p></br>
+<p>
+To provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.
+</p></td>
                         <td></td>
                       </tr>
                     
@@ -728,7 +744,7 @@ address identifier. It is the address Identifier that allows an address to be re
               <h3 class="h3" id="Concept"><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Concept</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A SKOS concept can be viewed as an idea or notion; a unit of thought. However, what constitutes a unit of thought is subjective, and this definition is meant to be suggestive, rather than restrictive.</dd>
+                    <dt>Description</dt><dd>A SKOS Concept can be viewed as an idea or notion; a unit of thought. However,what constitutes a unit of thought is subjective,and this definition is meant to be suggestive,rather than restrictive.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -756,10 +772,10 @@ that some implementations may find useful.</dd>
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Contact%20Point%3Aavailability%20restriction">availability restriction</a>, 
                       <a href="#Contact%20Point%3Ahas%20email">has email</a>, 
                       <a href="#Contact%20Point%3Ahas%20telephone">has telephone</a>, 
-                      <a href="#Contact%20Point%3Aopening%20hours">opening hours</a>, 
-                      <a href="#Contact%20Point%3Aopening%20hours%20specification">opening hours specification</a>.</dd>
+                      <a href="#Contact%20Point%3Aopening%20hours">opening hours</a>.</dd>
                     
                   </dl>
                 </div>
@@ -777,6 +793,25 @@ that some implementations may find useful.</dd>
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Contact%20Point%3Aavailability%20restriction" typeof="rdfs:Property" resource="http://schema.org/hoursAvailable">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/hoursAvailable" data-toggle="tooltip" data-content="http://schema.org/hoursAvailable" data-placement="right">
+                            availability restriction</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Opening Hours Specification" data-placement="right">Opening Hours Specification</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Contact%20Point%3Ahas%20email" typeof="rdfs:Property" resource="https://schema.org/email">
                         <td>
@@ -833,25 +868,6 @@ representative of it, can be contacted.</td>
                         </td>
                         <td property="rdfs:comment">The value of this property is structured text that gives the hours at which the contact point is normally available.</td>
                         <td property="skos:scopeNote">Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Contact%20Point%3Aopening%20hours%20specification" typeof="rdfs:Property" resource="http://schema.org/hoursAvailable">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/hoursAvailable" data-toggle="tooltip" data-content="http://schema.org/hoursAvailable" data-placement="right">
-                            opening hours specification</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Opening Hours Specification" data-placement="right">Opening Hours Specification</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case.</td>
-                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -1003,10 +1019,10 @@ representative of it, can be contacted.</td>
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Geometry%3Agml">gml</a>, 
                       <a href="#Geometry%3Alatitude">latitude</a>, 
                       <a href="#Geometry%3Alongitude">longitude</a>, 
-                      <a href="#Geometry%3Awell-known%20text%20representation">well-known text representation</a>, 
-                      <a href="#Geometry%3AXML%20geometry">XML geometry</a>.</dd>
+                      <a href="#Geometry%3Awkt">wkt</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1024,6 +1040,25 @@ representative of it, can be contacted.</td>
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Geometry%3Agml" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/gml">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/gml" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/gml" data-placement="right">
+                            gml</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">The geometry written in Geography Markup Language.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Geometry%3Alatitude" typeof="rdfs:Property" resource="http://schema.org/latitude">
                         <td>
@@ -1063,36 +1098,21 @@ representative of it, can be contacted.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Geometry%3Awell-known%20text%20representation" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#wktLiteral">
+                      <tr id="Geometry%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#wktLiteral">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://www.opengis.net/ont/geosparql#wktLiteral" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#wktLiteral" data-placement="right">
-                            well-known text representation</a>
+                            wkt</a>
                           </code>
                         </td>
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
                             
                           
                         </td>
-                        <td property="rdfs:comment">The WKT string describing the point, line or polygon.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3AXML%20geometry" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/xmlGeometry">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/xmlGeometry" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/xmlGeometry" data-placement="right">
-                            XML geometry</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td property="rdfs:comment">The XML geometry.</td>
+                        <td property="rdfs:comment">The well-known text representation string describing the point, line or polygon.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>

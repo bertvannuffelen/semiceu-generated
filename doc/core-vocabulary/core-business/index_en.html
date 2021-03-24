@@ -167,7 +167,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.00">https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/817ef9306d1290cace16096e6b217c733a62642f/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/817ef9306d1290cace16096e6b217c733a62642f/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/def5e2fd3a417c9900515e35270a3dbdb9b7aba8/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/def5e2fd3a417c9900515e35270a3dbdb9b7aba8/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/Core-Business-Vocabulary/issues">https://github.com/SEMICeu/Core-Business-Vocabulary/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="Core-Business-Vocabulary">Core-Business-Vocabulary</a></dd>-->
 
@@ -198,7 +198,7 @@
 <p>
 	The Core Business Vocabulary provides a minimum set of classes and properties for
     legal entities, that is, trading bodies that are formally registered with the relevant authority and that appear in
-    business registers. This excludes sole traders, virtual organisations and other types of 'agent'
+    business registers. This excludes sole traders, virtual organisations and other types of 'agents'
     that are able to do business.
 </p>
 
@@ -240,7 +240,7 @@
                       <a href="#Address">Address</a> |
                       <a href="#Agent">Agent</a> |
                       <a href="#Change">Change</a> |
-                      <a href="#Code">Code</a> |
+                      <a href="#Concept">Concept</a> |
                       <a href="#Identifier">Identifier</a> |
                       <a href="#Legal Entity">Legal Entity</a> |
                       <a href="#Licence">Licence</a> |
@@ -266,24 +266,29 @@
               <h3 class="h3" id="Address"><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">Address</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>An &quot;address representation&quot; as conceptually defined by the INSPIRE Address Representation data type.</dd>
+                    <dt>Description</dt><dd>Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.</dd>
                     
                     <dt>Usage</dt><dd><p>
-The representation of addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of addresses that do not conform to the stated national standard. At the time of publication, work is progressing on ISO 19160-1 that defines a method through which different addresses can be converted from one conceptual model to another.
+An "address representation" as conceptually defined by the <a href="https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353
+">INSPIRE Address Representation data type</a>.
 </p></br>
 
 <p>
-For this specification we have drawn heavily on the INSPIRE Address Representation data type. It is noteworthy that if an address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of
-properties we add two further properties:
+The representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href="https://www.iso.org/standard/61710.html">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.
+</p></br>
+
+<p>
+This specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of
+properties, we add two further properties:
 <ul>
   <li>full address (the complete address as a formatted string)</li>
   <li>addressID (a unique identifier for the address)</li>
 </ul>
-The first of these allows publishers to simply provide the complete address as one string, with or without formatting. This is analogous to vCard's label property.
+The first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href="http://www.w3.org/2006/vcard/ns#label">vCard's label property</a>.
 </p></br>
 
 <p>
-The addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the address to an alternative representation, such as vCard or OASIS xAL.
+The addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.
 </p></dd>
                     
 		    
@@ -294,6 +299,7 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                       <a href="#Address%3Aaddress%20ID">address ID</a>, 
                       <a href="#Address%3Aadmin%20unit%20level%201%20(country)">admin unit level 1 (country)</a>, 
                       <a href="#Address%3Aadmin%20unit%20level%202%20(country%2Fregion%2Fstate)">admin unit level 2 (country/region/state)</a>, 
+                      <a href="#Address%3Achange">change</a>, 
                       <a href="#Address%3Afull%20address">full address</a>, 
                       <a href="#Address%3Alocator%20designator">locator designator</a>, 
                       <a href="#Address%3Alocator%20name">locator name</a>, 
@@ -353,8 +359,19 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                           
                         </td>
                         <td property="rdfs:comment">A globally unique identifier for each instance of an Address.</td>
-                        <td property="skos:scopeNote">The concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an
-address identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary. </td>
+                        <td property="skos:scopeNote"><p>
+The concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an
+address identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.
+</p></br>
+<p>
+The INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.
+</p></br>
+<p>
+Many datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.
+</p></br>
+<p>
+To provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.
+</p></td>
                         <td></td>
                       </tr>
                     
@@ -392,6 +409,25 @@ address identifier. It is the address Identifier that allows an address to be re
                           
                         </td>
                         <td property="rdfs:comment">The region of the address, usually a county, state or other such area that typically encompasses several localities.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Address%3Achange" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/change">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/change" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/change" data-placement="right">
+                            change</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Change" data-placement="right">Change</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">TODO</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -568,19 +604,21 @@ address identifier. It is the address Identifier that allows an address to be re
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Code"><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a></h3>
+              <h3 class="h3" id="Concept"><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Concept</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd></dd>
+                    <dt>Description</dt><dd>This class represents any Concept that can be used for classifying the Legal Entity.</dd>
+                    
+                    <dt>Usage</dt><dd>This class relates to the Legal Entity through the properties company activitiy, company status and company type. Additional properties can be added to complement the need for adding other ways of classifying the Legal Entity, which have not been explicitly defined in the Core Vocabulary.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Code%3Acontent">content</a>, 
-                      <a href="#Code%3Alist">list</a>, 
-                      <a href="#Code%3Alist%20agency">list agency</a>, 
-                      <a href="#Code%3Alist%20version">list version</a>.</dd>
+                      <a href="#Concept%3Acontent">content</a>, 
+                      <a href="#Concept%3Alist">list</a>, 
+                      <a href="#Concept%3Alist%20agency">list agency</a>, 
+                      <a href="#Concept%3Alist%20version">list version</a>.</dd>
                     
                   </dl>
                 </div>
@@ -599,7 +637,7 @@ address identifier. It is the address Identifier that allows an address to be re
 
                     <tbody class="supertype">
                     
-                      <tr id="Code%3Acontent" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
+                      <tr id="Concept%3Acontent" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://www.w3.org/2004/02/skos/core#prefLabel" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#prefLabel" data-placement="right">
@@ -618,7 +656,7 @@ address identifier. It is the address Identifier that allows an address to be re
                         <td></td>
                       </tr>
                     
-                      <tr id="Code%3Alist" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#notation">
+                      <tr id="Concept%3Alist" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#notation">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://www.w3.org/2004/02/skos/core#notation" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#notation" data-placement="right">
@@ -637,7 +675,7 @@ address identifier. It is the address Identifier that allows an address to be re
                         <td></td>
                       </tr>
                     
-                      <tr id="Code%3Alist%20agency" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
+                      <tr id="Concept%3Alist%20agency" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">
@@ -656,7 +694,7 @@ address identifier. It is the address Identifier that allows an address to be re
                         <td></td>
                       </tr>
                     
-                      <tr id="Code%3Alist%20version" typeof="rdfs:Property" resource="http://schema.org/version">
+                      <tr id="Concept%3Alist%20version" typeof="rdfs:Property" resource="http://schema.org/version">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://schema.org/version" data-toggle="tooltip" data-content="http://schema.org/version" data-placement="right">
@@ -696,6 +734,7 @@ address identifier. It is the address Identifier that allows an address to be re
                       <a href="#Identifier%3Adate%20of%20issue">date of issue</a>, 
                       <a href="#Identifier%3Aidentifier">identifier</a>, 
                       <a href="#Identifier%3Aidentifier%20type">identifier type</a>, 
+                      <a href="#Identifier%3Aidentifies">identifies</a>, 
                       <a href="#Identifier%3Aissuing%20authority">issuing authority</a>, 
                       <a href="#Identifier%3Aissuing%20authority%20uri">issuing authority uri</a>.</dd>
                     
@@ -730,7 +769,7 @@ address identifier. It is the address Identifier that allows an address to be re
                             
                           
                         </td>
-                        <td property="rdfs:comment">The date on which the identifier was assigned.</td>
+                        <td property="rdfs:comment">The date on which the Identifier was assigned.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -749,7 +788,7 @@ address identifier. It is the address Identifier that allows an address to be re
                             
                           
                         </td>
-                        <td property="rdfs:comment">The value of this property is the identifier itself.</td>
+                        <td property="rdfs:comment">The value of this property is the Identifier itself.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -768,7 +807,26 @@ address identifier. It is the address Identifier that allows an address to be re
                             
                           
                         </td>
-                        <td property="rdfs:comment">The type of the identifier.</td>
+                        <td property="rdfs:comment">The type of the Identifier.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Identifier%3Aidentifies" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/identifies">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/identifies" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/identifies" data-placement="right">
+                            identifies</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Legal Entity" data-placement="right">Legal Entity</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The identifies relationship links an Identifier class to the resource it identifies.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -787,7 +845,7 @@ address identifier. It is the address Identifier that allows an address to be re
                             
                           
                         </td>
-                        <td property="rdfs:comment">The name of the agency responsible for issuing the identifier.</td>
+                        <td property="rdfs:comment">The name of the agency responsible for issuing the Identifier.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -821,9 +879,9 @@ address identifier. It is the address Identifier that allows an address to be re
               <h3 class="h3" id="Legal Entity"><a href="http://www.w3.org/ns/legal#LegalEntity" data-toggle="tooltip" data-content="http://www.w3.org/ns/legal#LegalEntity" data-placement="right">Legal Entity</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A legal entity able to transact business, typically registered with a body able to confer legal status such as a national business register.</dd>
+                    <dt>Description</dt><dd>A Legal Entity able to transact business, typically registered with a body able to confer legal status such as a national business register.</dd>
                     
-                    <dt>Usage</dt><dd>A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. This makes legal entities distinct from the concept of organisations, groups or sole traders. Many organisations exist that are not legal entities yet to the outside world they have staff, hierarchies, locations etc. Other organisations exist that are an umbrella for several legal entities (universities are often good examples of this). This vocabulary is concerned solely with registered legal entities and does not attempt to cover all possible trading bodies.</dd>
+                    <dt>Usage</dt><dd>A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. This makes Legal Entities distinct from the concept of organisations, groups or sole traders. Many organisations exist that are not Legal Entities, yet to the outside world they have staff, hierarchies, locations etc. Other organisations exist that are an umbrella for several Legal Entities (universities are often good examples of this). This vocabulary is concerned solely with registered Legal Entities and does not attempt to cover all possible trading bodies.</dd>
                     
 		     
 		    <dt>Subclass of<dt><dd>
@@ -834,6 +892,7 @@ address identifier. It is the address Identifier that allows an address to be re
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#Legal%20Entity%3Aalternative%20name">alternative name</a>, 
+                      <a href="#Legal%20Entity%3Achange">change</a>, 
                       <a href="#Legal%20Entity%3Acompany%20activity">company activity</a>, 
                       <a href="#Legal%20Entity%3Acompany%20status">company status</a>, 
                       <a href="#Legal%20Entity%3Acompany%20type">company type</a>, 
@@ -879,6 +938,25 @@ address identifier. It is the address Identifier that allows an address to be re
                         <td></td>
                       </tr>
                     
+                      <tr id="Legal%20Entity%3Achange" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/change">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/change" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/change" data-placement="right">
+                            change</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Change" data-placement="right">Change</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">TODO</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Legal%20Entity%3Acompany%20activity" typeof="rdfs:Property" resource="http://www.w3.org/ns/legal#companyActivity">
                         <td>
                           <code property="rdfs:label">
@@ -889,12 +967,12 @@ address identifier. It is the address Identifier that allows an address to be re
                         <td>
                           
 			    
-			    <a href="#Code" data-placement="right">Code</a>
+			    <a href="#Concept" data-placement="right">Concept</a>
 			    
                           
                         </td>
                         <td property="rdfs:comment">This property records the activity of the company.</td>
-                        <td property="skos:scopeNote">The activity of a company should be recorded using a controlled vocabulary. Several such vocabularies exist, many of which map to the UN's ISIC codes. Where a particular controlled vocabulary is in use within a given context, such as SIC codes in the UK, it is acceptable to use these, however, the preferred choice for European interoperability is NACE.</td>
+                        <td property="skos:scopeNote">The activity of a company should be recorded using a controlled vocabulary. Several such vocabularies exist, many of which map to the UN's <a href="=https://unstats.un.org/unsd/classifications/Econ/ISIC.cshtml">ISIC codes</a>. Where a particular controlled vocabulary is in use within a given context, such as SIC codes in the UK, it is acceptable to use these, however, the preferred choice for European interoperability is <a href="https://ec.europa.eu/eurostat/ramon/nomenclatures/index.cfm?TargetUrl=LST_NOM_DTL&StrNom=NACE_REV2&StrLanguageCode=EN&IntPcKey=&StrLayoutCode=HIERARCHIC">NACE</a>.</td>
                         <td></td>
                       </tr>
                     
@@ -908,7 +986,7 @@ address identifier. It is the address Identifier that allows an address to be re
                         <td>
                           
 			    
-			    <a href="#Code" data-placement="right">Code</a>
+			    <a href="#Concept" data-placement="right">Concept</a>
 			    
                           
                         </td>
@@ -927,12 +1005,12 @@ address identifier. It is the address Identifier that allows an address to be re
                         <td>
                           
 			    
-			    <a href="#Code" data-placement="right">Code</a>
+			    <a href="#Concept" data-placement="right">Concept</a>
 			    
                           
                         </td>
                         <td property="rdfs:comment">This property records the type of company.</td>
-                        <td property="skos:scopeNote">Familiar types are SA, PLC, LLC, GmbH etc. At the time of publication, there is no agreed set of company types that crosses borders. The term 'SA' is used in Poland and France for example although they mean slightly different things. The UK's LLP and Greece's EPE provide further example of close, but not exact, matches. That said, each jurisdiction will have a limited set of recognised company types and these should be used in a consistent manner.</td>
+                        <td property="skos:scopeNote">Familiar types are SA, PLC, LLC, GmbH etc. At the time of publication, there is no agreed set of company types that crosses borders. The term 'SA' is used in Poland and France for example although they mean slightly different things. The UK's LLP and Greece's EPE provide another example of close, but not exact, matches. That said, each jurisdiction will have a limited set of recognised company types and these should be used in a consistent manner.</td>
                         <td></td>
                       </tr>
                     
@@ -950,7 +1028,7 @@ address identifier. It is the address Identifier that allows an address to be re
 			    
                           
                         </td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">The Licence(s) held by a Legal Entity to carry out its activities.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -969,7 +1047,7 @@ address identifier. It is the address Identifier that allows an address to be re
 			    
                           
                         </td>
-                        <td property="rdfs:comment">The identity relation links a resource to any formally issued identifier for that resource other than the one that confers legal status upon it.</td>
+                        <td property="rdfs:comment">The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it.</td>
                         <td property="skos:scopeNote">Legal Entities, people, organisations and other Agents may have any number of identifiers (but only one legal identifier). For example, in many jurisdictions, a business will have one or more tax numbers associated with them which do not, by themselves, confer legal entity status. An individual may be issued with identifiers for everything from social security to club membership. The identifier relationship must not be used to link to the identifier issued by the authority that conferred legal entity status on a business.</td>
                         <td></td>
                       </tr>
@@ -988,8 +1066,8 @@ address identifier. It is the address Identifier that allows an address to be re
 			    
                           
                         </td>
-                        <td property="rdfs:comment">The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a legal entity and the authority with which it is registered.</td>
-                        <td property="skos:scopeNote">The details of the registration are provided as properties of the Identifier class. The Core vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's identifier is the relevant data point. The tax number often fulfils this function in Spain.</td>
+                        <td property="rdfs:comment">The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered.</td>
+                        <td property="skos:scopeNote">The details of the registration are provided as properties of the Identifier class. The Core vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's identifier is the relevant data point.</td>
                         <td></td>
                       </tr>
                     
@@ -1041,7 +1119,7 @@ address identifier. It is the address Identifier that allows an address to be re
               <h3 class="h3" id="Licence"><a href="https://data.europa.eu/m8g/Licence" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Licence" data-placement="right">Licence</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A place holder for a future licence class that is officially issued to a legal entity in order for them to carry out some activity or another. For example, a banking licence.</dd>
+                    <dt>Description</dt><dd>A place holder for a future licence class that is officially issued to a Legal Entity in order for them to carry out some activity or another. For example, a banking licence.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -1080,7 +1158,7 @@ address identifier. It is the address Identifier that allows an address to be re
 			    
                           
                         </td>
-                        <td property="rdfs:comment">This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities.</td>
+                        <td property="rdfs:comment">The Legal Entity holding Licence(s) as permit to carry out its activities.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>

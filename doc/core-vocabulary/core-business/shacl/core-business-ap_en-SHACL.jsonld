@@ -47,7 +47,7 @@
         {
           "sh:class": "http://www.w3.org/ns/legal#LegalEntity",
           "sh:definition": {
-            "en": "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."
+            "en": "The Legal Entity holding Licence(s) as permit to carry out its activities."
           },
           "sh:name": {
             "en": "held by"
@@ -76,7 +76,7 @@
       "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Resource"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/core-business-ap_en#CodeShape",
+      "@id": "https://semiceu.github.io/shacl/core-business-ap_en#ConceptShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -127,7 +127,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "The date on which the identifier was assigned."
+            "en": "The date on which the Identifier was assigned."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -139,7 +139,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "The value of this property is the identifier itself."
+            "en": "The value of this property is the Identifier itself."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -151,7 +151,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "The type of the identifier."
+            "en": "The type of the Identifier."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -161,9 +161,19 @@
           "sh:path": "http://purl.org/dc/terms/type"
         },
         {
+          "sh:class": "http://www.w3.org/ns/legal#LegalEntity",
+          "sh:definition": {
+            "en": "The identifies relationship links an Identifier class to the resource it identifies."
+          },
+          "sh:name": {
+            "en": "identifies"
+          },
+          "sh:path": "https://data.europa.eu/m8g/identifies"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "The name of the agency responsible for issuing the identifier."
+            "en": "The name of the agency responsible for issuing the Identifier."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -203,6 +213,16 @@
           "sh:path": "http://purl.org/dc/terms/alternative"
         },
         {
+          "sh:class": "https://data.europa.eu/m8g/Change",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "change"
+          },
+          "sh:path": "https://data.europa.eu/m8g/change"
+        },
+        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "This property records the activity of the company."
@@ -236,6 +256,9 @@
         },
         {
           "sh:class": "https://data.europa.eu/m8g/Licence",
+          "sh:definition": {
+            "en": "The Licence(s) held by a Legal Entity to carry out its activities."
+          },
           "sh:name": {
             "en": "holds licence"
           },
@@ -244,7 +267,7 @@
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:definition": {
-            "en": "The identity relation links a resource to any formally issued identifier for that resource other than the one that confers legal status upon it."
+            "en": "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it."
           },
           "sh:name": {
             "en": "identifier"
@@ -254,7 +277,7 @@
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:definition": {
-            "en": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a legal entity and the authority with which it is registered."
+            "en": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -339,6 +362,16 @@
             "en": "admin unit level 2 (country/region/state)"
           },
           "sh:path": "http://www.w3.org/ns/locn#adminUnitL2"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Change",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "change"
+          },
+          "sh:path": "https://data.europa.eu/m8g/change"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",

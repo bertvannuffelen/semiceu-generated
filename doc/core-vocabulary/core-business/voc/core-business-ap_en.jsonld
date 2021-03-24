@@ -80,7 +80,7 @@
       "@id": "https://data.europa.eu/m8g/Licence",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "A place holder for a future licence class that is officially issued to a legal entity in order for them to carry out some activity or another. For example, a banking licence."
+        "en": "A place holder for a future licence class that is officially issued to a Legal Entity in order for them to carry out some activity or another. For example, a banking licence."
       },
       "parents": []
     }
@@ -94,10 +94,46 @@
   ],
   "properties": [
     {
+      "@id": "https://data.europa.eu/m8g/change",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "TODO"
+      },
+      "domain": [
+        {
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://data.europa.eu/m8g/Change"
+        }
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.europa.eu/m8g/change",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "TODO"
+      },
+      "domain": [
+        {
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "range": [
+        {
+          "uri": "https://data.europa.eu/m8g/Change"
+        }
+      ],
+      "generalization": []
+    },
+    {
       "@id": "https://data.europa.eu/m8g/heldBy",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."
+        "en": "The Legal Entity holding Licence(s) as permit to carry out its activities."
       },
       "domain": [
         {
@@ -114,6 +150,9 @@
     {
       "@id": "https://data.europa.eu/m8g/holdsLicence",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The Licence(s) held by a Legal Entity to carry out its activities."
+      },
       "domain": [
         {
           "uri": "http://www.w3.org/ns/legal#LegalEntity"
@@ -125,9 +164,37 @@
         }
       ],
       "generalization": []
+    },
+    {
+      "@id": "https://data.europa.eu/m8g/identifies",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The identifies relationship links an Identifier class to the resource it identifies."
+      },
+      "domain": [
+        {
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "range": [
+        {
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "generalization": []
     }
   ],
   "externalproperties": [
+    {
+      "name": null,
+      "@id": "https://data.europa.eu/m8g/change",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://data.europa.eu/m8g/change",
+      "@type": "rdf:Property"
+    },
     {
       "name": null,
       "@id": "https://data.europa.eu/m8g/heldBy",
@@ -136,6 +203,11 @@
     {
       "name": null,
       "@id": "https://data.europa.eu/m8g/holdsLicence",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": null,
+      "@id": "https://data.europa.eu/m8g/identifies",
       "@type": "rdf:Property"
     }
   ],

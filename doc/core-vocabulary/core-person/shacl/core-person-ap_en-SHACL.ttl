@@ -8,11 +8,11 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape>,
+<https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape> .
+    <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -21,6 +21,25 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:definition "The identifies relationship links an Identifier class to the resource it identifies."@en;
+    shacl:name "identifies"@en;
+    shacl:path <http://www.w3.org/ns/adms#identifies>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "The date on which the Identifier was assigned."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "date of issue"@en;
+    shacl:path dc:created
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The type of the Identifier."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identifier type"@en;
+    shacl:path dc:type
+  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "The URI of the issuing authority."@en;
     shacl:maxCount 1;
@@ -29,37 +48,18 @@
     shacl:path dc:creator
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The type of the identifier."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "identifier type"@en;
-    shacl:path dc:type
-  ], [
-    shacl:class <http://www.w3.org/ns/person#Person>;
-    shacl:definition "The identifies relationship links an Identifier class to the resource it identifies."@en;
-    shacl:name "identifies"@en;
-    shacl:path <http://www.w3.org/ns/adms#identifies>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The name of the agency responsible for issuing the identifier."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "issuing authority"@en;
-    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The value of this property is the identifier itself."@en;
+    shacl:definition "The value of this property is the Identifier itself."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "identifier"@en;
     shacl:path skos:notation
   ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "The date on which the identifier was assigned."@en;
+    shacl:datatype xsd:string;
+    shacl:definition "The name of the agency responsible for issuing the Identifier."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "date of issue"@en;
-    shacl:path dc:created
+    shacl:name "issuing authority"@en;
+    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
@@ -85,38 +85,38 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class rdf:langString;
-    shacl:definition "A geographic name is a proper noun applied to a spatial object."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "geographic name"@en;
-    shacl:path <http://www.w3.org/ns/locn#geographicName>
-  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "A URI that identifies the Location."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "geographic identifier"@en;
     shacl:path rdfs:seeAlso
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "A geographic name is a proper noun applied to a spatial object."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "geographic name"@en;
+    shacl:path <http://www.w3.org/ns/locn#geographicName>
   ];
   shacl:targetClass dc:Location .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class skos:Concept;
-    shacl:definition "Gender of the Person."@en;
+    shacl:datatype xsd:string;
+    shacl:definition "Full name of the Person given upon their birth."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "gender"@en;
-    shacl:path schema:gender
+    shacl:name "birth name"@en;
+    shacl:path <http://www.w3.org/ns/person#birthName>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The full name contains the complete name of a person as one string."@en;
+    shacl:definition "Name based on the given name of the Person's father."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "full name"@en;
-    shacl:path foaf:name
+    shacl:name "patronymic name"@en;
+    shacl:path <http://www.w3.org/ns/person#patronymicName>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "A date that specifies the birth date of a Person."@en;
@@ -125,12 +125,15 @@
     shacl:name "date of birth"@en;
     shacl:path schema:birthDate
   ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "A date that specifies the death date of a Person."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "date of death"@en;
-    shacl:path schema:deathDate
+    shacl:class <https://data.europa.eu/m8g/Change>;
+    shacl:definition "TODO"@en;
+    shacl:name "change"@en;
+    shacl:path <https://data.europa.eu/m8g/change>
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "An Identifier for the Person."@en;
+    shacl:name "identifier"@en;
+    shacl:path dc:identifier
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Any name by which an individual is known other than their full name."@en;
@@ -139,6 +142,18 @@
     shacl:name "alternative name"@en;
     shacl:path dc:alternative
   ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "A date that specifies the death date of a Person."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "date of death"@en;
+    shacl:path schema:deathDate
+  ], [
+    shacl:class dc:Jurisdiction;
+    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
+    shacl:name "citizenship"@en;
+    shacl:path dc:citizenship
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "A family name is usually shared by members of a family."@en;
     shacl:maxCount 1;
@@ -146,29 +161,11 @@
     shacl:name "family name"@en;
     shacl:path foaf:familyName
   ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "An identifier for the Person."@en;
-    shacl:name "identifier"@en;
-    shacl:path dc:identifier
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Name based on the Person's father's given name."@en;
+    shacl:definition "Gender of the Person."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "patronymic name"@en;
-    shacl:path <http://www.w3.org/ns/person#patronymicName>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Full name of the Person given upon their birth."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "birth name"@en;
-    shacl:path <http://www.w3.org/ns/person#birthName>
-  ], [
-    shacl:class dc:Jurisdiction;
-    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
-    shacl:name "citizenship"@en;
-    shacl:path dc:citizenship
+    shacl:name "gender"@en;
+    shacl:path schema:gender
   ], [
     shacl:datatype xsd:string;
     shacl:definition """A given name, or multiple given names, are the denominator(s) that identify an individual within
@@ -177,5 +174,12 @@ a family."""@en;
     shacl:minCount 1;
     shacl:name "given name"@en;
     shacl:path foaf:givenName
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The full name contains the complete name of a person as one string."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "full name"@en;
+    shacl:path foaf:name
   ];
   shacl:targetClass schemas:Person .

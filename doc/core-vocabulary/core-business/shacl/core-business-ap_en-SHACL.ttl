@@ -7,65 +7,23 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/core-business-ap_en> <https://semiceu.github.io/shacl/core-business-ap_enshapes> <https://semiceu.github.io/shacl/core-business-ap_en#AgentShape>,
+<https://semiceu.github.io/shacl/core-business-ap_en> <https://semiceu.github.io/shacl/core-business-ap_enshapes> <https://semiceu.github.io/shacl/core-business-ap_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/core-business-ap_en#LicenceShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_en#CodeShape>,
+    <https://semiceu.github.io/shacl/core-business-ap_en#ConceptShape>,
     <https://semiceu.github.io/shacl/core-business-ap_en#ResourceShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_en#AddressShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_en#IdentifierShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_en#ChangeShape> .
+    <https://semiceu.github.io/shacl/core-business-ap_en#AgentShape>,
+    <https://semiceu.github.io/shacl/core-business-ap_en#ChangeShape>,
+    <https://semiceu.github.io/shacl/core-business-ap_en#AddressShape> .
 
 <https://semiceu.github.io/shacl/core-business-ap_en#AddressShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "The complete address written as a formatted string."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "full address"@en;
-    shacl:path <http://www.w3.org/ns/locn#fullAddress>
-  ], [
     shacl:datatype xsd:string;
     shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "admin unit level 1 (country)"@en;
     shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "admin unit level 2 (country/region/state)"@en;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "locator designator"@en;
-    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "A globally unique identifier for each instance of an Address."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "address ID"@en;
-    shacl:path <http://www.w3.org/ns/locn#addressID>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "address area"@en;
-    shacl:path <http://www.w3.org/ns/locn#addressArea>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "locator name"@en;
-    shacl:path <http://www.w3.org/ns/locn#locatorName>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The post code/zip code of an address."@en;
@@ -75,11 +33,39 @@
     shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)"""@en;
+    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "post name (city)"@en;
-    shacl:path <http://www.w3.org/ns/locn#postName>
+    shacl:name "address area"@en;
+    shacl:path <http://www.w3.org/ns/locn#addressArea>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "locator designator"@en;
+    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "locator name"@en;
+    shacl:path <http://www.w3.org/ns/locn#locatorName>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A globally unique identifier for each instance of an Address."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "address ID"@en;
+    shacl:path <http://www.w3.org/ns/locn#addressID>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The complete address written as a formatted string."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "full address"@en;
+    shacl:path <http://www.w3.org/ns/locn#fullAddress>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The Post Office Box number."@en;
@@ -88,12 +74,31 @@
     shacl:name "po box"@en;
     shacl:path <http://www.w3.org/ns/locn#poBox>
   ], [
+    shacl:class <https://data.europa.eu/m8g/Change>;
+    shacl:definition "TODO"@en;
+    shacl:name "change"@en;
+    shacl:path <https://data.europa.eu/m8g/change>
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "thoroughfare"@en;
     shacl:path <http://www.w3.org/ns/locn#thoroughfare>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)"""@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "post name (city)"@en;
+    shacl:path <http://www.w3.org/ns/locn#postName>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "admin unit level 2 (country/region/state)"@en;
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
@@ -105,15 +110,9 @@
   shacl:closed false;
   shacl:targetClass <https://data.europa.eu/m8g/Change> .
 
-<https://semiceu.github.io/shacl/core-business-ap_en#CodeShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/core-business-ap_en#ConceptShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "content"@en;
-    shacl:path skos:prefLabel
-  ], [
     shacl:datatype xsd:string;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -123,20 +122,38 @@
     shacl:datatype xsd:string;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "list agency"@en;
-    shacl:path dc:creator
+    shacl:name "content"@en;
+    shacl:path skos:prefLabel
   ], [
     shacl:datatype xsd:string;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "list version"@en;
     shacl:path schema:version
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "list agency"@en;
+    shacl:path dc:creator
   ];
   shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/core-business-ap_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/legal#LegalEntity>;
+    shacl:definition "The identifies relationship links an Identifier class to the resource it identifies."@en;
+    shacl:name "identifies"@en;
+    shacl:path <https://data.europa.eu/m8g/identifies>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The value of this property is the Identifier itself."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identifier"@en;
+    shacl:path skos:notation
+  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "The URI of the issuing authority."@en;
     shacl:maxCount 1;
@@ -145,28 +162,21 @@
     shacl:path dc:creator
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The type of the identifier."@en;
+    shacl:definition "The type of the Identifier."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "identifier type"@en;
     shacl:path dc:type
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The value of this property is the identifier itself."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "identifier"@en;
-    shacl:path skos:notation
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The name of the agency responsible for issuing the identifier."@en;
+    shacl:definition "The name of the agency responsible for issuing the Identifier."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "issuing authority"@en;
     shacl:path <http://www.w3.org/ns/adms#schemeAgency>
   ], [
     shacl:datatype xsd:dateTime;
-    shacl:definition "The date on which the identifier was assigned."@en;
+    shacl:definition "The date on which the Identifier was assigned."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "date of issue"@en;
@@ -178,7 +188,7 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://www.w3.org/ns/legal#LegalEntity>;
-    shacl:definition "This is the key class for the Business Core Vocabulary and represents a business that is legally registered. In many countries there is a single registry although in others, such as Spain and Germany, multiple registries exist. A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. It is a sub class of org:FormalOrganization which covers a wider range of entities, such as charities."@en;
+    shacl:definition "The Legal Entity holding Licence(s) as permit to carry out its activities."@en;
     shacl:name "held by"@en;
     shacl:path <https://data.europa.eu/m8g/heldBy>
   ];
@@ -218,6 +228,13 @@
   ] .
 
  [
+    shacl:class <https://data.europa.eu/m8g/Change>;
+    shacl:definition "TODO"@en;
+    shacl:name "change"@en;
+    shacl:path <https://data.europa.eu/m8g/change>
+  ] .
+
+ [
     shacl:class rdf:langString;
     shacl:definition "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name."@en;
     shacl:name "alternative name"@en;
@@ -241,7 +258,7 @@
 
  [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a legal entity and the authority with which it is registered."@en;
+    shacl:definition "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "legal identifier"@en;
@@ -250,13 +267,14 @@
 
  [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "The identity relation links a resource to any formally issued identifier for that resource other than the one that confers legal status upon it."@en;
+    shacl:definition "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it."@en;
     shacl:name "identifier"@en;
     shacl:path dc:identifier
   ] .
 
  [
     shacl:class <https://data.europa.eu/m8g/Licence>;
+    shacl:definition "The Licence(s) held by a Legal Entity to carry out its activities."@en;
     shacl:name "holds licence"@en;
     shacl:path <https://data.europa.eu/m8g/holdsLicence>
   ] .
