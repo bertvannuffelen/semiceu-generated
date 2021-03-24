@@ -5,10 +5,10 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/core-location-ap_en> <https://semiceu.github.io/shacl/core-location-ap_enshapes> <https://semiceu.github.io/shacl/core-location-ap_en#ResourceShape>,
-    <https://semiceu.github.io/shacl/core-location-ap_en#LocationShape>,
+<https://semiceu.github.io/shacl/core-location-ap_en> <https://semiceu.github.io/shacl/core-location-ap_enshapes> <https://semiceu.github.io/shacl/core-location-ap_en#AddressShape>,
     <https://semiceu.github.io/shacl/core-location-ap_en#GeometryShape>,
-    <https://semiceu.github.io/shacl/core-location-ap_en#AddressShape> .
+    <https://semiceu.github.io/shacl/core-location-ap_en#LocationShape>,
+    <https://semiceu.github.io/shacl/core-location-ap_en#ResourceShape> .
 
 <https://semiceu.github.io/shacl/core-location-ap_en#AddressShape> a shacl:NodeShape;
   shacl:closed false;
@@ -21,39 +21,11 @@
     shacl:path <http://www.w3.org/ns/locn#poBox>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
+    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)"""@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "admin unit level 1 (country)"@en;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "address area"@en;
-    shacl:path <http://www.w3.org/ns/locn#addressArea>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The post code/zip code of an address."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "post code"@en;
-    shacl:path <http://www.w3.org/ns/locn#postCode>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "thoroughfare"@en;
-    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "admin unit level 2 (country/region/state)"@en;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
+    shacl:name "post name (city)"@en;
+    shacl:path <http://www.w3.org/ns/locn#postName>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."@en;
@@ -63,18 +35,25 @@
     shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)"""@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "post name (city)"@en;
-    shacl:path <http://www.w3.org/ns/locn#postName>
-  ], [
-    shacl:datatype xsd:string;
     shacl:definition "A globally unique identifier for each instance of an Address."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "address ID"@en;
     shacl:path <http://www.w3.org/ns/locn#addressID>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The complete address written as a formatted string."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "full address"@en;
+    shacl:path <http://www.w3.org/ns/locn#fullAddress>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "address area"@en;
+    shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."@en;
@@ -84,11 +63,32 @@
     shacl:path <http://www.w3.org/ns/locn#locatorName>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The complete address written as a formatted string."@en;
+    shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "full address"@en;
-    shacl:path <http://www.w3.org/ns/locn#fullAddress>
+    shacl:name "admin unit level 1 (country)"@en;
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The post code/zip code of an address."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "post code"@en;
+    shacl:path <http://www.w3.org/ns/locn#postCode>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "admin unit level 2 (country/region/state)"@en;
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "thoroughfare"@en;
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
@@ -101,13 +101,6 @@
     shacl:minCount 1;
     shacl:name "latitude"@en;
     shacl:path schema:latitude
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The longitude."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "longitude"@en;
-    shacl:path schema:longitude
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "The geometry written in Geography Markup Language."@en;
@@ -122,12 +115,35 @@
     shacl:minCount 1;
     shacl:name "wkt"@en;
     shacl:path <http://www.opengis.net/ont/geosparql#wktLiteral>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The longitude."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "longitude"@en;
+    shacl:path schema:longitude
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Geometry> .
 
 <https://semiceu.github.io/shacl/core-location-ap_en#LocationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Geometry>;
+    shacl:definition "Associates any Resource with the corresponding Geometry."@en;
+    shacl:name "geometry"@en;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
+  ], [
+    shacl:class <http://www.w3.org/ns/locn#Geometry>;
+    shacl:definition "Associates any Resource with the corresponding Geometry."@en;
+    shacl:name "geometry"@en;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
+  ], [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition """The address relationship associates any Resource with the Address class (i.e. anything can be
+linked to its address using this property)."""@en;
+    shacl:name "address"@en;
+    shacl:path <https://data.europa.eu/m8g/address>
+  ], [
     shacl:class rdf:langString;
     shacl:definition "A geographic name is a proper noun applied to a spatial object."@en;
     shacl:maxCount 1;
@@ -141,16 +157,6 @@
     shacl:minCount 1;
     shacl:name "geographic identifier"@en;
     shacl:path rdfs:seeAlso
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Geometry>;
-    shacl:definition "Associates any Resource with the corresponding Geometry."@en;
-    shacl:name "geometry"@en;
-    shacl:path <http://www.w3.org/ns/locn#geometry>
-  ], [
-    shacl:class <http://www.w3.org/ns/locn#Geometry>;
-    shacl:definition "Associates any Resource with the corresponding Geometry."@en;
-    shacl:name "geometry"@en;
-    shacl:path <http://www.w3.org/ns/locn#geometry>
   ];
   shacl:targetClass dc:Location .
 
