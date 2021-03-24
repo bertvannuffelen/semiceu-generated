@@ -1,6 +1,3 @@
----
-title: Example 1
----
 ```
  <ex:a> a locn:Location ;
     locn:geometry

@@ -167,7 +167,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.00">https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/395bed8a6c15cf5de5e512ef655b62c9048800dd/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/395bed8a6c15cf5de5e512ef655b62c9048800dd/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/bca5d9591c5ef2b1586c3bdc05f74bfd1bca8d0f/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/bca5d9591c5ef2b1586c3bdc05f74bfd1bca8d0f/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/Core-Business-Vocabulary/issues">https://github.com/SEMICeu/Core-Business-Vocabulary/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="Core-Business-Vocabulary">Core-Business-Vocabulary</a></dd>-->
 
@@ -575,7 +575,9 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
               <h3 class="h3" id="Agent"><a href="http://xmlns.com/foaf/0.1/Agent" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Agent" data-placement="right">Agent</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The Agent class is any resource that acts or has the power to act. This includes people, organisations and groups.</dd>
+                    <dt>Description</dt><dd>Any entity that is able to carry out actions.</dd>
+                    
+                    <dt>Usage</dt><dd>In compliance with the description from FOAF, an Agent is considered as any entity that is able to carry out actions. The Agent class acts as a generic element which can be further specified by implementers for their usages, for example by defining the Person class from the Core Person Vocabulary or Organization from W3C's Organization Ontology as subclasses of Agent. This Person or Organization can then issue a certain Requirement or be concerned by an Evidence provided.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -647,12 +649,12 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">Preferred label for the code list defined.</td>
+                        <td property="skos:scopeNote">For example for the human sex code list: Codes for the representation of human sexes. This label can be repeated in other languages.</td>
                         <td></td>
                       </tr>
                     
@@ -670,8 +672,8 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">Unique name of the list.</td>
+                        <td property="skos:scopeNote">For example, ISO/IEC 5218:2004 for the human sex code list.</td>
                         <td></td>
                       </tr>
                     
@@ -689,8 +691,9 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">The responsible entity for the creation of the code list.</td>
+                        <td property="skos:scopeNote">If the publisher has a URI, so much the better, if not, it may be necessary to create a blank node, e.g. dcterms:title "ISO". The value of dcterms:creator should always be the URI of an Agent class, not a simple string or the URI of a Web site homepage.
+</td>
                         <td></td>
                       </tr>
                     
@@ -708,8 +711,8 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">The version of the code list.</td>
+                        <td property="skos:scopeNote">In the example of human sex, the version would be 2004.</td>
                         <td></td>
                       </tr>
                     
