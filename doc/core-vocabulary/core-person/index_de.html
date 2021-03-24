@@ -167,7 +167,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/Core-Person-Vocabulary/tree/master/releases/2.00">https://github.com/SEMICeu/Core-Person-Vocabulary/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/5949d0f2735789b154e03b662d464f489cf240b5/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/5949d0f2735789b154e03b662d464f489cf240b5/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/5128a1d06a67abd66e157f31478324aa96f47f5b/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/5128a1d06a67abd66e157f31478324aa96f47f5b/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/Core-Person-Vocabulary/issues">https://github.com/SEMICeu/Core-Person-Vocabulary/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="Core-Person-Vocabulary">Core-Person-Vocabulary</a></dd>-->
 
@@ -643,14 +643,19 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Person%3Agender">gender</a>, 
+                      <a href="#Person%3Acountry%20of%20birth">country of birth</a>, 
                       <a href="#Person%3Achange">change</a>, 
                       <a href="#Person%3Acitizenship">citizenship</a>, 
                       <a href="#Person%3Aidentifier">identifier</a>, 
                       <a href="#Person%3Adate%20of%20birth">date of birth</a>, 
                       <a href="#Person%3Adate%20of%20death">date of death</a>, 
-                      <a href="#Person%3Aalternative%20name">alternative name</a>, 
+                      <a href="#Person%3Agender">gender</a>, 
                       <a href="#Person%3Abirth%20name">birth name</a>, 
+                      <a href="#Person%3Aalternative%20name">alternative name</a>, 
+                      <a href="#Person%3Aplace%20of%20death">place of death</a>, 
+                      <a href="#Person%3Acountry%20of%20death">country of death</a>, 
+                      <a href="#Person%3Aresidency">residency</a>, 
+                      <a href="#Person%3Aplace%20of%20birth">place of birth</a>, 
                       <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
                       <a href="#Person%3Afamily%20name">family name</a>, 
                       <a href="#Person%3Agiven%20name">given name</a>, 
@@ -673,22 +678,31 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
 
                     <tbody class="supertype">
                     
-                      <tr id="Person%3Agender" typeof="rdfs:Property" resource="http://schema.org/gender">
+                      <tr id="Person%3Acountry%20of%20birth" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://schema.org/gender" data-toggle="tooltip" data-content="http://schema.org/gender" data-placement="right">
-                            gender</a>
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            country of birth</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Concept</a>
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
 			    
                           
                         </td>
-                        <td property="rdfs:comment">Gender of the Person.</td>
-                        <td property="skos:scopeNote">The gender of an individual should be recorded using a controlled vocabulary that is appropriate for the specific context. In some cases the chromosomal or physical state of an individual will be more important than the gender that they express, in others the reverse will be true. What is always important is that the controlled vocabulary used to describe an individual's gender is stated explicitly.</td>
+                        <td property="rdfs:comment">The country in which a Person was born.</td>
+                        <td property="skos:scopeNote">The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like "DE" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.
+Providing a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.
+Known diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:
+(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),
+(b) different languages (Italy vs. Italia),
+(c) historic name vs. current name (Burma vs. Myanmar),
+(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).
+The Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.
+See http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.
+Where a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3].</td>
                         <td></td>
                       </tr>
                     
@@ -706,8 +720,8 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
 			    
                           
                         </td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">The change relationship links a Class to a record of change in a data field associated with the Class.</td>
+                        <td property="skos:scopeNote">For example, a change of name or a person's their death. It is assumed that an inverse relationship will also be defined.</td>
                         <td></td>
                       </tr>
                     
@@ -787,6 +801,44 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                         <td></td>
                       </tr>
                     
+                      <tr id="Person%3Agender" typeof="rdfs:Property" resource="http://schema.org/gender">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/gender" data-toggle="tooltip" data-content="http://schema.org/gender" data-placement="right">
+                            gender</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Concept</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">Gender of the Person.</td>
+                        <td property="skos:scopeNote">The gender of an individual should be recorded using a controlled vocabulary that is appropriate for the specific context. In some cases the chromosomal or physical state of an individual will be more important than the gender that they express, in others the reverse will be true. What is always important is that the controlled vocabulary used to describe an individual's gender is stated explicitly.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Abirth%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#birthName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#birthName" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#birthName" data-placement="right">
+                            birth name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">Full name of the Person given upon their birth.</td>
+                        <td property="skos:scopeNote">All data associated with an individual are subject to change. Names can change for a variety of reasons, either formally or informally, and new information may come to light that means that a correction or clarification can be made to an existing record. Birth names tend to be persistent however and for this reason they are recorded by some public sector information systems. There is no granularity for birth name - the full name should be recorded in a single field.</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Person%3Aalternative%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/alternative">
                         <td>
                           <code property="rdfs:label">
@@ -809,22 +861,93 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td></td>
                       </tr>
                     
-                      <tr id="Person%3Abirth%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#birthName">
+                      <tr id="Person%3Aplace%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/person#birthName" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#birthName" data-placement="right">
-                            birth name</a>
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            place of death</a>
                           </code>
                         </td>
                         <td>
                           
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
+			    
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
+			    
                           
                         </td>
-                        <td property="rdfs:comment">Full name of the Person given upon their birth.</td>
-                        <td property="skos:scopeNote">All data associated with an individual are subject to change. Names can change for a variety of reasons, either formally or informally, and new information may come to light that means that a correction or clarification can be made to an existing record. Birth names tend to be persistent however and for this reason they are recorded by some public sector information systems. There is no granularity for birth name - the full name should be recorded in a single field.</td>
+                        <td property="rdfs:comment">A Person&#39;s place of death.</td>
+                        <td property="skos:scopeNote">The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:
+(1) the geographic name of the place, which is given as a string such as "Amsterdam" or "Valetta" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).
+The use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Acountry%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            country of death</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The country in which a Person died.</td>
+                        <td property="skos:scopeNote">The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like "DE" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.
+Providing a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.
+Known diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:
+(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),
+(b) different languages (Italy vs. Italia),
+(c) historic name vs. current name (Burma vs. Myanmar),
+(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).
+The Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.
+See http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.
+Where a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3].</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Aresidency" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            residency</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Jurisdiction</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">Residency typically provides an individual with a subset of the rights of a citizen.</td>
+                        <td property="skos:scopeNote">
+A Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Aplace%20of%20birth" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            place of birth</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">A Person&#39;s place of birth.</td>
+                        <td property="skos:scopeNote">The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:
+(1) the geographic name of the place, which is given as a string such as "Amsterdam" or "Valetta" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).
+The use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported.</td>
                         <td></td>
                       </tr>
                     
@@ -933,14 +1056,19 @@ A name usually sticks with a person for a long time period. In some European cou
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Person%3Agender">gender</a>, 
+                      <a href="#Person%3Acountry%20of%20birth">country of birth</a>, 
                       <a href="#Person%3Achange">change</a>, 
                       <a href="#Person%3Acitizenship">citizenship</a>, 
                       <a href="#Person%3Aidentifier">identifier</a>, 
                       <a href="#Person%3Adate%20of%20birth">date of birth</a>, 
                       <a href="#Person%3Adate%20of%20death">date of death</a>, 
-                      <a href="#Person%3Aalternative%20name">alternative name</a>, 
+                      <a href="#Person%3Agender">gender</a>, 
                       <a href="#Person%3Abirth%20name">birth name</a>, 
+                      <a href="#Person%3Aalternative%20name">alternative name</a>, 
+                      <a href="#Person%3Aplace%20of%20death">place of death</a>, 
+                      <a href="#Person%3Acountry%20of%20death">country of death</a>, 
+                      <a href="#Person%3Aresidency">residency</a>, 
+                      <a href="#Person%3Aplace%20of%20birth">place of birth</a>, 
                       <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
                       <a href="#Person%3Afamily%20name">family name</a>, 
                       <a href="#Person%3Agiven%20name">given name</a>, 
@@ -963,22 +1091,31 @@ A name usually sticks with a person for a long time period. In some European cou
 
                     <tbody class="supertype">
                     
-                      <tr id="Person%3Agender" typeof="rdfs:Property" resource="http://schema.org/gender">
+                      <tr id="Person%3Acountry%20of%20birth" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://schema.org/gender" data-toggle="tooltip" data-content="http://schema.org/gender" data-placement="right">
-                            gender</a>
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            country of birth</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Concept</a>
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
 			    
                           
                         </td>
-                        <td property="rdfs:comment">Gender of the Person.</td>
-                        <td property="skos:scopeNote">The gender of an individual should be recorded using a controlled vocabulary that is appropriate for the specific context. In some cases the chromosomal or physical state of an individual will be more important than the gender that they express, in others the reverse will be true. What is always important is that the controlled vocabulary used to describe an individual's gender is stated explicitly.</td>
+                        <td property="rdfs:comment">The country in which a Person was born.</td>
+                        <td property="skos:scopeNote">The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like "DE" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.
+Providing a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.
+Known diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:
+(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),
+(b) different languages (Italy vs. Italia),
+(c) historic name vs. current name (Burma vs. Myanmar),
+(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).
+The Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.
+See http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.
+Where a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3].</td>
                         <td></td>
                       </tr>
                     
@@ -996,8 +1133,8 @@ A name usually sticks with a person for a long time period. In some European cou
 			    
                           
                         </td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">The change relationship links a Class to a record of change in a data field associated with the Class.</td>
+                        <td property="skos:scopeNote">For example, a change of name or a person's their death. It is assumed that an inverse relationship will also be defined.</td>
                         <td></td>
                       </tr>
                     
@@ -1077,6 +1214,44 @@ A name usually sticks with a person for a long time period. In some European cou
                         <td></td>
                       </tr>
                     
+                      <tr id="Person%3Agender" typeof="rdfs:Property" resource="http://schema.org/gender">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://schema.org/gender" data-toggle="tooltip" data-content="http://schema.org/gender" data-placement="right">
+                            gender</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Concept</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">Gender of the Person.</td>
+                        <td property="skos:scopeNote">The gender of an individual should be recorded using a controlled vocabulary that is appropriate for the specific context. In some cases the chromosomal or physical state of an individual will be more important than the gender that they express, in others the reverse will be true. What is always important is that the controlled vocabulary used to describe an individual's gender is stated explicitly.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Abirth%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#birthName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#birthName" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#birthName" data-placement="right">
+                            birth name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">Full name of the Person given upon their birth.</td>
+                        <td property="skos:scopeNote">All data associated with an individual are subject to change. Names can change for a variety of reasons, either formally or informally, and new information may come to light that means that a correction or clarification can be made to an existing record. Birth names tend to be persistent however and for this reason they are recorded by some public sector information systems. There is no granularity for birth name - the full name should be recorded in a single field.</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Person%3Aalternative%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/alternative">
                         <td>
                           <code property="rdfs:label">
@@ -1099,22 +1274,93 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td></td>
                       </tr>
                     
-                      <tr id="Person%3Abirth%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#birthName">
+                      <tr id="Person%3Aplace%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/person#birthName" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#birthName" data-placement="right">
-                            birth name</a>
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            place of death</a>
                           </code>
                         </td>
                         <td>
                           
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
+			    
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
+			    
                           
                         </td>
-                        <td property="rdfs:comment">Full name of the Person given upon their birth.</td>
-                        <td property="skos:scopeNote">All data associated with an individual are subject to change. Names can change for a variety of reasons, either formally or informally, and new information may come to light that means that a correction or clarification can be made to an existing record. Birth names tend to be persistent however and for this reason they are recorded by some public sector information systems. There is no granularity for birth name - the full name should be recorded in a single field.</td>
+                        <td property="rdfs:comment">A Person&#39;s place of death.</td>
+                        <td property="skos:scopeNote">The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:
+(1) the geographic name of the place, which is given as a string such as "Amsterdam" or "Valetta" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).
+The use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Acountry%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            country of death</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The country in which a Person died.</td>
+                        <td property="skos:scopeNote">The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like "DE" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.
+Providing a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.
+Known diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:
+(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),
+(b) different languages (Italy vs. Italia),
+(c) historic name vs. current name (Burma vs. Myanmar),
+(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).
+The Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.
+See http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.
+Where a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3].</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Aresidency" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            residency</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Jurisdiction</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">Residency typically provides an individual with a subset of the rights of a citizen.</td>
+                        <td property="skos:scopeNote">
+A Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Aplace%20of%20birth" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            place of birth</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Location</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">A Person&#39;s place of birth.</td>
+                        <td property="skos:scopeNote">The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:
+(1) the geographic name of the place, which is given as a string such as "Amsterdam" or "Valetta" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).
+The use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported.</td>
                         <td></td>
                       </tr>
                     

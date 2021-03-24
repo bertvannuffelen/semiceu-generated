@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/5949d0f2735789b154e03b662d464f489cf240b5",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/5949d0f2735789b154e03b662d464f489cf240b5/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/5128a1d06a67abd66e157f31478324aa96f47f5b",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/5128a1d06a67abd66e157f31478324aa96f47f5b/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/Core-Person-Vocabulary/issues",
     "standaardregisterurl": "Core-Person-Vocabulary",
     "usesVocs": [],
@@ -465,9 +465,11 @@
             "en": "change"
           },
           "description": {
-            "en": "TODO"
+            "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
           },
-          "usage": {},
+          "usage": {
+            "en": "For example, a change of name or a person's their death. It is assumed that an inverse relationship will also be defined."
+          },
           "domain": [
             {
               "EA-Name": "Person",
@@ -743,6 +745,191 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "country of birth",
+          "sort": "country of birth",
+          "label": {
+            "en": "country of birth"
+          },
+          "description": {
+            "en": "The country in which a Person was born."
+          },
+          "usage": {
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "place of death",
+          "sort": "place of death",
+          "label": {
+            "en": "place of death"
+          },
+          "description": {
+            "en": "A Person's place of death."
+          },
+          "usage": {
+            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "country of death",
+          "sort": "country of death",
+          "label": {
+            "en": "country of death"
+          },
+          "description": {
+            "en": "The country in which a Person died."
+          },
+          "usage": {
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "residency",
+          "sort": "residency",
+          "label": {
+            "en": "residency"
+          },
+          "description": {
+            "en": "Residency typically provides an individual with a subset of the rights of a citizen."
+          },
+          "usage": {
+            "en": "\nA Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Jurisdiction",
+              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Jurisdiction",
+              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
+              "range_label": {
+                "en": "Jurisdiction"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "place of birth",
+          "sort": "place of birth",
+          "label": {
+            "en": "place of birth"
+          },
+          "description": {
+            "en": "A Person's place of birth."
+          },
+          "usage": {
+            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -916,9 +1103,11 @@
             "en": "change"
           },
           "description": {
-            "en": "TODO"
+            "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
           },
-          "usage": {},
+          "usage": {
+            "en": "For example, a change of name or a person's their death. It is assumed that an inverse relationship will also be defined."
+          },
           "domain": [
             {
               "EA-Name": "Person",
@@ -1194,6 +1383,191 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "country of birth",
+          "sort": "country of birth",
+          "label": {
+            "en": "country of birth"
+          },
+          "description": {
+            "en": "The country in which a Person was born."
+          },
+          "usage": {
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "place of death",
+          "sort": "place of death",
+          "label": {
+            "en": "place of death"
+          },
+          "description": {
+            "en": "A Person's place of death."
+          },
+          "usage": {
+            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "country of death",
+          "sort": "country of death",
+          "label": {
+            "en": "country of death"
+          },
+          "description": {
+            "en": "The country in which a Person died."
+          },
+          "usage": {
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses ISO 3166-1 codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "residency",
+          "sort": "residency",
+          "label": {
+            "en": "residency"
+          },
+          "description": {
+            "en": "Residency typically provides an individual with a subset of the rights of a citizen."
+          },
+          "usage": {
+            "en": "\nA Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Jurisdiction",
+              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Jurisdiction",
+              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
+              "range_label": {
+                "en": "Jurisdiction"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "place of birth",
+          "sort": "place of birth",
+          "label": {
+            "en": "place of birth"
+          },
+          "description": {
+            "en": "A Person's place of birth."
+          },
+          "usage": {
+            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
