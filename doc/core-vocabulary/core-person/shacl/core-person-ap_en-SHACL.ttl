@@ -7,12 +7,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape>,
+<https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#ConceptShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape> .
+    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#ChangeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -25,19 +25,19 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype xsd:string;
+    shacl:definition "The name of the agency responsible for issuing the Identifier."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "issuing authority"@en;
+    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
+  ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "The date on which the Identifier was assigned."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "date of issue"@en;
     shacl:path dc:created
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The type of the Identifier."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "identifier type"@en;
-    shacl:path dc:type
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The value of this property is the Identifier itself."@en;
@@ -59,11 +59,11 @@
     shacl:path <http://www.w3.org/ns/adms#identifies>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The name of the agency responsible for issuing the Identifier."@en;
+    shacl:definition "The type of the Identifier."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "issuing authority"@en;
-    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
+    shacl:name "identifier type"@en;
+    shacl:path dc:type
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
@@ -113,89 +113,10 @@
     shacl:name "country of death"@en;
     shacl:path <http://www.w3.org/ns/person#countryOfBirth>
   ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Full name of the Person given upon their birth."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "birth name"@en;
-    shacl:path <http://www.w3.org/ns/person#birthName>
-  ], [
-    shacl:class dc:Location;
-    shacl:definition "A Person's place of birth."@en;
-    shacl:name "place of birth"@en;
-    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The full name contains the complete name of a person as one string."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "full name"@en;
-    shacl:path foaf:name
-  ], [
-    shacl:class dc:Jurisdiction;
-    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
-    shacl:name "citizenship"@en;
-    shacl:path dc:citizenship
-  ], [
-    shacl:class dc:Location;
-    shacl:definition "A Person's place of death."@en;
-    shacl:name "place of death"@en;
-    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
-  ], [
-    shacl:class <https://data.europa.eu/m8g/Change>;
-    shacl:definition "The change relationship links a Class to a record of change in a data field associated with the Class."@en;
-    shacl:name "change"@en;
-    shacl:path <https://data.europa.eu/m8g/change>
-  ], [
-    shacl:class dc:Jurisdiction;
-    shacl:definition "Residency typically provides an individual with a subset of the rights of a citizen."@en;
-    shacl:name "residency"@en;
-    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "A date that specifies the birth date of a Person."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "date of birth"@en;
-    shacl:path schema:birthDate
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Name based on the given name of the Person's father."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "patronymic name"@en;
-    shacl:path <http://www.w3.org/ns/person#patronymicName>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "A family name is usually shared by members of a family."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "family name"@en;
-    shacl:path foaf:familyName
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Any name by which an individual is known other than their full name."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "alternative name"@en;
-    shacl:path dc:alternative
-  ], [
     shacl:class dc:Location;
     shacl:definition "The country in which a Person was born."@en;
     shacl:name "country of birth"@en;
     shacl:path <http://www.w3.org/ns/person#countryOfBirth>
-  ], [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "An Identifier for the Person."@en;
-    shacl:name "identifier"@en;
-    shacl:path dc:identifier
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "A date that specifies the death date of a Person."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "date of death"@en;
-    shacl:path schema:deathDate
   ], [
     shacl:class skos:Concept;
     shacl:definition "Gender of the Person."@en;
@@ -209,5 +130,84 @@ a family."""@en;
     shacl:minCount 1;
     shacl:name "given name"@en;
     shacl:path foaf:givenName
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "A Person's place of birth."@en;
+    shacl:name "place of birth"@en;
+    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "A date that specifies the death date of a Person."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "date of death"@en;
+    shacl:path schema:deathDate
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Name based on the given name of the Person's father."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "patronymic name"@en;
+    shacl:path <http://www.w3.org/ns/person#patronymicName>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "A date that specifies the birth date of a Person."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "date of birth"@en;
+    shacl:path schema:birthDate
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Any name by which an individual is known other than their full name."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "alternative name"@en;
+    shacl:path dc:alternative
+  ], [
+    shacl:class dc:Jurisdiction;
+    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
+    shacl:name "citizenship"@en;
+    shacl:path dc:citizenship
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Change>;
+    shacl:definition "The change relationship links a Class to a record of change in a data field associated with the Class."@en;
+    shacl:name "change"@en;
+    shacl:path <https://data.europa.eu/m8g/change>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Full name of the Person given upon their birth."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "birth name"@en;
+    shacl:path <http://www.w3.org/ns/person#birthName>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The full name contains the complete name of a person as one string."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "full name"@en;
+    shacl:path foaf:name
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "A Person's place of death."@en;
+    shacl:name "place of death"@en;
+    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "An Identifier for the Person."@en;
+    shacl:name "identifier"@en;
+    shacl:path dc:identifier
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A family name is usually shared by members of a family."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "family name"@en;
+    shacl:path foaf:familyName
+  ], [
+    shacl:class dc:Jurisdiction;
+    shacl:definition "Residency typically provides an individual with a subset of the rights of a citizen."@en;
+    shacl:name "residency"@en;
+    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
   ];
   shacl:targetClass foaf:Person .
