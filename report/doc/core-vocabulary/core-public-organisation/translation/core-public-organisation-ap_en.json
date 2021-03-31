@@ -92,7 +92,7 @@
         "en": "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."
       },
       "usage": {
-        "en": "This class defines the notion of \"geometry\" at the conceptual level, and it shall be encoded by using different formats (see usage note of the locn:geometry property). We also refer to the examples at the bottom of this specification."
+        "en": "This class defines the notion of \"geometry\" at the conceptual level, and it shall be encoded by using different formats (see usage note of the locn:geometry property). We also refer to the <a href=\"#examples\">Examples section</a> of this specification for a number of different geometry examples expressed in different formats."
       }
     },
     {
@@ -184,23 +184,26 @@
       }
     },
     {
-      "EA-Guid": "{DF953D05-18CC-40fd-A09C-3ED1D82948E5}",
-      "name": "date of issue",
-      "label": {
-        "en": "date of issue"
-      },
-      "definition": {
-        "en": "The date on which the Identifier was assigned."
-      }
-    },
-    {
       "EA-Guid": "{C2B744EF-A0CC-4489-8270-82FFED3EDAE9}",
-      "name": "issuing authority uri",
+      "name": "issuing authority URI",
       "label": {
-        "en": "issuing authority uri"
+        "en": "issuing authority URI"
       },
       "definition": {
         "en": "The URI of the issuing authority."
+      },
+      "usage": {
+        "en": "Example: <https://belgium.be/id/organizations/1233>."
+      }
+    },
+    {
+      "EA-Guid": "{48F4DACE-671A-44dd-963D-208500BD0C06}",
+      "name": "description",
+      "label": {
+        "en": "description"
+      },
+      "definition": {
+        "en": "A textual description of the event."
       }
     },
     {
@@ -214,6 +217,16 @@
       }
     },
     {
+      "EA-Guid": "{DF953D05-18CC-40fd-A09C-3ED1D82948E5}",
+      "name": "date of issue",
+      "label": {
+        "en": "date of issue"
+      },
+      "definition": {
+        "en": "The date on which the Identifier was assigned."
+      }
+    },
+    {
       "EA-Guid": "{A0D68D59-FE20-40e6-A339-6AC6C8181AEE}",
       "name": "spatial",
       "label": {
@@ -224,16 +237,6 @@
       },
       "usage": {
         "en": "<p>\r\nThe value of the properly should be the URI of the region as defined in an authoritative\r\nlist of regions. In Europe, this is likely to be the Administrative Territorial Units\r\nNamed Authority List maintained by the Publications Office's Metadata Registry.\r\n</p></br>\r\n\r\n<p>\r\nThe ATU list does not include a geometry. That is, the territory is only identified by\r\nits name not its spatial coordinates. This is likely to be the case for similar lists. If\r\ngeometries are available for the Public Organization's territory, they can be linked\r\nfrom the territorial unit using the Core Location Vocabulary's locn:geometry\r\nproperty.\r\n</p>"
-      }
-    },
-    {
-      "EA-Guid": "{F0D1048C-7438-47ab-8CEE-617CE01EA1E0}",
-      "name": "identifier type",
-      "label": {
-        "en": "identifier type"
-      },
-      "definition": {
-        "en": "The type of the Identifier."
       }
     },
     {
@@ -347,6 +350,9 @@
       },
       "definition": {
         "en": "The value of this property is the Identifier itself."
+      },
+      "usage": {
+        "en": "Example: \"abc-12345-de\"^^<https://belgium.be/scheme/nationalIDnumber>."
       }
     },
     {
@@ -370,6 +376,9 @@
       },
       "definition": {
         "en": "The name of the agency responsible for issuing the Identifier."
+      },
+      "usage": {
+        "en": "Example: \"Federal Public Service Interior\"@en."
       }
     },
     {
@@ -382,7 +391,7 @@
         "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
       },
       "usage": {
-        "en": "This would typically be part of a city, a neighbourhood or village."
+        "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre."
       }
     },
     {
@@ -408,7 +417,7 @@
         "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
       },
       "usage": {
-        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'United Kingdom' or 'UK' consistently throughout the data set and avoid mixing the two."
+        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary from the Publications Office can be reused for this."
       }
     },
     {
@@ -421,7 +430,7 @@
         "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
       },
       "usage": {
-        "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>."
+        "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary."
       }
     },
     {
@@ -434,7 +443,7 @@
         "en": "The complete address written as a formatted string."
       },
       "usage": {
-        "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction."
+        "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\"."
       }
     },
     {
@@ -447,7 +456,7 @@
         "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
       },
       "usage": {
-        "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17.\""
+        "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\"."
       }
     },
     {
@@ -465,15 +474,15 @@
     },
     {
       "EA-Guid": "{BD696942-96FF-49f8-9712-8C00CAC1493B}",
-      "name": "po box",
+      "name": "post office box",
       "label": {
-        "en": "po box"
+        "en": "post office box"
       },
       "definition": {
         "en": "The Post Office Box number."
       },
       "usage": {
-        "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology."
+        "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\"."
       }
     },
     {
@@ -486,7 +495,7 @@
         "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
       },
       "usage": {
-        "en": "Post codes are common elements in many countries' postal address systems."
+        "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
       }
     },
     {
@@ -496,7 +505,7 @@
         "en": "post name (city)"
       },
       "definition": {
-        "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r"
+        "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
       }
     },
     {
@@ -507,6 +516,9 @@
       },
       "definition": {
         "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+      },
+      "usage": {
+        "en": "For example, \"Avenue des Champs-Élysées\"."
       }
     },
     {
@@ -665,6 +677,26 @@
       },
       "usage": {
         "en": "Organizations typically comprise many departments, units, teams etc. Each of these\r\nis modelled in the CPOV as a unit that is linked from the parent Organization with\r\nhasUnit and to the parent with unitOf."
+      }
+    },
+    {
+      "EA-Guid": "{F591A0F8-E3B8-4c70-B362-B181D39CCA8B}",
+      "name": "ended at time",
+      "label": {
+        "en": "ended at time"
+      },
+      "definition": {
+        "en": "The time at which the Change Event ended."
+      }
+    },
+    {
+      "EA-Guid": "{A7D2921B-951A-4d4a-A111-F358F2F65AFE}",
+      "name": "started at time",
+      "label": {
+        "en": "started at time"
+      },
+      "definition": {
+        "en": "The time at which the Change Event started."
       }
     },
     {

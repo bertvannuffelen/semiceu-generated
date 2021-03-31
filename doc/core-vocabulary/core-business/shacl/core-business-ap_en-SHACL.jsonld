@@ -40,24 +40,6 @@
   "@id": "https://semiceu.github.io/shacl/core-business-ap_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/core-business-ap_en#LicenceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/legal#LegalEntity",
-          "sh:definition": {
-            "en": "The Legal Entity holding Licence(s) as permit to carry out its activities."
-          },
-          "sh:name": {
-            "en": "held by"
-          },
-          "sh:path": "https://data.europa.eu/m8g/heldBy"
-        }
-      ],
-      "sh:targetClass": "https://data.europa.eu/m8g/Licence"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/core-business-ap_en#ResourceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -146,10 +128,10 @@
           "sh:name": {
             "en": "date of issue"
           },
-          "sh:path": "http://purl.org/dc/terms/created"
+          "sh:path": "http://purl.org/dc/terms/issued"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
             "en": "The value of this property is the Identifier itself."
           },
@@ -159,18 +141,6 @@
             "en": "identifier"
           },
           "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "en": "The type of the Identifier."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "identifier type"
-          },
-          "sh:path": "http://purl.org/dc/terms/type"
         },
         {
           "sh:class": "http://www.w3.org/ns/legal#LegalEntity",
@@ -183,7 +153,7 @@
           "sh:path": "https://data.europa.eu/m8g/identifies"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
             "en": "The name of the agency responsible for issuing the Identifier."
           },
@@ -202,7 +172,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "issuing authority uri"
+            "en": "issuing authority URI"
           },
           "sh:path": "http://purl.org/dc/terms/creator"
         }
@@ -255,16 +225,6 @@
             "en": "company type"
           },
           "sh:path": "http://www.w3.org/ns/legal#companyType"
-        },
-        {
-          "sh:class": "https://data.europa.eu/m8g/Licence",
-          "sh:definition": {
-            "en": "The Licence(s) held by a Legal Entity to carry out its activities."
-          },
-          "sh:name": {
-            "en": "holds licence"
-          },
-          "sh:path": "https://data.europa.eu/m8g/holdsLicence"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
@@ -408,7 +368,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "po box"
+            "en": "post office box"
           },
           "sh:path": "http://www.w3.org/ns/locn#poBox"
         },
@@ -427,7 +387,7 @@
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r"
+            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -452,11 +412,11 @@
       "sh:targetClass": "http://www.w3.org/ns/locn#Address"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/core-business-ap_en#AgentShape",
+      "@id": "https://semiceu.github.io/shacl/core-business-ap_en#FormalOrganizationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
+      "sh:targetClass": "http://www.w3.org/ns/org#FormalOrganization"
     }
   ]
 }

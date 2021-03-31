@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Core Public Organisation Vocabulary",
     "uri": "https://data.europa.eu/m8g",
-    "issued": "2021-03-23",
+    "issued": "2021-04-01",
     "baseURI": "https://data.europa.eu/m8g/",
     "filename": "core-public-organisation-ap",
     "navigation": {
@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/664237362a3bfce9b894ac22f40231265b770692",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/664237362a3bfce9b894ac22f40231265b770692/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/6ecccfa7533ca7a4ca18597ae98be1c3b5ec3319",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/6ecccfa7533ca7a4ca18597ae98be1c3b5ec3319/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/CPOV/issues",
     "standaardregisterurl": "CPOV",
     "usesVocs": [],
@@ -864,7 +864,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "cpsv:FormalFramework",
+              "EA-Name": "FormalFramework",
               "uri": "http://purl.org/vocab/cpsv#FormalFramework"
             }
           ],
@@ -899,7 +899,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "cpsv:FormalFramework",
+              "EA-Name": "FormalFramework",
               "uri": "http://purl.org/vocab/cpsv#FormalFramework"
             }
           ],
@@ -934,7 +934,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "cpsv:FormalFramework",
+              "EA-Name": "FormalFramework",
               "uri": "http://purl.org/vocab/cpsv#FormalFramework"
             }
           ],
@@ -988,7 +988,44 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://purl.org/dc/terms/created",
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "issuing authority URI",
+          "sort": "issuing authority URI",
+          "label": {
+            "en": "issuing authority URI"
+          },
+          "description": {
+            "en": "The URI of the issuing authority."
+          },
+          "usage": {
+            "en": "Example: <https://belgium.be/id/organizations/1233>."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/issued",
           "name": "date of issue",
           "sort": "date of issue",
           "label": {
@@ -1023,76 +1060,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/creator",
-          "name": "issuing authority uri",
-          "sort": "issuing authority uri",
-          "label": {
-            "en": "issuing authority uri"
-          },
-          "description": {
-            "en": "The URI of the issuing authority."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Identifier",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "en": "URI"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/type",
-          "name": "identifier type",
-          "sort": "identifier type",
-          "label": {
-            "en": "identifier type"
-          },
-          "description": {
-            "en": "The type of the Identifier."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Identifier",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://www.w3.org/2004/02/skos/core#notation",
           "name": "identifier",
           "sort": "identifier",
@@ -1102,7 +1069,9 @@
           "description": {
             "en": "The value of this property is the Identifier itself."
           },
-          "usage": {},
+          "usage": {
+            "en": "Example: \"abc-12345-de\"^^<https://belgium.be/scheme/nationalIDnumber>."
+          },
           "domain": [
             {
               "EA-Name": "Identifier",
@@ -1111,16 +1080,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "en": "String"
+                "en": "Literal"
               }
             }
           ],
@@ -1137,7 +1106,9 @@
           "description": {
             "en": "The name of the agency responsible for issuing the Identifier."
           },
-          "usage": {},
+          "usage": {
+            "en": "Example: \"Federal Public Service Interior\"@en."
+          },
           "domain": [
             {
               "EA-Name": "Identifier",
@@ -1146,16 +1117,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "en": "String"
+                "en": "Literal"
               }
             }
           ],
@@ -1190,7 +1161,7 @@
             "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
           },
           "usage": {
-            "en": "This would typically be part of a city, a neighbourhood or village."
+            "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre."
           },
           "domain": [
             {
@@ -1264,7 +1235,7 @@
             "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
           },
           "usage": {
-            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'United Kingdom' or 'UK' consistently throughout the data set and avoid mixing the two."
+            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary from the Publications Office can be reused for this."
           },
           "domain": [
             {
@@ -1288,7 +1259,7 @@
             "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
           },
           "usage": {
-            "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>."
+            "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary."
           },
           "domain": [
             {
@@ -1325,7 +1296,7 @@
             "en": "The complete address written as a formatted string."
           },
           "usage": {
-            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction."
+            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\"."
           },
           "domain": [
             {
@@ -1362,7 +1333,7 @@
             "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
           },
           "usage": {
-            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17.\""
+            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\"."
           },
           "domain": [
             {
@@ -1427,16 +1398,16 @@
         },
         {
           "uri": "http://www.w3.org/ns/locn#poBox",
-          "name": "po box",
-          "sort": "po box",
+          "name": "post office box",
+          "sort": "post office box",
           "label": {
-            "en": "po box"
+            "en": "post office box"
           },
           "description": {
             "en": "The Post Office Box number."
           },
           "usage": {
-            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology."
+            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\"."
           },
           "domain": [
             {
@@ -1473,7 +1444,7 @@
             "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
           },
           "usage": {
-            "en": "Post codes are common elements in many countries' postal address systems."
+            "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
           },
           "domain": [
             {
@@ -1507,7 +1478,7 @@
             "en": "post name (city)"
           },
           "description": {
-            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r"
+            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
           },
           "usage": {},
           "domain": [
@@ -1544,7 +1515,9 @@
           "description": {
             "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
           },
-          "usage": {},
+          "usage": {
+            "en": "For example, \"Avenue des Champs-Élysées\"."
+          },
           "domain": [
             {
               "EA-Name": "Address",
@@ -1582,7 +1555,7 @@
         "en": "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."
       },
       "usage": {
-        "en": "This class defines the notion of \"geometry\" at the conceptual level, and it shall be encoded by using different formats (see usage note of the locn:geometry property). We also refer to the examples at the bottom of this specification."
+        "en": "This class defines the notion of \"geometry\" at the conceptual level, and it shall be encoded by using different formats (see usage note of the locn:geometry property). We also refer to the <a href=\"#examples\">Examples section</a> of this specification for a number of different geometry examples expressed in different formats."
       },
       "parents": [],
       "properties": [
@@ -1852,7 +1825,7 @@
           ],
           "range": [
             {
-              "range_label": "cpsv:FormalFramework",
+              "range_label": "FormalFramework",
               "range_uri": "http://purl.org/vocab/cpsv#FormalFramework"
             }
           ],
@@ -1866,6 +1839,41 @@
             }
           ],
           "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "A textual description of the event."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ChangeEvent",
+              "uri": "http://www.w3.org/ns/org#ChangeEvent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -1936,6 +1944,76 @@
             }
           ],
           "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/prov#endedAtTime",
+          "name": "ended at time",
+          "sort": "ended at time",
+          "label": {
+            "en": "ended at time"
+          },
+          "description": {
+            "en": "The time at which the Change Event ended."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ChangeEvent",
+              "uri": "http://www.w3.org/ns/org#ChangeEvent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/prov#startedAtTime",
+          "name": "started at time",
+          "sort": "started at time",
+          "label": {
+            "en": "started at time"
+          },
+          "description": {
+            "en": "The time at which the Change Event started."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ChangeEvent",
+              "uri": "http://www.w3.org/ns/org#ChangeEvent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         }
       ]

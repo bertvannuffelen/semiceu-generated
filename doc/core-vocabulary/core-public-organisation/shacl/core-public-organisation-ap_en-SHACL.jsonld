@@ -279,7 +279,7 @@
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/core-public-organisation-ap_en#cpsv:FormalFrameworkShape",
+      "@id": "https://semiceu.github.io/shacl/core-public-organisation-ap_en#FormalFrameworkShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -342,10 +342,10 @@
           "sh:name": {
             "en": "date of issue"
           },
-          "sh:path": "http://purl.org/dc/terms/created"
+          "sh:path": "http://purl.org/dc/terms/issued"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
             "en": "The value of this property is the Identifier itself."
           },
@@ -357,19 +357,7 @@
           "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "en": "The type of the Identifier."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "identifier type"
-          },
-          "sh:path": "http://purl.org/dc/terms/type"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
             "en": "The name of the agency responsible for issuing the Identifier."
           },
@@ -388,7 +376,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "issuing authority uri"
+            "en": "issuing authority URI"
           },
           "sh:path": "http://purl.org/dc/terms/creator"
         }
@@ -491,7 +479,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "po box"
+            "en": "post office box"
           },
           "sh:path": "http://www.w3.org/ns/locn#poBox"
         },
@@ -510,7 +498,7 @@
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r"
+            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -625,6 +613,30 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "A textual description of the event."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The time at which the Change Event ended."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "ended at time"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#endedAtTime"
+        },
+        {
           "sh:class": "http://purl.org/vocab/cpsv#FormalFramework",
           "sh:definition": {
             "en": "The property hasFormalFramework links a Change Event or Foundation Event to a piece of legislation or a policy document that prompted the change."
@@ -653,6 +665,18 @@
             "en": "resulting organization"
           },
           "sh:path": "http://www.w3.org/ns/org#resultingOrganization"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The time at which the Change Event started."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "started at time"
+          },
+          "sh:path": "http://www.w3.org/ns/prov#startedAtTime"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/org#ChangeEvent"
