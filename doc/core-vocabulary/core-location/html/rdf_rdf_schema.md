@@ -1,4 +1,3 @@
-## RDF (schema.org)
 ```
 <ex:a> a locn:Location ;
 locn:geometry [ a schema:GeoCoordinates; schema:latitude "51.477811";

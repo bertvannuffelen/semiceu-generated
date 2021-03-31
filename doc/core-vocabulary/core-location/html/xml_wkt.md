@@ -1,4 +1,3 @@
-## WKT (GeoSPARQL)
 ```
 <Geometry>
   <GeometryExpression>

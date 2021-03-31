@@ -1,4 +1,3 @@
-## URI reference (GeoHash)
 ```
 <Geometry>
   <GeometryExpression>

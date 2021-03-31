@@ -1,4 +1,3 @@
-## RDF (WGS84 lat/long)
 ```
 <ex:a> a locn:Location ;
 locn:geometry [ a geo:Point;

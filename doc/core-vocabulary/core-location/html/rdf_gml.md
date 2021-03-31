@@ -1,4 +1,3 @@
-## GML
 ```
  <ex:a> a locn:Location ;
     locn:geometry

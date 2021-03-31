@@ -1,4 +1,3 @@
-## RDF+WKT (GeoSPARQL)
 ```
 <ex:a> a locn:Location ;
 locn:geometry [ a ogc:Point; ogc:asWKT

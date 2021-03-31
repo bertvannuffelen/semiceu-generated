@@ -6,26 +6,26 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://semiceu.github.io/shacl/core-location-ap_en> <https://semiceu.github.io/shacl/core-location-ap_enshapes> <https://semiceu.github.io/shacl/core-location-ap_en#LocationShape>,
-    <https://semiceu.github.io/shacl/core-location-ap_en#AddressShape>,
+    <https://semiceu.github.io/shacl/core-location-ap_en#GeometryShape>,
     <https://semiceu.github.io/shacl/core-location-ap_en#ResourceShape>,
-    <https://semiceu.github.io/shacl/core-location-ap_en#GeometryShape> .
+    <https://semiceu.github.io/shacl/core-location-ap_en#AddressShape> .
 
 <https://semiceu.github.io/shacl/core-location-ap_en#AddressShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:string;
-    shacl:definition "The post code/zip code of an address."@en;
+    shacl:definition "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "post code"@en;
-    shacl:path <http://www.w3.org/ns/locn#postCode>
+    shacl:name "locator name"@en;
+    shacl:path <http://www.w3.org/ns/locn#locatorName>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The Post Office Box number."@en;
+    shacl:definition "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "po box"@en;
-    shacl:path <http://www.w3.org/ns/locn#poBox>
+    shacl:name "locator designator"@en;
+    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The complete address written as a formatted string."@en;
@@ -35,11 +35,11 @@
     shacl:path <http://www.w3.org/ns/locn#fullAddress>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."@en;
+    shacl:definition "The post code/zip code of an address."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "locator name"@en;
-    shacl:path <http://www.w3.org/ns/locn#locatorName>
+    shacl:name "post code"@en;
+    shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "A globally unique identifier for each instance of an Address."@en;
@@ -49,18 +49,18 @@
     shacl:path <http://www.w3.org/ns/locn#addressID>
   ], [
     shacl:datatype xsd:string;
+    shacl:definition "The Post Office Box number."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "po box"@en;
+    shacl:path <http://www.w3.org/ns/locn#poBox>
+  ], [
+    shacl:datatype xsd:string;
     shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "admin unit level 1 (country)"@en;
     shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "admin unit level 2 (country/region/state)"@en;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
@@ -84,11 +84,11 @@
     shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."@en;
+    shacl:definition "The region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "locator designator"@en;
-    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
+    shacl:name "admin unit level 2 (country/region/state)"@en;
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
@@ -103,6 +103,13 @@
     shacl:path schema:longitude
   ], [
     shacl:datatype rdfs:Literal;
+    shacl:definition "The geometry written in Geography Markup Language."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "gml"@en;
+    shacl:path <https://data.europa.eu/m8g/gml>
+  ], [
+    shacl:datatype rdfs:Literal;
     shacl:definition "The well-known text representation string describing the point, line or polygon."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -115,13 +122,6 @@
     shacl:minCount 1;
     shacl:name "latitude"@en;
     shacl:path schema:latitude
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "The geometry written in Geography Markup Language."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "gml"@en;
-    shacl:path <https://data.europa.eu/m8g/gml>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Geometry> .
 
@@ -134,6 +134,13 @@
     shacl:minCount 1;
     shacl:name "geographic identifier"@en;
     shacl:path rdfs:seeAlso
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "A geographic name is a proper noun applied to a spatial object."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "geographic name"@en;
+    shacl:path <http://www.w3.org/ns/locn#geographicName>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:definition """The address relationship associates any Resource with the Address class (i.e. anything can be
@@ -150,13 +157,6 @@ linked to its address using this property)."""@en;
     shacl:definition "Associates any Resource with the corresponding Geometry."@en;
     shacl:name "geometry"@en;
     shacl:path <http://www.w3.org/ns/locn#geometry>
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "A geographic name is a proper noun applied to a spatial object."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "geographic name"@en;
-    shacl:path <http://www.w3.org/ns/locn#geographicName>
   ];
   shacl:targetClass dc:Location .
 

@@ -1,4 +1,3 @@
-## GML
 ```
 <Geometry>
   <GeometryExpression>

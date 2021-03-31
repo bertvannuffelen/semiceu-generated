@@ -1,4 +1,3 @@
-## RDF+GML (GeoSPARQL)
 ```
 <ex:a> a locn:Location ;
 locn:geometry
