@@ -7,12 +7,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/core-business-ap_en> <https://semiceu.github.io/shacl/core-business-ap_enshapes> <https://semiceu.github.io/shacl/core-business-ap_en#AddressShape>,
+<https://semiceu.github.io/shacl/core-business-ap_en> <https://semiceu.github.io/shacl/core-business-ap_enshapes> <https://semiceu.github.io/shacl/core-business-ap_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/core-business-ap_en#LicenceShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_en#ResourceShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/core-business-ap_en#ConceptShape>,
+    <https://semiceu.github.io/shacl/core-business-ap_en#ResourceShape>,
     <https://semiceu.github.io/shacl/core-business-ap_en#AgentShape>,
+    <https://semiceu.github.io/shacl/core-business-ap_en#AddressShape>,
     <https://semiceu.github.io/shacl/core-business-ap_en#ChangeShape> .
 
 <https://semiceu.github.io/shacl/core-business-ap_en#AddressShape> a shacl:NodeShape;
@@ -26,32 +26,11 @@
     shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)"""@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "post name (city)"@en;
-    shacl:path <http://www.w3.org/ns/locn#postName>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The Post Office Box number."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "po box"@en;
-    shacl:path <http://www.w3.org/ns/locn#poBox>
-  ], [
-    shacl:datatype xsd:string;
     shacl:definition "The complete address written as a formatted string."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "full address"@en;
     shacl:path <http://www.w3.org/ns/locn#fullAddress>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "address area"@en;
-    shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."@en;
@@ -61,23 +40,18 @@
     shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "A globally unique identifier for each instance of an Address."@en;
+    shacl:definition "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "address ID"@en;
-    shacl:path <http://www.w3.org/ns/locn#addressID>
+    shacl:name "thoroughfare"@en;
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
+    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "admin unit level 1 (country)"@en;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
-  ], [
-    shacl:class <https://data.europa.eu/m8g/Change>;
-    shacl:definition "The change relationship links a Class to a record of change in a data field associated with the Class."@en;
-    shacl:name "change"@en;
-    shacl:path <https://data.europa.eu/m8g/change>
+    shacl:name "address area"@en;
+    shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
@@ -87,11 +61,37 @@
     shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ], [
     shacl:datatype xsd:string;
-    shacl:definition "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."@en;
+    shacl:definition "The uppermost administrative unit for the address, almost always a country."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "thoroughfare"@en;
-    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
+    shacl:name "admin unit level 1 (country)"@en;
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A globally unique identifier for each instance of an Address."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "address ID"@en;
+    shacl:path <http://www.w3.org/ns/locn#addressID>
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Change>;
+    shacl:definition "The change relationship links a Class to a record of change in a data field associated with the Class."@en;
+    shacl:name "change"@en;
+    shacl:path <https://data.europa.eu/m8g/change>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The Post Office Box number."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "po box"@en;
+    shacl:path <http://www.w3.org/ns/locn#poBox>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)"""@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "post name (city)"@en;
+    shacl:path <http://www.w3.org/ns/locn#postName>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."@en;
@@ -113,12 +113,12 @@
 <https://semiceu.github.io/shacl/core-business-ap_en#ConceptShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "The responsible entity for the creation of the code list."@en;
+    shacl:class rdf:langString;
+    shacl:definition "Preferred label for the code list defined."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "list agency"@en;
-    shacl:path dc:creator
+    shacl:name "content"@en;
+    shacl:path skos:prefLabel
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Unique name of the list."@en;
@@ -127,12 +127,12 @@
     shacl:name "list"@en;
     shacl:path skos:notation
   ], [
-    shacl:class rdf:langString;
-    shacl:definition "Preferred label for the code list defined."@en;
+    shacl:datatype xsd:string;
+    shacl:definition "The responsible entity for the creation of the code list."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "content"@en;
-    shacl:path skos:prefLabel
+    shacl:name "list agency"@en;
+    shacl:path dc:creator
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The version of the code list."@en;
@@ -146,20 +146,6 @@
 <https://semiceu.github.io/shacl/core-business-ap_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "The type of the Identifier."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "identifier type"@en;
-    shacl:path dc:type
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "The name of the agency responsible for issuing the Identifier."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "issuing authority"@en;
-    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
-  ], [
     shacl:datatype xsd:string;
     shacl:definition "The value of this property is the Identifier itself."@en;
     shacl:maxCount 1;
@@ -185,6 +171,20 @@
     shacl:definition "The identifies relationship links an Identifier class to the resource it identifies."@en;
     shacl:name "identifies"@en;
     shacl:path <https://data.europa.eu/m8g/identifies>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The type of the Identifier."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "identifier type"@en;
+    shacl:path dc:type
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "The name of the agency responsible for issuing the Identifier."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "issuing authority"@en;
+    shacl:path <http://www.w3.org/ns/adms#schemeAgency>
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
@@ -207,36 +207,6 @@
     shacl:path <http://www.w3.org/ns/legal#legalEntity>
   ];
   shacl:targetClass rdfs:Resource .
-
- [
-    shacl:class skos:Concept;
-    shacl:definition "This property records the type of company."@en;
-    shacl:maxCount 1;
-    shacl:name "company type"@en;
-    shacl:path <http://www.w3.org/ns/legal#companyType>
-  ] .
-
- [
-    shacl:class skos:Concept;
-    shacl:definition "This property records the status of the company."@en;
-    shacl:maxCount 1;
-    shacl:name "company status"@en;
-    shacl:path <http://www.w3.org/ns/legal#companyStatus>
-  ] .
-
- [
-    shacl:class skos:Concept;
-    shacl:definition "This property records the activity of the company."@en;
-    shacl:name "company activity"@en;
-    shacl:path <http://www.w3.org/ns/legal#companyActivity>
-  ] .
-
- [
-    shacl:class <https://data.europa.eu/m8g/Change>;
-    shacl:definition "The change relationship links a Class to a record of change in a data field associated with the Class."@en;
-    shacl:name "change"@en;
-    shacl:path <https://data.europa.eu/m8g/change>
-  ] .
 
  [
     shacl:class rdf:langString;
@@ -281,4 +251,34 @@
     shacl:definition "The Licence(s) held by a Legal Entity to carry out its activities."@en;
     shacl:name "holds licence"@en;
     shacl:path <https://data.europa.eu/m8g/holdsLicence>
+  ] .
+
+ [
+    shacl:class skos:Concept;
+    shacl:definition "This property records the type of company."@en;
+    shacl:maxCount 1;
+    shacl:name "company type"@en;
+    shacl:path <http://www.w3.org/ns/legal#companyType>
+  ] .
+
+ [
+    shacl:class skos:Concept;
+    shacl:definition "This property records the status of the company."@en;
+    shacl:maxCount 1;
+    shacl:name "company status"@en;
+    shacl:path <http://www.w3.org/ns/legal#companyStatus>
+  ] .
+
+ [
+    shacl:class skos:Concept;
+    shacl:definition "This property records the activity of the company."@en;
+    shacl:name "company activity"@en;
+    shacl:path <http://www.w3.org/ns/legal#companyActivity>
+  ] .
+
+ [
+    shacl:class <https://data.europa.eu/m8g/Change>;
+    shacl:definition "The change relationship links a Class to a record of change in a data field associated with the Class."@en;
+    shacl:name "change"@en;
+    shacl:path <https://data.europa.eu/m8g/change>
   ] .
