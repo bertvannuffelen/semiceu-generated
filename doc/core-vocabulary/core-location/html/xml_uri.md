@@ -1,0 +1,11 @@
+## URI reference (GeoHash)
+```
+<Geometry>
+  <GeometryExpression>
+    http://geohash.org/gcpuzgnzvxkp
+  </GeometryExpression>
+  <GeometryDataType>
+    GeoHash
+  </GeometryDataType>
+</Geometry>
+```
