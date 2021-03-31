@@ -28,6 +28,17 @@
 </head>
 
 <body>
+  <script type="text/javascript">
+		  function iframeLoaded() {
+			        var iFrameID = document.getElementById('exampleiframe');
+			        if(iFrameID) {
+					            // here you can make the height, I delete it first, then I make it again
+					            iFrameID.height = "";
+					            iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px";
+					      }   
+			    }
+	</script> 
+
   <div style="min-height:44px;;" id="duet-header" class="header">
     <!-- insert your global header here -->
     <title>SEMIC</title>
@@ -1057,7 +1068,7 @@ Resource is necessarily at that Location at the time when the assertion is made.
 <h2 class="h2">Geometry RDF Examples</h2>
 
 <div>
-	<iframe id="exampleiframe" src="https://bertvannuffelen.github.io/semiceu-generated/doc/core-vocabulary/core-location/html/code" width="100%"></iframe>
+	<iframe id="exampleiframe" src="https://bertvannuffelen.github.io/semiceu-generated/doc/core-vocabulary/core-location/html/code" width="100%" onload="iframeLoaded()"></iframe>
 </div>
 	    
 	    <!--
