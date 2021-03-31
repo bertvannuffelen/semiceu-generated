@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/5472aafa77fa4e3982da10a0c66be0124a3a4828",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/5472aafa77fa4e3982da10a0c66be0124a3a4828/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/bf7df6b435f1a4962c914d1c36337a157c64647d",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/bf7df6b435f1a4962c914d1c36337a157c64647d/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/Core-Person-Vocabulary/issues",
     "standaardregisterurl": "Core-Person-Vocabulary",
     "usesVocs": [],
@@ -120,7 +120,7 @@
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "A spatial region or named place."
+        "en": "An identifiable geographic place or named place."
       },
       "usage": {},
       "parents": [],
@@ -467,6 +467,447 @@
       ]
     },
     {
+      "uri": "http://www.w3.org/ns/locn#Address",
+      "name": "Address",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Address"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/locn#addressArea",
+          "name": "address area",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "address area"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "This would typically be part of a city, a neighbourhood or village."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#addressID",
+          "name": "address ID",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "address ID"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A globally unique identifier for each instance of an Address."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "de": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "administrative unit level 1 (country)",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "administrative unit level 1 (country)"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'United Kingdom' or 'UK' consistently throughout the data set and avoid mixing the two."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
+          "name": "administrative unit level 2 (country/region/state)",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "administrative unit level 2 (country/region/state)"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#fullAddress",
+          "name": "full address",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "full address"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The complete address written as a formatted string."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
+          "name": "locator designator",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "locator designator"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17.\""
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "de": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorName",
+          "name": "locator name",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "locator name"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Proper noun(s) applied to the real world entity identified by the locator."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#poBox",
+          "name": "po box",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "po box"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The Post Office Box number."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "de": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postCode",
+          "name": "post code",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "post code"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Post codes are common elements in many countries' postal address systems."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "de": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postName",
+          "name": "post name (city)",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "post name (city)"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#thoroughfare",
+          "name": "thoroughfare",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "thoroughfare"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/ns/person#Person",
       "name": "Person",
       "label": {
@@ -493,47 +934,6 @@
       ],
       "properties": [
         {
-          "uri": "https://data.europa.eu/m8g/change",
-          "name": "change",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "change"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "For example, a change of name or a person's their death. It is assumed that an inverse relationship will also be defined."
-          },
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Change",
-              "range_uri": "https://data.europa.eu/m8g/Change"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.europa.eu/m8g/Change",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Change"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://purl.org/dc/terms/alternative",
           "name": "alternative name",
           "sort": "Enter your translation here",
@@ -557,16 +957,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -626,7 +1026,10 @@
             "de": "Enter your translation here",
             "en": "An Identifier for the Person."
           },
-          "usage": {},
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "NOTE"
+          },
           "domain": [
             {
               "EA-Name": "Person",
@@ -662,7 +1065,7 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A date that specifies the birth date of a Person."
+            "en": "The day on which the Person was born."
           },
           "usage": {},
           "domain": [
@@ -699,7 +1102,7 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A date that specifies the death date of a Person."
+            "en": "The day on which the Person died."
           },
           "usage": {},
           "domain": [
@@ -791,61 +1194,20 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "country of birth",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "country of birth"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The country in which a Person was born."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
-          },
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Location",
-              "range_uri": "http://purl.org/dc/terms/Location"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://purl.org/dc/terms/Location",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Location"
-              }
-            }
-          ],
-          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -858,7 +1220,7 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A Person's place of death."
+            "en": "The Location where a Person died."
           },
           "usage": {
             "de": "Enter your translation here",
@@ -932,6 +1294,47 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "place of birth",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "place of birth"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The Location where the Person was born."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
           "name": "residency",
           "sort": "Enter your translation here",
           "label": {
@@ -973,19 +1376,19 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "place of birth",
+          "name": "country of birth",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "place of birth"
+            "en": "country of birth"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A Person's place of birth."
+            "en": "The country in which a Person was born."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
           },
           "domain": [
             {
@@ -1036,16 +1439,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1054,11 +1457,11 @@
         },
         {
           "uri": "http://xmlns.com/foaf/0.1/familyName",
-          "name": "family name",
+          "name": "family name (surname)",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "family name"
+            "en": "family name (surname)"
           },
           "description": {
             "de": "Enter your translation here",
@@ -1076,16 +1479,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1094,11 +1497,11 @@
         },
         {
           "uri": "http://xmlns.com/foaf/0.1/givenName",
-          "name": "given name",
+          "name": "given name (forename)",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "given name"
+            "en": "given name (forename)"
           },
           "description": {
             "de": "Enter your translation here",
@@ -1116,16 +1519,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1156,16 +1559,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1190,47 +1593,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.europa.eu/m8g/change",
-          "name": "change",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "change"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "For example, a change of name or a person's their death. It is assumed that an inverse relationship will also be defined."
-          },
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Change",
-              "range_uri": "https://data.europa.eu/m8g/Change"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.europa.eu/m8g/Change",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Change"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://purl.org/dc/terms/alternative",
           "name": "alternative name",
           "sort": "Enter your translation here",
@@ -1254,16 +1616,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1323,7 +1685,10 @@
             "de": "Enter your translation here",
             "en": "An Identifier for the Person."
           },
-          "usage": {},
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "NOTE"
+          },
           "domain": [
             {
               "EA-Name": "Person",
@@ -1359,7 +1724,7 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A date that specifies the birth date of a Person."
+            "en": "The day on which the Person was born."
           },
           "usage": {},
           "domain": [
@@ -1396,7 +1761,7 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A date that specifies the death date of a Person."
+            "en": "The day on which the Person died."
           },
           "usage": {},
           "domain": [
@@ -1488,61 +1853,20 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "country of birth",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "country of birth"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The country in which a Person was born."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
-          },
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Location",
-              "range_uri": "http://purl.org/dc/terms/Location"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://purl.org/dc/terms/Location",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Location"
-              }
-            }
-          ],
-          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -1555,7 +1879,7 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A Person's place of death."
+            "en": "The Location where a Person died."
           },
           "usage": {
             "de": "Enter your translation here",
@@ -1629,6 +1953,47 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "place of birth",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "place of birth"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The Location where the Person was born."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
           "name": "residency",
           "sort": "Enter your translation here",
           "label": {
@@ -1670,19 +2035,19 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "place of birth",
+          "name": "country of birth",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "place of birth"
+            "en": "country of birth"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "A Person's place of birth."
+            "en": "The country in which a Person was born."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
           },
           "domain": [
             {
@@ -1733,16 +2098,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1751,11 +2116,11 @@
         },
         {
           "uri": "http://xmlns.com/foaf/0.1/familyName",
-          "name": "family name",
+          "name": "family name (surname)",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "family name"
+            "en": "family name (surname)"
           },
           "description": {
             "de": "Enter your translation here",
@@ -1773,16 +2138,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1791,11 +2156,11 @@
         },
         {
           "uri": "http://xmlns.com/foaf/0.1/givenName",
-          "name": "given name",
+          "name": "given name (forename)",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "given name"
+            "en": "given name (forename)"
           },
           "description": {
             "de": "Enter your translation here",
@@ -1813,16 +2178,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1853,16 +2218,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "String"
+                "de": "Text"
               }
             }
           ],
@@ -1870,42 +2235,9 @@
           "codelist_uri": ""
         }
       ]
-    },
-    {
-      "uri": "https://data.europa.eu/m8g/Change",
-      "name": "Change",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Change"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
     }
   ],
-  "properties": [
-    {
-      "uri": "https://data.europa.eu/m8g/change",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "change",
-        "undefined": "change"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    }
-  ],
+  "properties": [],
   "contributors": [
     {
       "role": "A",

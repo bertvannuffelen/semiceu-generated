@@ -3,23 +3,23 @@
     "Address": "http://www.w3.org/ns/locn#Address",
     "Address.addressArea": {
       "@id": "http://www.w3.org/ns/locn#addressArea",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "@id"
     },
     "Address.addressId": {
       "@id": "http://www.w3.org/ns/locn#addressID",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Address.adminUnitLevel1 (country)": {
+    "Address.administrativeUnitLevel1 (country)": {
       "@id": "http://www.w3.org/ns/locn#adminUnitL1",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": ""
     },
-    "Address.adminUnitLevel2 (country/region/state)": {
+    "Address.administrativeUnitLevel2 (country/region/state)": {
       "@id": "http://www.w3.org/ns/locn#adminUnitL2",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "@id"
     },
     "Address.fullAddress": {
       "@id": "http://www.w3.org/ns/locn#fullAddress",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "@id"
     },
     "Address.locatorDesignator": {
       "@id": "http://www.w3.org/ns/locn#locatorDesignator",
@@ -27,7 +27,7 @@
     },
     "Address.locatorName": {
       "@id": "http://www.w3.org/ns/locn#locatorName",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "@id"
     },
     "Address.poBox": {
       "@id": "http://www.w3.org/ns/locn#poBox",
@@ -39,11 +39,11 @@
     },
     "Address.postName (city)": {
       "@id": "http://www.w3.org/ns/locn#postName",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "@id"
     },
     "Address.thoroughfare": {
       "@id": "http://www.w3.org/ns/locn#thoroughfare",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
+      "@type": "@id"
     },
     "AdministrativeTerritorialUnits": "http://data.europa.eu/88u/dataset/atu-type",
     "AdministrativeTerritorialUnits.geometry": {
@@ -103,6 +103,21 @@
     },
     "FoundationEvent": "http://data.europa.eu/m8g/FoundationEvent",
     "Geometry": "http://www.w3.org/ns/locn#Geometry",
+    "Geometry.coordinates": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/m8g/coordinates",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Geometry.crs": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/m8g/crs",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
+    },
+    "Geometry.geometryType": {
+      "@container": "@set",
+      "@id": "https://data.europa.eu/m8g/geometryType",
+      "@type": ""
+    },
     "Geometry.gml": {
       "@id": "https://data.europa.eu/m8g/gml",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
@@ -118,6 +133,27 @@
     "Geometry.wkt": {
       "@id": "http://www.opengis.net/ont/geosparql#wktLiteral",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+    },
+    "Identifier": "http://www.w3.org/ns/adms#Identifier",
+    "Identifier.dateOfIssue": {
+      "@id": "http://purl.org/dc/terms/created",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Identifier.identifier": {
+      "@id": "http://www.w3.org/2004/02/skos/core#notation",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Identifier.identifierType": {
+      "@id": "http://purl.org/dc/terms/type",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Identifier.issuingAuthority": {
+      "@id": "http://www.w3.org/ns/adms#schemeAgency",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Identifier.issuingAuthorityUri": {
+      "@id": "http://purl.org/dc/terms/creator",
+      "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
     "ImageObject": "https://schema.org/ImageObject",
     "OpeningHoursSpecification": "https://schema.org/OpeningHoursSpecification",
@@ -190,8 +226,9 @@
       "@type": "@id"
     },
     "PublicOrganization.identifier": {
+      "@container": "@set",
       "@id": "http://www.w3.org/ns/org#identifier",
-      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
+      "@type": "@id"
     },
     "PublicOrganization.logo": {
       "@container": "@set",

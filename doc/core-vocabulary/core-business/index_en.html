@@ -179,7 +179,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.00">https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/5472aafa77fa4e3982da10a0c66be0124a3a4828/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/5472aafa77fa4e3982da10a0c66be0124a3a4828/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/bf7df6b435f1a4962c914d1c36337a157c64647d/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/bf7df6b435f1a4962c914d1c36337a157c64647d/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/Core-Business-Vocabulary/issues">https://github.com/SEMICeu/Core-Business-Vocabulary/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="Core-Business-Vocabulary">Core-Business-Vocabulary</a></dd>-->
 
@@ -251,7 +251,6 @@
                       |
                       <a href="#Address">Address</a> |
                       <a href="#Agent">Agent</a> |
-                      <a href="#Change">Change</a> |
                       <a href="#Concept">Concept</a> |
                       <a href="#Identifier">Identifier</a> |
                       <a href="#Legal Entity">Legal Entity</a> |
@@ -278,11 +277,11 @@
               <h3 class="h3" id="Address"><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">Address</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.</dd>
+                    <dt>Description</dt><dd>A spatial object that in a human-readable way identifies a fixed location of a property.</dd>
                     
                     <dt>Usage</dt><dd><p>
 An "address representation" as conceptually defined by the <a href="https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353
-">INSPIRE Address Representation data type</a>.
+">INSPIRE Address Representation data type: "Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way."</a>.
 </p></br>
 
 <p>
@@ -309,9 +308,8 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                     <dd>For this entity the following properties are defined:
                       <a href="#Address%3Aaddress%20area">address area</a>, 
                       <a href="#Address%3Aaddress%20ID">address ID</a>, 
-                      <a href="#Address%3Aadmin%20unit%20level%201%20(country)">admin unit level 1 (country)</a>, 
-                      <a href="#Address%3Aadmin%20unit%20level%202%20(country%2Fregion%2Fstate)">admin unit level 2 (country/region/state)</a>, 
-                      <a href="#Address%3Achange">change</a>, 
+                      <a href="#Address%3Aadministrative%20unit%20level%201%20(country)">administrative unit level 1 (country)</a>, 
+                      <a href="#Address%3Aadministrative%20unit%20level%202%20(country%2Fregion%2Fstate)">administrative unit level 2 (country/region/state)</a>, 
                       <a href="#Address%3Afull%20address">full address</a>, 
                       <a href="#Address%3Alocator%20designator">locator designator</a>, 
                       <a href="#Address%3Alocator%20name">locator name</a>, 
@@ -347,7 +345,7 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -387,60 +385,40 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td></td>
                       </tr>
                     
-                      <tr id="Address%3Aadmin%20unit%20level%201%20(country)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
+                      <tr id="Address%3Aadministrative%20unit%20level%201%20(country)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://www.w3.org/ns/locn#adminUnitL1" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL1" data-placement="right">
-                            admin unit level 1 (country)</a>
+                            administrative unit level 1 (country)</a>
                           </code>
                         </td>
                         <td>
                           
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
                         </td>
-                        <td property="rdfs:comment">The uppermost administrative unit for the address, almost always a country.</td>
+                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
                         <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'United Kingdom' or 'UK' consistently throughout the data set and avoid mixing the two.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Address%3Aadmin%20unit%20level%202%20(country%2Fregion%2Fstate)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
+                      <tr id="Address%3Aadministrative%20unit%20level%202%20(country%2Fregion%2Fstate)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right">
-                            admin unit level 2 (country/region/state)</a>
+                            administrative unit level 2 (country/region/state)</a>
                           </code>
                         </td>
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
-                        <td property="rdfs:comment">The region of the address, usually a county, state or other such area that typically encompasses several localities.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Address%3Achange" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/change">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/change" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/change" data-placement="right">
-                            change</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Change" data-placement="right">Change</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The change relationship links a Class to a record of change in a data field associated with the Class.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.</td>
+                        <td property="skos:scopeNote">Some recommended codelists from the EU Publications Office include:
+<a href="http://publications.europa.eu/resource/authority/atu">Administrative Territorial Units (ATU)</a>,
+<a href="https://ec.europa.eu/eurostat/web/nuts/background">NUTS</a> and
+<a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">Local Administrative Units (LAU)</a>.</td>
                         <td></td>
                       </tr>
                     
@@ -454,7 +432,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -477,7 +455,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-                        <td property="rdfs:comment">A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators.</td>
+                        <td property="rdfs:comment">A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.</td>
                         <td property="skos:scopeNote">In simpler terms, this is the building number, apartment number, etc. For an address such as "Flat 3, 17 Bridge Street", the locator is "flat 3, 17."</td>
                         <td></td>
                       </tr>
@@ -492,12 +470,17 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
-                        <td property="rdfs:comment">Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.</td>
-                        <td property="skos:scopeNote">The key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, "Shumann, Berlaymont" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.</td>
+                        <td property="rdfs:comment">Proper noun(s) applied to the real world entity identified by the locator.</td>
+                        <td property="skos:scopeNote"><p>
+The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.
+</p></br>
+<p>
+The key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, "Shumann, Berlaymont" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.
+</p></td>
                         <td></td>
                       </tr>
                     
@@ -534,7 +517,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-                        <td property="rdfs:comment">The post code/zip code of an address.</td>
+                        <td property="rdfs:comment">The post/zip code of an address. (INSPIRE&#39;s definition is &quot;A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.&quot;)</td>
                         <td property="skos:scopeNote">Post codes are common elements in many countries' postal address systems.</td>
                         <td></td>
                       </tr>
@@ -549,7 +532,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -568,11 +551,11 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
-                        <td property="rdfs:comment">An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.</td>
+                        <td property="rdfs:comment">An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -590,22 +573,6 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                     <dt>Description</dt><dd>Any entity that is able to carry out actions.</dd>
                     
                     <dt>Usage</dt><dd>In compliance with the description from FOAF, an Agent is considered as any entity that is able to carry out actions. The Agent class acts as a generic element which can be further specified by implementers for their usages, for example by defining the Person class from the Core Person Vocabulary or Organization from W3C's Organization Ontology as subclasses of Agent. This Person or Organization can then issue a certain Requirement or be concerned by an Evidence provided.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Change"><a href="https://data.europa.eu/m8g/Change" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Change" data-placement="right">Change</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -907,7 +874,6 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#Legal%20Entity%3Aalternative%20name">alternative name</a>, 
-                      <a href="#Legal%20Entity%3Achange">change</a>, 
                       <a href="#Legal%20Entity%3Acompany%20activity">company activity</a>, 
                       <a href="#Legal%20Entity%3Acompany%20status">company status</a>, 
                       <a href="#Legal%20Entity%3Acompany%20type">company type</a>, 
@@ -950,25 +916,6 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         </td>
                         <td property="rdfs:comment">Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity&#39;s name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name.</td>
                         <td property="skos:scopeNote">Where more than one legal name exists and where they have equal standing but are expressed in different languages, identify the language used in each of the multiple legal names.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Legal%20Entity%3Achange" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/change">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/change" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/change" data-placement="right">
-                            change</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Change" data-placement="right">Change</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The change relationship links a Class to a record of change in a data field associated with the Class.</td>
-                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     

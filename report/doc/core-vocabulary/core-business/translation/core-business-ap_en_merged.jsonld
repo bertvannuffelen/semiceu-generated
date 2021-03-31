@@ -159,7 +159,7 @@
   "contributors-column": "CoreVoc",
   "contributors-file": "stakeholders.csv",
   "diagram": "Core_Business",
-  "documentcommit": "5472aafa77fa4e3982da10a0c66be0124a3a4828",
+  "documentcommit": "bf7df6b435f1a4962c914d1c36337a157c64647d",
   "dummy": "dimi-14",
   "eap": "CoreVocabularies.EAP",
   "editors": [
@@ -2011,7 +2011,7 @@
     },
     {
       "@id": "http://www.w3.org/ns/locn#addressArea",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{42A3291F-2C59-4432-9003-3E6719430A52}",
       "ap-definition-en": {
         "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
@@ -2035,12 +2035,13 @@
         "EA-Guid": "{42A3291F-2C59-4432-9003-3E6719430A52}",
         "EA-Name": "addressArea",
         "EA-Package": "Core Location",
-        "EA-Range": "String",
+        "EA-Range": "Text",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -2093,9 +2094,10 @@
       "name": "address area",
       "range": [
         {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ],
       "usage": {
@@ -2197,17 +2199,17 @@
     },
     {
       "@id": "http://www.w3.org/ns/locn#adminUnitL1",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
       "EA-Guid": "{EFCE2B24-F154-487f-BDC4-0C162CA80935}",
       "ap-definition-en": {
-        "en": "The uppermost administrative unit for the address, almost always a country."
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
       },
       "ap-label-en": {
-        "en": "admin unit level 1 (country)"
+        "en": "administrative unit level 1 (country)"
       },
       "codelist": [],
       "definition": {
-        "en": "The uppermost administrative unit for the address, almost always a country."
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
       },
       "domain": [
         {
@@ -2221,12 +2223,12 @@
         "EA-Guid": "{EFCE2B24-F154-487f-BDC4-0C162CA80935}",
         "EA-Name": "adminUnitL1",
         "EA-Package": "Core Location",
-        "EA-Range": "String",
+        "EA-Range": "Code",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "String",
+          "EA-Name": "",
           "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "uri": "null"
         },
         "RawTags": [
           {
@@ -2237,12 +2239,12 @@
           {
             "key": "label-en",
             "note": "null",
-            "value": "admin unit level 1 (country)"
+            "value": "administrative unit level 1 (country)"
           },
           {
             "key": "definition-en",
-            "note": "null",
-            "value": "The uppermost administrative unit for the address, almost always a country."
+            "note": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+            "value": "NOTE"
           },
           {
             "key": "usageNote-en",
@@ -2253,17 +2255,17 @@
         "Scope": "NOTHING",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "The uppermost administrative unit for the address, almost always a country."
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
         },
         "ap-label-en": {
-          "en": "admin unit level 1 (country)"
+          "en": "administrative unit level 1 (country)"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "The uppermost administrative unit for the address, almost always a country."
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
         },
         "label": {
-          "en": "admin unit level 1 (country)"
+          "en": "administrative unit level 1 (country)"
         },
         "usage": {
           "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'United Kingdom' or 'UK' consistently throughout the data set and avoid mixing the two."
@@ -2272,35 +2274,29 @@
       "generalization": [],
       "inpackage": "OTHER_PACKAGE",
       "label": {
-        "en": "admin unit level 1 (country)"
+        "en": "administrative unit level 1 (country)"
       },
       "maxCardinality": "1",
       "minCardinality": "1",
-      "name": "admin unit level 1 (country)",
-      "range": [
-        {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
-        }
-      ],
+      "name": "administrative unit level 1 (country)",
+      "range": [],
       "usage": {
         "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'United Kingdom' or 'UK' consistently throughout the data set and avoid mixing the two."
       }
     },
     {
       "@id": "http://www.w3.org/ns/locn#adminUnitL2",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{958C6E0B-EB04-416c-BC1A-5B3459FD355A}",
       "ap-definition-en": {
-        "en": "The region of the address, usually a county, state or other such area that typically encompasses several localities."
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
       },
       "ap-label-en": {
-        "en": "admin unit level 2 (country/region/state)"
+        "en": "administrative unit level 2 (country/region/state)"
       },
       "codelist": [],
       "definition": {
-        "en": "The region of the address, usually a county, state or other such area that typically encompasses several localities."
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
       },
       "domain": [
         {
@@ -2314,12 +2310,13 @@
         "EA-Guid": "{958C6E0B-EB04-416c-BC1A-5B3459FD355A}",
         "EA-Name": "adminUnitL2",
         "EA-Package": "Core Location",
-        "EA-Range": "String",
+        "EA-Range": "Text",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -2330,50 +2327,61 @@
           {
             "key": "label-en",
             "note": "null",
-            "value": "admin unit level 2 (country/region/state)"
+            "value": "administrative unit level 2 (country/region/state)"
           },
           {
             "key": "definition-en",
-            "note": "null",
-            "value": "The region of the address, usually a county, state or other such area that typically encompasses several localities."
+            "note": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>.",
+            "value": "NOTE"
           }
         ],
         "Scope": "NOTHING",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "The region of the address, usually a county, state or other such area that typically encompasses several localities."
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
         },
         "ap-label-en": {
-          "en": "admin unit level 2 (country/region/state)"
+          "en": "administrative unit level 2 (country/region/state)"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "The region of the address, usually a county, state or other such area that typically encompasses several localities."
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
         },
         "label": {
-          "en": "admin unit level 2 (country/region/state)"
+          "en": "administrative unit level 2 (country/region/state)"
         },
-        "usage": ""
+        "usage": {
+          "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>."
+        }
       },
       "generalization": [],
       "inpackage": "OTHER_PACKAGE",
       "label": {
-        "en": "admin unit level 2 (country/region/state)"
+        "en": "administrative unit level 2 (country/region/state)"
       },
       "maxCardinality": "1",
       "minCardinality": "1",
-      "name": "admin unit level 2 (country/region/state)",
+      "name": "administrative unit level 2 (country/region/state)",
       "range": [
         {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
-      ]
+      ],
+      "usage": {
+        "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>."
+      }
     },
     {
       "@id": "http://www.w3.org/ns/locn#fullAddress",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{CACD1A53-7E91-4570-BE69-F842DE505549}",
       "ap-definition-en": {
         "en": "The complete address written as a formatted string."
@@ -2397,12 +2405,13 @@
         "EA-Guid": "{CACD1A53-7E91-4570-BE69-F842DE505549}",
         "EA-Name": "fullAddress",
         "EA-Package": "Core Location",
-        "EA-Range": "String",
+        "EA-Range": "Text",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -2455,9 +2464,10 @@
       "name": "full address",
       "range": [
         {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ],
       "usage": {
@@ -2469,14 +2479,14 @@
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{509BF1D0-4E76-4bee-B17F-AC883B236548}",
       "ap-definition-en": {
-        "en": "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."
+        "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
       },
       "ap-label-en": {
         "en": "locator designator"
       },
       "codelist": [],
       "definition": {
-        "en": "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."
+        "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
       },
       "domain": [
         {
@@ -2511,7 +2521,7 @@
           {
             "key": "definition-en",
             "note": "null",
-            "value": "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."
+            "value": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
           },
           {
             "key": "usageNote-en",
@@ -2522,14 +2532,14 @@
         "Scope": "NOTHING",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."
+          "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
         },
         "ap-label-en": {
           "en": "locator designator"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "A number or a sequence of characters that uniquely identifies the locator within the relevant scope(s). The full identification of the locator could include one or more locator designators."
+          "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
         },
         "label": {
           "en": "locator designator"
@@ -2559,17 +2569,17 @@
     },
     {
       "@id": "http://www.w3.org/ns/locn#locatorName",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{BD85C372-1378-4b22-9DA6-B4897A7F0106}",
       "ap-definition-en": {
-        "en": "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."
+        "en": "Proper noun(s) applied to the real world entity identified by the locator."
       },
       "ap-label-en": {
         "en": "locator name"
       },
       "codelist": [],
       "definition": {
-        "en": "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."
+        "en": "Proper noun(s) applied to the real world entity identified by the locator."
       },
       "domain": [
         {
@@ -2583,12 +2593,13 @@
         "EA-Guid": "{BD85C372-1378-4b22-9DA6-B4897A7F0106}",
         "EA-Name": "locatorName",
         "EA-Package": "Core Location",
-        "EA-Range": "String",
+        "EA-Range": "Text",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -2603,32 +2614,32 @@
           },
           {
             "key": "definition-en",
-            "note": "null",
-            "value": "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."
+            "note": "Proper noun(s) applied to the real world entity identified by the locator.",
+            "value": "NOTE"
           },
           {
             "key": "usageNote-en",
-            "note": "The key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.",
+            "note": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>",
             "value": "NOTE"
           }
         ],
         "Scope": "NOTHING",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."
+          "en": "Proper noun(s) applied to the real world entity identified by the locator."
         },
         "ap-label-en": {
           "en": "locator name"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "Proper noun(s) applied to the real world entity identified by the locator. The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building."
+          "en": "Proper noun(s) applied to the real world entity identified by the locator."
         },
         "label": {
           "en": "locator name"
         },
         "usage": {
-          "en": "The key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator."
+          "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>"
         }
       },
       "generalization": [],
@@ -2641,13 +2652,14 @@
       "name": "locator name",
       "range": [
         {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ],
       "usage": {
-        "en": "The key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator."
+        "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>"
       }
     },
     {
@@ -2748,14 +2760,14 @@
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{2EF6D767-8E3F-461c-AC37-772819BA21B6}",
       "ap-definition-en": {
-        "en": "The post code/zip code of an address."
+        "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
       },
       "ap-label-en": {
         "en": "post code"
       },
       "codelist": [],
       "definition": {
-        "en": "The post code/zip code of an address."
+        "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
       },
       "domain": [
         {
@@ -2789,8 +2801,8 @@
           },
           {
             "key": "definition-en",
-            "note": "null",
-            "value": "The post code/zip code of an address."
+            "note": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")",
+            "value": "NOTE"
           },
           {
             "key": "usageNote-en",
@@ -2801,14 +2813,14 @@
         "Scope": "NOTHING",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "The post code/zip code of an address."
+          "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
         },
         "ap-label-en": {
           "en": "post code"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "The post code/zip code of an address."
+          "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
         },
         "label": {
           "en": "post code"
@@ -2838,7 +2850,7 @@
     },
     {
       "@id": "http://www.w3.org/ns/locn#postName",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{F0699A53-4F4C-4e83-AF49-34E33744BF36}",
       "ap-definition-en": {
         "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r"
@@ -2862,12 +2874,13 @@
         "EA-Guid": "{F0699A53-4F4C-4e83-AF49-34E33744BF36}",
         "EA-Name": "postName",
         "EA-Package": "Core Location",
-        "EA-Range": "String",
+        "EA-Range": "Text",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -2913,25 +2926,26 @@
       "name": "post name (city)",
       "range": [
         {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ]
     },
     {
       "@id": "http://www.w3.org/ns/locn#thoroughfare",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{2D384BE4-CFED-4f52-B1EC-3C84511ACCC6}",
       "ap-definition-en": {
-        "en": "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+        "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
       },
       "ap-label-en": {
         "en": "thoroughfare"
       },
       "codelist": [],
       "definition": {
-        "en": "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+        "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
       },
       "domain": [
         {
@@ -2945,12 +2959,13 @@
         "EA-Guid": "{2D384BE4-CFED-4f52-B1EC-3C84511ACCC6}",
         "EA-Name": "thoroughfare",
         "EA-Package": "Core Location",
-        "EA-Range": "String",
+        "EA-Range": "Text",
         "EA-Type": "attribute",
         "RangeData": {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         },
         "RawTags": [
           {
@@ -2966,20 +2981,20 @@
           {
             "key": "definition-en",
             "note": "null",
-            "value": "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+            "value": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
           }
         ],
         "Scope": "NOTHING",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+          "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
         },
         "ap-label-en": {
           "en": "thoroughfare"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "An address component that represents the name of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+          "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
         },
         "label": {
           "en": "thoroughfare"
@@ -2996,9 +3011,10 @@
       "name": "thoroughfare",
       "range": [
         {
-          "EA-Name": "String",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
         }
       ]
     }
@@ -3290,13 +3306,13 @@
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
       "ap-definition-en": {
-        "en": "Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way."
+        "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
       },
       "ap-label-en": {
         "en": "Address"
       },
       "definition": {
-        "en": "Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way."
+        "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
       },
       "extra": {
         "EA-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
@@ -3318,33 +3334,33 @@
           },
           {
             "key": "definition-en",
-            "note": "Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.",
+            "note": "A spatial object that in a human-readable way identifies a fixed location of a property.",
             "value": "NOTE"
           },
           {
             "key": "usageNote-en",
-            "note": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>",
+            "note": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>",
             "value": "NOTE"
           }
         ],
         "Scope": "NOTHING",
         "ap-codelist": "",
         "ap-definition-en": {
-          "en": "Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way."
+          "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
         },
         "ap-label-en": {
           "en": "Address"
         },
         "ap-usageNote-en": "",
         "definition": {
-          "en": "Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way."
+          "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
         },
         "label": {
           "en": "Address"
         },
         "parentclasses": "",
         "usage": {
-          "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>"
+          "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>"
         }
       },
       "inpackage": "OTHER_PACKAGE",
@@ -3353,7 +3369,7 @@
       },
       "name": "Address",
       "usage": {
-        "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>"
+        "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>"
       }
     },
     {
@@ -3426,62 +3442,6 @@
       "usage": {
         "en": "In compliance with the description from FOAF, an Agent is considered as any entity that is able to carry out actions. The Agent class acts as a generic element which can be further specified by implementers for their usages, for example by defining the Person class from the Core Person Vocabulary or Organization from W3C's Organization Ontology as subclasses of Agent. This Person or Organization can then issue a certain Requirement or be concerned by an Evidence provided."
       }
-    },
-    {
-      "@id": "https://data.europa.eu/m8g/Change",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "EA-Guid": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
-      "ap-definition-en": {
-        "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-      },
-      "ap-label-en": {
-        "en": "Change"
-      },
-      "definition": {
-        "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-      },
-      "extra": {
-        "EA-Guid": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
-        "EA-Name": "Change",
-        "EA-Package": "Core Vocabulary",
-        "EA-Parents": "",
-        "EA-Parents2": [],
-        "EA-Type": "CLASS",
-        "RawTags": [
-          {
-            "key": "label-en",
-            "note": "null",
-            "value": "Change"
-          },
-          {
-            "key": "definition-en",
-            "note": "null",
-            "value": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-          }
-        ],
-        "Scope": "NOTHING",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-        },
-        "ap-label-en": {
-          "en": "Change"
-        },
-        "ap-usageNote-en": "",
-        "definition": {
-          "en": "The Change class is envisaged as one that captures any change in a data point. This might be a change in address, a change of name or any other update."
-        },
-        "label": {
-          "en": "Change"
-        },
-        "parentclasses": "",
-        "usage": ""
-      },
-      "inpackage": "OTHER_PACKAGE",
-      "label": {
-        "en": "Change"
-      },
-      "name": "Change"
     }
   ],
   "extra": {
@@ -3510,212 +3470,6 @@
   "name": "core-business-ap",
   "navigation": {},
   "properties": [
-    {
-      "@id": "https://data.europa.eu/m8g/change",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "EA-Guid": "{972619AF-6E0A-48af-B721-2489E8E932DA}",
-      "ap-definition-en": {
-        "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-      },
-      "ap-label-en": {
-        "en": "change"
-      },
-      "codelist": [],
-      "definition": {
-        "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-      },
-      "domain": [
-        {
-          "EA-Name": "Address",
-          "uri": "http://www.w3.org/ns/locn#Address"
-        }
-      ],
-      "extra": {
-        "DestRoleTags": [
-          {
-            "key": "package",
-            "note": "Core Business",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-en",
-            "note": "change",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "The change relationship links a Class to a record of change in a data field associated with the Class.",
-            "value": "NOTE"
-          }
-        ],
-        "EA-Domain": "Address",
-        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
-        "EA-Guid": "{972619AF-6E0A-48af-B721-2489E8E932DA}",
-        "EA-Name": "change",
-        "EA-Package": "",
-        "EA-Range": "Change",
-        "EA-Type": "connector",
-        "RangeData": {
-          "EA-GUID": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
-          "EA-Name": "Change",
-          "EA-Package": "Core Vocabulary",
-          "uri": "https://data.europa.eu/m8g/Change"
-        },
-        "RawTags": [
-          {
-            "key": "package",
-            "note": "Core Business",
-            "value": "NOTE"
-          },
-          {
-            "key": "label-en",
-            "note": "change",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "The change relationship links a Class to a record of change in a data field associated with the Class.",
-            "value": "NOTE"
-          }
-        ],
-        "Scope": "FULL_DEFINITON",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-        },
-        "ap-label-en": {
-          "en": "change"
-        },
-        "ap-usageNote-en": "",
-        "definition": {
-          "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-        },
-        "derived": "false",
-        "destRole": "change",
-        "label": {
-          "en": "change"
-        },
-        "sourceRole": "null",
-        "usage": ""
-      },
-      "generalization": [],
-      "inpackage": "ACTIVE_PACKAGE",
-      "label": {
-        "en": "change"
-      },
-      "name": "change",
-      "range": [
-        {
-          "EA-GUID": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
-          "EA-Name": "Change",
-          "EA-Package": "Core Vocabulary",
-          "uri": "https://data.europa.eu/m8g/Change"
-        }
-      ]
-    },
-    {
-      "@id": "https://data.europa.eu/m8g/change",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "EA-Guid": "{A47671BC-4F6F-4e96-B428-57C64E3B3369}",
-      "ap-definition-en": {
-        "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-      },
-      "ap-label-en": {
-        "en": "change"
-      },
-      "codelist": [],
-      "definition": {
-        "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-      },
-      "domain": [
-        {
-          "EA-Name": "Legal Entity",
-          "uri": "http://www.w3.org/ns/legal#LegalEntity"
-        }
-      ],
-      "extra": {
-        "DestRoleTags": [
-          {
-            "key": "label-en",
-            "note": "change",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "The change relationship links a Class to a record of change in a data field associated with the Class.",
-            "value": "NOTE"
-          },
-          {
-            "key": "package",
-            "note": "Core Business",
-            "value": "NOTE"
-          }
-        ],
-        "EA-Domain": "Legal Entity",
-        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
-        "EA-Guid": "{A47671BC-4F6F-4e96-B428-57C64E3B3369}",
-        "EA-Name": "change",
-        "EA-Package": "",
-        "EA-Range": "Change",
-        "EA-Type": "connector",
-        "RangeData": {
-          "EA-GUID": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
-          "EA-Name": "Change",
-          "EA-Package": "Core Vocabulary",
-          "uri": "https://data.europa.eu/m8g/Change"
-        },
-        "RawTags": [
-          {
-            "key": "label-en",
-            "note": "change",
-            "value": "NOTE"
-          },
-          {
-            "key": "definition-en",
-            "note": "The change relationship links a Class to a record of change in a data field associated with the Class.",
-            "value": "NOTE"
-          },
-          {
-            "key": "package",
-            "note": "Core Business",
-            "value": "NOTE"
-          }
-        ],
-        "Scope": "FULL_DEFINITON",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-        },
-        "ap-label-en": {
-          "en": "change"
-        },
-        "ap-usageNote-en": "",
-        "definition": {
-          "en": "The change relationship links a Class to a record of change in a data field associated with the Class."
-        },
-        "derived": "false",
-        "destRole": "change",
-        "label": {
-          "en": "change"
-        },
-        "sourceRole": "null",
-        "usage": ""
-      },
-      "generalization": [],
-      "inpackage": "ACTIVE_PACKAGE",
-      "label": {
-        "en": "change"
-      },
-      "name": "change",
-      "range": [
-        {
-          "EA-GUID": "{28D6807E-B59D-4501-BA49-6F19B5600DD7}",
-          "EA-Name": "Change",
-          "EA-Package": "Core Vocabulary",
-          "uri": "https://data.europa.eu/m8g/Change"
-        }
-      ]
-    },
     {
       "@id": "https://data.europa.eu/m8g/heldBy",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
@@ -4014,7 +3768,7 @@
   "standaardregisterurl": "Core-Business-Vocabulary",
   "template": "core-business-ap_en.j2",
   "title": "Core Business Vocabulary",
-  "toolchaincommit": "6dafbb67820ff9c4a3fbba7dc1680a1aab5b5a5c",
+  "toolchaincommit": "07717a3d33c2377ac8f6a576a937d2913328520d",
   "translation": [
     {
       "language": "en",
