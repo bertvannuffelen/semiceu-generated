@@ -1,0 +1,1052 @@
+{
+  "@context": {
+    "@vocab": "https://semiceu.github.io/shacl/cpsv-ap_en",
+    "qb": "http://purl.org/linked-data/cube#",
+    "qb:codeList": {
+      "@type": "@id"
+    },
+    "sh": "http://www.w3.org/ns/shacl#",
+    "sh:class": {
+      "@type": "@id"
+    },
+    "sh:datatype": {
+      "@type": "@id"
+    },
+    "sh:definition": {
+      "@container": "@language"
+    },
+    "sh:maxCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:minCount": {
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "sh:name": {
+      "@container": "@language"
+    },
+    "sh:path": {
+      "@type": "@id"
+    },
+    "sh:property": {
+      "@type": "@id"
+    },
+    "sh:targetClass": {
+      "@type": "@id"
+    },
+    "shapes": {
+      "@type": "@id"
+    }
+  },
+  "@id": "https://semiceu.github.io/shacl/cpsv-ap_en",
+  "shapes": [
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LegalResourceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#Rule",
+          "sh:definition": {
+            "en": "The Implements property links a Rule to relevant legislation or policy documents i.e.\r\nthe Legal Resource under which the Rules are being defined (see section 3.16)."
+          },
+          "sh:name": {
+            "en": "implements"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#implements"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "en": "This property represents another instance of the Legal Resource class that is related\r\nto the particular Legal Resource being described."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "related"
+          },
+          "sh:path": "http://fixme.com#related"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResource"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#PublicServiceDatasetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property contains a name given to the\r\nDataset. T his property can be repeated for\r\nparallel language versions of the name."
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "Note"
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:definition": {
+            "en": "This property refers to a web page\r\nthat provides access to the Dataset,\r\nits Distributions and/or additional\r\ninformation. It is intended to point to\r\na landing page at the original data\r\nprovider, not to a page on a site of a\r\nthird party, such as an aggregator."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "landing page"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#landingPage"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property contains a name given to the\r\nDataset. This property can be repeated for\r\nparallel language versions of the name."
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity\r\n(organisation) responsible for making the Public Service Dataset available."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#PublicServiceDataset"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#PublicServiceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a free text Description of the Public Service. The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public administrations are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#Rule",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "follows"
+          },
+          "sh:path": "http://fixme.com#follows"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a formally-issued Identifier for the Public Service."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a keyword, term or phrase to describe the Public Service."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "keyword"
+          },
+          "sh:path": "http://www.w3.org/ns/dcat#keyword"
+        },
+        {
+          "sh:definition": {
+            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The recommended controlled vocabularies are listed in section 4.\r"
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "language"
+          },
+          "sh:path": "http://purl.org/dc/terms/LinguisticSystem"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the official Name of the Public Service."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The Is Classified By property allows to classify the Public Service with any Concept\r\n(section 3.19), other than those already foreseen and defined explicitely in the CPSVAP (Thematic Area, Sector, ). It is a generic property which can be further\r\nspecialised to make the classification explicit, for instance for classifying public\r\nservices according level of digitisation, type of audience \r\nThe Concept is at its turn related to a Collection (section 3.20), which groups the\r\ndifferent concepts into a controlled vocabulary."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/isClassifiedBy"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Event",
+          "sh:definition": {
+            "en": "This property links the Public Service to the Event class (section 3.2.25). Several\r\nPublic Services may be associated with a particular Event and, likewise, the same\r\nPublic Service may be associated with several different Events. "
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/isGroupedBy"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Channel",
+          "sh:definition": {
+            "en": "This property links the Public Service to any Channel through which an Agent\r\nprovides, uses or otherwise interacts with the Public Service, such as an online\r\nservice, phone number or office. See section 3.12"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasChannel"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Output",
+          "sh:definition": {
+            "en": "The Produces property links a Public Service to one or more instances of the Output\r\nclass (see section 3.10), describing the actual result of executing a given Public \r\nPage 20\r\nService. Outputs can be any resource, for instance a document, artefact or anything\r\nelse being produced as a result of executing the Public Service."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://purl.org/vocab/cpsv#produces"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Evidence",
+          "sh:definition": {
+            "en": "The Has Input property links a Public Service to one or more instances of the Evidence\r\nclass (see section 3.9). A specific Public Service may require the presence of certain\r\npieces of Evidence in order to be delivered. If the evidence required to make use of\r\na service varies according to the channel through which it is accessed, then Has Input\r\nshould be at the level of the Channel (section 3.12.4)."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
+        },
+        {
+          "sh:class": "https://schema.org/ContactPoint",
+          "sh:definition": {
+            "en": "A contact point for the service is almost always helpful. The value of this property,\r\nthe contact information itself, should be provided using schema:ContactPoint. Note\r\nthat the contact information should be relevant to the Public Service which may not\r\nbe the same as contact information for the Competent Authority or any Participant. "
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/hasContactPoint"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "en": "One Public Service may require, or in some way make use of, the output of one or\r\nseveral other Public Services. In this case, for a Public Service to be executed,\r\nanother Public Service must be executed beforehand. The nature of the requirement\r\nwill be described in the associated Rule or Input"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://purl.org/dc/terms/requires"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/CriterionRequirement",
+          "sh:definition": {
+            "en": "This property links a Public Service to a Public Organization, which is the responsible\r\nAgent for the delivery of the Public Service. Whether the particular Public\r\nOrganization provides the public service directly or outsources it is not relevant. The\r\nPublic Organization that is the Competent Authority of the service is the one that is\r\nultimately responsible for managing and providing the public service.\r\n\r\nThe term Competent Authority is defined in the Services Directive (2006/123/EC) in\r\nthe following way:\r\nAny body or authority which has a supervisory or regulatory role in a Member State\r\nin relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional\r\nassociations or other professional organisations which, in the exercise of their legal\r\nautonomy, regulate in a collective manner access to service activities or the exercise\r\nthereof.\r"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/hasCompetentAuthority"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Cost",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/hasCost"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "en": "The Has Legal Resource property links a Public Service to a Legal Resource. It\r\nindicates the Legal Resource (e.g. legislation) to which the Public Service relates,\r\noperates or has its legal basis.\r"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/hasLegalResource"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Participation",
+          "sh:definition": {
+            "en": "The CPSV-AP defines the two basic roles of Competent Authority and Service"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/hasParticipation"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "en": "This property represents a Public Service related to the particular instance of the\r\nPublic Service class."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the Wikipedia page16 that references the official ISO standard17.\r\n\r\nThis approach is consistent with both schema.org and the W3C OWL Time Ontology."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "processing time"
+          },
+          "sh:path": "http://fixme.com#processingTime"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "related"
+          },
+          "sh:path": "http://fixme.com#related"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "requires"
+          },
+          "sh:path": "http://fixme.com#requires"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "sector"
+          },
+          "sh:path": "http://fixme.com#sector"
+        },
+        {
+          "sh:definition": {
+            "en": "A Public Service is likely to be available only within a given area, typically the area\r\ncovered by a particular public authority."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "spatial"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "Indicates whether a Public Service is active, inactive, under development etc.\r\naccording to a controlled vocabulary."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "status"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#status"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the Thematic Area of a Public Service as described in a\r\ncontrolled vocabulary, for instance social protection, health, recreation, culture and\r\nreligion, family, traveling economic affairs, tax, staff, environment..."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "thematic area"
+          },
+          "sh:path": "http://fixme.com#thematicArea"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the Type of a Public Service as described in a controlled vocabulary. For the indicating the Type, we are referring to the functions of government to indicate the purpose of a government activity, which the public service is intended for."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#PublicService"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#RuleShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a free text Description of the Rule.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Rule.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:definition": {
+            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "language"
+          },
+          "sh:path": "http://purl.org/dc/terms/language"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the name of the Rule.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "en": "The follows property links a Public Service to the Rule(s) under which it operates.\r\nThe definition of the Rule class is very broad. In a typical case, the competent\r\nauthority that provides the public service will also define the rules that will implement\r\nits own policies. The CPSV-AP is flexible to allow for significant variation in such a\r\nscenario."
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#follows"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/vocab/cpsv#Rule"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#CollectionShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "member"
+          },
+          "sh:path": "http://fixme.com#member"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The Member property, as defined in SKOS, allows to indicate the Concepts (section\r\n3.19) that are part of a Collection."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://www.w3.org/2004/02/skos/core#member"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Collection"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#ConceptShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "This property represents an Address related to an Agent. Asserting the address\r\nrelationship implies that the Agent has an Address."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "has address"
+          },
+          "sh:path": "http://fixme.com#hasAddress"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Agent."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the Name of the Agent."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Participation",
+          "sh:definition": {
+            "en": "This property links an Agent to the Participation class. The Participation class is\r\ndefined in section 3.6 and facilitates the detailed description of how an Agent\r\nparticipates in or interacts with a Public Service and may include temporal and spatial\r\n"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/playsRole"
+        }
+      ],
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#BusinessEventShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.europa.eu/m8g/BusinessEvent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#ChannelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.europa.eu/m8g/Evidence",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "has input"
+          },
+          "sh:path": "https://data.europa.eu/m8g/hasInput"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Channel.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Cost",
+          "sh:definition": {
+            "en": "Where the cost varies depending on the channel used, for example, if accessed\r\nthrough an online service cf. accessed at a physical location, the cost can be linked\r\nto the channel using the If Accessed Through property. "
+          },
+          "sh:path": "http://data.europa.eu/m8g/ifAccessedThrough"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
+          "sh:definition": {
+            "en": "This property links the Channel class with one or more instances of the Agent class\r\n(section 3.15). This property indicates the owner of a specific Channel through which\r\na Public Service is being delivered. Note that Public Organization is a sub class of\r\nAgent so that if the owner is the Public Organization, the ownedBy property can link\r\nto it. "
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/ownedBy"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Evidence",
+          "sh:definition": {
+            "en": "In the majority of cases, the evidence required to use a Public Service will be\r\nindependent of the channel through which the service is accessed. The Has Input\r\nproperty should normally be used to link a Public Service directly to one or more\r\n\r\npieces of Evidence (see section 3.9). However, where the type of Evidence required\r\nvaries according to the channel used to access the Public Service, then the Has Input\r\nproperty may be used at the Channel level. For example, a digital signature may be\r\nrequired for an online channel, whereas a physical signature may be required for a\r\nface to face service provision.\r"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://purl.org/vocab/cpsv#hasInput"
+        },
+        {
+          "sh:class": "https://schema.org/OpeningHoursSpecfication",
+          "sh:definition": {
+            "en": "This property links a channel to information about when the channel is not available,\r\noverriding the general opening hours information (3.12.5). The details are provided\r\nusing the Opening Hours Specification class (section 3.13)."
+          },
+          "sh:maxCount": "1",
+          "sh:path": "https://schema.org/hoursAvailable"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the normal opening hours of a channel."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "opening hours"
+          },
+          "sh:path": "https://schema.org/openingHours"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "owned by"
+          },
+          "sh:path": "https://data.europa.eu/m8g/ownedBy"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the type of Channel as defined in a controlled vocabulary."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Channel"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#CostShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the currency in which the Cost needs to be paid and the\r\nvalue of the Cost is expressed. The possible values for this property are described in\r\na controlled vocabulary."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "currency"
+          },
+          "sh:path": "https://data.europa.eu/m8g/currency"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a free text description of the Cost."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "https://data.europa.eu/m8g/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Cost."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Channel",
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "if accessed through"
+          },
+          "sh:path": "https://data.europa.eu/m8g/ifAccessedThrough"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "is defined by"
+          },
+          "sh:path": "https://data.europa.eu/m8g/isDefinedBy"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
+          "sh:definition": {
+            "en": "This property links the Cost class with one or more instances of the Public\r\nOrganization class (section 3.16). This property indicates which Public Organization\r\nis the Competent Authority for defining the costs associated with the delivery of a\r\nparticular Public Service.\r"
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://data.europa.eu/m8g/isDefinedBy"
+        },
+        {
+          "sh:definition": {
+            "en": "This property represents a numeric value indicating the amount of the Cost."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "https://data.europa.eu/m8g/value"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Cost"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#CriterionRequirementShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Criterion Requirement."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the official Name of the Criterion Requirement.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the type of Criterion Requirement as described in a\r\ncontrolled vocabulary."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/CriterionRequirement"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#EventShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Event."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the Name (or title) of the Event.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "en": "This property links an event directly to a public service that is related to it."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "http://purl.org/dc/terms/relation"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.\r"
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Event"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#EvidenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a free text Description of the piece of Evidence."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the piece of Evidence."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:definition": {
+            "en": "Indicates the language(s) in which the Evidence must be provided.\r"
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "language"
+          },
+          "sh:path": "http://purl.org/dc/terms/language"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the official Name of the piece of Evidence.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:definition": {
+            "en": "This property represents documentation that contains information related to the\r\nEvidence, for instance a particular template for an administrative document, an\r\napplication or a guide on formatting the Input."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "related documentation"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/page"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the type of Evidence as described in a controlled vocabulary."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Evidence"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LifeEventShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.europa.eu/m8g/LifeEvent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#OutputShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents a free text Description of the Output.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Output."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents the official Name of the Output."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "This property represents the type of Output as defined in a controlled vocabulary."
+          },
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Output"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#ParticipationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "A free text description of the Participation."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:definition": {
+            "en": "This property represents an Identifier for the Participation.\r"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "Provides the role played. This should be provided using a controlled vocabulary. Since\r\nthis is an extension mechanism for the CSPV-AP, the controlled vocabulary should be\r\ndecided to suit local implementations."
+          },
+          "sh:maxCount": "n",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "role"
+          },
+          "sh:path": "https://data.europa.eu/m8g/role"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Participation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#PublicOrganizationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/vocab/cpsv#PublicService",
+          "sh:definition": {
+            "en": "This property links a Public Service to a Public Organization, which is the responsible\r\nAgent for the delivery of the Public Service. Whether the particular Public\r\nOrganization provides the public service directly or outsources it is not relevant. The\r\nPublic Organization that is the Competent Authority of the service is the one that is\r\nultimately responsible for managing and providing the public service.\r\n\r\nThe term Competent Authority is defined in the Services Directive (2006/123/EC) in\r\nthe following way:\r\nAny body or authority which has a supervisory or regulatory role in a Member State\r\nin relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional\r\nassociations or other professional organisations which, in the exercise of their legal\r\nautonomy, regulate in a collective manner access to service activities or the exercise\r\nthereof.\r"
+          },
+          "sh:path": "http://data.europa.eu/m8g/hasCompetentAuthority"
+        },
+        {
+          "sh:class": "http://fixme.com#Text",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "preferred label"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:definition": {
+            "en": "A Public Service is likely to be available only within a given area, typically the area\r\ncovered by a particular public authority."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "spatial"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/PublicOrganization"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#ContactPointShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://schema.org/OpeningHoursSpecfication",
+          "sh:maxCount": "n",
+          "sh:name": {
+            "en": "availability restriction"
+          },
+          "sh:path": "http://fixme.com#availabilityRestriction"
+        },
+        {
+          "sh:class": "https://schema.org/OpeningHoursSpecfication",
+          "sh:definition": {
+            "en": "This property links a channel to information about when the channel is not available,\r\noverriding the general opening hours information (3.12.5). The details are provided\r\nusing the Opening Hours Specification class (section 3.13)."
+          },
+          "sh:maxCount": "n",
+          "sh:path": "https://schema.org/hoursAvailable"
+        }
+      ],
+      "sh:targetClass": "https://schema.org/ContactPoint"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#OpeningHoursSpecificationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://schema.org/OpeningHoursSpecfication"
+    }
+  ]
+}

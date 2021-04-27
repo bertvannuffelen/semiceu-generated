@@ -179,7 +179,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/CPOV/tree/master/releases/2.00">https://github.com/SEMICeu/CPOV/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/6ecccfa7533ca7a4ca18597ae98be1c3b5ec3319/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/6ecccfa7533ca7a4ca18597ae98be1c3b5ec3319/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/a331de8d2ab93350eb81ab197aede04ba116cee6/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/a331de8d2ab93350eb81ab197aede04ba116cee6/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/CPOV/issues">https://github.com/SEMICeu/CPOV/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="CPOV">CPOV</a></dd>-->
 
@@ -330,11 +330,11 @@
                     <dd>For this entity the following properties are defined:
                       <a href="#Geometry%3Alatitude">latitude</a>, 
                       <a href="#Geometry%3Alongitude">longitude</a>, 
+                      <a href="#Geometry%3Agml">gml</a>, 
                       <a href="#Geometry%3Awkt">wkt</a>, 
                       <a href="#Geometry%3Acoordinates">coordinates</a>, 
                       <a href="#Geometry%3Acrs">crs</a>, 
-                      <a href="#Geometry%3Ageometry%20type">geometry type</a>, 
-                      <a href="#Geometry%3Agml">gml</a>.</dd>
+                      <a href="#Geometry%3Ageometry%20type">geometry type</a>.</dd>
                     
                   </dl>
                 </div>
@@ -391,10 +391,29 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="Geometry%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#wktLiteral">
+                      <tr id="Geometry%3Agml" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#wktLiteral" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#wktLiteral" data-placement="right">
+                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right">
+                            gml</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">The geometry written in Geography Markup Language.</td>
+                        <td property="skos:scopeNote">Use "http://www.opengis.net/ont/geosparql#gmlLiteral" as type for the literal.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Geometry%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right">
                             wkt</a>
                           </code>
                         </td>
@@ -406,7 +425,7 @@
                           
                         </td>
                         <td property="rdfs:comment">The well-known text representation string describing the point, line or polygon.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Use "http://www.opengis.net/ont/geosparql#wktLiteral" as type for the literal.</td>
                         <td></td>
                       </tr>
                     
@@ -459,25 +478,6 @@
                           
                         </td>
                         <td property="rdfs:comment">The geometry type, e.g. point, line or polygon.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3Agml" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/gml">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/gml" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/gml" data-placement="right">
-                            gml</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right"></a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The geometry written in Geography Markup Language.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1248,7 +1248,7 @@ information.</td>
                           
                         </td>
                         <td property="rdfs:comment">The value of this property is the Identifier itself.</td>
-                        <td property="skos:scopeNote">Example: "abc-12345-de"^^<https://belgium.be/scheme/nationalIDnumber>.</td>
+                        <td property="skos:scopeNote">Example: "abc-12345-de"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;.</td>
                         <td></td>
                       </tr>
                     
