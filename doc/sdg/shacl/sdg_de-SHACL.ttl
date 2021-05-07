@@ -3,13 +3,13 @@
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#PublicOrganizationShape>,
-    <https://semiceu.github.io/shacl/sdg_de#LinguisticSystemShape>,
+<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape>,
     <https://semiceu.github.io/shacl/sdg_de#LocationShape>,
-    <https://semiceu.github.io/shacl/sdg_de#OutputShape>,
+    <https://semiceu.github.io/shacl/sdg_de#PublicOrganizationShape>,
+    <https://semiceu.github.io/shacl/sdg_de#LinguisticSystemShape>,
     <https://semiceu.github.io/shacl/sdg_de#ContactPointShape>,
     <https://semiceu.github.io/shacl/sdg_de#WebpageShape>,
-    <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape> .
+    <https://semiceu.github.io/shacl/sdg_de#OutputShape> .
 
 <https://semiceu.github.io/shacl/sdg_de#ContactPointShape> a shacl:NodeShape;
   shacl:closed false;
@@ -45,7 +45,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#identifier>
+    shacl:path <http://fixme.com#name>
   ], [
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -57,24 +57,19 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#description>
+    shacl:path <http://fixme.com#identifier>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#name>
+    shacl:path <http://fixme.com#description>
   ];
   shacl:targetClass <http://fixme.com#Output> .
 
 <https://semiceu.github.io/shacl/sdg_de#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Location>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#spatial>
-  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
@@ -86,6 +81,11 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#identifier>
+  ], [
+    shacl:class <http://fixme.com#Location>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#spatial>
   ];
   shacl:targetClass <http://fixme.com#PublicOrganization> .
 
@@ -96,6 +96,16 @@
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#produces>
+  ], [
+    shacl:class <http://fixme.com#PublicOrganization>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#hasCompetentAuthority>
+  ], [
+    shacl:class <http://fixme.com#ContactPoint>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#hasContactPoint>
   ], [
     shacl:class <http://fixme.com#Webpage>;
     shacl:definition "Enter your translation here"@de;
@@ -114,16 +124,6 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#description>
   ], [
-    shacl:class <http://fixme.com#ContactPoint>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#hasContactPoint>
-  ], [
-    shacl:class <http://fixme.com#PublicOrganization>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#hasCompetentAuthority>
-  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
@@ -140,15 +140,15 @@
 <https://semiceu.github.io/shacl/sdg_de#WebpageShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://fixme.com#LinguisticSystem>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#hasLanguage>
+  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#Identifier>
-  ], [
-    shacl:class <http://fixme.com#LinguisticSystem>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#hasLanguage>
   ];
   shacl:targetClass <http://fixme.com#Webpage> .
