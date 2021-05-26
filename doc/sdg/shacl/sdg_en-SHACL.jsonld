@@ -40,11 +40,16 @@
   "@id": "https://semiceu.github.io/shacl/sdg_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/sdg_en#ContactPointShape",
+      "@id": "https://semiceu.github.io/shacl/sdg_en#EventShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://fixme.com#ContactPoint"
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:path": "http://fixme.com#sdgType"
+        }
+      ],
+      "sh:targetClass": "http://fixme.com#Event"
     },
     {
       "@id": "https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape",
@@ -52,6 +57,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "TODO"
           },
@@ -75,12 +81,16 @@
           "sh:definition": {
             "en": "TODO"
           },
-          "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "geographic identifier"
           },
           "sh:path": "http://fixme.com#geographicIdentifier"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#geographicName"
         }
       ],
       "sh:targetClass": "http://fixme.com#Location"
@@ -124,13 +134,14 @@
           "sh:path": "http://fixme.com#name"
         },
         {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "TODO"
           },
           "sh:name": {
             "en": "type"
           },
-          "sh:path": "http://fixme.com#type"
+          "sh:path": "http://fixme.com#sdgType"
         }
       ],
       "sh:targetClass": "http://fixme.com#Output"
@@ -196,11 +207,18 @@
           "sh:definition": {
             "en": "TODO"
           },
+          "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "has language"
           },
           "sh:path": "http://fixme.com#hasLanguage"
+        },
+        {
+          "qb:codeList": "<ul>\r\n<li>information</li>\r\n<li>procedure</li>\r\n</ul>",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "2",
+          "sh:path": "http://fixme.com#type"
         }
       ],
       "sh:targetClass": "http://fixme.com#Webpage"
@@ -215,6 +233,7 @@
           "sh:definition": {
             "en": "TODO"
           },
+          "sh:maxCount": "n",
           "sh:minCount": "1",
           "sh:name": {
             "en": "description"
@@ -226,20 +245,12 @@
           "sh:definition": {
             "en": "TODO"
           },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "en": "has competent authority"
           },
           "sh:path": "http://fixme.com#hasCompetentAuthority"
-        },
-        {
-          "sh:class": "http://fixme.com#ContactPoint",
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:name": {
-            "en": "has contact point"
-          },
-          "sh:path": "http://fixme.com#hasContactPoint"
         },
         {
           "sh:class": "http://fixme.com#Webpage",
@@ -257,6 +268,7 @@
           "sh:definition": {
             "en": "TODO"
           },
+          "sh:maxCount": "n",
           "sh:minCount": "1",
           "sh:name": {
             "en": "identifier"
@@ -264,10 +276,15 @@
           "sh:path": "http://fixme.com#identifier"
         },
         {
+          "sh:class": "http://fixme.com#Event",
+          "sh:path": "http://fixme.com#isGroupedBy"
+        },
+        {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
             "en": "TODO"
           },
+          "sh:maxCount": "n",
           "sh:minCount": "1",
           "sh:name": {
             "en": "name"
@@ -293,9 +310,20 @@
             "en": "spatial"
           },
           "sh:path": "http://fixme.com#spatial"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:path": "http://fixme.com#type"
         }
       ],
       "sh:targetClass": "http://purl.org/vocab/cpsv#PublicService"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/sdg_en#CodeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     }
   ]
 }

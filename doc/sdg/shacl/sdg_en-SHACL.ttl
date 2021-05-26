@@ -1,23 +1,34 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdg_en> <https://semiceu.github.io/shacl/sdg_enshapes> <https://semiceu.github.io/shacl/sdg_en#ContactPointShape>,
+<https://semiceu.github.io/shacl/sdg_en> <https://semiceu.github.io/shacl/sdg_enshapes> <https://semiceu.github.io/shacl/sdg_en#PublicServiceShape>,
+    <https://semiceu.github.io/shacl/sdg_en#OutputShape>,
+    <https://semiceu.github.io/shacl/sdg_en#WebpageShape>,
     <https://semiceu.github.io/shacl/sdg_en#PublicOrganizationShape>,
-    <https://semiceu.github.io/shacl/sdg_en#PublicServiceShape>,
     <https://semiceu.github.io/shacl/sdg_en#LocationShape>,
     <https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape>,
-    <https://semiceu.github.io/shacl/sdg_en#WebpageShape>,
-    <https://semiceu.github.io/shacl/sdg_en#OutputShape> .
+    <https://semiceu.github.io/shacl/sdg_en#CodeShape>,
+    <https://semiceu.github.io/shacl/sdg_en#EventShape> .
 
-<https://semiceu.github.io/shacl/sdg_en#ContactPointShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/sdg_en#CodeShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://fixme.com#ContactPoint> .
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/sdg_en#EventShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:path <http://fixme.com#sdgType>
+  ];
+  shacl:targetClass <http://fixme.com#Event> .
 
 <https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
     shacl:definition "TODO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -31,10 +42,13 @@
   shacl:property [
     shacl:datatype xsd:anyURI;
     shacl:definition "TODO"@en;
-    shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "geographic identifier"@en;
     shacl:path <http://fixme.com#geographicIdentifier>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:minCount 1;
+    shacl:path <http://fixme.com#geographicName>
   ];
   shacl:targetClass <http://fixme.com#Location> .
 
@@ -44,24 +58,25 @@
     shacl:datatype rdfs:Literal;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
+    shacl:name "name"@en;
+    shacl:path <http://fixme.com#name>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "TODO"@en;
+    shacl:name "type"@en;
+    shacl:path <http://fixme.com#sdgType>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "TODO"@en;
+    shacl:minCount 1;
     shacl:name "identifier"@en;
     shacl:path <http://fixme.com#identifier>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
-    shacl:name "name"@en;
-    shacl:path <http://fixme.com#name>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
     shacl:name "description"@en;
     shacl:path <http://fixme.com#description>
-  ], [
-    shacl:definition "TODO"@en;
-    shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
   ];
   shacl:targetClass <http://fixme.com#Output> .
 
@@ -71,6 +86,34 @@
     shacl:datatype rdfs:Literal;
     shacl:definition "TODO"@en;
     shacl:minCount 1;
+    shacl:name "preferred label"@en;
+    shacl:path <http://fixme.com#preferredLabel>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "TODO"@en;
+    shacl:minCount 1;
+    shacl:name "identifier"@en;
+    shacl:path <http://fixme.com#identifier>
+  ], [
+    shacl:class <http://fixme.com#Location>;
+    shacl:definition "TODO"@en;
+    shacl:name "spatial"@en;
+    shacl:path <http://fixme.com#spatial>
+  ];
+  shacl:targetClass <http://fixme.com#PublicOrganization> .
+
+<https://semiceu.github.io/shacl/sdg_en#PublicServiceShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://fixme.com#Output>;
+    shacl:definition "TODO"@en;
+    shacl:name "produces"@en;
+    shacl:path <http://fixme.com#produces>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "TODO"@en;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
     shacl:name "identifier"@en;
     shacl:path <http://fixme.com#identifier>
   ], [
@@ -79,35 +122,16 @@
     shacl:name "spatial"@en;
     shacl:path <http://fixme.com#spatial>
   ], [
-    shacl:datatype rdfs:Literal;
+    shacl:class <http://fixme.com#PublicOrganization>;
     shacl:definition "TODO"@en;
+    shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "preferred label"@en;
-    shacl:path <http://fixme.com#preferredLabel>
-  ];
-  shacl:targetClass <http://fixme.com#PublicOrganization> .
-
-<https://semiceu.github.io/shacl/sdg_en#PublicServiceShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <http://fixme.com#Location>;
-    shacl:definition "TODO"@en;
-    shacl:name "spatial"@en;
-    shacl:path <http://fixme.com#spatial>
-  ], [
-    shacl:class <http://fixme.com#Output>;
-    shacl:definition "TODO"@en;
-    shacl:name "produces"@en;
-    shacl:path <http://fixme.com#produces>
+    shacl:name "has competent authority"@en;
+    shacl:path <http://fixme.com#hasCompetentAuthority>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "name"@en;
-    shacl:path <http://fixme.com#name>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
+    shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
     shacl:name "description"@en;
     shacl:path <http://fixme.com#description>
@@ -118,21 +142,18 @@
     shacl:name "has webpage"@en;
     shacl:path <http://fixme.com#hasWebpage>
   ], [
-    shacl:class <http://fixme.com#ContactPoint>;
-    shacl:definition "TODO"@en;
-    shacl:name "has contact point"@en;
-    shacl:path <http://fixme.com#hasContactPoint>
-  ], [
-    shacl:class <http://fixme.com#PublicOrganization>;
-    shacl:definition "TODO"@en;
-    shacl:name "has competent authority"@en;
-    shacl:path <http://fixme.com#hasCompetentAuthority>
+    shacl:class skos:Concept;
+    shacl:path <http://fixme.com#type>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "TODO"@en;
+    shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
-    shacl:name "identifier"@en;
-    shacl:path <http://fixme.com#identifier>
+    shacl:name "name"@en;
+    shacl:path <http://fixme.com#name>
+  ], [
+    shacl:class <http://fixme.com#Event>;
+    shacl:path <http://fixme.com#isGroupedBy>
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
 
@@ -147,8 +168,13 @@
   ], [
     shacl:class <http://fixme.com#LinguisticSystem>;
     shacl:definition "TODO"@en;
+    shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "has language"@en;
     shacl:path <http://fixme.com#hasLanguage>
+  ], [
+    shacl:class skos:Concept;
+    shacl:maxCount 2;
+    shacl:path <http://fixme.com#type>
   ];
   shacl:targetClass <http://fixme.com#Webpage> .
