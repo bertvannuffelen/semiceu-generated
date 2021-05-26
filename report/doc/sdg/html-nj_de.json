@@ -10,8 +10,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/b2433ad76c84f1fe30a9427c5178b6d0c313fa42",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/b2433ad76c84f1fe30a9427c5178b6d0c313fa42/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/ea13aba477895dacfb3530e0f93fd6a5b7a1a723",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/ea13aba477895dacfb3530e0f93fd6a5b7a1a723/CHANGELOG",
     "feedbackurl": "https://github.com/catalogue-of-services-isa/SDG-services-model/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -19,7 +19,7 @@
   },
   "classes": [
     {
-      "uri": "http://fixme.com#Event",
+      "uri": "http://data.europa.eu/m8g/Event",
       "name": "Event",
       "label": {
         "de": "Enter your translation here",
@@ -28,16 +28,13 @@
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "TODO"
+        "en": "The event that the Public Service covers."
       },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
+      "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#sdgType",
+          "uri": "http://purl.org/dc/terms/type",
           "name": "sdg type",
           "sort": "Enter your translation here",
           "label": {
@@ -46,16 +43,187 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The type of the Event as defined in a controlled vocabulary."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "Events as proposed in the procedures of annex II of the SDGR."
           },
           "domain": [
             {
               "EA-Name": "Event",
-              "uri": "http://fixme.com#Event"
+              "uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "de": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": "{birth; residence; studying; working; moving; retiring; starting, running and closing a business}"
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Output",
+      "name": "Output",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Output"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "The expected results of the Public Service."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "Outputs can be any resource - document, artefact  anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organization) that permits/authorises/entitles an Agent (such as the person that is requesting the Public Service) to (do) something."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "description"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A free text description of the Output."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "identifier"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A unique identifier of the Output produced by the Public Service."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "name"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The name of the Output that is produced by the Public Service."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "type"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The type of the Output as defined in a controlled vocabulary."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Outputs as proposed in the procedures of annex II of the SDGR."
+          },
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
             }
           ],
           "range": [
@@ -79,7 +247,142 @@
       ]
     },
     {
-      "uri": "http://fixme.com#LinguisticSystem",
+      "uri": "http://data.europa.eu/m8g/PublicOrganisation",
+      "name": "Public Organization",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Public Organization"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "The Public Organisation that is providing the Public Service."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "The Public Organisation reuses Core Public Organisation Vocabulary, in which Public Organisation is a Organisation and Agent."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "identifier"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A unique identifier of the Public Organisation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/spatial",
+          "name": "spatial",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "spatial"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The area in which the Public Organisation is competent."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "preferred label",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "preferred label"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The preferred label of the Public Organisation"
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization. An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property."
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://purl.org/dc/terms/LinguisticSystem",
       "name": "Linguistic System",
       "label": {
         "de": "Enter your translation here",
@@ -88,16 +391,13 @@
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "TODO"
+        "en": "The language in which the Public Service can be provided."
       },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
+      "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#language",
+          "uri": "http://purl.org/dc/terms/language",
           "name": "language",
           "sort": "Enter your translation here",
           "label": {
@@ -106,16 +406,16 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The code which indicates the language."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The linguistic system will be defined by the ISO 639-1 code, e.g. 'en' for English. The Publications Office proposes a controlled vocabulary for languages fully compliant with ISA 639-1 (alpha 2): http://publications.europa.eu/resource/dataset/language . More information can be found here: https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language"
           },
           "domain": [
             {
               "EA-Name": "LinguisticSystem",
-              "uri": "http://fixme.com#LinguisticSystem"
+              "uri": "http://purl.org/dc/terms/LinguisticSystem"
             }
           ],
           "range": [
@@ -139,7 +439,7 @@
       ]
     },
     {
-      "uri": "http://fixme.com#Location",
+      "uri": "http://purl.org/dc/terms/Location",
       "name": "Location",
       "label": {
         "de": "Enter your translation here",
@@ -148,16 +448,13 @@
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "TODO"
+        "en": "An identifiable geographic place or named place."
       },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
+      "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#geographicIdentifier",
+          "uri": "http://purl.org/dc/terms/identifier",
           "name": "geographic identifier",
           "sort": "Enter your translation here",
           "label": {
@@ -166,16 +463,16 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "A unique identifier for the Location."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "\"NUTS (Nomenclature of Territorial Units for Statistics) or LAU (Local administrative units) vocabulary. \nNUTS 1,2,3 defines regions into three different levels. Above NUTS 1, there is the 'national' level of the Member States.\nLAU is only defined in a spreadsheet. NUTS and NUTS are compatible.\""
           },
           "domain": [
             {
               "EA-Name": "Location",
-              "uri": "http://fixme.com#Location"
+              "uri": "http://purl.org/dc/terms/Location"
             }
           ],
           "range": [
@@ -197,7 +494,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#geographicName",
+          "uri": "http://purl.org/dc/terms/title",
           "name": "geographic name",
           "sort": "Enter your translation here",
           "label": {
@@ -206,16 +503,16 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The geographic name of the Location."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "TBD"
           },
           "domain": [
             {
               "EA-Name": "Location",
-              "uri": "http://fixme.com#Location"
+              "uri": "http://purl.org/dc/terms/Location"
             }
           ],
           "range": [
@@ -239,25 +536,145 @@
       ]
     },
     {
-      "uri": "http://fixme.com#Output",
-      "name": "Output",
+      "uri": "http://purl.org/vocab/cpsv#PublicService",
+      "name": "Public Service",
       "label": {
         "de": "Enter your translation here",
-        "en": "Output"
+        "en": "Public Service"
       },
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "TODO"
+        "en": "A Public Service is a mandatory or discretionary set of activities performed, or able to be performed, by or on behalf of a public organisation, publicly funded and arise from public policy. It is covering all information about the services offered by competent authorities in the EEA countries and the European Commission as part of the Single Digital Gateway Regulation (EU) 2018/1724."
       },
       "usage": {
         "de": "Enter your translation here",
-        "en": "TODO"
+        "en": "Services may be for the benefit of an individual, a business, or other public authority, or groups of any of these. A service exists whether it is used or not, and the term 'benefit' may apply in the sense of enabling the fulfilment of an obligation. Typical examples of public Services are \"registering a car\", \"requesting a birth certificate\", etc."
       },
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#description",
+          "uri": "TBD",
+          "name": "has webpage",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has webpage"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The webpage(s) on which the information is provided about the Public Service."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "TBD which webpages should be included next to the general webpage which contains the information about the Public Service."
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Webpage",
+              "range_uri": "http://xmlns.com/foaf/spec/#term_page"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://xmlns.com/foaf/spec/#term_page",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Webpage"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasCompetentAuthority",
+          "name": "has competent authority",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has competent authority"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Any Member State authority or body established at national, regional or local level with specific responsibilities relating to the information, procedures, assistance and problem-solving services covered by the Single Digital Gateway Regulation."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "\"This is aligned with CPSV-AP where the property links a Public Service to a Public Organization, which is responsible for the delivery of the Public Service. Whether the particular Public Organization provides the public service directly or outsources it is not relevant. The Public Organization that is the Competent Authority of the service is the one that is ultimately responsible for managing and providing the public service.\nThe term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way:\n\nAny body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities, including courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\""
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicOrganization",
+              "range_uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/PublicOrganisation",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Public Organization"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isGroupedBy",
+          "name": "event",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "Event"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property links the Public Service class to the Event class."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Event",
+              "range_uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Event",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Event"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
           "name": "description",
           "sort": "Enter your translation here",
           "label": {
@@ -266,16 +683,16 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "A free text description of the Public Service."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public Service providers are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information."
           },
           "domain": [
             {
-              "EA-Name": "Output",
-              "uri": "http://fixme.com#Output"
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
             }
           ],
           "range": [
@@ -293,11 +710,11 @@
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "1..n",
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#identifier",
+          "uri": "http://purl.org/dc/terms/identifier",
           "name": "identifier",
           "sort": "Enter your translation here",
           "label": {
@@ -306,16 +723,13 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "A unique identifier of the Public Service."
           },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
+          "usage": {},
           "domain": [
             {
-              "EA-Name": "Output",
-              "uri": "http://fixme.com#Output"
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
             }
           ],
           "range": [
@@ -333,11 +747,52 @@
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "1..n",
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#name",
+          "uri": "http://purl.org/dc/terms/spatial",
+          "name": "spatial",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "spatial"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A Public Service is available within a given area, typically the area covered by a specific public authority."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "The value of the properly should be the URI of the region as defined in an authoritative list of regions. In Europe, this is likely to be NUTS (Nomenclature of Territorial Units for Statistics) or LAU (Local administrative units)."
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
           "name": "name",
           "sort": "Enter your translation here",
           "label": {
@@ -346,16 +801,16 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The official name of the Public Service."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "Each Public Service is denoted by a name, for example 'change of address' for the Public Service which covers the registering of a change of address."
           },
           "domain": [
             {
-              "EA-Name": "Output",
-              "uri": "http://fixme.com#Output"
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
             }
           ],
           "range": [
@@ -373,11 +828,11 @@
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "1..n",
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#sdgType",
+          "uri": "http://purl.org/dc/terms/type",
           "name": "type",
           "sort": "Enter your translation here",
           "label": {
@@ -386,16 +841,16 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "Classification which determines the kind of procedure."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "TBD The procedure type foreseen in order to classify the public services. To be agreed how to exactly fill this in. Currently we propose to use the classifications from Annex I and II of the Regulation."
           },
           "domain": [
             {
-              "EA-Name": "Output",
-              "uri": "http://fixme.com#Output"
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
             }
           ],
           "range": [
@@ -415,152 +870,52 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com#PublicOrganization",
-      "name": "Public Organization",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Public Organization"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com#identifier",
-          "name": "identifier",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "identifier"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://fixme.com#PublicOrganization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "de": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#preferredLabel",
-          "name": "preferred label",
+          "uri": "http://purl.org/vocab/cpsv#produces",
+          "name": "produces",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "preferred label"
+            "en": "produces"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "Example, a Public Service 'registration of a car', can have as output the 'Registration certificate'."
           },
           "domain": [
             {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://fixme.com#PublicOrganization"
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
             }
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "de": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#spatial",
-          "name": "spatial",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "spatial"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://fixme.com#PublicOrganization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Location",
-              "range_uri": "http://fixme.com#Location"
+              "range_label": "Output",
+              "range_uri": "http://data.europa.eu/m8g/Output"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Location",
+              "range_puri": "http://data.europa.eu/m8g/Output",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Location"
+                "en": "Output"
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
     },
     {
-      "uri": "http://fixme.com#Webpage",
+      "uri": "http://xmlns.com/foaf/spec/#term_page",
       "name": "Webpage",
       "label": {
         "de": "Enter your translation here",
@@ -569,56 +924,13 @@
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "TODO"
+        "en": "The webpage containing the information about the Public Service."
       },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
+      "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#Identifier",
-          "name": "identifier",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "identifier"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "Webpage",
-              "uri": "http://fixme.com#Webpage"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "de": "URI"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#hasLanguage",
+          "uri": "http://purl.org/dc/terms/language",
           "name": "has language",
           "sort": "Enter your translation here",
           "label": {
@@ -627,28 +939,25 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The Language(s) in which the Webpage is available."
           },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Webpage",
-              "uri": "http://fixme.com#Webpage"
+              "uri": "http://xmlns.com/foaf/spec/#term_page"
             }
           ],
           "range": [
             {
               "range_label": "LinguisticSystem",
-              "range_uri": "http://fixme.com#LinguisticSystem"
+              "range_uri": "http://purl.org/dc/terms/LinguisticSystem"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#LinguisticSystem",
+              "range_puri": "http://purl.org/dc/terms/LinguisticSystem",
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Linguistic System"
@@ -659,7 +968,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#type",
+          "uri": "http://purl.org/dc/terms/type",
           "name": "type",
           "sort": "Enter your translation here",
           "label": {
@@ -668,16 +977,16 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The Language(s) in which the Webpage is available."
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The Single Digital Gateway Regulation defines three types of information: rights/obligation and rules, procedures and assistance services. Within this context for the Webpages, we will make use of the first two: information on rights/obligations and rules and information on procedures, respectively identified as information and procedure."
           },
           "domain": [
             {
               "EA-Name": "Webpage",
-              "uri": "http://fixme.com#Webpage"
+              "uri": "http://xmlns.com/foaf/spec/#term_page"
             }
           ],
           "range": [
@@ -696,152 +1005,10 @@
             }
           ],
           "cardinality": "0..2",
-          "codelist_uri": "<ul>\r\n<li>information</li>\r\n<li>procedure</li>\r\n</ul>"
-        }
-      ]
-    },
-    {
-      "uri": "http://purl.org/vocab/cpsv#PublicService",
-      "name": "Public Service",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Public Service"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "TODO"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com#description",
-          "name": "description",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "description"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "de": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1..n",
-          "codelist_uri": ""
+          "codelist_uri": "{information; procedure}"
         },
         {
-          "uri": "http://fixme.com#hasCompetentAuthority",
-          "name": "has competent authority",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has competent authority"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PublicOrganization",
-              "range_uri": "http://fixme.com#PublicOrganization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#PublicOrganization",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Public Organization"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#hasWebpage",
-          "name": "has webpage",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has webpage"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Webpage",
-              "range_uri": "http://fixme.com#Webpage"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Webpage",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Webpage"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#identifier",
+          "uri": "http://www.w3.org/ns/dcat#accessURL",
           "name": "identifier",
           "sort": "Enter your translation here",
           "label": {
@@ -850,436 +1017,37 @@
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "TODO"
+            "en": "The URL of the Webpage."
           },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
+          "usage": {},
           "domain": [
             {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
+              "EA-Name": "Webpage",
+              "uri": "http://xmlns.com/foaf/spec/#term_page"
             }
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
               "range_label": {
-                "de": "Literal"
+                "de": "URI"
               }
             }
           ],
-          "cardinality": "1..n",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#isGroupedBy",
-          "name": "event",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "Event"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Event",
-              "range_uri": "http://fixme.com#Event"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Event",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Event"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#name",
-          "name": "name",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "name"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "de": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1..n",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#produces",
-          "name": "produces",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "produces"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Output",
-              "range_uri": "http://fixme.com#Output"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Output",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Output"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#spatial",
-          "name": "spatial",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "spatial"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Location",
-              "range_uri": "http://fixme.com#Location"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Location",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Location"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#type",
-          "name": "type",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "type"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "TODO"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "de": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
+          "cardinality": "1..*",
           "codelist_uri": ""
         }
       ]
     }
   ],
-  "properties": [
-    {
-      "uri": "http://fixme.com#hasCompetentAuthority",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "has competent authority",
-        "undefined": "has competent authority"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#hasLanguage",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "has language",
-        "undefined": "has language"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#hasWebpage",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "has webpage",
-        "undefined": "has webpage"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#isGroupedBy",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "Event",
-        "undefined": "event"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#language",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "language",
-        "undefined": "language"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#produces",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "produces",
-        "undefined": "produces"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#sdgType",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "type",
-        "undefined": "type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#sdgType",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "sdg type",
-        "undefined": "sdg type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#spatial",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "spatial",
-        "undefined": "spatial"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#spatial",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "spatial",
-        "undefined": "spatial"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#type",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "type",
-        "undefined": "type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://fixme.com#type",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "type",
-        "undefined": "type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    }
-  ],
+  "properties": [],
   "contributors": [
     {
       "role": "E",

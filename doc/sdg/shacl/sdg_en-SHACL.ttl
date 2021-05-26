@@ -1,162 +1,165 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdg_en> <https://semiceu.github.io/shacl/sdg_enshapes> <https://semiceu.github.io/shacl/sdg_en#EventShape>,
-    <https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape>,
-    <https://semiceu.github.io/shacl/sdg_en#PublicOrganizationShape>,
-    <https://semiceu.github.io/shacl/sdg_en#PublicServiceShape>,
-    <https://semiceu.github.io/shacl/sdg_en#LocationShape>,
+<https://semiceu.github.io/shacl/sdg_en> <https://semiceu.github.io/shacl/sdg_enshapes> <https://semiceu.github.io/shacl/sdg_en#OutputShape>,
     <https://semiceu.github.io/shacl/sdg_en#WebpageShape>,
-    <https://semiceu.github.io/shacl/sdg_en#OutputShape> .
+    <https://semiceu.github.io/shacl/sdg_en#PublicOrganizationShape>,
+    <https://semiceu.github.io/shacl/sdg_en#LocationShape>,
+    <https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape>,
+    <https://semiceu.github.io/shacl/sdg_en#EventShape>,
+    <https://semiceu.github.io/shacl/sdg_en#PublicServiceShape> .
 
 <https://semiceu.github.io/shacl/sdg_en#EventShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:definition "TODO"@en;
+    shacl:definition "The type of the Event as defined in a controlled vocabulary."@en;
     shacl:name "sdg type"@en;
-    shacl:path <http://fixme.com#sdgType>
+    shacl:path dc:type
   ];
-  shacl:targetClass <http://fixme.com#Event> .
+  shacl:targetClass <http://data.europa.eu/m8g/Event> .
 
 <https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:definition "TODO"@en;
+    shacl:definition "The code which indicates the language."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "language"@en;
-    shacl:path <http://fixme.com#language>
+    shacl:path dc:language
   ];
-  shacl:targetClass <http://fixme.com#LinguisticSystem> .
+  shacl:targetClass dc:LinguisticSystem .
 
 <https://semiceu.github.io/shacl/sdg_en#LocationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:anyURI;
-    shacl:definition "TODO"@en;
+    shacl:definition "A unique identifier for the Location."@en;
     shacl:minCount 1;
     shacl:name "geographic identifier"@en;
-    shacl:path <http://fixme.com#geographicIdentifier>
+    shacl:path dc:identifier
   ], [
     shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
+    shacl:definition "The geographic name of the Location."@en;
     shacl:minCount 1;
     shacl:name "geographic name"@en;
-    shacl:path <http://fixme.com#geographicName>
+    shacl:path dc:title
   ];
-  shacl:targetClass <http://fixme.com#Location> .
+  shacl:targetClass dc:Location .
 
 <https://semiceu.github.io/shacl/sdg_en#OutputShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "description"@en;
-    shacl:path <http://fixme.com#description>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
+    shacl:definition "A unique identifier of the Output produced by the Public Service."@en;
     shacl:minCount 1;
     shacl:name "identifier"@en;
-    shacl:path <http://fixme.com#identifier>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "name"@en;
-    shacl:path <http://fixme.com#name>
+    shacl:path dc:identifier
   ], [
     shacl:class skos:Concept;
-    shacl:definition "TODO"@en;
+    shacl:definition "The type of the Output as defined in a controlled vocabulary."@en;
     shacl:name "type"@en;
-    shacl:path <http://fixme.com#sdgType>
+    shacl:path dc:type
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "The name of the Output that is produced by the Public Service."@en;
+    shacl:minCount 1;
+    shacl:name "name"@en;
+    shacl:path dc:title
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "A free text description of the Output."@en;
+    shacl:minCount 1;
+    shacl:name "description"@en;
+    shacl:path dc:description
   ];
-  shacl:targetClass <http://fixme.com#Output> .
+  shacl:targetClass <http://data.europa.eu/m8g/Output> .
 
 <https://semiceu.github.io/shacl/sdg_en#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
+    shacl:definition "The preferred label of the Public Organisation"@en;
     shacl:minCount 1;
     shacl:name "preferred label"@en;
-    shacl:path <http://fixme.com#preferredLabel>
-  ], [
-    shacl:class <http://fixme.com#Location>;
-    shacl:definition "TODO"@en;
-    shacl:name "spatial"@en;
-    shacl:path <http://fixme.com#spatial>
+    shacl:path skos:prefLabel
   ], [
     shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
+    shacl:definition "A unique identifier of the Public Organisation."@en;
     shacl:minCount 1;
     shacl:name "identifier"@en;
-    shacl:path <http://fixme.com#identifier>
+    shacl:path dc:identifier
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "The area in which the Public Organisation is competent."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "spatial"@en;
+    shacl:path dc:spatial
   ];
-  shacl:targetClass <http://fixme.com#PublicOrganization> .
+  shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
 
 <https://semiceu.github.io/shacl/sdg_en#PublicServiceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
+    shacl:definition "Classification which determines the kind of procedure."@en;
+    shacl:name "type"@en;
+    shacl:path dc:type
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "A Public Service is available within a given area, typically the area covered by a specific public authority."@en;
+    shacl:name "spatial"@en;
+    shacl:path dc:spatial
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Event>;
+    shacl:definition "This property links the Public Service class to the Event class."@en;
+    shacl:name "Event"@en;
+    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
+  ], [
+    shacl:class <http://xmlns.com/foaf/spec/#term_page>;
+    shacl:definition "The webpage(s) on which the information is provided about the Public Service."@en;
+    shacl:minCount 1;
+    shacl:name "has webpage"@en
+  ], [
     shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
+    shacl:definition "The official name of the Public Service."@en;
     shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
     shacl:name "name"@en;
-    shacl:path <http://fixme.com#name>
-  ], [
-    shacl:class <http://fixme.com#Location>;
-    shacl:definition "TODO"@en;
-    shacl:name "spatial"@en;
-    shacl:path <http://fixme.com#spatial>
-  ], [
-    shacl:class <http://fixme.com#Event>;
-    shacl:definition "TODO"@en;
-    shacl:name "Event"@en;
-    shacl:path <http://fixme.com#isGroupedBy>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "TODO"@en;
-    shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
-  ], [
-    shacl:class <http://fixme.com#Webpage>;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "has webpage"@en;
-    shacl:path <http://fixme.com#hasWebpage>
+    shacl:path dc:title
   ], [
     shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:minCount 1;
-    shacl:name "description"@en;
-    shacl:path <http://fixme.com#description>
-  ], [
-    shacl:class <http://fixme.com#PublicOrganization>;
-    shacl:definition "TODO"@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "has competent authority"@en;
-    shacl:path <http://fixme.com#hasCompetentAuthority>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "TODO"@en;
+    shacl:definition "A unique identifier of the Public Service."@en;
     shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
     shacl:name "identifier"@en;
-    shacl:path <http://fixme.com#identifier>
+    shacl:path dc:identifier
   ], [
-    shacl:class <http://fixme.com#Output>;
-    shacl:definition "TODO"@en;
+    shacl:class <http://data.europa.eu/m8g/Output>;
+    shacl:definition "The produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service."@en;
     shacl:name "produces"@en;
-    shacl:path <http://fixme.com#produces>
+    shacl:path <http://purl.org/vocab/cpsv#produces>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "A free text description of the Public Service."@en;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
+    shacl:name "description"@en;
+    shacl:path dc:description
+  ], [
+    shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+    shacl:definition "Any Member State authority or body established at national, regional or local level with specific responsibilities relating to the information, procedures, assistance and problem-solving services covered by the Single Digital Gateway Regulation."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "has competent authority"@en;
+    shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
 
@@ -164,22 +167,22 @@
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:definition "TODO"@en;
+    shacl:definition "The Language(s) in which the Webpage is available."@en;
     shacl:maxCount 2;
     shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
+    shacl:path dc:type
   ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "TODO"@en;
-    shacl:minCount 1;
-    shacl:name "identifier"@en;
-    shacl:path <http://fixme.com#Identifier>
-  ], [
-    shacl:class <http://fixme.com#LinguisticSystem>;
-    shacl:definition "TODO"@en;
+    shacl:class dc:LinguisticSystem;
+    shacl:definition "The Language(s) in which the Webpage is available."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "has language"@en;
-    shacl:path <http://fixme.com#hasLanguage>
+    shacl:path dc:language
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "The URL of the Webpage."@en;
+    shacl:minCount 1;
+    shacl:name "identifier"@en;
+    shacl:path dcat:accessURL
   ];
-  shacl:targetClass <http://fixme.com#Webpage> .
+  shacl:targetClass <http://xmlns.com/foaf/spec/#term_page> .
