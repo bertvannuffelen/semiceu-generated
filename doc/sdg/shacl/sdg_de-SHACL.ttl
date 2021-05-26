@@ -4,23 +4,20 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#CodeShape>,
-    <https://semiceu.github.io/shacl/sdg_de#EventShape>,
-    <https://semiceu.github.io/shacl/sdg_de#WebpageShape>,
+<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#EventShape>,
     <https://semiceu.github.io/shacl/sdg_de#LocationShape>,
+    <https://semiceu.github.io/shacl/sdg_de#WebpageShape>,
+    <https://semiceu.github.io/shacl/sdg_de#OutputShape>,
     <https://semiceu.github.io/shacl/sdg_de#PublicOrganizationShape>,
     <https://semiceu.github.io/shacl/sdg_de#LinguisticSystemShape>,
-    <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape>,
-    <https://semiceu.github.io/shacl/sdg_de#OutputShape> .
-
-<https://semiceu.github.io/shacl/sdg_de#CodeShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass skos:Concept .
+    <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape> .
 
 <https://semiceu.github.io/shacl/sdg_de#EventShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#sdgType>
   ];
   shacl:targetClass <http://fixme.com#Event> .
@@ -47,7 +44,9 @@
     shacl:path <http://fixme.com#geographicIdentifier>
   ], [
     shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#geographicName>
   ];
   shacl:targetClass <http://fixme.com#Location> .
@@ -55,18 +54,6 @@
 <https://semiceu.github.io/shacl/sdg_de#OutputShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#description>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#identifier>
-  ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
@@ -76,7 +63,19 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#identifier>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#name>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#description>
   ];
   shacl:targetClass <http://fixme.com#Output> .
 
@@ -87,18 +86,18 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#identifier>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#preferredLabel>
   ], [
     shacl:class <http://fixme.com#Location>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#spatial>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#identifier>
   ];
   shacl:targetClass <http://fixme.com#PublicOrganization> .
 
@@ -119,17 +118,34 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#identifier>
   ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#type>
+  ], [
+    shacl:class <http://fixme.com#Event>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#isGroupedBy>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#name>
+  ], [
+    shacl:class <http://fixme.com#Output>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#produces>
+  ], [
     shacl:class <http://fixme.com#PublicOrganization>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#hasCompetentAuthority>
-  ], [
-    shacl:class <http://fixme.com#Output>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#produces>
   ], [
     shacl:class <http://fixme.com#Webpage>;
     shacl:definition "Enter your translation here"@de;
@@ -141,19 +157,6 @@
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#spatial>
-  ], [
-    shacl:class <http://fixme.com#Event>;
-    shacl:path <http://fixme.com#isGroupedBy>
-  ], [
-    shacl:class skos:Concept;
-    shacl:path <http://fixme.com#type>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#name>
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
 
@@ -161,14 +164,10 @@
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:maxCount 2;
-    shacl:path <http://fixme.com#type>
-  ], [
-    shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
+    shacl:maxCount 2;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#Identifier>
+    shacl:path <http://fixme.com#type>
   ], [
     shacl:class <http://fixme.com#LinguisticSystem>;
     shacl:definition "Enter your translation here"@de;
@@ -176,5 +175,11 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#hasLanguage>
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#Identifier>
   ];
   shacl:targetClass <http://fixme.com#Webpage> .
