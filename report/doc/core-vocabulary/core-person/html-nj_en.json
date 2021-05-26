@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/2b20007cb4a054af51cc3d65f2a3d2e923cc014b",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/2b20007cb4a054af51cc3d65f2a3d2e923cc014b/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/aad082b87766f37b11a43b5909b55235950a5910",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/aad082b87766f37b11a43b5909b55235950a5910/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/Core-Person-Vocabulary/issues",
     "standaardregisterurl": "Core-Person-Vocabulary",
     "usesVocs": [],
@@ -1094,16 +1094,16 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "residency",
-          "sort": "residency",
+          "name": "country of birth",
+          "sort": "country of birth",
           "label": {
-            "en": "residency"
+            "en": "country of birth"
           },
           "description": {
-            "en": "Residency typically provides an individual with a subset of the rights of a citizen."
+            "en": "The country in which a Person was born."
           },
           "usage": {
-            "en": "\nA Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship."
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
           },
           "domain": [
             {
@@ -1113,16 +1113,16 @@
           ],
           "range": [
             {
-              "range_label": "Jurisdiction",
-              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Jurisdiction",
-              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
-                "en": "Jurisdiction"
+                "en": "Location"
               }
             }
           ],
@@ -1168,6 +1168,43 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "residency",
+          "sort": "residency",
+          "label": {
+            "en": "residency"
+          },
+          "description": {
+            "en": "Residency typically provides an individual with a subset of the rights of a citizen."
+          },
+          "usage": {
+            "en": "\nA Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Jurisdiction",
+              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Jurisdiction",
+              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
+              "range_label": {
+                "en": "Jurisdiction"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
           "name": "place of death",
           "sort": "place of death",
           "label": {
@@ -1178,43 +1215,6 @@
           },
           "usage": {
             "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
-          },
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Location",
-              "range_uri": "http://purl.org/dc/terms/Location"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Location",
-              "range_puri": "http://purl.org/dc/terms/Location",
-              "range_label": {
-                "en": "Location"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "country of birth",
-          "sort": "country of birth",
-          "label": {
-            "en": "country of birth"
-          },
-          "description": {
-            "en": "The country in which a Person was born."
-          },
-          "usage": {
-            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
           },
           "domain": [
             {
@@ -1697,16 +1697,16 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "residency",
-          "sort": "residency",
+          "name": "country of birth",
+          "sort": "country of birth",
           "label": {
-            "en": "residency"
+            "en": "country of birth"
           },
           "description": {
-            "en": "Residency typically provides an individual with a subset of the rights of a citizen."
+            "en": "The country in which a Person was born."
           },
           "usage": {
-            "en": "\nA Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship."
+            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
           },
           "domain": [
             {
@@ -1716,16 +1716,16 @@
           ],
           "range": [
             {
-              "range_label": "Jurisdiction",
-              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Jurisdiction",
-              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
+              "range_uri": "#Location",
+              "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
-                "en": "Jurisdiction"
+                "en": "Location"
               }
             }
           ],
@@ -1771,6 +1771,43 @@
         },
         {
           "uri": "http://www.w3.org/ns/person#countryOfBirth",
+          "name": "residency",
+          "sort": "residency",
+          "label": {
+            "en": "residency"
+          },
+          "description": {
+            "en": "Residency typically provides an individual with a subset of the rights of a citizen."
+          },
+          "usage": {
+            "en": "\nA Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship."
+          },
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Jurisdiction",
+              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Jurisdiction",
+              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
+              "range_label": {
+                "en": "Jurisdiction"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/person#countryOfBirth",
           "name": "place of death",
           "sort": "place of death",
           "label": {
@@ -1781,43 +1818,6 @@
           },
           "usage": {
             "en": "The Place of Birth and Place of Death are given using the Location class which is associated via the appropriate relationship. The Location Class has two properties:\n(1) the geographic name of the place, which is given as a string such as \"Amsterdam\" or \"Valetta\" and (2) an identifier, such as a geonames URI http://sws.geonames.org/2759794 (which identifies Amsterdam) or http://sws.geonames.org/2562305 (which identifies Valetta).\nThe use of identifiers is preferred as these are unambiguous, however, public sector data typically uses simple names to record places and this is fully supported."
-          },
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Location",
-              "range_uri": "http://purl.org/dc/terms/Location"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Location",
-              "range_puri": "http://purl.org/dc/terms/Location",
-              "range_label": {
-                "en": "Location"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/person#countryOfBirth",
-          "name": "country of birth",
-          "sort": "country of birth",
-          "label": {
-            "en": "country of birth"
-          },
-          "description": {
-            "en": "The country in which a Person was born."
-          },
-          "usage": {
-            "en": "The Location Class has two properties: a Geographic Name and a Geographic Identifier. Plain codes like \"DE\" should be provided as values for Geographical Names whereas URIs should be provided as value of the Geographical Identifier. Ideally, provide both.\nProviding a simple country name is problematic and should be avoided whereas using a standardised system that allows the use of a code list for country names has a lot of potential for increasing semantic interoperability.\nKnown diversity that one has to deal with when exchanging country names between different communication partners without relying on an agreed code list are:\n(a) long form vs. short form of a country name (e.g. Federal Republic of Germany vs. Germany),\n(b) different languages (Italy vs. Italia),\n(c) historic name vs. current name (Burma vs. Myanmar),\n(d) ambiguity of similar sounding countries (Republic of the Congo vs. Democratic Republic of the Congo).\nThe Publications Office of the European Union recommends and uses <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166-1</a> codes for countries in all cases except two: use 'UK' in preference to the ISO 3166 code GB for the United Kingdom; use 'EL' in preference to the ISO 3166 code GR for Greece.\nSee http://publications.europa.eu/code/en/en-5000500.htm for details of the OPOCE's full list of countries, codes, currencies and more.\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code [ISO 3166-3]."
           },
           "domain": [
             {
