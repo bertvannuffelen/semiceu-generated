@@ -7,24 +7,24 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/cpsv-ap_de> <https://semiceu.github.io/shacl/cpsv-ap_deshapes> <https://semiceu.github.io/shacl/cpsv-ap_de#CostShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#CollectionShape>,
+<https://semiceu.github.io/shacl/cpsv-ap_de> <https://semiceu.github.io/shacl/cpsv-ap_deshapes> <https://semiceu.github.io/shacl/cpsv-ap_de#CollectionShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceDatasetShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#PublicOrganizationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#ConceptShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#ParticipationShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#AgentShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#CostShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#CriterionRequirementShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#LifeEventShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#LegalResourceShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#BusinessEventShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#RuleShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#EventShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#OpeningHoursSpecificationShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#OutputShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#ChannelShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#LegalResourceShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#RuleShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceDatasetShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#OpeningHoursSpecificationShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#ParticipationShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#CriterionRequirementShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#EvidenceShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#LifeEventShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#AgentShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#EventShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#BusinessEventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#ContactPointShape> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#AgentShape> a shacl:NodeShape;
@@ -42,17 +42,17 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#hasAddress>
   ], [
-    shacl:class <https://data.europa.eu/m8g/Participation>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/playsRole>
-  ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Participation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/playsRole>
   ];
   shacl:targetClass foaf:Agent .
 
@@ -68,14 +68,11 @@
     shacl:maxCount 1;
     shacl:path schemas:hoursAvailable
   ], [
-    shacl:class <https://data.europa.eu/m8g/Cost>;
+    shacl:class <http://fixme.com#Code>;
     shacl:definition "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/ifAccessedThrough>
-  ], [
-    shacl:class <https://data.europa.eu/m8g/Evidence>;
-    shacl:maxCount "n"^^xsd:integer;
+    shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <https://data.europa.eu/m8g/hasInput>
+    shacl:path dc:type
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
@@ -88,18 +85,14 @@
     shacl:maxCount "n"^^xsd:integer;
     shacl:path <http://data.europa.eu/m8g/ownedBy>
   ], [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
+    shacl:class <https://data.europa.eu/m8g/Evidence>;
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:type
+    shacl:path <https://data.europa.eu/m8g/hasInput>
   ], [
-    shacl:class <http://fixme.com#Text>;
+    shacl:class <https://data.europa.eu/m8g/Cost>;
     shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:identifier
+    shacl:path <http://data.europa.eu/m8g/ifAccessedThrough>
   ], [
     shacl:class <https://data.europa.eu/m8g/Evidence>;
     shacl:definition "Enter your translation here"@de;
@@ -110,6 +103,13 @@
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
     shacl:path <https://data.europa.eu/m8g/ownedBy>
+  ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:identifier
   ];
   shacl:targetClass <https://data.europa.eu/m8g/Channel> .
 
@@ -117,14 +117,14 @@
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#member>
-  ], [
-    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:path skos:member
+  ], [
+    shacl:class skos:Concept;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#member>
   ];
   shacl:targetClass skos:Collection .
 
@@ -136,14 +136,14 @@
   shacl:closed false;
   shacl:property [
     shacl:class schemas:OpeningHoursSpecfication;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path schemas:hoursAvailable
-  ], [
-    shacl:class schemas:OpeningHoursSpecfication;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#availabilityRestriction>
+  ], [
+    shacl:class schemas:OpeningHoursSpecfication;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path schemas:hoursAvailable
   ];
   shacl:targetClass schemas:ContactPoint .
 
@@ -162,6 +162,16 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <https://data.europa.eu/m8g/currency>
   ], [
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <https://data.europa.eu/m8g/value>
+  ], [
+    shacl:class <https://data.europa.eu/m8g/PublicOrganization>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/isDefinedBy>
+  ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -170,19 +180,9 @@
     shacl:path dc:identifier
   ], [
     shacl:class <https://data.europa.eu/m8g/PublicOrganization>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/isDefinedBy>
-  ], [
-    shacl:class <https://data.europa.eu/m8g/PublicOrganization>;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
     shacl:path <https://data.europa.eu/m8g/isDefinedBy>
-  ], [
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <https://data.europa.eu/m8g/value>
   ], [
     shacl:class <https://data.europa.eu/m8g/Channel>;
     shacl:maxCount 1;
@@ -194,18 +194,18 @@
 <https://semiceu.github.io/shacl/cpsv-ap_de#CriterionRequirementShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:type
-  ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
+  ], [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:type
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
@@ -219,23 +219,17 @@
 <https://semiceu.github.io/shacl/cpsv-ap_de#EventShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path dc:relation
-  ], [
-    shacl:class <http://fixme.com#Text>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
-  ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:title
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path dc:relation
   ], [
     shacl:class <http://fixme.com#Code>;
     shacl:definition "Enter your translation here"@de;
@@ -249,6 +243,12 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
+  ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:description
   ];
   shacl:targetClass <https://data.europa.eu/m8g/Event> .
 
@@ -262,6 +262,13 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
   ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:title
+  ], [
     shacl:class <http://fixme.com#Code>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -271,14 +278,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
-    shacl:path foaf:page
-  ], [
-    shacl:class <http://fixme.com#Text>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:title
+    shacl:path dc:language
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
@@ -289,22 +289,22 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:language
+    shacl:path foaf:page
   ];
   shacl:targetClass <https://data.europa.eu/m8g/Evidence> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#LegalResourceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#related>
-  ], [
     shacl:class <http://purl.org/vocab/cpsv#Rule>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://purl.org/vocab/cpsv#implements>
+  ], [
+    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#related>
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
     shacl:definition "Enter your translation here"@de;
@@ -334,15 +334,15 @@
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
+    shacl:path dc:identifier
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:identifier
+    shacl:path dc:description
   ], [
     shacl:class <http://fixme.com#Code>;
     shacl:definition "Enter your translation here"@de;
@@ -355,6 +355,13 @@
 <https://semiceu.github.io/shacl/cpsv-ap_de#ParticipationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <https://data.europa.eu/m8g/role>
+  ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -368,22 +375,17 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:description
-  ], [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <https://data.europa.eu/m8g/role>
   ];
   shacl:targetClass <https://data.europa.eu/m8g/Participation> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
+    shacl:class <http://fixme.com#Text>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path skos:prefLabel
   ], [
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -391,24 +393,15 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:spatial
   ], [
-    shacl:class <http://fixme.com#Text>;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path skos:prefLabel
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
   ];
   shacl:targetClass <https://data.europa.eu/m8g/PublicOrganization> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceDatasetShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://fixme.com#Text>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
-  ], [
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
@@ -419,6 +412,13 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:path dc:publisher
+  ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:description
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
@@ -438,43 +438,11 @@
 <https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <https://data.europa.eu/m8g/Participation>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/hasParticipation>
-  ], [
-    shacl:class <https://data.europa.eu/m8g/Channel>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/hasChannel>
-  ], [
-    shacl:class <https://data.europa.eu/m8g/Output>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://purl.org/vocab/cpsv#produces>
-  ], [
-    shacl:class <http://fixme.com#Text>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dcat:keyword
-  ], [
     shacl:class <http://fixme.com#Code>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#thematicArea>
-  ], [
-    shacl:class <http://fixme.com#Text>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
-  ], [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#related>
   ], [
     shacl:class <http://purl.org/vocab/cpsv#PublicService>;
     shacl:definition "Enter your translation here"@de;
@@ -483,65 +451,26 @@
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
+    shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:title
+    shacl:path dcat:keyword
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#related>
   ], [
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:LinguisticSystem
   ], [
-    shacl:class <https://data.europa.eu/m8g/Evidence>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://purl.org/vocab/cpsv#hasInput>
-  ], [
-    shacl:class schemas:ContactPoint;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/hasContactPoint>
-  ], [
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:spatial
-  ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:identifier
-  ], [
-    shacl:class <https://data.europa.eu/m8g/Event>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
-  ], [
-    shacl:class <http://purl.org/vocab/cpsv#Rule>;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#follows>
-  ], [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#sector>
-  ], [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:type
-  ], [
-    shacl:class <http://fixme.com#Code>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/adms#status>
+    shacl:path dc:title
   ], [
     shacl:datatype xsd:duration;
     shacl:definition "Enter your translation here"@de;
@@ -549,51 +478,15 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#processingTime>
   ], [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
+    shacl:class <https://data.europa.eu/m8g/Evidence>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/hasLegalResource>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/isClassifiedBy>
-  ], [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path dc:requires
-  ], [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#requires>
-  ], [
-    shacl:class <https://data.europa.eu/m8g/Cost>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount "n"^^xsd:integer;
-    shacl:path <http://data.europa.eu/m8g/hasCost>
+    shacl:path <http://purl.org/vocab/cpsv#hasInput>
   ], [
     shacl:class <https://data.europa.eu/m8g/CriterionRequirement>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
-  ];
-  shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
-
-<https://semiceu.github.io/shacl/cpsv-ap_de#RuleShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <http://fixme.com#Text>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:identifier
-  ], [
-    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:path <http://purl.org/vocab/cpsv#follows>
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
@@ -602,10 +495,117 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:description
   ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/isClassifiedBy>
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Output>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://purl.org/vocab/cpsv#produces>
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#Rule>;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#follows>
+  ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:identifier
+  ], [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#sector>
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Event>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
+  ], [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:type
+  ], [
+    shacl:class schemas:ContactPoint;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/hasContactPoint>
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Participation>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/hasParticipation>
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path dc:requires
+  ], [
+    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/hasLegalResource>
+  ], [
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:spatial
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Channel>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/hasChannel>
+  ], [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#requires>
+  ], [
+    shacl:class <http://fixme.com#Code>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/adms#status>
+  ], [
+    shacl:class <https://data.europa.eu/m8g/Cost>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount "n"^^xsd:integer;
+    shacl:path <http://data.europa.eu/m8g/hasCost>
+  ];
+  shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
+
+<https://semiceu.github.io/shacl/cpsv-ap_de#RuleShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://purl.org/vocab/cpsv#PublicService>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:path <http://purl.org/vocab/cpsv#follows>
+  ], [
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:language
+  ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:identifier
+  ], [
+    shacl:class <http://fixme.com#Text>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:description
   ], [
     shacl:class <http://fixme.com#Text>;
     shacl:definition "Enter your translation here"@de;
