@@ -102,12 +102,6 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
   rdfs:isDefinedBy <http://data.europa.eu/m8g/cccev>;
   rdfs:range [] .
 
-<http://data.europa.eu/m8g/cccev#duration> a rdf:Property,
-    owl:DatatypeProperty;
-  rdfs:domain [];
-  rdfs:isDefinedBy <http://data.europa.eu/m8g/cccev>;
-  rdfs:range [] .
-
 <http://data.europa.eu/m8g/cccev#evidenceTypeClassification> a rdf:Property,
     owl:ObjectProperty;
   rdfs:domain [];
@@ -214,8 +208,8 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
   rdfs:range [] .
 
 <http://data.europa.eu/m8g/cccev> a owl:Ontology;
-  rdfs:label "cccev"@en,
-    "cccev"@nl;
+  rdfs:label "cccev"@nl,
+    "cccev"@en;
   dc:contributor [
     a foaf:Person;
     schema:affiliation [foaf:name "European Commission"];
@@ -223,44 +217,48 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
     foaf:lastName "van Hooland"
   ];
   dc:issued "TODO";
-  dc:license "https://creativecommons.org/licenses/by/4.0/",
-    <https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic>;
+  dc:license <https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic>,
+    "https://creativecommons.org/licenses/by/4.0/";
   dc:mediator [
     foaf:homepage <https://semic.eu>;
     foaf:name "Semantic Interoperability Community (SEMIC)"
   ];
-  rdfs:seeAlso <http://data.europa.eu/m8g/cccev#Requirement>,
+  rdfs:seeAlso <http://data.europa.eu/m8g/cccev#validityPeriodConstraint>,
     <http://data.europa.eu/m8g/cccev#EvidenceType>,
-    <http://data.europa.eu/m8g/cccev#confidentionalityLevelType>,
-    <http://data.europa.eu/m8g/cccev#Criterion>,
-    <http://data.europa.eu/m8g/cccev#InformationConcept>,
-    <http://data.europa.eu/m8g/cccev#isRequirementOf>,
-    <http://data.europa.eu/m8g/cccev#duration>,
-    <http://data.europa.eu/m8g/cccev#EvidenceTypeList>,
     <http://data.europa.eu/m8g/cccev#evidenceTypeClassification>,
+    <http://data.europa.eu/m8g/cccev#Criterion>,
+    <http://data.europa.eu/m8g/cccev#hasRequirement>,
+    <http://data.europa.eu/m8g/cccev#Evidence>,
+    <http://data.europa.eu/m8g/cccev#validityPeriod>,
+    <http://data.europa.eu/m8g/cccev#Constraint>,
     <http://data.europa.eu/m8g/cccev#bias>,
-    <http://data.europa.eu/m8g/cccev#query>,
-    <http://data.europa.eu/m8g/cccev#ReferenceFramework>,
+    <http://data.europa.eu/m8g/cccev#isRequirementOf>,
+    <http://data.europa.eu/m8g/cccev#PeriodOfTime>,
+    <http://data.europa.eu/m8g/cccev#isSpecifiedIn>,
+    <http://data.europa.eu/m8g/cccev#InformationConcept>,
+    <http://data.europa.eu/m8g/cccev#hasQualifiedRelation>,
+    <http://data.europa.eu/m8g/cccev#EvidenceTypeList>,
+    <http://data.europa.eu/m8g/cccev#specifiesEvidenceType>,
+    <http://data.europa.eu/m8g/cccev#weightingType>,
+    <http://data.europa.eu/m8g/cccev#Requirement>,
+    <http://data.europa.eu/m8g/cccev#supportsRequirement>,
     <http://data.europa.eu/m8g/cccev#InformationRequirement>,
     <http://data.europa.eu/m8g/cccev#expressionOfExpectedValue>,
-    <http://data.europa.eu/m8g/cccev#SupportedValue>,
-    <http://data.europa.eu/m8g/cccev#supportsValue>,
-    <http://data.europa.eu/m8g/cccev#Evidence>,
-    <http://data.europa.eu/m8g/cccev#PeriodOfTime>,
-    <http://data.europa.eu/m8g/cccev#validityPeriodConstraint>,
-    <http://data.europa.eu/m8g/cccev#Constraint>,
-    <http://data.europa.eu/m8g/cccev#value>,
-    <http://data.europa.eu/m8g/cccev#weight>,
-    <http://data.europa.eu/m8g/cccev#isSpecifiedIn>,
-    <http://data.europa.eu/m8g/cccev#hasQualifiedRelation>,
-    <http://data.europa.eu/m8g/cccev#hasRequirement>,
     <http://data.europa.eu/m8g/cccev#weightingConsiderationDescription>,
-    <http://data.europa.eu/m8g/cccev#supportsRequirement>,
+    <http://data.europa.eu/m8g/cccev#supportsValue>,
+    <http://data.europa.eu/m8g/cccev#SupportedValue>,
     <http://data.europa.eu/m8g/cccev#providesValueFor>,
-    <http://data.europa.eu/m8g/cccev#weightingType>,
-    <http://data.europa.eu/m8g/cccev#specifiesEvidenceType>,
-    <http://data.europa.eu/m8g/cccev#validityPeriod>;
+    <http://data.europa.eu/m8g/cccev#weight>,
+    <http://data.europa.eu/m8g/cccev#ReferenceFramework>,
+    <http://data.europa.eu/m8g/cccev#value>,
+    <http://data.europa.eu/m8g/cccev#query>,
+    <http://data.europa.eu/m8g/cccev#confidentionalityLevelType>;
   <http://www.w3.org/2001/02pd/rec54#editor> [
+    a foaf:Person;
+    schema:affiliation [foaf:name "PwC EU Services"];
+    foaf:firstName "Michiel";
+    foaf:lastName "De Keyzer"
+  ], [
     a foaf:Person;
     schema:affiliation [foaf:name "PwC"];
     foaf:firstName "Dimitri";
@@ -272,19 +270,14 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
     foaf:lastName "Barthelemy"
   ], [
     a foaf:Person;
-    schema:affiliation [foaf:name "TenForce"];
-    foaf:firstName "Bert";
-    foaf:lastName "Van Nuffelen"
-  ], [
-    a foaf:Person;
-    schema:affiliation [foaf:name "PwC EU Services"];
-    foaf:firstName "Michiel";
-    foaf:lastName "De Keyzer"
-  ], [
-    a foaf:Person;
     schema:affiliation [foaf:name "European Commission"];
     foaf:firstName "Pavlina";
     foaf:lastName "Fragkou"
+  ], [
+    a foaf:Person;
+    schema:affiliation [foaf:name "TenForce"];
+    foaf:firstName "Bert";
+    foaf:lastName "Van Nuffelen"
   ];
   foaf:maker [
     a foaf:Person;
