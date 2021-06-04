@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/2a79bb06435f3c4d80cb4ced491737d6b290a482",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/2a79bb06435f3c4d80cb4ced491737d6b290a482/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/e74cad96a47d013248ed211a196b94ffd351ae4c",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/e74cad96a47d013248ed211a196b94ffd351ae4c/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/CCCEV/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -384,7 +384,7 @@
             "en": "validity period"
           },
           "description": {
-            "en": "TODO"
+            "en": "Indicates the validity period of the Evidence."
           },
           "usage": {},
           "domain": [
@@ -484,6 +484,37 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://data.europa.eu/m8g/cccev#issuedBy",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://data.europa.eu/m8g/cccev#supportsConcept",
           "name": "supports concept",
           "sort": "supports concept",
@@ -514,6 +545,72 @@
               "range_puri": "http://data.europa.eu/m8g/cccev#InformationConcept",
               "range_label": {
                 "en": "Information Concept"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://udfr.org/docs/onto/dct_creator.html",
+          "name": "is created by",
+          "sort": "is created by",
+          "label": {
+            "en": "is created by"
+          },
+          "description": {
+            "en": "The Agent that produces the Evidence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://udfr.org/docs/onto/dct_publisher.html",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
               }
             }
           ],
@@ -575,41 +672,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/cccev#identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "TODO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "EvidenceType",
-              "uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://data.europa.eu/m8g/cccev#isSpecifiedIn",
           "name": "is specified in",
           "sort": "is specified in",
@@ -652,7 +714,7 @@
             "en": "validity period constraint"
           },
           "description": {
-            "en": "TODO"
+            "en": "Indicates the validity period of the Evidence Type. "
           },
           "usage": {},
           "domain": [
@@ -677,6 +739,41 @@
             }
           ],
           "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "An unambiguous reference to an Evidence Type List."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "EvidenceType",
+              "uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -1064,7 +1161,7 @@
       },
       "sort": "Period of Time",
       "description": {
-        "en": "TODO"
+        "en": "Temporal information related to an evidence. "
       },
       "usage": {},
       "parents": [],
@@ -1074,7 +1171,9 @@
           "name": "",
           "sort": "",
           "label": {},
-          "description": {},
+          "description": {
+            "en": "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit"
+          },
           "usage": {},
           "domain": [
             {
@@ -1101,14 +1200,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/cccev#endtime",
-          "name": "endtime",
-          "sort": "endtime",
+          "uri": "https://www.w3.org/TR/owl-time/#time:hasBeginning",
+          "name": "starttime",
+          "sort": "starttime",
           "label": {
-            "en": "endtime"
+            "en": "starttime"
           },
           "description": {
-            "en": "TODO"
+            "en": "Time information indicating the begining of the defined period."
           },
           "usage": {},
           "domain": [
@@ -1136,14 +1235,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/cccev#starttime",
-          "name": "starttime",
-          "sort": "starttime",
+          "uri": "https://www.w3.org/TR/owl-time/#time:hasEnd",
+          "name": "endtime",
+          "sort": "endtime",
           "label": {
-            "en": "starttime"
+            "en": "endtime"
           },
           "description": {
-            "en": "TODO"
+            "en": "Time information indicating the end of the defined period."
           },
           "usage": {},
           "domain": [
@@ -1188,14 +1287,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#identifier",
+          "uri": "http://purl.org/dc/terms/identifier",
           "name": "identifier",
           "sort": "identifier",
           "label": {
             "en": "identifier"
           },
           "description": {
-            "en": "TODO"
+            "en": "An unambiguous reference to an Evidence Type List."
           },
           "usage": {},
           "domain": [
@@ -1790,11 +1889,15 @@
       ]
     },
     {
-      "uri": "http://fixme.com#Location",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "uri": "http://purl.org/dc/terms/Location",
+      "name": "Location",
+      "label": {
+        "en": "Location"
+      },
+      "sort": "Location",
+      "description": {
+        "en": "The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant."
+      },
       "usage": {},
       "parents": [],
       "properties": []

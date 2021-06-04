@@ -151,6 +151,24 @@
           "sh:path": "http://data.europa.eu/m8g/cccev#isConformantTo"
         },
         {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "The Agent that produces the Evidence."
+          },
+          "sh:name": {
+            "en": "is created by"
+          },
+          "sh:path": "https://udfr.org/docs/onto/dct_creator.html"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:path": "http://data.europa.eu/m8g/cccev#issuedBy"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:path": "https://udfr.org/docs/onto/dct_publisher.html"
+        },
+        {
           "sh:class": "http://data.europa.eu/m8g/cccev#InformationConcept",
           "sh:definition": {
             "en": "The Information Concept that is supported by the Evidence."
@@ -183,7 +201,7 @@
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Indicates the validity period of the Evidence."
           },
           "sh:name": {
             "en": "validity period"
@@ -213,14 +231,14 @@
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "TODO"
+            "en": "An unambiguous reference to an Evidence Type List."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "identifier"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#identifier"
+          "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
@@ -235,7 +253,7 @@
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Indicates the validity period of the Evidence Type. "
           },
           "sh:name": {
             "en": "validity period constraint"
@@ -381,6 +399,9 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "en": "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit"
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:path": "http://data.europa.eu/m8g/cccev#duration"
@@ -388,26 +409,26 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Time information indicating the end of the defined period."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "endtime"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#endtime"
+          "sh:path": "https://www.w3.org/TR/owl-time/#time:hasEnd"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "TODO"
+            "en": "Time information indicating the begining of the defined period."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "starttime"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#starttime"
+          "sh:path": "https://www.w3.org/TR/owl-time/#time:hasBeginning"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
@@ -420,14 +441,14 @@
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "TODO"
+            "en": "An unambiguous reference to an Evidence Type List."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "identifier"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#identifier"
+          "sh:path": "http://purl.org/dc/terms/identifier"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/cccev#ReferenceFramework"
@@ -615,7 +636,7 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "http://fixme.com#Location"
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cccev-ap_en#DatasetShape",
