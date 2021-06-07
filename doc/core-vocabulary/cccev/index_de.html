@@ -109,6 +109,17 @@
                         
                           <dd inlist="" rel="bibo:editor" class="p-author h-card vcard">
                               <span typeof="foaf:Person">
+                              <span class="p-name fn" property="foaf:lastName">Beaufays</span>,
+                              <span class="p-name fn" property="foaf:firstName">Alexandre</span>
+                              
+                                 - <span class="p-org org h-org h-card">:PwC EU Services</span>
+                              
+                							
+                							</span>
+                          </dd>
+                        
+                          <dd inlist="" rel="bibo:editor" class="p-author h-card vcard">
+                              <span typeof="foaf:Person">
                               <span class="p-name fn" property="foaf:lastName">De Keyzer</span>,
                               <span class="p-name fn" property="foaf:firstName">Michiel</span>
                               
@@ -179,7 +190,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/462e7650813abb6a8ddf91710c4c103bc74f1f2c/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/462e7650813abb6a8ddf91710c4c103bc74f1f2c/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/4aa93172315aa7f4d5d1035e6eb03710db458fa0/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/4aa93172315aa7f4d5d1035e6eb03710db458fa0/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/CCCEV/issues">https://github.com/SEMICeu/CCCEV/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -270,7 +281,7 @@
                     <p>This document describes the usage of the following entities for a correct usage of the Core Vocabulary: 
                       <br />
                       |
-                      <a href="#Reference Framework">Reference Framework</a> |
+                      <a href="#Requirement">Requirement</a> |
                       <a href="#Constraint">Constraint</a> |
                       <a href="#Evidence">Evidence</a> |
                       <a href="#Evidence Type">Evidence Type</a> |
@@ -278,8 +289,8 @@
                       <a href="#Information Concept">Information Concept</a> |
                       <a href="#Information Requirement">Information Requirement</a> |
                       <a href="#Criterion">Criterion</a> |
-                      <a href="#Requirement">Requirement</a> |
                       <a href="#Supported Value">Supported Value</a> |
+                      <a href="#Reference Framework">Reference Framework</a> |
                       <a href="#Location">Location</a> |
                       <a href="#Period of Time">Period of Time</a> |
                       <a href="#Dataset">Dataset</a> |
@@ -302,18 +313,31 @@
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Reference Framework"><a href="http://data.europa.eu/m8g/cccev#ReferenceFramework" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#ReferenceFramework" data-placement="right">Reference Framework</a></h3>
+              <h3 class="h3" id="Requirement"><a href="http://data.europa.eu/m8g/cccev#Requirement" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#Requirement" data-placement="right">Requirement</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A source from where Requirements are identified and derived.</dd>
+                    <dt>Description</dt><dd>A condition or prerequisite that someone requests and someone else has to meet.</dd>
                     
-                    <dt>Usage</dt><dd>Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc.</dd>
+                    <dt>Usage</dt><dd>Requirement is a generic class representing any type of prerequisite that may be desired, needed or imposed as an obligation. 
+
+CCCEV recommends to not use the Requirement class directly, but rather a more semantically-enriched subclass such as Criterion, Information Requirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Reference%20Framework%3Aidentifier">identifier</a>.</dd>
+                      <a href="#Requirement%3Ais%20derived%20from">is derived from</a>, 
+                      <a href="#Requirement%3Ahas%20qualified%20relation">has qualified relation</a>, 
+                      <a href="#Requirement%3Ais%20requirement%20of">is requirement of</a>, 
+                      <a href="#Requirement%3Ahas%20concept">has concept</a>, 
+                      <a href="#Requirement%3Ahas%20evidence%20type%20list">has evidence type list</a>, 
+                      <a href="#Requirement%3Ahas%20supporting%20evidence">has supporting evidence</a>, 
+                      <a href="#Requirement%3Ahas%20requirement">has requirement</a>, 
+                      <a href="#Requirement%3Adescription">description</a>, 
+                      <a href="#Requirement%3Aidentifier">identifier</a>, 
+                      <a href="#Requirement%3Aissued%20by">issued by</a>, 
+                      <a href="#Requirement%3Atype">type</a>, 
+                      <a href="#Requirement%3Aname">name</a>.</dd>
                     
                   </dl>
                 </div>
@@ -332,7 +356,159 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="Reference%20Framework%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
+                      <tr id="Requirement%3Ais%20derived%20from" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#isDerivedFrom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-placement="right">
+                            is derived from</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Reference Framework</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The Reference Framework that is responsible for the creation/initiation of the Requirement.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Ahas%20qualified%20relation" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasQualifiedRelation">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#hasQualifiedRelation" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasQualifiedRelation" data-placement="right">
+                            has qualified relation</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">A described and/or categorised relation to the instance of another Requirement class or subclass.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Ais%20requirement%20of" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#isRequirementOf">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#isRequirementOf" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#isRequirementOf" data-placement="right">
+                            is requirement of</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">A reference between a sub-Requirement and its parent, more general, Requirement.</td>
+                        <td property="skos:scopeNote">Inverse relation from hasRequirement. If there is no hierarchy then this relationship is not needed.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Ahas%20concept" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasConcept">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#hasConcept" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasConcept" data-placement="right">
+                            has concept</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Information Concept</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The Information Concept for which the Requirement expects a support in the supporting Evidence.</td>
+                        <td property="skos:scopeNote">Information Concepts are tools to make Requirements more machine processable: they allow the user to provide more detail about a Requirement. Information Requirements are a request for information. Instead of writing this expectation down as a textual description, associating an Information Concept with the Information Requirement makes the expectation more formal.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Ahas%20evidence%20type%20list" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasEvidenceTypeList">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#hasEvidenceTypeList" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasEvidenceTypeList" data-placement="right">
+                            has evidence type list</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Evidence Type List</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The single or various combinations of Evidence Types for supporting a Requirement. Out of the different Lists, one of them must be satisfied by the response to the Requirement.</td>
+                        <td property="skos:scopeNote">Often a single kind of response is sufficient, but in many cases different responses can be accepted. For instance, to prove one's identity, a bankcard, social security token, driving license or ID card could be accepted as Evidence. To satisfy this combination, one of the Evidence Type Lists, each containing one of the examples above, must be satisfied: this is thus an OR condition.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Ahas%20supporting%20evidence" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasSupportingEvidence">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#hasSupportingEvidence" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasSupportingEvidence" data-placement="right">
+                            has supporting evidence</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Evidence</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The Evidence that supplies information (proof, support) for this Requirement.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Ahas%20requirement" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasRequirement">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#hasRequirement" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasRequirement" data-placement="right">
+                            has requirement</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">A sub-Requirement.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
+                            description</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Requirement being instantiated.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
@@ -346,7 +522,64 @@
                             
                           
                         </td>
-                        <td property="rdfs:comment">An unambiguous reference to a Reference Framework.</td>
+                        <td property="rdfs:comment">An unambiguous reference to a Requirement.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Aissued%20by" typeof="rdfs:Property" resource="http://purl.org/dc/terms/publisher">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/publisher" data-toggle="tooltip" data-content="http://purl.org/dc/terms/publisher" data-placement="right">
+                            issued by</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Agent</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">The Agent that has published the Requirement.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
+                            type</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">The category or type to which the requirement belongs.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Aname" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2004/02/skos/core#prefLabel" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#prefLabel" data-placement="right">
+                            name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">A name to identify in common language the Requirement.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -443,8 +676,8 @@ Note that CCCEV does not provide any specific guidance on when which kind of Req
                       <a href="#Evidence%3Asupports%20requirement">supports requirement</a>, 
                       <a href="#Evidence%3Asupports%20value">supports value</a>, 
                       <a href="#Evidence%3Avalidity%20period">validity period</a>, 
-                      <a href="#Evidence%3Ais%20conformant%20to">is conformant to</a>, 
                       <a href="#Evidence%3Asupports%20concept">supports concept</a>, 
+                      <a href="#Evidence%3Ais%20conformant%20to">is conformant to</a>, 
                       <a href="#Evidence%3Ais%20created%20by">is created by</a>, 
                       <a href="#Evidence%3Ais%20issued%20by">is issued by</a>, 
                       <a href="#Evidence%3Ais%20about">is about</a>.</dd>
@@ -466,10 +699,10 @@ Note that CCCEV does not provide any specific guidance on when which kind of Req
 
                     <tbody class="supertype">
                     
-                      <tr id="Evidence%3Aconfidentiality%20level%20type" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#confidentionalityLevelType">
+                      <tr id="Evidence%3Aconfidentiality%20level%20type" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#confidentialityLevelType">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#confidentionalityLevelType" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#confidentionalityLevelType" data-placement="right">
+                            <a href="http://data.europa.eu/m8g/cccev#confidentialityLevelType" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#confidentialityLevelType" data-placement="right">
                             confidentiality level type</a>
                           </code>
                         </td>
@@ -542,25 +775,6 @@ Note that CCCEV does not provide any specific guidance on when which kind of Req
                         <td></td>
                       </tr>
                     
-                      <tr id="Evidence%3Ais%20conformant%20to" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#isConformantTo">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#isConformantTo" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#isConformantTo" data-placement="right">
-                            is conformant to</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Evidence Type</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">A reference to one or more types of Evidence where the content and, possibly, the layout or configuration of the Evidence is specified.</td>
-                        <td property="skos:scopeNote">This property can be fulfilled with the dcat property dct:conformsTo. The definition should reflect the need for another property and the usage note should make the distinction clear.</td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Evidence%3Asupports%20concept" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#supportsConcept">
                         <td>
                           <code property="rdfs:label">
@@ -577,6 +791,25 @@ Note that CCCEV does not provide any specific guidance on when which kind of Req
                         </td>
                         <td property="rdfs:comment">The Information Concept that is supported by the Evidence.</td>
                         <td property="skos:scopeNote">Used to express details about the information that is provided by the Evidence.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Evidence%3Ais%20conformant%20to" typeof="rdfs:Property" resource="http://purl.org/dc/terms/conformsTo">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/conformsTo" data-toggle="tooltip" data-content="http://purl.org/dc/terms/conformsTo" data-placement="right">
+                            is conformant to</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Evidence Type</a>
+			    
+                          
+                        </td>
+                        <td property="rdfs:comment">A reference to one or more types of Evidence where the content and, possibly, the layout or configuration of the Evidence is specified.</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -1021,7 +1254,7 @@ Note that CCCEV does not provide any specific guidance on when which kind of Req
                     <dt>Description</dt><dd>A request for data that is proof of Evidence or that leads to the source of such a proof.</dd>
                     
                     <dt>Usage</dt><dd>Information Requirements are the most neutral kind of Requirements. They aim to request information in any form, e.g. a person's date of birth or a company's turnover.
-They represent requests for data that proves one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as 'requests for Evidences'. 
+They represent requests for data that prove one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as 'requests for Evidences'. 
 
 The response to an Information Requirement is an Evidence when the issuer of the response is an authoritative source (e.g. a Civil Registry providing data about a natural person for the provision of public service through the Single Digital Gateway). In other cases, the responses might not be issued by an authoritative source, but the issuer supports the responses with Evidences (or commits to support them timely, e.g. a self-declaration or a declaration of oath). 
 
@@ -1166,284 +1399,6 @@ A concrete example of a Criterion is 'participation in a criminal organisation' 
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Requirement"><a href="http://data.europa.eu/m8g/cccev#Requirement" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#Requirement" data-placement="right">Requirement</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>A condition or prerequisite that someone requests and someone else has to meet.</dd>
-                    
-                    <dt>Usage</dt><dd>Requirement is a generic class representing any type of prerequisite that may be desired, needed or imposed as an obligation. 
-
-CCCEV recommends to not use the Requirement class directly, but rather a more semanticall-enriched subclass such as Criterion, Information Requirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Requirement%3Ais%20derived%20from">is derived from</a>, 
-                      <a href="#Requirement%3Ahas%20qualified%20relation">has qualified relation</a>, 
-                      <a href="#Requirement%3Ais%20requirement%20of">is requirement of</a>, 
-                      <a href="#Requirement%3Ahas%20concept">has concept</a>, 
-                      <a href="#Requirement%3Ahas%20evidence%20type%20list">has evidence type list</a>, 
-                      <a href="#Requirement%3Ahas%20supporting%20evidence">has supporting evidence</a>, 
-                      <a href="#Requirement%3Ahas%20requirement">has requirement</a>, 
-                      <a href="#Requirement%3Adescription">description</a>, 
-                      <a href="#Requirement%3Aidentifier">identifier</a>, 
-                      <a href="#Requirement%3Aissued%20by">issued by</a>, 
-                      <a href="#Requirement%3Atype">type</a>, 
-                      <a href="#Requirement%3Aname">name</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Requirement%3Ais%20derived%20from" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#isDerivedFrom">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-placement="right">
-                            is derived from</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Reference Framework</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The Reference Framework that is responsible for the creation/initiation of the Requirement.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Ahas%20qualified%20relation" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasQualifiedRelation">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#hasQualifiedRelation" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasQualifiedRelation" data-placement="right">
-                            has qualified relation</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">A described and/or categorised relation to the instance of another Requirement class or subclass.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Ais%20requirement%20of" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#isRequirementOf">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#isRequirementOf" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#isRequirementOf" data-placement="right">
-                            is requirement of</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">A reference between a sub-Requirement and its parent, more general, Requirement.</td>
-                        <td property="skos:scopeNote">Inverse relation from hasRequirement. If there is no hierarchy then this relationship is not needed.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Ahas%20concept" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasConcept">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#hasConcept" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasConcept" data-placement="right">
-                            has concept</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Information Concept</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The Information Concept for which the Requirement expects a support in the supporting Evidence.</td>
-                        <td property="skos:scopeNote">Information Concepts are tools to make Requirements more machine processable: they allow the user to provide more detail about a Requirement. Information Requirements are a request for information. Instead of writing this expectation down as a textual description, associating an Information Concept with the Information Requirement makes the expectation more formal.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Ahas%20evidence%20type%20list" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasEvidenceTypeList">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#hasEvidenceTypeList" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasEvidenceTypeList" data-placement="right">
-                            has evidence type list</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Evidence Type List</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The single or various combinations of Evidence Types for supporting a Requirement. Out of the different Lists, one of them must be satisfied by the response to the Requirement.</td>
-                        <td property="skos:scopeNote">Often a single kind of response is sufficient, but in many cases different responses can be accepted. For instance, to prove one's identity, a bankcard, social security token, driving license or ID card could be accepted as Evidence. To satisfy this combination, one of the Evidence Type Lists, each containing one of the examples above, must be satisfied: this is thus an OR condition.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Ahas%20supporting%20evidence" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasSupportingEvidence">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#hasSupportingEvidence" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasSupportingEvidence" data-placement="right">
-                            has supporting evidence</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Evidence</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The Evidence that supplies information (proof, support) for this Requirement.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Ahas%20requirement" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasRequirement">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#hasRequirement" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasRequirement" data-placement="right">
-                            has requirement</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">A sub-Requirement.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
-                            description</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Requirement being instantiated.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
-                            identifier</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right"></a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">An unambiguous reference to a Requirement.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Aissued%20by" typeof="rdfs:Property" resource="http://purl.org/dc/terms/publisher">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/publisher" data-toggle="tooltip" data-content="http://purl.org/dc/terms/publisher" data-placement="right">
-                            issued by</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Agent</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The Agent that has published the Requirement.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
-                            type</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The category or type to which the requirement belongs.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Requirement%3Aname" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/2004/02/skos/core#prefLabel" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#prefLabel" data-placement="right">
-                            name</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">A name to identify in common language the Requirement.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="Supported Value"><a href="http://data.europa.eu/m8g/cccev#SupportedValue" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#SupportedValue" data-placement="right">Supported Value</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -1544,6 +1499,62 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
             </div>
             
               <div class="region region--no-space-top">
+              <h3 class="h3" id="Reference Framework"><a href="http://data.europa.eu/m8g/ReferenceFramework" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/ReferenceFramework" data-placement="right">Reference Framework</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A source from where Requirements are identified and derived.</dd>
+                    
+                    <dt>Usage</dt><dd>Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Reference%20Framework%3Aidentifier">identifier</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Reference%20Framework%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
+                            identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">An unambiguous reference to a Reference Framework.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
               <h3 class="h3" id="Location"><a href="http://purl.org/dc/terms/Location" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Location" data-placement="right">Location</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -1569,9 +1580,9 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Period%20of%20Time%3A"></a>, 
                       <a href="#Period%20of%20Time%3Astarttime">starttime</a>, 
-                      <a href="#Period%20of%20Time%3Aendtime">endtime</a>.</dd>
+                      <a href="#Period%20of%20Time%3Aendtime">endtime</a>, 
+                      <a href="#Period%20of%20Time%3Aduration">duration</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1589,25 +1600,6 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
                     </thead>
 
                     <tbody class="supertype">
-                    
-                      <tr id="Period%20of%20Time%3A" typeof="rdfs:Property" resource="http://www.w3.org/2006/time#hasXSDDuration">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/2006/time#hasXSDDuration" data-toggle="tooltip" data-content="http://www.w3.org/2006/time#hasXSDDuration" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#duration" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#duration" data-placement="right"></a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">Extent of the Period of Time.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
                     
                       <tr id="Period%20of%20Time%3Astarttime" typeof="rdfs:Property" resource="http://www.w3.org/2006/time#hasBeginning">
                         <td>
@@ -1643,6 +1635,25 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
                           
                         </td>
                         <td property="rdfs:comment">Date and time information indicating the end of the Period.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Period%20of%20Time%3Aduration" typeof="rdfs:Property" resource="http://www.w3.org/2006/time#hasXSDDuration">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2006/time#hasXSDDuration" data-toggle="tooltip" data-content="http://www.w3.org/2006/time#hasXSDDuration" data-placement="right">
+                            duration</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#duration" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#duration" data-placement="right"></a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">Extent of the Period of Time.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>

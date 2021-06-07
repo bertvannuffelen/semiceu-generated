@@ -128,7 +128,7 @@
           "sh:name": {
             "en": "confidentiality level type"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#confidentionalityLevelType"
+          "sh:path": "http://data.europa.eu/m8g/cccev#confidentialityLevelType"
         },
         {
           "sh:class": "http://xmlns.com/foaf/0.1/Agent",
@@ -148,7 +148,7 @@
           "sh:name": {
             "en": "is conformant to"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#isConformantTo"
+          "sh:path": "http://purl.org/dc/terms/conformsTo"
         },
         {
           "sh:class": "http://xmlns.com/foaf/0.1/Agent",
@@ -395,26 +395,6 @@
       "sh:targetClass": "http://data.europa.eu/m8g/cccev#InformationRequirement"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#ReferenceFrameworkShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
-          "sh:definition": {
-            "en": "An unambiguous reference to a Reference Framework."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "identifier"
-          },
-          "sh:path": "http://purl.org/dc/terms/identifier"
-        }
-      ],
-      "sh:targetClass": "http://data.europa.eu/m8g/cccev#ReferenceFramework"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/cccev-ap_en#RequirementShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -494,7 +474,7 @@
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/cccev#ReferenceFramework",
+          "sh:class": "http://data.europa.eu/m8g/ReferenceFramework",
           "sh:definition": {
             "en": "The Reference Framework that is responsible for the creation/initiation of the Requirement."
           },
@@ -593,6 +573,26 @@
       "sh:targetClass": "http://data.europa.eu/m8g/cccev#SupportedValue"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_en#ReferenceFrameworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "An unambiguous reference to a Reference Framework."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/ReferenceFramework"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/cccev-ap_en#LocationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -611,6 +611,9 @@
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "en": "duration"
+          },
           "sh:path": "http://www.w3.org/2006/time#hasXSDDuration"
         },
         {
