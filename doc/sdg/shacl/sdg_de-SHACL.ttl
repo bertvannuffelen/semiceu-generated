@@ -6,13 +6,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#EventShape>,
-    <https://semiceu.github.io/shacl/sdg_de#LinguisticSystemShape>,
+<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#OutputShape>,
+    <https://semiceu.github.io/shacl/sdg_de#EventShape>,
+    <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape>,
     <https://semiceu.github.io/shacl/sdg_de#LocationShape>,
-    <https://semiceu.github.io/shacl/sdg_de#PublicOrganisationShape>,
     <https://semiceu.github.io/shacl/sdg_de#WebpageShape>,
-    <https://semiceu.github.io/shacl/sdg_de#OutputShape>,
-    <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape> .
+    <https://semiceu.github.io/shacl/sdg_de#LinguisticSystemShape>,
+    <https://semiceu.github.io/shacl/sdg_de#PublicOrganisationShape> .
 
 <https://semiceu.github.io/shacl/sdg_de#EventShape> a shacl:NodeShape;
   shacl:closed false;
@@ -65,12 +65,6 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:title
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
     shacl:path dc:description
   ], [
     shacl:datatype rdfs:Literal;
@@ -78,6 +72,12 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:title
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Output> .
 
@@ -113,6 +113,11 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://purl.org/vocab/cpsv#produces>
   ], [
+    shacl:class <http://data.europa.eu/m8g/Event>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
+  ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
@@ -126,28 +131,17 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
   ], [
-    shacl:class dc:Location;
+    shacl:class <http://xmlns.com/foaf/spec/#term_page>;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:spatial
+    shacl:name "Enter your translation here"@de
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
-  ], [
-    shacl:class <http://data.europa.eu/m8g/Event>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
-  ], [
-    shacl:class <http://xmlns.com/foaf/spec/#term_page>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de
+    shacl:path dc:title
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
@@ -161,7 +155,13 @@
     shacl:maxCount "n"^^xsd:integer;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:title
+    shacl:path dc:description
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:spatial
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
 

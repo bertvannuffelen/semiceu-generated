@@ -10,8 +10,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/40f0ba2323ee68630c42e90f64c2e1f67c72ece2",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/40f0ba2323ee68630c42e90f64c2e1f67c72ece2/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/462e7650813abb6a8ddf91710c4c103bc74f1f2c",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/462e7650813abb6a8ddf91710c4c103bc74f1f2c/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/CCCEV/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -160,22 +160,6 @@
       ]
     },
     {
-      "uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
-      "name": "Period of Time",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Period of Time"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Temporal information related to an evidence. "
-      },
-      "usage": {},
-      "equivalent": [],
-      "parents": []
-    },
-    {
       "uri": "http://data.europa.eu/m8g/cccev#ReferenceFramework",
       "name": "Reference Framework",
       "label": {
@@ -317,7 +301,7 @@
       },
       "usage": {
         "de": "Enter your translation here",
-        "en": "Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF)."
+        "en": "Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF). Using a Literal datatype, it is possible to annotate the expression language used, e.g. \"today.getDate() - birthDate.getDate()\"^^ex:JavaScript\"."
       },
       "domain": [
         "http://data.europa.eu/m8g/cccev#InformationConcept"
@@ -536,7 +520,7 @@
         "http://data.europa.eu/m8g/cccev#Evidence"
       ],
       "range": [
-        "http://data.europa.eu/m8g/cccev#PeriodOfTime"
+        "http://www.w3.org/2006/time#ProperInterval"
       ],
       "parents": []
     },
@@ -550,14 +534,17 @@
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "Indicates the validity period of the Evidence Type. "
+        "en": "Indicates a temporal constraint on the validity period of the Evidence Type."
       },
-      "usage": {},
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class.\r\n"
+      },
       "domain": [
         "http://data.europa.eu/m8g/cccev#EvidenceType"
       ],
       "range": [
-        "http://data.europa.eu/m8g/cccev#PeriodOfTime"
+        "http://www.w3.org/2006/time#ProperInterval"
       ],
       "parents": []
     },
@@ -702,6 +689,24 @@
     }
   ],
   "external_terms": [
+    {
+      "uri": "http://www.w3.org/2006/time#ProperInterval",
+      "name": "Period of Time",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Period of Time"
+      },
+      "description": {
+        "de": "Enter your translation here",
+        "en": "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different."
+      },
+      "usage": {},
+      "sort": "Enter your translation here",
+      "indvl": false,
+      "inpackage": false,
+      "inscope": true,
+      "show": true
+    },
     {
       "uri": "http://data.europa.eu/m8g/cccev#constrains",
       "name": "constrains",
@@ -924,7 +929,7 @@
       },
       "description": {
         "de": "Enter your translation here",
-        "en": "An unambiguous reference to an Evidence Type List."
+        "en": "An unambiguous reference to a Reference Framework."
       },
       "usage": {},
       "sort": "Enter your translation here",
@@ -942,7 +947,7 @@
       },
       "description": {
         "de": "Enter your translation here",
-        "en": "An unambiguous reference to an Evidence Type List."
+        "en": "An unambiguous reference to an Evidence Type."
       },
       "usage": {},
       "sort": "Enter your translation here",
@@ -1078,7 +1083,7 @@
       "show": true
     },
     {
-      "uri": "https://www.w3.org/TR/owl-time/#time:hasBeginning",
+      "uri": "http://www.w3.org/2006/time#hasBeginning",
       "name": "starttime",
       "label": {
         "de": "Enter your translation here",
@@ -1086,7 +1091,7 @@
       },
       "description": {
         "de": "Enter your translation here",
-        "en": "Time information indicating the begining of the defined period."
+        "en": "Date and time information indicating the beginning of the Period."
       },
       "usage": {},
       "sort": "Enter your translation here",
@@ -1096,7 +1101,7 @@
       "show": true
     },
     {
-      "uri": "https://www.w3.org/TR/owl-time/#time:hasEnd",
+      "uri": "http://www.w3.org/2006/time#hasEnd",
       "name": "endtime",
       "label": {
         "de": "Enter your translation here",
@@ -1104,7 +1109,7 @@
       },
       "description": {
         "de": "Enter your translation here",
-        "en": "Time information indicating the end of the defined period."
+        "en": "Date and time information indicating the end of the Period."
       },
       "usage": {},
       "sort": "Enter your translation here",

@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/40f0ba2323ee68630c42e90f64c2e1f67c72ece2",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/40f0ba2323ee68630c42e90f64c2e1f67c72ece2/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/462e7650813abb6a8ddf91710c4c103bc74f1f2c",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/462e7650813abb6a8ddf91710c4c103bc74f1f2c/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/CCCEV/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -396,50 +396,15 @@
           "range": [
             {
               "range_label": "PeriodOfTime",
-              "range_uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
+              "range_uri": "http://www.w3.org/2006/time#ProperInterval"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Period of Time",
-              "range_puri": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
+              "range_puri": "http://www.w3.org/2006/time#ProperInterval",
               "range_label": {
                 "en": "Period of Time"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/cccev#isAbout",
-          "name": "is about",
-          "sort": "is about",
-          "label": {
-            "en": "is about"
-          },
-          "description": {
-            "en": "The Agent that is the main actor in the provided Evidence."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "http://data.europa.eu/m8g/cccev#Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
               }
             }
           ],
@@ -484,37 +449,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/cccev#issuedBy",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "http://data.europa.eu/m8g/cccev#Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://data.europa.eu/m8g/cccev#supportsConcept",
           "name": "supports concept",
           "sort": "supports concept",
@@ -552,7 +486,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://udfr.org/docs/onto/dct_creator.html",
+          "uri": "http://purl.org/dc/terms/creator",
           "name": "is created by",
           "sort": "is created by",
           "label": {
@@ -587,11 +521,50 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://udfr.org/docs/onto/dct_publisher.html",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "uri": "http://purl.org/dc/terms/publisher",
+          "name": "is issued by",
+          "sort": "is issued by",
+          "label": {
+            "en": "is issued by"
+          },
+          "description": {
+            "en": "The legal authority responsible for an Evidence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/subject",
+          "name": "is about",
+          "sort": "is about",
+          "label": {
+            "en": "is about"
+          },
+          "description": {
+            "en": "The Agent that is the main actor in the provided Evidence."
+          },
           "usage": {},
           "domain": [
             {
@@ -714,9 +687,11 @@
             "en": "validity period constraint"
           },
           "description": {
-            "en": "Indicates the validity period of the Evidence Type. "
+            "en": "Indicates a temporal constraint on the validity period of the Evidence Type."
           },
-          "usage": {},
+          "usage": {
+            "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class.\r\n"
+          },
           "domain": [
             {
               "EA-Name": "EvidenceType",
@@ -726,13 +701,13 @@
           "range": [
             {
               "range_label": "PeriodOfTime",
-              "range_uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
+              "range_uri": "http://www.w3.org/2006/time#ProperInterval"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Period of Time",
-              "range_puri": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
+              "range_puri": "http://www.w3.org/2006/time#ProperInterval",
               "range_label": {
                 "en": "Period of Time"
               }
@@ -749,7 +724,7 @@
             "en": "identifier"
           },
           "description": {
-            "en": "An unambiguous reference to an Evidence Type List."
+            "en": "An unambiguous reference to an Evidence Type."
           },
           "usage": {},
           "domain": [
@@ -961,7 +936,7 @@
             "en": "An expression (function) of the value that the Requirement expects."
           },
           "usage": {
-            "en": "Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF)."
+            "en": "Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF). Using a Literal datatype, it is possible to annotate the expression language used, e.g. \"today.getDate() - birthDate.getDate()\"^^ex:JavaScript\"."
           },
           "domain": [
             {
@@ -1154,124 +1129,6 @@
       "properties": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
-      "name": "Period of Time",
-      "label": {
-        "en": "Period of Time"
-      },
-      "sort": "Period of Time",
-      "description": {
-        "en": "Temporal information related to an evidence. "
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://www.w3.org/TR/owl-time/#time:Duration",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {
-            "en": "Duration of a temporal extent expressed as a decimal number scaled by a temporal unit"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PeriodOfTime",
-              "uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Duration",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
-              "range_label": {
-                "en": "Duration"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://www.w3.org/TR/owl-time/#time:hasBeginning",
-          "name": "starttime",
-          "sort": "starttime",
-          "label": {
-            "en": "starttime"
-          },
-          "description": {
-            "en": "Time information indicating the begining of the defined period."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PeriodOfTime",
-              "uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://www.w3.org/TR/owl-time/#time:hasEnd",
-          "name": "endtime",
-          "sort": "endtime",
-          "label": {
-            "en": "endtime"
-          },
-          "description": {
-            "en": "Time information indicating the end of the defined period."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PeriodOfTime",
-              "uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "http://data.europa.eu/m8g/cccev#ReferenceFramework",
       "name": "Reference Framework",
       "label": {
@@ -1294,7 +1151,7 @@
             "en": "identifier"
           },
           "description": {
-            "en": "An unambiguous reference to an Evidence Type List."
+            "en": "An unambiguous reference to a Reference Framework."
           },
           "usage": {},
           "domain": [
@@ -1590,41 +1447,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/cccev#issuedBy",
-          "name": "issued by",
-          "sort": "issued by",
-          "label": {
-            "en": "issued by"
-          },
-          "description": {
-            "en": "The Agent that has issued the Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/cccev#Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://purl.org/dc/terms/description",
           "name": "description",
           "sort": "description",
@@ -1692,6 +1514,41 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/publisher",
+          "name": "issued by",
+          "sort": "issued by",
+          "label": {
+            "en": "issued by"
+          },
+          "description": {
+            "en": "The Agent that has published the Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -1896,11 +1753,129 @@
       },
       "sort": "Location",
       "description": {
-        "en": "The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant."
+        "en": "An identifiable geographic place or named place."
       },
       "usage": {},
       "parents": [],
       "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/2006/time#ProperInterval",
+      "name": "Period of Time",
+      "label": {
+        "en": "Period of Time"
+      },
+      "sort": "Period of Time",
+      "description": {
+        "en": "A temporal entity with non-zero extent or duration, i.e. for which the value of the beginning and end are different."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/2006/time#hasBeginning",
+          "name": "starttime",
+          "sort": "starttime",
+          "label": {
+            "en": "starttime"
+          },
+          "description": {
+            "en": "Date and time information indicating the beginning of the Period."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PeriodOfTime",
+              "uri": "http://www.w3.org/2006/time#ProperInterval"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2006/time#hasEnd",
+          "name": "endtime",
+          "sort": "endtime",
+          "label": {
+            "en": "endtime"
+          },
+          "description": {
+            "en": "Date and time information indicating the end of the Period."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PeriodOfTime",
+              "uri": "http://www.w3.org/2006/time#ProperInterval"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2006/time#hasXSDDuration",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {
+            "en": "Extent of the Period of Time."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PeriodOfTime",
+              "uri": "http://www.w3.org/2006/time#ProperInterval"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_label": {
+                "en": "Duration"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/ns/dcat#Dataset",
@@ -1919,10 +1894,14 @@
       "properties": [
         {
           "uri": "http://fixme.com#identifier",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "An unambiguous reference to a Dataset."
+          },
           "usage": {},
           "domain": [
             {

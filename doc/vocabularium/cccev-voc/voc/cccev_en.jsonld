@@ -161,14 +161,6 @@
       ]
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Temporal information related to an evidence. "
-      },
-      "parents": []
-    },
-    {
       "@id": "http://data.europa.eu/m8g/cccev#ReferenceFramework",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -236,11 +228,6 @@
     {
       "name": null,
       "@id": "http://data.europa.eu/m8g/cccev#InformationRequirement",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
       "@type": "rdfs:Class"
     },
     {
@@ -327,7 +314,7 @@
         "en": "An expression (function) of the value that the Requirement expects."
       },
       "usage": {
-        "en": "Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF)."
+        "en": "Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF). Using a Literal datatype, it is possible to annotate the expression language used, e.g. \"today.getDate() - birthDate.getDate()\"^^ex:JavaScript\"."
       },
       "domain": [
         {
@@ -519,7 +506,7 @@
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
+          "uri": "http://www.w3.org/2006/time#ProperInterval"
         }
       ],
       "generalization": []
@@ -528,7 +515,10 @@
       "@id": "http://data.europa.eu/m8g/cccev#validityPeriodConstraint",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "Indicates the validity period of the Evidence Type. "
+        "en": "Indicates a temporal constraint on the validity period of the Evidence Type."
+      },
+      "usage": {
+        "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class.\r\n"
       },
       "domain": [
         {
@@ -537,7 +527,7 @@
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
+          "uri": "http://www.w3.org/2006/time#ProperInterval"
         }
       ],
       "generalization": []

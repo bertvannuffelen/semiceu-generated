@@ -138,7 +138,7 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#isAbout"
+          "sh:path": "http://purl.org/dc/terms/subject"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#EvidenceType",
@@ -158,15 +158,17 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://udfr.org/docs/onto/dct_creator.html"
+          "sh:path": "http://purl.org/dc/terms/creator"
         },
         {
           "sh:class": "http://xmlns.com/foaf/0.1/Agent",
-          "sh:path": "http://data.europa.eu/m8g/cccev#issuedBy"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
-          "sh:path": "https://udfr.org/docs/onto/dct_publisher.html"
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/cccev#InformationConcept",
@@ -199,7 +201,7 @@
           "sh:path": "http://data.europa.eu/m8g/cccev#supportsValue"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
+          "sh:class": "http://www.w3.org/2006/time#ProperInterval",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -251,7 +253,7 @@
           "sh:path": "http://data.europa.eu/m8g/cccev#isSpecifiedIn"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/cccev#PeriodOfTime",
+          "sh:class": "http://www.w3.org/2006/time#ProperInterval",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -393,47 +395,6 @@
       "sh:targetClass": "http://data.europa.eu/m8g/cccev#InformationRequirement"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/cccev-ap_de#PeriodOfTimeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://www.w3.org/TR/owl-time/#time:Duration"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://www.w3.org/TR/owl-time/#time:hasEnd"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://www.w3.org/TR/owl-time/#time:hasBeginning"
-        }
-      ],
-      "sh:targetClass": "http://data.europa.eu/m8g/cccev#PeriodOfTime"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/cccev-ap_de#ReferenceFrameworkShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -543,6 +504,16 @@
           "sh:path": "http://data.europa.eu/m8g/cccev#isDerivedFrom"
         },
         {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        },
+        {
           "sh:class": "http://data.europa.eu/m8g/cccev#Requirement",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -563,16 +534,6 @@
             "de": "Enter your translation here"
           },
           "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://data.europa.eu/m8g/cccev#issuedBy"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -639,14 +600,61 @@
       "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/cccev-ap_de#PeriodOfTimeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://www.w3.org/2006/time#hasXSDDuration"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/2006/time#hasEnd"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/2006/time#hasBeginning"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/2006/time#ProperInterval"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/cccev-ap_de#DatasetShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
           "sh:path": "http://fixme.com#identifier"
         }
       ],

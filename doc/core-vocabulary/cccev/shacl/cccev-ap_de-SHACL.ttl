@@ -7,20 +7,20 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/cccev-ap_de> <https://semiceu.github.io/shacl/cccev-ap_deshapes> <https://semiceu.github.io/shacl/cccev-ap_de#ReferenceFrameworkShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#EvidenceTypeShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#RequirementShape>,
+<https://semiceu.github.io/shacl/cccev-ap_de> <https://semiceu.github.io/shacl/cccev-ap_deshapes> <https://semiceu.github.io/shacl/cccev-ap_de#SupportedValueShape>,
     <https://semiceu.github.io/shacl/cccev-ap_de#CriterionShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#PeriodOfTimeShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_de#RequirementShape>,
     <https://semiceu.github.io/shacl/cccev-ap_de#InformationConceptShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#SupportedValueShape>,
     <https://semiceu.github.io/shacl/cccev-ap_de#EvidenceTypeListShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#ConstraintShape>,
     <https://semiceu.github.io/shacl/cccev-ap_de#AgentShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#InformationRequirementShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#EvidenceShape>,
     <https://semiceu.github.io/shacl/cccev-ap_de#LocationShape>,
-    <https://semiceu.github.io/shacl/cccev-ap_de#DatasetShape> .
+    <https://semiceu.github.io/shacl/cccev-ap_de#PeriodOfTimeShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_de#EvidenceTypeShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_de#ReferenceFrameworkShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_de#ConstraintShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_de#EvidenceShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_de#DatasetShape>,
+    <https://semiceu.github.io/shacl/cccev-ap_de#InformationRequirementShape> .
 
 <https://semiceu.github.io/shacl/cccev-ap_de#AgentShape> a shacl:NodeShape;
   shacl:closed false;
@@ -51,7 +51,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#weight>
+    shacl:path <http://data.europa.eu/m8g/cccev#bias>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -65,7 +65,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#bias>
+    shacl:path <http://data.europa.eu/m8g/cccev#weight>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#Criterion> .
 
@@ -73,8 +73,10 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
     shacl:path <http://fixme.com#identifier>
   ];
   shacl:targetClass dcat:Dataset .
@@ -82,29 +84,6 @@
 <https://semiceu.github.io/shacl/cccev-ap_de#EvidenceShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceType>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#isConformantTo>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#SupportedValue>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#supportsValue>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#PeriodOfTime>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#validityPeriod>
-  ], [
-    shacl:class foaf:Agent;
-    shacl:path <https://udfr.org/docs/onto/dct_publisher.html>
-  ], [
-    shacl:class foaf:Agent;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#isAbout>
-  ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
@@ -112,23 +91,45 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#confidentionalityLevelType>
   ], [
+    shacl:class foaf:Agent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:subject
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceType>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#isConformantTo>
+  ], [
+    shacl:class foaf:Agent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:publisher
+  ], [
     shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#supportsRequirement>
   ], [
-    shacl:class foaf:Agent;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <https://udfr.org/docs/onto/dct_creator.html>
-  ], [
-    shacl:class foaf:Agent;
-    shacl:path <http://data.europa.eu/m8g/cccev#issuedBy>
-  ], [
     shacl:class <http://data.europa.eu/m8g/cccev#InformationConcept>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#supportsConcept>
+  ], [
+    shacl:class foaf:Agent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:creator
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#SupportedValue>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#supportsValue>
+  ], [
+    shacl:class <http://www.w3.org/2006/time#ProperInterval>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#validityPeriod>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#Evidence> .
 
@@ -140,7 +141,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path skos:prefLabel
+    shacl:path dc:description
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
@@ -154,7 +155,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
+    shacl:path skos:prefLabel
   ], [
     shacl:class <http://data.europa.eu/m8g/cccev#EvidenceType>;
     shacl:definition "Enter your translation here"@de;
@@ -166,7 +167,19 @@
 <https://semiceu.github.io/shacl/cccev-ap_de#EvidenceTypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/cccev#PeriodOfTime>;
+    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceTypeList>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#isSpecifiedIn>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#evidenceTypeClassification>
+  ], [
+    shacl:class <http://www.w3.org/2006/time#ProperInterval>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#validityPeriodConstraint>
@@ -177,37 +190,32 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#evidenceTypeClassification>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceTypeList>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#isSpecifiedIn>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#EvidenceType> .
 
 <https://semiceu.github.io/shacl/cccev-ap_de#InformationConceptShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#expressionOfExpectedValue>
-  ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:description
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:identifier
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#expressionOfExpectedValue>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -222,13 +230,6 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:type
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:identifier
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#InformationConcept> .
 
@@ -243,27 +244,27 @@
 <https://semiceu.github.io/shacl/cccev-ap_de#PeriodOfTimeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <https://www.w3.org/TR/owl-time/#time:hasBeginning>
-  ], [
     shacl:datatype xsd:duration;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:path <https://www.w3.org/TR/owl-time/#time:Duration>
+    shacl:path <http://www.w3.org/2006/time#hasXSDDuration>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <https://www.w3.org/TR/owl-time/#time:hasEnd>
+    shacl:path <http://www.w3.org/2006/time#hasEnd>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/2006/time#hasBeginning>
   ];
-  shacl:targetClass <http://data.europa.eu/m8g/cccev#PeriodOfTime> .
+  shacl:targetClass <http://www.w3.org/2006/time#ProperInterval> .
 
 <https://semiceu.github.io/shacl/cccev-ap_de#ReferenceFrameworkShape> a shacl:NodeShape;
   shacl:closed false;
@@ -280,20 +281,47 @@
 <https://semiceu.github.io/shacl/cccev-ap_de#RequirementShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/cccev#Evidence>;
+    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasSupportingEvidence>
+    shacl:path <http://data.europa.eu/m8g/cccev#isRequirementOf>
   ], [
     shacl:class <http://data.europa.eu/m8g/cccev#ReferenceFramework>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#isDerivedFrom>
   ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:type
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceTypeList>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasEvidenceTypeList>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#Evidence>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasSupportingEvidence>
+  ], [
     shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#isRequirementOf>
+    shacl:path <http://data.europa.eu/m8g/cccev#hasRequirement>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#hasQualifiedRelation>
+  ], [
+    shacl:class foaf:Agent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:publisher
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -301,13 +329,6 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path skos:prefLabel
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:identifier
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -321,32 +342,12 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#hasConcept>
   ], [
-    shacl:class skos:Concept;
+    shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:type
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasQualifiedRelation>
-  ], [
-    shacl:class foaf:Agent;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#issuedBy>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#EvidenceTypeList>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasEvidenceTypeList>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/cccev#Requirement>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#hasRequirement>
+    shacl:path dc:identifier
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#Requirement> .
 
@@ -358,18 +359,18 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/cccev#value>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#query>
   ], [
     shacl:class <http://data.europa.eu/m8g/cccev#InformationConcept>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/cccev#providesValueFor>
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/cccev#value>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/cccev#SupportedValue> .
