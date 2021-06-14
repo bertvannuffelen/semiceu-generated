@@ -5,7 +5,7 @@
     "foaf:mbox": "mailto: contact@semic.eu",
     "foaf:name": "Semantic Interoperability Community (SEMIC)"
   },
-  "@id": "http://data.europa.eu/m8g/cccev",
+  "@id": "http://data.europa.eu/m8g",
   "@type": "http://www.w3.org/2002/07/owl#Ontology",
   "label": {
     "en": "cccev",
@@ -84,7 +84,7 @@
   "publication-date": "2021-06-30",
   "classes": [
     {
-      "@id": "http://data.europa.eu/m8g/cccev#Constraint",
+      "@id": "http://data.europa.eu/m8g/Constraint",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A limitation applied to Requirement(s) or to the Information Concept(s) the Requirement is about."
@@ -93,11 +93,11 @@
         "en": "Constraints are requirements in themselves, since they impose prerequisites which influence the definition, use and/or fulfilment of the requirement.\nThey represent hard conditions such as minimum or maximum expressions which can be used to evaluate pieces of information, the required age, income, involvement in activities, etc. \n\nAn example from the eProcurement domain is a threshold as the minimum turnover required by the buying organisation to select the candidates. \n\nNote that CCCEV does not provide any specific guidance on when which kind of Requirement should be used. Users of this vocabulary should make decisions on this topic in their specific context."
       },
       "parents": [
-        "http://data.europa.eu/m8g/cccev#Requirement"
+        "http://data.europa.eu/m8g/Requirement"
       ]
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#Criterion",
+      "@id": "http://data.europa.eu/m8g/Criterion",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A condition for evaluation or assessment."
@@ -106,11 +106,11 @@
         "en": "In general, Criteria are used for comparison, filtering or selection purposes. Criteria usually set minimum conditions (e.g. limits, intervals, thresholds, etc.) that need to be met in order to pass the requirements or to fulfil them to a certain degree or quality. The concept of Criteria is broader than the concept of Constraint since it covers more usages. The evaluation of the fulfilment is usually supported by the provision of Evidence. \nIn the eProcurement domain, the eProcurement Ontology defines different subclasses of Criterion such as exclusion grounds, selection criteria or award criteria. \n\nA concrete example of a Criterion is 'participation in a criminal organisation' which could also be considered as an exclusion ground criterion in the procurement domain or for requiring a public service."
       },
       "parents": [
-        "http://data.europa.eu/m8g/cccev#Requirement"
+        "http://data.europa.eu/m8g/Requirement"
       ]
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#Evidence",
+      "@id": "http://data.europa.eu/m8g/Evidence",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "The data proving that a Requirement is met or has been fulfilled."
@@ -123,7 +123,7 @@
       ]
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#EvidenceType",
+      "@id": "http://data.europa.eu/m8g/EvidenceType",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Information about the characteristics of an expected Evidence."
@@ -134,7 +134,7 @@
       "parents": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
+      "@id": "http://data.europa.eu/m8g/EvidenceTypeList",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A combination of Evidence Types for each of which a conforming Evidence must be provided."
@@ -145,7 +145,7 @@
       "parents": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#InformationConcept",
+      "@id": "http://data.europa.eu/m8g/InformationConcept",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A reference to an entity, i.e. a class or a property, which is used to describe information in the Evidence to be provided for the Requirement specified."
@@ -156,7 +156,7 @@
       "parents": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#InformationRequirement",
+      "@id": "http://data.europa.eu/m8g/InformationRequirement",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A request for data that is proof of Evidence or that leads to the source of such a proof."
@@ -165,11 +165,22 @@
         "en": "Information Requirements are the most neutral kind of Requirements. They aim to request information in any form, e.g. a person's date of birth or a company's turnover.\r\nThey represent requests for data that prove one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as 'requests for Evidences'. \r\n\r\nThe response to an Information Requirement is an Evidence when the issuer of the response is an authoritative source (e.g. a Civil Registry providing data about a natural person for the provision of public service through the Single Digital Gateway). In other cases, the responses might not be issued by an authoritative source, but the issuer supports the responses with Evidences (or commits to support them timely, e.g. a self-declaration or a declaration of oath). \r\n\r\nThe Information Requirement can require structured data or documents of any form. For structured data, the Requirement can use 'Concepts' to specify the structure and type of the data expected in the response. For both structured and unstructured data, the Information Requirement can indicate the expected Type of Evidence, its format, source, and other properties related to the Evidence.\r\n"
       },
       "parents": [
-        "http://data.europa.eu/m8g/cccev#Requirement"
+        "http://data.europa.eu/m8g/Requirement"
       ]
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#Requirement",
+      "@id": "http://data.europa.eu/m8g/ReferenceFramework",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A source from where Requirements are identified and derived."
+      },
+      "usage": {
+        "en": "Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://data.europa.eu/m8g/Requirement",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A condition or prerequisite that someone requests and someone else has to meet."
@@ -180,7 +191,7 @@
       "parents": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#SupportedValue",
+      "@id": "http://data.europa.eu/m8g/SupportedValue",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A value for an Information Concept that is supported by an Evidence."
@@ -194,53 +205,58 @@
   "externals": [
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#Constraint",
+      "@id": "http://data.europa.eu/m8g/Constraint",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#Criterion",
+      "@id": "http://data.europa.eu/m8g/Criterion",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#Evidence",
+      "@id": "http://data.europa.eu/m8g/Evidence",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#EvidenceType",
+      "@id": "http://data.europa.eu/m8g/EvidenceType",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#EvidenceTypeList",
+      "@id": "http://data.europa.eu/m8g/EvidenceTypeList",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#InformationConcept",
+      "@id": "http://data.europa.eu/m8g/InformationConcept",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#InformationRequirement",
+      "@id": "http://data.europa.eu/m8g/InformationRequirement",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#Requirement",
+      "@id": "http://data.europa.eu/m8g/ReferenceFramework",
       "@type": "rdfs:Class"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#SupportedValue",
+      "@id": "http://data.europa.eu/m8g/Requirement",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": null,
+      "@id": "http://data.europa.eu/m8g/SupportedValue",
       "@type": "rdfs:Class"
     }
   ],
   "properties": [
     {
-      "@id": "http://data.europa.eu/m8g/cccev#bias",
+      "@id": "http://data.europa.eu/m8g/bias",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Additional parameter(s) used to adjust the evaluation of the Criterion composed of multiple sub-Criteria and their respective weights."
@@ -250,7 +266,7 @@
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Criterion"
+          "uri": "http://data.europa.eu/m8g/Criterion"
         }
       ],
       "range": [
@@ -261,14 +277,14 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#confidentialityLevelType",
+      "@id": "http://data.europa.eu/m8g/confidentialityLevelType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "The security classification assigned to an Evidence or, in general, to a content."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+          "uri": "http://data.europa.eu/m8g/Evidence"
         }
       ],
       "range": [
@@ -279,7 +295,7 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#evidenceTypeClassification",
+      "@id": "http://data.europa.eu/m8g/evidenceTypeClassification",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "A classification code to specify the layout and content expected for an Evidence."
@@ -289,7 +305,7 @@
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
+          "uri": "http://data.europa.eu/m8g/EvidenceType"
         }
       ],
       "range": [
@@ -300,7 +316,7 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#expressionOfExpectedValue",
+      "@id": "http://data.europa.eu/m8g/expressionOfExpectedValue",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "An expression (function) of the value that the Requirement expects."
@@ -310,7 +326,7 @@
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#InformationConcept"
+          "uri": "http://data.europa.eu/m8g/InformationConcept"
         }
       ],
       "range": [
@@ -321,43 +337,43 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#hasQualifiedRelation",
+      "@id": "http://data.europa.eu/m8g/hasQualifiedRelation",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "A described and/or categorised relation to the instance of another Requirement class or subclass."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+          "uri": "http://data.europa.eu/m8g/Requirement"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+          "uri": "http://data.europa.eu/m8g/Requirement"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#hasRequirement",
+      "@id": "http://data.europa.eu/m8g/hasRequirement",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "A sub-Requirement."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+          "uri": "http://data.europa.eu/m8g/Requirement"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+          "uri": "http://data.europa.eu/m8g/Requirement"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#isRequirementOf",
+      "@id": "http://data.europa.eu/m8g/isRequirementOf",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "A reference between a sub-Requirement and its parent, more general, Requirement."
@@ -367,61 +383,61 @@
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+          "uri": "http://data.europa.eu/m8g/Requirement"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+          "uri": "http://data.europa.eu/m8g/Requirement"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#isSpecifiedIn",
+      "@id": "http://data.europa.eu/m8g/isSpecifiedIn",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Refers to an Evidence Type List in which the Evidence Type is included."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
+          "uri": "http://data.europa.eu/m8g/EvidenceType"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#EvidenceTypeList"
+          "uri": "http://data.europa.eu/m8g/EvidenceTypeList"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#providesValueFor",
+      "@id": "http://data.europa.eu/m8g/providesValueFor",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "The Information Concept for which the Supported Value is providing a value."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#SupportedValue"
+          "uri": "http://data.europa.eu/m8g/SupportedValue"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#InformationConcept"
+          "uri": "http://data.europa.eu/m8g/InformationConcept"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#query",
+      "@id": "http://data.europa.eu/m8g/query",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The query via which the value for the Information Concept can be retrieved. The query must be executed on the business data provided by the supporting Evidence."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#SupportedValue"
+          "uri": "http://data.europa.eu/m8g/SupportedValue"
         }
       ],
       "range": [
@@ -432,68 +448,68 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#specifiesEvidenceType",
+      "@id": "http://data.europa.eu/m8g/specifiesEvidenceType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Indicates one Type of Evidence included in a List of Evidence Types."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#EvidenceTypeList"
+          "uri": "http://data.europa.eu/m8g/EvidenceTypeList"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
+          "uri": "http://data.europa.eu/m8g/EvidenceType"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#supportsRequirement",
+      "@id": "http://data.europa.eu/m8g/supportsRequirement",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "The Requirement for which the Evidence provides information (proof, support)."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+          "uri": "http://data.europa.eu/m8g/Evidence"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Requirement"
+          "uri": "http://data.europa.eu/m8g/Requirement"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#supportsValue",
+      "@id": "http://data.europa.eu/m8g/supportsValue",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "The Supported Value for which an Evidence holds information."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+          "uri": "http://data.europa.eu/m8g/Evidence"
         }
       ],
       "range": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#SupportedValue"
+          "uri": "http://data.europa.eu/m8g/SupportedValue"
         }
       ],
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#validityPeriod",
+      "@id": "http://data.europa.eu/m8g/validityPeriod",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Indicates the validity period of the Evidence."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Evidence"
+          "uri": "http://data.europa.eu/m8g/Evidence"
         }
       ],
       "range": [
@@ -504,7 +520,7 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#validityPeriodConstraint",
+      "@id": "http://data.europa.eu/m8g/validityPeriodConstraint",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Indicates a temporal constraint on the validity period of the Evidence Type."
@@ -514,7 +530,7 @@
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#EvidenceType"
+          "uri": "http://data.europa.eu/m8g/EvidenceType"
         }
       ],
       "range": [
@@ -525,14 +541,14 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#value",
+      "@id": "http://data.europa.eu/m8g/value",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The value for the Information Concept that the Evidence is supporting."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#SupportedValue"
+          "uri": "http://data.europa.eu/m8g/SupportedValue"
         }
       ],
       "range": [
@@ -543,14 +559,14 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#weight",
+      "@id": "http://data.europa.eu/m8g/weight",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Relative importance assigned to a given Criterion."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Criterion"
+          "uri": "http://data.europa.eu/m8g/Criterion"
         }
       ],
       "range": [
@@ -561,14 +577,14 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#weightingConsiderationDescription",
+      "@id": "http://data.europa.eu/m8g/weightingConsiderationDescription",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The explanation of how the weighting of a Criterion is to be used at evaluation time."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Criterion"
+          "uri": "http://data.europa.eu/m8g/Criterion"
         }
       ],
       "range": [
@@ -579,14 +595,14 @@
       "generalization": []
     },
     {
-      "@id": "http://data.europa.eu/m8g/cccev#weightingType",
+      "@id": "http://data.europa.eu/m8g/weightingType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "The numeric form used to weight."
       },
       "domain": [
         {
-          "uri": "http://data.europa.eu/m8g/cccev#Criterion"
+          "uri": "http://data.europa.eu/m8g/Criterion"
         }
       ],
       "range": [
@@ -600,97 +616,97 @@
   "externalproperties": [
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#bias",
+      "@id": "http://data.europa.eu/m8g/bias",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#confidentialityLevelType",
+      "@id": "http://data.europa.eu/m8g/confidentialityLevelType",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#evidenceTypeClassification",
+      "@id": "http://data.europa.eu/m8g/evidenceTypeClassification",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#expressionOfExpectedValue",
+      "@id": "http://data.europa.eu/m8g/expressionOfExpectedValue",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#hasQualifiedRelation",
+      "@id": "http://data.europa.eu/m8g/hasQualifiedRelation",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#hasRequirement",
+      "@id": "http://data.europa.eu/m8g/hasRequirement",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#isRequirementOf",
+      "@id": "http://data.europa.eu/m8g/isRequirementOf",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#isSpecifiedIn",
+      "@id": "http://data.europa.eu/m8g/isSpecifiedIn",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#providesValueFor",
+      "@id": "http://data.europa.eu/m8g/providesValueFor",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#query",
+      "@id": "http://data.europa.eu/m8g/query",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#specifiesEvidenceType",
+      "@id": "http://data.europa.eu/m8g/specifiesEvidenceType",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#supportsRequirement",
+      "@id": "http://data.europa.eu/m8g/supportsRequirement",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#supportsValue",
+      "@id": "http://data.europa.eu/m8g/supportsValue",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#validityPeriod",
+      "@id": "http://data.europa.eu/m8g/validityPeriod",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#validityPeriodConstraint",
+      "@id": "http://data.europa.eu/m8g/validityPeriodConstraint",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#value",
+      "@id": "http://data.europa.eu/m8g/value",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#weight",
+      "@id": "http://data.europa.eu/m8g/weight",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#weightingConsiderationDescription",
+      "@id": "http://data.europa.eu/m8g/weightingConsiderationDescription",
       "@type": "rdf:Property"
     },
     {
       "name": null,
-      "@id": "http://data.europa.eu/m8g/cccev#weightingType",
+      "@id": "http://data.europa.eu/m8g/weightingType",
       "@type": "rdf:Property"
     }
   ],
