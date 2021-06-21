@@ -10,8 +10,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/498666bbc30cf7e1f7a22df4a75b665695851f0a",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/498666bbc30cf7e1f7a22df4a75b665695851f0a/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/ccd9c12cd280b9d3ed3905454959bcce9fc98f92",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/ccd9c12cd280b9d3ed3905454959bcce9fc98f92/CHANGELOG",
     "feedbackurl": "https://github.com/catalogue-of-services-isa/SDG-services-model/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -81,7 +81,7 @@
         "en": "The expected results of the Public Service."
       },
       "usage": {
-        "en": "Outputs can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organization) that permits/authorises/entitles an Agent (such as the person that is requesting the Public Service) to (do) something."
+        "en": "Outputs can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organisation) that permits/authorises/entitles an Agent (such as the person that is requesting the Public Service) to (do) something."
       },
       "parents": [],
       "properties": [
@@ -491,6 +491,41 @@
           ],
           "cardinality": "1..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "additional geographic name",
+          "sort": "additional geographic name",
+          "label": {
+            "en": "additional geographic name"
+          },
+          "description": {},
+          "usage": {
+            "en": "Next to the property 'geographic name' which is also defined under Location and follows the NUTS/LAU codelists, an additional property is foreseen so that any preferred name can be used to indicate a location."
+          },
+          "domain": [
+            {
+              "EA-Name": "Location",
+              "uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -591,7 +626,7 @@
             "en": "is grouped by"
           },
           "description": {
-            "en": "This property links the Public Service class to the Event class."
+            "en": "The Event (life/business) that is related to this Public Service."
           },
           "usage": {},
           "domain": [
@@ -652,7 +687,7 @@
               }
             }
           ],
-          "cardinality": "1..n",
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
@@ -687,7 +722,7 @@
               }
             }
           ],
-          "cardinality": "1..n",
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
@@ -761,7 +796,7 @@
               }
             }
           ],
-          "cardinality": "1..n",
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
@@ -772,7 +807,7 @@
             "en": "policy code"
           },
           "description": {
-            "en": "Controlled vocabulary from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service."
+            "en": "Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service."
           },
           "usage": {
             "en": "A Public Service can fall under one or several codes. In the future, additional classifications will be discussed regarding the Public Services."
@@ -854,6 +889,41 @@
       "parents": [],
       "properties": [
         {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "A unique identifier of the Webpage."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Webpage",
+              "uri": "http://xmlns.com/foaf/spec/#term_page"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://purl.org/dc/terms/language",
           "name": "has language",
           "sort": "has language",
@@ -899,7 +969,7 @@
             "en": "The kind of information that can be found on the Webpage."
           },
           "usage": {
-            "en": "The Single Digital Gateway Regulation defines three types of information: rights/obligation and rules, procedures and assistance services. Within this context for the Webpages, we will make use of the first two: information on rights/obligations and rules and information on procedures, respectively identified as information and procedure. The types are: {information;procedure}."
+            "en": "The Single Digital Gateway Regulation defines whether the page points to information or where the user can conduct a procedure. "
           },
           "domain": [
             {
@@ -927,14 +997,12 @@
         },
         {
           "uri": "http://www.w3.org/ns/dcat#accessURL",
-          "name": "identifier",
-          "sort": "identifier",
+          "name": "URL",
+          "sort": "URL",
           "label": {
-            "en": "identifier"
+            "en": "URL"
           },
-          "description": {
-            "en": "The URL of the Webpage."
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {

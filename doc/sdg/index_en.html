@@ -132,7 +132,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/498666bbc30cf7e1f7a22df4a75b665695851f0a/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/498666bbc30cf7e1f7a22df4a75b665695851f0a/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/ccd9c12cd280b9d3ed3905454959bcce9fc98f92/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/ccd9c12cd280b9d3ed3905454959bcce9fc98f92/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/catalogue-of-services-isa/SDG-services-model/issues">https://github.com/catalogue-of-services-isa/SDG-services-model/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -353,6 +353,7 @@ Similarly to the Output type, the Event type can be retrieved automatically from
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Location%3Aadditional%20geographic%20name">additional geographic name</a>, 
                       <a href="#Location%3Ageographic%20identifier">geographic identifier</a>, 
                       <a href="#Location%3Ageographic%20name">geographic name</a>.</dd>
                     
@@ -373,6 +374,26 @@ Similarly to the Output type, the Event type can be retrieved automatically from
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Location%3Aadditional%20geographic%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
+                            additional geographic name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote">Next to the property 'geographic name' which is also defined under Location and follows the NUTS/LAU codelists, an additional property is foreseen so that any preferred name can be used to indicate a location.</td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Location%3Ageographic%20identifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
@@ -429,7 +450,7 @@ It is best to include the lowest level possible, as the higher levels could be a
                   <dl>
                     <dt>Description</dt><dd>The expected results of the Public Service.</dd>
                     
-                    <dt>Usage</dt><dd>Outputs can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organization) that permits/authorises/entitles an Agent (such as the person that is requesting the Public Service) to (do) something.</dd>
+                    <dt>Usage</dt><dd>Outputs can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organisation) that permits/authorises/entitles an Agent (such as the person that is requesting the Public Service) to (do) something.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -699,7 +720,7 @@ When using the different codes from the Regulation, some codes can be retrieved 
                             
                           
                         </td>
-			<td>1..n</td>
+			<td>1..*</td>
                         <td property="rdfs:comment">A free text description of the Public Service.</td>
                         <td property="skos:scopeNote">The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public Service providers are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information. This typically represents part of the content included in the general information page about the Public Service. In practice for the search results in a search engine or in YourEurope, only the top lines will be displayed.</td>
                         <td></td>
@@ -762,7 +783,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                             
                           
                         </td>
-			<td>1..n</td>
+			<td>1..*</td>
                         <td property="rdfs:comment">A unique identifier of the Public Service.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -783,7 +804,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">This property links the Public Service class to the Event class.</td>
+                        <td property="rdfs:comment">The Event (life/business) that is related to this Public Service.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -802,7 +823,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                             
                           
                         </td>
-			<td>1..n</td>
+			<td>1..*</td>
                         <td property="rdfs:comment">The official name of the Public Service.</td>
                         <td property="skos:scopeNote">Each Public Service is denoted by a name, for example 'change of address' for the Public Service which covers the registering of a change of address. The official name is the one allocated by the competent authority.</td>
                         <td></td>
@@ -823,7 +844,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                           
                         </td>
 			<td>1..*</td>
-                        <td property="rdfs:comment">Controlled vocabulary from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service.</td>
+                        <td property="rdfs:comment">Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service.</td>
                         <td property="skos:scopeNote">A Public Service can fall under one or several codes. In the future, additional classifications will be discussed regarding the Public Services.</td>
                         <td></td>
                       </tr>
@@ -886,7 +907,8 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                     <dd>For this entity the following properties are defined:
                       <a href="#Webpage%3Ahas%20language">has language</a>, 
                       <a href="#Webpage%3Aidentifier">identifier</a>, 
-                      <a href="#Webpage%3Atype">type</a>.</dd>
+                      <a href="#Webpage%3Atype">type</a>, 
+                      <a href="#Webpage%3AURL">URL</a>.</dd>
                     
                   </dl>
                 </div>
@@ -926,22 +948,22 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                         <td></td>
                       </tr>
                     
-                      <tr id="Webpage%3Aidentifier" typeof="rdfs:Property" resource="http://www.w3.org/ns/dcat#accessURL">
+                      <tr id="Webpage%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/dcat#accessURL" data-toggle="tooltip" data-content="http://www.w3.org/ns/dcat#accessURL" data-placement="right">
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
                             identifier</a>
                           </code>
                         </td>
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
                             
                           
                         </td>
 			<td>1..*</td>
-                        <td property="rdfs:comment">The URL of the Webpage.</td>
+                        <td property="rdfs:comment">A unique identifier of the Webpage.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -962,7 +984,27 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                         </td>
 			<td>0..2</td>
                         <td property="rdfs:comment">The kind of information that can be found on the Webpage.</td>
-                        <td property="skos:scopeNote">The Single Digital Gateway Regulation defines three types of information: rights/obligation and rules, procedures and assistance services. Within this context for the Webpages, we will make use of the first two: information on rights/obligations and rules and information on procedures, respectively identified as information and procedure. The types are: {information;procedure}.</td>
+                        <td property="skos:scopeNote">The Single Digital Gateway Regulation defines whether the page points to information or where the user can conduct a procedure. </td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Webpage%3AURL" typeof="rdfs:Property" resource="http://www.w3.org/ns/dcat#accessURL">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/dcat#accessURL" data-toggle="tooltip" data-content="http://www.w3.org/ns/dcat#accessURL" data-placement="right">
+                            URL</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
+                            
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     

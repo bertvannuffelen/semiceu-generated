@@ -4,13 +4,13 @@
   <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
 <rdfs:isDefinedBy>
 <owl:Ontology rdf:about='http://data.europa.eu/m8g'>
-<rdfs:label xml:lang='nl'>cccev</rdfs:label>
- <rdfs:label xml:lang='en'>cccev</rdfs:label>
+<rdfs:label xml:lang='en'>cccev</rdfs:label>
+ <rdfs:label xml:lang='nl'>cccev</rdfs:label>
 
 <dc:contributor>
-<foaf:Person rdf:nodeID='g47279087247540'>
+<foaf:Person rdf:nodeID='g47001056398980'>
 <schema:affiliation>
-<rdf:Description rdf:nodeID='g47279087263500'>
+<rdf:Description rdf:nodeID='g47001056398600'>
 <foaf:name>European Commission</foaf:name>
 
 </rdf:Description>
@@ -27,11 +27,11 @@
 
 <dc:issued>TODO</dc:issued>
 
-<dc:license>https://creativecommons.org/licenses/by/4.0/</dc:license>
- <dc:license rdf:resource='https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic' />
+<dc:license rdf:resource='https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic' />
+ <dc:license>https://creativecommons.org/licenses/by/4.0/</dc:license>
 
 <dc:mediator>
-<rdf:Description rdf:nodeID='g47279087253720'>
+<rdf:Description rdf:nodeID='g47001056388820'>
 <foaf:homepage rdf:resource='https://semic.eu' />
 
 <foaf:name>Semantic Interoperability Community (SEMIC)</foaf:name>
@@ -41,15 +41,11 @@
 </dc:mediator>
 
 <rdfs:seeAlso>
-<owl:Class rdf:about='http://data.europa.eu/m8g/SupportedValue'>
+<owl:Class rdf:about='http://data.europa.eu/m8g/EvidenceType'>
   <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<skos:scopeNote xml:lang='en'>The notion of Supported Value is closely related to actual data exchange between two parties: (a) the Requirement processor, i.e. the Agent setting out Requirements for an objective and processing the supplied Evidences in the context of the Requirements, and (b) the Evidence provider, i.e. the Agent supplying information to an information request expressed as Requirements.
-
-Obtaining the actual Value for an Information Concept carried by an Evidence is the result of an information retrieval process on the business information of the Evidence. This process can be executed by the Evidence provider. In that case the Evidence provider can supply the Value as is. But it can also be executed by the Requirement processor. If the Requirement processor can process the business information of the supplied Evidence then the Requirement processor can query for the information itself. In CCCEV, the latter case is supported by the query attribute for a Supported Value. So instead of providing a Value, a query on the data is supplied.
-
-As described in the Evidence class, CCCEV does not impose how the actual information contained in an Evidence must be exchanged and processed in order to fulfill a Requirement. The combination of Supported Value and Information Concept, is one of the approaches that CCCEV supports.</skos:scopeNote>
+<skos:scopeNote xml:lang='en'>Examples of Evidence Types include birth certificates, marriage evidences, university diploma's, etc. These are not concrete individual responses to a Requirement (Evidences), but descriptions about the desired form, content, source and/or other characteristics that an actual response should have and provide. For a specific Requirement, the requester can define the List of Evidence Types which would be accepted and, for each Evidence Type in this list, the specific information and form that should be part of the Evidence actually provided in order to answer the Requirement. Evidence Types can express conditions for an acceptable response at two levels: the concrete information that is being requested, and the metadata about how this concrete information is being obtained. This way, the Evidence Type can capture specific characteristics such as a specific format or source of the Evidence, as such characteristics may be strictly required depending on the Requirement. Implementations are free, however, to set the level of detail (i.e. number of characteristics) they want to specify for Evidence Types.</skos:scopeNote>
 
 </owl:Class>
 
@@ -57,11 +53,86 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
  <rdfs:seeAlso>
 <rdf:Property rdf:about='http://data.europa.eu/m8g/providesValueFor'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087246940' />
+<rdfs:domain rdf:nodeID='g47001056373840' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087246580' />
+<rdfs:range rdf:nodeID='g47001056373480' />
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/specifiesEvidenceType'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056372120' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056371760' />
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:Class rdf:about='http://data.europa.eu/m8g/EvidenceTypeList'>
+  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<skos:scopeNote xml:lang='en'>An Evidence Type List is satisfied if and only if for all included Evidence Types a corresponding conformant Evidence is supporting the Requirement having this List. The Evidence Type List describes thus an AND condition on the different Evidence Types within the list and an OR condition between two or more Evidence Type Lists. Combinations of alternative Lists can be provided for a respondent of a Requirement to choose amongst them.</skos:scopeNote>
+
+</owl:Class>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:DatatypeProperty rdf:about='http://data.europa.eu/m8g/expressionOfExpectedValue'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056378180' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056377820' />
+
+<skos:scopeNote xml:lang='en'>Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF). Using a Literal datatype, it is possible to annotate the expression language used, e.g. "today.getDate() - birthDate.getDate()"^^ex:JavaScript".</skos:scopeNote>
+
+</owl:DatatypeProperty>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:Class rdf:about='http://data.europa.eu/m8g/Requirement'>
+  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<skos:scopeNote xml:lang='en'>Requirement is a generic class representing any type of prerequisite that may be desired, needed or imposed as an obligation. 
+
+CCCEV recommends to not use the Requirement class directly, but rather a more semantically-enriched subclass such as Criterion, Information Requirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent.</skos:scopeNote>
+
+</owl:Class>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso rdf:resource='http://data.europa.eu/m8g/Constraint' />
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/hasRequirement'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056376460' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056376100' />
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/evidenceTypeClassification'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056362720' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056378720' />
+
+<skos:scopeNote xml:lang='en'>This classification could be used for example for providing a common list of Evidence Types accepted within a specific domain.</skos:scopeNote>
 
 </rdf:Property>
 
@@ -77,66 +148,69 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/supportsValue'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087243500' />
+<owl:DatatypeProperty rdf:about='http://data.europa.eu/m8g/weightingConsiderationDescription'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056390600' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087243140' />
+<rdfs:range rdf:nodeID='g47001056390240' />
+
+</owl:DatatypeProperty>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/bias'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056364480' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056364120' />
+
+<skos:scopeNote xml:lang='en'>In neural networks, the bias is equivalent to an intercept added in a linear equation used to shift the activation function to either right or left. It can be also used to manually adjust the pass/fail calculation of a weighted criterion.</skos:scopeNote>
 
 </rdf:Property>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/confidentialityLevelType'>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/weightingType'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087228540' />
+<rdfs:domain rdf:nodeID='g47001056389740' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087228180' />
+<rdfs:range rdf:nodeID='g47001056389380' />
 
 </rdf:Property>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/validityPeriodConstraint'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087241740' />
+<owl:DatatypeProperty rdf:about='http://data.europa.eu/m8g/query'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056372980' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087241380' />
+<rdfs:range rdf:nodeID='g47001056372620' />
 
-<skos:scopeNote xml:lang='en'>E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class.</skos:scopeNote>
-
-</rdf:Property>
+</owl:DatatypeProperty>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<owl:Class rdf:about='http://data.europa.eu/m8g/EvidenceType'>
+<owl:Class rdf:about='http://data.europa.eu/m8g/SupportedValue'>
   <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<skos:scopeNote xml:lang='en'>Examples of Evidence Types include birth certificates, marriage evidences, university diploma's, etc. These are not concrete individual responses to a Requirement (Evidences), but descriptions about the desired form, content, source and/or other characteristics that an actual response should have and provide. For a specific Requirement, the requester can define the List of Evidence Types which would be accepted and, for each Evidence Type in this list, the specific information and form that should be part of the Evidence actually provided in order to answer the Requirement. Evidence Types can express conditions for an acceptable response at two levels: the concrete information that is being requested, and the metadata about how this concrete information is being obtained. This way, the Evidence Type can capture specific characteristics such as a specific format or source of the Evidence, as such characteristics may be strictly required depending on the Requirement. Implementations are free, however, to set the level of detail (i.e. number of characteristics) they want to specify for Evidence Types.</skos:scopeNote>
+<skos:scopeNote xml:lang='en'>The notion of Supported Value is closely related to actual data exchange between two parties: (a) the Requirement processor, i.e. the Agent setting out Requirements for an objective and processing the supplied Evidences in the context of the Requirements, and (b) the Evidence provider, i.e. the Agent supplying information to an information request expressed as Requirements.
+
+Obtaining the actual Value for an Information Concept carried by an Evidence is the result of an information retrieval process on the business information of the Evidence. This process can be executed by the Evidence provider. In that case the Evidence provider can supply the Value as is. But it can also be executed by the Requirement processor. If the Requirement processor can process the business information of the supplied Evidence then the Requirement processor can query for the information itself. In CCCEV, the latter case is supported by the query attribute for a Supported Value. So instead of providing a Value, a query on the data is supplied.
+
+As described in the Evidence class, CCCEV does not impose how the actual information contained in an Evidence must be exchanged and processed in order to fulfill a Requirement. The combination of Supported Value and Information Concept, is one of the approaches that CCCEV supports.</skos:scopeNote>
 
 </owl:Class>
 
 </rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/validityPeriod'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087242640' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087242280' />
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso rdf:resource='http://data.europa.eu/m8g/Constraint' />
  <rdfs:seeAlso>
 <owl:Class rdf:about='http://data.europa.eu/m8g/Evidence'>
   <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
@@ -150,50 +224,11 @@ As described in the Evidence class, CCCEV does not impose how the actual informa
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/isRequirementOf'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087224120' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087223760' />
-
-<skos:scopeNote xml:lang='en'>Inverse relation from hasRequirement. If there is no hierarchy then this relationship is not needed.</skos:scopeNote>
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/bias'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087229400' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087229040' />
-
-<skos:scopeNote xml:lang='en'>In neural networks, the bias is equivalent to an intercept added in a linear equation used to shift the activation function to either right or left. It can be also used to manually adjust the pass/fail calculation of a weighted criterion.</skos:scopeNote>
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
 <owl:Class rdf:about='http://data.europa.eu/m8g/Criterion'>
   <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:subClassOf>
-<owl:Class rdf:about='http://data.europa.eu/m8g/Requirement'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<skos:scopeNote xml:lang='en'>Requirement is a generic class representing any type of prerequisite that may be desired, needed or imposed as an obligation. 
-
-CCCEV recommends to not use the Requirement class directly, but rather a more semantically-enriched subclass such as Criterion, Information Requirement or Constraint. Also note that the Requirement class is specified at a more abstract level and is not to be used as the instantiation of a Requirement for a specific Agent.</skos:scopeNote>
-
-</owl:Class>
-
-</rdfs:subClassOf>
+<rdfs:subClassOf rdf:resource='http://data.europa.eu/m8g/Requirement' />
 
 <skos:scopeNote xml:lang='en'>In general, Criteria are used for comparison, filtering or selection purposes. Criteria usually set minimum conditions (e.g. limits, intervals, thresholds, etc.) that need to be met in order to pass the requirements or to fulfil them to a certain degree or quality. The concept of Criteria is broader than the concept of Constraint since it covers more usages. The evaluation of the fulfilment is usually supported by the provision of Evidence. 
 In the eProcurement domain, the eProcurement Ontology defines different subclasses of Criterion such as exclusion grounds, selection criteria or award criteria. 
@@ -204,98 +239,13 @@ A concrete example of a Criterion is 'participation in a criminal organisation' 
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/supportsRequirement'>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/supportsValue'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087244360' />
+<rdfs:domain rdf:nodeID='g47001056394940' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087244000' />
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso rdf:resource='http://data.europa.eu/m8g/Requirement' />
- <rdfs:seeAlso>
-<owl:Class rdf:about='http://data.europa.eu/m8g/EvidenceTypeList'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<skos:scopeNote xml:lang='en'>An Evidence Type List is satisfied if and only if for all included Evidence Types a corresponding conformant Evidence is supporting the Requirement having this List. The Evidence Type List describes thus an AND condition on the different Evidence Types within the list and an OR condition between two or more Evidence Type Lists. Combinations of alternative Lists can be provided for a respondent of a Requirement to choose amongst them.</skos:scopeNote>
-
-</owl:Class>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/evidenceTypeClassification'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087227640' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087227280' />
-
-<skos:scopeNote xml:lang='en'>This classification could be used for example for providing a common list of Evidence Types accepted within a specific domain.</skos:scopeNote>
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/value'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#DatatypeProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087240880' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087240520' />
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/expressionOfExpectedValue'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#DatatypeProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087226740' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087226380' />
-
-<skos:scopeNote xml:lang='en'>Common example languages include XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF). Using a Literal datatype, it is possible to annotate the expression language used, e.g. "today.getDate() - birthDate.getDate()"^^ex:JavaScript".</skos:scopeNote>
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/weight'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087240020' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087239660' />
-
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<owl:Class rdf:about='http://data.europa.eu/m8g/ReferenceFramework'>
-  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<skos:scopeNote xml:lang='en'>Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc.</skos:scopeNote>
-
-</owl:Class>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/weightingType'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087254640' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087254280' />
+<rdfs:range rdf:nodeID='g47001056394580' />
 
 </rdf:Property>
 
@@ -318,13 +268,73 @@ The Information Requirement can require structured data or documents of any form
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/hasRequirement'>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/weight'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087225020' />
+<rdfs:domain rdf:nodeID='g47001056391460' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087224660' />
+<rdfs:range rdf:nodeID='g47001056391100' />
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/supportsRequirement'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056371260' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056370900' />
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:DatatypeProperty rdf:about='http://data.europa.eu/m8g/value'>
+  <rdf:type rdf:resource='http://www.w3.org/1999/02/22-rdf-syntax-ns#Property'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056392320' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056391960' />
+
+</owl:DatatypeProperty>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/isRequirementOf'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056375560' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056375200' />
+
+<skos:scopeNote xml:lang='en'>Inverse relation from hasRequirement. If there is no hierarchy then this relationship is not needed.</skos:scopeNote>
+
+</rdf:Property>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<owl:Class rdf:about='http://data.europa.eu/m8g/ReferenceFramework'>
+  <rdf:type rdf:resource='http://www.w3.org/2000/01/rdf-schema#Class'></rdf:type>
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<skos:scopeNote xml:lang='en'>Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc.</skos:scopeNote>
+
+</owl:Class>
+
+</rdfs:seeAlso>
+ <rdfs:seeAlso>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/confidentialityLevelType'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056363620' />
+
+<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
+
+<rdfs:range rdf:nodeID='g47001056363260' />
 
 </rdf:Property>
 
@@ -332,35 +342,25 @@ The Information Requirement can require structured data or documents of any form
  <rdfs:seeAlso>
 <rdf:Property rdf:about='http://data.europa.eu/m8g/isSpecifiedIn'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087223260' />
+<rdfs:domain rdf:nodeID='g47001056374700' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087222900' />
+<rdfs:range rdf:nodeID='g47001056374340' />
 
 </rdf:Property>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/query'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#DatatypeProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087246080' />
+<rdf:Property rdf:about='http://data.europa.eu/m8g/validityPeriodConstraint'>
+  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
+<rdfs:domain rdf:nodeID='g47001056393180' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087245720' />
+<rdfs:range rdf:nodeID='g47001056392820' />
 
-</rdf:Property>
-
-</rdfs:seeAlso>
- <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/weightingConsiderationDescription'>
-  <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#DatatypeProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087255500' />
-
-<rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
-
-<rdfs:range rdf:nodeID='g47279087255140' />
+<skos:scopeNote xml:lang='en'>E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class.</skos:scopeNote>
 
 </rdf:Property>
 
@@ -368,49 +368,49 @@ The Information Requirement can require structured data or documents of any form
  <rdfs:seeAlso>
 <rdf:Property rdf:about='http://data.europa.eu/m8g/hasQualifiedRelation'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087225880' />
+<rdfs:domain rdf:nodeID='g47001056377320' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087225520' />
+<rdfs:range rdf:nodeID='g47001056376960' />
 
 </rdf:Property>
 
 </rdfs:seeAlso>
  <rdfs:seeAlso>
-<rdf:Property rdf:about='http://data.europa.eu/m8g/specifiesEvidenceType'>
+<rdf:Property rdf:about='http://data.europa.eu/m8g/validityPeriod'>
   <rdf:type rdf:resource='http://www.w3.org/2002/07/owl#ObjectProperty'></rdf:type>
-<rdfs:domain rdf:nodeID='g47279087245220' />
+<rdfs:domain rdf:nodeID='g47001056394080' />
 
 <rdfs:isDefinedBy rdf:resource='http://data.europa.eu/m8g' />
 
-<rdfs:range rdf:nodeID='g47279087244860' />
+<rdfs:range rdf:nodeID='g47001056393720' />
 
 </rdf:Property>
 
 </rdfs:seeAlso>
 
 <ns0:editor>
-<foaf:Person rdf:nodeID='g47279087248420'>
+<foaf:Person rdf:nodeID='g47001056400700'>
 <schema:affiliation>
-<rdf:Description rdf:nodeID='g47279087248040'>
-<foaf:name>TenForce</foaf:name>
+<rdf:Description rdf:nodeID='g47001056400320'>
+<foaf:name>PwC</foaf:name>
 
 </rdf:Description>
 
 </schema:affiliation>
 
-<foaf:firstName>Bert</foaf:firstName>
+<foaf:firstName>Dimitri</foaf:firstName>
 
-<foaf:lastName>Van Nuffelen</foaf:lastName>
+<foaf:lastName>Schepers</foaf:lastName>
 
 </foaf:Person>
 
 </ns0:editor>
  <ns0:editor>
-<foaf:Person rdf:nodeID='g47279087250940'>
+<foaf:Person rdf:nodeID='g47001056402380'>
 <schema:affiliation>
-<rdf:Description rdf:nodeID='g47279087250560'>
+<rdf:Description rdf:nodeID='g47001056402000'>
 <foaf:name>PwC EU Services</foaf:name>
 
 </rdf:Description>
@@ -425,9 +425,9 @@ The Information Requirement can require structured data or documents of any form
 
 </ns0:editor>
  <ns0:editor>
-<foaf:Person rdf:nodeID='g47279087251780'>
+<foaf:Person rdf:nodeID='g47001056403220'>
 <schema:affiliation>
-<rdf:Description rdf:nodeID='g47279087251400'>
+<rdf:Description rdf:nodeID='g47001056402840'>
 <foaf:name>PwC EU Services</foaf:name>
 
 </rdf:Description>
@@ -442,9 +442,26 @@ The Information Requirement can require structured data or documents of any form
 
 </ns0:editor>
  <ns0:editor>
-<foaf:Person rdf:nodeID='g47279087252620'>
+<foaf:Person rdf:nodeID='g47001056399860'>
 <schema:affiliation>
-<rdf:Description rdf:nodeID='g47279087252240'>
+<rdf:Description rdf:nodeID='g47001056399480'>
+<foaf:name>TenForce</foaf:name>
+
+</rdf:Description>
+
+</schema:affiliation>
+
+<foaf:firstName>Bert</foaf:firstName>
+
+<foaf:lastName>Van Nuffelen</foaf:lastName>
+
+</foaf:Person>
+
+</ns0:editor>
+ <ns0:editor>
+<foaf:Person rdf:nodeID='g47001056387720'>
+<schema:affiliation>
+<rdf:Description rdf:nodeID='g47001056387340'>
 <foaf:name>PwC EU Services</foaf:name>
 
 </rdf:Description>
@@ -459,9 +476,9 @@ The Information Requirement can require structured data or documents of any form
 
 </ns0:editor>
  <ns0:editor>
-<foaf:Person rdf:nodeID='g47279087250100'>
+<foaf:Person rdf:nodeID='g47001056401540'>
 <schema:affiliation>
-<rdf:Description rdf:nodeID='g47279087249720'>
+<rdf:Description rdf:nodeID='g47001056401160'>
 <foaf:name>European Commission</foaf:name>
 
 </rdf:Description>
@@ -475,26 +492,9 @@ The Information Requirement can require structured data or documents of any form
 </foaf:Person>
 
 </ns0:editor>
- <ns0:editor>
-<foaf:Person rdf:nodeID='g47279087249260'>
-<schema:affiliation>
-<rdf:Description rdf:nodeID='g47279087248880'>
-<foaf:name>PwC</foaf:name>
-
-</rdf:Description>
-
-</schema:affiliation>
-
-<foaf:firstName>Dimitri</foaf:firstName>
-
-<foaf:lastName>Schepers</foaf:lastName>
-
-</foaf:Person>
-
-</ns0:editor>
 
 <foaf:maker>
-<foaf:Person rdf:nodeID='g47279087253060'>
+<foaf:Person rdf:nodeID='g47001056388160'>
 <foaf:firstName>Core Vocabularies Working Group</foaf:firstName>
 
 </foaf:Person>
