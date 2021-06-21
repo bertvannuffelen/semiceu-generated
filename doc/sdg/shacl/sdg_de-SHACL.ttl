@@ -6,13 +6,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#LinguisticSystemShape>,
-    <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape>,
+<https://semiceu.github.io/shacl/sdg_de> <https://semiceu.github.io/shacl/sdg_deshapes> <https://semiceu.github.io/shacl/sdg_de#PublicServiceShape>,
     <https://semiceu.github.io/shacl/sdg_de#OutputShape>,
-    <https://semiceu.github.io/shacl/sdg_de#LocationShape>,
-    <https://semiceu.github.io/shacl/sdg_de#WebpageShape>,
     <https://semiceu.github.io/shacl/sdg_de#EventShape>,
-    <https://semiceu.github.io/shacl/sdg_de#PublicOrganisationShape> .
+    <https://semiceu.github.io/shacl/sdg_de#LocationShape>,
+    <https://semiceu.github.io/shacl/sdg_de#PublicOrganisationShape>,
+    <https://semiceu.github.io/shacl/sdg_de#LinguisticSystemShape>,
+    <https://semiceu.github.io/shacl/sdg_de#WebpageShape> .
 
 <https://semiceu.github.io/shacl/sdg_de#EventShape> a shacl:NodeShape;
   shacl:closed false;
@@ -39,12 +39,6 @@
 <https://semiceu.github.io/shacl/sdg_de#LocationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:title
-  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
@@ -52,6 +46,12 @@
     shacl:path dc:identifier
   ], [
     shacl:datatype rdfs:Literal;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:title
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:title
   ];
@@ -64,13 +64,13 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
+    shacl:path dc:title
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:title
+    shacl:path dc:description
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
@@ -92,13 +92,13 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:identifier
+    shacl:path skos:prefLabel
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path skos:prefLabel
+    shacl:path dc:identifier
   ], [
     shacl:class dc:Location;
     shacl:definition "Enter your translation here"@de;
@@ -116,7 +116,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:title
+    shacl:path dc:description
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
@@ -124,32 +124,27 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
   ], [
-    shacl:class <http://data.europa.eu/m8g/Output>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://purl.org/vocab/cpsv#produces>
-  ], [
-    shacl:class <http://data.europa.eu/m8g/Event>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
-  ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:type
   ], [
-    shacl:class <http://xmlns.com/foaf/spec/#term_page>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de
-  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:description
+    shacl:path dc:title
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Output>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://purl.org/vocab/cpsv#produces>
+  ], [
+    shacl:class <http://xmlns.com/foaf/spec/#term_page>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de
   ], [
     shacl:class dc:Location;
     shacl:definition "Enter your translation here"@de;
@@ -163,16 +158,22 @@
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Event>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
 
 <https://semiceu.github.io/shacl/sdg_de#WebpageShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:minCount 1;
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 2;
     shacl:name "Enter your translation here"@de;
-    shacl:path dcat:accessURL
+    shacl:path dc:type
   ], [
     shacl:class dc:LinguisticSystem;
     shacl:definition "Enter your translation here"@de;
@@ -187,10 +188,10 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:identifier
   ], [
-    shacl:class skos:Concept;
+    shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 2;
+    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:type
+    shacl:path dcat:accessURL
   ];
   shacl:targetClass <http://xmlns.com/foaf/spec/#term_page> .
