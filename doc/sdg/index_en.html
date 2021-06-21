@@ -132,7 +132,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/5974170b1d0af5f029e176498b34d0b9584039cf/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/5974170b1d0af5f029e176498b34d0b9584039cf/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/ce77404629992a70ff82ee5ba47861a01cf626c2/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/ce77404629992a70ff82ee5ba47861a01cf626c2/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/catalogue-of-services-isa/SDG-services-model/issues">https://github.com/catalogue-of-services-isa/SDG-services-model/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -277,7 +277,7 @@ The main idea of the SDG Search Service model is to enable competent authorities
 			<td>0..*</td>
                         <td property="rdfs:comment">The type of the Event as defined in a controlled vocabulary.</td>
                         <td property="skos:scopeNote">Events as proposed in the procedures of Annex II of the Regulation: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. 
-Similarly to the Output type, the Event type can be retrieved automatically from the policy code indicated.</td>
+Similarly to the Output type, the Event type can be derived from the policy code indicated.</td>
                         <td></td>
                       </tr>
                     
@@ -334,7 +334,7 @@ Similarly to the Output type, the Event type can be retrieved automatically from
 			<td>1</td>
                         <td property="rdfs:comment">The code which indicates the language.</td>
                         <td property="skos:scopeNote">The linguistic system will be defined by the ISO 639-1 code, e.g. 'en' for English. The Publications Office proposes a controlled vocabulary for languages fully compliant with ISA 639-1 (alpha 2): <a href="http://publications.europa.eu/resource/dataset/language">http://publications.europa.eu/resource/dataset/language</a>. More information can be found here: <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language">https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language</a>.</td>
-                        <td></td>
+                        <td>OP's controlled vocabulary (<a href="http://publications.europa.eu/resource/dataset/language">ISO 639-1</a>)</td>
                       </tr>
                     
                     </tbody>
@@ -353,7 +353,6 @@ Similarly to the Output type, the Event type can be retrieved automatically from
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Location%3Aadditional%20geographic%20name">additional geographic name</a>, 
                       <a href="#Location%3Ageographic%20identifier">geographic identifier</a>, 
                       <a href="#Location%3Ageographic%20name">geographic name</a>.</dd>
                     
@@ -374,26 +373,6 @@ Similarly to the Output type, the Event type can be retrieved automatically from
                     </thead>
 
                     <tbody class="supertype">
-                    
-                      <tr id="Location%3Aadditional%20geographic%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
-                            additional geographic name</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote">Next to the property 'geographic name' which is also defined under Location and follows the NUTS/LAU codelists, an additional property is foreseen so that any preferred name can be used to indicate a location.</td>
-                        <td></td>
-                      </tr>
                     
                       <tr id="Location%3Ageographic%20identifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
@@ -434,8 +413,8 @@ It is best to include the lowest level possible, as the higher levels could be a
                         </td>
 			<td>1..*</td>
                         <td property="rdfs:comment">The geographic name of the Location.</td>
-                        <td property="skos:scopeNote">The name will be automatically retrieved from the NUTS or LAU code indicated.</td>
-                        <td></td>
+                        <td property="skos:scopeNote">It is recommended to use the name in correspondence with the NUTS and LAU dataset indicated under geographic Identifier. e.g. Belgique-België corresponds to http://data.europa.eu/nuts/code/BE. But it is also possible to indicate additional names outside of these codelists. </td>
+                        <td><a href="http://publications.europa.eu/resource/dataset/nuts">NUTS</a> and <a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">LAU</a> datasets.</td>
                       </tr>
                     
                     </tbody>
@@ -845,7 +824,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                         </td>
 			<td>1..*</td>
                         <td property="rdfs:comment">Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service.</td>
-                        <td property="skos:scopeNote">A Public Service can fall under one or several codes. In the future, additional classifications will be discussed regarding the Public Services.</td>
+                        <td property="skos:scopeNote">A Public Service can fall under one or several policy codes of the annexes I and II of the SDGR (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN</a>).  For example: B. Work and retirement within the Union. 1. seeking employment in another Member States. This means it has policy code B1. </td>
                         <td></td>
                       </tr>
                     
@@ -885,7 +864,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
                         </td>
 			<td>1..*</td>
                         <td property="rdfs:comment">The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority.</td>
-                        <td property="skos:scopeNote">The value of the property should be the URI of the region as defined in an authoritative list of regions. In Europe, this is likely to be NUTS (Nomenclature of Territorial Units for Statistics) or LAU (Local administrative units).</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -896,7 +875,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Webpage"><a href="http://xmlns.com/foaf/spec/#term_page" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_page" data-placement="right">Webpage</a></h3>
+              <h3 class="h3" id="Webpage"><a href="http://xmlns.com/foaf/0.1/Document" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Document" data-placement="right">Webpage</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>The webpage containing the information about the Public Service.</dd>
@@ -991,10 +970,10 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
 </ul></td>
                       </tr>
                     
-                      <tr id="Webpage%3AURL" typeof="rdfs:Property" resource="http://www.w3.org/ns/dcat#accessURL">
+                      <tr id="Webpage%3AURL" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/Page">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/dcat#accessURL" data-toggle="tooltip" data-content="http://www.w3.org/ns/dcat#accessURL" data-placement="right">
+                            <a href="http://xmlns.com/foaf/0.1/Page" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Page" data-placement="right">
                             URL</a>
                           </code>
                         </td>

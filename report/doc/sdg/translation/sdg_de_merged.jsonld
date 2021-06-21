@@ -86,8 +86,8 @@
   "contributors-column": "SDG",
   "contributors-file": "stakeholders.csv",
   "diagram": "SDG",
-  "documentcommit": "5974170b1d0af5f029e176498b34d0b9584039cf",
-  "dummy": "maxime-18",
+  "documentcommit": "ce77404629992a70ff82ee5ba47861a01cf626c2",
+  "dummy": "maxime-19",
   "eap": "SDG.eap",
   "editors": [
     {
@@ -179,7 +179,7 @@
           "EA-GUID": "{21499836-192B-46f7-8B36-CCE11F0FCC73}",
           "EA-Name": "Webpage",
           "EA-Package": "ISA vocs",
-          "uri": "http://xmlns.com/foaf/spec/#term_page"
+          "uri": "http://xmlns.com/foaf/0.1/Document"
         },
         "RawTags": [
           {
@@ -239,7 +239,7 @@
           "EA-GUID": "{21499836-192B-46f7-8B36-CCE11F0FCC73}",
           "EA-Name": "Webpage",
           "EA-Package": "ISA vocs",
-          "uri": "http://xmlns.com/foaf/spec/#term_page"
+          "uri": "http://xmlns.com/foaf/0.1/Document"
         }
       ],
       "usage": {
@@ -846,7 +846,7 @@
       "domain": [
         {
           "EA-Name": "Webpage",
-          "uri": "http://xmlns.com/foaf/spec/#term_page"
+          "uri": "http://xmlns.com/foaf/0.1/Document"
         }
       ],
       "extra": {
@@ -1118,7 +1118,7 @@
       "domain": [
         {
           "EA-Name": "Webpage",
-          "uri": "http://xmlns.com/foaf/spec/#term_page"
+          "uri": "http://xmlns.com/foaf/0.1/Document"
         }
       ],
       "extra": {
@@ -1211,6 +1211,7 @@
       "@id": "http://purl.org/dc/terms/language",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "EA-Guid": "{66556E25-0BFD-42cd-92A9-EFE31D1FF176}",
+      "ap-codelist": "OP's controlled vocabulary (<a href=\"http://publications.europa.eu/resource/dataset/language\">ISO 639-1</a>)",
       "ap-definition-en": {
         "en": "The code which indicates the language."
       },
@@ -1262,10 +1263,15 @@
             "key": "uri",
             "note": "null",
             "value": "http://purl.org/dc/terms/language"
+          },
+          {
+            "key": "ap-codelist",
+            "note": "OP's controlled vocabulary (<a href=\"http://publications.europa.eu/resource/dataset/language\">ISO 639-1</a>)",
+            "value": "NOTE"
           }
         ],
         "Scope": "TRANSLATIONS_ONLY",
-        "ap-codelist": "",
+        "ap-codelist": "OP's controlled vocabulary (<a href=\"http://publications.europa.eu/resource/dataset/language\">ISO 639-1</a>)",
         "ap-definition-en": {
           "en": "The code which indicates the language."
         },
@@ -1342,11 +1348,6 @@
             "key": "definition-en",
             "note": "The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority.",
             "value": "NOTE"
-          },
-          {
-            "key": "usageNote-en",
-            "note": "The value of the property should be the URI of the region as defined in an authoritative list of regions. In Europe, this is likely to be NUTS (Nomenclature of Territorial Units for Statistics) or LAU (Local administrative units).",
-            "value": "NOTE"
           }
         ],
         "EA-Domain": "PublicService",
@@ -1377,11 +1378,6 @@
             "key": "definition-en",
             "note": "The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority.",
             "value": "NOTE"
-          },
-          {
-            "key": "usageNote-en",
-            "note": "The value of the property should be the URI of the region as defined in an authoritative list of regions. In Europe, this is likely to be NUTS (Nomenclature of Territorial Units for Statistics) or LAU (Local administrative units).",
-            "value": "NOTE"
           }
         ],
         "Scope": "TRANSLATIONS_ONLY",
@@ -1402,9 +1398,7 @@
           "en": "spatial"
         },
         "sourceRole": "null",
-        "usage": {
-          "en": "The value of the property should be the URI of the region as defined in an authoritative list of regions. In Europe, this is likely to be NUTS (Nomenclature of Territorial Units for Statistics) or LAU (Local administrative units)."
-        }
+        "usage": ""
       },
       "generalization": [],
       "inpackage": "ACTIVE_PACKAGE",
@@ -1422,11 +1416,7 @@
           "EA-Package": "ISA vocs",
           "uri": "http://purl.org/dc/terms/Location"
         }
-      ],
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "The value of the property should be the URI of the region as defined in an authoritative list of regions. In Europe, this is likely to be NUTS (Nomenclature of Territorial Units for Statistics) or LAU (Local administrative units)."
-      }
+      ]
     },
     {
       "@id": "http://purl.org/dc/terms/spatial",
@@ -1635,6 +1625,7 @@
       "@id": "http://purl.org/dc/terms/title",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{068B5D73-F69A-4532-9BD2-1B7ED234E4B3}",
+      "ap-codelist": "<a href=\"http://publications.europa.eu/resource/dataset/nuts\">NUTS</a> and <a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">LAU</a> datasets.",
       "ap-definition-en": {
         "en": "The geographic name of the Location."
       },
@@ -1678,17 +1669,22 @@
           },
           {
             "key": "usageNote-en",
-            "note": "null",
-            "value": "The name will be automatically retrieved from the NUTS or LAU code indicated."
+            "note": "It is recommended to use the name in correspondence with the NUTS and LAU dataset indicated under geographic Identifier. e.g. Belgique-België corresponds to http://data.europa.eu/nuts/code/BE. But it is also possible to indicate additional names outside of these codelists. ",
+            "value": "NOTE"
           },
           {
             "key": "uri",
             "note": "null",
             "value": "http://purl.org/dc/terms/title"
+          },
+          {
+            "key": "ap-codelist",
+            "note": "<a href=\"http://publications.europa.eu/resource/dataset/nuts\">NUTS</a> and <a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">LAU</a> datasets.",
+            "value": "NOTE"
           }
         ],
         "Scope": "TRANSLATIONS_ONLY",
-        "ap-codelist": "",
+        "ap-codelist": "<a href=\"http://publications.europa.eu/resource/dataset/nuts\">NUTS</a> and <a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">LAU</a> datasets.",
         "ap-definition-en": {
           "en": "The geographic name of the Location."
         },
@@ -1703,7 +1699,7 @@
           "en": "geographic name"
         },
         "usage": {
-          "en": "The name will be automatically retrieved from the NUTS or LAU code indicated."
+          "en": "It is recommended to use the name in correspondence with the NUTS and LAU dataset indicated under geographic Identifier. e.g. Belgique-België corresponds to http://data.europa.eu/nuts/code/BE. But it is also possible to indicate additional names outside of these codelists. "
         }
       },
       "generalization": [],
@@ -1724,97 +1720,7 @@
       ],
       "usage": {
         "de": "Enter your translation here",
-        "en": "The name will be automatically retrieved from the NUTS or LAU code indicated."
-      }
-    },
-    {
-      "@id": "http://purl.org/dc/terms/title",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "EA-Guid": "{FB9DC9EA-BCBC-4cfd-A11C-D6350A4E5E6C}",
-      "ap-definition-en": {
-        "en": "TODO"
-      },
-      "ap-label-en": {
-        "en": "additional geographic name"
-      },
-      "codelist": [],
-      "domain": [
-        {
-          "EA-Name": "Location",
-          "uri": "http://purl.org/dc/terms/Location"
-        }
-      ],
-      "extra": {
-        "EA-Domain": "Location",
-        "EA-Domain-Guid": "{5E596703-8D56-4de7-A930-2D5CD7C36183}",
-        "EA-Guid": "{FB9DC9EA-BCBC-4cfd-A11C-D6350A4E5E6C}",
-        "EA-Name": "additionalGeographicName",
-        "EA-Package": "ISA vocs",
-        "EA-Range": "Literal",
-        "EA-Type": "attribute",
-        "RangeData": {
-          "EA-Name": "Literal",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-        },
-        "RawTags": [
-          {
-            "key": "uri",
-            "note": "null",
-            "value": "http://purl.org/dc/terms/title"
-          },
-          {
-            "key": "label-en",
-            "note": "null",
-            "value": "additional geographic name"
-          },
-          {
-            "key": "description",
-            "note": "null",
-            "value": "A geographic name that can be chosen freely."
-          },
-          {
-            "key": "usageNote-en",
-            "note": "null",
-            "value": "Next to the property 'geographic name' which is also defined under Location and follows the NUTS/LAU codelists, an additional property is foreseen so that any preferred name can be used to indicate a location."
-          }
-        ],
-        "Scope": "TRANSLATIONS_ONLY",
-        "ap-codelist": "",
-        "ap-definition-en": {
-          "en": "TODO"
-        },
-        "ap-label-en": {
-          "en": "additional geographic name"
-        },
-        "ap-usageNote-en": "",
-        "definition": "",
-        "label": {
-          "en": "additional geographic name"
-        },
-        "usage": {
-          "en": "Next to the property 'geographic name' which is also defined under Location and follows the NUTS/LAU codelists, an additional property is foreseen so that any preferred name can be used to indicate a location."
-        }
-      },
-      "generalization": [],
-      "inpackage": "OTHER_PACKAGE",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "additional geographic name"
-      },
-      "maxCardinality": "*",
-      "minCardinality": "0",
-      "name": "additional geographic name",
-      "range": [
-        {
-          "EA-Name": "Literal",
-          "EA-Package": "",
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-        }
-      ],
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "Next to the property 'geographic name' which is also defined under Location and follows the NUTS/LAU codelists, an additional property is foreseen so that any preferred name can be used to indicate a location."
+        "en": "It is recommended to use the name in correspondence with the NUTS and LAU dataset indicated under geographic Identifier. e.g. Belgique-België corresponds to http://data.europa.eu/nuts/code/BE. But it is also possible to indicate additional names outside of these codelists. "
       }
     },
     {
@@ -1950,8 +1856,8 @@
           },
           {
             "key": "usageNote-en",
-            "note": "null",
-            "value": "A Public Service can fall under one or several codes. In the future, additional classifications will be discussed regarding the Public Services."
+            "note": "A Public Service can fall under one or several policy codes of the annexes I and II of the SDGR (<a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN</a>).  For example: B. Work and retirement within the Union. 1. seeking employment in another Member States. This means it has policy code B1. ",
+            "value": "NOTE"
           },
           {
             "key": "uri",
@@ -1975,7 +1881,7 @@
           "en": "policy code"
         },
         "usage": {
-          "en": "A Public Service can fall under one or several codes. In the future, additional classifications will be discussed regarding the Public Services."
+          "en": "A Public Service can fall under one or several policy codes of the annexes I and II of the SDGR (<a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN</a>).  For example: B. Work and retirement within the Union. 1. seeking employment in another Member States. This means it has policy code B1. "
         }
       },
       "generalization": [],
@@ -1997,7 +1903,7 @@
       ],
       "usage": {
         "de": "Enter your translation here",
-        "en": "A Public Service can fall under one or several codes. In the future, additional classifications will be discussed regarding the Public Services."
+        "en": "A Public Service can fall under one or several policy codes of the annexes I and II of the SDGR (<a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN</a>).  For example: B. Work and retirement within the Union. 1. seeking employment in another Member States. This means it has policy code B1. "
       }
     },
     {
@@ -2019,7 +1925,7 @@
       "domain": [
         {
           "EA-Name": "Webpage",
-          "uri": "http://xmlns.com/foaf/spec/#term_page"
+          "uri": "http://xmlns.com/foaf/0.1/Document"
         }
       ],
       "extra": {
@@ -2250,7 +2156,7 @@
           },
           {
             "key": "usageNote-en",
-            "note": "Events as proposed in the procedures of Annex II of the Regulation: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. \nSimilarly to the Output type, the Event type can be retrieved automatically from the policy code indicated.",
+            "note": "Events as proposed in the procedures of Annex II of the Regulation: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. \nSimilarly to the Output type, the Event type can be derived from the policy code indicated.",
             "value": "NOTE"
           },
           {
@@ -2275,7 +2181,7 @@
           "en": "type"
         },
         "usage": {
-          "en": "Events as proposed in the procedures of Annex II of the Regulation: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. \nSimilarly to the Output type, the Event type can be retrieved automatically from the policy code indicated."
+          "en": "Events as proposed in the procedures of Annex II of the Regulation: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. \nSimilarly to the Output type, the Event type can be derived from the policy code indicated."
         }
       },
       "generalization": [],
@@ -2297,7 +2203,7 @@
       ],
       "usage": {
         "de": "Enter your translation here",
-        "en": "Events as proposed in the procedures of Annex II of the Regulation: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. \nSimilarly to the Output type, the Event type can be retrieved automatically from the policy code indicated."
+        "en": "Events as proposed in the procedures of Annex II of the Regulation: <a href=\"https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1\">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. \nSimilarly to the Output type, the Event type can be derived from the policy code indicated."
       }
     },
     {
@@ -2520,7 +2426,7 @@
       }
     },
     {
-      "@id": "http://www.w3.org/ns/dcat#accessURL",
+      "@id": "http://xmlns.com/foaf/0.1/Page",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "EA-Guid": "{E15C3511-2962-45ce-8540-F594EDFDCB65}",
       "ap-definition-en": {
@@ -2537,7 +2443,7 @@
       "domain": [
         {
           "EA-Name": "Webpage",
-          "uri": "http://xmlns.com/foaf/spec/#term_page"
+          "uri": "http://xmlns.com/foaf/0.1/Document"
         }
       ],
       "extra": {
@@ -2557,7 +2463,7 @@
           {
             "key": "uri",
             "note": "null",
-            "value": "http://www.w3.org/ns/dcat#accessURL"
+            "value": "http://xmlns.com/foaf/0.1/Page"
           },
           {
             "key": "label-en",
@@ -3018,7 +2924,7 @@
       }
     },
     {
-      "@id": "http://xmlns.com/foaf/spec/#term_page",
+      "@id": "http://xmlns.com/foaf/0.1/Document",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "EA-Guid": "{21499836-192B-46f7-8B36-CCE11F0FCC73}",
       "ap-definition-en": {
@@ -3052,7 +2958,7 @@
           {
             "key": "uri",
             "note": "null",
-            "value": "http://xmlns.com/foaf/spec/#term_page"
+            "value": "http://xmlns.com/foaf/0.1/Document"
           }
         ],
         "Scope": "TRANSLATIONS_ONLY",
@@ -3108,7 +3014,7 @@
   "standaardregisterurl": "TODO",
   "template": "sdg_de.j2",
   "title": "TODO SDG services model",
-  "toolchaincommit": "d0681b643160b22f3148b15d52e79a90695679c5",
+  "toolchaincommit": "49e1b8a1d996e431eee79be82144b6192be78e89",
   "translation": [
     {
       "language": "en",
