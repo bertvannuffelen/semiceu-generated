@@ -132,7 +132,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/ce77404629992a70ff82ee5ba47861a01cf626c2/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/ce77404629992a70ff82ee5ba47861a01cf626c2/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/87131db335744d0975cf8cbdba3dc2f6e1127aaa/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/87131db335744d0975cf8cbdba3dc2f6e1127aaa/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/catalogue-of-services-isa/SDG-services-model/issues">https://github.com/catalogue-of-services-isa/SDG-services-model/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -271,7 +271,15 @@
                         <td property="rdfs:comment">The type of the Event as defined in a controlled vocabulary.</td>
                         <td property="skos:scopeNote">Events as proposed in the procedures of Annex II of the Regulation: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>. 
 Similarly to the Output type, the Event type can be derived from the policy code indicated.</td>
-                        <td></td>
+                        <td><ul>
+<li>birth</li>
+<li>residence</li>
+<li>studying</li>
+<li>working</li>
+<li>moving</li>
+<li>retiring</li>
+<li>starting running and closing a business</li>
+</ul></td>
                       </tr>
                     
                     </tbody>
@@ -569,7 +577,8 @@ When using the different codes from the Regulation, some codes can be retrieved 
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#Location%3Ageographic%20identifier">geographic identifier</a>, 
-                      <a href="#Location%3Ageographic%20name">geographic name</a>.</dd>
+                      <a href="#Location%3Ageographic%20name">geographic name</a>, 
+                      <a href="#Location%3Aadditional%20name">additional name</a>.</dd>
                     
                   </dl>
                 </div>
@@ -630,6 +639,26 @@ It is best to include the lowest level possible, as the higher levels could be a
                         <td property="rdfs:comment">The geographic name of the Location.</td>
                         <td property="skos:scopeNote">It is recommended to use the name in correspondence with the NUTS and LAU dataset indicated under geographic Identifier. e.g. Belgique-België corresponds to http://data.europa.eu/nuts/code/BE. But it is also possible to indicate additional names outside of these codelists. </td>
                         <td><a href="http://publications.europa.eu/resource/dataset/nuts">NUTS</a> and <a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">LAU</a> datasets.</td>
+                      </tr>
+                    
+                      <tr id="Location%3Aadditional%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
+                            additional name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">An additional name of the Location.</td>
+                        <td property="skos:scopeNote">Next to the geographic Name defined by the NUTS/LAU codes, this property makes sure a name for the Location can be chosen outside of the NUTS/LAU codes if needed.</td>
+                        <td></td>
                       </tr>
                     
                     </tbody>
