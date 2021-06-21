@@ -7,49 +7,29 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#ConceptShape>,
+<https://semiceu.github.io/shacl/core-person-ap_en> <https://semiceu.github.io/shacl/core-person-ap_enshapes> <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#ConceptShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#JurisdictionShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape>,
+    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape>,
     <https://semiceu.github.io/shacl/core-person-ap_en#IdentifierShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#AddressShape>,
-    <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape> .
+    <https://semiceu.github.io/shacl/core-person-ap_en#AddressShape> .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#AddressShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
-    shacl:definition "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."@en;
+    shacl:class rdf:langString;
+    shacl:definition "The complete address written as a formatted string."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "locator designator"@en;
-    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
+    shacl:name "full address"@en;
+    shacl:path <http://www.w3.org/ns/locn#fullAddress>
   ], [
     shacl:class rdf:langString;
-    shacl:definition "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
+    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "administrative unit level 2 (country/region/state)"@en;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "thoroughfare"@en;
-    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "A globally unique identifier for each instance of an Address."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "address ID"@en;
-    shacl:path <http://www.w3.org/ns/locn#addressID>
-  ], [
-    shacl:definition "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "administrative unit level 1 (country)"@en;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
+    shacl:name "address area"@en;
+    shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"@en;
@@ -59,18 +39,11 @@
     shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:class rdf:langString;
-    shacl:definition "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."@en;
+    shacl:definition "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "address area"@en;
-    shacl:path <http://www.w3.org/ns/locn#addressArea>
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.) For example, \"Paris\"."""@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "post name (city)"@en;
-    shacl:path <http://www.w3.org/ns/locn#postName>
+    shacl:name "thoroughfare"@en;
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "The Post Office Box number."@en;
@@ -80,18 +53,45 @@
     shacl:path <http://www.w3.org/ns/locn#poBox>
   ], [
     shacl:class rdf:langString;
+    shacl:definition "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "administrative unit level 2 (country/region/state)"@en;
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
+  ], [
+    shacl:class rdf:langString;
     shacl:definition "Proper noun(s) applied to the real world entity identified by the locator."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "locator name"@en;
     shacl:path <http://www.w3.org/ns/locn#locatorName>
   ], [
-    shacl:class rdf:langString;
-    shacl:definition "The complete address written as a formatted string."@en;
+    shacl:datatype xsd:string;
+    shacl:definition "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "full address"@en;
-    shacl:path <http://www.w3.org/ns/locn#fullAddress>
+    shacl:name "locator designator"@en;
+    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A globally unique identifier for each instance of an Address."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "address ID"@en;
+    shacl:path <http://www.w3.org/ns/locn#addressID>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition """The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.) For example, \"Paris\"."""@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "post name (city)"@en;
+    shacl:path <http://www.w3.org/ns/locn#postName>
+  ], [
+    shacl:definition "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "administrative unit level 1 (country)"@en;
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
@@ -159,49 +159,25 @@
 <https://semiceu.github.io/shacl/core-person-ap_en#LocationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class rdf:langString;
-    shacl:definition "A geographic name is a proper noun applied to a spatial object."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "geographic name"@en;
-    shacl:path <http://www.w3.org/ns/locn#geographicName>
-  ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "A URI that identifies the Location."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "geographic identifier"@en;
     shacl:path rdfs:seeAlso
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "A geographic name is a proper noun applied to a spatial object."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "geographic name"@en;
+    shacl:path <http://www.w3.org/ns/locn#geographicName>
   ];
   shacl:targetClass dc:Location .
 
 <https://semiceu.github.io/shacl/core-person-ap_en#PersonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "An Identifier for the Person."@en;
-    shacl:name "identifier"@en;
-    shacl:path dc:identifier
-  ], [
-    shacl:class dc:Location;
-    shacl:definition "The Location where the Person was born."@en;
-    shacl:name "place of birth"@en;
-    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "The day on which the Person was born."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "date of birth"@en;
-    shacl:path schema:birthDate
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "The full name contains the complete name of a person as one string."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "full name"@en;
-    shacl:path foaf:name
-  ], [
     shacl:class rdf:langString;
     shacl:definition "A family name is usually shared by members of a family."@en;
     shacl:maxCount 1;
@@ -209,29 +185,12 @@
     shacl:name "family name (surname)"@en;
     shacl:path foaf:familyName
   ], [
-    shacl:class dc:Location;
-    shacl:definition "The country in which a Person died."@en;
-    shacl:name "country of death"@en;
-    shacl:path <http://www.w3.org/ns/person#countryOfDeath>
-  ], [
     shacl:class rdf:langString;
     shacl:definition "Name based on the given name of the Person's father."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "patronymic name"@en;
     shacl:path <http://www.w3.org/ns/person#patronymicName>
-  ], [
-    shacl:class dc:Jurisdiction;
-    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
-    shacl:name "citizenship"@en;
-    shacl:path dc:citizenship
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Any name by which an individual is known other than their full name."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "alternative name"@en;
-    shacl:path dc:alternative
   ], [
     shacl:class rdf:langString;
     shacl:definition """A given name, or multiple given names, are the denominator(s) that identify an individual within
@@ -242,15 +201,39 @@ a family."""@en;
     shacl:path foaf:givenName
   ], [
     shacl:class rdf:langString;
+    shacl:definition "Any name by which an individual is known other than their full name."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "alternative name"@en;
+    shacl:path dc:alternative
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "The country in which a Person was born."@en;
+    shacl:name "country of birth"@en;
+    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "The day on which the Person was born."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "date of birth"@en;
+    shacl:path schema:birthDate
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "An Identifier for the Person."@en;
+    shacl:name "identifier"@en;
+    shacl:path dc:identifier
+  ], [
+    shacl:class rdf:langString;
     shacl:definition "Full name of the Person given upon their birth."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "birth name"@en;
     shacl:path <http://www.w3.org/ns/person#birthName>
   ], [
-    shacl:class dc:Location;
-    shacl:definition "The country in which a Person was born."@en;
-    shacl:name "country of birth"@en;
+    shacl:class dc:Jurisdiction;
+    shacl:definition "Residency typically provides an individual with a subset of the rights of a citizen."@en;
+    shacl:name "residency"@en;
     shacl:path <http://www.w3.org/ns/person#countryOfBirth>
   ], [
     shacl:class dc:Location;
@@ -265,14 +248,31 @@ a family."""@en;
     shacl:name "date of death"@en;
     shacl:path schema:deathDate
   ], [
+    shacl:class dc:Location;
+    shacl:definition "The Location where the Person was born."@en;
+    shacl:name "place of birth"@en;
+    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
+  ], [
     shacl:class skos:Concept;
     shacl:definition "Gender of the Person."@en;
     shacl:name "gender"@en;
     shacl:path schema:gender
   ], [
     shacl:class dc:Jurisdiction;
-    shacl:definition "Residency typically provides an individual with a subset of the rights of a citizen."@en;
-    shacl:name "residency"@en;
-    shacl:path <http://www.w3.org/ns/person#countryOfBirth>
+    shacl:definition "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport."@en;
+    shacl:name "citizenship"@en;
+    shacl:path dc:citizenship
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "The full name contains the complete name of a person as one string."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "full name"@en;
+    shacl:path foaf:name
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "The country in which a Person died."@en;
+    shacl:name "country of death"@en;
+    shacl:path <http://www.w3.org/ns/person#countryOfDeath>
   ];
   shacl:targetClass foaf:Person .
