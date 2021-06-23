@@ -132,7 +132,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/87131db335744d0975cf8cbdba3dc2f6e1127aaa/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/87131db335744d0975cf8cbdba3dc2f6e1127aaa/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/3f34f8494745db0318ee792c0f5b7e6af15c8a87/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/3f34f8494745db0318ee792c0f5b7e6af15c8a87/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/catalogue-of-services-isa/SDG-services-model/issues">https://github.com/catalogue-of-services-isa/SDG-services-model/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -203,7 +203,7 @@ The main idea of the SDG Search Service model is to enable competent authorities
                 <div class="col--9-12 col--1-1--s typography">
                   
                   <div class="region region--no-space-top">
-                    <p>This document describes the usage of the following entities for a correct usage of the Core Vocabulary: 
+                    <p>This document describes the usage of the following entities for a correct usage of the data model: 
                       <br />
                       |
                       <a href="#Event">Event</a> |
@@ -234,7 +234,12 @@ The main idea of the SDG Search Service model is to enable competent authorities
               <h3 class="h3" id="Event"><a href="http://data.europa.eu/m8g/Event" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/Event" data-placement="right">Event</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The event that the Public Service covers.</dd>
+                    <dt>Description</dt><dd>This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service.</dd>
+                    
+                    <dt>Usage</dt><dd>An event can be both a business event as a life event. A Business Event is
+a specific situation or event in the lifecycle of a business that fulfils one or more needs
+or (legal) obligations of that business at this specific point in time. A life event represents an important event or situations in a citizen's life
+where public services may be required.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -456,9 +461,7 @@ It is best to include the lowest level possible, as the higher levels could be a
               <h3 class="h3" id="Output"><a href="http://data.europa.eu/m8g/Output" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/Output" data-placement="right">Output</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The expected results of the Public Service.</dd>
-                    
-                    <dt>Usage</dt><dd>Outputs can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organisation) that permits/authorises/entitles an Agent (such as the person that is requesting the Public Service) to (do) something.</dd>
+                    <dt>Description</dt><dd>Outputs can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organisation) that permits/authorises/entitles an Agent (such as the person that is requesting the Public Service) to (do) something.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -565,7 +568,7 @@ It is best to include the lowest level possible, as the higher levels could be a
                         <td property="rdfs:comment">The type of the Output as defined in a controlled vocabulary.</td>
                         <td property="skos:scopeNote">The controlled vocabulary agreed for now is the one defined in the Annex II of the Regulation: <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN#d1e32-36-1</a>.
 When using the different codes from the Regulation, some codes can be retrieved automatically. For example, if the Public Service is identified as relevant for the procedure 'Requesting proof of registration of birth', the Output type 'Proof of registration of birth or birth certificate' can automatically be derived from it and attached to the Public Service and its Output.</td>
-                        <td></td>
+                        <td>https://github.com/catalogue-of-services-isa/SDG-search-service-model/blob/master/codelists/Annex%20II%20outputs.xlsx">Annex II output types</a></td>
                       </tr>
                     
                     </tbody>
@@ -578,9 +581,9 @@ When using the different codes from the Regulation, some codes can be retrieved 
               <h3 class="h3" id="Public Organisation"><a href="http://data.europa.eu/m8g/PublicOrganisation" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/PublicOrganisation" data-placement="right">Public Organisation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The Public Organisation that is providing the Public Service.</dd>
+                    <dt>Description</dt><dd>Any Organisation that is defined as being part of the public sector by a legal framework at any level.</dd>
                     
-                    <dt>Usage</dt><dd>The Public Organisation reuses Core Public Organisation Vocabulary, in which Public Organisation is a Organisation and Agent.</dd>
+                    <dt>Usage</dt><dd>The Public Organisation reuses Core Public Organisation Vocabulary (<a href="https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization">https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization</a>), in which Public Organisation is a Organisation and Agent. </dd>
                     
 		    
                     <dt>Properties</dt>
@@ -854,7 +857,7 @@ The term Competent Authority is defined in the Services Directive (2006/123/EC) 
 			<td>1..*</td>
                         <td property="rdfs:comment">Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service.</td>
                         <td property="skos:scopeNote">A Public Service can fall under one or several policy codes of the annexes I and II of the SDGR (<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN">https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32018R1724&from=EN</a>).  For example: B. Work and retirement within the Union. 1. seeking employment in another Member States. This means it has policy code B1. </td>
-                        <td></td>
+                        <td><a href="https://github.com/catalogue-of-services-isa/SDG-search-service-model/blob/master/codelists/Annex%20I%20and%20II%20policy%20codes.xlsx">Annex I and II policy codes</a></td>
                       </tr>
                     
                       <tr id="Public%20Service%3Aproduces" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#produces">
