@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/c97333a75047fe0c433d0832184c93f7b74f4ad7",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/c97333a75047fe0c433d0832184c93f7b74f4ad7/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/8c079c810f0ea86455883c7735c856cbaa24cb37",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/8c079c810f0ea86455883c7735c856cbaa24cb37/CHANGELOG",
     "feedbackurl": "https://github.com/SEMICeu/Core-Location-Vocabulary/issues",
     "standaardregisterurl": "Core-Location-Vocabulary",
     "usesVocs": [],
@@ -32,43 +32,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "https://data.europa.eu/m8g/address",
-          "name": "address",
-          "sort": "address",
-          "label": {
-            "en": "address"
-          },
-          "description": {
-            "en": "The address relationship associates any Resource with the Address class (i.e. anything can be\r\nlinked to its address using this property)."
-          },
-          "usage": {
-            "en": "Asserting the address relationship implies that the\r\n Resource has an Address."
-          },
-          "domain": [
-            {
-              "EA-Name": "Location",
-              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Address",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Address",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "en": "Address"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "name": "geographic identifier",
@@ -142,43 +105,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#geometry",
-          "name": "geometry",
-          "sort": "geometry",
-          "label": {
-            "en": "geometry"
-          },
-          "description": {
-            "en": "Associates any Resource with the corresponding Geometry."
-          },
-          "usage": {
-            "en": "<p>Depending on how a geometry is encoded, the range of this property may be one of the following:\r\n<ul>\r\n  <li>- a literal (e.g., WKT - string literal -, GML, KML - XML literal)</li>\r\n  <li>- a geometry class, as those defined in the OGC's GeoSPARQL specification, in the W3C's Basic Geo (WGS84 lat/long) vocabulary, and at schema.org;</li>\r\n  <li>- geocoded URIs, as geo or GeoHash URIs, treated as URI references.</li>\r\n</ul>\r\n\r\n<p>\r\nFor interoperability reasons, it is recommended using one of the following:\r\n<ul>\r\n  <li>- Any geometry:\r\n    <ul>\r\n      <li>  - WKT, GML, and RDF+WKT/GML, as per the GeoSPARQL specification.</li>\r\n      <li>  - KML (Keyhole Markup Language) - note that KML supports the following geometries only: point, line string, linear ring, and polygon.\r\n      <li>  - RDF as per the schema.org vocabulary (see classes schema:GeoCoordinates and schema:GeoShape).\r\n    </ul>\r\n  </li>\r\n  <li>- Points: one of the above, or:\r\n    <ul>\r\n      <li>  - RDF as per the W3C Basic Geo (WGS84 lat/long) vocabulary.</li>\r\n      <li>  - GeoHash URIs.</li>\r\n      <li>  - geo URIs.</li>\r\n    </ul>\r\n  </li>\r\n</ul>\r\n</p>"
-          },
-          "domain": [
-            {
-              "EA-Name": "Location",
-              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Geometry",
-              "range_uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Geometry",
-              "range_puri": "http://www.w3.org/ns/locn#Geometry",
-              "range_label": {
-                "en": "Geometry"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
         }
       ]
     },
@@ -195,6 +121,43 @@
       "usage": {},
       "parents": [],
       "properties": [
+        {
+          "uri": "https://data.europa.eu/m8g/address",
+          "name": "address",
+          "sort": "address",
+          "label": {
+            "en": "address"
+          },
+          "description": {
+            "en": "The address relationship associates any Resource with the Address class (i.e. anything can be\r\nlinked to its address using this property)."
+          },
+          "usage": {
+            "en": "Asserting the address relationship implies that the\r\n Resource has an Address."
+          },
+          "domain": [
+            {
+              "EA-Name": "Resource",
+              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Address",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
         {
           "uri": "https://data.europa.eu/m8g/location",
           "name": "location",
@@ -226,6 +189,43 @@
               "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
                 "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#geometry",
+          "name": "geometry",
+          "sort": "geometry",
+          "label": {
+            "en": "geometry"
+          },
+          "description": {
+            "en": "Associates any Resource with the corresponding Geometry."
+          },
+          "usage": {
+            "en": "<p>Depending on how a geometry is encoded, the range of this property may be one of the following:\r\n<ul>\r\n  <li>- a literal (e.g., WKT - string literal -, GML, KML - XML literal)</li>\r\n  <li>- a geometry class, as those defined in the OGC's GeoSPARQL specification, in the W3C's Basic Geo (WGS84 lat/long) vocabulary, and at schema.org;</li>\r\n  <li>- geocoded URIs, as geo or GeoHash URIs, treated as URI references.</li>\r\n</ul>\r\n\r\n<p>\r\nFor interoperability reasons, it is recommended using one of the following:\r\n<ul>\r\n  <li>- Any geometry:\r\n    <ul>\r\n      <li>  - WKT, GML, and RDF+WKT/GML, as per the GeoSPARQL specification.</li>\r\n      <li>  - KML (Keyhole Markup Language) - note that KML supports the following geometries only: point, line string, linear ring, and polygon.\r\n      <li>  - RDF as per the schema.org vocabulary (see classes schema:GeoCoordinates and schema:GeoShape).\r\n    </ul>\r\n  </li>\r\n  <li>- Points: one of the above, or:\r\n    <ul>\r\n      <li>  - RDF as per the W3C Basic Geo (WGS84 lat/long) vocabulary.</li>\r\n      <li>  - GeoHash URIs.</li>\r\n      <li>  - geo URIs.</li>\r\n    </ul>\r\n  </li>\r\n</ul>\r\n</p>"
+          },
+          "domain": [
+            {
+              "EA-Name": "Resource",
+              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Geometry",
+              "range_uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Geometry",
+              "range_puri": "http://www.w3.org/ns/locn#Geometry",
+              "range_label": {
+                "en": "Geometry"
               }
             }
           ],
@@ -974,7 +974,7 @@
       "first_name": "Dimitri",
       "last_name": "Schepers",
       "affiliation": {
-        "name": "PwC"
+        "name": "PwC EU Services"
       }
     },
     {

@@ -14,6 +14,19 @@
       }
     },
     {
+      "EA-Guid": "{21C7916B-3091-4a57-8AD5-03FD0D92E2B2}",
+      "name": "Legal resource",
+      "label": {
+        "en": "Legal resource"
+      },
+      "definition": {
+        "en": "Legislation, policy, or policies lying behind the rules that govern a public service."
+      },
+      "usage": {
+        "en": "Instances of the Formal Framwork class are FRBR Expressions, i.e., concrete expressions of the more abstract concept of the piece of legislation or policy itself.\nThe European Council's invitation to introduce the European Legislation Identifier and portals such as legislation.gov.uk are relevant in this context. Adding '/data.xml' or /data.rdf' to any legislation URI on legislation.gov.uk will reveal how this can be done, for example http://www.legislation.gov.uk/uksi/2012/3170/contents/made{/data.rdf or /data.xml}."
+      }
+    },
+    {
       "EA-Guid": "{D5F84F8A-4C7B-4646-9C78-11423D6E9751}",
       "name": "Foundation Event",
       "label": {
@@ -25,25 +38,15 @@
     },
     {
       "EA-Guid": "{1AA76693-A640-459d-B2DC-C3333972134E}",
-      "name": "Public Organization",
+      "name": "Public Organisation",
       "label": {
-        "en": "Public Organization"
+        "en": "Public Organisation"
       },
       "definition": {
         "en": "Any Organization that is defined as being part of the public sector by a legal framework at any level."
       },
       "usage": {
         "en": "<p>\r\n  The Public Organization class represents the organization. One organization may\r\n  comprise several sub-organizations and any organization may have one or more \r\n  organizational units. Each of these is described using the same properties and\r\n  relationships.\r\n</p></br>\r\n\r\n<p>\r\nThis definition is consistent with the more detailed definition of a \"public sector body\" as given\r\nin the PSI Directive: \"the State, regional or local authorities, bodies\r\ngoverned by public law and associations formed by one or several such authorities\r\nor one or several such bodies governed by public law\". It further defines a body\r\ngoverned by public law as any body \"(a) established for the specific purpose of\r\nmeeting needs in the general interest, not having an industrial or commercial\r\ncharacter; and (b) having legal personality; and (c) financed, for the most part by\r\nthe State, or regional or local authorities, or other bodies governed by public law; or\r\nsubject to management supervision by those bodies; or having an administrative,\r\nmanagerial or supervisory board, more than half of whose members are appointed\r\nby the State, regional or local authorities or by other bodies governed by public law\".\r\r\n</p>"
-      }
-    },
-    {
-      "EA-Guid": "{A14F90EA-4FA1-4451-8AAE-43EC697FF06F}",
-      "name": "Formal Framework",
-      "label": {
-        "en": "Formal Framework"
-      },
-      "definition": {
-        "en": "This class may represent legislation or official policy that leads to a change event, including the establishment of the Organization."
       }
     },
     {
@@ -112,10 +115,10 @@
         "en": "Organizational Unit"
       },
       "definition": {
-        "en": "An Organizational Unit is a subclass of Organization but conceptually does not exist in its own right."
+        "en": "An Organization such as a department or support unit which is part of some larger Organization and only has full recognition within the context of that Organization. In particular the unit would not be regarded as a legal entity in its own right."
       },
       "usage": {
-        "en": "This is in contrast to a sub Organization that, although part of the larger Organization, may be legally distinct\r\nor otherwise enjoy a degree of autonomy.\r"
+        "en": "Units can be large and complex, containing other Units. An alternative name is \"Department\". An Organizational Unit is in contrast to a suborganization that, although part of the larger Organization, may be legally distinct or otherwise enjoy a degree of autonomy.\r"
       }
     },
     {
@@ -181,6 +184,26 @@
       },
       "definition": {
         "en": "The property hasFormalFramework links a Change Event or Foundation Event to a piece of legislation or a policy document that prompted the change."
+      }
+    },
+    {
+      "EA-Guid": "{F9250A30-C64A-4cf8-B6E9-A15F1441C964}",
+      "name": "scheme name",
+      "label": {
+        "en": "scheme name"
+      },
+      "definition": {
+        "en": "Name of the scheme used to construct the identifier."
+      }
+    },
+    {
+      "EA-Guid": "{A145710E-6B8F-4a53-B0F3-3AB50C244C08}",
+      "name": "scheme URI",
+      "label": {
+        "en": "scheme URI"
+      },
+      "definition": {
+        "en": "URI of the scheme used to construct the identifier."
       }
     },
     {
@@ -386,9 +409,9 @@
     },
     {
       "EA-Guid": "{898C9352-2AE7-446e-9F20-26A8DBD97C02}",
-      "name": "issuing authority",
+      "name": "issuing authority name",
       "label": {
-        "en": "issuing authority"
+        "en": "issuing authority name"
       },
       "definition": {
         "en": "The name of the agency responsible for issuing the Identifier."
@@ -610,16 +633,6 @@
       }
     },
     {
-      "EA-Guid": "{36B9EDC8-91CB-4511-9BE7-8D8418645EFC}",
-      "name": "identifier",
-      "label": {
-        "en": "identifier"
-      },
-      "definition": {
-        "en": "This property represents an Identifier for the Formal Framework."
-      }
-    },
-    {
       "EA-Guid": "{D6E1FD66-9083-4eda-BB4F-920E8715429C}",
       "name": "member of",
       "label": {
@@ -713,6 +726,9 @@
       },
       "definition": {
         "en": "The time at which the Change Event started."
+      },
+      "usage": {
+        "en": "If only one time is known and it is unclear whether it represents the start or end time, use only the startedAtTime property."
       }
     },
     {
@@ -726,16 +742,6 @@
       },
       "usage": {
         "en": "The value of this property is a URL irrespective of the serialisation of the data."
-      }
-    },
-    {
-      "EA-Guid": "{B2B7D1E1-0D28-4777-841B-6F5AE20B1B11}",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "definition": {
-        "en": "This property contains a name given to the Formal Framework."
       }
     },
     {
