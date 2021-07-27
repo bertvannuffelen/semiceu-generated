@@ -40,6 +40,60 @@
   "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en",
   "shapes": [
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#AgentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/hasAddress"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#organization",
+          "sh:definition": {
+            "en": "TODO"
+          },
+          "sh:name": {
+            "en": "TODO"
+          },
+          "sh:path": "TODO"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/name"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/qualification"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/spatial"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/title"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Agent"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#AdministrativeTerritorialUnitsShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -87,6 +141,12 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/Type"
+        },
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:definition": {
@@ -272,15 +332,6 @@
             "en": "sub organization of"
           },
           "sh:path": "http://www.w3.org/ns/org#subOrganizationOf"
-        },
-        {
-          "sh:class": "http://fixme.com#Code",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "type"
-          },
-          "sh:path": "https://data.europa.eu/m8g/type"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
@@ -795,6 +846,12 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#lastUpdated"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
             "en": "The date when the Opening Hours Specification becomes valid."
           },
@@ -819,69 +876,6 @@
         }
       ],
       "sh:targetClass": "https://schema.org/OpeningHoursSpecification"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#AgentShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "has Address"
-          },
-          "sh:path": "https://data.europa.eu/m8g/hasAddress"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "identifier"
-          },
-          "sh:path": "https://data.europa.eu/m8g/identifier"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#organization",
-          "sh:definition": {
-            "en": "TODO"
-          },
-          "sh:name": {
-            "en": "TODO"
-          },
-          "sh:path": "TODO"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "name"
-          },
-          "sh:path": "https://data.europa.eu/m8g/name"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "Qualification"
-          },
-          "sh:path": "https://data.europa.eu/m8g/qualification"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "title"
-          },
-          "sh:path": "https://data.europa.eu/m8g/title"
-        }
-      ],
-      "sh:targetClass": "https://schema.org/agent"
     }
   ]
 }
