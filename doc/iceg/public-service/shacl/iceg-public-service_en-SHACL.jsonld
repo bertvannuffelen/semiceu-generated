@@ -81,20 +81,6 @@
       "sh:targetClass": "https://data.europa.eu/m8g/Website"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#vcard: EmailShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.europa.eu/m8g/vcard: Email"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#vcard: PhoneShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.europa.eu/m8g/vcard: Phone"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#LegalResourceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -113,62 +99,63 @@
       "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResource"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#DatasetShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#AgentProfileShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description."
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "description"
-          },
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
           "sh:class": "http://fixme.com#Identifier",
-          "sh:definition": {
-            "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."
-          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "en": "identifier"
           },
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organisation) responsible for making the Public Service Dataset available."
+            "en": "This property represents the Name of the Agent."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "publisher"
-          },
-          "sh:path": "http://purl.org/dc/terms/publisher"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "This property contains a name given to the Dataset."
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "title"
+            "en": "name"
           },
           "sh:path": "http://purl.org/dc/terms/title"
         }
       ],
-      "sh:targetClass": "http://fixme.com#Dataset"
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#ProfileShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.europa.eu/m8g/Participation",
+          "sh:definition": {
+            "en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.\r\n"
+          },
+          "sh:name": {
+            "en": "plays role"
+          },
+          "sh:path": "http://data.europa.eu/m8g/playsRole"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/AgentClass"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PublicServiceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#alternativeName"
+        },
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
@@ -184,7 +171,7 @@
         {
           "sh:class": "http://purl.org/vocab/cpsv#Rule",
           "sh:definition": {
-            "en": "The Follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. The CPSV-AP is flexible to allow for significant variation in such a scenario."
+            "en": "The Follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. This model is flexible to allow for significant variation in such a scenario."
           },
           "sh:name": {
             "en": "follows"
@@ -254,7 +241,7 @@
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:class": "http://fixme.com#Dataset",
+          "sh:class": "https://data.europa.eu/m8g/Dataset",
           "sh:definition": {
             "en": "The Is Described At property links a Public Service to the Public Service Dataset(s) in which it is being described."
           },
@@ -466,18 +453,6 @@
             "en": "name"
           },
           "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Type of Rule."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "type"
-          },
-          "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
       "sh:targetClass": "http://purl.org/vocab/cpsv#Rule"
@@ -623,48 +598,6 @@
       "sh:targetClass": "http://www.w3.org/ns/locn#Address"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#AgentShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://fixme.com#Identifier",
-          "sh:definition": {
-            "en": "This property represents an Identifier for the Agent."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "identifier"
-          },
-          "sh:path": "http://purl.org/dc/terms/identifier"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "This property represents the Name of the Agent."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "name"
-          },
-          "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:class": "https://data.europa.eu/m8g/Participation",
-          "sh:definition": {
-            "en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.\r\n"
-          },
-          "sh:name": {
-            "en": "plays role"
-          },
-          "sh:path": "http://data.europa.eu/m8g/playsRole"
-        }
-      ],
-      "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#BusinessEventShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -738,7 +671,7 @@
           "sh:path": "https://schema.org/openingHours"
         },
         {
-          "sh:class": "https://data.europa.eu/m8g/PublicOrganisation",
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
           "sh:definition": {
             "en": "This property indicates the owner of a specific Channel through which a Public Service is being delivered."
           },
@@ -817,7 +750,7 @@
           "sh:path": "http://data.europa.eu/m8g/ifAccessedThrough"
         },
         {
-          "sh:class": "https://data.europa.eu/m8g/PublicOrganisation",
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
           "sh:definition": {
             "en": "This property links the Cost class with one or more instances of the Public Organization class. This property indicates which Public Organization is the Competent Authority for defining the costs associated with the delivery of a particular Public Service.\r"
           },
@@ -839,6 +772,58 @@
         }
       ],
       "sh:targetClass": "https://data.europa.eu/m8g/Cost"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#DatasetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Identifier",
+          "sh:definition": {
+            "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."
+          },
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/AgentClass",
+          "sh:definition": {
+            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organisation) responsible for making the Public Service Dataset available."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "publisher"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "This property contains a name given to the Dataset."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "title"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Dataset"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#EventShape",
@@ -924,6 +909,28 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:path": "https://data.europa.eu/m8g/country"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Output",
+          "sh:maxCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/isUsedAs"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Output",
+          "sh:maxCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/isUsedAs"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/language"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/type"
         }
       ],
       "sh:targetClass": "https://data.europa.eu/m8g/Evidence"
@@ -950,6 +957,13 @@
             "en": "description"
           },
           "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:name": {
+            "en": "Has Legal Resources"
+          },
+          "sh:path": "TODO"
         },
         {
           "sh:class": "http://fixme.com#Identifier",
@@ -1038,7 +1052,7 @@
       "sh:targetClass": "https://data.europa.eu/m8g/Participation"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PublicOrganisationShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PublicOrganizationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -1087,7 +1101,7 @@
           "sh:path": "http://purl.org/dc/terms/spatial"
         }
       ],
-      "sh:targetClass": "https://data.europa.eu/m8g/PublicOrganisation"
+      "sh:targetClass": "https://data.europa.eu/m8g/PublicOrganization"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#RequirementShape",
@@ -1163,6 +1177,20 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://schema.org/OpeningHoursSpecfication"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#vcard: PhoneShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.rfc-editor.org/rfc/rfc6350.html#section-6.4.1"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#vcard: EmailShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.rfc-editor.org/rfc/rfc6350.html#section-6.4.2"
     }
   ]
 }

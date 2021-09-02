@@ -81,20 +81,6 @@
       "sh:targetClass": "https://data.europa.eu/m8g/Website"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#vcard: EmailShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.europa.eu/m8g/vcard: Email"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#vcard: PhoneShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.europa.eu/m8g/vcard: Phone"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#LegalResourceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -113,33 +99,21 @@
       "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResource"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#DatasetShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#AgentProfileShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
           "sh:class": "http://fixme.com#Identifier",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -148,27 +122,40 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "http://purl.org/dc/terms/publisher"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
           "sh:path": "http://purl.org/dc/terms/title"
         }
       ],
-      "sh:targetClass": "http://fixme.com#Dataset"
+      "sh:targetClass": "http://purl.org/dc/terms/Agent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#ProfileShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.europa.eu/m8g/Participation",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://data.europa.eu/m8g/playsRole"
+        }
+      ],
+      "sh:targetClass": "http://purl.org/dc/terms/AgentClass"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#PublicServiceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#alternativeName"
+        },
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
@@ -254,7 +241,7 @@
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
-          "sh:class": "http://fixme.com#Dataset",
+          "sh:class": "https://data.europa.eu/m8g/Dataset",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -466,18 +453,6 @@
             "de": "Enter your translation here"
           },
           "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
       "sh:targetClass": "http://purl.org/vocab/cpsv#Rule"
@@ -623,48 +598,6 @@
       "sh:targetClass": "http://www.w3.org/ns/locn#Address"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#AgentShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://fixme.com#Identifier",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://purl.org/dc/terms/identifier"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://purl.org/dc/terms/title"
-        },
-        {
-          "sh:class": "https://data.europa.eu/m8g/Participation",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://data.europa.eu/m8g/playsRole"
-        }
-      ],
-      "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#BusinessEventShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -738,7 +671,7 @@
           "sh:path": "https://schema.org/openingHours"
         },
         {
-          "sh:class": "https://data.europa.eu/m8g/PublicOrganisation",
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -817,7 +750,7 @@
           "sh:path": "http://data.europa.eu/m8g/ifAccessedThrough"
         },
         {
-          "sh:class": "https://data.europa.eu/m8g/PublicOrganisation",
+          "sh:class": "https://data.europa.eu/m8g/PublicOrganization",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -839,6 +772,58 @@
         }
       ],
       "sh:targetClass": "https://data.europa.eu/m8g/Cost"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#DatasetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://fixme.com#Identifier",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/AgentClass",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/Dataset"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#EventShape",
@@ -924,6 +909,28 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:path": "https://data.europa.eu/m8g/country"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Output",
+          "sh:maxCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/isUsedAs"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Output",
+          "sh:maxCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/isUsedAs"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/language"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/type"
         }
       ],
       "sh:targetClass": "https://data.europa.eu/m8g/Evidence"
@@ -950,6 +957,13 @@
             "de": "Enter your translation here"
           },
           "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "TODO"
         },
         {
           "sh:class": "http://fixme.com#Identifier",
@@ -1038,7 +1052,7 @@
       "sh:targetClass": "https://data.europa.eu/m8g/Participation"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#PublicOrganisationShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#PublicOrganizationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -1087,7 +1101,7 @@
           "sh:path": "http://purl.org/dc/terms/spatial"
         }
       ],
-      "sh:targetClass": "https://data.europa.eu/m8g/PublicOrganisation"
+      "sh:targetClass": "https://data.europa.eu/m8g/PublicOrganization"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#RequirementShape",
@@ -1163,6 +1177,20 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://schema.org/OpeningHoursSpecfication"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#vcard: PhoneShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.rfc-editor.org/rfc/rfc6350.html#section-6.4.1"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#vcard: EmailShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://www.rfc-editor.org/rfc/rfc6350.html#section-6.4.2"
     }
   ]
 }

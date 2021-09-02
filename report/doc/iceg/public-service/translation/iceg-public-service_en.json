@@ -20,14 +20,6 @@
     {
       "EA-Guid": "{BD7993D4-F3DA-4aae-BAF4-918B992C8289}",
       "name": ""
-    },
-    {
-      "EA-Guid": "{CF552E56-0DBD-4206-A9B1-4853ABD41350}",
-      "name": ""
-    },
-    {
-      "EA-Guid": "{5AF4B717-595E-44b8-AFF0-8BAC5514A082}",
-      "name": ""
     }
   ],
   "properties": [
@@ -47,17 +39,21 @@
         "en": "This class represents the legislation, policy or policies that lie behind the Rules that govern the service."
       },
       "usage": {
-        "en": "The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in \"Council conclusions inviting the introduction of the European Legislation Identifier (ELI)\". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ) we refer to the ELI ontology."
+        "en": "The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in \"Council conclusions inviting the introduction of the European Legislation Identifier (ELI)\". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ...) we refer to the ELI ontology."
       }
     },
     {
-      "EA-Guid": "{4C40BA3A-6C08-4950-8EE2-E9CE8073C616}",
-      "name": "Dataset",
+      "EA-Guid": "{297118E7-46A3-4386-BC6D-66520991A76B}",
+      "name": "Agent",
       "label": {
-        "en": "Dataset"
-      },
-      "definition": {
-        "en": "The class describes the metada of where the dataset is being described, for instance on a regional public service portal and/or a national eGovernment portal."
+        "en": "Agent"
+      }
+    },
+    {
+      "EA-Guid": "{FB3925F3-255C-4258-99C8-F2636D6BA2B1}",
+      "name": "Agent Class",
+      "label": {
+        "en": "Agent Class"
       }
     },
     {
@@ -77,7 +73,7 @@
         "en": "Rule"
       },
       "definition": {
-        "en": "The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.\r\n\r\nInstances of the Rule class are FRBR Expressions, that is, a concrete expression such\r\nas a document, of the more abstract concept of the rules themselves. The CPSV-AP does not envisage instances of the Rule class as machine-readable business rules.\r\n\r\nDetailed modelling of the rules related to Public Services is out of scope of the CPSV-AP.\r"
+        "en": "The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.\r\n\r\nInstances of the Rule class are FRBR Expressions, that is, a concrete expression such\r\nas a document, of the more abstract concept of the rules themselves.This model does not envisage instances of the Rule class as machine-readable business rules.\r\n\r\nDetailed modelling of the rules related to Public Services is out of scope of this model.\r"
       }
     },
     {
@@ -91,16 +87,6 @@
       },
       "usage": {
         "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type</a>: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p></br>"
-      }
-    },
-    {
-      "EA-Guid": "{F41DDB41-25B4-4b39-88FD-7B1D1D8D373A}",
-      "name": "Agent",
-      "label": {
-        "en": "Agent"
-      },
-      "definition": {
-        "en": "The Agent class is any resource that acts or has the power to act. This includes people, organisations and groups. The Public Organization class, defined in the Core Public Organisation Vocabulary, is a notable subclass of Agent.\r"
       }
     },
     {
@@ -134,6 +120,16 @@
       }
     },
     {
+      "EA-Guid": "{4C40BA3A-6C08-4950-8EE2-E9CE8073C616}",
+      "name": "Dataset",
+      "label": {
+        "en": "Dataset"
+      },
+      "definition": {
+        "en": "The class describes all the metadata related to a public service. These metadata can be displayed on a regional public service portal and/or a national eGovernment portal."
+      }
+    },
+    {
       "EA-Guid": "{D2847FDB-E27B-4057-BF05-089A5CE08EF3}",
       "name": "Event",
       "label": {
@@ -163,7 +159,7 @@
         "en": "Life Event"
       },
       "definition": {
-        "en": "The Life Event class represents an important event or situations in a citizen's life where public services may be required. Note the scope: an individual will encounter any number of 'events' in the general sense of the word. In the context of the CPSV-AP, the Life Event class only represents an event for which a Public Service is related.\r\n\r\nFor example, a couple becoming engaged is not a CPSV-AP Life Event, getting married is, since only the latter has any relevance to public services."
+        "en": "The Life Event class represents an important event or situations in a citizen's life where public services may be required. Note the scope: an individual will encounter any number of 'events' in the general sense of the word. Within this model, the Life Event class only represents an event for which a Public Service is related. For example, a couple becoming engaged is not a  Life Event, getting married is, since only the latter has any relevance to public services."
       }
     },
     {
@@ -186,33 +182,33 @@
         "en": "Participation"
       },
       "definition": {
-        "en": "The CPSV-AP recognises a common role connected with public services, i.e. the Competent Authority. However, this simple structure does not allow statements to be made about those participants, such the start and end date of a contract, nor does it support the inclusion of other roles. The Participation class supports this extra complexity if required, for instance, the description of a service user or a service provider. The model is consistent with the CPOV which in turn is based on the W3C Organization Ontology that supports the common cases simply but allows the complex cases where necessary. The Participation class can be mapped to the Organization Ontology's Membership class that allows more complex\r\nrelationships and richer metadata to be applied to a role filled by a given Agent."
+        "en": "This model recognises a common role connected with public services, i.e. the Competent Authority. However, this simple structure does not allow statements to be made about those participants, such the start and end date of a contract, nor does it support the inclusion of other roles. The Participation class supports this extra complexity if required, for instance, the description of a service user or a service provider. The model is consistent with the CPOV which in turn is based on the W3C Organization Ontology that supports the common cases simply but allows the complex cases where necessary. The Participation class can be mapped to the Organization Ontology's Membership class that allows more complex\r\nrelationships and richer metadata to be applied to a role filled by a given Agent."
       }
     },
     {
       "EA-Guid": "{FD2FE27D-2842-467d-A825-12FAF150DE73}",
-      "name": "Public Organisation",
+      "name": "Public Organization",
       "label": {
-        "en": "Public Organisation"
+        "en": "Public Organization"
       },
       "definition": {
-        "en": "Any Organisation that is defined as being part of the public sector by a legal framework at any level."
+        "en": "Any Organization that is defined as being part of the public sector by a legal framework at any level."
       },
       "usage": {
-        "en": "Within the CPSV-AP the following properties are mandatory: preferred label and spatial. The value of the latter should be a URI from the Administrative Territorial Units Named Authority List maintained by the Publications Office's Metadata Registry.\r"
+        "en": "Within this model the following properties are mandatory: preferred label and spatial. The value of the latter should be a URI from the Administrative Territorial Units Named Authority List maintained by the Publications Office's Metadata Registry.\r"
       }
     },
     {
       "EA-Guid": "{EFF3F185-7B5E-4ca0-B12A-A9263F809A11}",
-      "name": "Criterion Requirement",
+      "name": "Requirement",
       "label": {
-        "en": "Criterion Requirement"
+        "en": "Requirement"
       },
       "definition": {
         "en": "A Criterion can be expressed as a set of requirements where every requirement must be valid. A Criterion requirement is an atomic requirement. Some criteria can be expressed with several atomic requirements. A Criterion requirement can specify the expected value that the Criterion response has to contain, or a range of threshold values within which the Criterion response has to fit in. The Criterion requirement may apply to a certain period of time. It also can provide a list of candidate evidences that the responder can use to prove the Criterion requirement."
       },
       "usage": {
-        "en": "Not all public services are needed or usable by everyone. For example, the visa service operated by European countries is not needed by European citizens but is needed by some citizens from elsewhere, or public services offering unemployment benefits and grants are targeting specific societal groups. The CPSV-AP reuses the Core Criterion and Core Evidence Vocabulary for this class. The CCCEV provides more details but the Criterion Requirement class has three mandatory properties."
+        "en": "Not all public services are needed or usable by everyone. For example, the visa service operated by European countries is not needed by European citizens but is needed by some citizens from elsewhere, or public services offering unemployment benefits and grants are targeting specific societal groups. This model reuses the Core Criterion and Core Evidence Vocabulary for this class. The CCCEV provides more details but the Criterion Requirement class has three mandatory properties."
       }
     },
     {
@@ -222,14 +218,29 @@
         "en": "Opening Hours Specification"
       },
       "definition": {
-        "en": "The CPSV-AP makes use of schema.org's openingHours property to provide details of regular operations."
+        "en": "The Public Service model makes use schema.org's openingHours property to provide details of regular operations. This class gives more details to the openingHours attribute of the Channel class."
       },
       "usage": {
         "en": "The Opening Hours Specification class can be used to provide details of exceptional circumstances, such as being closed on public holidays, which is encoded (in Turtle), thus:\r\nex:PublicHolidayClosed a schema:OpeningHoursSpecification;\r\nschema:dayOfWeek <http://schema.org/PublicHoliday>.\r\n\r\nNote that the property schema:opens is not used, therefore the contact point is closed. More specific closures can be indicated by including the schema:validFrom and schema:validThrough properties, for example:\r\nex:ChristmasClosed a schema:OpeningHoursSpecification;\r\nschema:validFrom \"2016-12-24T012:00Z\";\r\nschema:validThrough \"2017-01-02T09:00Z\".\r\n"
       }
+    },
+    {
+      "EA-Guid": "{5AF4B717-595E-44b8-AFF0-8BAC5514A082}",
+      "name": ""
+    },
+    {
+      "EA-Guid": "{CF552E56-0DBD-4206-A9B1-4853ABD41350}",
+      "name": ""
     }
   ],
   "externalproperties": [
+    {
+      "EA-Guid": "{F8E73668-6806-488f-843B-AAAC11D6814D}",
+      "name": "has Legal Resources",
+      "label": {
+        "en": "Has Legal Resources"
+      }
+    },
     {
       "EA-Guid": "{689F4190-1856-458c-9C41-92D3572725FD}",
       "name": "has channel",
@@ -341,6 +352,10 @@
       }
     },
     {
+      "EA-Guid": "{32FDEF0D-6584-4d6a-8F06-EBA939E9F688}",
+      "name": ""
+    },
+    {
       "EA-Guid": "{F5CCD77F-2922-4d2c-BF03-A5CF33874987}",
       "name": ""
     },
@@ -445,16 +460,6 @@
       }
     },
     {
-      "EA-Guid": "{D7E7E096-A2DA-45ea-A517-302C1147447E}",
-      "name": "identifier",
-      "label": {
-        "en": "identifier"
-      },
-      "definition": {
-        "en": "This property represents an Identifier for the Agent."
-      }
-    },
-    {
       "EA-Guid": "{6AFD1AA9-61EF-4292-A50F-ABB535659710}",
       "name": "identifier",
       "label": {
@@ -545,6 +550,13 @@
       }
     },
     {
+      "EA-Guid": "{80CBBAEA-6995-44a9-A6F8-5FCF382542A1}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier"
+      }
+    },
+    {
       "EA-Guid": "{6AB2CEB9-FCF2-4a56-9B7B-AA6A628AF2F3}",
       "name": "language",
       "label": {
@@ -565,16 +577,6 @@
       }
     },
     {
-      "EA-Guid": "{58D1DA3E-E7B4-4eb0-8DB4-3960AF4FB6CF}",
-      "name": "related service",
-      "label": {
-        "en": "related service"
-      },
-      "definition": {
-        "en": "This property links an event directly to a public service that is related to it."
-      }
-    },
-    {
       "EA-Guid": "{177F3705-53E3-4a81-B709-2512F7CCF615}",
       "name": "related",
       "label": {
@@ -592,6 +594,16 @@
       },
       "definition": {
         "en": "This property represents a Public Service related to the particular instance of the Public Service class."
+      }
+    },
+    {
+      "EA-Guid": "{58D1DA3E-E7B4-4eb0-8DB4-3960AF4FB6CF}",
+      "name": "related service",
+      "label": {
+        "en": "related service"
+      },
+      "definition": {
+        "en": "This property links an event directly to a public service that is related to it."
       }
     },
     {
@@ -628,16 +640,6 @@
       },
       "usage": {
         "en": "The value should be a URI from the Administrative Territorial Units Named Authority List maintained by the Publications Office's Metadata Registry."
-      }
-    },
-    {
-      "EA-Guid": "{A5D54F67-471B-4968-AC02-CC4FE3940082}",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "definition": {
-        "en": "This property represents the Name of the Agent."
       }
     },
     {
@@ -704,6 +706,16 @@
       }
     },
     {
+      "EA-Guid": "{8E2C4DBC-4665-4f15-84D8-4F48DE618918}",
+      "name": "name",
+      "label": {
+        "en": "name"
+      },
+      "definition": {
+        "en": "This property represents the Name of the Agent."
+      }
+    },
+    {
       "EA-Guid": "{FB2B769F-03A4-4a2f-A658-48E76A292FA7}",
       "name": "type",
       "label": {
@@ -711,16 +723,6 @@
       },
       "definition": {
         "en": "This property represents the Type of a Public Service as described in a controlled vocabulary. For the indicating the Type, we are referring to the functions of government to indicate the purpose of a government activity, which the public service is intended for."
-      }
-    },
-    {
-      "EA-Guid": "{5A433A68-E3DD-4a6f-B945-F76B49828956}",
-      "name": "type",
-      "label": {
-        "en": "type"
-      },
-      "definition": {
-        "en": "Type of Rule."
       }
     },
     {
@@ -780,7 +782,7 @@
         "en": "follows"
       },
       "definition": {
-        "en": "The Follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. The CPSV-AP is flexible to allow for significant variation in such a scenario."
+        "en": "The Follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. This model is flexible to allow for significant variation in such a scenario."
       }
     },
     {
@@ -1056,6 +1058,18 @@
       "name": ""
     },
     {
+      "EA-Guid": "{3E577914-F6D3-49e6-AF08-4E174CC5771A}",
+      "name": ""
+    },
+    {
+      "EA-Guid": "{3E577914-F6D3-49e6-AF08-4E174CC5771A}",
+      "name": ""
+    },
+    {
+      "EA-Guid": "{65D05BA6-DAC6-4e82-8BE5-3BF4AFDD4A56}",
+      "name": ""
+    },
+    {
       "EA-Guid": "{9C4BB768-0148-4ad3-9B12-A25FE678EE28}",
       "name": ""
     },
@@ -1075,6 +1089,10 @@
     },
     {
       "EA-Guid": "{9930792E-5EEE-4bfb-97B3-535E79DC8FC2}",
+      "name": ""
+    },
+    {
+      "EA-Guid": "{E2DBD970-17F6-4e91-AE8D-AA9F0C986C86}",
       "name": ""
     },
     {
