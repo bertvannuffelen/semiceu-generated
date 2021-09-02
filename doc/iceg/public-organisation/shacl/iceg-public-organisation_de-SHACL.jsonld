@@ -40,60 +40,6 @@
   "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de#AgentShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/hasAddress"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/identifier"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/org#organization",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "TODO"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/name"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/qualification"
-        },
-        {
-          "sh:class": "http://fixme.com#Code",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/spatial"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/title"
-        }
-      ],
-      "sh:targetClass": "https://data.europa.eu/m8g/Agent"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de#AdministrativeTerritorialUnitsShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -103,6 +49,7 @@
           "sh:definition": {
             "de": "Enter your translation here"
           },
+          "sh:maxCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
@@ -137,7 +84,7 @@
       "sh:targetClass": "http://data.europa.eu/m8g/FoundationEvent"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de#PublicOrganisationShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de#PublicOrganizationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -190,18 +137,6 @@
           "sh:path": "https://schema.org/contactPoint"
         },
         {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
           "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -240,16 +175,6 @@
             "de": "Enter your translation here"
           },
           "sh:path": "http://xmlns.com/foaf/0.1/homepage"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/org#identifier"
         },
         {
           "sh:class": "https://schema.org/ImageObject",
@@ -728,18 +653,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "http://fixme.com#description"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "http://fixme.com#identifier"
-        },
-        {
           "sh:class": "http://data.europa.eu/m8g/PublicOrganisation",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -756,8 +669,153 @@
       "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de#OrganizationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#description"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://fixme.com#identifier"
+        }
+      ],
       "sh:targetClass": "http://www.w3.org/ns/org#organization"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de#PersonShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/alternative"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/person#birthName"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://schema.org/birthDate"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://schema.org/deathDate"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/familyName"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/name"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://xmlns.com/foaf/0.1/givenName"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#organization",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "TODO"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/person#patronymicName"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/qualification"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/title"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/person#Person"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_de#DocumentShape",
@@ -776,6 +834,7 @@
           "sh:definition": {
             "de": "Enter your translation here"
           },
+          "sh:maxCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
@@ -848,7 +907,7 @@
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:path": "http://fixme.com#lastUpdated"
+          "sh:path": "http://fixme.com#updateDataDate"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
