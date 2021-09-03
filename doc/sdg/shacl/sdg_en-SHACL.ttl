@@ -6,13 +6,13 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/sdg_en> <https://semiceu.github.io/shacl/sdg_enshapes> <https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape>,
+<https://semiceu.github.io/shacl/sdg_en> <https://semiceu.github.io/shacl/sdg_enshapes> <https://semiceu.github.io/shacl/sdg_en#OutputShape>,
     <https://semiceu.github.io/shacl/sdg_en#PublicOrganisationShape>,
     <https://semiceu.github.io/shacl/sdg_en#EventShape>,
-    <https://semiceu.github.io/shacl/sdg_en#OutputShape>,
-    <https://semiceu.github.io/shacl/sdg_en#WebpageShape>,
+    <https://semiceu.github.io/shacl/sdg_en#LocationShape>,
     <https://semiceu.github.io/shacl/sdg_en#PublicServiceShape>,
-    <https://semiceu.github.io/shacl/sdg_en#LocationShape> .
+    <https://semiceu.github.io/shacl/sdg_en#LinguisticSystemShape>,
+    <https://semiceu.github.io/shacl/sdg_en#WebpageShape> .
 
 <https://semiceu.github.io/shacl/sdg_en#EventShape> a shacl:NodeShape;
   shacl:closed false;
@@ -44,17 +44,17 @@
     shacl:name "additional name"@en;
     shacl:path dc:title
   ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "A unique identifier for the Location."@en;
-    shacl:minCount 1;
-    shacl:name "geographic identifier"@en;
-    shacl:path dc:identifier
-  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "The geographic name of the Location."@en;
     shacl:minCount 1;
     shacl:name "geographic name"@en;
     shacl:path dc:title
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "A unique identifier for the Location."@en;
+    shacl:minCount 1;
+    shacl:name "geographic identifier"@en;
+    shacl:path dc:identifier
   ];
   shacl:targetClass dc:Location .
 
@@ -62,16 +62,16 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
+    shacl:definition "A unique identifier of the Output produced by the Public Service."@en;
+    shacl:minCount 1;
+    shacl:name "identifier"@en;
+    shacl:path dc:identifier
+  ], [
+    shacl:datatype rdfs:Literal;
     shacl:definition "The name of the Output that is produced by the Public Service."@en;
     shacl:minCount 1;
     shacl:name "name"@en;
     shacl:path dc:title
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "A free text description of the Output."@en;
-    shacl:minCount 1;
-    shacl:name "description"@en;
-    shacl:path dc:description
   ], [
     shacl:class skos:Concept;
     shacl:definition "The type of the Output as defined in a controlled vocabulary."@en;
@@ -79,10 +79,10 @@
     shacl:path dc:type
   ], [
     shacl:datatype rdfs:Literal;
-    shacl:definition "A unique identifier of the Output produced by the Public Service."@en;
+    shacl:definition "A free text description of the Output."@en;
     shacl:minCount 1;
-    shacl:name "identifier"@en;
-    shacl:path dc:identifier
+    shacl:name "description"@en;
+    shacl:path dc:description
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Output> .
 
@@ -114,6 +114,24 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
+    shacl:definition "A unique identifier of the Public Service."@en;
+    shacl:minCount 1;
+    shacl:name "identifier"@en;
+    shacl:path dc:identifier
+  ], [
+    shacl:datatype rdfs:Literal;
+    shacl:definition "The official name of the Public Service."@en;
+    shacl:minCount 1;
+    shacl:name "name"@en;
+    shacl:path dc:title
+  ], [
+    shacl:class dc:Location;
+    shacl:definition "The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority."@en;
+    shacl:minCount 1;
+    shacl:name "spatial"@en;
+    shacl:path dc:spatial
+  ], [
+    shacl:datatype rdfs:Literal;
     shacl:definition "A free text description of the Public Service."@en;
     shacl:minCount 1;
     shacl:name "description"@en;
@@ -124,23 +142,6 @@
     shacl:minCount 1;
     shacl:name "has webpage"@en;
     shacl:path foaf:Document
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "A unique identifier of the Public Service."@en;
-    shacl:minCount 1;
-    shacl:name "identifier"@en;
-    shacl:path dc:identifier
-  ], [
-    shacl:class <http://data.europa.eu/m8g/Event>;
-    shacl:definition "The Event (life/business) that is related to this Public Service."@en;
-    shacl:name "is grouped by"@en;
-    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "The official name of the Public Service."@en;
-    shacl:minCount 1;
-    shacl:name "name"@en;
-    shacl:path dc:title
   ], [
     shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
     shacl:definition "Any Member State authority or body established at national, regional or local level with specific responsibilities relating to the information, procedures, assistance and problem-solving services covered by the Single Digital Gateway Regulation."@en;
@@ -155,16 +156,15 @@
     shacl:name "policy code"@en;
     shacl:path dc:type
   ], [
-    shacl:class dc:Location;
-    shacl:definition "The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority."@en;
-    shacl:minCount 1;
-    shacl:name "spatial"@en;
-    shacl:path dc:spatial
-  ], [
     shacl:class <http://data.europa.eu/m8g/Output>;
     shacl:definition "The Output, or actual result of a Public Service."@en;
     shacl:name "produces"@en;
     shacl:path <http://purl.org/vocab/cpsv#produces>
+  ], [
+    shacl:class <http://data.europa.eu/m8g/Event>;
+    shacl:definition "The Event (life/business) that is related to this Public Service."@en;
+    shacl:name "is grouped by"@en;
+    shacl:path <http://data.europa.eu/m8g/isGroupedBy>
   ];
   shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
 
@@ -176,12 +176,6 @@
     shacl:minCount 1;
     shacl:name "identifier"@en;
     shacl:path dc:identifier
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "The URL of the webpage."@en;
-    shacl:minCount 1;
-    shacl:name "URL"@en;
-    shacl:path foaf:Page
   ], [
     shacl:class dc:LinguisticSystem;
     shacl:definition "The Language(s) in which the Webpage is available."@en;
@@ -195,5 +189,11 @@
     shacl:maxCount 2;
     shacl:name "type"@en;
     shacl:path dc:type
+  ], [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "The URL of the webpage."@en;
+    shacl:minCount 1;
+    shacl:name "URL"@en;
+    shacl:path foaf:Page
   ];
   shacl:targetClass foaf:Document .
