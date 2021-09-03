@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/b75696d627608d525cf8d9819dd21a1348b12147/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/b75696d627608d525cf8d9819dd21a1348b12147/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/06678df41e3f945b0249033a32b6328544fa85d5/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/06678df41e3f945b0249033a32b6328544fa85d5/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="TBD">TBD</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -1512,18 +1512,18 @@ The European Council's invitation to introduce the European Legislation Identifi
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Organization%3A"></a>, 
                       <a href="#Organization%3Achanged%20by">changed by</a>, 
                       <a href="#Organization%3Acontact%20point">contact point</a>, 
                       <a href="#Organization%3ADescription">Description</a>, 
-                      <a href="#Organization%3Ahas%20member">has member</a>, 
+                      <a href="#Organization%3Ahas%20part">has part</a>, 
                       <a href="#Organization%3Ahas%20post">has post</a>, 
+                      <a href="#Organization%3Ahas%20site">has site</a>, 
                       <a href="#Organization%3Ahas%20sub%20organization">has sub organization</a>, 
                       <a href="#Organization%3Ahomepage">homepage</a>, 
                       <a href="#Organization%3AIdentifier">Identifier</a>, 
                       <a href="#Organization%3Alogo">logo</a>, 
-                      <a href="#Organization%3Amember%20of">member of</a>, 
                       <a href="#Organization%3Anext">next</a>, 
+                      <a href="#Organization%3Apart%20of">part of</a>, 
                       <a href="#Organization%3Aprev">prev</a>, 
                       <a href="#Organization%3Aresulted%20from">resulted from</a>, 
                       <a href="#Organization%3Asub%20organization%20of">sub organization of</a>.</dd>
@@ -1545,26 +1545,6 @@ The European Council's invitation to introduce the European Legislation Identifi
                     </thead>
 
                     <tbody class="supertype">
-                    
-                      <tr id="Organization%3A" typeof="rdfs:Property" resource="http://fixme.com#hasSite">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://fixme.com#hasSite" data-toggle="tooltip" data-content="http://fixme.com#hasSite" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Site" data-placement="right">Site</a>
-			    
-                          
-                        </td>
-			<td>1..*</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
                     
                       <tr id="Organization%3Achanged%20by" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#changedBy">
                         <td>
@@ -1630,11 +1610,11 @@ information.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Ahas%20member" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#hasMember">
+                      <tr id="Organization%3Ahas%20part" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#hasMember">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://www.w3.org/ns/org#hasMember" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#hasMember" data-placement="right">
-                            has member</a>
+                            has part</a>
                           </code>
                         </td>
                         <td>
@@ -1673,6 +1653,26 @@ the simple memberOf/hasMember properties.</td>
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Organization%3Ahas%20site" typeof="rdfs:Property" resource="http://fixme.com#hasSite">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://fixme.com#hasSite" data-toggle="tooltip" data-content="http://fixme.com#hasSite" data-placement="right">
+                            has site</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Site" data-placement="right">Site</a>
+			    
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">Work in progress</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1760,33 +1760,6 @@ between Organizations in a hierarchical structure. </td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Amember%20of" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#memberOf">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#memberOf" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#memberOf" data-placement="right">
-                            member of</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Organization" data-placement="right">Organization</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">One Organization may be a member of another without being a sub organization, i.e.
-they are independent entities.</td>
-                        <td property="skos:scopeNote">The memberOf and hasMember properties are very simple and don't support
-statements describing the nature of the membership. The W3C Organization Ontology
-provides both this simple method and a more sophisticated model25 that does make
-it possible to, for example, provide information about the period of time in which one
-Organization was a member of another, the level of membership etc. That more
-sophisticated model should be used where necessary and may be used in addition to
-the simple memberOf/hasMember properties.</td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Organization%3Anext" typeof="rdfs:Property" resource="http://www.w3.org/1999/xhtml/vocab#next">
                         <td>
                           <code property="rdfs:label">
@@ -1807,6 +1780,33 @@ organizations that precede and succeed each other. To support this, the CPOV
 includes the well-known relationships of previous and next to allow such sequences
 to be captured and computed.</td>
                         <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Organization%3Apart%20of" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#memberOf">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/org#memberOf" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#memberOf" data-placement="right">
+                            part of</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Organization" data-placement="right">Organization</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">One Organization may be a member of another without being a sub organization, i.e.
+they are independent entities.</td>
+                        <td property="skos:scopeNote">The memberOf and hasMember properties are very simple and don't support
+statements describing the nature of the membership. The W3C Organization Ontology
+provides both this simple method and a more sophisticated model25 that does make
+it possible to, for example, provide information about the period of time in which one
+Organization was a member of another, the level of membership etc. That more
+sophisticated model should be used where necessary and may be used in addition to
+the simple memberOf/hasMember properties.</td>
                         <td></td>
                       </tr>
                     
@@ -1972,9 +1972,9 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                       <a href="#Person%3Afull%20name">full name</a>, 
                       <a href="#Person%3Agiven%20name%20(forename)">given name (forename)</a>, 
                       <a href="#Person%3AIdentifier">Identifier</a>, 
+                      <a href="#Person%3Amember%20of">member of</a>, 
                       <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
-                      <a href="#Person%3ATitle">Title</a>, 
-                      <a href="#Person%3AtODO">TODO</a>.</dd>
+                      <a href="#Person%3ATitle">Title</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2167,6 +2167,26 @@ A name usually sticks with a person for a long time period. In some European cou
                         <td></td>
                       </tr>
                     
+                      <tr id="Person%3Amember%20of" typeof="rdfs:Property" resource="TODO">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="TODO" data-toggle="tooltip" data-content="TODO" data-placement="right">
+                            member of</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Organization" data-placement="right">Organization</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">Work in progress</td>
+                        <td property="skos:scopeNote">TODO</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Person%3Apatronymic%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#patronymicName">
                         <td>
                           <code property="rdfs:label">
@@ -2209,26 +2229,6 @@ Note that patronymic names refer to a father's given name, not the family name i
                         <td></td>
                       </tr>
                     
-                      <tr id="Person%3AtODO" typeof="rdfs:Property" resource="TODO">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="TODO" data-toggle="tooltip" data-content="TODO" data-placement="right">
-                            TODO</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Organization" data-placement="right">Organization</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">TODO</td>
-                        <td property="skos:scopeNote">TODO</td>
-                        <td></td>
-                      </tr>
-                    
                     </tbody>
                   </table>
                 </div>
@@ -2239,14 +2239,14 @@ Note that patronymic names refer to a father's given name, not the family name i
               <h3 class="h3" id="Post"><a href="http://fixme.com#Post" data-toggle="tooltip" data-content="http://fixme.com#Post" data-placement="right">Post</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd></dd>
+                    <dt>Description</dt><dd>Work in progress</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Post%3A"></a>, 
-                      <a href="#Post%3Apost%20in">post in</a>.</dd>
+                      <a href="#Post%3Apost%20in">post in</a>, 
+                      <a href="#Post%3Arole">role</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2266,26 +2266,6 @@ Note that patronymic names refer to a father's given name, not the family name i
 
                     <tbody class="supertype">
                     
-                      <tr id="Post%3A" typeof="rdfs:Property" resource="http://fixme.com#role">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://fixme.com#role" data-toggle="tooltip" data-content="http://fixme.com#role" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Role" data-placement="right">Role</a>
-			    
-                          
-                        </td>
-			<td>1..*</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Post%3Apost%20in" typeof="rdfs:Property" resource="http://fixme.com#postIn">
                         <td>
                           <code property="rdfs:label">
@@ -2302,6 +2282,26 @@ Note that patronymic names refer to a father's given name, not the family name i
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Post%3Arole" typeof="rdfs:Property" resource="http://fixme.com#role">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://fixme.com#role" data-toggle="tooltip" data-content="http://fixme.com#role" data-placement="right">
+                            role</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Role" data-placement="right">Role</a>
+			    
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">Work in progress</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2495,7 +2495,7 @@ property.
               <h3 class="h3" id="Role"><a href="http://fixme.com#Role" data-toggle="tooltip" data-content="http://fixme.com#Role" data-placement="right">Role</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd></dd>
+                    <dt>Description</dt><dd>Work in progress</dd>
                     
 		    
                     <dt>Properties</dt>
