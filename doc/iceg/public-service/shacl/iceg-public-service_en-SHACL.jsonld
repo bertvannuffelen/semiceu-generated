@@ -40,11 +40,31 @@
   "@id": "https://semiceu.github.io/shacl/iceg-public-service_en",
   "shapes": [
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#ChannelPreferenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.europa.eu/m8g/Channel",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.channel"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Purpose",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.purpose"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PurposeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.europa.eu/m8g/Purpose"
+      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference.purpose"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#LegalResourceShape",
@@ -145,6 +165,10 @@
           "sh:path": "http://fixme.com#hasCompetentAuthority"
         },
         {
+          "sh:class": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization",
+          "sh:path": "http://fixme.com#hasContactPoint"
+        },
+        {
           "sh:class": "http://fixme.com#ContactPoint",
           "sh:definition": {
             "en": "A contact point for the service is almost always helpful. The value of this property, the contact information itself, should be provided using schema:ContactPoint. Note that the contact information should be relevant to the Public Service which may not be the same as contact information for the Competent Authority or any Participant."
@@ -152,10 +176,6 @@
           "sh:name": {
             "en": "has contact point"
           },
-          "sh:path": "http://fixme.com#hasContactPoint"
-        },
-        {
-          "sh:class": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization",
           "sh:path": "http://fixme.com#hasContactPoint"
         },
         {
@@ -265,8 +285,6 @@
           "sh:definition": {
             "en": "This property represents the status within the lifecycle of the public service (exp: creation, use or deletion of a Public Service). It doesn't refer to the status within the Public Service process."
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "lifecycleStatus"
           },
@@ -731,7 +749,7 @@
           "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
-      "sh:targetClass": "https://data.europa.eu/m8g/Channel"
+      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference.channel"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#CostShape",
@@ -1013,11 +1031,11 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "Work in progress"
+            "en": "This property represents the type of Evidence as described in a controlled vocabulary.\t"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "Type"
+            "en": "type"
           },
           "sh:path": "https://data.europa.eu/m8g/type"
         }
@@ -1104,7 +1122,6 @@
             "en": "The duration necessary for the Public Service to deliver the Output given that the Beneficiary has provided all the Evidences."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "responseTime"
           },

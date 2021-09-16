@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/fa7c40649a12f9163729444c03308b4ae11b383b/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/fa7c40649a12f9163729444c03308b4ae11b383b/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/0c98258facee5bc0f9b9ec0b8310183e01e52b76/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/0c98258facee5bc0f9b9ec0b8310183e01e52b76/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="TBD">TBD</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -192,8 +192,9 @@ TBD
                     <p>This document describes the usage of the following entities for a correct usage of the data model: 
                       <br />
                       |
-                      <a href="#Channel">Channel</a> |
-                      <a href="#Purpose">Purpose</a> |
+                      <a href="#Business Event">Business Event</a> |
+                      <a href="#Channel Preference">Channel Preference</a> |
+                      <a href="#Legal Resource">Legal Resource</a> |
                       <a href="#Collection">Collection</a> |
                       <a href="#Concept">Concept</a> |
                       <a href="#Contact Point">Contact Point</a> |
@@ -202,8 +203,8 @@ TBD
                       <a href="#Address">Address</a> |
                       <a href="#Agent">Agent</a> |
                       <a href="#Group">Group</a> |
-                      <a href="#Business Event">Business Event</a> |
-                      <a href="#Legal Resource">Legal Resource</a> |
+                      <a href="#Purpose">Purpose</a> |
+                      <a href="#Channel">Channel</a> |
                       <a href="#Cost">Cost</a> |
                       <a href="#Dataset">Dataset</a> |
                       <a href="#Event">Event</a> |
@@ -232,22 +233,39 @@ TBD
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Channel"><a href="https://data.europa.eu/m8g/Channel" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Channel" data-placement="right">Channel</a></h3>
+              <h3 class="h3" id="Business Event"><a href="https://data.europa.eu/m8g/BusinessEvent" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/BusinessEvent" data-placement="right">Business Event</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The Channel class represents the medium through which an Agent provides, uses or interacts in another way with a Public Service. Typical examples include online services, phone, walk-in centres etc.</dd>
+                    <dt>Description</dt><dd>This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.
+
+In other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event.</dd>
+                    
+		     
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Event">Event</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Channel Preference"><a href="https://data.europa.eu/m8g/ChannelPreference" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference" data-placement="right">Channel Preference</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>This class describes the relationship between Channel and Purpose. For instance, a Channel can be preferred for a Purpose and depreciated for another one (exp: you can introduce you tax declaration in paper but you&#39;re not encouraged to do so).</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Channel%3Aowned%20by">owned by</a>, 
-                      <a href="#Channel%3Aidentifier">identifier</a>, 
-                      <a href="#Channel%3Atype">type</a>, 
-                      <a href="#Channel%3Ahas%20input">has input</a>, 
-                      <a href="#Channel%3ADescription">Description</a>, 
-                      <a href="#Channel%3Aavailability%20restriction">availability restriction</a>, 
-                      <a href="#Channel%3Aopening%20hours">opening hours</a>.</dd>
+                      <a href="#Channel%20Preference%3A"></a>, 
+                      <a href="#Channel%20Preference%3A"></a>.</dd>
                     
                   </dl>
                 </div>
@@ -267,147 +285,43 @@ TBD
 
                     <tbody class="supertype">
                     
-                      <tr id="Channel%3Aowned%20by" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/ownedBy">
+                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.channel">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/ownedBy" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/ownedBy" data-placement="right">
-                            owned by</a>
+                            <a href="https://data.europa.eu/m8g/ChannelPreference.channel" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.channel" data-placement="right">
+                            </a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Public Organization</a>
+			    <a href="#Enter your translation here" data-placement="right">Channel</a>
 			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property indicates the owner of a specific Channel through which a Public Service is being delivered.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Channel%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
-                            identifier</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://fixme.com#Identifier" data-toggle="tooltip" data-content="http://fixme.com#Identifier" data-placement="right"></a>
-                            
                           
                         </td>
 			<td>1</td>
-                        <td property="rdfs:comment">This property represents an Identifier for the Channel.</td>
+                        <td property="rdfs:comment"></td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Channel%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.purpose">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
-                            type</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">This property represents the type of Channel as defined in a controlled vocabulary.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Channel%3Ahas%20input" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#hasInput">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/vocab/cpsv#hasInput" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#hasInput" data-placement="right">
-                            has input</a>
+                            <a href="https://data.europa.eu/m8g/ChannelPreference.purpose" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.purpose" data-placement="right">
+                            </a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
+			    <a href="#Enter your translation here" data-placement="right">Purpose</a>
 			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be
-required for an online channel, whereas a physical signature may be required for a face to face service provision.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Channel%3ADescription" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/description">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/description" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/description" data-placement="right">
-                            Description</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
                           
                         </td>
 			<td>1</td>
-                        <td property="rdfs:comment">This property represents a free text description of the Channel.</td>
+                        <td property="rdfs:comment"></td>
                         <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Channel%3Aavailability%20restriction" typeof="rdfs:Property" resource="https://schema.org/hoursAvailable">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://schema.org/hoursAvailable" data-toggle="tooltip" data-content="https://schema.org/hoursAvailable" data-placement="right">
-                            availability restriction</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Opening Hours Specification</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Channel%3Aopening%20hours" typeof="rdfs:Property" resource="https://schema.org/openingHours">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://schema.org/openingHours" data-toggle="tooltip" data-content="https://schema.org/openingHours" data-placement="right">
-                            opening hours</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents the normal opening hours of a channel.</td>
-                        <td property="skos:scopeNote">The value should follow the flexible format defined for schema.org's opening hours property.
-Following that structure, days of the week are represented by two letter codes (Mo,Tu, We, Th, Fr, Sa, Su).  Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen (for example: Mo-Fr).
-
-If it is appropriate to add opening hours then this follows the day so if a phone service is available 08:00-20:00 Monday to Saturday and 08:00-18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00.</td>
                         <td></td>
                       </tr>
                     
@@ -418,19 +332,61 @@ If it is appropriate to add opening hours then this follows the day so if a phon
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Purpose"><a href="https://data.europa.eu/m8g/Purpose" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Purpose" data-placement="right">Purpose</a></h3>
+              <h3 class="h3" id="Legal Resource"><a href="http://data.europa.eu/eli/ontology#LegalResource" data-toggle="tooltip" data-content="http://data.europa.eu/eli/ontology#LegalResource" data-placement="right">Legal Resource</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Work in progress</dd>
+                    <dt>Description</dt><dd>This class represents the legislation, policy or policies that lie behind the Rules that govern the service.</dd>
+                    
+                    <dt>Usage</dt><dd>The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in "Council conclusions inviting the introduction of the European Legislation Identifier (ELI)". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ...) we refer to the ELI ontology.</dd>
                     
 		    
                     <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Legal%20Resource%3Arelated">related</a>.</dd>
                     
                   </dl>
                 </div>
-		
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Legal%20Resource%3Arelated" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
+                            related</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
             </div>
             
               <div class="region region--no-space-top">
@@ -556,8 +512,8 @@ behalf, to businesses, citizens or others public administrations.</dd>
                       <a href="#Public%20Service%3Ais%20described%20at">is described at</a>, 
                       <a href="#Public%20Service%3Ais%20grouped%20by">is grouped by</a>, 
                       <a href="#Public%20Service%3Ahas%20competent%20authority">has competent authority</a>, 
-                      <a href="#Public%20Service%3Ahas%20channel">has channel</a>, 
                       <a href="#Public%20Service%3Ahas%20contact%20point">has contact point</a>, 
+                      <a href="#Public%20Service%3Ahas%20channel">has channel</a>, 
                       <a href="#Public%20Service%3Ais%20classified%20by">is classified by</a>, 
                       <a href="#Public%20Service%3AlifecycleStatus">lifecycleStatus</a>, 
                       <a href="#Public%20Service%3Aprocessing%20time">processing time</a>, 
@@ -768,26 +724,6 @@ thereof.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Service%3Ahas%20channel" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasChannel">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/hasChannel" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/hasChannel" data-placement="right">
-                            has channel</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Channel</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Public%20Service%3Ahas%20contact%20point" typeof="rdfs:Property" resource="http://fixme.com#hasContactPoint">
                         <td>
                           <code property="rdfs:label">
@@ -804,6 +740,26 @@ thereof.</td>
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">A contact point for the service is almost always helpful. The value of this property, the contact information itself, should be provided using schema:ContactPoint. Note that the contact information should be relevant to the Public Service which may not be the same as contact information for the Competent Authority or any Participant.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Service%3Ahas%20channel" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasChannel">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/hasChannel" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/hasChannel" data-placement="right">
+                            has channel</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Channel</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -842,7 +798,7 @@ thereof.</td>
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">This property represents the status within the lifecycle of the public service (exp: creation, use or deletion of a Public Service). It doesn&#39;t refer to the status within the Public Service process.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -1794,18 +1750,20 @@ While a Group has the characteristics of a Agent, it is also associated with a n
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Business Event"><a href="https://data.europa.eu/m8g/BusinessEvent" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/BusinessEvent" data-placement="right">Business Event</a></h3>
+              <h3 class="h3" id="Purpose"><a href="https://data.europa.eu/m8g/Purpose" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Purpose" data-placement="right">Purpose</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.
+                    <dt>Description</dt><dd>This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel.</dd>
+                    
+                    <dt>Usage</dt><dd>This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, 
 
-In other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event.</dd>
+More specifically:
+
+Each channel could serve several purposes.
+ 
+Each purpose can have one or more preferred channels, and one or more "deprecated" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)</dd>
                     
-		     
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Event">Event</a>
-		   </dd>
-                    
+		    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -1816,18 +1774,22 @@ In other words, a Business Event groups together a number of public services tha
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Legal Resource"><a href="http://data.europa.eu/eli/ontology#LegalResource" data-toggle="tooltip" data-content="http://data.europa.eu/eli/ontology#LegalResource" data-placement="right">Legal Resource</a></h3>
+              <h3 class="h3" id="Channel"><a href="https://data.europa.eu/m8g/Channel" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Channel" data-placement="right">Channel</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>This class represents the legislation, policy or policies that lie behind the Rules that govern the service.</dd>
-                    
-                    <dt>Usage</dt><dd>The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in "Council conclusions inviting the introduction of the European Legislation Identifier (ELI)". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ...) we refer to the ELI ontology.</dd>
+                    <dt>Description</dt><dd>The Channel class represents the medium through which an Agent provides, uses or interacts in another way with a Public Service. Typical examples include online services, phone, walk-in centres etc.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Legal%20Resource%3Arelated">related</a>.</dd>
+                      <a href="#Channel%3Aowned%20by">owned by</a>, 
+                      <a href="#Channel%3Aidentifier">identifier</a>, 
+                      <a href="#Channel%3Atype">type</a>, 
+                      <a href="#Channel%3Ahas%20input">has input</a>, 
+                      <a href="#Channel%3ADescription">Description</a>, 
+                      <a href="#Channel%3Aavailability%20restriction">availability restriction</a>, 
+                      <a href="#Channel%3Aopening%20hours">opening hours</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1847,23 +1809,147 @@ In other words, a Business Event groups together a number of public services tha
 
                     <tbody class="supertype">
                     
-                      <tr id="Legal%20Resource%3Arelated" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
+                      <tr id="Channel%3Aowned%20by" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/ownedBy">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
-                            related</a>
+                            <a href="http://data.europa.eu/m8g/ownedBy" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/ownedBy" data-placement="right">
+                            owned by</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
+			    <a href="#Enter your translation here" data-placement="right">Public Organization</a>
 			    
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.</td>
+                        <td property="rdfs:comment">This property indicates the owner of a specific Channel through which a Public Service is being delivered.</td>
                         <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Channel%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
+                            identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://fixme.com#Identifier" data-toggle="tooltip" data-content="http://fixme.com#Identifier" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents an Identifier for the Channel.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Channel%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
+                            type</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">This property represents the type of Channel as defined in a controlled vocabulary.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Channel%3Ahas%20input" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#hasInput">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/vocab/cpsv#hasInput" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#hasInput" data-placement="right">
+                            has input</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be
+required for an online channel, whereas a physical signature may be required for a face to face service provision.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Channel%3ADescription" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/description">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/description" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/description" data-placement="right">
+                            Description</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents a free text description of the Channel.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Channel%3Aavailability%20restriction" typeof="rdfs:Property" resource="https://schema.org/hoursAvailable">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://schema.org/hoursAvailable" data-toggle="tooltip" data-content="https://schema.org/hoursAvailable" data-placement="right">
+                            availability restriction</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Opening Hours Specification</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Channel%3Aopening%20hours" typeof="rdfs:Property" resource="https://schema.org/openingHours">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://schema.org/openingHours" data-toggle="tooltip" data-content="https://schema.org/openingHours" data-placement="right">
+                            opening hours</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property represents the normal opening hours of a channel.</td>
+                        <td property="skos:scopeNote">The value should follow the flexible format defined for schema.org's opening hours property.
+Following that structure, days of the week are represented by two letter codes (Mo,Tu, We, Th, Fr, Sa, Su).  Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen (for example: Mo-Fr).
+
+If it is appropriate to add opening hours then this follows the day so if a phone service is available 08:00-20:00 Monday to Saturday and 08:00-18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00.</td>
                         <td></td>
                       </tr>
                     
@@ -2340,7 +2426,7 @@ In some cases, the Output of one service will be Evidence for another service. S
                     <dd>For this entity the following properties are defined:
                       <a href="#Evidence%3ACountry">Country</a>, 
                       <a href="#Evidence%3ALanguage">Language</a>, 
-                      <a href="#Evidence%3AType">Type</a>, 
+                      <a href="#Evidence%3Atype">type</a>, 
                       <a href="#Evidence%3Aconfidentiality%20level%20type">confidentiality level type</a>, 
                       <a href="#Evidence%3Ais%20about">is about</a>, 
                       <a href="#Evidence%3Ais%20created%20by">is created by</a>, 
@@ -2405,11 +2491,11 @@ In some cases, the Output of one service will be Evidence for another service. S
                         <td></td>
                       </tr>
                     
-                      <tr id="Evidence%3AType" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/type">
+                      <tr id="Evidence%3Atype" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/type">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://data.europa.eu/m8g/type" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/type" data-placement="right">
-                            Type</a>
+                            type</a>
                           </code>
                         </td>
                         <td>
@@ -2420,7 +2506,7 @@ In some cases, the Output of one service will be Evidence for another service. S
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">Work in progress</td>
+                        <td property="rdfs:comment">This property represents the type of Evidence as described in a controlled vocabulary.	</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2748,7 +2834,7 @@ This property might be used when a Public Service consumes its own Output as Evi
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The duration necessary for the Public Service to deliver the Output given that the Beneficiary has provided all the Evidences.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>

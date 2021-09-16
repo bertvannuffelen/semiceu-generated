@@ -11,14 +11,95 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/fa7c40649a12f9163729444c03308b4ae11b383b",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/fa7c40649a12f9163729444c03308b4ae11b383b/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/0c98258facee5bc0f9b9ec0b8310183e01e52b76",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/0c98258facee5bc0f9b9ec0b8310183e01e52b76/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
+    {
+      "uri": "https://data.europa.eu/m8g/ChannelPreference",
+      "name": "Channel Preference",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Channel Preference"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "This class describes the relationship between Channel and Purpose. For instance, a Channel can be preferred for a Purpose and depreciated for another one (exp: you can introduce you tax declaration in paper but you're not encouraged to do so)."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://data.europa.eu/m8g/ChannelPreference.channel",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ChannelPreference",
+              "uri": "https://data.europa.eu/m8g/ChannelPreference"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Channel",
+              "range_uri": "https://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://data.europa.eu/m8g/Channel",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Channel"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.europa.eu/m8g/ChannelPreference.purpose",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ChannelPreference",
+              "uri": "https://data.europa.eu/m8g/ChannelPreference"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Purpose",
+              "range_uri": "https://data.europa.eu/m8g/Purpose"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://data.europa.eu/m8g/Purpose",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Purpose"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
     {
       "uri": "https://data.europa.eu/m8g/Purpose",
       "name": "Purpose",
@@ -29,9 +110,12 @@
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "Work in progress"
+        "en": "This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel."
       },
-      "usage": {},
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)"
+      },
       "parents": [],
       "properties": []
     },
@@ -501,38 +585,6 @@
         },
         {
           "uri": "http://fixme.com#hasContactPoint",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PublicOrganization",
-              "range_uri": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Public Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#hasContactPoint",
           "name": "has contact point",
           "sort": "Enter your translation here",
           "label": {
@@ -563,6 +615,38 @@
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Contact Point"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#hasContactPoint",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicOrganization",
+              "range_uri": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Public Organization"
               }
             }
           ],
@@ -641,7 +725,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -3124,15 +3208,15 @@
         },
         {
           "uri": "https://data.europa.eu/m8g/type",
-          "name": "Type",
+          "name": "type",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "Type"
+            "en": "type"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "Work in progress"
+            "en": "This property represents the type of Evidence as described in a controlled vocabulary.\t"
           },
           "usage": {},
           "domain": [
@@ -3685,7 +3769,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -4376,7 +4460,36 @@
       ]
     }
   ],
-  "properties": [],
+  "properties": [
+    {
+      "uri": "https://data.europa.eu/m8g/ChannelPreference.channel",
+      "name": {
+        "undefined": ""
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.europa.eu/m8g/ChannelPreference.purpose",
+      "name": {
+        "undefined": ""
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    }
+  ],
   "contributors": [
     {
       "role": "E",

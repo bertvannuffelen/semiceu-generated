@@ -40,11 +40,31 @@
   "@id": "https://semiceu.github.io/shacl/iceg-public-service_de",
   "shapes": [
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#ChannelPreferenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "https://data.europa.eu/m8g/Channel",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.channel"
+        },
+        {
+          "sh:class": "https://data.europa.eu/m8g/Purpose",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.purpose"
+        }
+      ],
+      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#PurposeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.europa.eu/m8g/Purpose"
+      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference.purpose"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#LegalResourceShape",
@@ -145,6 +165,10 @@
           "sh:path": "http://fixme.com#hasCompetentAuthority"
         },
         {
+          "sh:class": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization",
+          "sh:path": "http://fixme.com#hasContactPoint"
+        },
+        {
           "sh:class": "http://fixme.com#ContactPoint",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -152,10 +176,6 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "http://fixme.com#hasContactPoint"
-        },
-        {
-          "sh:class": "https://semiceu.github.io/CPOV/releases/2.00/#Public%20Organization",
           "sh:path": "http://fixme.com#hasContactPoint"
         },
         {
@@ -265,8 +285,6 @@
           "sh:definition": {
             "de": "Enter your translation here"
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
@@ -731,7 +749,7 @@
           "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
-      "sh:targetClass": "https://data.europa.eu/m8g/Channel"
+      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference.channel"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_de#CostShape",
@@ -1104,7 +1122,6 @@
             "de": "Enter your translation here"
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },

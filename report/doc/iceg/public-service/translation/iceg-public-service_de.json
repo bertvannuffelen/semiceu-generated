@@ -2,6 +2,18 @@
   "baseURI": "https://data.europa.eu/m8g/",
   "classes": [
     {
+      "EA-Guid": "{EC2DF6A9-8DCA-46c3-8700-55F0702F6839}",
+      "name": "Channel Preference",
+      "label": {
+        "en": "Channel Preference",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class describes the relationship between Channel and Purpose. For instance, a Channel can be preferred for a Purpose and depreciated for another one (exp: you can introduce you tax declaration in paper but you're not encouraged to do so).",
+        "de": "Enter your translation here"
+      }
+    },
+    {
       "EA-Guid": "{BBB9949B-6AFA-4dbf-B8B0-6FE35C0B3EF9}",
       "name": "Purpose",
       "label": {
@@ -9,12 +21,25 @@
         "de": "Enter your translation here"
       },
       "definition": {
-        "en": "Work in progress",
+        "en": "This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel.",
+        "de": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)",
         "de": "Enter your translation here"
       }
     }
   ],
-  "properties": [],
+  "properties": [
+    {
+      "EA-Guid": "Derived:{EC2DF6A9-8DCA-46c3-8700-55F0702F6839}->{7CCC2DFE-AAA4-4d1c-ABE6-CB1EE94C7049}",
+      "name": ""
+    },
+    {
+      "EA-Guid": "Derived:{EC2DF6A9-8DCA-46c3-8700-55F0702F6839}->{BBB9949B-6AFA-4dbf-B8B0-6FE35C0B3EF9}",
+      "name": ""
+    }
+  ],
   "externals": [
     {
       "EA-Guid": "{40B93801-41E5-41e7-8189-E830062C1134}",
@@ -451,10 +476,6 @@
       }
     },
     {
-      "EA-Guid": "{F2DC1555-2AD1-4be6-AECF-8968FD25F804}",
-      "name": ""
-    },
-    {
       "EA-Guid": "{EB31A0C3-8C0A-4309-BE5E-837E453D01CB}",
       "name": "has contact point",
       "label": {
@@ -465,6 +486,10 @@
         "en": "A contact point for the service is almost always helpful. The value of this property, the contact information itself, should be provided using schema:ContactPoint. Note that the contact information should be relevant to the Public Service which may not be the same as contact information for the Competent Authority or any Participant.",
         "de": "Enter your translation here"
       }
+    },
+    {
+      "EA-Guid": "{F2DC1555-2AD1-4be6-AECF-8968FD25F804}",
+      "name": ""
     },
     {
       "EA-Guid": "{5151C981-FA56-4125-9797-1CAA625C5F43}",
@@ -779,18 +804,6 @@
       }
     },
     {
-      "EA-Guid": "{177F3705-53E3-4a81-B709-2512F7CCF615}",
-      "name": "related",
-      "label": {
-        "en": "related",
-        "de": "Enter your translation here"
-      },
-      "definition": {
-        "en": "This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.",
-        "de": "Enter your translation here"
-      }
-    },
-    {
       "EA-Guid": "{58D1DA3E-E7B4-4eb0-8DB4-3960AF4FB6CF}",
       "name": "related service",
       "label": {
@@ -799,6 +812,18 @@
       },
       "definition": {
         "en": "This property links an event directly to a public service that is related to it.",
+        "de": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{177F3705-53E3-4a81-B709-2512F7CCF615}",
+      "name": "related",
+      "label": {
+        "en": "related",
+        "de": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.",
         "de": "Enter your translation here"
       }
     },
@@ -1408,13 +1433,13 @@
     },
     {
       "EA-Guid": "{E2DBD970-17F6-4e91-AE8D-AA9F0C986C86}",
-      "name": "Type",
+      "name": "type",
       "label": {
-        "en": "Type",
+        "en": "type",
         "de": "Enter your translation here"
       },
       "definition": {
-        "en": "Work in progress",
+        "en": "This property represents the type of Evidence as described in a controlled vocabulary.\t",
         "de": "Enter your translation here"
       }
     },
