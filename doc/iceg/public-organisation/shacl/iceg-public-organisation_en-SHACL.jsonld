@@ -89,28 +89,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://fixme.com#Code",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "Type"
-          },
-          "sh:path": "https://data.europa.eu/m8g/Type"
-        },
-        {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "alternative label"
-          },
-          "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel"
-        },
-        {
           "sh:class": "http://www.w3.org/ns/org#OrganizationalUnit",
           "sh:definition": {
             "en": "The properties hasUnit and unitOf are used to link to operational departments within an Organization that may not generally exist in their own right."
@@ -123,14 +101,13 @@
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization"
+            "en": "The type of entity as defined by the Belgian law"
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "preferred label"
+            "en": "legal form"
           },
-          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+          "sh:path": "https://data.europa.eu/m8g/legalForm"
         },
         {
           "sh:class": "http://data.europa.eu/88u/dataset/atu-type",
@@ -152,9 +129,6 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/ns/org#organization",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
           "sh:name": {
             "en": "post in"
           },
@@ -162,13 +136,7 @@
         },
         {
           "sh:class": "http://fixme.com#Role",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
           "sh:minCount": "1",
-          "sh:name": {
-            "en": "role"
-          },
           "sh:path": "http://fixme.com#role"
         }
       ],
@@ -189,7 +157,7 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:definition": {
-            "en": "A property to link a public organization to its address."
+            "en": "A property to link an organization to its address."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -573,12 +541,12 @@
         {
           "sh:class": "http://fixme.com#Code",
           "sh:definition": {
-            "en": "Work in progress"
+            "en": "TBD"
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "Type"
+            "en": "type"
           },
           "sh:path": "http://fixme.com#type"
         }
@@ -609,6 +577,28 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "alternative label"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#altLabel"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "Approvals, authorizations or licenses of interest to third parties or subject to publicity"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "authorizations"
+          },
+          "sh:path": "http://fixme.com#authorizations"
+        },
+        {
           "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
           "sh:definition": {
             "en": "The changed by organization property links an Organization to the Change Event that changed the Organization."
@@ -617,6 +607,17 @@
             "en": "changed by"
           },
           "sh:path": "http://www.w3.org/ns/org#changedBy"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Unique combination of numbers and, in some cases, letters to identify a company"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "company number"
+          },
+          "sh:path": "http://fixme.com#companyNumber"
         },
         {
           "sh:class": "https://schema.org/ContactPoint",
@@ -629,13 +630,21 @@
           "sh:path": "https://schema.org/contactPoint"
         },
         {
-          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:class": "http://fixme.com#Code",
           "sh:definition": {
-            "en": "Work in progress"
+            "en": "Ex officio deregistration due to failure to file annual accounts"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "Description"
+            "en": "deregistration"
+          },
+          "sh:path": "http://fixme.com#deregistration"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "description"
           },
           "sh:path": "http://fixme.com#description"
         },
@@ -645,15 +654,12 @@
             "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
           },
           "sh:name": {
-            "en": "has part"
+            "en": "has member"
           },
           "sh:path": "http://www.w3.org/ns/org#hasMember"
         },
         {
           "sh:class": "http://fixme.com#Post",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
           "sh:name": {
             "en": "has post"
           },
@@ -661,13 +667,7 @@
         },
         {
           "sh:class": "http://fixme.com#Site",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
           "sh:minCount": "1",
-          "sh:name": {
-            "en": "has site"
-          },
           "sh:path": "http://fixme.com#hasSite"
         },
         {
@@ -692,14 +692,22 @@
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://fixme.com#identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "Work in progress"
+            "en": "Links to databases of information not included in the BCE/KBO"
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "Identifier"
+            "en": "link to database"
           },
-          "sh:path": "http://fixme.com#identifier"
+          "sh:path": "http://fixme.com#linkToDatabase"
         },
         {
           "sh:class": "https://schema.org/ImageObject",
@@ -714,6 +722,16 @@
         {
           "sh:class": "http://www.w3.org/ns/org#organization",
           "sh:definition": {
+            "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
+          },
+          "sh:name": {
+            "en": "member of"
+          },
+          "sh:path": "http://www.w3.org/ns/org#memberOf"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#organization",
+          "sh:definition": {
             "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
           },
           "sh:name": {
@@ -722,14 +740,16 @@
           "sh:path": "http://www.w3.org/1999/xhtml/vocab#next"
         },
         {
-          "sh:class": "http://www.w3.org/ns/org#organization",
+          "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
+            "en": "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization"
           },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
-            "en": "part of"
+            "en": "preferred label"
           },
-          "sh:path": "http://www.w3.org/ns/org#memberOf"
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#organization",
@@ -750,6 +770,25 @@
             "en": "resulted from"
           },
           "sh:path": "http://www.w3.org/ns/org#resultedFrom"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "start date of this data"
+          },
+          "sh:path": "http://fixme.com#startDateOfThisData"
+        },
+        {
+          "sh:class": "http://fixme.com#Code",
+          "sh:definition": {
+            "en": "entity status, e.g. active, closed, cancelled, identified\r\nlegal creation, stopped\r\n"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "status"
+          },
+          "sh:path": "http://fixme.com#status"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#organization",
@@ -851,22 +890,16 @@
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
           "sh:maxCount": "1",
-          "sh:name": {
-            "en": "Identifier"
-          },
           "sh:path": "https://data.europa.eu/m8g/identifier"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#organization",
           "sh:definition": {
-            "en": "Work in progress"
+            "en": "TODO"
           },
           "sh:name": {
-            "en": "member of"
+            "en": "TODO"
           },
           "sh:path": "TODO"
         },
@@ -883,12 +916,9 @@
         },
         {
           "sh:class": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "Title"
+            "en": "title"
           },
           "sh:path": "https://data.europa.eu/m8g/title"
         }
@@ -983,9 +1013,6 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:definition": {
-            "en": "Work in progress"
-          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {

@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Public Organisation",
     "uri": "https://data.europa.eu/m8g",
-    "issued": "2021-09-01",
+    "issued": "2021-09-17",
     "baseURI": "https://data.europa.eu/m8g/",
     "filename": "iceg-public-organisation",
     "navigation": {
@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/0c98258facee5bc0f9b9ec0b8310183e01e52b76",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/0c98258facee5bc0f9b9ec0b8310183e01e52b76/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/91ecfd8982e607b654fb9d734627973821769044",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/91ecfd8982e607b654fb9d734627973821769044/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -145,11 +145,11 @@
     },
     {
       "uri": "http://data.europa.eu/m8g/PublicOrganisation",
-      "name": "Public Organisation",
+      "name": "Public Organization",
       "label": {
-        "en": "Public Organisation"
+        "en": "Public Organization"
       },
-      "sort": "Public Organisation",
+      "sort": "Public Organization",
       "description": {
         "en": "Any Organization that is defined as being part of the public sector by a legal framework at any level."
       },
@@ -167,14 +167,14 @@
       ],
       "properties": [
         {
-          "uri": "https://data.europa.eu/m8g/Type",
-          "name": "Type",
-          "sort": "Type",
+          "uri": "https://data.europa.eu/m8g/legalForm",
+          "name": "legal form",
+          "sort": "legal form",
           "label": {
-            "en": "Type"
+            "en": "legal form"
           },
           "description": {
-            "en": "Work in progress"
+            "en": "The type of entity as defined by the Belgian law"
           },
           "usage": {},
           "domain": [
@@ -185,16 +185,16 @@
           ],
           "range": [
             {
-              "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "Code"
+                "en": "Text"
               }
             }
           ],
@@ -236,78 +236,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
-          "name": "alternative label",
-          "sort": "alternative label",
-          "label": {
-            "en": "alternative label"
-          },
-          "description": {
-            "en": "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-          "name": "preferred label",
-          "sort": "preferred label",
-          "label": {
-            "en": "preferred label"
-          },
-          "description": {
-            "en": "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization"
-          },
-          "usage": {
-            "en": "An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property."
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -357,7 +285,7 @@
       },
       "sort": "Post",
       "description": {
-        "en": "Work in progress"
+        "en": "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio"
       },
       "usage": {},
       "parents": [],
@@ -369,9 +297,7 @@
           "label": {
             "en": "post in"
           },
-          "description": {
-            "en": "Work in progress"
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -399,14 +325,10 @@
         },
         {
           "uri": "http://fixme.com#role",
-          "name": "role",
-          "sort": "role",
-          "label": {
-            "en": "role"
-          },
-          "description": {
-            "en": "Work in progress"
-          },
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -442,7 +364,7 @@
       },
       "sort": "Role",
       "description": {
-        "en": "Work in progress"
+        "en": "Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of org:Membership."
       },
       "usage": {},
       "parents": [],
@@ -456,7 +378,7 @@
       },
       "sort": "Site",
       "description": {
-        "en": "Work in progress"
+        "en": "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations."
       },
       "usage": {},
       "parents": [],
@@ -469,7 +391,7 @@
             "en": "address"
           },
           "description": {
-            "en": "A property to link a public organization to its address."
+            "en": "A property to link an organization to its address."
           },
           "usage": {
             "en": "For consistency with INSPIRE,\r\nthe Location Core Vocabulary's Address class should be used."
@@ -1471,13 +1393,13 @@
         },
         {
           "uri": "http://fixme.com#type",
-          "name": "Type",
-          "sort": "Type",
+          "name": "type",
+          "sort": "type",
           "label": {
-            "en": "Type"
+            "en": "type"
           },
           "description": {
-            "en": "Work in progress"
+            "en": "TBD"
           },
           "usage": {},
           "domain": [
@@ -1733,10 +1655,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Public Organisation",
+              "range_uri": "#Public Organization",
               "range_puri": "http://data.europa.eu/m8g/PublicOrganisation",
               "range_label": {
-                "en": "Public Organisation"
+                "en": "Public Organization"
               }
             }
           ],
@@ -1759,15 +1681,120 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#description",
-          "name": "Description",
-          "sort": "Description",
+          "uri": "http://fixme.com#authorizations",
+          "name": "authorizations",
+          "sort": "authorizations",
           "label": {
-            "en": "Description"
+            "en": "authorizations"
           },
           "description": {
-            "en": "Work in progress"
+            "en": "Approvals, authorizations or licenses of interest to third parties or subject to publicity"
           },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://fixme.com#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Code",
+              "range_puri": "http://fixme.com#Code",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#companyNumber",
+          "name": "company number",
+          "sort": "company number",
+          "label": {
+            "en": "company number"
+          },
+          "description": {
+            "en": "Unique combination of numbers and, in some cases, letters to identify a company"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#deregistration",
+          "name": "deregistration",
+          "sort": "deregistration",
+          "label": {
+            "en": "deregistration"
+          },
+          "description": {
+            "en": "Ex officio deregistration due to failure to file annual accounts"
+          },
+          "usage": {
+            "en": "The Management Department is empowered to strike off ex officio the companies, which have not complied with the obligation to deposit their annual accounts with the National Bank of Belgium for at least three consicutive accounting years"
+          },
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://fixme.com#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Code",
+              "range_puri": "http://fixme.com#Code",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -1800,9 +1827,7 @@
           "label": {
             "en": "has post"
           },
-          "description": {
-            "en": "Work in progress"
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -1830,14 +1855,10 @@
         },
         {
           "uri": "http://fixme.com#hasSite",
-          "name": "has site",
-          "sort": "has site",
-          "label": {
-            "en": "has site"
-          },
-          "description": {
-            "en": "Work in progress"
-          },
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -1865,14 +1886,12 @@
         },
         {
           "uri": "http://fixme.com#identifier",
-          "name": "Identifier",
-          "sort": "Identifier",
+          "name": "identifier",
+          "sort": "identifier",
           "label": {
-            "en": "Identifier"
+            "en": "identifier"
           },
-          "description": {
-            "en": "Work in progress"
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -1892,6 +1911,109 @@
               "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
                 "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#linkToDatabase",
+          "name": "link to database",
+          "sort": "link to database",
+          "label": {
+            "en": "link to database"
+          },
+          "description": {
+            "en": "Links to databases of information not included in the BCE/KBO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#startDateOfThisData",
+          "name": "start date of this data",
+          "sort": "start date of this data",
+          "label": {
+            "en": "start date of this data"
+          },
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://fixme.com#status",
+          "name": "status",
+          "sort": "status",
+          "label": {
+            "en": "status"
+          },
+          "description": {
+            "en": "entity status, e.g. active, closed, cancelled, identified\r\nlegal creation, stopped\r\n"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://fixme.com#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Code",
+              "range_puri": "http://fixme.com#Code",
+              "range_label": {
+                "en": "Code"
               }
             }
           ],
@@ -1969,6 +2091,78 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "alternative label",
+          "sort": "alternative label",
+          "label": {
+            "en": "alternative label"
+          },
+          "description": {
+            "en": "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "preferred label",
+          "sort": "preferred label",
+          "label": {
+            "en": "preferred label"
+          },
+          "description": {
+            "en": "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization"
+          },
+          "usage": {
+            "en": "An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property."
+          },
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/org#changedBy",
           "name": "changed by",
           "sort": "changed by",
@@ -2005,10 +2199,10 @@
         },
         {
           "uri": "http://www.w3.org/ns/org#hasMember",
-          "name": "has part",
-          "sort": "has part",
+          "name": "has member",
+          "sort": "has member",
           "label": {
-            "en": "has part"
+            "en": "has member"
           },
           "description": {
             "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
@@ -2077,10 +2271,10 @@
         },
         {
           "uri": "http://www.w3.org/ns/org#memberOf",
-          "name": "part of",
-          "sort": "part of",
+          "name": "member of",
+          "sort": "member of",
           "label": {
-            "en": "part of"
+            "en": "member of"
           },
           "description": {
             "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
@@ -2320,13 +2514,13 @@
       "properties": [
         {
           "uri": "TODO",
-          "name": "member of",
-          "sort": "member of",
+          "name": "tODO",
+          "sort": "TODO",
           "label": {
-            "en": "member of"
+            "en": "TODO"
           },
           "description": {
-            "en": "Work in progress"
+            "en": "TODO"
           },
           "usage": {
             "en": "TODO"
@@ -2649,14 +2843,10 @@
         },
         {
           "uri": "https://data.europa.eu/m8g/identifier",
-          "name": "Identifier",
-          "sort": "Identifier",
-          "label": {
-            "en": "Identifier"
-          },
-          "description": {
-            "en": "Work in progress"
-          },
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -2684,14 +2874,12 @@
         },
         {
           "uri": "https://data.europa.eu/m8g/title",
-          "name": "Title",
-          "sort": "Title",
+          "name": "title",
+          "sort": "title",
           "label": {
-            "en": "Title"
+            "en": "title"
           },
-          "description": {
-            "en": "Work in progress"
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -2926,9 +3114,7 @@
           "label": {
             "en": "update data date"
           },
-          "description": {
-            "en": "Work in progress"
-          },
+          "description": {},
           "usage": {},
           "domain": [
             {
@@ -3064,10 +3250,10 @@
   ],
   "properties": [
     {
-      "uri": "https://data.europa.eu/m8g/Type",
+      "uri": "https://data.europa.eu/m8g/legalForm",
       "name": {
-        "en": "Type",
-        "undefined": "Type"
+        "en": "legal form",
+        "undefined": "legal form"
       },
       "description": {},
       "domain": [
