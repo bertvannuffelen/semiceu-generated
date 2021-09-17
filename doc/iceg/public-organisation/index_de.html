@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/4a3c7f439c6f97e5f294ad1ae03b5742bc017899/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/4a3c7f439c6f97e5f294ad1ae03b5742bc017899/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/ede3b8e84b4207661a58439185e63f3dd11e8002/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/ede3b8e84b4207661a58439185e63f3dd11e8002/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="TBD">TBD</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -1783,7 +1783,7 @@ to be captured and computed.</td>
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">	The date on which the Organization-related information was provided.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2121,12 +2121,11 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
-                      <a href="#Person%3Ahas%20member">has member</a>, 
+                      <a href="#Person%3Aalternative%20name">alternative name</a>, 
                       <a href="#Person%3Adate%20of%20birth">date of birth</a>, 
                       <a href="#Person%3Adate%20of%20death">date of death</a>, 
                       <a href="#Person%3Abirth%20name">birth name</a>, 
-                      <a href="#Person%3Aalternative%20name">alternative name</a>, 
+                      <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
                       <a href="#Person%3Afamily%20name%20(surname)">family name (surname)</a>, 
                       <a href="#Person%3Agiven%20name%20(forename)">given name (forename)</a>, 
                       <a href="#Person%3Afull%20name">full name</a>, 
@@ -2151,11 +2150,11 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
 
                     <tbody class="supertype">
                     
-                      <tr id="Person%3Apatronymic%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#patronymicName">
+                      <tr id="Person%3Aalternative%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/alternative">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/person#patronymicName" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#patronymicName" data-placement="right">
-                            patronymic name</a>
+                            <a href="http://purl.org/dc/terms/alternative" data-toggle="tooltip" data-content="http://purl.org/dc/terms/alternative" data-placement="right">
+                            alternative name</a>
                           </code>
                         </td>
                         <td>
@@ -2166,30 +2165,11 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">Name based on the given name of the Person&#39;s father.</td>
-                        <td property="skos:scopeNote">Patronymic names are important in some countries. Iceland does not have a concept of 'family name' in the way that many other European countries do, for example. Erik Magnusson and Erika Magnusdottir are siblings, both offspring of Magnus, irrespective of his patronymic name.
-In Bulgaria and Russia, patronymic names are in everyday usage, for example, the "Sergeyevich" in "Mikhail Sergeyevich Gorbachev".
-Note that patronymic names refer to a father's given name, not the family name inherited from the mother and father as is the case in countries such as Spain and Portugal. Again referring to the example of Miguel de Cervantes Saavedra's, the patronymic name element would be unused.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Person%3Ahas%20member" typeof="rdfs:Property" resource="TODO">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="TODO" data-toggle="tooltip" data-content="TODO" data-placement="right">
-                            has member</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Organization</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">Indicates that Person is a member of the Organization with no indication of the nature of that membership or the role played</td>
-                        <td property="skos:scopeNote">TODO</td>
+                        <td property="rdfs:comment">Any name by which an individual is known other than their full name.</td>
+                        <td property="skos:scopeNote">Many individuals use a short form of their name, a 'middle' name as a 'first' name or a professional name. For example, the British politician and former UN High Representative for Bosnia and Herzegovina, Jeremy John Durham Ashdown, Baron Ashdown of Norton-sub-Hamdon, is usually referred to simply as 'Paddy Ashdown' or 'Lord Ashdown.' 
+It is not the role of the alternative name property to record nick names, pet names or other 'familiar names' that will be of no consequence in public sector data exchange.
+Furthermore, some individuals have more than one legal name in which case the full name property should be used multiple times. 
+Alternative name gives a means of recording names by which an individual is generally known, or professionally known, even though such names are no more than secondary from a legal point of view.</td>
                         <td></td>
                       </tr>
                     
@@ -2253,11 +2233,11 @@ Note that patronymic names refer to a father's given name, not the family name i
                         <td></td>
                       </tr>
                     
-                      <tr id="Person%3Aalternative%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/alternative">
+                      <tr id="Person%3Apatronymic%20name" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#patronymicName">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/alternative" data-toggle="tooltip" data-content="http://purl.org/dc/terms/alternative" data-placement="right">
-                            alternative name</a>
+                            <a href="http://www.w3.org/ns/person#patronymicName" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#patronymicName" data-placement="right">
+                            patronymic name</a>
                           </code>
                         </td>
                         <td>
@@ -2268,11 +2248,10 @@ Note that patronymic names refer to a father's given name, not the family name i
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">Any name by which an individual is known other than their full name.</td>
-                        <td property="skos:scopeNote">Many individuals use a short form of their name, a 'middle' name as a 'first' name or a professional name. For example, the British politician and former UN High Representative for Bosnia and Herzegovina, Jeremy John Durham Ashdown, Baron Ashdown of Norton-sub-Hamdon, is usually referred to simply as 'Paddy Ashdown' or 'Lord Ashdown.' 
-It is not the role of the alternative name property to record nick names, pet names or other 'familiar names' that will be of no consequence in public sector data exchange.
-Furthermore, some individuals have more than one legal name in which case the full name property should be used multiple times. 
-Alternative name gives a means of recording names by which an individual is generally known, or professionally known, even though such names are no more than secondary from a legal point of view.</td>
+                        <td property="rdfs:comment">Name based on the given name of the Person&#39;s father.</td>
+                        <td property="skos:scopeNote">Patronymic names are important in some countries. Iceland does not have a concept of 'family name' in the way that many other European countries do, for example. Erik Magnusson and Erika Magnusdottir are siblings, both offspring of Magnus, irrespective of his patronymic name.
+In Bulgaria and Russia, patronymic names are in everyday usage, for example, the "Sergeyevich" in "Mikhail Sergeyevich Gorbachev".
+Note that patronymic names refer to a father's given name, not the family name inherited from the mother and father as is the case in countries such as Spain and Portugal. Again referring to the example of Miguel de Cervantes Saavedra's, the patronymic name element would be unused.</td>
                         <td></td>
                       </tr>
                     
