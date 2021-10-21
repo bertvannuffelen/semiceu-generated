@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/7f321962fdf77affe427db69269158dd26660095",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/7f321962fdf77affe427db69269158dd26660095/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/c709ce8f181dd610c9a81d890218debde6089866",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/c709ce8f181dd610c9a81d890218debde6089866/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -88,7 +88,7 @@
       },
       "usage": {
         "de": "Enter your translation here",
-        "en": "Instances of the Formal Framwork class are FRBR Expressions, i.e., concrete expressions of the more abstract concept of the piece of legislation or policy itself.\nThe European Council's invitation to introduce the European Legislation Identifier and portals such as legislation.gov.uk are relevant in this context. Adding '/data.xml' or /data.rdf' to any legislation URI on legislation.gov.uk will reveal how this can be done, for example http://www.legislation.gov.uk/uksi/2012/3170/contents/made{/data.rdf or /data.xml}."
+        "en": "Instances of the Formal Framwork class are FRBR (Functional Requirements\r\nfor Bibliographic Records) Expressions, i.e., concrete expressions of the more abstract concept of the piece of legislation or policy itself.\nThe European Council's invitation to introduce the European Legislation Identifier and portals such as legislation.gov.uk are relevant in this context. Adding '/data.xml' or /data.rdf' to any legislation URI on legislation.gov.uk will reveal how this can be done, for example http://www.legislation.gov.uk/uksi/2012/3170/contents/made{/data.rdf or /data.xml}."
       },
       "parents": [],
       "properties": [
@@ -254,47 +254,6 @@
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Administrative Territorial Units"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#hasUnit",
-          "name": "has unit",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has unit"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The properties hasUnit and unitOf are used to link to operational departments within an Organization that may not generally exist in their own right."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "Organizations typically comprise many departments, units, teams etc. Each of these\r\nis modelled in the CPOV as a unit that is linked from the parent Organization with\r\nhasUnit and to the parent with unitOf."
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OrganizationalUnit",
-              "range_uri": "http://www.w3.org/ns/org#OrganizationalUnit"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/ns/org#OrganizationalUnit",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Organizational Unit"
               }
             }
           ],
@@ -1758,17 +1717,17 @@
           ],
           "range": [
             {
-              "range_label": "PublicOrganization",
-              "range_uri": "http://data.europa.eu/m8g/PublicOrganisation"
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#organization"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/m8g/PublicOrganisation",
+              "range_puri": "http://www.w3.org/ns/org#organization",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Public Organization"
+                "en": "Organization"
               }
             }
           ],
@@ -2433,6 +2392,47 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.w3.org/ns/org#hasUnit",
+          "name": "has unit",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has unit"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The properties hasUnit and unitOf are used to link to operational departments within an Organization that may not generally exist in their own right."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Organizations typically comprise many departments, units, teams etc. Each of these\r\nis modelled in the CPOV as a unit that is linked from the parent Organization with\r\nhasUnit and to the parent with unitOf."
+          },
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OrganizationalUnit",
+              "range_uri": "http://www.w3.org/ns/org#OrganizationalUnit"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/org#OrganizationalUnit",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Organizational Unit"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/org#memberOf",
           "name": "member of",
           "sort": "Enter your translation here",
@@ -2688,7 +2688,7 @@
       },
       "usage": {
         "de": "Enter your translation here",
-        "en": "The fact that a person in the context of Core Person Vocabulary cannot be imaginary makes person:Person a subclass of both foaf:Person and schema:Person which both cover imaginary characters as well as real people.\n\nThe Person Class is a subclass of the more general 'Agent' class that encompasses organisations, legal entities, groups etc. - any entity that is able to carry out actions."
+        "en": "The fact that a person in the context of Core Person Vocabulary cannot be imaginary makes person:Person a subclass of both foaf:Person and schema:Person which both cover imaginary characters as well as real people.\n\nThe Person Class is a subclass of the more general 'Agent' class that encompasses organizations, legal entities, groups etc. - any entity that is able to carry out actions."
       },
       "parents": [
         {

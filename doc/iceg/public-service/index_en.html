@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/7f321962fdf77affe427db69269158dd26660095/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/7f321962fdf77affe427db69269158dd26660095/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/c709ce8f181dd610c9a81d890218debde6089866/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/c709ce8f181dd610c9a81d890218debde6089866/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="TBD">TBD</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -1491,8 +1491,8 @@ In some cases, the Output of one service will be Evidence for another service. S
                       <a href="#Evidence%3ACountry">Country</a>, 
                       <a href="#Evidence%3Ais%20about">is about</a>, 
                       <a href="#Evidence%3Ais%20created%20by">is created by</a>, 
-                      <a href="#Evidence%3Ais%20evidence">is evidence</a>, 
                       <a href="#Evidence%3Ais%20issued%20by">is issued by</a>, 
+                      <a href="#Evidence%3Ais%20output">is output</a>, 
                       <a href="#Evidence%3ALanguage">Language</a>, 
                       <a href="#Evidence%3Asupports%20Requirement">Supports Requirement</a>, 
                       <a href="#Evidence%3Atype">type</a>.</dd>
@@ -1595,28 +1595,6 @@ In some cases, the Output of one service will be Evidence for another service. S
                         <td></td>
                       </tr>
                     
-                      <tr id="Evidence%3Ais%20evidence" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/isEvidence">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/isEvidence" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/isEvidence" data-placement="right">
-                            is evidence</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Output" data-placement="right">Output</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property describes the case where an Output is considered as one or multiple Evidence. 
-This property might be used when a Public Service consumes its own Output as Evidence.
-</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Evidence%3Ais%20issued%20by" typeof="rdfs:Property" resource="https://semiceu.github.io/CCCEV/releases/2.00/#Evidence%3Ais%20issued%20by">
                         <td>
                           <code property="rdfs:label">
@@ -1633,6 +1611,27 @@ This property might be used when a Public Service consumes its own Output as Evi
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">The legal authority responsible for an Evidence.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Evidence%3Ais%20output" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/isEvidence">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/isEvidence" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/isEvidence" data-placement="right">
+                            is output</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Output" data-placement="right">Output</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property describes the case where an Evidence is considered as one or multiple Output. 
+This property might be used when a Public Service consumes its own Output as Evidence.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1886,7 +1885,7 @@ schema:validThrough "2017-01-02T09:00Z".
                       <a href="#Output%3Adescription">description</a>, 
                       <a href="#Output%3Ahas%20Legal%20Resources">Has Legal Resources</a>, 
                       <a href="#Output%3Aidentifier">identifier</a>, 
-                      <a href="#Output%3Ais%20output">is output</a>, 
+                      <a href="#Output%3Ais%20evidence">is evidence</a>, 
                       <a href="#Output%3Aname">name</a>, 
                       <a href="#Output%3AresponseTime">responseTime</a>, 
                       <a href="#Output%3Atype">type</a>.</dd>
@@ -1969,11 +1968,11 @@ schema:validThrough "2017-01-02T09:00Z".
                         <td></td>
                       </tr>
                     
-                      <tr id="Output%3Ais%20output" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/isOutput">
+                      <tr id="Output%3Ais%20evidence" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/isOutput">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://data.europa.eu/m8g/isOutput" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/isOutput" data-placement="right">
-                            is output</a>
+                            is evidence</a>
                           </code>
                         </td>
                         <td>
@@ -1984,7 +1983,7 @@ schema:validThrough "2017-01-02T09:00Z".
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">This property describes the case where an Evidence is considered as one or multiple Output. 
+                        <td property="rdfs:comment">This property describes the case where an Output is considered as one or multiple Evidence. 
 This property might be used when a Public Service consumes its own Output as Evidence.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
