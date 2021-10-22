@@ -65,7 +65,7 @@
               <dl>
               <dt>Status</dt><dd>Working Draft</dd>
               <dt>Published at</dt><dd>2021-10-22</dd>
-              <dt>This version</dt><dd></dd>
+              <dt>This version</dt><dd><br><br></dd>
               
               
               </dl>
@@ -120,8 +120,8 @@
 
               <div class="head" role="metainfo" id="metainfo">
               <dl>
-              <dt>Source</dt><dd></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/ae7577273a19f9b9b0ee69e9e8582a7210218af4/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/ae7577273a19f9b9b0ee69e9e8582a7210218af4/CHANGELOG</a></dd>-->
+              <dt>Source</dt><dd><br><br></dd>
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/3ae40fc331f7d4c0b6698ffa4218c30705636dc8/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/3ae40fc331f7d4c0b6698ffa4218c30705636dc8/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="TBD">TBD</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -192,25 +192,25 @@ TBD
                     <p>This document describes the usage of the following entities for a correct usage of the data model: 
                       <br />
                       |
-                      <a href="#"></a> |
-                      <a href="#Group">Group</a> |
+                      <a href="#Rule">Rule</a> |
+                      <a href="#Channel Preference">Channel Preference</a> |
+                      <a href="#Business Event">Business Event</a> |
                       <a href="#Channel">Channel</a> |
                       <a href="#Collection">Collection</a> |
                       <a href="#Concept">Concept</a> |
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Dataset">Dataset</a> |
-                      <a href="#Channel Preference">Channel Preference</a> |
+                      <a href="#Event">Event</a> |
+                      <a href="#Life Event">Life Event</a> |
+                      <a href="#site">site</a> |
                       <a href="#Public Service">Public Service</a> |
-                      <a href="#Rule">Rule</a> |
+                      <a href="#Legal Resource">Legal Resource</a> |
                       <a href="#Address">Address</a> |
                       <a href="#Agent">Agent</a> |
-                      <a href="#Legal Resource">Legal Resource</a> |
+                      <a href="#Group">Group</a> |
                       <a href="#Purpose">Purpose</a> |
-                      <a href="#Business Event">Business Event</a> |
                       <a href="#Cost">Cost</a> |
-                      <a href="#Event">Event</a> |
                       <a href="#Evidence">Evidence</a> |
-                      <a href="#Life Event">Life Event</a> |
                       <a href="#Output">Output</a> |
                       <a href="#Participation">Participation</a> |
                       <a href="#Requirement">Requirement</a> |
@@ -234,16 +234,25 @@ TBD
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id=""><a href="http://fixme.com#Site" data-toggle="tooltip" data-content="http://fixme.com#Site" data-placement="right"></a></h3>
+              <h3 class="h3" id="Rule"><a href="http://purl.org/vocab/cpsv#Rule" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#Rule" data-placement="right">Rule</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd></dd>
+                    <dt>Description</dt><dd>The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.
+
+Instances of the Rule class are FRBR (Functional Requirements for Bibliographic Records) Expressions, that is, a concrete expression such
+as a document, of the more abstract concept of the rules themselves.This model does not envisage instances of the Rule class as machine-readable business rules.
+
+Detailed modelling of the rules related to Public Services is out of scope of this model.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#%3Aaddress">address</a>.</dd>
+                      <a href="#Rule%3Adescription">description</a>, 
+                      <a href="#Rule%3Aidentifier">identifier</a>, 
+                      <a href="#Rule%3Alanguage">language</a>, 
+                      <a href="#Rule%3Aname">name</a>, 
+                      <a href="#Rule%3Aimplements">implements</a>.</dd>
                     
                   </dl>
                 </div>
@@ -263,25 +272,104 @@ TBD
 
                     <tbody class="supertype">
                     
-                      <tr id="%3Aaddress" typeof="rdfs:Property" resource="http://w3.org/ns/locn#address">
+                      <tr id="Rule%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://w3.org/ns/locn#address" data-toggle="tooltip" data-content="http://w3.org/ns/locn#address" data-placement="right">
-                            address</a>
+                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
+                            description</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents a free text Description of the Rule.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Rule%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
+                            identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://fixme.com#Identifier" data-toggle="tooltip" data-content="http://fixme.com#Identifier" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents an Identifier for the Rule.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Rule%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
+                            language</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Rule%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
+                            name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents the Name of the Rule.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Rule%3Aimplements" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#implements">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/vocab/cpsv#implements" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#implements" data-placement="right">
+                            implements</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Address</a>
+			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
 			    
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment">A property to link an organization to its address.</td>
-                        <td property="skos:scopeNote">For consistency with INSPIRE,
-the Location Core Vocabulary's Address class should be used.
-</td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The Implements property links a Rule to relevant legislation or policy documents i.e.
+the Legal Resource under which the Rules are being defined (see section 3.16).</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -292,24 +380,17 @@ the Location Core Vocabulary's Address class should be used.
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Group"><a href="http://xmlns.com/foaf/spec/#term_Group" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_Group" data-placement="right">Group</a></h3>
+              <h3 class="h3" id="Channel Preference"><a href="https://data.europa.eu/m8g/ChannelPreference" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference" data-placement="right">Channel Preference</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The Group class represents a collection of individual agents (and may itself play the role of a Agent, ie. something that can perform actions).
-
-This concept is intentionally quite broad, covering informal and ad-hoc groups, long-lived communities, organizational groups within a workplace, etc. Some such groups may have associated characteristics which could be captured in RDF (perhaps a homepage, name, mailing list etc.).
-
-While a Group has the characteristics of a Agent, it is also associated with a number of other Agents (typically people) who constitute the Group. FOAF provides a mechanism, the membershipClass property, which relates a Group to a sub-class of the class Agent who are members of the group. This is a little complicated, but allows us to make group membership rules explicit.</dd>
+                    <dt>Description</dt><dd>This class describes the relationship between Channel and Purpose. For instance, a Channel can be preferred for a Purpose and depreciated for another one (exp: you can introduce you tax declaration in paper but you&#39;re not encouraged to do so).</dd>
                     
-		     
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Agent">Agent</a>
-		   </dd>
-                    
+		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Group%3Amember">member</a>.</dd>
+                      <a href="#Channel%20Preference%3A"></a>, 
+                      <a href="#Channel%20Preference%3A"></a>.</dd>
                     
                   </dl>
                 </div>
@@ -329,22 +410,42 @@ While a Group has the characteristics of a Agent, it is also associated with a n
 
                     <tbody class="supertype">
                     
-                      <tr id="Group%3Amember" typeof="rdfs:Property" resource="http://xmlns.com/foaf/spec/#term_member">
+                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.channel">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://xmlns.com/foaf/spec/#term_member" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_member" data-placement="right">
-                            member</a>
+                            <a href="https://data.europa.eu/m8g/ChannelPreference.channel" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.channel" data-placement="right">
+                            </a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Agent</a>
+			    <a href="#Enter your translation here" data-placement="right">Channel</a>
 			    
                           
                         </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">The member property relates a Group to a Agent that is a member of that group.</td>
+			<td>1</td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.purpose">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/ChannelPreference.purpose" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.purpose" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Purpose</a>
+			    
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment"></td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -353,6 +454,28 @@ While a Group has the characteristics of a Agent, it is also associated with a n
                   </table>
                 </div>
       			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Business Event"><a href="http://fixme.com#BusinessEvent" data-toggle="tooltip" data-content="http://fixme.com#BusinessEvent" data-placement="right">Business Event</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.
+
+In other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event.</dd>
+                    
+		     
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Event">Event</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
             </div>
             
               <div class="region region--no-space-top">
@@ -688,8 +811,9 @@ The Concept may or may not belong to (member) a certain Collection.
                             
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment"></td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A property through which an e-mail address for the Public Organization, or a
+representative of it, can be contacted.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -708,7 +832,7 @@ The Concept may or may not belong to (member) a certain Collection.
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The value of this property is structured text that gives the hours at which the contact point is normally available.</td>
                         <td property="skos:scopeNote">Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00.</td>
                         <td></td>
@@ -728,7 +852,7 @@ The Concept may or may not belong to (member) a certain Collection.
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A property through which a phone number for the Public Organization, or a representative of it, can be contacted.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -860,17 +984,23 @@ The Concept may or may not belong to (member) a certain Collection.
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Channel Preference"><a href="https://data.europa.eu/m8g/ChannelPreference" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference" data-placement="right">Channel Preference</a></h3>
+              <h3 class="h3" id="Event"><a href="http://fixme.com#Event" data-toggle="tooltip" data-content="http://fixme.com#Event" data-placement="right">Event</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>This class describes the relationship between Channel and Purpose. For instance, a Channel can be preferred for a Purpose and depreciated for another one (exp: you can introduce you tax declaration in paper but you&#39;re not encouraged to do so).</dd>
+                    <dt>Description</dt><dd>This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service. It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses.
+
+The Event class is used as a hook either to a single related Public Service, such as diagnosis of illness being related to application for sickness benefit ;
+or to a group of Public Services, such as all those related to the establishment of a new business.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Channel%20Preference%3A"></a>, 
-                      <a href="#Channel%20Preference%3A"></a>.</dd>
+                      <a href="#Event%3Adescription">description</a>, 
+                      <a href="#Event%3Aidentifier">identifier</a>, 
+                      <a href="#Event%3Arelated%20service">related service</a>, 
+                      <a href="#Event%3Aname">name</a>, 
+                      <a href="#Event%3Atype">type</a>.</dd>
                     
                   </dl>
                 </div>
@@ -890,43 +1020,181 @@ The Concept may or may not belong to (member) a certain Collection.
 
                     <tbody class="supertype">
                     
-                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.channel">
+                      <tr id="Event%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/ChannelPreference.channel" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.channel" data-placement="right">
-                            </a>
+                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
+                            description</a>
                           </code>
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Channel</a>
-			    
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment"></td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.purpose">
+                      <tr id="Event%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/ChannelPreference.purpose" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.purpose" data-placement="right">
-                            </a>
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
+                            identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://fixme.com#Identifier" data-toggle="tooltip" data-content="http://fixme.com#Identifier" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents an Identifier for the Event.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Event%3Arelated%20service" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
+                            related service</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Purpose</a>
+			    <a href="#Enter your translation here" data-placement="right">Public Service</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property links an event directly to a public service that is related to it.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Event%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
+                            name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents the Name (or title) of the Event.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Event%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
+                            type</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Life Event"><a href="http://fixme.com#LifeEvent" data-toggle="tooltip" data-content="http://fixme.com#LifeEvent" data-placement="right">Life Event</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>The Life Event class represents an important event or situations in a citizen&#39;s life where public services may be required. Note the scope: an individual will encounter any number of &#39;events&#39; in the general sense of the word. Within this model, the Life Event class only represents an event for which a Public Service is related. For example, a couple becoming engaged is not a  Life Event, getting married is, since only the latter has any relevance to public services.</dd>
+                    
+		     
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Event">Event</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="site"><a href="http://fixme.com#Site" data-toggle="tooltip" data-content="http://fixme.com#Site" data-placement="right">site</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#site%3Aaddress">address</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="site%3Aaddress" typeof="rdfs:Property" resource="http://w3.org/ns/locn#address">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://w3.org/ns/locn#address" data-toggle="tooltip" data-content="http://w3.org/ns/locn#address" data-placement="right">
+                            address</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Address</a>
 			    
                           
                         </td>
 			<td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">A property to link an organization to its address.</td>
+                        <td property="skos:scopeNote">For consistency with INSPIRE,
+the Location Core Vocabulary's Address class should be used.
+</td>
                         <td></td>
                       </tr>
                     
@@ -1485,25 +1753,18 @@ N.B. The spatial restriction is not meant to be used to describe eligibility or 
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Rule"><a href="http://purl.org/vocab/cpsv#Rule" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#Rule" data-placement="right">Rule</a></h3>
+              <h3 class="h3" id="Legal Resource"><a href="http://data.europa.eu/eli/ontology#LegalResource" data-toggle="tooltip" data-content="http://data.europa.eu/eli/ontology#LegalResource" data-placement="right">Legal Resource</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.
-
-Instances of the Rule class are FRBR (Functional Requirements for Bibliographic Records) Expressions, that is, a concrete expression such
-as a document, of the more abstract concept of the rules themselves.This model does not envisage instances of the Rule class as machine-readable business rules.
-
-Detailed modelling of the rules related to Public Services is out of scope of this model.</dd>
+                    <dt>Description</dt><dd>This class represents the legislation, policy or policies that lie behind the Rules that govern the service.</dd>
+                    
+                    <dt>Usage</dt><dd>The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in "Council conclusions inviting the introduction of the European Legislation Identifier (ELI)". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ...) we refer to the ELI ontology.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Rule%3Adescription">description</a>, 
-                      <a href="#Rule%3Aidentifier">identifier</a>, 
-                      <a href="#Rule%3Alanguage">language</a>, 
-                      <a href="#Rule%3Aname">name</a>, 
-                      <a href="#Rule%3Aimplements">implements</a>.</dd>
+                      <a href="#Legal%20Resource%3Arelated">related</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1523,91 +1784,11 @@ Detailed modelling of the rules related to Public Services is out of scope of th
 
                     <tbody class="supertype">
                     
-                      <tr id="Rule%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
+                      <tr id="Legal%20Resource%3Arelated" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
-                            description</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents a free text Description of the Rule.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
-                            identifier</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://fixme.com#Identifier" data-toggle="tooltip" data-content="http://fixme.com#Identifier" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents an Identifier for the Rule.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
-                            language</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
-                            name</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents the Name of the Rule.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Aimplements" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#implements">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/vocab/cpsv#implements" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#implements" data-placement="right">
-                            implements</a>
+                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
+                            related</a>
                           </code>
                         </td>
                         <td>
@@ -1618,8 +1799,7 @@ Detailed modelling of the rules related to Public Services is out of scope of th
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">The Implements property links a Rule to relevant legislation or policy documents i.e.
-the Legal Resource under which the Rules are being defined (see section 3.16).</td>
+                        <td property="rdfs:comment">This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2040,18 +2220,24 @@ The key difference between a locator and a locator name is that the latter is a 
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Legal Resource"><a href="http://data.europa.eu/eli/ontology#LegalResource" data-toggle="tooltip" data-content="http://data.europa.eu/eli/ontology#LegalResource" data-placement="right">Legal Resource</a></h3>
+              <h3 class="h3" id="Group"><a href="http://xmlns.com/foaf/spec/#term_Group" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_Group" data-placement="right">Group</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>This class represents the legislation, policy or policies that lie behind the Rules that govern the service.</dd>
+                    <dt>Description</dt><dd>The Group class represents a collection of individual agents (and may itself play the role of a Agent, ie. something that can perform actions).
+
+This concept is intentionally quite broad, covering informal and ad-hoc groups, long-lived communities, organizational groups within a workplace, etc. Some such groups may have associated characteristics which could be captured in RDF (perhaps a homepage, name, mailing list etc.).
+
+While a Group has the characteristics of a Agent, it is also associated with a number of other Agents (typically people) who constitute the Group. FOAF provides a mechanism, the membershipClass property, which relates a Group to a sub-class of the class Agent who are members of the group. This is a little complicated, but allows us to make group membership rules explicit.</dd>
                     
-                    <dt>Usage</dt><dd>The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in "Council conclusions inviting the introduction of the European Legislation Identifier (ELI)". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ...) we refer to the ELI ontology.</dd>
+		     
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Agent">Agent</a>
+		   </dd>
                     
-		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Legal%20Resource%3Arelated">related</a>.</dd>
+                      <a href="#Group%3Amember">member</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2071,22 +2257,22 @@ The key difference between a locator and a locator name is that the latter is a 
 
                     <tbody class="supertype">
                     
-                      <tr id="Legal%20Resource%3Arelated" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
+                      <tr id="Group%3Amember" typeof="rdfs:Property" resource="http://xmlns.com/foaf/spec/#term_member">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
-                            related</a>
+                            <a href="http://xmlns.com/foaf/spec/#term_member" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_member" data-placement="right">
+                            member</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
+			    <a href="#Enter your translation here" data-placement="right">Agent</a>
 			    
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.</td>
+                        <td property="rdfs:comment">The member property relates a Group to a Agent that is a member of that group.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2167,28 +2353,6 @@ It can also be other types like:
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Business Event"><a href="https://data.europa.eu/m8g/BusinessEvent" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/BusinessEvent" data-placement="right">Business Event</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.
-
-In other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event.</dd>
-                    
-		     
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Event">Event</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="Cost"><a href="https://data.europa.eu/m8g/Cost" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Cost" data-placement="right">Cost</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -2201,7 +2365,7 @@ In other words, a Business Event groups together a number of public services tha
                       <a href="#Cost%3Aif%20accessed%20through">if accessed through</a>, 
                       <a href="#Cost%3Ais%20defined%20by">is defined by</a>, 
                       <a href="#Cost%3Aidentifier">identifier</a>, 
-                      <a href="#Cost%3AcostBreakdown">costBreakdown</a>, 
+                      <a href="#Cost%3Acost%20breakdown">cost breakdown</a>, 
                       <a href="#Cost%3Acurrency">currency</a>, 
                       <a href="#Cost%3Adescription">description</a>, 
                       <a href="#Cost%3Avalue">value</a>.</dd>
@@ -2284,11 +2448,11 @@ In other words, a Business Event groups together a number of public services tha
                         <td></td>
                       </tr>
                     
-                      <tr id="Cost%3AcostBreakdown" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/costBreakdown">
+                      <tr id="Cost%3Acost%20breakdown" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/costBreakdown">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://data.europa.eu/m8g/costBreakdown" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/costBreakdown" data-placement="right">
-                            costBreakdown</a>
+                            cost breakdown</a>
                           </code>
                         </td>
                         <td>
@@ -2361,149 +2525,6 @@ The cost breakdown property is not to be confused with the description property 
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">This property represents a numeric value indicating the amount of the Cost.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Event"><a href="https://data.europa.eu/m8g/Event" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Event" data-placement="right">Event</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service. It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses.
-
-The Event class is used as a hook either to a single related Public Service, such as diagnosis of illness being related to application for sickness benefit ;
-or to a group of Public Services, such as all those related to the establishment of a new business.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Event%3Adescription">description</a>, 
-                      <a href="#Event%3Aidentifier">identifier</a>, 
-                      <a href="#Event%3Arelated%20service">related service</a>, 
-                      <a href="#Event%3Aname">name</a>, 
-                      <a href="#Event%3Atype">type</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Event%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
-                            description</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Event%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
-                            identifier</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://fixme.com#Identifier" data-toggle="tooltip" data-content="http://fixme.com#Identifier" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents an Identifier for the Event.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Event%3Arelated%20service" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
-                            related service</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Public Service</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property links an event directly to a public service that is related to it.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Event%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
-                            name</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents the Name (or title) of the Event.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Event%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
-                            type</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2750,26 +2771,6 @@ This property might be used when a Public Service consumes its own Output as Evi
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Life Event"><a href="https://data.europa.eu/m8g/LifeEvent" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/LifeEvent" data-placement="right">Life Event</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>The Life Event class represents an important event or situations in a citizen&#39;s life where public services may be required. Note the scope: an individual will encounter any number of &#39;events&#39; in the general sense of the word. Within this model, the Life Event class only represents an event for which a Public Service is related. For example, a couple becoming engaged is not a  Life Event, getting married is, since only the latter has any relevance to public services.</dd>
-                    
-		     
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Event">Event</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="Output"><a href="https://data.europa.eu/m8g/Output" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Output" data-placement="right">Output</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -2781,7 +2782,7 @@ This property might be used when a Public Service consumes its own Output as Evi
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Output%3Ahas%20legal%20resources">has legal resources</a>, 
+                      <a href="#Output%3Ahas%20legal%20resource">has legal resource</a>, 
                       <a href="#Output%3Adescription">description</a>, 
                       <a href="#Output%3Aidentifier">identifier</a>, 
                       <a href="#Output%3Aname">name</a>, 
@@ -2807,11 +2808,11 @@ This property might be used when a Public Service consumes its own Output as Evi
 
                     <tbody class="supertype">
                     
-                      <tr id="Output%3Ahas%20legal%20resources" typeof="rdfs:Property" resource="TODO">
+                      <tr id="Output%3Ahas%20legal%20resource" typeof="rdfs:Property" resource="TODO">
                         <td>
                           <code property="rdfs:label">
                             <a href="TODO" data-toggle="tooltip" data-content="TODO" data-placement="right">
-                            has legal resources</a>
+                            has legal resource</a>
                           </code>
                         </td>
                         <td>
@@ -2822,7 +2823,7 @@ This property might be used when a Public Service consumes its own Output as Evi
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">The Has Legal Resource property links an Output to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Output relates, operates or has its legal basis.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -3402,7 +3403,7 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
                         <td>
                           
 			    
-			    <a href="#Site" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">site</a>
 			    
                           
                         </td>

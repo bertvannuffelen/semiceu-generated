@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/ae7577273a19f9b9b0ee69e9e8582a7210218af4",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/ae7577273a19f9b9b0ee69e9e8582a7210218af4/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/3ae40fc331f7d4c0b6698ffa4218c30705636dc8",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/3ae40fc331f7d4c0b6698ffa4218c30705636dc8/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -157,6 +157,30 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "http://fixme.com#BusinessEvent",
+      "name": "Business Event",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Business Event"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.\r\n\r\nIn other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Event",
+          "name": "Event",
+          "package": "cpsv",
+          "uri": "http://fixme.com#Event",
+          "scoped_uri": "#Event"
+        }
+      ],
+      "properties": []
     },
     {
       "uri": "http://fixme.com#Channel",
@@ -572,7 +596,10 @@
             "de": "Enter your translation here",
             "en": "has email"
           },
-          "description": {},
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A property through which an e-mail address for the Public Organization, or a\r\nrepresentative of it, can be contacted."
+          },
           "usage": {},
           "domain": [
             {
@@ -595,7 +622,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -635,7 +662,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -672,7 +699,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -847,11 +874,244 @@
       ]
     },
     {
+      "uri": "http://fixme.com#Event",
+      "name": "Event",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Event"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service. It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses.\r\r\n\r\nThe Event class is used as a hook either to a single related Public Service, such as diagnosis of illness being related to application for sickness benefit ;\r\nor to a group of Public Services, such as all those related to the establishment of a new business."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "description"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://fixme.com#Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "identifier"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property represents an Identifier for the Event."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://fixme.com#Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://fixme.com#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Identifier",
+              "range_puri": "http://fixme.com#Identifier",
+              "range_label": {
+                "de": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": "related service",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "related service"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property links an event directly to a public service that is related to it."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://fixme.com#Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicService",
+              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Public Service"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "name"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property represents the Name (or title) of the Event."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://fixme.com#Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "type"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.\r"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://fixme.com#Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "de": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://fixme.com#LifeEvent",
+      "name": "Life Event",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Life Event"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "The Life Event class represents an important event or situations in a citizen's life where public services may be required. Note the scope: an individual will encounter any number of 'events' in the general sense of the word. Within this model, the Life Event class only represents an event for which a Public Service is related. For example, a couple becoming engaged is not a  Life Event, getting married is, since only the latter has any relevance to public services."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Event",
+          "name": "Event",
+          "package": "cpsv",
+          "uri": "http://fixme.com#Event",
+          "scoped_uri": "#Event"
+        }
+      ],
+      "properties": []
+    },
+    {
       "uri": "http://fixme.com#Site",
-      "name": "",
-      "label": {},
-      "sort": "",
-      "description": {},
+      "name": "site",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "site"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations."
+      },
       "usage": {},
       "parents": [],
       "properties": [
@@ -1163,13 +1423,13 @@
           "range": [
             {
               "range_label": "Event",
-              "range_uri": "https://data.europa.eu/m8g/Event"
+              "range_uri": "http://fixme.com#Event"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.europa.eu/m8g/Event",
+              "range_puri": "http://fixme.com#Event",
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Event"
@@ -2694,30 +2954,6 @@
       ]
     },
     {
-      "uri": "https://data.europa.eu/m8g/BusinessEvent",
-      "name": "Business Event",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Business Event"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.\r\n\r\nIn other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "label": "Event",
-          "name": "Event",
-          "package": "cccev",
-          "uri": "https://data.europa.eu/m8g/Event",
-          "scoped_uri": "#Event"
-        }
-      ],
-      "properties": []
-    },
-    {
       "uri": "https://data.europa.eu/m8g/Cost",
       "name": "Cost",
       "label": {
@@ -2847,11 +3083,11 @@
         },
         {
           "uri": "https://data.europa.eu/m8g/costBreakdown",
-          "name": "costBreakdown",
+          "name": "cost breakdown",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "costBreakdown"
+            "en": "cost breakdown"
           },
           "description": {
             "de": "Enter your translation here",
@@ -2994,209 +3230,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.europa.eu/m8g/Event",
-      "name": "Event",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Event"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service. It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses.\r\r\n\r\nThe Event class is used as a hook either to a single related Public Service, such as diagnosis of illness being related to application for sickness benefit ;\r\nor to a group of Public Services, such as all those related to the establishment of a new business."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "description",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "description"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Event",
-              "uri": "https://data.europa.eu/m8g/Event"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "de": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/identifier",
-          "name": "identifier",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "identifier"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property represents an Identifier for the Event."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Event",
-              "uri": "https://data.europa.eu/m8g/Event"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identifier",
-              "range_uri": "http://fixme.com#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://fixme.com#Identifier",
-              "range_puri": "http://fixme.com#Identifier",
-              "range_label": {
-                "de": "Identifier"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/relation",
-          "name": "related service",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "related service"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property links an event directly to a public service that is related to it."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Event",
-              "uri": "https://data.europa.eu/m8g/Event"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "PublicService",
-              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Public Service"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/title",
-          "name": "name",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "name"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property represents the Name (or title) of the Event."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Event",
-              "uri": "https://data.europa.eu/m8g/Event"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "de": "Text"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/type",
-          "name": "type",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "type"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.\r"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Event",
-              "uri": "https://data.europa.eu/m8g/Event"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "de": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -3571,30 +3604,6 @@
       ]
     },
     {
-      "uri": "https://data.europa.eu/m8g/LifeEvent",
-      "name": "Life Event",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Life Event"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "The Life Event class represents an important event or situations in a citizen's life where public services may be required. Note the scope: an individual will encounter any number of 'events' in the general sense of the word. Within this model, the Life Event class only represents an event for which a Public Service is related. For example, a couple becoming engaged is not a  Life Event, getting married is, since only the latter has any relevance to public services."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "label": "Event",
-          "name": "Event",
-          "package": "cccev",
-          "uri": "https://data.europa.eu/m8g/Event",
-          "scoped_uri": "#Event"
-        }
-      ],
-      "properties": []
-    },
-    {
       "uri": "https://data.europa.eu/m8g/Output",
       "name": "Output",
       "label": {
@@ -3614,13 +3623,16 @@
       "properties": [
         {
           "uri": "TODO",
-          "name": "has legal resources",
+          "name": "has legal resource",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "has legal resources"
+            "en": "has legal resource"
           },
-          "description": {},
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The Has Legal Resource property links an Output to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Output relates, operates or has its legal basis."
+          },
           "usage": {},
           "domain": [
             {
@@ -4499,10 +4511,11 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Site",
+              "range_uri": "#Enter your translation here",
               "range_puri": "http://fixme.com#Site",
               "range_label": {
-                "de": "Site"
+                "de": "Enter your translation here",
+                "en": "site"
               }
             }
           ],
