@@ -7,27 +7,34 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://semiceu.github.io/shacl/core-business-ap_de> <https://semiceu.github.io/shacl/core-business-ap_deshapes> <https://semiceu.github.io/shacl/core-business-ap_de#ResourceShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_de#IdentifierShape>,
+    <https://semiceu.github.io/shacl/core-business-ap_de#ConceptShape>,
     <https://semiceu.github.io/shacl/core-business-ap_de#AddressShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_de#FormalOrganizationShape>,
-    <https://semiceu.github.io/shacl/core-business-ap_de#ConceptShape> .
+    <https://semiceu.github.io/shacl/core-business-ap_de#IdentifierShape>,
+    <https://semiceu.github.io/shacl/core-business-ap_de#FormalOrganizationShape> .
 
 <https://semiceu.github.io/shacl/core-business-ap_de#AddressShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
+    shacl:path <http://www.w3.org/ns/locn#addressID>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/locn#poBox>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#addressArea>
+    shacl:path <http://www.w3.org/ns/locn#fullAddress>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -48,21 +55,14 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#postName>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#addressID>
+    shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#fullAddress>
+    shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -82,14 +82,14 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#poBox>
+    shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
-    shacl:datatype xsd:string;
+    shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#postCode>
+    shacl:path <http://www.w3.org/ns/locn#postName>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
@@ -111,10 +111,12 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:issued
   ], [
-    shacl:class <http://www.w3.org/ns/legal#LegalEntity>;
+    shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <https://data.europa.eu/m8g/identifies>
+    shacl:path dc:conformsTo
   ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
@@ -130,12 +132,10 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:creator
   ], [
-    shacl:datatype rdfs:Literal;
+    shacl:class <http://www.w3.org/ns/legal#LegalEntity>;
     shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path skos:notation
+    shacl:path <https://data.europa.eu/m8g/identifies>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -144,12 +144,12 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/adms#schemeAgency>
   ], [
-    shacl:class rdf:langString;
+    shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:conformsTo
+    shacl:path skos:notation
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
@@ -162,20 +162,6 @@
     shacl:path <http://www.w3.org/ns/legal#legalEntity>
   ];
   shacl:targetClass rdfs:Resource .
-
- [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/legal#registeredAddress>
-  ] .
-
- [
-    shacl:class rdf:langString;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/legal#legalName>
-  ] .
 
  [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
@@ -217,4 +203,18 @@
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:alternative
+  ] .
+
+ [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/legal#legalName>
+  ] .
+
+ [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/legal#registeredAddress>
   ] .
