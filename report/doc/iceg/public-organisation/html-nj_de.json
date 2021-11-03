@@ -11,69 +11,14 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/3af11dd61f2779fbba4399d52c07f390db760929",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/3af11dd61f2779fbba4399d52c07f390db760929/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/71e2265f184163cd12bbbe4465cf0f60ac61b98a",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/71e2265f184163cd12bbbe4465cf0f60ac61b98a/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
-    {
-      "uri": "http://data.europa.eu/88u/dataset/atu-type",
-      "name": "Administrative Territorial Units",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Administrative Territorial Units"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Lists of codes that represent the administrative territorial units of the EU Member States, based on national official / legal information and the ISO 3166-2 standard."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://w3.org/ns/locn#geometry",
-          "name": "geometry",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "geometry"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The geometry relationship associates a Administrative Territorial Unit with the Geometry class."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AdministrativeTerritorialUnits",
-              "uri": "http://data.europa.eu/88u/dataset/atu-type"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Geometry",
-              "range_uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/ns/locn#Geometry",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Geometry"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
     {
       "uri": "http://data.europa.eu/eli/ontology#LegalResource",
       "name": "Legal resource",
@@ -133,7 +78,365 @@
       ]
     },
     {
-      "uri": "http://data.europa.eu/m8g/FoundationEvent",
+      "uri": "http://schema.org/ContactPoint",
+      "name": "Contact Point",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Contact Point"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "A class representing a point of contact."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "The Core Public\r\nOrganization Vocabulary defines properties for telephone number, e-mail address and\r\nopening hours although it is noteworthy that the class is based on schema.org's\r\nContactPoint class (http://schema.org/ContactPoint) that has additional properties\r\nthat some implementations may find useful."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://schema.org/hoursAvailable",
+          "name": "availability restriction",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "availability restriction"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OpeningHoursSpecification",
+              "range_uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://schema.org/OpeningHoursSpecification",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Opening Hours Specification"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/email",
+          "name": "has email",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has email"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A property through which an e-mail address for the Public Organization, or a\r\nrepresentative of it, can be contacted."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/openingHours",
+          "name": "opening hours",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "opening hours"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The value of this property is structured text that gives the hours at which the contact point is normally available."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00."
+          },
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/telephone",
+          "name": "has telephone",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has telephone"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A property through which a phone number for the Public Organization, or a representative of it, can be contacted."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "http://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://schema.org/OpeningHoursSpecification",
+      "name": "Opening Hours Specification",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Opening Hours Specification"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "The Opening Hours Specification class can be used to provide details of exceptional circumstances, such as being closed on public holidays."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "The Core Public Organization Vocabulary makes full use of schema.org's openingHours property to provide details of regular operations. The Opening Hours Specification  class can be used to provide details of exceptional circumstances, such as being closed on public holidays. Note that the property schema:opens is not used, therefore the contact point is closed. More specific closures can be indicated by including the schema:validFrom and schema:validThrough properties."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://schema.org/dayOfWeek",
+          "name": "day of week",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "day of week"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The day of the week for which these opening hours are valid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "de": "URI"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/validFrom",
+          "name": "valid from",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "valid from"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The date when the Opening Hours Specification becomes valid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "de": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/validThrough",
+          "name": "valid through",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "valid through"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The date after when the Opening Hours Specification is not valid."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "OpeningHoursSpecification",
+              "uri": "http://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "de": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://semiceu.github.io/CPOV/releases/2.00/#Administrative%20Territorial%20Units",
+      "name": "Administrative Territorial Units",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Administrative Territorial Units"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "Lists of codes that represent the administrative territorial units of the EU Member States, based on national official / legal information and the ISO 3166-2 standard."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/locn#geometry",
+          "name": "geometry",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "geometry"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The geometry relationship associates a Administrative Territorial Unit with the Geometry class."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AdministrativeTerritorialUnits",
+              "uri": "http://semiceu.github.io/CPOV/releases/2.00/#Administrative%20Territorial%20Units"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Geometry",
+              "range_uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/locn#Geometry",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Geometry"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://semiceu.github.io/CPOV/releases/2.00/#Foundation%20Event",
       "name": "Foundation Event",
       "label": {
         "de": "Enter your translation here",
@@ -155,279 +458,6 @@
         }
       ],
       "properties": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/PublicOrganisation",
-      "name": "Public Organization",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Public Organization"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Any Organization that is defined as being part of the public sector by a legal framework at any level."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "<p>\r\n  The Public Organization class represents the organization. One organization may\r\n  comprise several sub-organizations and any organization may have one or more \r\n  organizational units. Each of these is described using the same properties and\r\n  relationships.\r\n</p></br>\r\n\r\n<p>\r\nThis definition is consistent with the more detailed definition of a \"public sector body\" as given\r\nin the PSI Directive: \"the State, regional or local authorities, bodies\r\ngoverned by public law and associations formed by one or several such authorities\r\nor one or several such bodies governed by public law\". It further defines a body\r\ngoverned by public law as any body \"(a) established for the specific purpose of\r\nmeeting needs in the general interest, not having an industrial or commercial\r\ncharacter; and (b) having legal personality; and (c) financed, for the most part by\r\nthe State, or regional or local authorities, or other bodies governed by public law; or\r\nsubject to management supervision by those bodies; or having an administrative,\r\nmanagerial or supervisory board, more than half of whose members are appointed\r\nby the State, regional or local authorities or by other bodies governed by public law\".\r\r\n</p>"
-      },
-      "parents": [
-        {
-          "label": "Organization",
-          "name": "Organization",
-          "package": "org",
-          "uri": "http://www.w3.org/ns/org#organization",
-          "scoped_uri": "#Organization"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://data.europa.eu/m8g/legalForm",
-          "name": "legal form",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "legal form"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The type of entity as defined by the Belgian law"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "de": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/spatial",
-          "name": "spatial",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "spatial"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property links an Organization to the Administrative Region(s) that it covers."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "<p>\r\nThe value of the properly should be the URI of the region as defined in an authoritative\r\nlist of regions. In Europe, this is likely to be the Administrative Territorial Units\r\nNamed Authority List maintained by the Publications Office's Metadata Registry.\r\n</p></br>\r\n\r\n<p>\r\nThe ATU list does not include a geometry. That is, the territory is only identified by\r\nits name not its spatial coordinates. This is likely to be the case for similar lists. If\r\ngeometries are available for the Public Organization's territory, they can be linked\r\nfrom the territorial unit using the Core Location Vocabulary's locn:geometry\r\nproperty.\r\n</p>"
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AdministrativeTerritorialUnits",
-              "range_uri": "http://data.europa.eu/88u/dataset/atu-type"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/88u/dataset/atu-type",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Administrative Territorial Units"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com#Post",
-      "name": "Post",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Post"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://fixme.com#postIn",
-          "name": "post in",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "post in"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Indicates the Organization whose post belongs to."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Post",
-              "uri": "http://fixme.com#Post"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/ns/org#organization",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#role",
-          "name": "role",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "role"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Post",
-              "uri": "http://fixme.com#Post"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Role",
-              "range_uri": "http://fixme.com#Role"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Role",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Role"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://fixme.com#Role",
-      "name": "Role",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Role"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of org:Membership."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "http://fixme.com#Site",
-      "name": "Site",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Site"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://w3.org/ns/locn#address",
-          "name": "address",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "address"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "A property to link an organization to its address."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "For consistency with INSPIRE,\r\nthe Location Core Vocabulary's Address class should be used.\r\n"
-          },
-          "domain": [
-            {
-              "EA-Name": "Site",
-              "uri": "http://fixme.com#Site"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Address",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Address"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
     },
     {
       "uri": "http://www.w3.org/ns/adms#Identifier",
@@ -1156,16 +1186,16 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://schema.org/latitude",
-          "name": "latitude",
+          "uri": "http://data.europa.eu/m8g/coordinates",
+          "name": "coordinates",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "latitude"
+            "en": "coordinates"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "The latitude."
+            "en": "The coordinate list."
           },
           "usage": {},
           "domain": [
@@ -1189,20 +1219,20 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "http://schema.org/longitude",
-          "name": "longitude",
+          "uri": "http://data.europa.eu/m8g/crs",
+          "name": "crs",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "longitude"
+            "en": "crs"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "The longitude."
+            "en": "An identifier for the coordinate reference system."
           },
           "usage": {},
           "domain": [
@@ -1213,20 +1243,57 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
               "range_label": {
-                "de": "String"
+                "de": "URI"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/geometry",
+          "name": "geometry type",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "geometry type"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The geometry type, e.g. point, line or polygon."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Geometry",
+              "uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://fixme.com#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Code",
+              "range_puri": "http://fixme.com#Code",
+              "range_label": {
+                "de": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -1266,7 +1333,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -1306,20 +1373,20 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.europa.eu/m8g/coordinates",
-          "name": "coordinates",
+          "uri": "https://schema.org/latitude",
+          "name": "latitude",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "coordinates"
+            "en": "latitude"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "The coordinate list."
+            "en": "The latitude."
           },
           "usage": {},
           "domain": [
@@ -1343,20 +1410,20 @@
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.europa.eu/m8g/crs",
-          "name": "crs",
+          "uri": "https://schema.org/longitude",
+          "name": "longitude",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "crs"
+            "en": "longitude"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "An identifier for the coordinate reference system."
+            "en": "The longitude."
           },
           "usage": {},
           "domain": [
@@ -1367,57 +1434,20 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "de": "URI"
+                "de": "String"
               }
             }
           ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.europa.eu/m8g/geometryType",
-          "name": "geometry type",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "geometry type"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The geometry type, e.g. point, line or polygon."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Geometry",
-              "uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
-              "range_label": {
-                "de": "Code"
-              }
-            }
-          ],
-          "cardinality": "",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1737,6 +1767,157 @@
       ]
     },
     {
+      "uri": "http://www.w3.org/ns/org#Post",
+      "name": "Post",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Post"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/org#postIn",
+          "name": "post in",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "post in"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Indicates the Organization whose post belongs to."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Post",
+              "uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/org#organization",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Organization"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#role",
+          "name": "role",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "role"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Post",
+              "uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Role",
+              "range_uri": "https://www.w3.org/ns/org#role"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://www.w3.org/ns/org#role",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Role"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#Site",
+      "name": "Site",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Site"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/locn#address",
+          "name": "address",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "address"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A property to link an organization to its address."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "For consistency with INSPIRE,\r\nthe Location Core Vocabulary's Address class should be used.\r\n"
+          },
+          "domain": [
+            {
+              "EA-Name": "Site",
+              "uri": "http://www.w3.org/ns/org#Site"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Address",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Address"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/ns/org#organization",
       "name": "Organization",
       "label": {
@@ -1752,16 +1933,16 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#authorizations",
-          "name": "authorizations",
+          "uri": "http://data.europa.eu/m8g/certification",
+          "name": "certification",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "authorizations"
+            "en": "certification"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "Approvals, authorizations or licenses of interest to third parties or subject to publicity"
+            "en": "Certifications, licences or registrations that are of importance for third parties or whose publication is mandatory"
           },
           "usage": {},
           "domain": [
@@ -1789,12 +1970,12 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#companyNumber",
-          "name": "company number",
+          "uri": "http://data.europa.eu/m8g/companyregistrationNumber",
+          "name": "company registration number",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "company number"
+            "en": "company registration number"
           },
           "description": {
             "de": "Enter your translation here",
@@ -1826,47 +2007,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#deregistration",
-          "name": "deregistration",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "deregistration"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Ex officio deregistration due to failure to file annual accounts"
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "Companies which have not complied with the obligation to deposit their annual accounts with the National Bank of Belgium for at least three consecutive accounting years can be struck off ex officio"
-          },
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
-              "range_label": {
-                "de": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#description",
+          "uri": "http://data.europa.eu/m8g/description",
           "name": "description",
           "sort": "Enter your translation here",
           "label": {
@@ -1903,16 +2044,56 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#hasPost",
-          "name": "has post",
+          "uri": "http://data.europa.eu/m8g/exOfficioStrikingOff",
+          "name": "ex officio striking off",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "has post"
+            "en": "ex officio striking off"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "Indicates the post that belongs to the Organization."
+            "en": "Ex officio striking off of the entity for failure to submit their financial statements"
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Companies which have not complied with the obligation to deposit their annual accounts with the National Bank of Belgium for at least three consecutive accounting years can be struck off ex officio"
+          },
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://fixme.com#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Code",
+              "range_puri": "http://fixme.com#Code",
+              "range_label": {
+                "de": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/linkToDatabase",
+          "name": "links to database",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "links to database"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Links to databases containing data not recorded in the CBE/KBO"
           },
           "usage": {},
           "domain": [
@@ -1923,17 +2104,16 @@
           ],
           "range": [
             {
-              "range_label": "Post",
-              "range_uri": "http://fixme.com#Post"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Post",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Post"
+                "de": "Text"
               }
             }
           ],
@@ -1941,16 +2121,16 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#hasSite",
-          "name": "has site",
+          "uri": "http://data.europa.eu/m8g/startDateOfData",
+          "name": "start date of this data",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "has site"
+            "en": "start date of this data"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
+            "en": "\tThe date on which the Organization-related information was provided."
           },
           "usage": {},
           "domain": [
@@ -1961,21 +2141,57 @@
           ],
           "range": [
             {
-              "range_label": "Site",
-              "range_uri": "http://fixme.com#Site"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://fixme.com#Site",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Site"
+                "de": "DateTime"
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/status",
+          "name": "status",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "status"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Entity status, e.g. active, closed, cancelled, identified\r\nlegal creation, stopped"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://fixme.com#Code"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://fixme.com#Code",
+              "range_puri": "http://fixme.com#Code",
+              "range_label": {
+                "de": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2017,18 +2233,21 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#linkToDatabase",
-          "name": "link to database",
+          "uri": "http://schema.org/contactPoint",
+          "name": "contact point",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "link to database"
+            "en": "contact point"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "Links to databases of information not included in the BCE/KBO"
+            "en": "The contact point property links to a Contact Point that provides contact\r\ninformation, in particular a phone number and e-mail address."
           },
-          "usage": {},
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Other contact methods\r\nmay be included, including online contact information, but this is conceptually distinct\r\nfrom the organization's homepage that may or may not provide contact\r\ninformation."
+          },
           "domain": [
             {
               "EA-Name": "Organization",
@@ -2037,94 +2256,21 @@
           ],
           "range": [
             {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "ContactPoint",
+              "range_uri": "http://schema.org/ContactPoint"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://schema.org/ContactPoint",
               "range_label": {
-                "de": "Text"
+                "de": "Enter your translation here",
+                "en": "Contact Point"
               }
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#startDateOfThisData",
-          "name": "start date of this data",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "start date of this data"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "\tThe date on which the Organization-related information was provided."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "de": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#status",
-          "name": "status",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "status"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Entity status, e.g. active, closed, cancelled, identified\r\nlegal creation, stopped"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
-              "range_label": {
-                "de": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2357,6 +2503,82 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#hasPost",
+          "name": "has post",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has post"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Indicates the post that belongs to the Organization."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Post",
+              "range_uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/org#Post",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Post"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#hasSite",
+          "name": "has site",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has site"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Site",
+              "range_uri": "http://www.w3.org/ns/org#Site"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/org#Site",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Site"
+              }
+            }
+          ],
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
@@ -2597,47 +2819,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/contactPoint",
-          "name": "contact point",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "contact point"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The contact point property links to a Contact Point that provides contact\r\ninformation, in particular a phone number and e-mail address."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "Other contact methods\r\nmay be included, including online contact information, but this is conceptually distinct\r\nfrom the organization's homepage that may or may not provide contact\r\ninformation."
-          },
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ContactPoint",
-              "range_uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://schema.org/ContactPoint",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Contact Point"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://schema.org/logo",
           "name": "logo",
           "sort": "Enter your translation here",
@@ -2681,6 +2862,112 @@
       ]
     },
     {
+      "uri": "http://www.w3.org/ns/org#organization",
+      "name": "Public Organization",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Public Organization"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "Any Organization that is defined as being part of the public sector by a legal framework at any level."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "<p>\r\n  The Public Organization class represents the organization. One organization may\r\n  comprise several sub-organizations and any organization may have one or more \r\n  organizational units. Each of these is described using the same properties and\r\n  relationships.\r\n</p></br>\r\n\r\n<p>\r\nThis definition is consistent with the more detailed definition of a \"public sector body\" as given\r\nin the PSI Directive: \"the State, regional or local authorities, bodies\r\ngoverned by public law and associations formed by one or several such authorities\r\nor one or several such bodies governed by public law\". It further defines a body\r\ngoverned by public law as any body \"(a) established for the specific purpose of\r\nmeeting needs in the general interest, not having an industrial or commercial\r\ncharacter; and (b) having legal personality; and (c) financed, for the most part by\r\nthe State, or regional or local authorities, or other bodies governed by public law; or\r\nsubject to management supervision by those bodies; or having an administrative,\r\nmanagerial or supervisory board, more than half of whose members are appointed\r\nby the State, regional or local authorities or by other bodies governed by public law\".\r\r\n</p>"
+      },
+      "parents": [
+        {
+          "label": "Organization",
+          "name": "Organization",
+          "package": "org",
+          "uri": "http://www.w3.org/ns/org#organization",
+          "scoped_uri": "#Organization"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "http://data.europa.eu/m8g/legalForm",
+          "name": "legal form",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "legal form"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The type of entity as defined by the Belgian law"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/spatial",
+          "name": "spatial",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "spatial"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property links an Organization to the Administrative Region(s) that it covers."
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "<p>\r\nThe value of the properly should be the URI of the region as defined in an authoritative\r\nlist of regions. In Europe, this is likely to be the Administrative Territorial Units\r\nNamed Authority List maintained by the Publications Office's Metadata Registry.\r\n</p></br>\r\n\r\n<p>\r\nThe ATU list does not include a geometry. That is, the territory is only identified by\r\nits name not its spatial coordinates. This is likely to be the case for similar lists. If\r\ngeometries are available for the Public Organization's territory, they can be linked\r\nfrom the territorial unit using the Core Location Vocabulary's locn:geometry\r\nproperty.\r\n</p>"
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AdministrativeTerritorialUnits",
+              "range_uri": "http://semiceu.github.io/CPOV/releases/2.00/#Administrative%20Territorial%20Units"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://semiceu.github.io/CPOV/releases/2.00/#Administrative%20Territorial%20Units",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Administrative Territorial Units"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/ns/person#Person",
       "name": "Person",
       "label": {
@@ -2706,6 +2993,43 @@
         }
       ],
       "properties": [
+        {
+          "uri": "http://data.europa.eu/m8g/title",
+          "name": "title",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "title"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "A word or name that describes a person's job or status in a company or organization"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "de": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://purl.org/dc/terms/alternative",
           "name": "alternative name",
@@ -3057,43 +3381,6 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.europa.eu/m8g/title",
-          "name": "title",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "title"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "A word or name that describes a person's job or status in a company or organization"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "de": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -3114,178 +3401,6 @@
       "properties": []
     },
     {
-      "uri": "https://schema.org/ContactPoint",
-      "name": "Contact Point",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Contact Point"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "A class representing a point of contact."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "The Core Public\r\nOrganization Vocabulary defines properties for telephone number, e-mail address and\r\nopening hours although it is noteworthy that the class is based on schema.org's\r\nContactPoint class (http://schema.org/ContactPoint) that has additional properties\r\nthat some implementations may find useful."
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://schema.org/hoursAvailable",
-          "name": "availability restriction",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "availability restriction"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OpeningHoursSpecification",
-              "range_uri": "https://schema.org/OpeningHoursSpecification"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://schema.org/OpeningHoursSpecification",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Opening Hours Specification"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/email",
-          "name": "has email",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has email"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "A property through which an e-mail address for the Public Organization, or a\r\nrepresentative of it, can be contacted."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "de": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/openingHours",
-          "name": "opening hours",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "opening hours"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The value of this property is structured text that gives the hours at which the contact point is normally available."
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00."
-          },
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "de": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/telephone",
-          "name": "has telephone",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has telephone"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "A property through which a phone number for the Public Organization, or a representative of it, can be contacted."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "de": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "https://schema.org/ImageObject",
       "name": "Image Object",
       "label": {
@@ -3302,155 +3417,23 @@
       "properties": []
     },
     {
-      "uri": "https://schema.org/OpeningHoursSpecification",
-      "name": "Opening Hours Specification",
+      "uri": "https://www.w3.org/ns/org#role",
+      "name": "Role",
       "label": {
         "de": "Enter your translation here",
-        "en": "Opening Hours Specification"
+        "en": "Role"
       },
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "The Opening Hours Specification class can be used to provide details of exceptional circumstances, such as being closed on public holidays."
+        "en": "Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of org:Membership."
       },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "The Core Public Organization Vocabulary makes full use of schema.org's openingHours property to provide details of regular operations. The Opening Hours Specification  class can be used to provide details of exceptional circumstances, such as being closed on public holidays. Note that the property schema:opens is not used, therefore the contact point is closed. More specific closures can be indicated by including the schema:validFrom and schema:validThrough properties."
-      },
+      "usage": {},
       "parents": [],
-      "properties": [
-        {
-          "uri": "https://schema.org/dayOfWeek",
-          "name": "day of week",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "day of week"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The day of the week for which these opening hours are valid."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "OpeningHoursSpecification",
-              "uri": "https://schema.org/OpeningHoursSpecification"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "de": "URI"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/validFrom",
-          "name": "valid from",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "valid from"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The date when the Opening Hours Specification becomes valid."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "OpeningHoursSpecification",
-              "uri": "https://schema.org/OpeningHoursSpecification"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "de": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/validThrough",
-          "name": "valid through",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "valid through"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The date after when the Opening Hours Specification is not valid."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "OpeningHoursSpecification",
-              "uri": "https://schema.org/OpeningHoursSpecification"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "de": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
+      "properties": []
     }
   ],
-  "properties": [
-    {
-      "uri": "https://data.europa.eu/m8g/legalForm",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "legal form",
-        "undefined": "legal form"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    }
-  ],
+  "properties": [],
   "contributors": [
     {
       "role": "E",
