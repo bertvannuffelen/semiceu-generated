@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/313c9ec9e9ddcb0da75368700da0107bb5056646",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/313c9ec9e9ddcb0da75368700da0107bb5056646/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/9dd321834e8e1e040d28c9cee90e2f79f6e0f907",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/9dd321834e8e1e040d28c9cee90e2f79f6e0f907/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -167,41 +167,6 @@
       ],
       "properties": [
         {
-          "uri": "http://fixme.com#legalForm",
-          "name": "legal form",
-          "sort": "legal form",
-          "label": {
-            "en": "legal form"
-          },
-          "description": {
-            "en": "The type of entity as defined by the Belgian law"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://www.iceg.be/PublicOrganization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://purl.org/dc/terms/spatial",
           "name": "spatial",
           "sort": "spatial",
@@ -236,6 +201,41 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.iceg.be/PublicOrganization/LegalForm",
+          "name": "legal form",
+          "sort": "legal form",
+          "label": {
+            "en": "legal form"
+          },
+          "description": {
+            "en": "The type of entity as defined by the Belgian law"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://www.iceg.be/PublicOrganization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1451,6 +1451,91 @@
       ]
     },
     {
+      "uri": "http://www.w3.org/ns/org#Post",
+      "name": "Post",
+      "label": {
+        "en": "Post"
+      },
+      "sort": "Post",
+      "description": {
+        "en": "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/org#postIn",
+          "name": "post in",
+          "sort": "post in",
+          "label": {
+            "en": "post in"
+          },
+          "description": {
+            "en": "Indicates the Organization whose post belongs to."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Post",
+              "uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#organization",
+              "range_label": {
+                "en": "Organization"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#role",
+          "name": "role",
+          "sort": "role",
+          "label": {
+            "en": "role"
+          },
+          "description": {
+            "en": "Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Post",
+              "uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Role",
+              "range_uri": "https://www.w3.org/ns/org#role"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Role",
+              "range_puri": "https://www.w3.org/ns/org#role",
+              "range_label": {
+                "en": "Role"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/ns/org#Site",
       "name": "Site",
       "label": {
@@ -1516,7 +1601,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#certification",
+          "uri": "http://www.iceg.be/Organization/Certification",
           "name": "certification",
           "sort": "certification",
           "label": {
@@ -1551,7 +1636,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#companyRegistrationNumber",
+          "uri": "http://www.iceg.be/Organization/CompanyRegistrationNumber",
           "name": "company registration number",
           "sort": "company registration number",
           "label": {
@@ -1586,7 +1671,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#description",
+          "uri": "http://www.iceg.be/Organization/Description",
           "name": "description",
           "sort": "description",
           "label": {
@@ -1621,7 +1706,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#exOfficioStrikingOff",
+          "uri": "http://www.iceg.be/Organization/ExOfficioStrikingOff",
           "name": "ex officio striking off",
           "sort": "ex officio striking off",
           "label": {
@@ -1658,7 +1743,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#linksToDatabase",
+          "uri": "http://www.iceg.be/Organization/LinksToTheDatabase",
           "name": "links to database",
           "sort": "links to database",
           "label": {
@@ -1693,7 +1778,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#startDateOfThisData",
+          "uri": "http://www.iceg.be/Organization/StartDateOfThisData",
           "name": "start date of this data",
           "sort": "start date of this data",
           "label": {
@@ -1728,7 +1813,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#status",
+          "uri": "http://www.iceg.be/Organization/Status",
           "name": "status",
           "sort": "status",
           "label": {
@@ -1996,13 +2081,13 @@
           "range": [
             {
               "range_label": "Post",
-              "range_uri": "https://www.w3.org/ns/org#Post"
+              "range_uri": "http://www.w3.org/ns/org#Post"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Post",
-              "range_puri": "https://www.w3.org/ns/org#Post",
+              "range_puri": "http://www.w3.org/ns/org#Post",
               "range_label": {
                 "en": "Post"
               }
@@ -2399,6 +2484,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.iceg.be/Person/Title",
+          "name": "title",
+          "sort": "title",
+          "label": {
+            "en": "title"
+          },
+          "description": {
+            "en": "A word or name that describes a person's job or status in a company or organization"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/person#birthName",
           "name": "birth name",
           "sort": "birth name",
@@ -2581,41 +2701,6 @@
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.europa.eu/m8g/title",
-          "name": "title",
-          "sort": "title",
-          "label": {
-            "en": "title"
-          },
-          "description": {
-            "en": "A word or name that describes a person's job or status in a company or organization"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2995,91 +3080,6 @@
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://www.w3.org/ns/org#Post",
-      "name": "Post",
-      "label": {
-        "en": "Post"
-      },
-      "sort": "Post",
-      "description": {
-        "en": "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://www.w3.org/ns/org#postIn",
-          "name": "post in",
-          "sort": "post in",
-          "label": {
-            "en": "post in"
-          },
-          "description": {
-            "en": "Indicates the Organization whose post belongs to."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Post",
-              "uri": "https://www.w3.org/ns/org#Post"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#organization",
-              "range_label": {
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#role",
-          "name": "role",
-          "sort": "role",
-          "label": {
-            "en": "role"
-          },
-          "description": {
-            "en": "Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Post",
-              "uri": "https://www.w3.org/ns/org#Post"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Role",
-              "range_uri": "https://www.w3.org/ns/org#role"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Role",
-              "range_puri": "https://www.w3.org/ns/org#role",
-              "range_label": {
-                "en": "Role"
-              }
-            }
-          ],
-          "cardinality": "1..*",
           "codelist_uri": ""
         }
       ]

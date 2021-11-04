@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/313c9ec9e9ddcb0da75368700da0107bb5056646/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/313c9ec9e9ddcb0da75368700da0107bb5056646/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/9dd321834e8e1e040d28c9cee90e2f79f6e0f907/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/9dd321834e8e1e040d28c9cee90e2f79f6e0f907/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="TBD">TBD</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -195,7 +195,7 @@ TBD
                     <p>This document describes the usage of the following entities for a correct usage of the data model: 
                       <br />
                       |
-                      <a href="#Site">Site</a> |
+                      <a href="#Post">Post</a> |
                       <a href="#Administrative Territorial Units">Administrative Territorial Units</a> |
                       <a href="#Foundation Event">Foundation Event</a> |
                       <a href="#Public Organization">Public Organization</a> |
@@ -205,13 +205,13 @@ TBD
                       <a href="#Change Event">Change Event</a> |
                       <a href="#Organizational Unit">Organizational Unit</a> |
                       <a href="#Legal resource">Legal resource</a> |
+                      <a href="#Site">Site</a> |
                       <a href="#Organization">Organization</a> |
                       <a href="#Person">Person</a> |
                       <a href="#Document">Document</a> |
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Image Object">Image Object</a> |
                       <a href="#Opening Hours Specification">Opening Hours Specification</a> |
-                      <a href="#Post">Post</a> |
                       <a href="#Role">Role</a> |
                     </p>
                   </div>
@@ -231,16 +231,17 @@ TBD
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Site"><a href="http://www.w3.org/ns/org#Site" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#Site" data-placement="right">Site</a></h3>
+              <h3 class="h3" id="Post"><a href="http://www.w3.org/ns/org#Post" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#Post" data-placement="right">Post</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations.</dd>
+                    <dt>Description</dt><dd>A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Site%3Aaddress">address</a>.</dd>
+                      <a href="#Post%3Apost%20in">post in</a>, 
+                      <a href="#Post%3Arole">role</a>.</dd>
                     
                   </dl>
                 </div>
@@ -260,25 +261,43 @@ TBD
 
                     <tbody class="supertype">
                     
-                      <tr id="Site%3Aaddress" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#address">
+                      <tr id="Post%3Apost%20in" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#postIn">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#address" data-placement="right">
-                            address</a>
+                            <a href="http://www.w3.org/ns/org#postIn" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#postIn" data-placement="right">
+                            post in</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Address</a>
+			    <a href="#Enter your translation here" data-placement="right">Organization</a>
 			    
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment">A property to link an organization to its address.</td>
-                        <td property="skos:scopeNote">For consistency with INSPIRE,
-the Location Core Vocabulary's Address class should be used.
-</td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">Indicates the Organization whose post belongs to.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Post%3Arole" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#role">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/org#role" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#role" data-placement="right">
+                            role</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Role</a>
+			    
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays.</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -399,8 +418,8 @@ by the State, regional or local authorities or by other bodies governed by publi
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Public%20Organization%3Alegal%20form">legal form</a>, 
-                      <a href="#Public%20Organization%3Aspatial">spatial</a>.</dd>
+                      <a href="#Public%20Organization%3Aspatial">spatial</a>, 
+                      <a href="#Public%20Organization%3Alegal%20form">legal form</a>.</dd>
                     
                   </dl>
                 </div>
@@ -419,26 +438,6 @@ by the State, regional or local authorities or by other bodies governed by publi
                     </thead>
 
                     <tbody class="supertype">
-                    
-                      <tr id="Public%20Organization%3Alegal%20form" typeof="rdfs:Property" resource="http://fixme.com#legalForm">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://fixme.com#legalForm" data-toggle="tooltip" data-content="http://fixme.com#legalForm" data-placement="right">
-                            legal form</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">The type of entity as defined by the Belgian law</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
                     
                       <tr id="Public%20Organization%3Aspatial" typeof="rdfs:Property" resource="http://purl.org/dc/terms/spatial">
                         <td>
@@ -469,6 +468,26 @@ geometries are available for the Public Organization's territory, they can be li
 from the territorial unit using the Core Location Vocabulary's locn:geometry
 property.
 </p></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Organization%3Alegal%20form" typeof="rdfs:Property" resource="http://www.iceg.be/PublicOrganization/LegalForm">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.iceg.be/PublicOrganization/LegalForm" data-toggle="tooltip" data-content="http://www.iceg.be/PublicOrganization/LegalForm" data-placement="right">
+                            legal form</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The type of entity as defined by the Belgian law</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -1420,6 +1439,64 @@ The European Council's invitation to introduce the European Legislation Identifi
             </div>
             
               <div class="region region--no-space-top">
+              <h3 class="h3" id="Site"><a href="http://www.w3.org/ns/org#Site" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#Site" data-placement="right">Site</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Site%3Aaddress">address</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Site%3Aaddress" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#address">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#address" data-placement="right">
+                            address</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Address</a>
+			    
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">A property to link an organization to its address.</td>
+                        <td property="skos:scopeNote">For consistency with INSPIRE,
+the Location Core Vocabulary's Address class should be used.
+</td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
               <h3 class="h3" id="Organization"><a href="http://www.w3.org/ns/org#organization" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#organization" data-placement="right">Organization</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -1491,10 +1568,10 @@ The European Council's invitation to introduce the European Legislation Identifi
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Acertification" typeof="rdfs:Property" resource="http://fixme.com#certification">
+                      <tr id="Organization%3Acertification" typeof="rdfs:Property" resource="http://www.iceg.be/Organization/Certification">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#certification" data-toggle="tooltip" data-content="http://fixme.com#certification" data-placement="right">
+                            <a href="http://www.iceg.be/Organization/Certification" data-toggle="tooltip" data-content="http://www.iceg.be/Organization/Certification" data-placement="right">
                             certification</a>
                           </code>
                         </td>
@@ -1511,10 +1588,10 @@ The European Council's invitation to introduce the European Legislation Identifi
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Adescription" typeof="rdfs:Property" resource="http://fixme.com#description">
+                      <tr id="Organization%3Adescription" typeof="rdfs:Property" resource="http://www.iceg.be/Organization/Description">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#description" data-toggle="tooltip" data-content="http://fixme.com#description" data-placement="right">
+                            <a href="http://www.iceg.be/Organization/Description" data-toggle="tooltip" data-content="http://www.iceg.be/Organization/Description" data-placement="right">
                             description</a>
                           </code>
                         </td>
@@ -1531,10 +1608,10 @@ The European Council's invitation to introduce the European Legislation Identifi
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Aex%20officio%20striking%20off" typeof="rdfs:Property" resource="http://fixme.com#exOfficioStrikingOff">
+                      <tr id="Organization%3Aex%20officio%20striking%20off" typeof="rdfs:Property" resource="http://www.iceg.be/Organization/ExOfficioStrikingOff">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#exOfficioStrikingOff" data-toggle="tooltip" data-content="http://fixme.com#exOfficioStrikingOff" data-placement="right">
+                            <a href="http://www.iceg.be/Organization/ExOfficioStrikingOff" data-toggle="tooltip" data-content="http://www.iceg.be/Organization/ExOfficioStrikingOff" data-placement="right">
                             ex officio striking off</a>
                           </code>
                         </td>
@@ -1551,10 +1628,10 @@ The European Council's invitation to introduce the European Legislation Identifi
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Alinks%20to%20database" typeof="rdfs:Property" resource="http://fixme.com#linksToDatabase">
+                      <tr id="Organization%3Alinks%20to%20database" typeof="rdfs:Property" resource="http://www.iceg.be/Organization/LinksToTheDatabase">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#linksToDatabase" data-toggle="tooltip" data-content="http://fixme.com#linksToDatabase" data-placement="right">
+                            <a href="http://www.iceg.be/Organization/LinksToTheDatabase" data-toggle="tooltip" data-content="http://www.iceg.be/Organization/LinksToTheDatabase" data-placement="right">
                             links to database</a>
                           </code>
                         </td>
@@ -1571,10 +1648,10 @@ The European Council's invitation to introduce the European Legislation Identifi
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Astart%20date%20of%20this%20data" typeof="rdfs:Property" resource="http://fixme.com#startDateOfThisData">
+                      <tr id="Organization%3Astart%20date%20of%20this%20data" typeof="rdfs:Property" resource="http://www.iceg.be/Organization/StartDateOfThisData">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#startDateOfThisData" data-toggle="tooltip" data-content="http://fixme.com#startDateOfThisData" data-placement="right">
+                            <a href="http://www.iceg.be/Organization/StartDateOfThisData" data-toggle="tooltip" data-content="http://www.iceg.be/Organization/StartDateOfThisData" data-placement="right">
                             start date of this data</a>
                           </code>
                         </td>
@@ -1591,10 +1668,10 @@ The European Council's invitation to introduce the European Legislation Identifi
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Astatus" typeof="rdfs:Property" resource="http://fixme.com#status">
+                      <tr id="Organization%3Astatus" typeof="rdfs:Property" resource="http://www.iceg.be/Organization/Status">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#status" data-toggle="tooltip" data-content="http://fixme.com#status" data-placement="right">
+                            <a href="http://www.iceg.be/Organization/Status" data-toggle="tooltip" data-content="http://www.iceg.be/Organization/Status" data-placement="right">
                             status</a>
                           </code>
                         </td>
@@ -1698,10 +1775,10 @@ to be captured and computed.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Acompany%20registration%20number" typeof="rdfs:Property" resource="http://fixme.com#companyRegistrationNumber">
+                      <tr id="Organization%3Acompany%20registration%20number" typeof="rdfs:Property" resource="http://www.iceg.be/Organization/CompanyRegistrationNumber">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#companyRegistrationNumber" data-toggle="tooltip" data-content="http://fixme.com#companyRegistrationNumber" data-placement="right">
+                            <a href="http://www.iceg.be/Organization/CompanyRegistrationNumber" data-toggle="tooltip" data-content="http://www.iceg.be/Organization/CompanyRegistrationNumber" data-placement="right">
                             company registration number</a>
                           </code>
                         </td>
@@ -1989,12 +2066,12 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#Person%3Aalternative%20name">alternative name</a>, 
+                      <a href="#Person%3Atitle">title</a>, 
                       <a href="#Person%3Abirth%20name">birth name</a>, 
                       <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
                       <a href="#Person%3Afamily%20name%20(surname)">family name (surname)</a>, 
                       <a href="#Person%3Agiven%20name%20(forename)">given name (forename)</a>, 
                       <a href="#Person%3Afull%20name">full name</a>, 
-                      <a href="#Person%3Atitle">title</a>, 
                       <a href="#Person%3Adate%20of%20birth">date of birth</a>, 
                       <a href="#Person%3Adate%20of%20death">date of death</a>.</dd>
                     
@@ -2036,6 +2113,26 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
 It is not the role of the alternative name property to record nick names, pet names or other 'familiar names' that will be of no consequence in public sector data exchange.
 Furthermore, some individuals have more than one legal name in which case the full name property should be used multiple times. 
 Alternative name gives a means of recording names by which an individual is generally known, or professionally known, even though such names are no more than secondary from a legal point of view.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Atitle" typeof="rdfs:Property" resource="http://www.iceg.be/Person/Title">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.iceg.be/Person/Title" data-toggle="tooltip" data-content="http://www.iceg.be/Person/Title" data-placement="right">
+                            title</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A word or name that describes a person&#39;s job or status in a company or organization</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -2148,26 +2245,6 @@ Note that the vocabulary provides an alternative name property. This allows name
 
 A name usually sticks with a person for a long time period. In some European countries a name may only be changed according to certain laws and life events, e.g. marriage. The name denominates a natural person even if he/she changes their address. Documents like birth certificate or diploma usually don't carry an address but always the name. Thus the name is one of the core attributes. However it is not sufficient to identify a person since there are combinations of very common names like Smith in the UK, Meier in Germany, or Li in China.
 </p></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Person%3Atitle" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/title">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/title" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/title" data-placement="right">
-                            title</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">A word or name that describes a person&#39;s job or status in a company or organization</td>
-                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -2465,83 +2542,6 @@ representative of it, can be contacted.</td>
                         </td>
 			<td>1</td>
                         <td property="rdfs:comment">The date after when the Opening Hours Specification is not valid.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Post"><a href="https://www.w3.org/ns/org#Post" data-toggle="tooltip" data-content="https://www.w3.org/ns/org#Post" data-placement="right">Post</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Post%3Apost%20in">post in</a>, 
-                      <a href="#Post%3Arole">role</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Post%3Apost%20in" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#postIn">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#postIn" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#postIn" data-placement="right">
-                            post in</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Organization</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">Indicates the Organization whose post belongs to.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Post%3Arole" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#role">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#role" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#role" data-placement="right">
-                            role</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Role</a>
-			    
-                          
-                        </td>
-			<td>1..*</td>
-                        <td property="rdfs:comment">Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
