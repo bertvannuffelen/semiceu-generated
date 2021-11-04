@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/71e2265f184163cd12bbbe4465cf0f60ac61b98a",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/71e2265f184163cd12bbbe4465cf0f60ac61b98a/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/582fb1435262be7489d18ad2df09fa7423114e1d",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/582fb1435262be7489d18ad2df09fa7423114e1d/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -1927,6 +1927,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://data.europa.eu/m8g/hasMember",
+          "name": "has member",
+          "sort": "has member",
+          "label": {
+            "en": "has member"
+          },
+          "description": {
+            "en": "Indicates that Person is a member of the Organization with no indication of the nature of that membership or the role played"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Person",
+              "range_uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Person",
+              "range_puri": "http://www.w3.org/ns/person#Person",
+              "range_label": {
+                "en": "Person"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://data.europa.eu/m8g/linkToDatabase",
           "name": "links to database",
           "sort": "links to database",
@@ -2763,6 +2798,76 @@
       ],
       "properties": [
         {
+          "uri": "http://data.europa.eu/m8g/holds",
+          "name": "holds",
+          "sort": "holds",
+          "label": {
+            "en": "holds"
+          },
+          "description": {
+            "en": "Indicates a Post held by a Person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Post",
+              "range_uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Post",
+              "range_puri": "http://www.w3.org/ns/org#Post",
+              "range_label": {
+                "en": "Post"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/memberOf",
+          "name": "member of",
+          "sort": "member of",
+          "label": {
+            "en": "member of"
+          },
+          "description": {
+            "en": "Indicates a Person who is a member of the subject Organization"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#organization",
+              "range_label": {
+                "en": "Organization"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://data.europa.eu/m8g/title",
           "name": "title",
           "sort": "title",
@@ -2898,6 +3003,41 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
                 "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://w3.org/ns/locn#address",
+          "name": "registered address",
+          "sort": "registered address",
+          "label": {
+            "en": "registered address"
+          },
+          "description": {
+            "en": "The registered address of the Person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Address",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address"
               }
             }
           ],

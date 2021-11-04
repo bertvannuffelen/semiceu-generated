@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/71e2265f184163cd12bbbe4465cf0f60ac61b98a/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/71e2265f184163cd12bbbe4465cf0f60ac61b98a/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/582fb1435262be7489d18ad2df09fa7423114e1d/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/582fb1435262be7489d18ad2df09fa7423114e1d/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="TBD">TBD</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -1618,10 +1618,11 @@ the Location Core Vocabulary's Address class should be used.
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Organization%3Apreferred%20label">preferred label</a>, 
+                      <a href="#Organization%3Aalternative%20label">alternative label</a>, 
                       <a href="#Organization%3Acertification">certification</a>, 
                       <a href="#Organization%3Adescription">description</a>, 
                       <a href="#Organization%3Aex%20officio%20striking%20off">ex officio striking off</a>, 
+                      <a href="#Organization%3Ahas%20member">has member</a>, 
                       <a href="#Organization%3Alinks%20to%20database">links to database</a>, 
                       <a href="#Organization%3Astart%20date%20of%20this%20data">start date of this data</a>, 
                       <a href="#Organization%3Astatus">status</a>, 
@@ -1629,8 +1630,8 @@ the Location Core Vocabulary's Address class should be used.
                       <a href="#Organization%3Acontact%20point">contact point</a>, 
                       <a href="#Organization%3Anext">next</a>, 
                       <a href="#Organization%3Aprev">prev</a>, 
-                      <a href="#Organization%3Aalternative%20label">alternative label</a>, 
                       <a href="#Organization%3Acompany%20registration%20number">company registration number</a>, 
+                      <a href="#Organization%3Apreferred%20label">preferred label</a>, 
                       <a href="#Organization%3Achanged%20by">changed by</a>, 
                       <a href="#Organization%3Ahas%20member">has member</a>, 
                       <a href="#Organization%3Ahas%20post">has post</a>, 
@@ -1661,11 +1662,11 @@ the Location Core Vocabulary's Address class should be used.
 
                     <tbody class="supertype">
                     
-                      <tr id="Organization%3Apreferred%20label" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
+                      <tr id="Organization%3Aalternative%20label" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#altLabel">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/2004/02/skos/core#prefLabel" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#prefLabel" data-placement="right">
-                            preferred label</a>
+                            <a href="http://www.w3.org/2004/02/skos/core#altLabel" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#altLabel" data-placement="right">
+                            alternative label</a>
                           </code>
                         </td>
                         <td>
@@ -1675,9 +1676,9 @@ the Location Core Vocabulary's Address class should be used.
                             
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment">As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization</td>
-                        <td property="skos:scopeNote">An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property.</td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language.</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -1738,6 +1739,26 @@ the Location Core Vocabulary's Address class should be used.
 			<td>0..1</td>
                         <td property="rdfs:comment">Ex officio striking off of the entity for failure to submit their financial statements</td>
                         <td property="skos:scopeNote">Companies which have not complied with the obligation to deposit their annual accounts with the National Bank of Belgium for at least three consecutive accounting years can be struck off ex officio</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Organization%3Ahas%20member" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasMember">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/hasMember" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/hasMember" data-placement="right">
+                            has member</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Person</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">Indicates that Person is a member of the Organization with no indication of the nature of that membership or the role played</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -1892,26 +1913,6 @@ to be captured and computed.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Organization%3Aalternative%20label" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#altLabel">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/2004/02/skos/core#altLabel" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#altLabel" data-placement="right">
-                            alternative label</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Organization%3Acompany%20registration%20number" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/companyregistrationNumber">
                         <td>
                           <code property="rdfs:label">
@@ -1929,6 +1930,26 @@ to be captured and computed.</td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Unique combination of numbers and, in some cases, letters to identify a company</td>
                         <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Organization%3Apreferred%20label" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/2004/02/skos/core#prefLabel" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#prefLabel" data-placement="right">
+                            preferred label</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization</td>
+                        <td property="skos:scopeNote">An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property.</td>
                         <td></td>
                       </tr>
                     
@@ -2312,10 +2333,13 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Person%3Aregistered%20address">registered address</a>, 
+                      <a href="#Person%3Aholds">holds</a>, 
                       <a href="#Person%3Atitle">title</a>, 
                       <a href="#Person%3Aalternative%20name">alternative name</a>, 
                       <a href="#Person%3Adate%20of%20birth">date of birth</a>, 
                       <a href="#Person%3Adate%20of%20death">date of death</a>, 
+                      <a href="#Person%3Amember%20of">member of</a>, 
                       <a href="#Person%3Abirth%20name">birth name</a>, 
                       <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
                       <a href="#Person%3Afamily%20name%20(surname)">family name (surname)</a>, 
@@ -2340,6 +2364,46 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Person%3Aregistered%20address" typeof="rdfs:Property" resource="http://w3.org/ns/locn#address">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://w3.org/ns/locn#address" data-toggle="tooltip" data-content="http://w3.org/ns/locn#address" data-placement="right">
+                            registered address</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Address</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The registered address of the Person.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Aholds" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/holds">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/holds" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/holds" data-placement="right">
+                            holds</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Post</a>
+			    
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">Indicates a Post held by a Person.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Person%3Atitle" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/title">
                         <td>
@@ -2420,6 +2484,26 @@ Alternative name gives a means of recording names by which an individual is gene
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">The day on which the Person died.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3Amember%20of" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/memberOf">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/memberOf" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/memberOf" data-placement="right">
+                            member of</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Organization</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">Indicates a Person who is a member of the subject Organization</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
