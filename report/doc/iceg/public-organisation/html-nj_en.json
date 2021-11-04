@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/b159c95b8928a707865d65fa7eb0c635172cee54",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/b159c95b8928a707865d65fa7eb0c635172cee54/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/313c9ec9e9ddcb0da75368700da0107bb5056646",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/313c9ec9e9ddcb0da75368700da0107bb5056646/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "uri": "http://data.europa.eu/m8g/FoundationEvent",
+      "uri": "http://www.iceg.be/FoundationEvent",
       "name": "Foundation Event",
       "label": {
         "en": "Foundation Event"
@@ -144,7 +144,7 @@
       "properties": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/PublicOrganisation",
+      "uri": "http://www.iceg.be/PublicOrganization",
       "name": "Public Organization",
       "label": {
         "en": "Public Organization"
@@ -167,7 +167,7 @@
       ],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/legalForm",
+          "uri": "http://fixme.com#legalForm",
           "name": "legal form",
           "sort": "legal form",
           "label": {
@@ -180,7 +180,7 @@
           "domain": [
             {
               "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
+              "uri": "http://www.iceg.be/PublicOrganization"
             }
           ],
           "range": [
@@ -217,7 +217,7 @@
           "domain": [
             {
               "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
+              "uri": "http://www.iceg.be/PublicOrganization"
             }
           ],
           "range": [
@@ -236,6 +236,239 @@
             }
           ],
           "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/adms#Identifier",
+      "name": "Identifier",
+      "label": {
+        "en": "Identifier"
+      },
+      "sort": "Identifier",
+      "description": {
+        "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+      },
+      "usage": {
+        "en": "The Identifier class is based on the UN/CEFACT class of the same name and is defined under the ADMS namespace."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/conformsTo",
+          "name": "scheme name",
+          "sort": "scheme name",
+          "label": {
+            "en": "scheme name"
+          },
+          "description": {
+            "en": "Name of the scheme used to construct the identifier."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/conformsTo",
+          "name": "scheme URI",
+          "sort": "scheme URI",
+          "label": {
+            "en": "scheme URI"
+          },
+          "description": {
+            "en": "URI of the scheme used to construct the identifier."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "issuing authority URI",
+          "sort": "issuing authority URI",
+          "label": {
+            "en": "issuing authority URI"
+          },
+          "description": {
+            "en": "The URI of the issuing authority."
+          },
+          "usage": {
+            "en": "Example: <https://belgium.be/id/organizations/1233>."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "name": "date of issue",
+          "sort": "date of issue",
+          "label": {
+            "en": "date of issue"
+          },
+          "description": {
+            "en": "The date on which the Identifier was assigned."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "The value of this property is the Identifier itself."
+          },
+          "usage": {
+            "en": "Example: \"abc-12345-de\"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/adms#schemeAgency",
+          "name": "issuing authority name",
+          "sort": "issuing authority name",
+          "label": {
+            "en": "issuing authority name"
+          },
+          "description": {
+            "en": "The name of the agency responsible for issuing the Identifier."
+          },
+          "usage": {
+            "en": "Example: \"Federal Public Service Interior\"@en."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -351,13 +584,13 @@
           "range": [
             {
               "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Code"
               }
@@ -678,7 +911,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/coordinates",
+          "uri": "http://www.iceg.be/Geometry/Coordinates",
           "name": "coordinates",
           "sort": "coordinates",
           "label": {
@@ -713,7 +946,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/crs",
+          "uri": "http://www.iceg.be/Geometry/Crs",
           "name": "crs",
           "sort": "crs",
           "label": {
@@ -748,7 +981,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/geometry",
+          "uri": "http://www.iceg.be/Geometry/GeometryType",
           "name": "geometry type",
           "sort": "geometry type",
           "label": {
@@ -767,13 +1000,13 @@
           "range": [
             {
               "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Code"
               }
@@ -1218,91 +1451,6 @@
       ]
     },
     {
-      "uri": "http://www.w3.org/ns/org#Post",
-      "name": "Post",
-      "label": {
-        "en": "Post"
-      },
-      "sort": "Post",
-      "description": {
-        "en": "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio"
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://www.w3.org/ns/org#postIn",
-          "name": "post in",
-          "sort": "post in",
-          "label": {
-            "en": "post in"
-          },
-          "description": {
-            "en": "Indicates the Organization whose post belongs to."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Post",
-              "uri": "http://www.w3.org/ns/org#Post"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#organization",
-              "range_label": {
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#role",
-          "name": "role",
-          "sort": "role",
-          "label": {
-            "en": "role"
-          },
-          "description": {
-            "en": "Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Post",
-              "uri": "http://www.w3.org/ns/org#Post"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Role",
-              "range_uri": "https://www.w3.org/ns/org#role"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Role",
-              "range_puri": "https://www.w3.org/ns/org#role",
-              "range_label": {
-                "en": "Role"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "http://www.w3.org/ns/org#Site",
       "name": "Site",
       "label": {
@@ -1368,7 +1516,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/certification",
+          "uri": "http://fixme.com#certification",
           "name": "certification",
           "sort": "certification",
           "label": {
@@ -1387,13 +1535,13 @@
           "range": [
             {
               "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Code"
               }
@@ -1403,7 +1551,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/companyregistrationNumber",
+          "uri": "http://fixme.com#companyRegistrationNumber",
           "name": "company registration number",
           "sort": "company registration number",
           "label": {
@@ -1438,7 +1586,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/description",
+          "uri": "http://fixme.com#description",
           "name": "description",
           "sort": "description",
           "label": {
@@ -1473,7 +1621,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/exOfficioStrikingOff",
+          "uri": "http://fixme.com#exOfficioStrikingOff",
           "name": "ex officio striking off",
           "sort": "ex officio striking off",
           "label": {
@@ -1494,13 +1642,13 @@
           "range": [
             {
               "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Code"
               }
@@ -1510,42 +1658,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/hasMember",
-          "name": "has member",
-          "sort": "has member",
-          "label": {
-            "en": "has member"
-          },
-          "description": {
-            "en": "Indicates that Person is a member of the Organization with no indication of the nature of that membership or the role played"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Person",
-              "range_uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Person",
-              "range_puri": "http://www.w3.org/ns/person#Person",
-              "range_label": {
-                "en": "Person"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/linkToDatabase",
+          "uri": "http://fixme.com#linksToDatabase",
           "name": "links to database",
           "sort": "links to database",
           "label": {
@@ -1580,7 +1693,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/startDateOfData",
+          "uri": "http://fixme.com#startDateOfThisData",
           "name": "start date of this data",
           "sort": "start date of this data",
           "label": {
@@ -1615,7 +1728,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/status",
+          "uri": "http://fixme.com#status",
           "name": "status",
           "sort": "status",
           "label": {
@@ -1634,13 +1747,13 @@
           "range": [
             {
               "range_label": "Code",
-              "range_uri": "http://fixme.com#Code"
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://fixme.com#Code",
-              "range_puri": "http://fixme.com#Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Code"
               }
@@ -1883,13 +1996,13 @@
           "range": [
             {
               "range_label": "Post",
-              "range_uri": "http://www.w3.org/ns/org#Post"
+              "range_uri": "https://www.w3.org/ns/org#Post"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Post",
-              "range_puri": "http://www.w3.org/ns/org#Post",
+              "range_puri": "https://www.w3.org/ns/org#Post",
               "range_label": {
                 "en": "Post"
               }
@@ -2249,111 +2362,6 @@
       ],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/holds",
-          "name": "holds",
-          "sort": "holds",
-          "label": {
-            "en": "holds"
-          },
-          "description": {
-            "en": "Indicates a Post held by a Person."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Post",
-              "range_uri": "http://www.w3.org/ns/org#Post"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Post",
-              "range_puri": "http://www.w3.org/ns/org#Post",
-              "range_label": {
-                "en": "Post"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/memberOf",
-          "name": "member of",
-          "sort": "member of",
-          "label": {
-            "en": "member of"
-          },
-          "description": {
-            "en": "Indicates a Person who is a member of the subject Organization"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#organization",
-              "range_label": {
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/title",
-          "name": "title",
-          "sort": "title",
-          "label": {
-            "en": "title"
-          },
-          "description": {
-            "en": "A word or name that describes a person's job or status in a company or organization"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://purl.org/dc/terms/alternative",
           "name": "alternative name",
           "sort": "alternative name",
@@ -2384,41 +2392,6 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#address",
-          "name": "registered address",
-          "sort": "registered address",
-          "label": {
-            "en": "registered address"
-          },
-          "description": {
-            "en": "The registered address of the Person."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Address",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Address",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "en": "Address"
               }
             }
           ],
@@ -2608,6 +2581,41 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.europa.eu/m8g/title",
+          "name": "title",
+          "sort": "title",
+          "label": {
+            "en": "title"
+          },
+          "description": {
+            "en": "A word or name that describes a person's job or status in a company or organization"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -2987,6 +2995,91 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://www.w3.org/ns/org#Post",
+      "name": "Post",
+      "label": {
+        "en": "Post"
+      },
+      "sort": "Post",
+      "description": {
+        "en": "A Post represents some position within an organization that exists independently of the person or persons filling it. Posts may be used to represent situations where a person is a member of an organization ex officio"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/org#postIn",
+          "name": "post in",
+          "sort": "post in",
+          "label": {
+            "en": "post in"
+          },
+          "description": {
+            "en": "Indicates the Organization whose post belongs to."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Post",
+              "uri": "https://www.w3.org/ns/org#Post"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#organization",
+              "range_label": {
+                "en": "Organization"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#role",
+          "name": "role",
+          "sort": "role",
+          "label": {
+            "en": "role"
+          },
+          "description": {
+            "en": "Indicates the Role that the Person plays in a Membership relationship with an Organization. Can also be used on a org:Post to indicate the role that any holder of the Post plays."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Post",
+              "uri": "https://www.w3.org/ns/org#Post"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Role",
+              "range_uri": "https://www.w3.org/ns/org#role"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Role",
+              "range_puri": "https://www.w3.org/ns/org#role",
+              "range_label": {
+                "en": "Role"
+              }
+            }
+          ],
+          "cardinality": "1..*",
           "codelist_uri": ""
         }
       ]
