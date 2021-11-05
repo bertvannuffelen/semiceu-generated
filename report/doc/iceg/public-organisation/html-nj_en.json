@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/9dd321834e8e1e040d28c9cee90e2f79f6e0f907",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/9dd321834e8e1e040d28c9cee90e2f79f6e0f907/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/1ce4aa40de73af583ffd6b2be86a3cda01db8f90",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/1ce4aa40de73af583ffd6b2be86a3cda01db8f90/CHANGELOG",
     "feedbackurl": "TBD",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -122,7 +122,7 @@
       ]
     },
     {
-      "uri": "http://www.iceg.be/FoundationEvent",
+      "uri": "http://data.europa.eu/m8g/FoundationEvent",
       "name": "Foundation Event",
       "label": {
         "en": "Foundation Event"
@@ -911,7 +911,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://www.iceg.be/Geometry/Coordinates",
+          "uri": "http://data.europa.eu/m8g/Geometry/Coordinates",
           "name": "coordinates",
           "sort": "coordinates",
           "label": {
@@ -946,7 +946,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.iceg.be/Geometry/Crs",
+          "uri": "http://data.europa.eu/m8g/Geometry/Crs",
           "name": "crs",
           "sort": "crs",
           "label": {
@@ -981,7 +981,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.iceg.be/Geometry/GeometryType",
+          "uri": "http://data.europa.eu/m8g/Geometry/GeometryType",
           "name": "geometry type",
           "sort": "geometry type",
           "label": {
@@ -1518,13 +1518,13 @@
           "range": [
             {
               "range_label": "Role",
-              "range_uri": "https://www.w3.org/ns/org#role"
+              "range_uri": "http://www.w3.org/ns/org#Role"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Role",
-              "range_puri": "https://www.w3.org/ns/org#role",
+              "range_puri": "http://www.w3.org/ns/org#Role",
               "range_label": {
                 "en": "Role"
               }
@@ -1534,6 +1534,20 @@
           "codelist_uri": ""
         }
       ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#Role",
+      "name": "Role",
+      "label": {
+        "en": "Role"
+      },
+      "sort": "Role",
+      "description": {
+        "en": "Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of org:Membership."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
     },
     {
       "uri": "http://www.w3.org/ns/org#Site",
@@ -1600,6 +1614,41 @@
       "usage": {},
       "parents": [],
       "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "Statement or account giving the characteristics of the company."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://www.iceg.be/Organization/Certification",
           "name": "certification",
@@ -1671,41 +1720,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.iceg.be/Organization/Description",
-          "name": "description",
-          "sort": "description",
-          "label": {
-            "en": "description"
-          },
-          "description": {
-            "en": "Statement or account giving the characteristics of the company."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://www.iceg.be/Organization/ExOfficioStrikingOff",
           "name": "ex officio striking off",
           "sort": "ex officio striking off",
@@ -1736,6 +1750,41 @@
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
                 "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.iceg.be/Organization/Identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "Many organizations are referred to by an acronym or some other identifier\r\n"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identifier",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "en": "Identifier"
               }
             }
           ],
@@ -2484,6 +2533,76 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.iceg.be/Organization/Holds",
+          "name": "holds",
+          "sort": "holds",
+          "label": {
+            "en": "holds"
+          },
+          "description": {
+            "en": "Indicates a Post held by a Person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Post",
+              "range_uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Post",
+              "range_puri": "http://www.w3.org/ns/org#Post",
+              "range_label": {
+                "en": "Post"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.iceg.be/Person/Identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "The identifier relation is used to link a Person to any formally issued Identifier for that Person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identifier",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.iceg.be/Person/Title",
           "name": "title",
           "sort": "title",
@@ -2516,6 +2635,41 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#address",
+          "name": "registered address\r\n",
+          "sort": "registered address\r\n",
+          "label": {
+            "en": "registered address\r\n"
+          },
+          "description": {
+            "en": "The registered address of the Person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Address",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address"
+              }
+            }
+          ],
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -3083,20 +3237,6 @@
           "codelist_uri": ""
         }
       ]
-    },
-    {
-      "uri": "https://www.w3.org/ns/org#role",
-      "name": "Role",
-      "label": {
-        "en": "Role"
-      },
-      "sort": "Role",
-      "description": {
-        "en": "Denotes a role that a Person or other Agent can take in an organization. Instances of this class describe the abstract role; to denote a specific instance of a person playing that role in a specific organization use an instance of org:Membership."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
     }
   ],
   "properties": [],

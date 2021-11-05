@@ -10,47 +10,40 @@
 @prefix xhv: <http://www.w3.org/1999/xhtml/vocab#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/iceg-public-organisation_de> <https://semiceu.github.io/shacl/iceg-public-organisation_deshapes> <https://semiceu.github.io/shacl/iceg-public-organisation_de#DocumentShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#FoundationEventShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#OrganizationShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#AddressShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#IdentifierShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#RoleShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#ImageObjectShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#AdministrativeTerritorialUnitsShape>,
+<https://semiceu.github.io/shacl/iceg-public-organisation_de> <https://semiceu.github.io/shacl/iceg-public-organisation_deshapes> <https://semiceu.github.io/shacl/iceg-public-organisation_de#PersonShape>,
     <https://semiceu.github.io/shacl/iceg-public-organisation_de#OrganizationalUnitShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#ContactPointShape>,
     <https://semiceu.github.io/shacl/iceg-public-organisation_de#ChangeEventShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#GeometryShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#PostShape>,
     <https://semiceu.github.io/shacl/iceg-public-organisation_de#OpeningHoursSpecificationShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#RoleShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#ContactPointShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#PostShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#GeometryShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#ImageObjectShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#OrganizationShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#IdentifierShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#AddressShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#FoundationEventShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#AdministrativeTerritorialUnitsShape>,
     <https://semiceu.github.io/shacl/iceg-public-organisation_de#PublicOrganizationShape>,
-    <https://semiceu.github.io/shacl/iceg-public-organisation_de#PersonShape>,
+    <https://semiceu.github.io/shacl/iceg-public-organisation_de#DocumentShape>,
     <https://semiceu.github.io/shacl/iceg-public-organisation_de#SiteShape> .
 
 <https://semiceu.github.io/shacl/iceg-public-organisation_de#AddressShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:string;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#postCode>
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#addressArea>
+    shacl:path <http://www.w3.org/ns/locn#locatorName>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -66,26 +59,19 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/locn#addressID>
   ], [
-    shacl:class rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#locatorName>
+    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#postName>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
+    shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -94,12 +80,26 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/locn#thoroughfare>
   ], [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/locn#addressArea>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/locn#postName>
+  ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
+    shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
@@ -127,18 +127,13 @@
     shacl:class org:organization;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path org:originalOrganization
+    shacl:path org:resultingOrganization
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:description
-  ], [
-    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/hasFormalFramework>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
@@ -152,10 +147,15 @@
     shacl:name "Enter your translation here"@de;
     shacl:path prov:endedAtTime
   ], [
+    shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/hasFormalFramework>
+  ], [
     shacl:class org:organization;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path org:resultingOrganization
+    shacl:path org:originalOrganization
   ];
   shacl:targetClass org:ChangeEvent .
 
@@ -169,18 +169,18 @@
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:telephone
   ], [
-    shacl:class schemas:OpeningHoursSpecification;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path schemas:hoursAvailable
-  ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:openingHours
+  ], [
+    shacl:class schemas:OpeningHoursSpecification;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path schemas:hoursAvailable
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
@@ -197,7 +197,7 @@
 
 <https://semiceu.github.io/shacl/iceg-public-organisation_de#FoundationEventShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://www.iceg.be/FoundationEvent> .
+  shacl:targetClass <http://data.europa.eu/m8g/FoundationEvent> .
 
 <https://semiceu.github.io/shacl/iceg-public-organisation_de#GeometryShape> a shacl:NodeShape;
   shacl:closed false;
@@ -208,17 +208,11 @@
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:longitude
   ], [
-    shacl:class skos:Concept;
+    shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Geometry/GeometryType>
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path schemas:latitude
+    shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
@@ -230,30 +224,37 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Geometry/Coordinates>
+    shacl:path schemas:latitude
   ], [
-    shacl:datatype rdfs:Literal;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
+    shacl:path <http://data.europa.eu/m8g/Geometry/GeometryType>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://data.europa.eu/m8g/Geometry/Coordinates>
   ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Geometry/Crs>
+    shacl:path <http://data.europa.eu/m8g/Geometry/Crs>
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Geometry> .
 
 <https://semiceu.github.io/shacl/iceg-public-organisation_de#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype xsd:dateTime;
+    shacl:datatype rdfs:Literal;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:issued
+    shacl:path skos:notation
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -265,22 +266,21 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path dc:conformsTo
-  ], [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
     shacl:path dc:creator
   ], [
-    shacl:datatype rdfs:Literal;
+    shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path skos:notation
+    shacl:path dc:conformsTo
   ], [
-    shacl:class rdf:langString;
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:issued
+  ], [
+    shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -300,14 +300,14 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path schemas:validThrough
+    shacl:path schemas:validFrom
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path schemas:validFrom
+    shacl:path schemas:validThrough
   ], [
     shacl:datatype xsd:anyURI;
     shacl:definition "Enter your translation here"@de;
@@ -321,95 +321,17 @@
 <https://semiceu.github.io/shacl/iceg-public-organisation_de#OrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class skos:Concept;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Organization/Certification>
-  ], [
-    shacl:class org:organization;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path xhv:prev
-  ], [
-    shacl:class skos:Concept;
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Organization/ExOfficioStrikingOff>
-  ], [
-    shacl:class org:ChangeEvent;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:changedBy
-  ], [
-    shacl:class schemas:ContactPoint;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path schemas:contactPoint
-  ], [
-    shacl:class org:organization;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:subOrganizationOf
-  ], [
-    shacl:class org:OrganizationalUnit;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasUnit
-  ], [
-    shacl:datatype xsd:string;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Organization/CompanyRegistrationNumber>
-  ], [
-    shacl:class org:organization;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path xhv:next
-  ], [
-    shacl:class org:organization;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasMember
+    shacl:path <http://www.iceg.be/Organization/Identifier>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path skos:altLabel
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Organization/StartDateOfThisData>
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Organization/LinksToTheDatabase>
-  ], [
-    shacl:class org:organization;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasSubOrganization
-  ], [
-    shacl:class org:organization;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:memberOf
-  ], [
-    shacl:class org:Post;
-    shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasPost
-  ], [
-    shacl:class org:Site;
-    shacl:definition "Enter your translation here"@de;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path org:hasSite
+    shacl:path dc:description
   ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
@@ -419,19 +341,72 @@
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Organization/Description>
+    shacl:path <http://www.iceg.be/Organization/LinksToTheDatabase>
   ], [
-    shacl:class org:ChangeEvent;
+    shacl:class org:organization;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path org:resultedFrom
+    shacl:path org:hasMember
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.iceg.be/Organization/StartDateOfThisData>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path skos:altLabel
+  ], [
+    shacl:class org:Post;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:hasPost
+  ], [
+    shacl:class org:organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:hasSubOrganization
+  ], [
+    shacl:class org:organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path xhv:prev
   ], [
     shacl:class foaf:Document;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path foaf:homepage
+  ], [
+    shacl:class org:organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path xhv:next
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.iceg.be/Organization/ExOfficioStrikingOff>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.iceg.be/Organization/Certification>
+  ], [
+    shacl:class org:ChangeEvent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:changedBy
+  ], [
+    shacl:datatype xsd:string;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.iceg.be/Organization/CompanyRegistrationNumber>
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -440,10 +415,41 @@
     shacl:name "Enter your translation here"@de;
     shacl:path skos:prefLabel
   ], [
+    shacl:class org:ChangeEvent;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:resultedFrom
+  ], [
+    shacl:class org:Site;
+    shacl:definition "Enter your translation here"@de;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:hasSite
+  ], [
+    shacl:class org:organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:memberOf
+  ], [
+    shacl:class org:organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:subOrganizationOf
+  ], [
     shacl:class schemas:ImageObject;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:logo
+  ], [
+    shacl:class schemas:ContactPoint;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path schemas:contactPoint
+  ], [
+    shacl:class org:OrganizationalUnit;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path org:hasUnit
   ];
   shacl:targetClass org:organization .
 
@@ -463,9 +469,8 @@
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path foaf:givenName
+    shacl:path dc:alternative
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -473,11 +478,23 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/person#patronymicName>
   ], [
-    shacl:datatype xsd:dateTime;
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.w3.org/ns/locn#address>
+  ], [
+    shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path schemas:birthDate
+    shacl:path <http://www.iceg.be/Person/Title>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path foaf:name
   ], [
     shacl:class rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -492,30 +509,36 @@
     shacl:name "Enter your translation here"@de;
     shacl:path foaf:familyName
   ], [
-    shacl:class rdf:langString;
+    shacl:class org:Post;
     shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path foaf:name
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path dc:alternative
-  ], [
-    shacl:class rdf:langString;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://www.iceg.be/Person/Title>
+    shacl:path <http://www.iceg.be/Organization/Holds>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:deathDate
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path schemas:birthDate
+  ], [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://www.iceg.be/Person/Identifier>
+  ], [
+    shacl:class rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path foaf:givenName
   ];
   shacl:targetClass <http://www.w3.org/ns/person#Person> .
 
@@ -527,7 +550,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path org:postIn
   ], [
-    shacl:class <https://www.w3.org/ns/org#role>;
+    shacl:class org:Role;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
@@ -553,7 +576,7 @@
 
 <https://semiceu.github.io/shacl/iceg-public-organisation_de#RoleShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://www.w3.org/ns/org#role> .
+  shacl:targetClass org:Role .
 
 <https://semiceu.github.io/shacl/iceg-public-organisation_de#SiteShape> a shacl:NodeShape;
   shacl:closed false;
