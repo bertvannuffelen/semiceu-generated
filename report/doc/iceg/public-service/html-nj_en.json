@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/f2230b3ec08d5b5f1a65c3b7e79b14e9ce02975e",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/f2230b3ec08d5b5f1a65c3b7e79b14e9ce02975e/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/580cad231e7672a14439a02519b524d8aa65b408",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -1314,6 +1314,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://data.europa.eu/m8g/cccev#isDerivedFrom",
+          "name": "is derived from",
+          "sort": "is derived from",
+          "label": {
+            "en": "is derived from"
+          },
+          "description": {
+            "en": "The Legal Resource that is responsible for the creation/initiation of the Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LegalResource",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Legal Resource",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "en": "Legal Resource"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
           "name": "has qualified relation",
           "sort": "has qualified relation",
@@ -1453,6 +1488,41 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/publisher",
+          "name": "is issued by",
+          "sort": "is issued by",
+          "label": {
+            "en": "is issued by"
+          },
+          "description": {
+            "en": "The Agent that has published the Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -2212,6 +2282,43 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.iceg.be/PublicService/hasPreferredChannel",
+          "name": "has preferred channel",
+          "sort": "has preferred channel",
+          "label": {
+            "en": "has preferred channel"
+          },
+          "description": {
+            "en": "This relationship represents the preferred channel for a specific Public Service. "
+          },
+          "usage": {
+            "en": "Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage."
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Channel",
+              "range_uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Channel",
+              "range_puri": "http://data.europa.eu/m8g/Channel",
+              "range_label": {
+                "en": "Channel"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.iceg.be/PublicService/lifecycleStatus",
           "name": "lifecycle status",
           "sort": "lifecycle status",
@@ -2609,83 +2716,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://www.iceg.be/ChannelPreference",
-      "name": "Channel Preference",
-      "label": {
-        "en": "Channel Preference"
-      },
-      "sort": "Channel Preference",
-      "description": {
-        "en": "This class describes the relationship between Channel and Purpose. For instance, a Channel can be preferred for a Purpose and depreciated for another one (exp: you can introduce you tax declaration in paper but you're not encouraged to do so)."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://data.europa.eu/m8g/ChannelPreference.channel",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ChannelPreference",
-              "uri": "http://www.iceg.be/ChannelPreference"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Channel",
-              "range_uri": "http://data.europa.eu/m8g/Channel"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Channel",
-              "range_puri": "http://data.europa.eu/m8g/Channel",
-              "range_label": {
-                "en": "Channel"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.europa.eu/m8g/ChannelPreference.purpose",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ChannelPreference",
-              "uri": "http://www.iceg.be/ChannelPreference"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Purpose",
-              "range_uri": "http://www.iceg.be/Purpose"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Purpose",
-              "range_puri": "http://www.iceg.be/Purpose",
-              "range_label": {
-                "en": "Purpose"
-              }
-            }
-          ],
-          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -3966,6 +3996,41 @@
               "range_puri": "https://schema.org/OpeningHoursSpecification",
               "range_label": {
                 "en": "Opening Hours Specification"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/WebSite",
+          "name": "website",
+          "sort": "website",
+          "label": {
+            "en": "website"
+          },
+          "description": {
+            "en": "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "https://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URL",
+              "range_uri": "http://schema.org/url"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://schema.org/url",
+              "range_puri": "http://schema.org/url",
+              "range_label": {
+                "en": "URL"
               }
             }
           ],

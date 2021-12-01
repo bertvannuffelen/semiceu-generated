@@ -509,6 +509,26 @@
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
+          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:definition": {
+            "en": "The Legal Resource that is responsible for the creation/initiation of the Requirement."
+          },
+          "sh:name": {
+            "en": "is derived from"
+          },
+          "sh:path": "http://data.europa.eu/m8g/cccev#isDerivedFrom"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "The Agent that has published the Requirement."
+          },
+          "sh:name": {
+            "en": "is issued by"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        },
+        {
           "sh:class": "http://data.europa.eu/m8g/Requirement",
           "sh:definition": {
             "en": "A reference between a sub-Requirement and its parent, more general, Requirement."
@@ -620,6 +640,16 @@
             "en": "has participation"
           },
           "sh:path": "http://data.europa.eu/m8g/hasParticipation"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Channel",
+          "sh:definition": {
+            "en": "This relationship represents the preferred channel for a specific Public Service. "
+          },
+          "sh:name": {
+            "en": "has preferred channel"
+          },
+          "sh:path": "http://www.iceg.be/PublicService/hasPreferredChannel"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/Requirement",
@@ -862,26 +892,6 @@
         }
       ],
       "sh:targetClass": "http://purl.org/vocab/cpsv#Rule"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#ChannelPreferenceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://data.europa.eu/m8g/Channel",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.channel"
-        },
-        {
-          "sh:class": "http://www.iceg.be/Purpose",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.purpose"
-        }
-      ],
-      "sh:targetClass": "http://www.iceg.be/ChannelPreference"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PurposeShape",
@@ -1337,6 +1347,17 @@
             "en": "opening hours"
           },
           "sh:path": "https://schema.org/openingHours"
+        },
+        {
+          "sh:datatype": "http://schema.org/url",
+          "sh:definition": {
+            "en": "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "website"
+          },
+          "sh:path": "https://schema.org/WebSite"
         }
       ],
       "sh:targetClass": "https://schema.org/ContactPoint"
@@ -1384,6 +1405,25 @@
         }
       ],
       "sh:targetClass": "https://schema.org/OpeningHoursSpecification"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#ChannelPreferenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/Channel",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.channel"
+        },
+        {
+          "sh:class": "http://www.iceg.be/Purpose",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.purpose"
+        }
+      ]
     }
   ]
 }

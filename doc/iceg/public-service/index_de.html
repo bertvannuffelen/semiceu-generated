@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/f2230b3ec08d5b5f1a65c3b7e79b14e9ce02975e/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/f2230b3ec08d5b5f1a65c3b7e79b14e9ce02975e/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -192,7 +192,7 @@ TBD
                     <p>This document describes the usage of the following entities for a correct usage of the data model: 
                       <br />
                       |
-                      <a href="#Channel Preference">Channel Preference</a> |
+                      <a href="#Rule">Rule</a> |
                       <a href="#Legal Resource">Legal Resource</a> |
                       <a href="#Channel">Channel</a> |
                       <a href="#Cost">Cost</a> |
@@ -203,7 +203,6 @@ TBD
                       <a href="#Public Organization">Public Organization</a> |
                       <a href="#Requirement">Requirement</a> |
                       <a href="#Public Service">Public Service</a> |
-                      <a href="#Rule">Rule</a> |
                       <a href="#Business Event">Business Event</a> |
                       <a href="#Purpose">Purpose</a> |
                       <a href="#Collection">Collection</a> |
@@ -234,17 +233,25 @@ TBD
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Channel Preference"><a href="http://www.iceg.be/ChannelPreference" data-toggle="tooltip" data-content="http://www.iceg.be/ChannelPreference" data-placement="right">Channel Preference</a></h3>
+              <h3 class="h3" id="Rule"><a href="http://purl.org/vocab/cpsv#Rule" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#Rule" data-placement="right">Rule</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>This class describes the relationship between Channel and Purpose. For instance, a Channel can be preferred for a Purpose and depreciated for another one (exp: you can introduce you tax declaration in paper but you&#39;re not encouraged to do so).</dd>
+                    <dt>Description</dt><dd>The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.
+
+Instances of the Rule class are FRBR (Functional Requirements for Bibliographic Records) Expressions, that is, a concrete expression such
+as a document, of the more abstract concept of the rules themselves.This model does not envisage instances of the Rule class as machine-readable business rules.
+
+Detailed modelling of the rules related to Public Services is out of scope of this model.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Channel%20Preference%3A"></a>, 
-                      <a href="#Channel%20Preference%3A"></a>.</dd>
+                      <a href="#Rule%3Adescription">description</a>, 
+                      <a href="#Rule%3Aidentifier">identifier</a>, 
+                      <a href="#Rule%3Alanguage">language</a>, 
+                      <a href="#Rule%3Aname">name</a>, 
+                      <a href="#Rule%3Aimplements">implements</a>.</dd>
                     
                   </dl>
                 </div>
@@ -264,42 +271,103 @@ TBD
 
                     <tbody class="supertype">
                     
-                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.channel">
+                      <tr id="Rule%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/ChannelPreference.channel" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.channel" data-placement="right">
-                            </a>
+                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
+                            description</a>
                           </code>
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Channel</a>
-			    
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>1</td>
-                        <td property="rdfs:comment"></td>
+                        <td property="rdfs:comment">This property represents a free text Description of the Rule.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Channel%20Preference%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/ChannelPreference.purpose">
+                      <tr id="Rule%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/ChannelPreference.purpose" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/ChannelPreference.purpose" data-placement="right">
-                            </a>
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
+                            identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents an Identifier for the Rule.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Rule%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
+                            language</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Rule%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
+                            name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents the Name of the Rule.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Rule%3Aimplements" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#implements">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/vocab/cpsv#implements" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#implements" data-placement="right">
+                            implements</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Purpose</a>
+			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
 			    
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment"></td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The Implements property links a Rule to relevant legislation or policy documents i.e.
+the Legal Resource under which the Rules are being defined (see section 3.16).</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1256,10 +1324,12 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#Requirement%3Ahas%20Supporting%20Evidence">has Supporting Evidence</a>, 
+                      <a href="#Requirement%3Ais%20derived%20from">is derived from</a>, 
                       <a href="#Requirement%3Ahas%20qualified%20relation">has qualified relation</a>, 
                       <a href="#Requirement%3Ais%20requirement%20of">is requirement of</a>, 
                       <a href="#Requirement%3Adescription">description</a>, 
                       <a href="#Requirement%3Aidentifier">identifier</a>, 
+                      <a href="#Requirement%3Ais%20issued%20by">is issued by</a>, 
                       <a href="#Requirement%3Aname">name</a>, 
                       <a href="#Requirement%3Ahas%20requirement">has requirement</a>.</dd>
                     
@@ -1297,6 +1367,26 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">The Evidence that supplies information (proof, support) for this Requirement.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Requirement%3Ais%20derived%20from" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#isDerivedFrom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-placement="right">
+                            is derived from</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The Legal Resource that is responsible for the creation/initiation of the Requirement.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1381,6 +1471,26 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
                         <td></td>
                       </tr>
                     
+                      <tr id="Requirement%3Ais%20issued%20by" typeof="rdfs:Property" resource="http://purl.org/dc/terms/publisher">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/publisher" data-toggle="tooltip" data-content="http://purl.org/dc/terms/publisher" data-placement="right">
+                            is issued by</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Agent</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The Agent that has published the Requirement.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Requirement%3Aname" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
                         <td>
                           <code property="rdfs:label">
@@ -1448,7 +1558,7 @@ behalf, to businesses, citizens or others public administrations.</dd>
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Public%20Service%3Alanguage">language</a>, 
+                      <a href="#Public%20Service%3Arelated">related</a>, 
                       <a href="#Public%20Service%3Ahas%20channel">has channel</a>, 
                       <a href="#Public%20Service%3Ahas%20contact%20point">has contact point</a>, 
                       <a href="#Public%20Service%3Ahas%20cost">has cost</a>, 
@@ -1460,13 +1570,14 @@ behalf, to businesses, citizens or others public administrations.</dd>
                       <a href="#Public%20Service%3Ais%20grouped%20by">is grouped by</a>, 
                       <a href="#Public%20Service%3Adescription">description</a>, 
                       <a href="#Public%20Service%3Aidentifier">identifier</a>, 
+                      <a href="#Public%20Service%3Alanguage">language</a>, 
                       <a href="#Public%20Service%3Ahas%20competent%20authority">has competent authority</a>, 
-                      <a href="#Public%20Service%3Arelated">related</a>, 
                       <a href="#Public%20Service%3Arequires">requires</a>, 
                       <a href="#Public%20Service%3Aspatial">spatial</a>, 
                       <a href="#Public%20Service%3Aname">name</a>, 
                       <a href="#Public%20Service%3Afollows">follows</a>, 
                       <a href="#Public%20Service%3Aproduces">produces</a>, 
+                      <a href="#Public%20Service%3Ahas%20preferred%20channel">has preferred channel</a>, 
                       <a href="#Public%20Service%3Alifecycle%20status">lifecycle status</a>, 
                       <a href="#Public%20Service%3Aprocessing%20time">processing time</a>, 
                       <a href="#Public%20Service%3Asector">sector</a>, 
@@ -1492,23 +1603,33 @@ behalf, to businesses, citizens or others public administrations.</dd>
 
                     <tbody class="supertype">
                     
-                      <tr id="Public%20Service%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
+                      <tr id="Public%20Service%3Arelated" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
-                            language</a>
+                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
+                            related</a>
                           </code>
                         </td>
                         <td>
                           
-			     
-			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right"></a>
-                            
+			    
+			    <a href="#Enter your translation here" data-placement="right">Public Service</a>
+			    
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The recommended controlled vocabularies are listed in section 4.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">This property represents a Public Service related to the particular instance of the Public Service class.</td>
+                        <td property="skos:scopeNote">Indication of a public service having a relationship with other public services.
+
+For example, in Flanders there is a child allowance package, groeipakket. It consists of different services that can be requested together. Those different services are including, but not limited to: 
+	Basic benefit for every child
+	Day care benefit
+	School benefit
+	Additional benefit for children that have special needs (e.g., Children with a handicap)
+	Additional benefit for orphans
+	
+
+</td>
                         <td></td>
                       </tr>
                     
@@ -1735,6 +1856,26 @@ Public Services may be associated with a particular Event and, likewise, the sam
                         <td></td>
                       </tr>
                     
+                      <tr id="Public%20Service%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
+                            language</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The recommended controlled vocabularies are listed in section 4.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Public%20Service%3Ahas%20competent%20authority" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasCompetentAuthority">
                         <td>
                           <code property="rdfs:label">
@@ -1765,36 +1906,6 @@ associations or other professional organizations which, in the exercise of their
 autonomy, regulate in a collective manner access to service activities or the exercise
 thereof.</td>
                         <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Service%3Arelated" typeof="rdfs:Property" resource="http://purl.org/dc/terms/relation">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/relation" data-toggle="tooltip" data-content="http://purl.org/dc/terms/relation" data-placement="right">
-                            related</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Public Service</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents a Public Service related to the particular instance of the Public Service class.</td>
-                        <td property="skos:scopeNote">Indication of a public service having a relationship with other public services.
-
-For example, in Flanders there is a child allowance package, groeipakket. It consists of different services that can be requested together. Those different services are including, but not limited to: 
-	Basic benefit for every child
-	Day care benefit
-	School benefit
-	Additional benefit for children that have special needs (e.g., Children with a handicap)
-	Additional benefit for orphans
-	
-
-</td>
                         <td></td>
                       </tr>
                     
@@ -1900,6 +2011,26 @@ N.B. The spatial restriction is not meant to be used to describe eligibility or 
 			<td>0..*</td>
                         <td property="rdfs:comment">The Produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service. Outputs can be any resource, for instance a document, artefact or anything else being produced as a result of executing the Public Service.</td>
                         <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Service%3Ahas%20preferred%20channel" typeof="rdfs:Property" resource="http://www.iceg.be/PublicService/hasPreferredChannel">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.iceg.be/PublicService/hasPreferredChannel" data-toggle="tooltip" data-content="http://www.iceg.be/PublicService/hasPreferredChannel" data-placement="right">
+                            has preferred channel</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Channel</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This relationship represents the preferred channel for a specific Public Service. </td>
+                        <td property="skos:scopeNote">Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage.</td>
                         <td></td>
                       </tr>
                     
@@ -2033,152 +2164,6 @@ This approach is consistent with both schema.org and the W3C OWL Time Ontology.<
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">This property represents a keyword, term or phrase to describe the Public Service.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Rule"><a href="http://purl.org/vocab/cpsv#Rule" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#Rule" data-placement="right">Rule</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.
-
-Instances of the Rule class are FRBR (Functional Requirements for Bibliographic Records) Expressions, that is, a concrete expression such
-as a document, of the more abstract concept of the rules themselves.This model does not envisage instances of the Rule class as machine-readable business rules.
-
-Detailed modelling of the rules related to Public Services is out of scope of this model.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Rule%3Adescription">description</a>, 
-                      <a href="#Rule%3Aidentifier">identifier</a>, 
-                      <a href="#Rule%3Alanguage">language</a>, 
-                      <a href="#Rule%3Aname">name</a>, 
-                      <a href="#Rule%3Aimplements">implements</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Rule%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
-                            description</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents a free text Description of the Rule.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
-                            identifier</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents an Identifier for the Rule.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
-                            language</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
-                            name</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents the Name of the Rule.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Rule%3Aimplements" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#implements">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/vocab/cpsv#implements" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#implements" data-placement="right">
-                            implements</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">The Implements property links a Rule to relevant legislation or policy documents i.e.
-the Legal Resource under which the Rules are being defined (see section 3.16).</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -3230,6 +3215,7 @@ This property might be used when a Public Service consumes its own Output as Evi
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#Contact%20Point%3Aavailability%20restriction">availability restriction</a>, 
+                      <a href="#Contact%20Point%3Awebsite">website</a>, 
                       <a href="#Contact%20Point%3Ahas%20email">has email</a>, 
                       <a href="#Contact%20Point%3Aopening%20hours">opening hours</a>, 
                       <a href="#Contact%20Point%3Ahas%20telephone">has telephone</a>.</dd>
@@ -3268,6 +3254,26 @@ This property might be used when a Public Service consumes its own Output as Evi
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Contact%20Point%3Awebsite" typeof="rdfs:Property" resource="https://schema.org/WebSite">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://schema.org/WebSite" data-toggle="tooltip" data-content="https://schema.org/WebSite" data-placement="right">
+                            website</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://schema.org/url" data-toggle="tooltip" data-content="http://schema.org/url" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>

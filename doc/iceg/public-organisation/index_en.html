@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/f2230b3ec08d5b5f1a65c3b7e79b14e9ce02975e/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/f2230b3ec08d5b5f1a65c3b7e79b14e9ce02975e/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -161,7 +161,76 @@ The Core Public Organization Vocabulary is designed to describe the organization
 As the name suggests, the vocabulary is not concerned with features associated with commercial entities such as shareholdings and ownership.
 <br><br>
 Whenever possible, the CPOV will reuse existing vocabularies to avoid defining new terms. As such, it reuses schema, org, foaf, core location, core person, amongst others.
+<br><br>
+<p>Please find below the namespace used in the model:</p>
 
+    <table id="table-namespaces" class="simple">
+      <thead>
+      <tr>
+        <th>Prefix</th>
+        <th>Namespace IRI</th>
+        <th>Source</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><code>dcat</code></td>
+        <td><code>http://www.w3.org/ns/dcat#</code></td>
+        <td>[[VOCAB-DCAT]]</td>
+      </tr>
+      <tr>
+        <td><code>dct</code></td>
+        <td><code>http://purl.org/dc/terms/</code></td>
+        <td>[[DCTERMS]]</td>
+      </tr>
+      <tr>
+        <td><code>foaf</code></td>
+        <td><code>http://xmlns.com/foaf/0.1/</code></td>
+        <td>[[FOAF]]</td>
+      </tr>
+      <tr>
+        <td><code>schema</code></td>
+        <td><code>http://schema.org/</code></td>
+        <td>[[schema-org]]</td>
+      </tr>
+      <tr>
+        <td><code>rdf</code></td>
+        <td><code>http://www.w3.org/1999/02/22-rdf-syntax-ns#</code></td>
+        <td>[[RDF-SYNTAX-GRAMMAR]]</td>
+      </tr>
+      <tr>
+        <td><code>rdfs</code></td>
+        <td><code>http://www.w3.org/2000/01/rdf-schema#</code></td>
+        <td>[[RDF-SCHEMA]]</td>
+      </tr>
+      <tr>
+        <td><code>vcard</code></td>
+        <td><code>http://www.w3.org/2006/vcard/ns#</code></td>
+        <td>[[VCARD-RDF]]</td>
+      </tr>
+      <tr>
+        <td><code>xsd</code></td>
+        <td><code>http://www.w3.org/2001/XMLSchema#</code></td>
+        <td>[[XMLSCHEMA11-2]]</td>
+      </tr>
+      <tr>
+        <td><code>adms</code></td>
+        <td><code>http://www.w3.org/ns/adms#</code></td>
+        <td>[[VOCAB-ADMS]]</td>
+      </tr>
+      <tr>
+        <td><code>skos</code></td>
+        <td><code>http://www.w3.org/2004/02/skos/core#</code></td>
+        <td>[[SKOS-REFERENCE]]</td>
+      </tr>
+      <tr>
+        <td><code>locn</code></td>
+        <td><code>http://www.w3.org/ns/locn#</code></td>
+        <td>[[LOCN]]</td>
+      </tr>
+      </tbody>
+    </table>
+</p>
 </p>
 
             </div>
@@ -312,7 +381,7 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit.</td>
                         <td property="skos:scopeNote">This would typically be part of a city, a neighbourhood or village, e.g. Montmartre.</td>
                         <td></td>
@@ -332,7 +401,7 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A globally unique identifier for each instance of an Address.</td>
                         <td property="skos:scopeNote"><p>
 The concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an
@@ -364,7 +433,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
                         <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href="http://publications.europa.eu/resource/dataset/country">Country controlled vocabulary from the Publications Office can be reused for this.</td>
                         <td></td>
@@ -384,7 +453,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.</td>
                         <td property="skos:scopeNote">Some recommended codelists from the EU Publications Office include:
 <a href="http://publications.europa.eu/resource/authority/atu">Administrative Territorial Units (ATU)</a>,
@@ -407,7 +476,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The complete address written as a formatted string.</td>
                         <td property="skos:scopeNote">Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France".</td>
                         <td></td>
@@ -427,7 +496,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.</td>
                         <td property="skos:scopeNote">In simpler terms, this is the building number, apartment number, etc. For an address such as "Flat 3, 17 Bridge Street", the locator is "flat 3, 17".</td>
                         <td></td>
@@ -447,7 +516,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">Proper noun(s) applied to the real world entity identified by the locator.</td>
                         <td property="skos:scopeNote"><p>
 The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.
@@ -472,7 +541,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The post/zip code of an address. (INSPIRE&#39;s definition is &quot;A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.&quot;)</td>
                         <td property="skos:scopeNote">Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example "75000".</td>
                         <td></td>
@@ -492,7 +561,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The key postal division of the address, usually the city. (INSPIRE&#39;s definition is &quot;One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.) For example, &quot;Paris&quot;.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -512,7 +581,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The Post Office Box number.</td>
                         <td property="skos:scopeNote">INSPIRE's name for this is "postalDeliveryIdentifier" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is "9383".</td>
                         <td></td>
@@ -532,7 +601,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.</td>
                         <td property="skos:scopeNote">For example, "Avenue des Champs-Élysées".</td>
                         <td></td>
@@ -777,11 +846,11 @@ that some implementations may find useful.</dd>
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Contact%20Point%3A"></a>, 
                       <a href="#Contact%20Point%3Aavailability%20restriction">availability restriction</a>, 
                       <a href="#Contact%20Point%3Ahas%20email">has email</a>, 
                       <a href="#Contact%20Point%3Ahas%20telephone">has telephone</a>, 
-                      <a href="#Contact%20Point%3Aopening%20hours">opening hours</a>.</dd>
+                      <a href="#Contact%20Point%3Aopening%20hours">opening hours</a>, 
+                      <a href="#Contact%20Point%3Awebsite">website</a>.</dd>
                     
                   </dl>
                 </div>
@@ -800,26 +869,6 @@ that some implementations may find useful.</dd>
                     </thead>
 
                     <tbody class="supertype">
-                    
-                      <tr id="Contact%20Point%3A" typeof="rdfs:Property" resource="http://fixme.com#website">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://fixme.com#website" data-toggle="tooltip" data-content="http://fixme.com#website" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://schema.org/url" data-toggle="tooltip" data-content="http://schema.org/url" data-placement="right">URL</a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
                     
                       <tr id="Contact%20Point%3Aavailability%20restriction" typeof="rdfs:Property" resource="https://schema.org/hoursAvailable">
                         <td>
@@ -855,7 +904,7 @@ that some implementations may find useful.</dd>
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A property through which an e-mail address for the Public Organization, or a
 representative of it, can be contacted.</td>
                         <td property="skos:scopeNote"></td>
@@ -876,7 +925,7 @@ representative of it, can be contacted.</td>
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A property through which a phone number for the Public Organization, or a representative of it, can be contacted.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -896,9 +945,29 @@ representative of it, can be contacted.</td>
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The value of this property is structured text that gives the hours at which the contact point is normally available.</td>
                         <td property="skos:scopeNote">Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Contact%20Point%3Awebsite" typeof="rdfs:Property" resource="https://schema.org/WebSite">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://schema.org/WebSite" data-toggle="tooltip" data-content="https://schema.org/WebSite" data-placement="right">
+                            website</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://schema.org/url" data-toggle="tooltip" data-content="http://schema.org/url" data-placement="right">URL</a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
