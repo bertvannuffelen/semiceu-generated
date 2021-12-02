@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -192,13 +192,13 @@ TBD
                       |
                       <a href="#Organization">Organization</a> |
                       <a href="#Administrative Territorial Units">Administrative Territorial Units</a> |
-                      <a href="#Foundation Event">Foundation Event</a> |
                       <a href="#Public Organization">Public Organization</a> |
+                      <a href="#Reference Framework">Reference Framework</a> |
                       <a href="#Identifier">Identifier</a> |
                       <a href="#Address">Address</a> |
                       <a href="#Geometry">Geometry</a> |
                       <a href="#Change Event">Change Event</a> |
-                      <a href="#Legal resource">Legal resource</a> |
+                      <a href="#Foundation Event">Foundation Event</a> |
                       <a href="#Organizational Unit">Organizational Unit</a> |
                       <a href="#Post">Post</a> |
                       <a href="#Role">Role</a> |
@@ -833,26 +833,6 @@ information.</td>
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Foundation Event"><a href="http://data.europa.eu/m8g/FoundationEvent" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/FoundationEvent" data-placement="right">Foundation Event</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>Public Organizations are formed and changed in response to events. This may be the result of new legislation, new policies, taking on new obligations etc. The CPOV captures this in its Change Event class but recognises the specific case of an Organization&#39;s foundation as being sufficiently distinct to require a subclass of Change Event.</dd>
-                    
-		     
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Change Event">Change Event</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-              <div class="region region--no-space-top">
               <h3 class="h3" id="Public Organization"><a href="http://data.europa.eu/m8g/PublicOrganisation" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/PublicOrganisation" data-placement="right">Public Organization</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -887,7 +867,7 @@ by the State, regional or local authorities or by other bodies governed by publi
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Public%20Organization%3Aspatial">spatial</a>, 
+                      <a href="#Public%20Organization%3Ajurisdiction">jurisdiction</a>, 
                       <a href="#Public%20Organization%3Alegal%20form">legal form</a>.</dd>
                     
                   </dl>
@@ -908,11 +888,11 @@ by the State, regional or local authorities or by other bodies governed by publi
 
                     <tbody class="supertype">
                     
-                      <tr id="Public%20Organization%3Aspatial" typeof="rdfs:Property" resource="http://purl.org/dc/terms/spatial">
+                      <tr id="Public%20Organization%3Ajurisdiction" typeof="rdfs:Property" resource="http://purl.org/dc/terms/spatial">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/spatial" data-toggle="tooltip" data-content="http://purl.org/dc/terms/spatial" data-placement="right">
-                            spatial</a>
+                            jurisdiction</a>
                           </code>
                         </td>
                         <td>
@@ -956,6 +936,85 @@ property.
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">The type of entity as defined by the Belgian law</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Reference Framework"><a href="http://data.europa.eu/m8g/ReferenceFramework" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/ReferenceFramework" data-placement="right">Reference Framework</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A source from where Requirements are identified and derived.</dd>
+                    
+                    <dt>Usage</dt><dd>Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Reference%20Framework%3Aidentifier">identifier</a>, 
+                      <a href="#Reference%20Framework%3Aimplements">implements</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Reference%20Framework%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
+                            identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">An unambiguous reference to a Reference Framework.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Reference%20Framework%3Aimplements" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#implements">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/vocab/cpsv#implements" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#implements" data-placement="right">
+                            implements</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Change Event</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1667,7 +1726,7 @@ The key difference between a locator and a locator name is that the latter is a 
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Legal resource</a>
+			    <a href="#Enter your translation here" data-placement="right">Reference Framework</a>
 			    
                           
                         </td>
@@ -1784,63 +1843,23 @@ The key difference between a locator and a locator name is that the latter is a 
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Legal resource"><a href="http://data.europa.eu/eli/ontology#LegalResource" data-toggle="tooltip" data-content="http://data.europa.eu/eli/ontology#LegalResource" data-placement="right">Legal resource</a></h3>
+              <h3 class="h3" id="Foundation Event"><a href="http://data.europa.eu/m8g/FoundationEvent" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/FoundationEvent" data-placement="right">Foundation Event</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Legislation, policy, or policies lying behind the rules that govern a public service.</dd>
+                    <dt>Description</dt><dd>Public Organizations are formed and changed in response to events. This may be the result of new legislation, new policies, taking on new obligations etc. The CPOV captures this in its Change Event class but recognises the specific case of an Organization&#39;s foundation as being sufficiently distinct to require a subclass of Change Event.</dd>
                     
-                    <dt>Usage</dt><dd>Instances of the Formal Framwork class are FRBR (Functional Requirements
-for Bibliographic Records) Expressions, i.e., concrete expressions of the more abstract concept of the piece of legislation or policy itself.
-The European Council's invitation to introduce the European Legislation Identifier and portals such as legislation.gov.uk are relevant in this context. Adding '/data.xml' or /data.rdf' to any legislation URI on legislation.gov.uk will reveal how this can be done, for example http://www.legislation.gov.uk/uksi/2012/3170/contents/made{/data.rdf or /data.xml}.</dd>
-                    
-		    
-                    <dt>Properties</dt>
 		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Legal%20resource%3Aimplements">implements</a>.</dd>
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Change Event">Change Event</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
                     
                   </dl>
                 </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Legal%20resource%3Aimplements" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#implements">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/vocab/cpsv#implements" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#implements" data-placement="right">
-                            implements</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Change Event</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
+		
             </div>
             
               <div class="region region--no-space-top">
@@ -2265,10 +2284,10 @@ Note that patronymic names refer to a father's given name, not the family name i
                         <td></td>
                       </tr>
                     
-                      <tr id="Person%3Atitle" typeof="rdfs:Property" resource="http://xmlns.com/foaf/spec/#term_title">
+                      <tr id="Person%3Atitle" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/title">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://xmlns.com/foaf/spec/#term_title" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_title" data-placement="right">
+                            <a href="http://xmlns.com/foaf/0.1/title" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/title" data-placement="right">
                             title</a>
                           </code>
                         </td>
@@ -2431,10 +2450,10 @@ that some implementations may find useful.</dd>
 
                     <tbody class="supertype">
                     
-                      <tr id="Contact%20Point%3Awebsite" typeof="rdfs:Property" resource="https://schema.org/WebSite">
+                      <tr id="Contact%20Point%3Awebsite" typeof="rdfs:Property" resource="http://schema.org/WebSite">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://schema.org/WebSite" data-toggle="tooltip" data-content="https://schema.org/WebSite" data-placement="right">
+                            <a href="http://schema.org/WebSite" data-toggle="tooltip" data-content="http://schema.org/WebSite" data-placement="right">
                             website</a>
                           </code>
                         </td>

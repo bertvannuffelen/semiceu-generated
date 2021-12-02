@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/580cad231e7672a14439a02519b524d8aa65b408",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -142,7 +142,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://fixme.com#description",
+          "uri": "http://purl.org/dc/terms/description",
           "name": "description",
           "sort": "description",
           "label": {
@@ -195,16 +195,16 @@
           ],
           "range": [
             {
-              "range_label": "Identifier",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/ns/adms#Identifier",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "Identifier"
+                "en": "Text"
               }
             }
           ],
@@ -231,13 +231,13 @@
           "range": [
             {
               "range_label": "Evidence",
-              "range_uri": "https://data.europa.eu/m8g/Evidence"
+              "range_uri": "http://data.europa.eu/m8g/Evidence"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Evidence",
-              "range_puri": "https://data.europa.eu/m8g/Evidence",
+              "range_puri": "http://data.europa.eu/m8g/Evidence",
               "range_label": {
                 "en": "Evidence"
               }
@@ -247,7 +247,44 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://schema.org/hoursAvailable",
+          "uri": "http://www.iceg.be/Channel/hasPurpose",
+          "name": "has purpose",
+          "sort": "has purpose",
+          "label": {
+            "en": "has purpose"
+          },
+          "description": {
+            "en": "This property describes the relationship between a purpose and a channel. "
+          },
+          "usage": {
+            "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
+          },
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Purpose",
+              "range_uri": "http://www.iceg.be/Purpose"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Purpose",
+              "range_puri": "http://www.iceg.be/Purpose",
+              "range_label": {
+                "en": "Purpose"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/hoursAvailable",
           "name": "availability restriction",
           "sort": "availability restriction",
           "label": {
@@ -455,21 +492,8 @@
               "uri": "http://data.europa.eu/m8g/Cost"
             }
           ],
-          "range": [
-            {
-              "range_label": "Double",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
-              "range_label": {
-                "en": "Double"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -527,16 +551,16 @@
           ],
           "range": [
             {
-              "range_label": "Identifier",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/ns/adms#Identifier",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "Identifier"
+                "en": "Text"
               }
             }
           ],
@@ -773,6 +797,340 @@
       ]
     },
     {
+      "uri": "http://data.europa.eu/m8g/Evidence",
+      "name": "Evidence",
+      "label": {
+        "en": "Evidence"
+      },
+      "sort": "Evidence",
+      "description": {
+        "en": "The Evidence class is defined in the Core Criterion and Core Evidence vocabulary (CCCEV) as any resource that can document or support a response. It contains information that proves that a normal requirement exists or is true, in particular evidences are used to prove that a specific riquerement is met."
+      },
+      "usage": {
+        "en": "Although the wording of the definition is different, the semantics are an exact match for CPSV's Input class which it replaces.\r\n\r\nEvidence can be any resource - document, artefact - anything needed for executing the Public Service. In the context of Public Services, Evidence is usually administrative documents or completed application forms. A specific Public Service may require the presence of certain Evidence or combinations of Evidence in order to be delivered.\r\n\r\nIn some cases, the Output of one service will be Evidence for another service. Such relationships should be described in the associated Rule(s).\r"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
+          "name": "confidentiality level type",
+          "sort": "confidentiality level type",
+          "label": {
+            "en": "confidentiality level type"
+          },
+          "description": {
+            "en": "The security classification assigned to an Evidence or, in general, to a content."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/supportsRequirement",
+          "name": "supports Requirement",
+          "sort": "supports Requirement",
+          "label": {
+            "en": "supports Requirement"
+          },
+          "description": {
+            "en": "The Requirement for which the Evidence provides information (proof, support)."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Requirement",
+              "range_uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Requirement",
+              "range_puri": "http://data.europa.eu/m8g/Requirement",
+              "range_label": {
+                "en": "Requirement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "is created by",
+          "sort": "is created by",
+          "label": {
+            "en": "is created by"
+          },
+          "description": {
+            "en": "The Agent that produces the Evidence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/language",
+          "name": "language",
+          "sort": "language",
+          "label": {
+            "en": "language"
+          },
+          "description": {
+            "en": "This property represents the language(s) in which the Evidence is issued. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. "
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LinguisticSystem",
+              "range_uri": "http://purl.org/dc/terms/LinguisticSystem"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://purl.org/dc/terms/LinguisticSystem",
+              "range_puri": "http://purl.org/dc/terms/LinguisticSystem",
+              "range_label": {
+                "en": "LinguisticSystem"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/provenance",
+          "name": "is provided by",
+          "sort": "is provided by",
+          "label": {
+            "en": "is provided by"
+          },
+          "description": {
+            "en": "The Agent that provides the trust and/or certifies that the Evidence is genuine."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/publisher",
+          "name": "is issued by",
+          "sort": "is issued by",
+          "label": {
+            "en": "is issued by"
+          },
+          "description": {
+            "en": "The legal authority responsible for an Evidence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/subject",
+          "name": "is about",
+          "sort": "is about",
+          "label": {
+            "en": "is about"
+          },
+          "description": {
+            "en": "The Agent that is the main actor in the provided Evidence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.iceg.be/Evidence/comesFrom",
+          "name": "comes from",
+          "sort": "comes from",
+          "label": {
+            "en": "comes from"
+          },
+          "description": {
+            "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Output",
+              "range_uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Output",
+              "range_puri": "http://data.europa.eu/m8g/Output",
+              "range_label": {
+                "en": "Output"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "country",
+          "sort": "country",
+          "label": {
+            "en": "country"
+          },
+          "description": {
+            "en": "Country where the evidence has been issued."
+          },
+          "usage": {
+            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The Country controlled vocabulary can be reused for this."
+          },
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://data.europa.eu/m8g/LifeEvent",
       "name": "Life Event",
       "label": {
@@ -915,6 +1273,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "type",
+          "label": {
+            "en": "type"
+          },
+          "description": {
+            "en": "This property represents the type of Output as defined in a controlled vocabulary. "
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.iceg.be/Output/hasLegalResource",
           "name": "has legal resource",
           "sort": "has legal resource",
@@ -943,6 +1336,39 @@
               "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
               "range_label": {
                 "en": "Legal Resource"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.iceg.be/Output/isAbout",
+          "name": "is about",
+          "sort": "is about",
+          "label": {
+            "en": "is about"
+          },
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
               }
             }
           ],
@@ -1004,13 +1430,13 @@
           "range": [
             {
               "range_label": "Evidence",
-              "range_uri": "https://data.europa.eu/m8g/Evidence"
+              "range_uri": "http://data.europa.eu/m8g/Evidence"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Evidence",
-              "range_puri": "https://data.europa.eu/m8g/Evidence",
+              "range_puri": "http://data.europa.eu/m8g/Evidence",
               "range_label": {
                 "en": "Evidence"
               }
@@ -1020,7 +1446,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.europa.eu/m8g/responseTime",
+          "uri": "http://www.iceg.be/Output/responseTime",
           "name": "response time",
           "sort": "response time",
           "label": {
@@ -1260,6 +1686,198 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#hasSite",
+          "name": "has site",
+          "sort": "has site",
+          "label": {
+            "en": "has site"
+          },
+          "description": {
+            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Site",
+              "range_uri": "http://www.w3.org/ns/org#Site"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Site",
+              "range_puri": "http://www.w3.org/ns/org#Site",
+              "range_label": {
+                "en": "Site"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/PublicServiceDataset",
+      "name": "Public Service Dataset",
+      "label": {
+        "en": "Public Service Dataset"
+      },
+      "sort": "Public Service Dataset",
+      "description": {
+        "en": "The class describes all the metadata related to a public service. These metadata can be displayed on a regional public service portal and/or a national eGovernment portal."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicServiceDataset",
+              "uri": "http://data.europa.eu/m8g/PublicServiceDataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicServiceDataset",
+              "uri": "http://data.europa.eu/m8g/PublicServiceDataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/ns/adms#Identifier",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/publisher",
+          "name": "publisher",
+          "sort": "publisher",
+          "label": {
+            "en": "publisher"
+          },
+          "description": {
+            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicServiceDataset",
+              "uri": "http://data.europa.eu/m8g/PublicServiceDataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "title",
+          "sort": "title",
+          "label": {
+            "en": "title"
+          },
+          "description": {
+            "en": "This property contains a name given to the Dataset."
+          },
+          "usage": {
+            "en": "This property can be repeated for parallel language versions of the name."
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicServiceDataset",
+              "uri": "http://data.europa.eu/m8g/PublicServiceDataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -1278,76 +1896,6 @@
       },
       "parents": [],
       "properties": [
-        {
-          "uri": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence",
-          "name": "has Supporting Evidence",
-          "sort": "has Supporting Evidence",
-          "label": {
-            "en": "has Supporting Evidence"
-          },
-          "description": {
-            "en": "The Evidence that supplies information (proof, support) for this Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Evidence",
-              "range_uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Evidence",
-              "range_puri": "https://data.europa.eu/m8g/Evidence",
-              "range_label": {
-                "en": "Evidence"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/cccev#isDerivedFrom",
-          "name": "is derived from",
-          "sort": "is derived from",
-          "label": {
-            "en": "is derived from"
-          },
-          "description": {
-            "en": "The Legal Resource that is responsible for the creation/initiation of the Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LegalResource",
-              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Legal Resource",
-              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
-              "range_label": {
-                "en": "Legal Resource"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
           "name": "has qualified relation",
@@ -1377,6 +1925,111 @@
               "range_puri": "http://data.europa.eu/m8g/Requirement",
               "range_label": {
                 "en": "Requirement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasRequirement",
+          "name": "has requirement",
+          "sort": "has requirement",
+          "label": {
+            "en": "has requirement"
+          },
+          "description": {
+            "en": "A sub-Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Requirement",
+              "range_uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Requirement",
+              "range_puri": "http://data.europa.eu/m8g/Requirement",
+              "range_label": {
+                "en": "Requirement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasSupportingEvidence",
+          "name": "has Supporting Evidence",
+          "sort": "has Supporting Evidence",
+          "label": {
+            "en": "has Supporting Evidence"
+          },
+          "description": {
+            "en": "The Evidence that supplies information (proof, support) for this Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Evidence",
+              "range_uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Evidence",
+              "range_puri": "http://data.europa.eu/m8g/Evidence",
+              "range_label": {
+                "en": "Evidence"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isDerivedFrom",
+          "name": "is derived from",
+          "sort": "is derived from",
+          "label": {
+            "en": "is derived from"
+          },
+          "description": {
+            "en": "The Legal Resource that is responsible for the creation/initiation of the Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LegalResource",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Legal Resource",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "en": "Legal Resource"
               }
             }
           ],
@@ -1559,41 +2212,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "https://semiceu.github.io/CCCEV/releases/2.00/#Requirement%3Ahas%20requirement",
-          "name": "has requirement",
-          "sort": "has requirement",
-          "label": {
-            "en": "has requirement"
-          },
-          "description": {
-            "en": "A sub-Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Requirement",
-              "range_uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Requirement",
-              "range_puri": "http://data.europa.eu/m8g/Requirement",
-              "range_label": {
-                "en": "Requirement"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
         }
       ]
     },
@@ -1753,41 +2371,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/hasCriterion",
-          "name": "has requirement",
-          "sort": "has requirement",
-          "label": {
-            "en": "has requirement"
-          },
-          "description": {
-            "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Requirement",
-              "range_uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Requirement",
-              "range_puri": "http://data.europa.eu/m8g/Requirement",
-              "range_label": {
-                "en": "Requirement"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://data.europa.eu/m8g/hasLegalResource",
           "name": "has legal resource",
           "sort": "has legal resource",
@@ -1911,16 +2494,16 @@
           ],
           "range": [
             {
-              "range_label": "Dataset",
-              "range_uri": "http://www.w3.org/ns/dcat#Dataset"
+              "range_label": "PublicServiceDataset",
+              "range_uri": "http://data.europa.eu/m8g/PublicServiceDataset"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Dataset",
-              "range_puri": "http://www.w3.org/ns/dcat#Dataset",
+              "range_uri": "#Public Service Dataset",
+              "range_puri": "http://data.europa.eu/m8g/PublicServiceDataset",
               "range_label": {
-                "en": "Dataset"
+                "en": "Public Service Dataset"
               }
             }
           ],
@@ -1956,6 +2539,111 @@
               "range_puri": "http://data.europa.eu/m8g/Event",
               "range_label": {
                 "en": "Event"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/processingTime",
+          "name": "processing time",
+          "sort": "processing time",
+          "label": {
+            "en": "processing time"
+          },
+          "description": {
+            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the Wikipedia page16 that references the official ISO standard17.\r\n\r\nThis approach is consistent with both schema.org and the W3C OWL Time Ontology."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_label": {
+                "en": "Duration"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/sector",
+          "name": "sector",
+          "sort": "sector",
+          "label": {
+            "en": "sector"
+          },
+          "description": {
+            "en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/thematicArea",
+          "name": "thematic area",
+          "sort": "thematic area",
+          "label": {
+            "en": "thematic area"
+          },
+          "description": {
+            "en": "This property represents the Thematic Area of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, family, traveling economic affairs, tax, staff, environment..."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
               }
             }
           ],
@@ -2319,6 +3007,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://www.iceg.be/PublicService/hasRequirement",
+          "name": "has requirement",
+          "sort": "has requirement",
+          "label": {
+            "en": "has requirement"
+          },
+          "description": {
+            "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Requirement",
+              "range_uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Requirement",
+              "range_puri": "http://data.europa.eu/m8g/Requirement",
+              "range_label": {
+                "en": "Requirement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.iceg.be/PublicService/lifecycleStatus",
           "name": "lifecycle status",
           "sort": "lifecycle status",
@@ -2327,111 +3050,6 @@
           },
           "description": {
             "en": "This property represents the status within the lifecycle of the public service (exp: creation, use or deletion of a Public Service). It doesn't refer to the status within the Public Service process."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.iceg.be/PublicService/processingTime",
-          "name": "processing time",
-          "sort": "processing time",
-          "label": {
-            "en": "processing time"
-          },
-          "description": {
-            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the Wikipedia page16 that references the official ISO standard17.\r\n\r\nThis approach is consistent with both schema.org and the W3C OWL Time Ontology."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Duration",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
-              "range_label": {
-                "en": "Duration"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.iceg.be/PublicService/sector",
-          "name": "sector",
-          "sort": "sector",
-          "label": {
-            "en": "sector"
-          },
-          "description": {
-            "en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.iceg.be/PublicService/thematicArea",
-          "name": "thematic area",
-          "sort": "thematic area",
-          "label": {
-            "en": "thematic area"
-          },
-          "description": {
-            "en": "This property represents the Thematic Area of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, family, traveling economic affairs, tax, staff, environment..."
           },
           "usage": {},
           "domain": [
@@ -2734,7 +3352,45 @@
         "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)"
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "http://www.iceg.be/Purpose/hasChannel",
+          "name": "has channel",
+          "sort": "has channel",
+          "label": {
+            "en": "has channel"
+          },
+          "description": {
+            "en": "This property describes the relationship between a purpose and a channel. "
+          },
+          "usage": {
+            "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
+          },
+          "domain": [
+            {
+              "EA-Name": "Purpose",
+              "uri": "http://www.iceg.be/Purpose"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Channel",
+              "range_uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Channel",
+              "range_puri": "http://data.europa.eu/m8g/Channel",
+              "range_label": {
+                "en": "Channel"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/2004/02/skos/core#Collection",
@@ -2839,163 +3495,6 @@
       ]
     },
     {
-      "uri": "http://www.w3.org/ns/dcat#Dataset",
-      "name": "Dataset",
-      "label": {
-        "en": "Dataset"
-      },
-      "sort": "Dataset",
-      "description": {
-        "en": "The class describes all the metadata related to a public service. These metadata can be displayed on a regional public service portal and/or a national eGovernment portal."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "description",
-          "sort": "description",
-          "label": {
-            "en": "description"
-          },
-          "description": {
-            "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Dataset",
-              "uri": "http://www.w3.org/ns/dcat#Dataset"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Dataset",
-              "uri": "http://www.w3.org/ns/dcat#Dataset"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identifier",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/ns/adms#Identifier",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
-              "range_label": {
-                "en": "Identifier"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/publisher",
-          "name": "publisher",
-          "sort": "publisher",
-          "label": {
-            "en": "publisher"
-          },
-          "description": {
-            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Dataset",
-              "uri": "http://www.w3.org/ns/dcat#Dataset"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/title",
-          "name": "title",
-          "sort": "title",
-          "label": {
-            "en": "title"
-          },
-          "description": {
-            "en": "This property contains a name given to the Dataset."
-          },
-          "usage": {
-            "en": "This property can be repeated for parallel language versions of the name."
-          },
-          "domain": [
-            {
-              "EA-Name": "Dataset",
-              "uri": "http://www.w3.org/ns/dcat#Dataset"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "http://www.w3.org/ns/locn#Address",
       "name": "Address",
       "label": {
@@ -3044,7 +3543,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3081,7 +3580,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3118,7 +3617,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3142,20 +3641,20 @@
           ],
           "range": [
             {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Text"
+                "en": "Code"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3192,7 +3691,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3229,7 +3728,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3266,7 +3765,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3303,7 +3802,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3340,7 +3839,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3375,7 +3874,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -3412,7 +3911,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -3586,11 +4085,46 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.iceg.be/Agent/hasAddress",
+          "name": "has address",
+          "sort": "has address",
+          "label": {
+            "en": "has address"
+          },
+          "description": {
+            "en": "This property represents an Address related to an Agent. Asserting the address relationship implies that the Agent has an Address."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Agent",
+              "uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Address",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
     {
-      "uri": "http://xmlns.com/foaf/spec/#term_Group",
+      "uri": "http://xmlns.com/foaf/0.1/Group",
       "name": "Group",
       "label": {
         "en": "Group"
@@ -3611,7 +4145,7 @@
       ],
       "properties": [
         {
-          "uri": "http://xmlns.com/foaf/spec/#term_member",
+          "uri": "http://xmlns.com/foaf/0.1/member",
           "name": "member",
           "sort": "member",
           "label": {
@@ -3624,7 +4158,7 @@
           "domain": [
             {
               "EA-Name": "Group",
-              "uri": "http://xmlns.com/foaf/spec/#term_Group"
+              "uri": "http://xmlns.com/foaf/0.1/Group"
             }
           ],
           "range": [
@@ -3643,313 +4177,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.europa.eu/m8g/Evidence",
-      "name": "Evidence",
-      "label": {
-        "en": "Evidence"
-      },
-      "sort": "Evidence",
-      "description": {
-        "en": "The Evidence class is defined in the Core Criterion and Core Evidence vocabulary (CCCEV) as any resource that can document or support a response. It contains information that proves that a normal requirement exists or is true, in particular evidences are used to prove that a specific riquerement is met."
-      },
-      "usage": {
-        "en": "Although the wording of the definition is different, the semantics are an exact match for CPSV's Input class which it replaces.\r\n\r\nEvidence can be any resource - document, artefact - anything needed for executing the Public Service. In the context of Public Services, Evidence is usually administrative documents or completed application forms. A specific Public Service may require the presence of certain Evidence or combinations of Evidence in order to be delivered.\r\n\r\nIn some cases, the Output of one service will be Evidence for another service. Such relationships should be described in the associated Rule(s).\r"
-      },
-      "parents": [
-        {
-          "label": "Dataset",
-          "name": "Dataset",
-          "package": "dcat",
-          "uri": "http://www.w3.org/ns/dcat#Dataset",
-          "scoped_uri": "#Dataset"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
-          "name": "confidentiality level type",
-          "sort": "confidentiality level type",
-          "label": {
-            "en": "confidentiality level type"
-          },
-          "description": {
-            "en": "The security classification assigned to an Evidence or, in general, to a content."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/supportsRequirement",
-          "name": "supports Requirement",
-          "sort": "supports Requirement",
-          "label": {
-            "en": "supports Requirement"
-          },
-          "description": {
-            "en": "The Requirement for which the Evidence provides information (proof, support)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Requirement",
-              "range_uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Requirement",
-              "range_puri": "http://data.europa.eu/m8g/Requirement",
-              "range_label": {
-                "en": "Requirement"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/creator",
-          "name": "is created by",
-          "sort": "is created by",
-          "label": {
-            "en": "is created by"
-          },
-          "description": {
-            "en": "The Agent that produces the Evidence."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/language",
-          "name": "language",
-          "sort": "language",
-          "label": {
-            "en": "language"
-          },
-          "description": {
-            "en": "This property represents the language(s) in which the Evidence is issued. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. "
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LinguisticSystem",
-              "range_uri": "http://purl.org/dc/terms/LinguisticSystem"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://purl.org/dc/terms/LinguisticSystem",
-              "range_puri": "http://purl.org/dc/terms/LinguisticSystem",
-              "range_label": {
-                "en": "LinguisticSystem"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/publisher",
-          "name": "is issued by",
-          "sort": "is issued by",
-          "label": {
-            "en": "is issued by"
-          },
-          "description": {
-            "en": "The legal authority responsible for an Evidence."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/subject",
-          "name": "is about",
-          "sort": "is about",
-          "label": {
-            "en": "is about"
-          },
-          "description": {
-            "en": "The Agent that is the main actor in the provided Evidence."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.iceg.be/Evidence/comesFrom",
-          "name": "comes from",
-          "sort": "comes from",
-          "label": {
-            "en": "comes from"
-          },
-          "description": {
-            "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Output",
-              "range_uri": "http://data.europa.eu/m8g/Output"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Output",
-              "range_puri": "http://data.europa.eu/m8g/Output",
-              "range_label": {
-                "en": "Output"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
-          "name": "country",
-          "sort": "country",
-          "label": {
-            "en": "country"
-          },
-          "description": {
-            "en": "Country where the evidence has been issued."
-          },
-          "usage": {
-            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The Country controlled vocabulary can be reused for this."
-          },
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "https://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -3967,41 +4194,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "http://schema.org/hoursAvailable",
-          "name": "availability restriction",
-          "sort": "availability restriction",
-          "label": {
-            "en": "availability restriction"
-          },
-          "description": {
-            "en": "The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "OpeningHoursSpecification",
-              "range_uri": "https://schema.org/OpeningHoursSpecification"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Opening Hours Specification",
-              "range_puri": "https://schema.org/OpeningHoursSpecification",
-              "range_label": {
-                "en": "Opening Hours Specification"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://schema.org/WebSite",
           "name": "website",
@@ -4066,6 +4258,41 @@
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
                 "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/hoursAvailable",
+          "name": "availability restriction",
+          "sort": "availability restriction",
+          "label": {
+            "en": "availability restriction"
+          },
+          "description": {
+            "en": "The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "https://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OpeningHoursSpecification",
+              "range_uri": "https://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Opening Hours Specification",
+              "range_puri": "https://schema.org/OpeningHoursSpecification",
+              "range_label": {
+                "en": "Opening Hours Specification"
               }
             }
           ],
@@ -4269,36 +4496,7 @@
       ]
     }
   ],
-  "properties": [
-    {
-      "uri": "https://data.europa.eu/m8g/ChannelPreference.channel",
-      "name": {
-        "undefined": ""
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.europa.eu/m8g/ChannelPreference.purpose",
-      "name": {
-        "undefined": ""
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    }
-  ],
+  "properties": [],
   "contributors": [
     {
       "role": "E",

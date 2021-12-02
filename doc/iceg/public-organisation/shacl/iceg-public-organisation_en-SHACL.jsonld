@@ -40,7 +40,7 @@
   "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#AdministrativeTerritorialUnitsShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#AdministrativeTerritorialUnitShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -59,24 +59,6 @@
       "sh:targetClass": "http://data.europa.eu/88u/dataset/atu-type"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#Legal ResourceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
-          "sh:definition": {
-            "en": "The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined."
-          },
-          "sh:name": {
-            "en": "implements"
-          },
-          "sh:path": "http://purl.org/vocab/cpsv#implements"
-        }
-      ],
-      "sh:targetClass": "http://data.europa.eu/eli/ontology#LegalResource"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#FoundationEventShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -89,6 +71,16 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://data.europa.eu/88u/dataset/atu-type",
+          "sh:definition": {
+            "en": "This property links an Organization to the Administrative Region(s) that it covers."
+          },
+          "sh:name": {
+            "en": "jurisdiction"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        },
+        {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "The type of entity as defined by the Belgian law"
@@ -98,19 +90,39 @@
             "en": "legal form"
           },
           "sh:path": "http://www.iceg.be/PublicOrganization/legalForm"
-        },
-        {
-          "sh:class": "http://data.europa.eu/88u/dataset/atu-type",
-          "sh:definition": {
-            "en": "This property links an Organization to the Administrative Region(s) that it covers."
-          },
-          "sh:name": {
-            "en": "spatial"
-          },
-          "sh:path": "http://purl.org/dc/terms/spatial"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#ReferenceFrameworkShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "An unambiguous reference to a Reference Framework."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/org#ChangeEvent",
+          "sh:definition": {
+            "en": "The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined."
+          },
+          "sh:name": {
+            "en": "implements"
+          },
+          "sh:path": "http://purl.org/vocab/cpsv#implements"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/ReferenceFramework"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-organisation_en#IdentifierShape",
@@ -429,7 +441,7 @@
           "sh:path": "http://www.w3.org/ns/prov#endedAtTime"
         },
         {
-          "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
+          "sh:class": "http://data.europa.eu/m8g/ReferenceFramework",
           "sh:definition": {
             "en": "The property hasFormalFramework links a Change Event or Foundation Event to a piece of legislation or a policy document that prompted the change."
           },
@@ -941,7 +953,7 @@
           "sh:name": {
             "en": "title"
           },
-          "sh:path": "http://xmlns.com/foaf/spec/#term_title"
+          "sh:path": "http://xmlns.com/foaf/0.1/title"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/person#Person"
@@ -1004,7 +1016,7 @@
           "sh:name": {
             "en": "website"
           },
-          "sh:path": "https://schema.org/WebSite"
+          "sh:path": "http://schema.org/WebSite"
         }
       ],
       "sh:targetClass": "https://schema.org/ContactPoint"

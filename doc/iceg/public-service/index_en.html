@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -280,7 +280,6 @@ Whenever possible, the Core Public Service Vocabulary will reuse existing vocabu
                       <a href="#Concept">Concept</a> |
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Cost">Cost</a> |
-                      <a href="#Dataset">Dataset</a> |
                       <a href="#Event">Event</a> |
                       <a href="#Evidence">Evidence</a> |
                       <a href="#Group">Group</a> |
@@ -291,6 +290,7 @@ Whenever possible, the Core Public Service Vocabulary will reuse existing vocabu
                       <a href="#Participation">Participation</a> |
                       <a href="#Public Organization">Public Organization</a> |
                       <a href="#Public Service">Public Service</a> |
+                      <a href="#Public Service Dataset">Public Service Dataset</a> |
                       <a href="#Purpose">Purpose</a> |
                       <a href="#Requirement">Requirement</a> |
                       <a href="#Rule">Rule</a> |
@@ -389,7 +389,7 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit.</td>
                         <td property="skos:scopeNote">This would typically be part of a city, a neighbourhood or village, e.g. Montmartre.</td>
                         <td></td>
@@ -409,7 +409,7 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A globally unique identifier for each instance of an Address.</td>
                         <td property="skos:scopeNote"><p>
 The concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an
@@ -441,7 +441,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
                         <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href="http://publications.europa.eu/resource/dataset/country">Country controlled vocabulary</a> from the Publications Office can be reused for this.</td>
                         <td></td>
@@ -457,11 +457,11 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.</td>
                         <td property="skos:scopeNote">Some recommended codelists from the EU Publications Office include:
 <a href="http://publications.europa.eu/resource/authority/atu">Administrative Territorial Units (ATU)</a>,
@@ -484,7 +484,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The complete address written as a formatted string.</td>
                         <td property="skos:scopeNote">Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France".</td>
                         <td></td>
@@ -504,7 +504,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.</td>
                         <td property="skos:scopeNote">In simpler terms, this is the building number, apartment number, etc. For an address such as "Flat 3, 17 Bridge Street", the locator is "flat 3, 17".</td>
                         <td></td>
@@ -524,7 +524,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">Proper noun(s) applied to the real world entity identified by the locator.</td>
                         <td property="skos:scopeNote"><p>
 The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.
@@ -549,7 +549,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The post/zip code of an address. (INSPIRE&#39;s definition is &quot;A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.&quot;)</td>
                         <td property="skos:scopeNote">Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example "75000".</td>
                         <td></td>
@@ -569,7 +569,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The key postal division of the address, usually the city. (INSPIRE&#39;s definition is &quot;One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)
  For example, &quot;Paris&quot;.</td>
                         <td property="skos:scopeNote"></td>
@@ -590,7 +590,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The Post Office Box number.</td>
                         <td property="skos:scopeNote">INSPIRE's name for this is "postalDeliveryIdentifier" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is "9383".</td>
                         <td></td>
@@ -610,7 +610,7 @@ The key difference between a locator and a locator name is that the latter is a 
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.</td>
                         <td property="skos:scopeNote">For example, "Avenue des Champs-Élysées".</td>
                         <td></td>
@@ -632,6 +632,7 @@ The key difference between a locator and a locator name is that the latter is a 
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Agent%3Ahas%20address">has address</a>, 
                       <a href="#Agent%3Aidentifier">identifier</a>, 
                       <a href="#Agent%3Aname">name</a>, 
                       <a href="#Agent%3Aplays%20role">plays role</a>.</dd>
@@ -653,6 +654,26 @@ The key difference between a locator and a locator name is that the latter is a 
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Agent%3Ahas%20address" typeof="rdfs:Property" resource="http://www.iceg.be/Agent/hasAddress">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.iceg.be/Agent/hasAddress" data-toggle="tooltip" data-content="http://www.iceg.be/Agent/hasAddress" data-placement="right">
+                            has address</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Address" data-placement="right">Address</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">This property represents an Address related to an Agent. Asserting the address relationship implies that the Agent has an Address.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Agent%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
@@ -755,6 +776,7 @@ In other words, a Business Event groups together a number of public services tha
                     <dd>For this entity the following properties are defined:
                       <a href="#Channel%3Aavailability%20restriction">availability restriction</a>, 
                       <a href="#Channel%3Adescription">description</a>, 
+                      <a href="#Channel%3Ahas%20purpose">has purpose</a>, 
                       <a href="#Channel%3Aidentifier">identifier</a>, 
                       <a href="#Channel%3Aopening%20hours">opening hours</a>, 
                       <a href="#Channel%3Aowned%20by">owned by</a>, 
@@ -778,10 +800,10 @@ In other words, a Business Event groups together a number of public services tha
 
                     <tbody class="supertype">
                     
-                      <tr id="Channel%3Aavailability%20restriction" typeof="rdfs:Property" resource="http://schema.org/hoursAvailable">
+                      <tr id="Channel%3Aavailability%20restriction" typeof="rdfs:Property" resource="https://schema.org/hoursAvailable">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://schema.org/hoursAvailable" data-toggle="tooltip" data-content="http://schema.org/hoursAvailable" data-placement="right">
+                            <a href="https://schema.org/hoursAvailable" data-toggle="tooltip" data-content="https://schema.org/hoursAvailable" data-placement="right">
                             availability restriction</a>
                           </code>
                         </td>
@@ -798,10 +820,10 @@ In other words, a Business Event groups together a number of public services tha
                         <td></td>
                       </tr>
                     
-                      <tr id="Channel%3Adescription" typeof="rdfs:Property" resource="http://fixme.com#description">
+                      <tr id="Channel%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#description" data-toggle="tooltip" data-content="http://fixme.com#description" data-placement="right">
+                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
                             description</a>
                           </code>
                         </td>
@@ -818,6 +840,26 @@ In other words, a Business Event groups together a number of public services tha
                         <td></td>
                       </tr>
                     
+                      <tr id="Channel%3Ahas%20purpose" typeof="rdfs:Property" resource="http://www.iceg.be/Channel/hasPurpose">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.iceg.be/Channel/hasPurpose" data-toggle="tooltip" data-content="http://www.iceg.be/Channel/hasPurpose" data-placement="right">
+                            has purpose</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Purpose" data-placement="right">Purpose</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property describes the relationship between a purpose and a channel. </td>
+                        <td property="skos:scopeNote">Different channels serve different purposes : information, activation of the service, assistance, appeal, ...</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Channel%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
                           <code property="rdfs:label">
@@ -828,7 +870,7 @@ In other words, a Business Event groups together a number of public services tha
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right">Identifier</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -1062,10 +1104,10 @@ The Concept may or may not belong to (member) a certain Collection.
 
                     <tbody class="supertype">
                     
-                      <tr id="Contact%20Point%3Aavailability%20restriction" typeof="rdfs:Property" resource="http://schema.org/hoursAvailable">
+                      <tr id="Contact%20Point%3Aavailability%20restriction" typeof="rdfs:Property" resource="https://schema.org/hoursAvailable">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://schema.org/hoursAvailable" data-toggle="tooltip" data-content="http://schema.org/hoursAvailable" data-placement="right">
+                            <a href="https://schema.org/hoursAvailable" data-toggle="tooltip" data-content="https://schema.org/hoursAvailable" data-placement="right">
                             availability restriction</a>
                           </code>
                         </td>
@@ -1276,7 +1318,7 @@ The cost breakdown property is not to be confused with the description property 
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right">Identifier</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -1335,133 +1377,10 @@ The cost breakdown property is not to be confused with the description property 
                         </td>
                         <td>
                           
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#double" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#double" data-placement="right">Double</a>
-                            
-                          
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">This property represents a numeric value indicating the amount of the Cost.</td>
                         <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Dataset"><a href="http://www.w3.org/ns/dcat#Dataset" data-toggle="tooltip" data-content="http://www.w3.org/ns/dcat#Dataset" data-placement="right">Dataset</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>The class describes all the metadata related to a public service. These metadata can be displayed on a regional public service portal and/or a national eGovernment portal.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Dataset%3Adescription">description</a>, 
-                      <a href="#Dataset%3Aidentifier">identifier</a>, 
-                      <a href="#Dataset%3Apublisher">publisher</a>, 
-                      <a href="#Dataset%3Atitle">title</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Dataset%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
-                            description</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
-                            
-                          
-                        </td>
-			<td>1..*</td>
-                        <td property="rdfs:comment">This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Dataset%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
-                            identifier</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right">Identifier</a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Dataset%3Apublisher" typeof="rdfs:Property" resource="http://purl.org/dc/terms/publisher">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/publisher" data-toggle="tooltip" data-content="http://purl.org/dc/terms/publisher" data-placement="right">
-                            publisher</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Agent" data-placement="right">Agent</a>
-			    
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Dataset%3Atitle" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
-                            title</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
-                            
-                          
-                        </td>
-			<td>1..*</td>
-                        <td property="rdfs:comment">This property contains a name given to the Dataset.</td>
-                        <td property="skos:scopeNote">This property can be repeated for parallel language versions of the name.</td>
                         <td></td>
                       </tr>
                     
@@ -1615,7 +1534,7 @@ or to a group of Public Services, such as all those related to the establishment
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Evidence"><a href="https://data.europa.eu/m8g/Evidence" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/Evidence" data-placement="right">Evidence</a></h3>
+              <h3 class="h3" id="Evidence"><a href="http://data.europa.eu/m8g/Evidence" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/Evidence" data-placement="right">Evidence</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>The Evidence class is defined in the Core Criterion and Core Evidence vocabulary (CCCEV) as any resource that can document or support a response. It contains information that proves that a normal requirement exists or is true, in particular evidences are used to prove that a specific riquerement is met.</dd>
@@ -1626,11 +1545,7 @@ Evidence can be any resource - document, artefact - anything needed for executin
 
 In some cases, the Output of one service will be Evidence for another service. Such relationships should be described in the associated Rule(s).</dd>
                     
-		     
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Dataset">Dataset</a>
-		   </dd>
-                    
+		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
@@ -1640,6 +1555,7 @@ In some cases, the Output of one service will be Evidence for another service. S
                       <a href="#Evidence%3Ais%20about">is about</a>, 
                       <a href="#Evidence%3Ais%20created%20by">is created by</a>, 
                       <a href="#Evidence%3Ais%20issued%20by">is issued by</a>, 
+                      <a href="#Evidence%3Ais%20provided%20by">is provided by</a>, 
                       <a href="#Evidence%3Alanguage">language</a>, 
                       <a href="#Evidence%3Asupports%20Requirement">supports Requirement</a>.</dd>
                     
@@ -1782,6 +1698,26 @@ This property might be used when a Public Service consumes its own Output as Evi
                         <td></td>
                       </tr>
                     
+                      <tr id="Evidence%3Ais%20provided%20by" typeof="rdfs:Property" resource="http://purl.org/dc/terms/provenance">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/provenance" data-toggle="tooltip" data-content="http://purl.org/dc/terms/provenance" data-placement="right">
+                            is provided by</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Agent" data-placement="right">Agent</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The Agent that provides the trust and/or certifies that the Evidence is genuine.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Evidence%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
                         <td>
                           <code property="rdfs:label">
@@ -1829,7 +1765,7 @@ This property might be used when a Public Service consumes its own Output as Evi
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Group"><a href="http://xmlns.com/foaf/spec/#term_Group" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_Group" data-placement="right">Group</a></h3>
+              <h3 class="h3" id="Group"><a href="http://xmlns.com/foaf/0.1/Group" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Group" data-placement="right">Group</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Description</dt><dd>The Group class represents a collection of individual agents (and may itself play the role of a Agent, ie. something that can perform actions).
@@ -1866,10 +1802,10 @@ While a Group has the characteristics of a Agent, it is also associated with a n
 
                     <tbody class="supertype">
                     
-                      <tr id="Group%3Amember" typeof="rdfs:Property" resource="http://xmlns.com/foaf/spec/#term_member">
+                      <tr id="Group%3Amember" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/member">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://xmlns.com/foaf/spec/#term_member" data-toggle="tooltip" data-content="http://xmlns.com/foaf/spec/#term_member" data-placement="right">
+                            <a href="http://xmlns.com/foaf/0.1/member" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/member" data-placement="right">
                             member</a>
                           </code>
                         </td>
@@ -2085,10 +2021,12 @@ While a Group has the characteristics of a Agent, it is also associated with a n
                       <a href="#Output%3Adescription">description</a>, 
                       <a href="#Output%3Ahas%20legal%20resource">has legal resource</a>, 
                       <a href="#Output%3Aidentifier">identifier</a>, 
+                      <a href="#Output%3Ais%20about">is about</a>, 
                       <a href="#Output%3Ais%20legal%20resource">is legal resource</a>, 
                       <a href="#Output%3Ais%20used%20as">is used as</a>, 
                       <a href="#Output%3Aname">name</a>, 
-                      <a href="#Output%3Aresponse%20time">response time</a>.</dd>
+                      <a href="#Output%3Aresponse%20time">response time</a>, 
+                      <a href="#Output%3Atype">type</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2168,6 +2106,26 @@ While a Group has the characteristics of a Agent, it is also associated with a n
                         <td></td>
                       </tr>
                     
+                      <tr id="Output%3Ais%20about" typeof="rdfs:Property" resource="http://www.iceg.be/Output/isAbout">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.iceg.be/Output/isAbout" data-toggle="tooltip" data-content="http://www.iceg.be/Output/isAbout" data-placement="right">
+                            is about</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Agent" data-placement="right">Agent</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Output%3Ais%20legal%20resource" typeof="rdfs:Property" resource="http://www.iceg.be/Output/isLegalResource">
                         <td>
                           <code property="rdfs:label">
@@ -2229,10 +2187,10 @@ This property might be used when a Public Service consumes its own Output as Evi
                         <td></td>
                       </tr>
                     
-                      <tr id="Output%3Aresponse%20time" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/responseTime">
+                      <tr id="Output%3Aresponse%20time" typeof="rdfs:Property" resource="http://www.iceg.be/Output/responseTime">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/responseTime" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/responseTime" data-placement="right">
+                            <a href="http://www.iceg.be/Output/responseTime" data-toggle="tooltip" data-content="http://www.iceg.be/Output/responseTime" data-placement="right">
                             response time</a>
                           </code>
                         </td>
@@ -2245,6 +2203,26 @@ This property might be used when a Public Service consumes its own Output as Evi
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">The duration necessary for the Public Service to deliver the Output given that the Beneficiary has provided all the Evidences.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Output%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
+                            type</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents the type of Output as defined in a controlled vocabulary. </td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2368,6 +2346,7 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#Public%20Organization%3Ahas%20channel">has channel</a>, 
+                      <a href="#Public%20Organization%3Ahas%20site">has site</a>, 
                       <a href="#Public%20Organization%3Alegal%20form">legal form</a>.</dd>
                     
                   </dl>
@@ -2404,6 +2383,26 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">This property indicates the specific Channel through which a Public Organization delivers a Public Service.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Organization%3Ahas%20site" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#hasSite">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/org#hasSite" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#hasSite" data-placement="right">
+                            has site</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Site" data-placement="right">Site</a>
+			    
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company).</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2694,10 +2693,10 @@ thereof.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Service%3Ahas%20requirement" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasCriterion">
+                      <tr id="Public%20Service%3Ahas%20requirement" typeof="rdfs:Property" resource="http://www.iceg.be/PublicService/hasRequirement">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/hasCriterion" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/hasCriterion" data-placement="right">
+                            <a href="http://www.iceg.be/PublicService/hasRequirement" data-toggle="tooltip" data-content="http://www.iceg.be/PublicService/hasRequirement" data-placement="right">
                             has requirement</a>
                           </code>
                         </td>
@@ -2765,7 +2764,7 @@ including courts acting as such, professional bodies, and those professional ass
                         <td>
                           
 			    
-			    <a href="#Dataset" data-placement="right">Dataset</a>
+			    <a href="#Public Service Dataset" data-placement="right">Public Service Dataset</a>
 			    
                           
                         </td>
@@ -2876,10 +2875,10 @@ Public Services may be associated with a particular Event and, likewise, the sam
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Service%3Aprocessing%20time" typeof="rdfs:Property" resource="http://www.iceg.be/PublicService/processingTime">
+                      <tr id="Public%20Service%3Aprocessing%20time" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/processingTime">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.iceg.be/PublicService/processingTime" data-toggle="tooltip" data-content="http://www.iceg.be/PublicService/processingTime" data-placement="right">
+                            <a href="http://data.europa.eu/m8g/processingTime" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/processingTime" data-placement="right">
                             processing time</a>
                           </code>
                         </td>
@@ -2980,10 +2979,10 @@ For example, in Flanders there is a child allowance package, groeipakket. It
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Service%3Asector" typeof="rdfs:Property" resource="http://www.iceg.be/PublicService/sector">
+                      <tr id="Public%20Service%3Asector" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/sector">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.iceg.be/PublicService/sector" data-toggle="tooltip" data-content="http://www.iceg.be/PublicService/sector" data-placement="right">
+                            <a href="http://data.europa.eu/m8g/sector" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/sector" data-placement="right">
                             sector</a>
                           </code>
                         </td>
@@ -3045,10 +3044,10 @@ N.B. The spatial restriction is not meant to be used to describe eligibility or 
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Service%3Athematic%20area" typeof="rdfs:Property" resource="http://www.iceg.be/PublicService/thematicArea">
+                      <tr id="Public%20Service%3Athematic%20area" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/thematicArea">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.iceg.be/PublicService/thematicArea" data-toggle="tooltip" data-content="http://www.iceg.be/PublicService/thematicArea" data-placement="right">
+                            <a href="http://data.europa.eu/m8g/thematicArea" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/thematicArea" data-placement="right">
                             thematic area</a>
                           </code>
                         </td>
@@ -3062,6 +3061,125 @@ N.B. The spatial restriction is not meant to be used to describe eligibility or 
 			<td>0..*</td>
                         <td property="rdfs:comment">This property represents the Thematic Area of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, family, traveling economic affairs, tax, staff, environment...</td>
                         <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Public Service Dataset"><a href="http://data.europa.eu/m8g/PublicServiceDataset" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/PublicServiceDataset" data-placement="right">Public Service Dataset</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>The class describes all the metadata related to a public service. These metadata can be displayed on a regional public service portal and/or a national eGovernment portal.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Public%20Service%20Dataset%3Adescription">description</a>, 
+                      <a href="#Public%20Service%20Dataset%3Aidentifier">identifier</a>, 
+                      <a href="#Public%20Service%20Dataset%3Apublisher">publisher</a>, 
+                      <a href="#Public%20Service%20Dataset%3Atitle">title</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Public%20Service%20Dataset%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
+                            description</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+                            
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Service%20Dataset%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
+                            identifier</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/ns/adms#Identifier" data-toggle="tooltip" data-content="http://www.w3.org/ns/adms#Identifier" data-placement="right">Identifier</a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Service%20Dataset%3Apublisher" typeof="rdfs:Property" resource="http://purl.org/dc/terms/publisher">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/publisher" data-toggle="tooltip" data-content="http://purl.org/dc/terms/publisher" data-placement="right">
+                            publisher</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Agent" data-placement="right">Agent</a>
+			    
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Service%20Dataset%3Atitle" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
+                            title</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+                            
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">This property contains a name given to the Dataset.</td>
+                        <td property="skos:scopeNote">This property can be repeated for parallel language versions of the name.</td>
                         <td></td>
                       </tr>
                     
@@ -3087,12 +3205,52 @@ Each purpose can have one or more preferred channels, and one or more "deprecate
                     
 		    
                     <dt>Properties</dt>
-		    
-                    <dd>No properties have been defined for this entity.</dd>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Purpose%3Ahas%20channel">has channel</a>.</dd>
                     
                   </dl>
                 </div>
-		
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Purpose%3Ahas%20channel" typeof="rdfs:Property" resource="http://www.iceg.be/Purpose/hasChannel">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.iceg.be/Purpose/hasChannel" data-toggle="tooltip" data-content="http://www.iceg.be/Purpose/hasChannel" data-placement="right">
+                            has channel</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Channel" data-placement="right">Channel</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property describes the relationship between a purpose and a channel. </td>
+                        <td property="skos:scopeNote">Different channels serve different purposes : information, activation of the service, assistance, appeal, ...</td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
             </div>
             
               <div class="region region--no-space-top">
@@ -3175,10 +3333,10 @@ Each purpose can have one or more preferred channels, and one or more "deprecate
                         <td></td>
                       </tr>
                     
-                      <tr id="Requirement%3Ahas%20requirement" typeof="rdfs:Property" resource="https://semiceu.github.io/CCCEV/releases/2.00/#Requirement%3Ahas%20requirement">
+                      <tr id="Requirement%3Ahas%20requirement" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasRequirement">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://semiceu.github.io/CCCEV/releases/2.00/#Requirement%3Ahas%20requirement" data-toggle="tooltip" data-content="https://semiceu.github.io/CCCEV/releases/2.00/#Requirement%3Ahas%20requirement" data-placement="right">
+                            <a href="http://data.europa.eu/m8g/hasRequirement" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/hasRequirement" data-placement="right">
                             has requirement</a>
                           </code>
                         </td>
@@ -3195,10 +3353,10 @@ Each purpose can have one or more preferred channels, and one or more "deprecate
                         <td></td>
                       </tr>
                     
-                      <tr id="Requirement%3Ahas%20Supporting%20Evidence" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#hasSupportingEvidence">
+                      <tr id="Requirement%3Ahas%20Supporting%20Evidence" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasSupportingEvidence">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#hasSupportingEvidence" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#hasSupportingEvidence" data-placement="right">
+                            <a href="http://data.europa.eu/m8g/hasSupportingEvidence" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/hasSupportingEvidence" data-placement="right">
                             has Supporting Evidence</a>
                           </code>
                         </td>
@@ -3235,10 +3393,10 @@ Each purpose can have one or more preferred channels, and one or more "deprecate
                         <td></td>
                       </tr>
                     
-                      <tr id="Requirement%3Ais%20derived%20from" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/cccev#isDerivedFrom">
+                      <tr id="Requirement%3Ais%20derived%20from" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/isDerivedFrom">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/cccev#isDerivedFrom" data-placement="right">
+                            <a href="http://data.europa.eu/m8g/isDerivedFrom" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/isDerivedFrom" data-placement="right">
                             is derived from</a>
                           </code>
                         </td>

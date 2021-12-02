@@ -78,7 +78,7 @@
           "sh:name": {
             "en": "availability restriction"
           },
-          "sh:path": "http://schema.org/hoursAvailable"
+          "sh:path": "https://schema.org/hoursAvailable"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -90,10 +90,20 @@
           "sh:name": {
             "en": "description"
           },
-          "sh:path": "http://fixme.com#description"
+          "sh:path": "http://purl.org/dc/terms/description"
         },
         {
-          "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
+          "sh:class": "http://www.iceg.be/Purpose",
+          "sh:definition": {
+            "en": "This property describes the relationship between a purpose and a channel. "
+          },
+          "sh:name": {
+            "en": "has purpose"
+          },
+          "sh:path": "http://www.iceg.be/Channel/hasPurpose"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "This property represents an Identifier for the Channel."
           },
@@ -125,7 +135,7 @@
           "sh:path": "http://data.europa.eu/m8g/ownedBy"
         },
         {
-          "sh:class": "https://data.europa.eu/m8g/Evidence",
+          "sh:class": "http://data.europa.eu/m8g/Evidence",
           "sh:definition": {
             "en": "In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be\r\nrequired for an online channel, whereas a physical signature may be required for a face to face service provision.\r"
           },
@@ -135,7 +145,7 @@
           "sh:path": "http://purl.org/vocab/cpsv#hasInput"
         }
       ],
-      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference.channel"
+      "sh:targetClass": "http://data.europa.eu/m8g/Channel"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#CostShape",
@@ -176,7 +186,7 @@
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
-          "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "This property represents an Identifier for the Cost."
           },
@@ -209,7 +219,6 @@
           "sh:path": "http://data.europa.eu/m8g/isDefinedBy"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
           "sh:definition": {
             "en": "This property represents a numeric value indicating the amount of the Cost."
           },
@@ -286,6 +295,106 @@
       "sh:targetClass": "http://data.europa.eu/m8g/Event"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#EvidenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/Output",
+          "sh:definition": {
+            "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
+          },
+          "sh:name": {
+            "en": "comes from"
+          },
+          "sh:path": "http://www.iceg.be/Evidence/comesFrom"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The security classification assigned to an Evidence or, in general, to a content."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "confidentiality level type"
+          },
+          "sh:path": "http://data.europa.eu/m8g/confidentialityLevelType"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Country where the evidence has been issued."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "country"
+          },
+          "sh:path": "http://www.w3.org/ns/locn#adminUnitL1"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "The Agent that is the main actor in the provided Evidence."
+          },
+          "sh:name": {
+            "en": "is about"
+          },
+          "sh:path": "http://purl.org/dc/terms/subject"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "The Agent that produces the Evidence."
+          },
+          "sh:name": {
+            "en": "is created by"
+          },
+          "sh:path": "http://purl.org/dc/terms/creator"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "The legal authority responsible for an Evidence."
+          },
+          "sh:name": {
+            "en": "is issued by"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "The Agent that provides the trust and/or certifies that the Evidence is genuine."
+          },
+          "sh:name": {
+            "en": "is provided by"
+          },
+          "sh:path": "http://purl.org/dc/terms/provenance"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
+          "sh:definition": {
+            "en": "This property represents the language(s) in which the Evidence is issued. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. "
+          },
+          "sh:name": {
+            "en": "language"
+          },
+          "sh:path": "http://purl.org/dc/terms/language"
+        },
+        {
+          "sh:class": "http://data.europa.eu/m8g/Requirement",
+          "sh:definition": {
+            "en": "The Requirement for which the Evidence provides information (proof, support)."
+          },
+          "sh:name": {
+            "en": "supports Requirement"
+          },
+          "sh:path": "http://data.europa.eu/m8g/supportsRequirement"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/Evidence"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#LifeEventShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -331,6 +440,13 @@
           "sh:path": "http://purl.org/dc/terms/identifier"
         },
         {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:name": {
+            "en": "is about"
+          },
+          "sh:path": "http://www.iceg.be/Output/isAbout"
+        },
+        {
           "sh:class": "http://data.europa.eu/eli/ontology#LegalResource",
           "sh:definition": {
             "en": "This property must be used if the Output is one or multiple legal resource"
@@ -341,7 +457,7 @@
           "sh:path": "http://www.iceg.be/Output/isLegalResource"
         },
         {
-          "sh:class": "https://data.europa.eu/m8g/Evidence",
+          "sh:class": "http://data.europa.eu/m8g/Evidence",
           "sh:definition": {
             "en": "This property describes the case where an Output is considered as one or multiple Evidence. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
           },
@@ -371,7 +487,19 @@
           "sh:name": {
             "en": "response time"
           },
-          "sh:path": "https://data.europa.eu/m8g/responseTime"
+          "sh:path": "http://www.iceg.be/Output/responseTime"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "This property represents the type of Output as defined in a controlled vocabulary. "
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/Output"
@@ -435,6 +563,17 @@
           "sh:path": "http://www.iceg.be/PublicOrganization/hasChannel"
         },
         {
+          "sh:class": "http://www.w3.org/ns/org#Site",
+          "sh:definition": {
+            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "has site"
+          },
+          "sh:path": "http://www.w3.org/ns/org#hasSite"
+        },
+        {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "The type of entity as defined by the Belgian law"
@@ -448,6 +587,58 @@
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PublicServiceDatasetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "description"
+          },
+          "sh:path": "http://purl.org/dc/terms/description"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."
+          },
+          "sh:name": {
+            "en": "identifier"
+          },
+          "sh:path": "http://purl.org/dc/terms/identifier"
+        },
+        {
+          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
+          "sh:definition": {
+            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "publisher"
+          },
+          "sh:path": "http://purl.org/dc/terms/publisher"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "This property contains a name given to the Dataset."
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "title"
+          },
+          "sh:path": "http://purl.org/dc/terms/title"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PublicServiceDataset"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#RequirementShape",
@@ -484,17 +675,17 @@
           "sh:name": {
             "en": "has requirement"
           },
-          "sh:path": "https://semiceu.github.io/CCCEV/releases/2.00/#Requirement%3Ahas%20requirement"
+          "sh:path": "http://data.europa.eu/m8g/hasRequirement"
         },
         {
-          "sh:class": "https://data.europa.eu/m8g/Evidence",
+          "sh:class": "http://data.europa.eu/m8g/Evidence",
           "sh:definition": {
             "en": "The Evidence that supplies information (proof, support) for this Requirement."
           },
           "sh:name": {
             "en": "has Supporting Evidence"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#hasSupportingEvidence"
+          "sh:path": "http://data.europa.eu/m8g/hasSupportingEvidence"
         },
         {
           "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
@@ -516,7 +707,7 @@
           "sh:name": {
             "en": "is derived from"
           },
-          "sh:path": "http://data.europa.eu/m8g/cccev#isDerivedFrom"
+          "sh:path": "http://data.europa.eu/m8g/isDerivedFrom"
         },
         {
           "sh:class": "http://xmlns.com/foaf/0.1/Agent",
@@ -659,7 +850,7 @@
           "sh:name": {
             "en": "has requirement"
           },
-          "sh:path": "http://data.europa.eu/m8g/hasCriterion"
+          "sh:path": "http://www.iceg.be/PublicService/hasRequirement"
         },
         {
           "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
@@ -684,7 +875,7 @@
           "sh:path": "http://data.europa.eu/m8g/isClassifiedBy"
         },
         {
-          "sh:class": "http://www.w3.org/ns/dcat#Dataset",
+          "sh:class": "http://data.europa.eu/m8g/PublicServiceDataset",
           "sh:definition": {
             "en": "The Is Described At property links a Public Service to the Public Service Dataset(s) in which it is being described."
           },
@@ -753,7 +944,7 @@
           "sh:name": {
             "en": "processing time"
           },
-          "sh:path": "http://www.iceg.be/PublicService/processingTime"
+          "sh:path": "http://data.europa.eu/m8g/processingTime"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/Output",
@@ -793,7 +984,7 @@
           "sh:name": {
             "en": "sector"
           },
-          "sh:path": "http://www.iceg.be/PublicService/sector"
+          "sh:path": "http://data.europa.eu/m8g/sector"
         },
         {
           "sh:class": "http://purl.org/dc/terms/Location",
@@ -824,7 +1015,7 @@
           "sh:name": {
             "en": "thematic area"
           },
-          "sh:path": "http://www.iceg.be/PublicService/thematicArea"
+          "sh:path": "http://data.europa.eu/m8g/thematicArea"
         }
       ],
       "sh:targetClass": "http://purl.org/vocab/cpsv#PublicService"
@@ -897,8 +1088,19 @@
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PurposeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.europa.eu/m8g/ChannelPreference.purpose"
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/Channel",
+          "sh:definition": {
+            "en": "This property describes the relationship between a purpose and a channel. "
+          },
+          "sh:name": {
+            "en": "has channel"
+          },
+          "sh:path": "http://www.iceg.be/Purpose/hasChannel"
+        }
+      ],
+      "sh:targetClass": "http://www.iceg.be/Purpose"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#CollectionShape",
@@ -938,58 +1140,6 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#DatasetShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description."
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "description"
-          },
-          "sh:path": "http://purl.org/dc/terms/description"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
-          "sh:definition": {
-            "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue."
-          },
-          "sh:name": {
-            "en": "identifier"
-          },
-          "sh:path": "http://purl.org/dc/terms/identifier"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
-          "sh:definition": {
-            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "publisher"
-          },
-          "sh:path": "http://purl.org/dc/terms/publisher"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "This property contains a name given to the Dataset."
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "title"
-          },
-          "sh:path": "http://purl.org/dc/terms/title"
-        }
-      ],
-      "sh:targetClass": "http://www.w3.org/ns/dcat#Dataset"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#AddressShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1000,7 +1150,6 @@
             "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "address area"
           },
@@ -1012,7 +1161,6 @@
             "en": "A globally unique identifier for each instance of an Address."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "address ID"
           },
@@ -1024,19 +1172,17 @@
             "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "administrative unit level 1 (country)"
           },
           "sh:path": "http://www.w3.org/ns/locn#adminUnitL1"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "administrative unit level 2 (country/region/state)"
           },
@@ -1048,7 +1194,6 @@
             "en": "The complete address written as a formatted string."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "full address"
           },
@@ -1060,7 +1205,6 @@
             "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "locator designator"
           },
@@ -1072,7 +1216,6 @@
             "en": "Proper noun(s) applied to the real world entity identified by the locator."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "locator name"
           },
@@ -1084,7 +1227,6 @@
             "en": "The Post Office Box number."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "post office box"
           },
@@ -1096,7 +1238,6 @@
             "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "post code"
           },
@@ -1108,7 +1249,6 @@
             "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r\n For example, \"Paris\"."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "post name (city)"
           },
@@ -1120,7 +1260,6 @@
             "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "thoroughfare"
           },
@@ -1154,6 +1293,17 @@
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "This property represents an Address related to an Agent. Asserting the address relationship implies that the Agent has an Address."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "has address"
+          },
+          "sh:path": "http://www.iceg.be/Agent/hasAddress"
+        },
         {
           "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
           "sh:definition": {
@@ -1204,100 +1354,10 @@
           "sh:name": {
             "en": "member"
           },
-          "sh:path": "http://xmlns.com/foaf/spec/#term_member"
+          "sh:path": "http://xmlns.com/foaf/0.1/member"
         }
       ],
-      "sh:targetClass": "http://xmlns.com/foaf/spec/#term_Group"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#EvidenceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://data.europa.eu/m8g/Output",
-          "sh:definition": {
-            "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
-          },
-          "sh:name": {
-            "en": "comes from"
-          },
-          "sh:path": "http://www.iceg.be/Evidence/comesFrom"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "The security classification assigned to an Evidence or, in general, to a content."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "confidentiality level type"
-          },
-          "sh:path": "http://data.europa.eu/m8g/confidentialityLevelType"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Country where the evidence has been issued."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "country"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#adminUnitL1"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
-          "sh:definition": {
-            "en": "The Agent that is the main actor in the provided Evidence."
-          },
-          "sh:name": {
-            "en": "is about"
-          },
-          "sh:path": "http://purl.org/dc/terms/subject"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
-          "sh:definition": {
-            "en": "The Agent that produces the Evidence."
-          },
-          "sh:name": {
-            "en": "is created by"
-          },
-          "sh:path": "http://purl.org/dc/terms/creator"
-        },
-        {
-          "sh:class": "http://xmlns.com/foaf/0.1/Agent",
-          "sh:definition": {
-            "en": "The legal authority responsible for an Evidence."
-          },
-          "sh:name": {
-            "en": "is issued by"
-          },
-          "sh:path": "http://purl.org/dc/terms/publisher"
-        },
-        {
-          "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
-          "sh:definition": {
-            "en": "This property represents the language(s) in which the Evidence is issued. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. "
-          },
-          "sh:name": {
-            "en": "language"
-          },
-          "sh:path": "http://purl.org/dc/terms/language"
-        },
-        {
-          "sh:class": "http://data.europa.eu/m8g/Requirement",
-          "sh:definition": {
-            "en": "The Requirement for which the Evidence provides information (proof, support)."
-          },
-          "sh:name": {
-            "en": "supports Requirement"
-          },
-          "sh:path": "http://data.europa.eu/m8g/supportsRequirement"
-        }
-      ],
-      "sh:targetClass": "https://data.europa.eu/m8g/Evidence"
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Group"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#ContactPointShape",
@@ -1313,7 +1373,7 @@
           "sh:name": {
             "en": "availability restriction"
           },
-          "sh:path": "http://schema.org/hoursAvailable"
+          "sh:path": "https://schema.org/hoursAvailable"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -1405,25 +1465,6 @@
         }
       ],
       "sh:targetClass": "https://schema.org/OpeningHoursSpecification"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#ChannelPreferenceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://data.europa.eu/m8g/Channel",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.channel"
-        },
-        {
-          "sh:class": "http://www.iceg.be/Purpose",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.europa.eu/m8g/ChannelPreference.purpose"
-        }
-      ]
     }
   ]
 }

@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/580cad231e7672a14439a02519b524d8aa65b408",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/580cad231e7672a14439a02519b524d8aa65b408/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/0f3d4949a805ef1aacc44622a4ae4f3b6647ec20/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -49,7 +49,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "AdministrativeTerritorialUnits",
+              "EA-Name": "AdministrativeTerritorialUnit",
               "uri": "http://data.europa.eu/88u/dataset/atu-type"
             }
           ],
@@ -70,64 +70,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "http://data.europa.eu/eli/ontology#LegalResource",
-      "name": "Legal resource",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Legal resource"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Legislation, policy, or policies lying behind the rules that govern a public service."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "Instances of the Formal Framwork class are FRBR (Functional Requirements\r\nfor Bibliographic Records) Expressions, i.e., concrete expressions of the more abstract concept of the piece of legislation or policy itself.\nThe European Council's invitation to introduce the European Legislation Identifier and portals such as legislation.gov.uk are relevant in this context. Adding '/data.xml' or /data.rdf' to any legislation URI on legislation.gov.uk will reveal how this can be done, for example http://www.legislation.gov.uk/uksi/2012/3170/contents/made{/data.rdf or /data.xml}."
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://purl.org/vocab/cpsv#implements",
-          "name": "implements",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "implements"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Legal Resource",
-              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ChangeEvent",
-              "range_uri": "http://www.w3.org/ns/org#ChangeEvent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/ns/org#ChangeEvent",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Change Event"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -184,11 +126,11 @@
       "properties": [
         {
           "uri": "http://purl.org/dc/terms/spatial",
-          "name": "spatial",
+          "name": "jurisdiction",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "spatial"
+            "en": "jurisdiction"
           },
           "description": {
             "de": "Enter your translation here",
@@ -206,7 +148,7 @@
           ],
           "range": [
             {
-              "range_label": "AdministrativeTerritorialUnits",
+              "range_label": "AdministrativeTerritorialUnit",
               "range_uri": "http://data.europa.eu/88u/dataset/atu-type"
             }
           ],
@@ -258,6 +200,101 @@
             }
           ],
           "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/ReferenceFramework",
+      "name": "Reference Framework",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Reference Framework"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "A source from where Requirements are identified and derived."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "Usual Reference Frameworks are legal and non-legal specifications. Examples include procedures, tendering legislation, etc."
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "identifier"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "An unambiguous reference to a Reference Framework."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ReferenceFramework",
+              "uri": "http://data.europa.eu/m8g/ReferenceFramework"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "de": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/vocab/cpsv#implements",
+          "name": "implements",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "implements"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ReferenceFramework",
+              "uri": "http://data.europa.eu/m8g/ReferenceFramework"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ChangeEvent",
+              "range_uri": "http://www.w3.org/ns/org#ChangeEvent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/org#ChangeEvent",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Change Event"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -1288,17 +1325,17 @@
           ],
           "range": [
             {
-              "range_label": "Legal Resource",
-              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+              "range_label": "ReferenceFramework",
+              "range_uri": "http://data.europa.eu/m8g/ReferenceFramework"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_puri": "http://data.europa.eu/m8g/ReferenceFramework",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Legal resource"
+                "en": "Reference Framework"
               }
             }
           ],
@@ -2942,7 +2979,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://xmlns.com/foaf/spec/#term_title",
+          "uri": "http://xmlns.com/foaf/0.1/title",
           "name": "title",
           "sort": "Enter your translation here",
           "label": {
@@ -3187,7 +3224,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://schema.org/WebSite",
+          "uri": "http://schema.org/WebSite",
           "name": "website",
           "sort": "Enter your translation here",
           "label": {
