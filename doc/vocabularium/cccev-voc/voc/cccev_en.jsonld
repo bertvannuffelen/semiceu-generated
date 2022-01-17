@@ -204,53 +204,10 @@
   ],
   "externals": [
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/Constraint",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/Criterion",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/Evidence",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/EvidenceType",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/EvidenceTypeList",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/InformationConcept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/InformationRequirement",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/ReferenceFramework",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/Requirement",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/SupportedValue",
+      "name": {
+        "en": "Period of Time"
+      },
+      "@id": "http://www.w3.org/2006/time#ProperInterval",
       "@type": "rdfs:Class"
     }
   ],
@@ -265,14 +222,10 @@
         "en": "The bias parameter tries to correct a systematic error. For example in procurement, a home bias corresponds to the \"presence of local preferences distorting international specialisation and resource allocation\". [https://trade.ec.europa.eu/doclib/docs/2018/september/tradoc_157319.pdf]\nWhen quantified, this systematic error can be removed."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Criterion"
-        }
+        "http://data.europa.eu/m8g/Criterion"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#decimal"
-        }
+        "http://www.w3.org/2001/XMLSchema#decimal"
       ],
       "generalization": []
     },
@@ -286,14 +239,10 @@
         "en": "Classifications should be defined by an organisation/country as an outcome of a security assessment."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Evidence"
-        }
+        "http://data.europa.eu/m8g/Evidence"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
-        }
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -307,14 +256,10 @@
         "en": "The categories agreed are left open but could for example specify the layout and content expected for an Evidence."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/EvidenceType"
-        }
+        "http://data.europa.eu/m8g/EvidenceType"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
-        }
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -328,14 +273,10 @@
         "en": "The property encapsulates all kind of expectations on the required and provided values one could have. \nThis may range from representational expectations such as the type (e.g. the value is expected to be a xsd:decimal) to expectations that reduce the allowed value range. Commonly this is done using min or max bounderary expressions (e.g. the maximum value is 1 Million Euro).\nOther usage could be to harmonise the supplied values (e.g. rounding, turning to percentages) to facilitate further processing.\n\nImplementers are free to use their own approach for defining the expected values in more details. For instance, this can be by defining their own datatypes extending or encapsulating common xsd datatypes. But also by using more complex languages such as XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF).\nBecause of this freedom, implementers are recommended to well-document their usage of this property (and related information). \n\n\n  \n\n"
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/InformationConcept"
-        }
+        "http://data.europa.eu/m8g/InformationConcept"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-        }
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
       ],
       "generalization": []
     },
@@ -349,14 +290,10 @@
         "en": "This property leaves the possiblity to define a qualified relation from Requirement to Information Requirement or Constraint as well as a qualified relation from Requirement to Requirement.  A use case would be to specialize an EU requirement in Member States' specific requirements."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Requirement"
-        }
+        "http://data.europa.eu/m8g/Requirement"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/Requirement"
-        }
+        "http://data.europa.eu/m8g/Requirement"
       ],
       "generalization": []
     },
@@ -367,14 +304,10 @@
         "en": "A more specific Requirement that is part of the Requirement."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Requirement"
-        }
+        "http://data.europa.eu/m8g/Requirement"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/Requirement"
-        }
+        "http://data.europa.eu/m8g/Requirement"
       ],
       "generalization": []
     },
@@ -388,14 +321,10 @@
         "en": "The relation between a parent Requirement and a sub-Requirement can be complex. Therefore, qualified relations (see hasQualifiedRelation) can be used to represent this relationship on its own and qualify it with additional information such as a date, a place. This is left to implementers.\n\nIn the case where the purpose is to link the two Requirements without additional information, the simple relationship as proposed here can be directly used."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Requirement"
-        }
+        "http://data.europa.eu/m8g/Requirement"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/Requirement"
-        }
+        "http://data.europa.eu/m8g/Requirement"
       ],
       "generalization": []
     },
@@ -406,14 +335,10 @@
         "en": "Evidence Type List in which the Evidence Type is included."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/EvidenceType"
-        }
+        "http://data.europa.eu/m8g/EvidenceType"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/EvidenceTypeList"
-        }
+        "http://data.europa.eu/m8g/EvidenceTypeList"
       ],
       "generalization": []
     },
@@ -424,14 +349,10 @@
         "en": "Information Concept for which the Supported Value provides a value."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/SupportedValue"
-        }
+        "http://data.europa.eu/m8g/SupportedValue"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/InformationConcept"
-        }
+        "http://data.europa.eu/m8g/InformationConcept"
       ],
       "generalization": []
     },
@@ -445,14 +366,10 @@
         "en": "The query must be executed on the business data provided by the supporting Evidence. In order to be able to evaluate the query on the provided data, the format of the provided data must be aligned with the query expression. For instance if the provided data is XML, a query in XPath could be expected. This alignment is part of the implementation agreements that implementors must make."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/SupportedValue"
-        }
+        "http://data.europa.eu/m8g/SupportedValue"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-        }
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
       ],
       "generalization": []
     },
@@ -463,14 +380,10 @@
         "en": "Evidence Type included in this Evidence Type List."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/EvidenceTypeList"
-        }
+        "http://data.europa.eu/m8g/EvidenceTypeList"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/EvidenceType"
-        }
+        "http://data.europa.eu/m8g/EvidenceType"
       ],
       "generalization": []
     },
@@ -481,14 +394,10 @@
         "en": "Requirement for which the Evidence provides proof."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Evidence"
-        }
+        "http://data.europa.eu/m8g/Evidence"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/Requirement"
-        }
+        "http://data.europa.eu/m8g/Requirement"
       ],
       "generalization": []
     },
@@ -499,14 +408,10 @@
         "en": "Supported Value that the Evidence contains."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Evidence"
-        }
+        "http://data.europa.eu/m8g/Evidence"
       ],
       "range": [
-        {
-          "uri": "http://data.europa.eu/m8g/SupportedValue"
-        }
+        "http://data.europa.eu/m8g/SupportedValue"
       ],
       "generalization": []
     },
@@ -517,14 +422,10 @@
         "en": "Period of Time during which the Evidence holds true or has force."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Evidence"
-        }
+        "http://data.europa.eu/m8g/Evidence"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2006/time#ProperInterval"
-        }
+        "http://www.w3.org/2006/time#ProperInterval"
       ],
       "generalization": []
     },
@@ -538,14 +439,10 @@
         "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/EvidenceType"
-        }
+        "http://data.europa.eu/m8g/EvidenceType"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2006/time#ProperInterval"
-        }
+        "http://www.w3.org/2006/time#ProperInterval"
       ],
       "generalization": []
     },
@@ -556,14 +453,10 @@
         "en": "Value for the Information Concept that the Evidence supports."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/SupportedValue"
-        }
+        "http://data.europa.eu/m8g/SupportedValue"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-        }
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
       ],
       "generalization": []
     },
@@ -577,14 +470,10 @@
         "en": "The weight must be between 0 and 1. Usually, all Criteria can be integrated within a weighted sum equal to 1."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Criterion"
-        }
+        "http://data.europa.eu/m8g/Criterion"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#decimal"
-        }
+        "http://www.w3.org/2001/XMLSchema#decimal"
       ],
       "generalization": []
     },
@@ -598,14 +487,10 @@
         "en": "This description gives the view of the creator of the Criterion weights on how to interpret and use them during the evaluation process."
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Criterion"
-        }
+        "http://data.europa.eu/m8g/Criterion"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2001/XMLSchema#string"
-        }
+        "http://www.w3.org/2001/XMLSchema#string"
       ],
       "generalization": []
     },
@@ -619,112 +504,174 @@
         "en": "An existing codelist http://publications.europa.eu/resource/authority/number-weight\nExample see: https://docs.ted.europa.eu/eforms/0.3.0/index.html#awardCriteriaSection"
       },
       "domain": [
-        {
-          "uri": "http://data.europa.eu/m8g/Criterion"
-        }
+        "http://data.europa.eu/m8g/Criterion"
       ],
       "range": [
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
-        }
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     }
   ],
   "externalproperties": [
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/bias",
+      "name": {
+        "en": "constrains"
+      },
+      "@id": "http://data.europa.eu/m8g/constrains",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/confidentialityLevelType",
+      "name": {
+        "en": "has concept"
+      },
+      "@id": "http://data.europa.eu/m8g/hasConcept",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/evidenceTypeClassification",
+      "name": {
+        "en": "has evidence type list"
+      },
+      "@id": "http://data.europa.eu/m8g/hasEvidenceTypeList",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/expressionOfExpectedValue",
+      "name": {
+        "en": "has supporting evidence"
+      },
+      "@id": "http://data.europa.eu/m8g/hasSupportingEvidence",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/hasQualifiedRelation",
+      "name": {
+        "en": "is derived from"
+      },
+      "@id": "http://data.europa.eu/m8g/isDerivedFrom",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/hasRequirement",
+      "name": {
+        "en": "supports concept"
+      },
+      "@id": "http://data.europa.eu/m8g/supportsConcept",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/isRequirementOf",
+      "name": {
+        "en": "is conformant to"
+      },
+      "@id": "http://purl.org/dc/terms/conformsTo",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/isSpecifiedIn",
+      "name": {
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/providesValueFor",
+      "name": {
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/query",
+      "name": {
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/specifiesEvidenceType",
+      "name": {
+        "en": "identifier"
+      },
+      "@id": "http://purl.org/dc/terms/identifier",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/supportsRequirement",
+      "name": {
+        "en": "identifier"
+      },
+      "@id": "http://purl.org/dc/terms/identifier",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/supportsValue",
+      "name": {
+        "en": "identifier"
+      },
+      "@id": "http://purl.org/dc/terms/identifier",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/validityPeriod",
+      "name": {
+        "en": "identifier"
+      },
+      "@id": "http://purl.org/dc/terms/identifier",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/validityPeriodConstraint",
+      "name": {
+        "en": "identifier"
+      },
+      "@id": "http://purl.org/dc/terms/identifier",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/value",
+      "name": {
+        "en": "type"
+      },
+      "@id": "http://purl.org/dc/terms/type",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/weight",
+      "name": {
+        "en": "type"
+      },
+      "@id": "http://purl.org/dc/terms/type",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/weightingConsiderationDescription",
+      "name": {
+        "en": "name"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
       "@type": "rdf:Property"
     },
     {
-      "name": null,
-      "@id": "http://data.europa.eu/m8g/weightingType",
+      "name": {
+        "en": "name"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "name"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "starttime"
+      },
+      "@id": "http://www.w3.org/2006/time#hasBeginning",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "endtime"
+      },
+      "@id": "http://www.w3.org/2006/time#hasEnd",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "duration"
+      },
+      "@id": "http://www.w3.org/2006/time#hasXSDDuration",
       "@type": "rdf:Property"
     }
   ],
