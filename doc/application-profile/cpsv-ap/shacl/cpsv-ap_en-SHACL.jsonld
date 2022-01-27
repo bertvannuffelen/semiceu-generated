@@ -144,7 +144,7 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary."
+            "en": "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -161,7 +161,7 @@
           "sh:name": {
             "en": "description"
           },
-          "sh:path": "http://data.europa.eu/m8g/description"
+          "sh:path": "http://purl.org/dc/terms/description"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -211,7 +211,7 @@
       "sh:targetClass": "http://data.europa.eu/m8g/Cost"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#CriterionRequirementShape",
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#CriterionShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -250,7 +250,7 @@
           "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
-      "sh:targetClass": "http://data.europa.eu/m8g/CriterionRequirement"
+      "sh:targetClass": "http://data.europa.eu/m8g/Criterion"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#EventShape",
@@ -346,10 +346,7 @@
         {
           "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
           "sh:definition": {
-            "en": "Indicates the language(s) in which the Evidence must be provided."
-          },
-          "sh:name": {
-            "en": "language"
+            "en": "Indicates the language(s) in which the Evidence must be provided.$ea_notes=The possible values for this property are described in the controlled vocabulary <a href=\" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language\">Language</a> Authority Table of the Publications Office. "
           },
           "sh:path": "http://purl.org/dc/terms/language"
         },
@@ -450,6 +447,38 @@
       "sh:targetClass": "http://data.europa.eu/m8g/Output"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#PublicOrganizationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "The primary (e.g. legally recognized) name."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "preferred label"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "spatial"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganization"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#ParticipationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -490,39 +519,21 @@
           "sh:path": "http://data.europa.eu/m8g/role"
         }
       ],
-      "sh:targetClass": "http://data.europa.eu/m8g/Participation"
+      "sh:targetClass": "http://fixme.com#Participation"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#PublicOrganizationShape",
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LinguisticSystemShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "The primary (e.g. legally recognized) name."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "preferred label"
-          },
-          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
-        },
-        {
-          "sh:class": "http://purl.org/dc/terms/Location",
-          "sh:definition": {
-            "en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "spatial"
-          },
-          "sh:path": "http://purl.org/dc/terms/spatial"
-        }
-      ],
-      "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganization"
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/LinguisticSystem"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LocationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#PublicServiceShape",
@@ -594,9 +605,9 @@
           "sh:path": "http://data.europa.eu/m8g/hasCost"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/CriterionRequirement",
+          "sh:class": "http://data.europa.eu/m8g/Criterion",
           "sh:definition": {
-            "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r"
+            "en": "Links a Public Service to a class that describes the criteria for needing or using the \r\nservice, such as residency in a given location, being over a certain age etc. The \r\nCriterion class is defined in the Core Criterion and Core Evidence Vocabulary"
           },
           "sh:name": {
             "en": "has criterion"
@@ -624,7 +635,7 @@
           "sh:path": "http://data.europa.eu/m8g/hasLegalResource"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/Participation",
+          "sh:class": "http://fixme.com#Participation",
           "sh:definition": {
             "en": "This property links a Public Service to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information."
           },
@@ -688,7 +699,7 @@
         {
           "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
           "sh:definition": {
-            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The recommended controlled vocabularies forthis property is the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language\">Language Authority Table</a> of the Publications Office"
+            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language."
           },
           "sh:name": {
             "en": "language"
@@ -710,7 +721,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
           "sh:definition": {
-            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> that references the official <a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.\r\n\r\nThis approach is consistent with both schema.org and the W3C OWL Time Ontology."
+            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the \" <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> \"that references the official \"<a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.\r\n\r\n\"This approach is consistent with both schema.org and the W3C OWL Time Ontology.\""
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -844,7 +855,7 @@
         {
           "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
           "sh:definition": {
-            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary."
+            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language."
           },
           "sh:name": {
             "en": "language"
@@ -921,7 +932,7 @@
         {
           "sh:class": "http://purl.org/vocab/cpsv#PublicService",
           "sh:definition": {
-            "en": "The Is has part property links a Public Service Dataset to the Public Service."
+            "en": "The has part property links a Public Service Dataset to the Public Service."
           },
           "sh:name": {
             "en": "has part"
@@ -1144,7 +1155,7 @@
           "sh:path": "http://purl.org/dc/terms/title"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/Participation",
+          "sh:class": "http://fixme.com#Participation",
           "sh:definition": {
             "en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.\r\n"
           },
@@ -1155,6 +1166,13 @@
         }
       ],
       "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#DocumentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Document"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#ContactPointShape",
@@ -1170,6 +1188,26 @@
             "en": "availability restriction"
           },
           "sh:path": "https://schema.org/hoursAvailable"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "the email of the ContactPoint"
+          },
+          "sh:name": {
+            "en": "hasEmail"
+          },
+          "sh:path": "http://fixme.com#email"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "the telephone of the ContactPoint"
+          },
+          "sh:name": {
+            "en": "hasTelephone"
+          },
+          "sh:path": "http://fixme.com#telephone"
         }
       ],
       "sh:targetClass": "https://schema.org/ContactPoint"

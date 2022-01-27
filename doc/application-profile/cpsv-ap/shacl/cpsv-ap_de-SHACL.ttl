@@ -11,13 +11,15 @@
     <https://semiceu.github.io/shacl/cpsv-ap_de#BusinessEventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#ChannelShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#CostShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#CriterionRequirementShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#CriterionShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#EventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#EvidenceShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#LifeEventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#OutputShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_de#ParticipationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#PublicOrganizationShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#ParticipationShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#LinguisticSystemShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#LocationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#RuleShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#CollectionShape>,
@@ -25,6 +27,7 @@
     <https://semiceu.github.io/shacl/cpsv-ap_de#DatasetShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#AddressShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#AgentShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_de#DocumentShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#ContactPointShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_de#OpeningHoursSpecificationShape> .
 
@@ -127,7 +130,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:title
   ], [
-    shacl:class <http://data.europa.eu/m8g/Participation>;
+    shacl:class <http://fixme.com#Participation>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/playsRole>
@@ -198,6 +201,16 @@
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path schemas:hoursAvailable
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#email>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://fixme.com#telephone>
   ];
   shacl:targetClass schemas:ContactPoint .
 
@@ -214,7 +227,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://data.europa.eu/m8g/description>
+    shacl:path dc:description
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -242,7 +255,7 @@
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Cost> .
 
-<https://semiceu.github.io/shacl/cpsv-ap_de#CriterionRequirementShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/cpsv-ap_de#CriterionShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:datatype rdf:langString;
@@ -264,7 +277,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:type
   ];
-  shacl:targetClass <http://data.europa.eu/m8g/CriterionRequirement> .
+  shacl:targetClass <http://data.europa.eu/m8g/Criterion> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#DatasetShape> a shacl:NodeShape;
   shacl:closed false;
@@ -304,6 +317,10 @@
     shacl:path dc:title
   ];
   shacl:targetClass dcat:Dataset .
+
+<https://semiceu.github.io/shacl/cpsv-ap_de#DocumentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass foaf:Document .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#EventShape> a shacl:NodeShape;
   shacl:closed false;
@@ -358,7 +375,6 @@
   ], [
     shacl:class dc:LinguisticSystem;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de;
     shacl:path dc:language
   ], [
     shacl:datatype rdf:langString;
@@ -394,6 +410,14 @@
 <https://semiceu.github.io/shacl/cpsv-ap_de#LifeEventShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://data.europa.eu/m8g/LifeEvent> .
+
+<https://semiceu.github.io/shacl/cpsv-ap_de#LinguisticSystemShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:LinguisticSystem .
+
+<https://semiceu.github.io/shacl/cpsv-ap_de#LocationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:Location .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#OpeningHoursSpecificationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -452,7 +476,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/role>
   ];
-  shacl:targetClass <http://data.europa.eu/m8g/Participation> .
+  shacl:targetClass <http://fixme.com#Participation> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_de#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -510,7 +534,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/hasCost>
   ], [
-    shacl:class <http://data.europa.eu/m8g/CriterionRequirement>;
+    shacl:class <http://data.europa.eu/m8g/Criterion>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/hasCriterion>
@@ -525,7 +549,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/hasLegalResource>
   ], [
-    shacl:class <http://data.europa.eu/m8g/Participation>;
+    shacl:class <http://fixme.com#Participation>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/hasParticipation>

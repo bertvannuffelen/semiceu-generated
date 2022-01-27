@@ -161,7 +161,7 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "http://data.europa.eu/m8g/description"
+          "sh:path": "http://purl.org/dc/terms/description"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -211,7 +211,7 @@
       "sh:targetClass": "http://data.europa.eu/m8g/Cost"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#CriterionRequirementShape",
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#CriterionShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -250,7 +250,7 @@
           "sh:path": "http://purl.org/dc/terms/type"
         }
       ],
-      "sh:targetClass": "http://data.europa.eu/m8g/CriterionRequirement"
+      "sh:targetClass": "http://data.europa.eu/m8g/Criterion"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#EventShape",
@@ -346,9 +346,6 @@
         {
           "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
           "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
             "de": "Enter your translation here"
           },
           "sh:path": "http://purl.org/dc/terms/language"
@@ -450,6 +447,38 @@
       "sh:targetClass": "http://data.europa.eu/m8g/Output"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#PublicOrganizationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
+        }
+      ],
+      "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganization"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#ParticipationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -490,39 +519,21 @@
           "sh:path": "http://data.europa.eu/m8g/role"
         }
       ],
-      "sh:targetClass": "http://data.europa.eu/m8g/Participation"
+      "sh:targetClass": "http://fixme.com#Participation"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#PublicOrganizationShape",
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#LinguisticSystemShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/2004/02/skos/core#prefLabel"
-        },
-        {
-          "sh:class": "http://purl.org/dc/terms/Location",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://purl.org/dc/terms/spatial"
-        }
-      ],
-      "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganization"
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/LinguisticSystem"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#LocationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#PublicServiceShape",
@@ -594,7 +605,7 @@
           "sh:path": "http://data.europa.eu/m8g/hasCost"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/CriterionRequirement",
+          "sh:class": "http://data.europa.eu/m8g/Criterion",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -624,7 +635,7 @@
           "sh:path": "http://data.europa.eu/m8g/hasLegalResource"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/Participation",
+          "sh:class": "http://fixme.com#Participation",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -1144,7 +1155,7 @@
           "sh:path": "http://purl.org/dc/terms/title"
         },
         {
-          "sh:class": "http://data.europa.eu/m8g/Participation",
+          "sh:class": "http://fixme.com#Participation",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -1155,6 +1166,13 @@
         }
       ],
       "sh:targetClass": "http://xmlns.com/foaf/0.1/Agent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#DocumentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://xmlns.com/foaf/0.1/Document"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_de#ContactPointShape",
@@ -1170,6 +1188,26 @@
             "de": "Enter your translation here"
           },
           "sh:path": "https://schema.org/hoursAvailable"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://fixme.com#email"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://fixme.com#telephone"
         }
       ],
       "sh:targetClass": "https://schema.org/ContactPoint"

@@ -147,7 +147,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/TODO/tree/master/releases/2.00">https://github.com/SEMICeu/TODO/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/ebe9eeb4ee75cd0d52e7fec8f8c10fdf4bdbe144/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/ebe9eeb4ee75cd0d52e7fec8f8c10fdf4bdbe144/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/4cecc07e98ea420d0c204b5d3382fa9576ccd367/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/4cecc07e98ea420d0c204b5d3382fa9576ccd367/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/catalogue-of-services-isa/CPSV-AP/issues">https://github.com/catalogue-of-services-isa/CPSV-AP/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -244,12 +244,15 @@
                       <a href="#Concept">Concept</a> |
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Cost">Cost</a> |
-                      <a href="#Criterion Requirement">Criterion Requirement</a> |
+                      <a href="#Criterion">Criterion</a> |
                       <a href="#Dataset">Dataset</a> |
+                      <a href="#Document">Document</a> |
                       <a href="#Event">Event</a> |
                       <a href="#Evidence">Evidence</a> |
                       <a href="#Legal Resource">Legal Resource</a> |
                       <a href="#Life Event">Life Event</a> |
+                      <a href="#LinguisticSystem">LinguisticSystem</a> |
+                      <a href="#Location">Location</a> |
                       <a href="#Opening Hours Specification">Opening Hours Specification</a> |
                       <a href="#Output">Output</a> |
                       <a href="#Participation">Participation</a> |
@@ -859,7 +862,7 @@ If it is appropriate to add opening hours then this follows the day so if a phon
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">This property represents the type of Channel as defined in a controlled vocabulary.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">TODO</td>
                         <td></td>
                       </tr>
                     
@@ -957,7 +960,9 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Contact%20Point%3Aavailability%20restriction">availability restriction</a>.</dd>
+                      <a href="#Contact%20Point%3Aavailability%20restriction">availability restriction</a>, 
+                      <a href="#Contact%20Point%3AhasEmail">hasEmail</a>, 
+                      <a href="#Contact%20Point%3AhasTelephone">hasTelephone</a>.</dd>
                     
                   </dl>
                 </div>
@@ -993,6 +998,46 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Contact%20Point%3AhasEmail" typeof="rdfs:Property" resource="http://fixme.com#email">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://fixme.com#email" data-toggle="tooltip" data-content="http://fixme.com#email" data-placement="right">
+                            hasEmail</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">the email of the ContactPoint</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Contact%20Point%3AhasTelephone" typeof="rdfs:Property" resource="http://fixme.com#telephone">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://fixme.com#telephone" data-toggle="tooltip" data-content="http://fixme.com#telephone" data-placement="right">
+                            hasTelephone</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">the telephone of the ContactPoint</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1053,15 +1098,16 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed.</td>
+                        <td property="skos:scopeNote">The possible values for this property are described in the controlled vocabulary 
+<a href="https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/currency">Currency</a> Authority Table of Publications Office</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Cost%3Adescription" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/description">
+                      <tr id="Cost%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/description" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/description" data-placement="right">
+                            <a href="http://purl.org/dc/terms/description" data-toggle="tooltip" data-content="http://purl.org/dc/terms/description" data-placement="right">
                             description</a>
                           </code>
                         </td>
@@ -1165,20 +1211,20 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Criterion Requirement"><a href="http://data.europa.eu/m8g/CriterionRequirement" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/CriterionRequirement" data-placement="right">Criterion Requirement</a></h3>
+              <h3 class="h3" id="Criterion"><a href="http://data.europa.eu/m8g/Criterion" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/Criterion" data-placement="right">Criterion</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Definition</dt><dd>A Criterion can be expressed as a set of requirements where every requirement must be valid. A Criterion requirement is an atomic requirement. Some criteria can be expressed with several atomic requirements. A Criterion requirement can specify the expected value that the Criterion response has to contain, or a range of threshold values within which the Criterion response has to fit in. The Criterion requirement may apply to a certain period of time. It also can provide a list of candidate evidences that the responder can use to prove the Criterion requirement.</dd>
                     
-                    <dt>Usage</dt><dd>Not all public services are needed or usable by everyone. For example, the visa service operated by European countries is not needed by European citizens but is needed by some citizens from elsewhere, or public services offering unemployment benefits and grants are targeting specific societal groups. The CPSV-AP reuses the Core Criterion and Core Evidence Vocabulary for this class. The CCCEV provides more details but the Criterion Requirement class has three mandatory properties.</dd>
+                    <dt>Usage</dt><dd>Not all public services are needed or usable by everyone. For example, the visa service operated by European countries is not needed by European citizens but is needed by some citizens from elsewhere, or public services offering unemployment benefits and grants are targeting specific societal groups. The CPSV-AP reuses the Core Criterion and Core Evidence Vocabulary for this class.</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Criterion%20Requirement%3Aidentifier">identifier</a>, 
-                      <a href="#Criterion%20Requirement%3Aname">name</a>, 
-                      <a href="#Criterion%20Requirement%3Atype">type</a>.</dd>
+                      <a href="#Criterion%3Aidentifier">identifier</a>, 
+                      <a href="#Criterion%3Aname">name</a>, 
+                      <a href="#Criterion%3Atype">type</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1198,7 +1244,7 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
 
                     <tbody class="supertype">
                     
-                      <tr id="Criterion%20Requirement%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
+                      <tr id="Criterion%3Aidentifier" typeof="rdfs:Property" resource="http://purl.org/dc/terms/identifier">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/identifier" data-toggle="tooltip" data-content="http://purl.org/dc/terms/identifier" data-placement="right">
@@ -1218,7 +1264,7 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                         <td></td>
                       </tr>
                     
-                      <tr id="Criterion%20Requirement%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
+                      <tr id="Criterion%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/title" data-toggle="tooltip" data-content="http://purl.org/dc/terms/title" data-placement="right">
@@ -1238,7 +1284,7 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                         <td></td>
                       </tr>
                     
-                      <tr id="Criterion%20Requirement%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
+                      <tr id="Criterion%3Atype" typeof="rdfs:Property" resource="http://purl.org/dc/terms/type">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://purl.org/dc/terms/type" data-toggle="tooltip" data-content="http://purl.org/dc/terms/type" data-placement="right">
@@ -1334,7 +1380,7 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">The Is has part property links a Public Service Dataset to the Public Service.</td>
+                        <td property="rdfs:comment">The has part property links a Public Service Dataset to the Public Service.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1368,9 +1414,9 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                         </td>
                         <td>
                           
-			     
-			    <a href="http://xmlns.com/foaf/0.1/Document" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Document" data-placement="right">Document</a>
-                            
+			    
+			    <a href="#Document" data-placement="right">Document</a>
+			    
                           
                         </td>
 			<td>0..*</td>
@@ -1423,6 +1469,22 @@ The Concept may or may not belong to (member) a certain Collection.</dd>
                   </table>
                 </div>
       			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Document"><a href="http://xmlns.com/foaf/0.1/Document" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Document" data-placement="right">Document</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Definition</dt><dd>A document.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity in the scope of this specification.</dd>
+                    
+                  </dl>
+                </div>
+		
             </div>
             
               <div class="region region--no-space-top">
@@ -1584,9 +1646,9 @@ In some cases, the Output of one service will be Evidence for another service. S
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Evidence%3A"></a>, 
                       <a href="#Evidence%3Adescription">description</a>, 
                       <a href="#Evidence%3Aidentifier">identifier</a>, 
-                      <a href="#Evidence%3Alanguage">language</a>, 
                       <a href="#Evidence%3Aname">name</a>, 
                       <a href="#Evidence%3Arelated%20documentation">related documentation</a>, 
                       <a href="#Evidence%3Atype">type</a>.</dd>
@@ -1608,6 +1670,26 @@ In some cases, the Output of one service will be Evidence for another service. S
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Evidence%3A" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#LinguisticSystem" data-placement="right">LinguisticSystem</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">Indicates the language(s) in which the Evidence must be provided.$ea_notes=The possible values for this property are described in the controlled vocabulary &lt;a href=&quot; https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language&quot;&gt;Language&lt;/a&gt; Authority Table of the Publications Office. </td>
+                        <td property="skos:scopeNote">NOTE</td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Evidence%3Adescription" typeof="rdfs:Property" resource="http://purl.org/dc/terms/description">
                         <td>
@@ -1649,26 +1731,6 @@ In some cases, the Output of one service will be Evidence for another service. S
                         <td></td>
                       </tr>
                     
-                      <tr id="Evidence%3Alanguage" typeof="rdfs:Property" resource="http://purl.org/dc/terms/language">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/language" data-toggle="tooltip" data-content="http://purl.org/dc/terms/language" data-placement="right">
-                            language</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right">LinguisticSystem</a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">Indicates the language(s) in which the Evidence must be provided.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Evidence%3Aname" typeof="rdfs:Property" resource="http://purl.org/dc/terms/title">
                         <td>
                           <code property="rdfs:label">
@@ -1698,9 +1760,9 @@ In some cases, the Output of one service will be Evidence for another service. S
                         </td>
                         <td>
                           
-			     
-			    <a href="http://xmlns.com/foaf/0.1/Document" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Document" data-placement="right">Document</a>
-                            
+			    
+			    <a href="#Document" data-placement="right">Document</a>
+			    
                           
                         </td>
 			<td>0..*</td>
@@ -1806,6 +1868,38 @@ For example, a couple becoming engaged is not a CPSV-AP Life Event, getting marr
                         <a href="#Event">Event</a>
 		   </dd>
                     
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity in the scope of this specification.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="LinguisticSystem"><a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right">LinguisticSystem</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Definition</dt><dd>A system of signs, symbols, sounds, gestures, or rules used in communication.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		    
+                    <dd>No properties have been defined for this entity in the scope of this specification.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Location"><a href="http://purl.org/dc/terms/Location" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Location" data-placement="right">Location</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Definition</dt><dd>An identifiable geographic place or named place.</dd>
+                    
+		    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity in the scope of this specification.</dd>
@@ -1952,7 +2046,14 @@ schema:validThrough "2017-01-02T09:00Z".
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">This property represents the type of Output as defined in a controlled vocabulary.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Possible values of Output types are:
+* Declaration
+* Physical object
+* Code
+* Financial obligation
+* Financial benefit
+* Recognition
+* Permit</td>
                         <td></td>
                       </tr>
                     
@@ -1963,7 +2064,7 @@ schema:validThrough "2017-01-02T09:00Z".
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Participation"><a href="http://data.europa.eu/m8g/Participation" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/Participation" data-placement="right">Participation</a></h3>
+              <h3 class="h3" id="Participation"><a href="http://fixme.com#Participation" data-toggle="tooltip" data-content="http://fixme.com#Participation" data-placement="right">Participation</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
                     <dt>Definition</dt><dd>The CPSV-AP recognises a common role connected with public services, i.e. the Competent Authority. However, this simple structure does not allow statements to be made about those participants, such the start and end date of a contract, nor does it support the inclusion of other roles. The Participation class supports this extra complexity if required, for instance, the description of a service user or a service provider. The model is consistent with the CPOV which in turn is based on the W3C Organization Ontology that supports the common cases simply but allows the complex cases where necessary. The Participation class can be mapped to the Organization Ontology&#39;s Membership class that allows more complex
@@ -2124,9 +2225,9 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
                         </td>
                         <td>
                           
-			     
-			    <a href="http://purl.org/dc/terms/Location" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Location" data-placement="right">Location</a>
-                            
+			    
+			    <a href="#Location" data-placement="right">Location</a>
+			    
                           
                         </td>
 			<td>1</td>
@@ -2348,13 +2449,14 @@ thereof.</td>
                         <td>
                           
 			    
-			    <a href="#Criterion Requirement" data-placement="right">Criterion Requirement</a>
+			    <a href="#Criterion" data-placement="right">Criterion</a>
 			    
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: &quot;Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,
-including courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.&quot;</td>
+                        <td property="rdfs:comment">Links a Public Service to a class that describes the criteria for needing or using the 
+service, such as residency in a given location, being over a certain age etc. The 
+Criterion class is defined in the Core Criterion and Core Evidence Vocabulary</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2529,14 +2631,14 @@ Public Services may be associated with a particular Event and, likewise, the sam
                         </td>
                         <td>
                           
-			     
-			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right">LinguisticSystem</a>
-                            
+			    
+			    <a href="#LinguisticSystem" data-placement="right">LinguisticSystem</a>
+			    
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The recommended controlled vocabularies forthis property is the &lt;a href=&quot;https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language&quot;&gt;Language Authority Table&lt;/a&gt; of the Publications Office</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language.</td>
+                        <td property="skos:scopeNote">The recommended controlled vocabularies forthis property is the <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language">Language</a> Authority Table of the Publications Office</td>
                         <td></td>
                       </tr>
                     
@@ -2587,9 +2689,9 @@ Duration Syntax - Syntax
 Durations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. 
 
 Note that days and times are separated by an uppercase T which also
-disambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the &lt;a href=&quot;https://en.wikipedia.org/wiki/ISO_8601#Durations&quot;&gt;Wikipedia page&lt;/a&gt; that references the official &lt;a href=&quot;https://www.iso.org/standard/40874.htm&quot;&gt;ISO standard&lt;/a&gt;.
+disambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the &quot; &lt;a href=&quot;https://en.wikipedia.org/wiki/ISO_8601#Durations&quot;&gt;Wikipedia page&lt;/a&gt; &quot;that references the official &quot;&lt;a href=&quot;https://www.iso.org/standard/40874.htm&quot;&gt;ISO standard&lt;/a&gt;.
 
-This approach is consistent with both schema.org and the W3C OWL Time Ontology.</td>
+&quot;This approach is consistent with both schema.org and the W3C OWL Time Ontology.&quot;</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2683,14 +2785,14 @@ This approach is consistent with both schema.org and the W3C OWL Time Ontology.<
                         </td>
                         <td>
                           
-			     
-			    <a href="http://purl.org/dc/terms/Location" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Location" data-placement="right">Location</a>
-                            
+			    
+			    <a href="#Location" data-placement="right">Location</a>
+			    
                           
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority.</td>
-                        <td property="skos:scopeNote">A common usage of the spatial property will be to define the Administrative Territorial Unit(s) - typically a country or region - in which a Public Service is available. The Publications Office of the European Union offers <a href="http://publications.europa.eu/resource/dataset/atu">a URI set</a> that is suitable for this purpose, e.g. Malta is identified by
+                        <td property="skos:scopeNote">A common usage of the spatial property will be to define the Administrative Territorial Unit(s) - typically a country or region - in which a Public Service is available. The Publications Office of the European Union offers <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/atu">a URI set</a> that is suitable for this purpose, e.g. Malta is identified by
 http://publications.europa.eu/resource/authority/atu/MLT,
 West Flanders by
 http://publications.europa.eu/resource/authority/atu/BEL_PR_WVL and so on. In case the ATU code list is not suitable, <a href="https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/nuts">NUTS</a> or <a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">LAU</a>, <a href="http://publications.europa.eu/resource/dataset/place">NAL Place</a> or <a href="http://www.geonames.org">Geonames</a> are recommended to use, in that order. If those are still not sufficient, we recommend to define your own code list.
@@ -2875,14 +2977,14 @@ the Legal Resource under which the Rules are being defined (see section 3.16).</
                         </td>
                         <td>
                           
-			     
-			    <a href="http://purl.org/dc/terms/LinguisticSystem" data-toggle="tooltip" data-content="http://purl.org/dc/terms/LinguisticSystem" data-placement="right">LinguisticSystem</a>
-                            
+			    
+			    <a href="#LinguisticSystem" data-placement="right">LinguisticSystem</a>
+			    
                           
                         </td>
 			<td>0..*</td>
-                        <td property="rdfs:comment">This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language.</td>
+                        <td property="skos:scopeNote">The possible values for this property are described in the controlled vocabulary <a href=" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language">Language</a> Authority Table of the Publications Office. </td>
                         <td></td>
                       </tr>
                     

@@ -11,13 +11,15 @@
     <https://semiceu.github.io/shacl/cpsv-ap_en#BusinessEventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#ChannelShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#CostShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_en#CriterionRequirementShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_en#CriterionShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#EventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#EvidenceShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#LifeEventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#OutputShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_en#ParticipationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#PublicOrganizationShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_en#ParticipationShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_en#LinguisticSystemShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_en#LocationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#PublicServiceShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#RuleShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#CollectionShape>,
@@ -25,6 +27,7 @@
     <https://semiceu.github.io/shacl/cpsv-ap_en#DatasetShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#AddressShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#AgentShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_en#DocumentShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#ContactPointShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#OpeningHoursSpecificationShape> .
 
@@ -128,7 +131,7 @@
     shacl:name "name"@en;
     shacl:path dc:title
   ], [
-    shacl:class <http://data.europa.eu/m8g/Participation>;
+    shacl:class <http://fixme.com#Participation>;
     shacl:definition """This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.
 """@en;
     shacl:name "plays role"@en;
@@ -201,6 +204,16 @@ required for an online channel, whereas a physical signature may be required for
     shacl:definition "This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class."@en;
     shacl:name "availability restriction"@en;
     shacl:path schemas:hoursAvailable
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "the email of the ContactPoint"@en;
+    shacl:name "hasEmail"@en;
+    shacl:path <http://fixme.com#email>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "the telephone of the ContactPoint"@en;
+    shacl:name "hasTelephone"@en;
+    shacl:path <http://fixme.com#telephone>
   ];
   shacl:targetClass schemas:ContactPoint .
 
@@ -208,7 +221,7 @@ required for an online channel, whereas a physical signature may be required for
   shacl:closed false;
   shacl:property [
     shacl:class skos:Concept;
-    shacl:definition "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary."@en;
+    shacl:definition "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed."@en;
     shacl:maxCount 1;
     shacl:name "currency"@en;
     shacl:path <http://data.europa.eu/m8g/currency>
@@ -217,7 +230,7 @@ required for an online channel, whereas a physical signature may be required for
     shacl:definition "This property represents a free text description of the Cost."@en;
     shacl:maxCount 1;
     shacl:name "description"@en;
-    shacl:path <http://data.europa.eu/m8g/description>
+    shacl:path dc:description
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "This property represents an Identifier for the Cost."@en;
@@ -245,7 +258,7 @@ required for an online channel, whereas a physical signature may be required for
   ];
   shacl:targetClass <http://data.europa.eu/m8g/Cost> .
 
-<https://semiceu.github.io/shacl/cpsv-ap_en#CriterionRequirementShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/cpsv-ap_en#CriterionShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
     shacl:datatype rdf:langString;
@@ -267,7 +280,7 @@ required for an online channel, whereas a physical signature may be required for
     shacl:name "type"@en;
     shacl:path dc:type
   ];
-  shacl:targetClass <http://data.europa.eu/m8g/CriterionRequirement> .
+  shacl:targetClass <http://data.europa.eu/m8g/Criterion> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_en#DatasetShape> a shacl:NodeShape;
   shacl:closed false;
@@ -279,7 +292,7 @@ required for an online channel, whereas a physical signature may be required for
     shacl:path dc:description
   ], [
     shacl:class <http://purl.org/vocab/cpsv#PublicService>;
-    shacl:definition "The Is has part property links a Public Service Dataset to the Public Service."@en;
+    shacl:definition "The has part property links a Public Service Dataset to the Public Service."@en;
     shacl:name "has part"@en;
     shacl:path dc:hasPart
   ], [
@@ -307,6 +320,10 @@ required for an online channel, whereas a physical signature may be required for
     shacl:path dc:title
   ];
   shacl:targetClass dcat:Dataset .
+
+<https://semiceu.github.io/shacl/cpsv-ap_en#DocumentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass foaf:Document .
 
 <https://semiceu.github.io/shacl/cpsv-ap_en#EventShape> a shacl:NodeShape;
   shacl:closed false;
@@ -360,8 +377,7 @@ required for an online channel, whereas a physical signature may be required for
     shacl:path dc:identifier
   ], [
     shacl:class dc:LinguisticSystem;
-    shacl:definition "Indicates the language(s) in which the Evidence must be provided."@en;
-    shacl:name "language"@en;
+    shacl:definition "Indicates the language(s) in which the Evidence must be provided.$ea_notes=The possible values for this property are described in the controlled vocabulary <a href=\" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language\">Language</a> Authority Table of the Publications Office. "@en;
     shacl:path dc:language
   ], [
     shacl:datatype rdf:langString;
@@ -397,6 +413,14 @@ required for an online channel, whereas a physical signature may be required for
 <https://semiceu.github.io/shacl/cpsv-ap_en#LifeEventShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://data.europa.eu/m8g/LifeEvent> .
+
+<https://semiceu.github.io/shacl/cpsv-ap_en#LinguisticSystemShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:LinguisticSystem .
+
+<https://semiceu.github.io/shacl/cpsv-ap_en#LocationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:Location .
 
 <https://semiceu.github.io/shacl/cpsv-ap_en#OpeningHoursSpecificationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -456,7 +480,7 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
     shacl:name "role"@en;
     shacl:path <http://data.europa.eu/m8g/role>
   ];
-  shacl:targetClass <http://data.europa.eu/m8g/Participation> .
+  shacl:targetClass <http://fixme.com#Participation> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_en#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -527,9 +551,10 @@ thereof."""@en;
     shacl:name "has cost"@en;
     shacl:path <http://data.europa.eu/m8g/hasCost>
   ], [
-    shacl:class <http://data.europa.eu/m8g/CriterionRequirement>;
-    shacl:definition """The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,
-including courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\""""@en;
+    shacl:class <http://data.europa.eu/m8g/Criterion>;
+    shacl:definition """Links a Public Service to a class that describes the criteria for needing or using the 
+service, such as residency in a given location, being over a certain age etc. The 
+Criterion class is defined in the Core Criterion and Core Evidence Vocabulary"""@en;
     shacl:name "has criterion"@en;
     shacl:path <http://data.europa.eu/m8g/hasCriterion>
   ], [
@@ -543,7 +568,7 @@ including courts acting as such, professional bodies, and those professional ass
     shacl:name "has legal resource"@en;
     shacl:path <http://data.europa.eu/m8g/hasLegalResource>
   ], [
-    shacl:class <http://data.europa.eu/m8g/Participation>;
+    shacl:class <http://fixme.com#Participation>;
     shacl:definition "This property links a Public Service to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information."@en;
     shacl:name "has participation"@en;
     shacl:path <http://data.europa.eu/m8g/hasParticipation>
@@ -577,7 +602,7 @@ Public Services may be associated with a particular Event and, likewise, the sam
     shacl:path dcat:keyword
   ], [
     shacl:class dc:LinguisticSystem;
-    shacl:definition "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The recommended controlled vocabularies forthis property is the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language\">Language Authority Table</a> of the Publications Office"@en;
+    shacl:definition "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language."@en;
     shacl:name "language"@en;
     shacl:path dc:language
   ], [
@@ -601,9 +626,9 @@ Duration Syntax - Syntax
 Durations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. 
 
 Note that days and times are separated by an uppercase T which also
-disambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> that references the official <a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.
+disambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the \" <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> \"that references the official \"<a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.
 
-This approach is consistent with both schema.org and the W3C OWL Time Ontology."""@en;
+\"This approach is consistent with both schema.org and the W3C OWL Time Ontology.\""""@en;
     shacl:maxCount 1;
     shacl:name "processing time"@en;
     shacl:path <http://data.europa.eu/m8g/processingTime>
@@ -675,7 +700,7 @@ the Legal Resource under which the Rules are being defined (see section 3.16).""
     shacl:path <http://purl.org/vocab/cpsv#implements>
   ], [
     shacl:class dc:LinguisticSystem;
-    shacl:definition "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary."@en;
+    shacl:definition "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language."@en;
     shacl:name "language"@en;
     shacl:path dc:language
   ], [
