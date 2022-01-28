@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/1f6b5c847c81ed6a09b99fe647f45b2f1b369897",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/1f6b5c847c81ed6a09b99fe647f45b2f1b369897/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/974d27b1b0564cbc0db6cc25e11effa6c7092e3b",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/974d27b1b0564cbc0db6cc25e11effa6c7092e3b/CHANGELOG",
     "feedbackurl": "https://github.com/catalogue-of-services-isa/CPSV-AP/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -268,13 +268,13 @@
           "range": [
             {
               "range_label": "OpeningHoursSpecification",
-              "range_uri": "https://schema.org/OpeningHoursSpecfication"
+              "range_uri": "https://schema.org/OpeningHoursSpecification"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Opening Hours Specification",
-              "range_puri": "https://schema.org/OpeningHoursSpecfication",
+              "range_puri": "https://schema.org/OpeningHoursSpecification",
               "range_label": {
                 "en": "Opening Hours Specification"
               }
@@ -1272,6 +1272,126 @@
       ]
     },
     {
+      "uri": "http://data.europa.eu/m8g/Participation",
+      "name": "Participation",
+      "label": {
+        "en": "Participation"
+      },
+      "sort": "Participation",
+      "description": {
+        "en": "The CPSV-AP recognises a common role connected with public services, i.e. the Competent Authority. However, this simple structure does not allow statements to be made about those participants, such the start and end date of a contract, nor does it support the inclusion of other roles. The Participation class supports this extra complexity if required, for instance, the description of a service user or a service provider. The model is consistent with the CPOV which in turn is based on the W3C Organization Ontology that supports the common cases simply but allows the complex cases where necessary. The Participation class can be mapped to the Organization Ontology's Membership class that allows more complex\r\nrelationships and richer metadata to be applied to a role filled by a given Agent."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://data.europa.eu/m8g/role",
+          "name": "role",
+          "sort": "role",
+          "label": {
+            "en": "role"
+          },
+          "description": {
+            "en": "Provides the role played. This should be provided using a controlled vocabulary. Since \r\nthis is an extension mechanism for the CSPV-AP, the controlled vocabulary should be decided to suit local implementations."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Participation",
+              "uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "A free text description of the Participation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Participation",
+              "uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Participation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Participation",
+              "uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://data.europa.eu/m8g/PublicOrganization",
       "name": "Public Organization",
       "label": {
@@ -1389,126 +1509,6 @@
       "properties": []
     },
     {
-      "uri": "http://purl.org/vocab/cpsv#Participation",
-      "name": "Participation",
-      "label": {
-        "en": "Participation"
-      },
-      "sort": "Participation",
-      "description": {
-        "en": "The CPSV-AP recognises a common role connected with public services, i.e. the Competent Authority. However, this simple structure does not allow statements to be made about those participants, such the start and end date of a contract, nor does it support the inclusion of other roles. The Participation class supports this extra complexity if required, for instance, the description of a service user or a service provider. The model is consistent with the CPOV which in turn is based on the W3C Organization Ontology that supports the common cases simply but allows the complex cases where necessary. The Participation class can be mapped to the Organization Ontology's Membership class that allows more complex\r\nrelationships and richer metadata to be applied to a role filled by a given Agent."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://data.europa.eu/m8g/role",
-          "name": "role",
-          "sort": "role",
-          "label": {
-            "en": "role"
-          },
-          "description": {
-            "en": "Provides the role played. This should be provided using a controlled vocabulary. Since \r\nthis is an extension mechanism for the CSPV-AP, the controlled vocabulary should be decided to suit local implementations."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Participation",
-              "uri": "http://purl.org/vocab/cpsv#Participation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "description",
-          "sort": "description",
-          "label": {
-            "en": "description"
-          },
-          "description": {
-            "en": "A free text description of the Participation."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Participation",
-              "uri": "http://purl.org/vocab/cpsv#Participation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "This property represents an Identifier for the Participation."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Participation",
-              "uri": "http://purl.org/vocab/cpsv#Participation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "http://purl.org/vocab/cpsv#PublicService",
       "name": "Public Service",
       "label": {
@@ -1564,7 +1564,7 @@
             "en": "has competent authority"
           },
           "description": {
-            "en": "This property links a Public Service to a Public Organization, which is the responsible\r\nAgent for the delivery of the Public Service. Whether the particular Public\r\nOrganization provides the public service directly or outsources it is not relevant. The\r\nPublic Organization that is the Competent Authority of the service is the one that is\r\nultimately responsible for managing and providing the public service.\r\n\r\nThe term Competent Authority is defined in the Services Directive (2006/123/EC) in\r\nthe following way:\r\nAny body or authority which has a supervisory or regulatory role in a Member State\r\nin relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional\r\nassociations or other professional organisations which, in the exercise of their legal\r\nautonomy, regulate in a collective manner access to service activities or the exercise\r\nthereof.\r"
+            "en": "This property links a Public Service to a Public Organization, which is the responsible\r\nAgent for the delivery of the Public Service. Whether the particular Public\r\nOrganization provides the public service directly or outsources it is not relevant. The\r\nPublic Organization that is the Competent Authority of the service is the one that is\r\nultimately responsible for managing and providing the public service.\r\n\r\nThe term Competent Authority is defined in the Services Directive (2006/123/EC) in\r\nthe following way:\r\n\"Any body or authority which has a supervisory or regulatory role in a Member State\r\nin relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional\r\nassociations or other professional organisations which, in the exercise of their legal\r\nautonomy, regulate in a collective manner access to service activities or the exercise\r\nthereof\".\r"
           },
           "usage": {},
           "domain": [
@@ -1751,13 +1751,13 @@
           "range": [
             {
               "range_label": "Participation",
-              "range_uri": "http://purl.org/vocab/cpsv#Participation"
+              "range_uri": "http://data.europa.eu/m8g/Participation"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Participation",
-              "range_puri": "http://purl.org/vocab/cpsv#Participation",
+              "range_puri": "http://data.europa.eu/m8g/Participation",
               "range_label": {
                 "en": "Participation"
               }
@@ -3414,13 +3414,13 @@
           "range": [
             {
               "range_label": "Participation",
-              "range_uri": "http://purl.org/vocab/cpsv#Participation"
+              "range_uri": "http://data.europa.eu/m8g/Participation"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Participation",
-              "range_puri": "http://purl.org/vocab/cpsv#Participation",
+              "range_puri": "http://data.europa.eu/m8g/Participation",
               "range_label": {
                 "en": "Participation"
               }
@@ -3532,10 +3532,10 @@
       "properties": [
         {
           "uri": "https://schema.org/email",
-          "name": "hasEmail",
-          "sort": "hasEmail",
+          "name": "has email",
+          "sort": "has email",
           "label": {
-            "en": "hasEmail"
+            "en": "has email"
           },
           "description": {
             "en": "the email of the ContactPoint"
@@ -3585,13 +3585,13 @@
           "range": [
             {
               "range_label": "OpeningHoursSpecification",
-              "range_uri": "https://schema.org/OpeningHoursSpecfication"
+              "range_uri": "https://schema.org/OpeningHoursSpecification"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Opening Hours Specification",
-              "range_puri": "https://schema.org/OpeningHoursSpecfication",
+              "range_puri": "https://schema.org/OpeningHoursSpecification",
               "range_label": {
                 "en": "Opening Hours Specification"
               }
@@ -3602,10 +3602,10 @@
         },
         {
           "uri": "https://schema.org/telephone",
-          "name": "hasTelephone",
-          "sort": "hasTelephone",
+          "name": "has telephone",
+          "sort": "has telephone",
           "label": {
-            "en": "hasTelephone"
+            "en": "has telephone"
           },
           "description": {
             "en": "the telephone of the ContactPoint"
@@ -3638,7 +3638,7 @@
       ]
     },
     {
-      "uri": "https://schema.org/OpeningHoursSpecfication",
+      "uri": "https://schema.org/OpeningHoursSpecification",
       "name": "Opening Hours Specification",
       "label": {
         "en": "Opening Hours Specification"

@@ -16,10 +16,10 @@
     <https://semiceu.github.io/shacl/cpsv-ap_en#EvidenceShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#LifeEventShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#OutputShape>,
+    <https://semiceu.github.io/shacl/cpsv-ap_en#ParticipationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#PublicOrganizationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#LinguisticSystemShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#LocationShape>,
-    <https://semiceu.github.io/shacl/cpsv-ap_en#ParticipationShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#PublicServiceShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#RuleShape>,
     <https://semiceu.github.io/shacl/cpsv-ap_en#CollectionShape>,
@@ -131,7 +131,7 @@
     shacl:name "name"@en;
     shacl:path dc:title
   ], [
-    shacl:class <http://purl.org/vocab/cpsv#Participation>;
+    shacl:class <http://data.europa.eu/m8g/Participation>;
     shacl:definition """This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.
 """@en;
     shacl:name "plays role"@en;
@@ -146,7 +146,7 @@
 <https://semiceu.github.io/shacl/cpsv-ap_en#ChannelShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class schemas:OpeningHoursSpecfication;
+    shacl:class schemas:OpeningHoursSpecification;
     shacl:definition "This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class."@en;
     shacl:maxCount 1;
     shacl:name "availability restriction"@en;
@@ -200,19 +200,19 @@ required for an online channel, whereas a physical signature may be required for
 <https://semiceu.github.io/shacl/cpsv-ap_en#ContactPointShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class schemas:OpeningHoursSpecfication;
+    shacl:class schemas:OpeningHoursSpecification;
     shacl:definition "This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class."@en;
     shacl:name "availability restriction"@en;
     shacl:path schemas:hoursAvailable
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "the email of the ContactPoint"@en;
-    shacl:name "hasEmail"@en;
+    shacl:name "has email"@en;
     shacl:path schemas:email
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "the telephone of the ContactPoint"@en;
-    shacl:name "hasTelephone"@en;
+    shacl:name "has telephone"@en;
     shacl:path schemas:telephone
   ];
   shacl:targetClass schemas:ContactPoint .
@@ -425,7 +425,7 @@ required for an online channel, whereas a physical signature may be required for
 
 <https://semiceu.github.io/shacl/cpsv-ap_en#OpeningHoursSpecificationShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass schemas:OpeningHoursSpecfication .
+  shacl:targetClass schemas:OpeningHoursSpecification .
 
 <https://semiceu.github.io/shacl/cpsv-ap_en#OutputShape> a shacl:NodeShape;
   shacl:closed false;
@@ -481,7 +481,7 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
     shacl:name "role"@en;
     shacl:path <http://data.europa.eu/m8g/role>
   ];
-  shacl:targetClass <http://purl.org/vocab/cpsv#Participation> .
+  shacl:targetClass <http://data.europa.eu/m8g/Participation> .
 
 <https://semiceu.github.io/shacl/cpsv-ap_en#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -531,12 +531,12 @@ ultimately responsible for managing and providing the public service.
 
 The term Competent Authority is defined in the Services Directive (2006/123/EC) in
 the following way:
-Any body or authority which has a supervisory or regulatory role in a Member State
+\"Any body or authority which has a supervisory or regulatory role in a Member State
 in relation to service activities, including, in particular, administrative authorities,
 including courts acting as such, professional bodies, and those professional
 associations or other professional organisations which, in the exercise of their legal
 autonomy, regulate in a collective manner access to service activities or the exercise
-thereof."""@en;
+thereof\"."""@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "has competent authority"@en;
@@ -569,7 +569,7 @@ Criterion class is defined in the Core Criterion and Core Evidence Vocabulary"""
     shacl:name "has legal resource"@en;
     shacl:path <http://data.europa.eu/m8g/hasLegalResource>
   ], [
-    shacl:class <http://purl.org/vocab/cpsv#Participation>;
+    shacl:class <http://data.europa.eu/m8g/Participation>;
     shacl:definition "This property links a Public Service to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information."@en;
     shacl:name "has participation"@en;
     shacl:path <http://data.europa.eu/m8g/hasParticipation>
