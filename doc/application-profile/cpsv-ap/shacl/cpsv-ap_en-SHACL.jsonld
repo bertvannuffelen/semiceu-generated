@@ -348,6 +348,9 @@
           "sh:definition": {
             "en": "Indicates the language(s) in which the Evidence must be provided.$ea_notes=The possible values for this property are described in the controlled vocabulary <a href=\" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language\">Language</a> Authority Table of the Publications Office. "
           },
+          "sh:name": {
+            "en": "language"
+          },
           "sh:path": "http://purl.org/dc/terms/language"
         },
         {
@@ -479,6 +482,20 @@
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganization"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LinguisticSystemShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/LinguisticSystem"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LocationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://purl.org/dc/terms/Location"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#ParticipationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -519,21 +536,7 @@
           "sh:path": "http://data.europa.eu/m8g/role"
         }
       ],
-      "sh:targetClass": "http://fixme.com#Participation"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LinguisticSystemShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://purl.org/dc/terms/LinguisticSystem"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#LocationShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://purl.org/dc/terms/Location"
+      "sh:targetClass": "http://purl.org/vocab/cpsv#Participation"
     },
     {
       "@id": "https://semiceu.github.io/shacl/cpsv-ap_en#PublicServiceShape",
@@ -635,7 +638,7 @@
           "sh:path": "http://data.europa.eu/m8g/hasLegalResource"
         },
         {
-          "sh:class": "http://fixme.com#Participation",
+          "sh:class": "http://purl.org/vocab/cpsv#Participation",
           "sh:definition": {
             "en": "This property links a Public Service to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information."
           },
@@ -699,7 +702,7 @@
         {
           "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
           "sh:definition": {
-            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language."
+            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language.$ea_notes=This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language."
           },
           "sh:name": {
             "en": "language"
@@ -721,7 +724,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#duration",
           "sh:definition": {
-            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the \" <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> \"that references the official \"<a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.\r\n\r\n\"This approach is consistent with both schema.org and the W3C OWL Time Ontology.\""
+            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. "
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -855,7 +858,7 @@
         {
           "sh:class": "http://purl.org/dc/terms/LinguisticSystem",
           "sh:definition": {
-            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language."
+            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language.$ea_notes=This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language."
           },
           "sh:name": {
             "en": "language"
@@ -1155,7 +1158,7 @@
           "sh:path": "http://purl.org/dc/terms/title"
         },
         {
-          "sh:class": "http://fixme.com#Participation",
+          "sh:class": "http://purl.org/vocab/cpsv#Participation",
           "sh:definition": {
             "en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.\r\n"
           },
@@ -1197,7 +1200,7 @@
           "sh:name": {
             "en": "hasEmail"
           },
-          "sh:path": "http://fixme.com#email"
+          "sh:path": "https://schema.org/email"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -1207,7 +1210,7 @@
           "sh:name": {
             "en": "hasTelephone"
           },
-          "sh:path": "http://fixme.com#telephone"
+          "sh:path": "https://schema.org/telephone"
         }
       ],
       "sh:targetClass": "https://schema.org/ContactPoint"

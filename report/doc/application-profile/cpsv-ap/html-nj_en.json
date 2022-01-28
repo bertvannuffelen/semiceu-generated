@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/4cecc07e98ea420d0c204b5d3382fa9576ccd367",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/4cecc07e98ea420d0c204b5d3382fa9576ccd367/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/c2c95a1ca02b4361daaf8c00b52a71fc0267d2d0",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/c2c95a1ca02b4361daaf8c00b52a71fc0267d2d0/CHANGELOG",
     "feedbackurl": "https://github.com/catalogue-of-services-isa/CPSV-AP/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -948,14 +948,16 @@
         },
         {
           "uri": "http://purl.org/dc/terms/language",
-          "name": "",
-          "sort": "",
-          "label": {},
+          "name": "language",
+          "sort": "language",
+          "label": {
+            "en": "language"
+          },
           "description": {
             "en": "Indicates the language(s) in which the Evidence must be provided.$ea_notes=The possible values for this property are described in the controlled vocabulary <a href=\" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language\">Language</a> Authority Table of the Publications Office. "
           },
           "usage": {
-            "en": "NOTE"
+            "en": "The recommended controlled vocabularies forthis property is the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language\">Language</a> Authority Table of the Publications Office"
           },
           "domain": [
             {
@@ -1241,7 +1243,7 @@
             "en": "This property represents the type of Output as defined in a controlled vocabulary."
           },
           "usage": {
-            "en": "Possible values of Output types are:\r\n* Declaration\r\n* Physical object\r\n* Code\r\n* Financial obligation\r\n* Financial benefit\r\n* Recognition\r\n* Permit"
+            "en": "Possible values of Output types are: Declaration, Physical object, Code, Financial obligation, Financial benefit, Recognition, Permit"
           },
           "domain": [
             {
@@ -1295,7 +1297,7 @@
             "en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority."
           },
           "usage": {
-            "en": "The value should be a URI from the \"Administrative Territorial Units Named Authority List\"[https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/atu] maintained by the Publications Office's Metadata Registry."
+            "en": "The value should be a URI from the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/atu\">Administrative Territorial Units</a> Authority Table maintained by the Publications Office."
           },
           "domain": [
             {
@@ -1359,7 +1361,35 @@
       ]
     },
     {
-      "uri": "http://fixme.com#Participation",
+      "uri": "http://purl.org/dc/terms/LinguisticSystem",
+      "name": "LinguisticSystem",
+      "label": {
+        "en": "LinguisticSystem"
+      },
+      "sort": "LinguisticSystem",
+      "description": {
+        "en": "A system of signs, symbols, sounds, gestures, or rules used in communication."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://purl.org/dc/terms/Location",
+      "name": "Location",
+      "label": {
+        "en": "Location"
+      },
+      "sort": "Location",
+      "description": {
+        "en": "An identifiable geographic place or named place."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://purl.org/vocab/cpsv#Participation",
       "name": "Participation",
       "label": {
         "en": "Participation"
@@ -1385,7 +1415,7 @@
           "domain": [
             {
               "EA-Name": "Participation",
-              "uri": "http://fixme.com#Participation"
+              "uri": "http://purl.org/vocab/cpsv#Participation"
             }
           ],
           "range": [
@@ -1420,7 +1450,7 @@
           "domain": [
             {
               "EA-Name": "Participation",
-              "uri": "http://fixme.com#Participation"
+              "uri": "http://purl.org/vocab/cpsv#Participation"
             }
           ],
           "range": [
@@ -1455,7 +1485,7 @@
           "domain": [
             {
               "EA-Name": "Participation",
-              "uri": "http://fixme.com#Participation"
+              "uri": "http://purl.org/vocab/cpsv#Participation"
             }
           ],
           "range": [
@@ -1477,34 +1507,6 @@
           "codelist_uri": ""
         }
       ]
-    },
-    {
-      "uri": "http://purl.org/dc/terms/LinguisticSystem",
-      "name": "LinguisticSystem",
-      "label": {
-        "en": "LinguisticSystem"
-      },
-      "sort": "LinguisticSystem",
-      "description": {
-        "en": "A system of signs, symbols, sounds, gestures, or rules used in communication."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "http://purl.org/dc/terms/Location",
-      "name": "Location",
-      "label": {
-        "en": "Location"
-      },
-      "sort": "Location",
-      "description": {
-        "en": "An identifiable geographic place or named place."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
     },
     {
       "uri": "http://purl.org/vocab/cpsv#PublicService",
@@ -1749,13 +1751,13 @@
           "range": [
             {
               "range_label": "Participation",
-              "range_uri": "http://fixme.com#Participation"
+              "range_uri": "http://purl.org/vocab/cpsv#Participation"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Participation",
-              "range_puri": "http://fixme.com#Participation",
+              "range_puri": "http://purl.org/vocab/cpsv#Participation",
               "range_label": {
                 "en": "Participation"
               }
@@ -1877,9 +1879,11 @@
             "en": "processing time"
           },
           "description": {
-            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the \" <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> \"that references the official \"<a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.\r\n\r\n\"This approach is consistent with both schema.org and the W3C OWL Time Ontology.\""
+            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. "
           },
-          "usage": {},
+          "usage": {
+            "en": "Some examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> that references the official <a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.\r\n\r\nThis approach is consistent with both schema.org and the W3C OWL Time Ontology."
+          },
           "domain": [
             {
               "EA-Name": "PublicService",
@@ -2052,7 +2056,7 @@
             "en": "language"
           },
           "description": {
-            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language."
+            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language.$ea_notes=This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language."
           },
           "usage": {
             "en": "The recommended controlled vocabularies forthis property is the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language\">Language</a> Authority Table of the Publications Office"
@@ -2526,7 +2530,7 @@
             "en": "language"
           },
           "description": {
-            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language."
+            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language.$ea_notes=This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language."
           },
           "usage": {
             "en": "The possible values for this property are described in the controlled vocabulary <a href=\" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language\">Language</a> Authority Table of the Publications Office. "
@@ -3410,13 +3414,13 @@
           "range": [
             {
               "range_label": "Participation",
-              "range_uri": "http://fixme.com#Participation"
+              "range_uri": "http://purl.org/vocab/cpsv#Participation"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Participation",
-              "range_puri": "http://fixme.com#Participation",
+              "range_puri": "http://purl.org/vocab/cpsv#Participation",
               "range_label": {
                 "en": "Participation"
               }
@@ -3527,7 +3531,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#email",
+          "uri": "https://schema.org/email",
           "name": "hasEmail",
           "sort": "hasEmail",
           "label": {
@@ -3535,41 +3539,6 @@
           },
           "description": {
             "en": "the email of the ContactPoint"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://fixme.com#telephone",
-          "name": "hasTelephone",
-          "sort": "hasTelephone",
-          "label": {
-            "en": "hasTelephone"
-          },
-          "description": {
-            "en": "the telephone of the ContactPoint"
           },
           "usage": {},
           "domain": [
@@ -3625,6 +3594,41 @@
               "range_puri": "https://schema.org/OpeningHoursSpecfication",
               "range_label": {
                 "en": "Opening Hours Specification"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/telephone",
+          "name": "hasTelephone",
+          "sort": "hasTelephone",
+          "label": {
+            "en": "hasTelephone"
+          },
+          "description": {
+            "en": "the telephone of the ContactPoint"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "https://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
               }
             }
           ],
