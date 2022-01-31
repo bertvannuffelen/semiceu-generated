@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/2a37f2dcfe10114da3b1e4ffc669943af9f6b557",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/2a37f2dcfe10114da3b1e4ffc669943af9f6b557/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/b32da714c1267498b1c3cfdff6b8de125589654c",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/b32da714c1267498b1c3cfdff6b8de125589654c/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -219,7 +219,7 @@
             "en": "via channel"
           },
           "description": {
-            "en": "In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be\r\nrequired for an online channel, whereas a physical signature may be required for a face to face service provision.\r"
+            "en": "In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be\r\nrequired for an online channel, whereas a physical signature may be required for a face to face service provision."
           },
           "usage": {},
           "domain": [
@@ -780,7 +780,7 @@
             "en": "type"
           },
           "description": {
-            "en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.\r"
+            "en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child."
           },
           "usage": {},
           "domain": [
@@ -1356,6 +1356,39 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://vocab.belgif.be/ns/publicservice#isAbout",
+          "name": "is about",
+          "sort": "is about",
+          "label": {
+            "en": "is about"
+          },
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://vocab.belgif.be/ns/publicservice#isLegalResource",
           "name": "is legal resource",
           "sort": "is legal resource",
@@ -1419,39 +1452,6 @@
               "range_puri": "http://data.europa.eu/m8g/Evidence",
               "range_label": {
                 "en": "Evidence"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#isAbout",
-          "name": "is about",
-          "sort": "is about",
-          "label": {
-            "en": "is about"
-          },
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Output",
-              "uri": "http://data.europa.eu/m8g/Output"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
               }
             }
           ],
@@ -3055,6 +3055,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://vocab.belgif.be/ns/publicservice#lifecycleStatus",
+          "name": "lifecycle status",
+          "sort": "lifecycle status",
+          "label": {
+            "en": "lifecycle status"
+          },
+          "description": {
+            "en": "This property represents the status within the lifecycle of the public service (exp: creation, use or deletion of a Public Service). It doesn't refer to the status within the Public Service process."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/adms#status",
           "name": "status",
           "sort": "status",
@@ -3118,41 +3153,6 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#lifecycleStatus",
-          "name": "lifecycle status",
-          "sort": "lifecycle status",
-          "label": {
-            "en": "lifecycle status"
-          },
-          "description": {
-            "en": "This property represents the status within the lifecycle of the public service (exp: creation, use or deletion of a Public Service). It doesn't refer to the status within the Public Service process."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
               }
             }
           ],
