@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/974d27b1b0564cbc0db6cc25e11effa6c7092e3b/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/974d27b1b0564cbc0db6cc25e11effa6c7092e3b/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/4911a81461fbea87b3db24b119baad3e23ba08a3/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/4911a81461fbea87b3db24b119baad3e23ba08a3/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -201,6 +201,7 @@ TBD
                       <a href="#Business Event">Business Event</a> |
                       <a href="#Public Service">Public Service</a> |
                       <a href="#Rule">Rule</a> |
+                      <a href="#Purpose">Purpose</a> |
                       <a href="#Collection">Collection</a> |
                       <a href="#Concept">Concept</a> |
                       <a href="#Address">Address</a> |
@@ -209,7 +210,6 @@ TBD
                       <a href="#Group">Group</a> |
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Opening Hours Specification">Opening Hours Specification</a> |
-                      <a href="#Purpose">Purpose</a> |
                     </p>
                   </div>
                   
@@ -525,9 +525,9 @@ TBD
                       <a href="#Channel%3Adescription">description</a>, 
                       <a href="#Channel%3Aidentifier">identifier</a>, 
                       <a href="#Channel%3Avia%20channel">via channel</a>, 
+                      <a href="#Channel%3Ahas%20purpose">has purpose</a>, 
                       <a href="#Channel%3Aavailability%20restriction">availability restriction</a>, 
-                      <a href="#Channel%3Aopening%20hours">opening hours</a>, 
-                      <a href="#Channel%3Ahas%20purpose">has purpose</a>.</dd>
+                      <a href="#Channel%3Aopening%20hours">opening hours</a>.</dd>
                     
                   </dl>
                 </div>
@@ -628,6 +628,26 @@ required for an online channel, whereas a physical signature may be required for
                         <td></td>
                       </tr>
                     
+                      <tr id="Channel%3Ahas%20purpose" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#hasPurpose">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/publicservice#hasPurpose" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#hasPurpose" data-placement="right">
+                            has purpose</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Purpose</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property describes the relationship between a purpose and a channel. </td>
+                        <td property="skos:scopeNote">Different channels serve different purposes : information, activation of the service, assistance, appeal, ...</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Channel%3Aavailability%20restriction" typeof="rdfs:Property" resource="https://schema.org/hoursAvailable">
                         <td>
                           <code property="rdfs:label">
@@ -668,26 +688,6 @@ required for an online channel, whereas a physical signature may be required for
 Following that structure, days of the week are represented by two letter codes (Mo,Tu, We, Th, Fr, Sa, Su).  Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen (for example: Mo-Fr).
 
 If it is appropriate to add opening hours then this follows the day so if a phone service is available 08:00-20:00 Monday to Saturday and 08:00-18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Channel%3Ahas%20purpose" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#hasPurpose">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#hasPurpose" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#hasPurpose" data-placement="right">
-                            has purpose</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Purpose</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property describes the relationship between a purpose and a channel. </td>
-                        <td property="skos:scopeNote">Different channels serve different purposes : information, activation of the service, assistance, appeal, ...</td>
                         <td></td>
                       </tr>
                     
@@ -802,6 +802,10 @@ If it is appropriate to add opening hours then this follows the day so if a phon
                         </td>
                         <td>
                           
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#double" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#double" data-placement="right"></a>
+                            
+                          
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">This property represents a numeric value indicating the amount of the Cost.</td>
@@ -849,10 +853,10 @@ If it is appropriate to add opening hours then this follows the day so if a phon
                         <td></td>
                       </tr>
                     
-                      <tr id="Cost%3Acost%20breakdown" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#costBreakdown">
+                      <tr id="Cost%3Acost%20breakdown" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#costBreakdown">
                         <td>
                           <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#costBreakdown" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#costBreakdown" data-placement="right">
+                            <a href="http://vocab.belgif.be/ns/publicservice#costBreakdown" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#costBreakdown" data-placement="right">
                             cost breakdown</a>
                           </code>
                         </td>
@@ -1042,8 +1046,8 @@ In some cases, the Output of one service will be Evidence for another service. S
                       <a href="#Evidence%3Ais%20provided%20by">is provided by</a>, 
                       <a href="#Evidence%3Ais%20issued%20by">is issued by</a>, 
                       <a href="#Evidence%3Ais%20about">is about</a>, 
-                      <a href="#Evidence%3Acountry">country</a>, 
-                      <a href="#Evidence%3Acomes%20from">comes from</a>.</dd>
+                      <a href="#Evidence%3Acomes%20from">comes from</a>, 
+                      <a href="#Evidence%3Acountry">country</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1203,6 +1207,27 @@ In some cases, the Output of one service will be Evidence for another service. S
                         <td></td>
                       </tr>
                     
+                      <tr id="Evidence%3Acomes%20from" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#comesFrom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/publicservice#comesFrom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#comesFrom" data-placement="right">
+                            comes from</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Output</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property describes the case where an Evidence is considered as one or multiple Output. 
+This property might be used when a Public Service consumes its own Output as Evidence.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Evidence%3Acountry" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
                         <td>
                           <code property="rdfs:label">
@@ -1220,27 +1245,6 @@ In some cases, the Output of one service will be Evidence for another service. S
 			<td>0..1</td>
                         <td property="rdfs:comment">Country where the evidence has been issued.</td>
                         <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The Country controlled vocabulary can be reused for this.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Evidence%3Acomes%20from" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#comesFrom">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#comesFrom" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#comesFrom" data-placement="right">
-                            comes from</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Output</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property describes the case where an Evidence is considered as one or multiple Output. 
-This property might be used when a Public Service consumes its own Output as Evidence.</td>
-                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -1287,9 +1291,9 @@ This property might be used when a Public Service consumes its own Output as Evi
                       <a href="#Output%3Aname">name</a>, 
                       <a href="#Output%3Atype">type</a>, 
                       <a href="#Output%3Ahas%20legal%20resource">has legal resource</a>, 
-                      <a href="#Output%3Ais%20about">is about</a>, 
                       <a href="#Output%3Ais%20legal%20resource">is legal resource</a>, 
                       <a href="#Output%3Ais%20used%20as">is used as</a>, 
+                      <a href="#Output%3Ais%20about">is about</a>, 
                       <a href="#Output%3Aresponse%20time">response time</a>.</dd>
                     
                   </dl>
@@ -1390,10 +1394,10 @@ This property might be used when a Public Service consumes its own Output as Evi
                         <td></td>
                       </tr>
                     
-                      <tr id="Output%3Ahas%20legal%20resource" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#hasLegalResource">
+                      <tr id="Output%3Ahas%20legal%20resource" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#hasLegalResource">
                         <td>
                           <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#hasLegalResource" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#hasLegalResource" data-placement="right">
+                            <a href="http://vocab.belgif.be/ns/publicservice#hasLegalResource" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#hasLegalResource" data-placement="right">
                             has legal resource</a>
                           </code>
                         </td>
@@ -1406,6 +1410,47 @@ This property might be used when a Public Service consumes its own Output as Evi
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">The Has Legal Resource property links an Output to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Output relates, operates or has its legal basis.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Output%3Ais%20legal%20resource" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#isLegalResource">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/publicservice#isLegalResource" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#isLegalResource" data-placement="right">
+                            is legal resource</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property must be used if the Output is one or multiple legal resource</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Output%3Ais%20used%20as" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#isUsedAs">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/publicservice#isUsedAs" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#isUsedAs" data-placement="right">
+                            is used as</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Evidence</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property describes the case where an Output is considered as one or multiple Evidence. 
+This property might be used when a Public Service consumes its own Output as Evidence.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1426,47 +1471,6 @@ This property might be used when a Public Service consumes its own Output as Evi
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Output%3Ais%20legal%20resource" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#isLegalResource">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#isLegalResource" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#isLegalResource" data-placement="right">
-                            is legal resource</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Legal Resource</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property must be used if the Output is one or multiple legal resource</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Output%3Ais%20used%20as" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#isUsedAs">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#isUsedAs" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#isUsedAs" data-placement="right">
-                            is used as</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Evidence</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property describes the case where an Output is considered as one or multiple Evidence. 
-This property might be used when a Public Service consumes its own Output as Evidence.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1609,9 +1613,9 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Public%20Organization%3Ahas%20site">has site</a>, 
+                      <a href="#Public%20Organization%3Ahas%20channel">has channel</a>, 
                       <a href="#Public%20Organization%3Alegal%20form">legal form</a>, 
-                      <a href="#Public%20Organization%3Ahas%20channel">has channel</a>.</dd>
+                      <a href="#Public%20Organization%3Ahas%20site">has site</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1631,30 +1635,30 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
 
                     <tbody class="supertype">
                     
-                      <tr id="Public%20Organization%3Ahas%20site" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#hasSite">
+                      <tr id="Public%20Organization%3Ahas%20channel" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#hasChannel">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#hasSite" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#hasSite" data-placement="right">
-                            has site</a>
+                            <a href="http://vocab.belgif.be/ns/publicservice#hasChannel" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#hasChannel" data-placement="right">
+                            has channel</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Site</a>
+			    <a href="#Enter your translation here" data-placement="right">Channel</a>
 			    
                           
                         </td>
-			<td>1..*</td>
-                        <td property="rdfs:comment">Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company).</td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property indicates the specific Channel through which a Public Organization delivers a Public Service.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Organization%3Alegal%20form" typeof="rdfs:Property" resource="purl.eu/ns/publicservice#legalForm">
+                      <tr id="Public%20Organization%3Alegal%20form" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#legalForm">
                         <td>
                           <code property="rdfs:label">
-                            <a href="purl.eu/ns/publicservice#legalForm" data-toggle="tooltip" data-content="purl.eu/ns/publicservice#legalForm" data-placement="right">
+                            <a href="http://vocab.belgif.be/ns/publicservice#legalForm" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#legalForm" data-placement="right">
                             legal form</a>
                           </code>
                         </td>
@@ -1671,22 +1675,22 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Organization%3Ahas%20channel" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#hasChannel">
+                      <tr id="Public%20Organization%3Ahas%20site" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#hasSite">
                         <td>
                           <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#hasChannel" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#hasChannel" data-placement="right">
-                            has channel</a>
+                            <a href="http://www.w3.org/ns/org#hasSite" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#hasSite" data-placement="right">
+                            has site</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Channel</a>
+			    <a href="#Enter your translation here" data-placement="right">Site</a>
 			    
                           
                         </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property indicates the specific Channel through which a Public Organization delivers a Public Service.</td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company).</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1880,10 +1884,10 @@ behalf, to businesses, citizens or others public administrations.</dd>
                       <a href="#Public%20Service%3Aname">name</a>, 
                       <a href="#Public%20Service%3Afollows">follows</a>, 
                       <a href="#Public%20Service%3Aproduces">produces</a>, 
-                      <a href="#Public%20Service%3Astatus">status</a>, 
-                      <a href="#Public%20Service%3Akeyword">keyword</a>, 
                       <a href="#Public%20Service%3Ahas%20preferred%20channel">has preferred channel</a>, 
                       <a href="#Public%20Service%3Ahas%20requirement">has requirement</a>, 
+                      <a href="#Public%20Service%3Astatus">status</a>, 
+                      <a href="#Public%20Service%3Akeyword">keyword</a>, 
                       <a href="#Public%20Service%3Alifecycle%20status">lifecycle status</a>.</dd>
                     
                   </dl>
@@ -2368,6 +2372,47 @@ N.B. The spatial restriction is not meant to be used to describe eligibility or 
                         <td></td>
                       </tr>
                     
+                      <tr id="Public%20Service%3Ahas%20preferred%20channel" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#hasPreferredChannel">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/publicservice#hasPreferredChannel" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#hasPreferredChannel" data-placement="right">
+                            has preferred channel</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Channel</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This relationship represents the preferred channel for a specific Public Service. </td>
+                        <td property="skos:scopeNote">Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage.</td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Service%3Ahas%20requirement" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#hasRequirement">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/publicservice#hasRequirement" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#hasRequirement" data-placement="right">
+                            has requirement</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: &quot;Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,
+including courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.&quot;</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Public%20Service%3Astatus" typeof="rdfs:Property" resource="http://www.w3.org/ns/adms#status">
                         <td>
                           <code property="rdfs:label">
@@ -2404,47 +2449,6 @@ N.B. The spatial restriction is not meant to be used to describe eligibility or 
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">This property represents a keyword, term or phrase to describe the Public Service.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Service%3Ahas%20preferred%20channel" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#hasPreferredChannel">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#hasPreferredChannel" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#hasPreferredChannel" data-placement="right">
-                            has preferred channel</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Channel</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This relationship represents the preferred channel for a specific Public Service. </td>
-                        <td property="skos:scopeNote">Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Service%3Ahas%20requirement" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#hasRequirement">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#hasRequirement" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#hasRequirement" data-placement="right">
-                            has requirement</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Requirement</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: &quot;Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,
-including courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.&quot;</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2622,6 +2626,70 @@ the Legal Resource under which the Rules are being defined (see section 3.16).</
             </div>
             
               <div class="region region--no-space-top">
+              <h3 class="h3" id="Purpose"><a href="http://vocab.belgif.be/ns/publicservice#Purpose" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#Purpose" data-placement="right">Purpose</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel.</dd>
+                    
+                    <dt>Usage</dt><dd>This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, 
+
+More specifically:
+
+Each channel could serve several purposes.
+ 
+Each purpose can have one or more preferred channels, and one or more "deprecated" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Purpose%3Ahas%20channel">has channel</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Purpose%3Ahas%20channel" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#hasChannel">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/publicservice#hasChannel" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#hasChannel" data-placement="right">
+                            has channel</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Channel</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">This property describes the relationship between a purpose and a channel. </td>
+                        <td property="skos:scopeNote">Different channels serve different purposes : information, activation of the service, assistance, appeal, ...</td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
               <h3 class="h3" id="Collection"><a href="http://www.w3.org/2004/02/skos/core#Collection" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Collection" data-placement="right">Collection</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
@@ -2715,10 +2783,10 @@ The Concept may or may not belong to (member) a certain Collection.
 
                     <tbody class="supertype">
                     
-                      <tr id="Concept%3Aclassification" typeof="rdfs:Property" resource="http://fixme.com#classification">
+                      <tr id="Concept%3Aclassification" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/publicservice#classification">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://fixme.com#classification" data-toggle="tooltip" data-content="http://fixme.com#classification" data-placement="right">
+                            <a href="http://vocab.belgif.be/ns/publicservice#classification" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/publicservice#classification" data-placement="right">
                             classification</a>
                           </code>
                         </td>
@@ -2915,10 +2983,6 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                           </code>
                         </td>
                         <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
                           
                         </td>
 			<td>0..1</td>
@@ -3525,70 +3589,6 @@ representative of it, can be contacted.</td>
 			<td>1</td>
                         <td property="rdfs:comment">TThe date after when the Opening Hours Specification is not valid.</td>
                         <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Purpose"><a href="vocab.belgif.be/ns/publicservice#Purpose" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#Purpose" data-placement="right">Purpose</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel.</dd>
-                    
-                    <dt>Usage</dt><dd>This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, 
-
-More specifically:
-
-Each channel could serve several purposes.
- 
-Each purpose can have one or more preferred channels, and one or more "deprecated" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Purpose%3Ahas%20channel">has channel</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Purpose%3Ahas%20channel" typeof="rdfs:Property" resource="vocab.belgif.be/ns/publicservice#hasChannel">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="vocab.belgif.be/ns/publicservice#hasChannel" data-toggle="tooltip" data-content="vocab.belgif.be/ns/publicservice#hasChannel" data-placement="right">
-                            has channel</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Channel</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">This property describes the relationship between a purpose and a channel. </td>
-                        <td property="skos:scopeNote">Different channels serve different purposes : information, activation of the service, assistance, appeal, ...</td>
                         <td></td>
                       </tr>
                     

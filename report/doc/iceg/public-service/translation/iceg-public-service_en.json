@@ -162,6 +162,19 @@
       }
     },
     {
+      "EA-Guid": "{BBB9949B-6AFA-4dbf-B8B0-6FE35C0B3EF9}",
+      "name": "Purpose",
+      "label": {
+        "en": "Purpose"
+      },
+      "definition": {
+        "en": "This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel."
+      },
+      "usage": {
+        "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)"
+      }
+    },
+    {
       "EA-Guid": "{55E73634-2A60-4584-933C-CA77A91196A6}",
       "name": "Collection",
       "label": {
@@ -245,19 +258,6 @@
       },
       "usage": {
         "en": "The Core Public Service Vocabulary makes full use of schema.org's openingHours property to provide details of regular operations. The Opening Hours Specification  class can be used to provide details of exceptional circumstances, such as being closed on public holidays. Note that the property schema:opens is not used, therefore the contact point is closed. More specific closures can be indicated by including the schema:validFrom and schema:validThrough properties."
-      }
-    },
-    {
-      "EA-Guid": "{BBB9949B-6AFA-4dbf-B8B0-6FE35C0B3EF9}",
-      "name": "Purpose",
-      "label": {
-        "en": "Purpose"
-      },
-      "definition": {
-        "en": "This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel."
-      },
-      "usage": {
-        "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)"
       }
     }
   ],
@@ -526,19 +526,6 @@
       }
     },
     {
-      "EA-Guid": "{C3E03665-F750-4e30-80A7-D80A08DCAD63}",
-      "name": "classification",
-      "label": {
-        "en": "classification"
-      },
-      "definition": {
-        "en": "Classification of the different types of public service."
-      },
-      "usage": {
-        "en": "The classification of a Public Service can be done via a codelist. As an example, this one can be used: https://inspire.ec.europa.eu/codelist/ServiceTypeValue"
-      }
-    },
-    {
       "EA-Guid": "{162EA2A3-6F60-420e-B852-58BC230AC747}",
       "name": "is created by",
       "label": {
@@ -779,16 +766,6 @@
       }
     },
     {
-      "EA-Guid": "{57413551-2323-437f-835D-55EB742C6C42}",
-      "name": "is issued by",
-      "label": {
-        "en": "is issued by"
-      },
-      "definition": {
-        "en": "The Agent that has published the Requirement."
-      }
-    },
-    {
       "EA-Guid": "{390E7EB8-9BE8-434b-9473-A54E29674610}",
       "name": "is issued by",
       "label": {
@@ -806,6 +783,26 @@
       },
       "definition": {
         "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available."
+      }
+    },
+    {
+      "EA-Guid": "{57413551-2323-437f-835D-55EB742C6C42}",
+      "name": "is issued by",
+      "label": {
+        "en": "is issued by"
+      },
+      "definition": {
+        "en": "The Agent that has published the Requirement."
+      }
+    },
+    {
+      "EA-Guid": "{177F3705-53E3-4a81-B709-2512F7CCF615}",
+      "name": "related",
+      "label": {
+        "en": "related"
+      },
+      "definition": {
+        "en": "This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described."
       }
     },
     {
@@ -829,16 +826,6 @@
       },
       "usage": {
         "en": "Indication of a public service having a relationship with other public services.\r\n\r\nFor example, in Flanders there is a child allowance package, groeipakket. It consists of different services that can be requested together. Those different services are including, but not limited to: \r\n\tBasic benefit for every child\r\n\tDay care benefit\r\n\tSchool benefit\r\n\tAdditional benefit for children that have special needs (e.g., Children with a handicap)\r\n\tAdditional benefit for orphans\r\n\t\r\n\r\n"
-      }
-    },
-    {
-      "EA-Guid": "{177F3705-53E3-4a81-B709-2512F7CCF615}",
-      "name": "related",
-      "label": {
-        "en": "related"
-      },
-      "definition": {
-        "en": "This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described."
       }
     },
     {
@@ -995,6 +982,141 @@
       },
       "definition": {
         "en": "The Produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service. Outputs can be any resource, for instance a document, artefact or anything else being produced as a result of executing the Public Service."
+      }
+    },
+    {
+      "EA-Guid": "{C3E03665-F750-4e30-80A7-D80A08DCAD63}",
+      "name": "classification",
+      "label": {
+        "en": "classification"
+      },
+      "definition": {
+        "en": "Classification of the different types of public service."
+      },
+      "usage": {
+        "en": "The classification of a Public Service can be done via a codelist. As an example, this one can be used: https://inspire.ec.europa.eu/codelist/ServiceTypeValue"
+      }
+    },
+    {
+      "EA-Guid": "{F017EE3A-50BA-49ca-8D97-697B40CCC7DA}",
+      "name": "comes from",
+      "label": {
+        "en": "comes from"
+      },
+      "definition": {
+        "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
+      }
+    },
+    {
+      "EA-Guid": "{EAE02CEC-CCF5-44f2-89BD-E4394F36BE41}",
+      "name": "cost breakdown",
+      "label": {
+        "en": "cost breakdown"
+      },
+      "definition": {
+        "en": "The cost breakdown property represents as a free text how the cost is calculated. "
+      },
+      "usage": {
+        "en": "Since the cost calculation can be complex, this property simplifies the possible relationships between cost and other classes by inviting the user to describe the calculation of the cost. \r\nThe cost breakdown property is not to be confused with the description property since the first explains how the cost is calculated and the latter gives a brief description of the cost."
+      }
+    },
+    {
+      "EA-Guid": "{7D6E26C3-92E9-46e9-AEC5-7A27802D85AD}",
+      "name": "has channel",
+      "label": {
+        "en": "has channel"
+      },
+      "definition": {
+        "en": "This property indicates the specific Channel through which a Public Organization delivers a Public Service."
+      }
+    },
+    {
+      "EA-Guid": "{4E5B590A-D806-4c2e-A9B5-C0A21D2E1954}",
+      "name": "has channel",
+      "label": {
+        "en": "has channel"
+      },
+      "definition": {
+        "en": "This property describes the relationship between a purpose and a channel. "
+      },
+      "usage": {
+        "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
+      }
+    },
+    {
+      "EA-Guid": "{F8E73668-6806-488f-843B-AAAC11D6814D}",
+      "name": "has legal resource",
+      "label": {
+        "en": "has legal resource"
+      },
+      "definition": {
+        "en": "The Has Legal Resource property links an Output to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Output relates, operates or has its legal basis."
+      }
+    },
+    {
+      "EA-Guid": "{4A65C653-BFE4-447a-B186-0C99188C045F}",
+      "name": "has preferred channel",
+      "label": {
+        "en": "has preferred channel"
+      },
+      "definition": {
+        "en": "This relationship represents the preferred channel for a specific Public Service. "
+      },
+      "usage": {
+        "en": "Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage."
+      }
+    },
+    {
+      "EA-Guid": "{4E5B590A-D806-4c2e-A9B5-C0A21D2E1954}",
+      "name": "has purpose",
+      "label": {
+        "en": "has purpose"
+      },
+      "definition": {
+        "en": "This property describes the relationship between a purpose and a channel. "
+      },
+      "usage": {
+        "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
+      }
+    },
+    {
+      "EA-Guid": "{2B3A50CD-3A2A-40af-A31E-D76F8BEC535A}",
+      "name": "has requirement",
+      "label": {
+        "en": "has requirement"
+      },
+      "definition": {
+        "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r"
+      }
+    },
+    {
+      "EA-Guid": "{BA36DF36-068C-42ec-A20A-3F5023C97294}",
+      "name": "is legal resource",
+      "label": {
+        "en": "is legal resource"
+      },
+      "definition": {
+        "en": "This property must be used if the Output is one or multiple legal resource"
+      }
+    },
+    {
+      "EA-Guid": "{F017EE3A-50BA-49ca-8D97-697B40CCC7DA}",
+      "name": "is used as",
+      "label": {
+        "en": "is used as"
+      },
+      "definition": {
+        "en": "This property describes the case where an Output is considered as one or multiple Evidence. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
+      }
+    },
+    {
+      "EA-Guid": "{6501A109-DA99-4721-B2F4-A1C214F3A670}",
+      "name": "legal form",
+      "label": {
+        "en": "legal form"
+      },
+      "definition": {
+        "en": "The type of entity as defined by the Belgian law"
       }
     },
     {
@@ -1264,16 +1386,6 @@
       }
     },
     {
-      "EA-Guid": "{E3AF3CF1-7185-4860-8615-E6CEE658B7E2}",
-      "name": "availability restriction",
-      "label": {
-        "en": "availability restriction"
-      },
-      "definition": {
-        "en": "The availability restriction property links a Channel  to details of specific details of its opening hours that override the general case."
-      }
-    },
-    {
       "EA-Guid": "{F71C6A06-957F-4a1b-B624-0383D1F13A4E}",
       "name": "availability restriction",
       "label": {
@@ -1281,6 +1393,16 @@
       },
       "definition": {
         "en": "The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case."
+      }
+    },
+    {
+      "EA-Guid": "{E3AF3CF1-7185-4860-8615-E6CEE658B7E2}",
+      "name": "availability restriction",
+      "label": {
+        "en": "availability restriction"
+      },
+      "definition": {
+        "en": "The availability restriction property links a Channel  to details of specific details of its opening hours that override the general case."
       }
     },
     {
@@ -1340,132 +1462,10 @@
       }
     },
     {
-      "EA-Guid": "{6501A109-DA99-4721-B2F4-A1C214F3A670}",
-      "name": "legal form",
-      "label": {
-        "en": "legal form"
-      },
-      "definition": {
-        "en": "The type of entity as defined by the Belgian law"
-      }
-    },
-    {
-      "EA-Guid": "{F017EE3A-50BA-49ca-8D97-697B40CCC7DA}",
-      "name": "comes from",
-      "label": {
-        "en": "comes from"
-      },
-      "definition": {
-        "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
-      }
-    },
-    {
-      "EA-Guid": "{EAE02CEC-CCF5-44f2-89BD-E4394F36BE41}",
-      "name": "cost breakdown",
-      "label": {
-        "en": "cost breakdown"
-      },
-      "definition": {
-        "en": "The cost breakdown property represents as a free text how the cost is calculated. "
-      },
-      "usage": {
-        "en": "Since the cost calculation can be complex, this property simplifies the possible relationships between cost and other classes by inviting the user to describe the calculation of the cost. \r\nThe cost breakdown property is not to be confused with the description property since the first explains how the cost is calculated and the latter gives a brief description of the cost."
-      }
-    },
-    {
-      "EA-Guid": "{4E5B590A-D806-4c2e-A9B5-C0A21D2E1954}",
-      "name": "has channel",
-      "label": {
-        "en": "has channel"
-      },
-      "definition": {
-        "en": "This property describes the relationship between a purpose and a channel. "
-      },
-      "usage": {
-        "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
-      }
-    },
-    {
-      "EA-Guid": "{7D6E26C3-92E9-46e9-AEC5-7A27802D85AD}",
-      "name": "has channel",
-      "label": {
-        "en": "has channel"
-      },
-      "definition": {
-        "en": "This property indicates the specific Channel through which a Public Organization delivers a Public Service."
-      }
-    },
-    {
-      "EA-Guid": "{F8E73668-6806-488f-843B-AAAC11D6814D}",
-      "name": "has legal resource",
-      "label": {
-        "en": "has legal resource"
-      },
-      "definition": {
-        "en": "The Has Legal Resource property links an Output to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Output relates, operates or has its legal basis."
-      }
-    },
-    {
-      "EA-Guid": "{4A65C653-BFE4-447a-B186-0C99188C045F}",
-      "name": "has preferred channel",
-      "label": {
-        "en": "has preferred channel"
-      },
-      "definition": {
-        "en": "This relationship represents the preferred channel for a specific Public Service. "
-      },
-      "usage": {
-        "en": "Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage."
-      }
-    },
-    {
-      "EA-Guid": "{4E5B590A-D806-4c2e-A9B5-C0A21D2E1954}",
-      "name": "has purpose",
-      "label": {
-        "en": "has purpose"
-      },
-      "definition": {
-        "en": "This property describes the relationship between a purpose and a channel. "
-      },
-      "usage": {
-        "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
-      }
-    },
-    {
-      "EA-Guid": "{2B3A50CD-3A2A-40af-A31E-D76F8BEC535A}",
-      "name": "has requirement",
-      "label": {
-        "en": "has requirement"
-      },
-      "definition": {
-        "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r"
-      }
-    },
-    {
       "EA-Guid": "{DA4986E8-F3E4-43c8-A334-7B6EE0CA6D82}",
       "name": "is about",
       "label": {
         "en": "is about"
-      }
-    },
-    {
-      "EA-Guid": "{BA36DF36-068C-42ec-A20A-3F5023C97294}",
-      "name": "is legal resource",
-      "label": {
-        "en": "is legal resource"
-      },
-      "definition": {
-        "en": "This property must be used if the Output is one or multiple legal resource"
-      }
-    },
-    {
-      "EA-Guid": "{F017EE3A-50BA-49ca-8D97-697B40CCC7DA}",
-      "name": "is used as",
-      "label": {
-        "en": "is used as"
-      },
-      "definition": {
-        "en": "This property describes the case where an Output is considered as one or multiple Evidence. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
       }
     },
     {

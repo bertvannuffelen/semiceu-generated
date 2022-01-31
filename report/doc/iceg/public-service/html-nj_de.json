@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Working Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/974d27b1b0564cbc0db6cc25e11effa6c7092e3b",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/974d27b1b0564cbc0db6cc25e11effa6c7092e3b/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/4911a81461fbea87b3db24b119baad3e23ba08a3",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/4911a81461fbea87b3db24b119baad3e23ba08a3/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -267,6 +267,47 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://vocab.belgif.be/ns/publicservice#hasPurpose",
+          "name": "has purpose",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has purpose"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property describes the relationship between a purpose and a channel. "
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
+          },
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Purpose",
+              "range_uri": "http://vocab.belgif.be/ns/publicservice#Purpose"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://vocab.belgif.be/ns/publicservice#Purpose",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Purpose"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "https://schema.org/hoursAvailable",
           "name": "availability restriction",
           "sort": "Enter your translation here",
@@ -338,47 +379,6 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#hasPurpose",
-          "name": "has purpose",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has purpose"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property describes the relationship between a purpose and a channel. "
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
-          },
-          "domain": [
-            {
-              "EA-Name": "Channel",
-              "uri": "http://data.europa.eu/m8g/Channel"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Purpose",
-              "range_uri": "vocab.belgif.be/ns/publicservice#Purpose"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "vocab.belgif.be/ns/publicservice#Purpose",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Purpose"
               }
             }
           ],
@@ -534,8 +534,21 @@
               "uri": "http://data.europa.eu/m8g/Cost"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "Double",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_label": {
+                "de": "Double"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -614,7 +627,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "vocab.belgif.be/ns/publicservice#costBreakdown",
+          "uri": "http://vocab.belgif.be/ns/publicservice#costBreakdown",
           "name": "cost breakdown",
           "sort": "Enter your translation here",
           "label": {
@@ -1141,6 +1154,44 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://vocab.belgif.be/ns/publicservice#comesFrom",
+          "name": "comes from",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "comes from"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Output",
+              "range_uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Output",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Output"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/locn#adminUnitL1",
           "name": "country",
           "sort": "Enter your translation here",
@@ -1178,44 +1229,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#comesFrom",
-          "name": "comes from",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "comes from"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "http://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Output",
-              "range_uri": "http://data.europa.eu/m8g/Output"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/m8g/Output",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Output"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -1411,7 +1424,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "vocab.belgif.be/ns/publicservice#hasLegalResource",
+          "uri": "http://vocab.belgif.be/ns/publicservice#hasLegalResource",
           "name": "has legal resource",
           "sort": "Enter your translation here",
           "label": {
@@ -1449,42 +1462,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "vocab.belgif.be/ns/publicservice#isAbout",
-          "name": "is about",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "is about"
-          },
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Output",
-              "uri": "http://data.europa.eu/m8g/Output"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#isLegalResource",
+          "uri": "http://vocab.belgif.be/ns/publicservice#isLegalResource",
           "name": "is legal resource",
           "sort": "Enter your translation here",
           "label": {
@@ -1522,7 +1500,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "vocab.belgif.be/ns/publicservice#isUsedAs",
+          "uri": "http://vocab.belgif.be/ns/publicservice#isUsedAs",
           "name": "is used as",
           "sort": "Enter your translation here",
           "label": {
@@ -1553,6 +1531,41 @@
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Evidence"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "vocab.belgif.be/ns/publicservice#isAbout",
+          "name": "is about",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "is about"
+          },
+          "description": {},
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Agent"
               }
             }
           ],
@@ -1745,16 +1758,16 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://www.w3.org/ns/org#hasSite",
-          "name": "has site",
+          "uri": "http://vocab.belgif.be/ns/publicservice#hasChannel",
+          "name": "has channel",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "has site"
+            "en": "has channel"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
+            "en": "This property indicates the specific Channel through which a Public Organization delivers a Public Service."
           },
           "usage": {},
           "domain": [
@@ -1765,25 +1778,25 @@
           ],
           "range": [
             {
-              "range_label": "Site",
-              "range_uri": "http://www.w3.org/ns/org#Site"
+              "range_label": "Channel",
+              "range_uri": "http://data.europa.eu/m8g/Channel"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/ns/org#Site",
+              "range_puri": "http://data.europa.eu/m8g/Channel",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Site"
+                "en": "Channel"
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
-          "uri": "purl.eu/ns/publicservice#legalForm",
+          "uri": "http://vocab.belgif.be/ns/publicservice#legalForm",
           "name": "legal form",
           "sort": "Enter your translation here",
           "label": {
@@ -1820,16 +1833,16 @@
           "codelist_uri": ""
         },
         {
-          "uri": "vocab.belgif.be/ns/publicservice#hasChannel",
-          "name": "has channel",
+          "uri": "http://www.w3.org/ns/org#hasSite",
+          "name": "has site",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "has channel"
+            "en": "has site"
           },
           "description": {
             "de": "Enter your translation here",
-            "en": "This property indicates the specific Channel through which a Public Organization delivers a Public Service."
+            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
           },
           "usage": {},
           "domain": [
@@ -1840,21 +1853,21 @@
           ],
           "range": [
             {
-              "range_label": "Channel",
-              "range_uri": "http://data.europa.eu/m8g/Channel"
+              "range_label": "Site",
+              "range_uri": "http://www.w3.org/ns/org#Site"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/m8g/Channel",
+              "range_puri": "http://www.w3.org/ns/org#Site",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Channel"
+                "en": "Site"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "1..*",
           "codelist_uri": ""
         }
       ]
@@ -3205,6 +3218,85 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://vocab.belgif.be/ns/publicservice#hasPreferredChannel",
+          "name": "has preferred channel",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has preferred channel"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This relationship represents the preferred channel for a specific Public Service. "
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage."
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Channel",
+              "range_uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Channel",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Channel"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/publicservice#hasRequirement",
+          "name": "has requirement",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has requirement"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Requirement",
+              "range_uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Requirement",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Requirement"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://www.w3.org/ns/adms#status",
           "name": "status",
           "sort": "Enter your translation here",
@@ -3272,85 +3364,6 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#hasPreferredChannel",
-          "name": "has preferred channel",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has preferred channel"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This relationship represents the preferred channel for a specific Public Service. "
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage."
-          },
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Channel",
-              "range_uri": "http://data.europa.eu/m8g/Channel"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/m8g/Channel",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Channel"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#hasRequirement",
-          "name": "has requirement",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has requirement"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicService",
-              "uri": "http://purl.org/vocab/cpsv#PublicService"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Requirement",
-              "range_uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/m8g/Requirement",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Requirement"
               }
             }
           ],
@@ -3600,6 +3613,67 @@
       ]
     },
     {
+      "uri": "http://vocab.belgif.be/ns/publicservice#Purpose",
+      "name": "Purpose",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Purpose"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/publicservice#hasChannel",
+          "name": "has channel",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has channel"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "This property describes the relationship between a purpose and a channel. "
+          },
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
+          },
+          "domain": [
+            {
+              "EA-Name": "Purpose",
+              "uri": "http://vocab.belgif.be/ns/publicservice#Purpose"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Channel",
+              "range_uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Channel",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Channel"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://www.w3.org/2004/02/skos/core#Collection",
       "name": "Collection",
       "label": {
@@ -3670,7 +3744,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://fixme.com#classification",
+          "uri": "http://vocab.belgif.be/ns/publicservice#classification",
           "name": "classification",
           "sort": "Enter your translation here",
           "label": {
@@ -3791,21 +3865,8 @@
               "uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "de": "String"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -4789,67 +4850,6 @@
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "vocab.belgif.be/ns/publicservice#Purpose",
-      "name": "Purpose",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Purpose"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "vocab.belgif.be/ns/publicservice#hasChannel",
-          "name": "has channel",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has channel"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "This property describes the relationship between a purpose and a channel. "
-          },
-          "usage": {
-            "de": "Enter your translation here",
-            "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ..."
-          },
-          "domain": [
-            {
-              "EA-Name": "Purpose",
-              "uri": "vocab.belgif.be/ns/publicservice#Purpose"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Channel",
-              "range_uri": "http://data.europa.eu/m8g/Channel"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://data.europa.eu/m8g/Channel",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Channel"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]

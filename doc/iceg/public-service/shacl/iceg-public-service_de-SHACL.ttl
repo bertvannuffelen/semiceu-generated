@@ -24,6 +24,7 @@
     <https://semiceu.github.io/shacl/iceg-public-service_de#RequirementShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_de#PublicServiceShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_de#RuleShape>,
+    <https://semiceu.github.io/shacl/iceg-public-service_de#PurposeShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_de#CollectionShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_de#ConceptShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_de#AddressShape>,
@@ -31,8 +32,7 @@
     <https://semiceu.github.io/shacl/iceg-public-service_de#AgentShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_de#GroupShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_de#ContactPointShape>,
-    <https://semiceu.github.io/shacl/iceg-public-service_de#OpeningHoursSpecificationShape>,
-    <https://semiceu.github.io/shacl/iceg-public-service_de#PurposeShape> .
+    <https://semiceu.github.io/shacl/iceg-public-service_de#OpeningHoursSpecificationShape> .
 
 <https://semiceu.github.io/shacl/iceg-public-service_de#AddressShape> a shacl:NodeShape;
   shacl:closed false;
@@ -43,7 +43,6 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
-    shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -155,8 +154,10 @@
     shacl:name "Enter your translation here"@de;
     shacl:path dc:description
   ], [
+    shacl:class <http://vocab.belgif.be/ns/publicservice#Purpose>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasPurpose>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -199,7 +200,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://fixme.com#classification>
+    shacl:path <http://vocab.belgif.be/ns/publicservice#classification>
   ];
   shacl:targetClass skos:Concept .
 
@@ -244,7 +245,8 @@
     shacl:datatype rdf:langString;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#costBreakdown>
   ], [
     shacl:datatype skos:Concept;
     shacl:definition "Enter your translation here"@de;
@@ -276,6 +278,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://data.europa.eu/m8g/isDefinedBy>
   ], [
+    shacl:datatype xsd:double;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -323,7 +326,8 @@
   shacl:property [
     shacl:class <http://data.europa.eu/m8g/Output>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#comesFrom>
   ], [
     shacl:datatype skos:Concept;
     shacl:definition "Enter your translation here"@de;
@@ -430,7 +434,8 @@
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasLegalResource>
   ], [
     shacl:datatype <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "Enter your translation here"@de;
@@ -444,11 +449,13 @@
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#isLegalResource>
   ], [
     shacl:class <http://data.europa.eu/m8g/Evidence>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#isUsedAs>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -501,7 +508,8 @@
   shacl:property [
     shacl:class <http://data.europa.eu/m8g/Channel>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasChannel>
   ], [
     shacl:class org:Site;
     shacl:definition "Enter your translation here"@de;
@@ -513,7 +521,8 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#legalForm>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
 
@@ -594,11 +603,13 @@
   ], [
     shacl:class <http://data.europa.eu/m8g/Channel>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasPreferredChannel>
   ], [
     shacl:class <http://data.europa.eu/m8g/Requirement>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasRequirement>
   ], [
     shacl:datatype <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "Enter your translation here"@de;
@@ -691,8 +702,10 @@
   shacl:property [
     shacl:class <http://data.europa.eu/m8g/Channel>;
     shacl:definition "Enter your translation here"@de;
-    shacl:name "Enter your translation here"@de
-  ] .
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasChannel>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/publicservice#Purpose> .
 
 <https://semiceu.github.io/shacl/iceg-public-service_de#RequirementShape> a shacl:NodeShape;
   shacl:closed false;

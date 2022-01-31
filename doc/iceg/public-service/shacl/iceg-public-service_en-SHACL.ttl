@@ -24,6 +24,7 @@
     <https://semiceu.github.io/shacl/iceg-public-service_en#RequirementShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_en#PublicServiceShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_en#RuleShape>,
+    <https://semiceu.github.io/shacl/iceg-public-service_en#PurposeShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_en#CollectionShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_en#ConceptShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_en#AddressShape>,
@@ -31,8 +32,7 @@
     <https://semiceu.github.io/shacl/iceg-public-service_en#AgentShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_en#GroupShape>,
     <https://semiceu.github.io/shacl/iceg-public-service_en#ContactPointShape>,
-    <https://semiceu.github.io/shacl/iceg-public-service_en#OpeningHoursSpecificationShape>,
-    <https://semiceu.github.io/shacl/iceg-public-service_en#PurposeShape> .
+    <https://semiceu.github.io/shacl/iceg-public-service_en#OpeningHoursSpecificationShape> .
 
 <https://semiceu.github.io/shacl/iceg-public-service_en#AddressShape> a shacl:NodeShape;
   shacl:closed false;
@@ -43,7 +43,6 @@
     shacl:name "address area"@en;
     shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
-    shacl:datatype xsd:string;
     shacl:definition "A globally unique identifier for each instance of an Address."@en;
     shacl:maxCount 1;
     shacl:name "address ID"@en;
@@ -157,8 +156,10 @@
     shacl:name "description"@en;
     shacl:path dc:description
   ], [
+    shacl:class <http://vocab.belgif.be/ns/publicservice#Purpose>;
     shacl:definition "This property describes the relationship between a purpose and a channel. "@en;
-    shacl:name "has purpose"@en
+    shacl:name "has purpose"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasPurpose>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "This property represents an Identifier for the Channel."@en;
@@ -202,7 +203,7 @@ required for an online channel, whereas a physical signature may be required for
     shacl:definition "Classification of the different types of public service."@en;
     shacl:maxCount 1;
     shacl:name "classification"@en;
-    shacl:path <http://fixme.com#classification>
+    shacl:path <http://vocab.belgif.be/ns/publicservice#classification>
   ];
   shacl:targetClass skos:Concept .
 
@@ -248,7 +249,8 @@ representative of it, can be contacted."""@en;
     shacl:datatype rdf:langString;
     shacl:definition "The cost breakdown property represents as a free text how the cost is calculated. "@en;
     shacl:maxCount 1;
-    shacl:name "cost breakdown"@en
+    shacl:name "cost breakdown"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#costBreakdown>
   ], [
     shacl:datatype skos:Concept;
     shacl:definition "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary."@en;
@@ -280,6 +282,7 @@ representative of it, can be contacted."""@en;
     shacl:name "is defined by"@en;
     shacl:path <http://data.europa.eu/m8g/isDefinedBy>
   ], [
+    shacl:datatype xsd:double;
     shacl:definition "This property represents a numeric value indicating the amount of the Cost."@en;
     shacl:maxCount 1;
     shacl:name "value"@en;
@@ -328,7 +331,8 @@ representative of it, can be contacted."""@en;
     shacl:class <http://data.europa.eu/m8g/Output>;
     shacl:definition """This property describes the case where an Evidence is considered as one or multiple Output. 
 This property might be used when a Public Service consumes its own Output as Evidence."""@en;
-    shacl:name "comes from"@en
+    shacl:name "comes from"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#comesFrom>
   ], [
     shacl:datatype skos:Concept;
     shacl:definition "The security classification assigned to an Evidence or, in general, to a content."@en;
@@ -435,7 +439,8 @@ This property might be used when a Public Service consumes its own Output as Evi
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
     shacl:definition "The Has Legal Resource property links an Output to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Output relates, operates or has its legal basis."@en;
-    shacl:name "has legal resource"@en
+    shacl:name "has legal resource"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasLegalResource>
   ], [
     shacl:datatype <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "This property represents an Identifier for the Output."@en;
@@ -449,12 +454,14 @@ This property might be used when a Public Service consumes its own Output as Evi
   ], [
     shacl:class <http://data.europa.eu/eli/ontology#LegalResource>;
     shacl:definition "This property must be used if the Output is one or multiple legal resource"@en;
-    shacl:name "is legal resource"@en
+    shacl:name "is legal resource"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#isLegalResource>
   ], [
     shacl:class <http://data.europa.eu/m8g/Evidence>;
     shacl:definition """This property describes the case where an Output is considered as one or multiple Evidence. 
 This property might be used when a Public Service consumes its own Output as Evidence."""@en;
-    shacl:name "is used as"@en
+    shacl:name "is used as"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#isUsedAs>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "This property represents the official Name of the Output."@en;
@@ -508,7 +515,8 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
   shacl:property [
     shacl:class <http://data.europa.eu/m8g/Channel>;
     shacl:definition "This property indicates the specific Channel through which a Public Organization delivers a Public Service."@en;
-    shacl:name "has channel"@en
+    shacl:name "has channel"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasChannel>
   ], [
     shacl:class org:Site;
     shacl:definition "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."@en;
@@ -520,7 +528,8 @@ this is an extension mechanism for the CSPV-AP, the controlled vocabulary should
     shacl:definition "The type of entity as defined by the Belgian law"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "legal form"@en
+    shacl:name "legal form"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#legalForm>
   ];
   shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
 
@@ -615,12 +624,14 @@ thereof."""@en;
   ], [
     shacl:class <http://data.europa.eu/m8g/Channel>;
     shacl:definition "This relationship represents the preferred channel for a specific Public Service. "@en;
-    shacl:name "has preferred channel"@en
+    shacl:name "has preferred channel"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasPreferredChannel>
   ], [
     shacl:class <http://data.europa.eu/m8g/Requirement>;
     shacl:definition """The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,
 including courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\""""@en;
-    shacl:name "has requirement"@en
+    shacl:name "has requirement"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasRequirement>
   ], [
     shacl:datatype <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "This property represents a formally-issued Identifier for the Public Service."@en;
@@ -728,8 +739,10 @@ This approach is consistent with both schema.org and the W3C OWL Time Ontology."
   shacl:property [
     shacl:class <http://data.europa.eu/m8g/Channel>;
     shacl:definition "This property describes the relationship between a purpose and a channel. "@en;
-    shacl:name "has channel"@en
-  ] .
+    shacl:name "has channel"@en;
+    shacl:path <http://vocab.belgif.be/ns/publicservice#hasChannel>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/publicservice#Purpose> .
 
 <https://semiceu.github.io/shacl/iceg-public-service_en#RequirementShape> a shacl:NodeShape;
   shacl:closed false;

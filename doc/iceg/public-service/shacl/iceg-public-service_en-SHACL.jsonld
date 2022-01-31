@@ -93,14 +93,14 @@
           "sh:path": "http://purl.org/dc/terms/description"
         },
         {
-          "sh:class": "vocab.belgif.be/ns/publicservice#Purpose",
+          "sh:class": "http://vocab.belgif.be/ns/publicservice#Purpose",
           "sh:definition": {
             "en": "This property describes the relationship between a purpose and a channel. "
           },
           "sh:name": {
             "en": "has purpose"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#hasPurpose"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#hasPurpose"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -161,7 +161,7 @@
           "sh:name": {
             "en": "cost breakdown"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#costBreakdown"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#costBreakdown"
         },
         {
           "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -219,6 +219,7 @@
           "sh:path": "http://data.europa.eu/m8g/isDefinedBy"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
           "sh:definition": {
             "en": "This property represents a numeric value indicating the amount of the Cost."
           },
@@ -307,7 +308,7 @@
           "sh:name": {
             "en": "comes from"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#comesFrom"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#comesFrom"
         },
         {
           "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -425,7 +426,7 @@
           "sh:name": {
             "en": "has legal resource"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#hasLegalResource"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#hasLegalResource"
         },
         {
           "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
@@ -454,7 +455,7 @@
           "sh:name": {
             "en": "is legal resource"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#isLegalResource"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#isLegalResource"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/Evidence",
@@ -464,7 +465,7 @@
           "sh:name": {
             "en": "is used as"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#isUsedAs"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#isUsedAs"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -560,7 +561,7 @@
           "sh:name": {
             "en": "has channel"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#hasChannel"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#hasChannel"
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Site",
@@ -583,7 +584,7 @@
           "sh:name": {
             "en": "legal form"
           },
-          "sh:path": "purl.eu/ns/publicservice#legalForm"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#legalForm"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
@@ -840,7 +841,7 @@
           "sh:name": {
             "en": "has preferred channel"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#hasPreferredChannel"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#hasPreferredChannel"
         },
         {
           "sh:class": "http://data.europa.eu/m8g/Requirement",
@@ -850,7 +851,7 @@
           "sh:name": {
             "en": "has requirement"
           },
-          "sh:path": "vocab.belgif.be/ns/publicservice#hasRequirement"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#hasRequirement"
         },
         {
           "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
@@ -1085,6 +1086,24 @@
       "sh:targetClass": "http://purl.org/vocab/cpsv#Rule"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PurposeShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/Channel",
+          "sh:definition": {
+            "en": "This property describes the relationship between a purpose and a channel. "
+          },
+          "sh:name": {
+            "en": "has channel"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#hasChannel"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/publicservice#Purpose"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#CollectionShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -1116,7 +1135,7 @@
           "sh:name": {
             "en": "classification"
           },
-          "sh:path": "http://fixme.com#classification"
+          "sh:path": "http://vocab.belgif.be/ns/publicservice#classification"
         }
       ],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
@@ -1138,7 +1157,6 @@
           "sh:path": "http://www.w3.org/ns/locn#addressArea"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "A globally unique identifier for each instance of an Address."
           },
@@ -1447,24 +1465,6 @@
         }
       ],
       "sh:targetClass": "https://schema.org/OpeningHoursSpecification"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-public-service_en#PurposeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://data.europa.eu/m8g/Channel",
-          "sh:definition": {
-            "en": "This property describes the relationship between a purpose and a channel. "
-          },
-          "sh:name": {
-            "en": "has channel"
-          },
-          "sh:path": "vocab.belgif.be/ns/publicservice#hasChannel"
-        }
-      ],
-      "sh:targetClass": "vocab.belgif.be/ns/publicservice#Purpose"
     }
   ]
 }
