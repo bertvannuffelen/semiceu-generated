@@ -139,6 +139,11 @@
       "@type": "foaf:Person"
     },
     {
+      "foaf:firstName": "Nathan Ghesquière",
+      "foaf:lastName": "PwC EU Services",
+      "@type": "foaf:Person"
+    },
+    {
       "foaf:firstName": "Dimitri",
       "foaf:lastName": "Schepers",
       "affiliation": {
@@ -387,7 +392,9 @@
           "uri": "http://www.w3.org/2001/XMLSchema#string"
         }
       ],
-      "generalization": []
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "https://data.europa.eu/m8g/crs",
@@ -462,11 +469,13 @@
           "uri": "http://www.w3.org/2001/XMLSchema#anyURI"
         }
       ],
-      "generalization": []
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "https://data.europa.eu/m8g/geometryType",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "name": "geometry type",
       "inpackage": "ACTIVE_PACKAGE",
       "ap-definition-en": {
@@ -490,9 +499,10 @@
         "EA-Domain-Guid": "{64FACE70-D1C3-42f6-BAB3-BEC548411487}",
         "EA-Range": "Code",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-Name": "Code",
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
         },
         "label": {
           "en": "geometry type"
@@ -530,8 +540,17 @@
           "EA-Name": "Geometry"
         }
       ],
-      "range": [],
-      "generalization": []
+      "range": [
+        {
+          "EA-Name": "Code",
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "generalization": [],
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "https://data.europa.eu/m8g/location",
@@ -657,13 +676,13 @@
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
-        "en": "An identifiable geographic place or named place."
+        "en": "Identifiable geographic place or named place."
       },
       "ap-label-en": {
         "en": "Location"
       },
       "definition": {
-        "en": "An identifiable geographic place or named place."
+        "en": "Identifiable geographic place or named place."
       },
       "label": {
         "en": "Location"
@@ -680,14 +699,14 @@
           "en": "Location"
         },
         "definition": {
-          "en": "An identifiable geographic place or named place."
+          "en": "Identifiable geographic place or named place."
         },
         "usage": "",
         "ap-label-en": {
           "en": "Location"
         },
         "ap-definition-en": {
-          "en": "An identifiable geographic place or named place."
+          "en": "Identifiable geographic place or named place."
         },
         "ap-usageNote-en": "",
         "ap-codelist": "",
@@ -704,7 +723,7 @@
           },
           {
             "key": "definition-en",
-            "value": "An identifiable geographic place or named place.",
+            "value": "Identifiable geographic place or named place.",
             "note": "null"
           }
         ],
@@ -993,8 +1012,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://schema.org/longitude",
@@ -1075,8 +1094,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.opengis.net/ont/geosparql#asGML",
@@ -1167,8 +1186,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.opengis.net/ont/geosparql#asWKT",
@@ -1259,8 +1278,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
@@ -1351,12 +1370,12 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#addressArea",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "name": "address area",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
@@ -1445,8 +1464,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#addressID",
@@ -1537,19 +1556,19 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#adminUnitL1",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "name": "administrative unit level 1 (country)",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
         "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
       },
       "usage": {
-        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary from the Publications Office can be reused for this."
+        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this."
       },
       "ap-label-en": {
         "en": "administrative unit level 1 (country)"
@@ -1562,16 +1581,17 @@
       },
       "extra": {
         "EA-Name": "adminUnitL1",
-        "EA-Guid": "{EFCE2B24-F154-487f-BDC4-0C162CA80935}",
+        "EA-Guid": "{2A176EB4-5D2B-41f1-A938-FF286CD39790}",
         "EA-Package": "Core Location",
         "EA-Type": "attribute",
         "EA-Domain": "Address",
         "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
         "EA-Range": "Code",
         "RangeData": {
-          "EA-Name": "",
-          "EA-Package": "",
-          "uri": "null"
+          "EA-Name": "Code",
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
         },
         "label": {
           "en": "administrative unit level 1 (country)"
@@ -1580,7 +1600,7 @@
           "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
         },
         "usage": {
-          "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary from the Publications Office can be reused for this."
+          "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this."
         },
         "ap-label-en": {
           "en": "administrative unit level 1 (country)"
@@ -1592,24 +1612,24 @@
         "ap-codelist": "",
         "RawTags": [
           {
-            "key": "uri",
-            "value": "http://www.w3.org/ns/locn#adminUnitL1",
-            "note": "null"
-          },
-          {
             "key": "label-en",
             "value": "administrative unit level 1 (country)",
             "note": "null"
           },
           {
+            "key": "uri",
+            "value": "http://www.w3.org/ns/locn#adminUnitL1",
+            "note": "null"
+          },
+          {
             "key": "definition-en",
-            "value": "NOTE",
-            "note": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+            "value": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+            "note": "null"
           },
           {
             "key": "usageNote-en",
             "value": "NOTE",
-            "note": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary from the Publications Office can be reused for this."
+            "note": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this."
           }
         ],
         "Scope": "TRANSLATIONS_ONLY"
@@ -1621,77 +1641,84 @@
           "EA-Name": "Address"
         }
       ],
-      "range": [],
+      "range": [
+        {
+          "EA-Name": "Code",
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#adminUnitL2",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "name": "administrative unit level 2 (country/region/state)",
+      "name": "admin unit L2 (country/region/state)",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
-        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
       },
       "usage": {
         "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary."
       },
       "ap-label-en": {
-        "en": "administrative unit level 2 (country/region/state)"
+        "en": "admin unit L2 (country/region/state)"
       },
       "definition": {
-        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
       },
       "label": {
-        "en": "administrative unit level 2 (country/region/state)"
+        "en": "admin unit L2 (country/region/state)"
       },
       "extra": {
         "EA-Name": "adminUnitL2",
-        "EA-Guid": "{958C6E0B-EB04-416c-BC1A-5B3459FD355A}",
+        "EA-Guid": "{FE32C615-1979-4110-86B2-BF3C6C469968}",
         "EA-Package": "Core Location",
         "EA-Type": "attribute",
         "EA-Domain": "Address",
         "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
-        "EA-Range": "Text",
+        "EA-Range": "Code",
         "RangeData": {
-          "EA-Name": "Text",
-          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Code",
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
           "EA-Package": "Core Vocabulary",
-          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
         },
         "label": {
-          "en": "administrative unit level 2 (country/region/state)"
+          "en": "admin unit L2 (country/region/state)"
         },
         "definition": {
-          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
         },
         "usage": {
           "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary."
         },
         "ap-label-en": {
-          "en": "administrative unit level 2 (country/region/state)"
+          "en": "admin unit L2 (country/region/state)"
         },
         "ap-definition-en": {
-          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
         },
         "ap-usageNote-en": "",
         "ap-codelist": "",
         "RawTags": [
+          {
+            "key": "label-en",
+            "value": "admin unit L2 (country/region/state)",
+            "note": "null"
+          },
           {
             "key": "uri",
             "value": "http://www.w3.org/ns/locn#adminUnitL2",
             "note": "null"
           },
           {
-            "key": "label-en",
-            "value": "administrative unit level 2 (country/region/state)",
-            "note": "null"
-          },
-          {
             "key": "definition-en",
-            "value": "NOTE",
-            "note": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities."
+            "value": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+            "note": "null"
           },
           {
             "key": "usageNote-en",
@@ -1710,19 +1737,19 @@
       ],
       "range": [
         {
-          "EA-Name": "Text",
-          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Code",
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
           "EA-Package": "Core Vocabulary",
-          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#fullAddress",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "name": "full address",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
@@ -1811,12 +1838,12 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#geographicName",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "name": "geographic name",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
@@ -1905,8 +1932,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#geometry",
@@ -2124,12 +2151,12 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#locatorName",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "name": "locator name",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
@@ -2218,8 +2245,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#poBox",
@@ -2310,8 +2337,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#postCode",
@@ -2402,12 +2429,12 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#postName",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "name": "post name (city)",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
@@ -2486,12 +2513,12 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     },
     {
       "@id": "http://www.w3.org/ns/locn#thoroughfare",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "name": "thoroughfare",
       "inpackage": "OTHER_PACKAGE",
       "ap-definition-en": {
@@ -2580,8 +2607,8 @@
         }
       ],
       "generalization": [],
-      "minCardinality": "1",
-      "maxCardinality": "1"
+      "minCardinality": "0",
+      "maxCardinality": "*"
     }
   ],
   "name": "core-location-ap",
@@ -2629,7 +2656,7 @@
   "branchtag": "master",
   "filename": "config/core-location.json",
   "navigation": {},
-  "documentcommit": "b32da714c1267498b1c3cfdff6b8de125589654c",
-  "toolchaincommit": "e8c51ff26e3eaba317a4d2958db863ce173dee0e",
+  "documentcommit": "89234fb55233d4475f07951f55039726bea67ee3",
+  "toolchaincommit": "00000c0987f40e66ccdef2b998170a29876f6aff",
   "hostname": "https://semiceu.github.io"
 }

@@ -132,6 +132,15 @@
                         
                           <dd inlist="" rel="bibo:editor" class="p-author h-card vcard">
                               <span typeof="foaf:Person">
+                              <span class="p-name fn" property="foaf:lastName">PwC EU Services</span>,
+                              <span class="p-name fn" property="foaf:firstName">Nathan Ghesquière</span>
+                              
+                							
+                							</span>
+                          </dd>
+                        
+                          <dd inlist="" rel="bibo:editor" class="p-author h-card vcard">
+                              <span typeof="foaf:Person">
                               <span class="p-name fn" property="foaf:lastName">Schepers</span>,
                               <span class="p-name fn" property="foaf:firstName">Dimitri</span>
                               
@@ -191,7 +200,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/CPOV/tree/master/releases/2.00">https://github.com/SEMICeu/CPOV/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/b32da714c1267498b1c3cfdff6b8de125589654c/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/b32da714c1267498b1c3cfdff6b8de125589654c/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/89234fb55233d4475f07951f55039726bea67ee3/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/89234fb55233d4475f07951f55039726bea67ee3/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/CPOV/issues">https://github.com/SEMICeu/CPOV/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="CPOV">CPOV</a></dd>-->
 
@@ -303,7 +312,6 @@
                       <a href="#Contact Point">Contact Point</a> |
                       <a href="#Document">Document</a> |
                       <a href="#Foundation Event">Foundation Event</a> |
-                      <a href="#Geometry">Geometry</a> |
                       <a href="#Identifier">Identifier</a> |
                       <a href="#Image Object">Image Object</a> |
                       <a href="#Legal resource">Legal resource</a> |
@@ -363,8 +371,8 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                     <dd>For this entity the following properties are defined:
                       <a href="#Address%3Aaddress%20area">address area</a>, 
                       <a href="#Address%3Aaddress%20ID">address ID</a>, 
+                      <a href="#Address%3Aadmin%20unit%20L2%20(country%2Fregion%2Fstate)">admin unit L2 (country/region/state)</a>, 
                       <a href="#Address%3Aadministrative%20unit%20level%201%20(country)">administrative unit level 1 (country)</a>, 
-                      <a href="#Address%3Aadministrative%20unit%20level%202%20(country%2Fregion%2Fstate)">administrative unit level 2 (country/region/state)</a>, 
                       <a href="#Address%3Afull%20address">full address</a>, 
                       <a href="#Address%3Alocator%20designator">locator designator</a>, 
                       <a href="#Address%3Alocator%20name">locator name</a>, 
@@ -440,6 +448,28 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td></td>
                       </tr>
                     
+                      <tr id="Address%3Aadmin%20unit%20L2%20(country%2Fregion%2Fstate)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right">
+                            admin unit L2 (country/region/state)</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
+                        <td property="skos:scopeNote">Some recommended codelists from the EU Publications Office include:
+<a href="http://publications.europa.eu/resource/authority/atu">Administrative Territorial Units (ATU)</a>,
+<a href="https://ec.europa.eu/eurostat/web/nuts/background">NUTS</a> and
+<a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as "http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01" in the ATU controlled vocabulary.</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Address%3Aadministrative%20unit%20level%201%20(country)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
                         <td>
                           <code property="rdfs:label">
@@ -449,31 +479,13 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         </td>
                         <td>
                           
-                        </td>
-                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
-                        <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href="http://publications.europa.eu/resource/dataset/country">Country controlled vocabulary from the Publications Office can be reused for this.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Address%3Aadministrative%20unit%20level%202%20(country%2Fregion%2Fstate)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right">
-                            administrative unit level 2 (country/region/state)</a>
-                          </code>
-                        </td>
-                        <td>
-                          
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
                             
                           
                         </td>
-                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.</td>
-                        <td property="skos:scopeNote">Some recommended codelists from the EU Publications Office include:
-<a href="http://publications.europa.eu/resource/authority/atu">Administrative Territorial Units (ATU)</a>,
-<a href="https://ec.europa.eu/eurostat/web/nuts/background">NUTS</a> and
-<a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as "http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01" in the ATU controlled vocabulary.</td>
+                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
+                        <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href="http://publications.europa.eu/resource/dataset/country">Country controlled vocabulary</a> from the Publications Office can be reused for this.</td>
                         <td></td>
                       </tr>
                     
@@ -629,50 +641,12 @@ The key difference between a locator and a locator name is that the latter is a 
                     
 		    
                     <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Administrative%20Territorial%20Units%3Ageometry">geometry</a>.</dd>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
                     
                   </dl>
                 </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-                        <th class="data-table__header-title--sortable">Definition</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Administrative%20Territorial%20Units%3Ageometry" typeof="rdfs:Property" resource="http://w3.org/ns/locn#geometry">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://w3.org/ns/locn#geometry" data-toggle="tooltip" data-content="http://w3.org/ns/locn#geometry" data-placement="right">
-                            geometry</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Geometry" data-placement="right">Geometry</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The geometry relationship associates a Administrative Territorial Unit with the Geometry class.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
+		
             </div>
             
               <div class="region region--no-space-top">
@@ -687,7 +661,6 @@ The key difference between a locator and a locator name is that the latter is a 
                     <dd>For this entity the following properties are defined:
                       <a href="#Change%20Event%3Adescription">description</a>, 
                       <a href="#Change%20Event%3Aended%20at%20time">ended at time</a>, 
-                      <a href="#Change%20Event%3Ahas%20formal%20framework">has formal framework</a>, 
                       <a href="#Change%20Event%3Aoriginal%20organization">original organization</a>, 
                       <a href="#Change%20Event%3Aresulting%20organization">resulting organization</a>, 
                       <a href="#Change%20Event%3Astarted%20at%20time">started at time</a>.</dd>
@@ -743,25 +716,6 @@ The key difference between a locator and a locator name is that the latter is a 
                           
                         </td>
                         <td property="rdfs:comment">The time at which the Change Event ended.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Change%20Event%3Ahas%20formal%20framework" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/hasFormalFramework">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://data.europa.eu/m8g/hasFormalFramework" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/hasFormalFramework" data-placement="right">
-                            has formal framework</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Legal resource" data-placement="right">Legal resource</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The property hasFormalFramework links a Change Event or Foundation Event to a piece of legislation or a policy document that prompted the change.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -988,11 +942,7 @@ representative of it, can be contacted.</td>
                   <dl>
                     <dt>Definition</dt><dd>Public Organizations are formed and changed in response to events. This may be the result of new legislation, new policies, taking on new obligations etc. The CPOV captures this in its Change Event class but recognises the specific case of an Organization&#39;s foundation as being sufficiently distinct to require a subclass of Change Event.</dd>
                     
-		     
-		    <dt>Subclass of<dt><dd>
-                        <a href="#Change Event">Change Event</a>
-		   </dd>
-                    
+		    
                     <dt>Properties</dt>
 		    
                     <dd>No properties have been defined for this entity.</dd>
@@ -1000,178 +950,6 @@ representative of it, can be contacted.</td>
                   </dl>
                 </div>
 		
-            </div>
-            
-              <div class="region region--no-space-top">
-              <h3 class="h3" id="Geometry"><a href="http://www.w3.org/ns/locn#Geometry" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Geometry" data-placement="right">Geometry</a></h3>
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Definition</dt><dd>The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system.</dd>
-                    
-                    <dt>Usage</dt><dd>This class defines the notion of "geometry" at the conceptual level, and it shall be encoded by using different formats (see usage note of the locn:geometry property). We also refer to the <a href="#examples">Examples section</a> of this specification for a number of different geometry examples expressed in different formats.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Geometry%3Acoordinates">coordinates</a>, 
-                      <a href="#Geometry%3Acrs">crs</a>, 
-                      <a href="#Geometry%3Ageometry%20type">geometry type</a>, 
-                      <a href="#Geometry%3Agml">gml</a>, 
-                      <a href="#Geometry%3Alatitude">latitude</a>, 
-                      <a href="#Geometry%3Alongitude">longitude</a>, 
-                      <a href="#Geometry%3Awkt">wkt</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-                        <th class="data-table__header-title--sortable">Definition</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Geometry%3Acoordinates" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/coordinates">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/coordinates" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/coordinates" data-placement="right">
-                            coordinates</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The coordinate list.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3Acrs" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/crs">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/crs" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/crs" data-placement="right">
-                            crs</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">An identifier for the coordinate reference system.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3Ageometry%20type" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/geometryType">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.europa.eu/m8g/geometryType" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/geometryType" data-placement="right">
-                            geometry type</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-                        <td property="rdfs:comment">The geometry type, e.g. point, line or polygon.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3Agml" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right">
-                            gml</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The geometry written in Geography Markup Language.</td>
-                        <td property="skos:scopeNote">Use "http://www.opengis.net/ont/geosparql#gmlLiteral" as type for the literal.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3Alatitude" typeof="rdfs:Property" resource="http://schema.org/latitude">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/latitude" data-toggle="tooltip" data-content="http://schema.org/latitude" data-placement="right">
-                            latitude</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The latitude.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3Alongitude" typeof="rdfs:Property" resource="http://schema.org/longitude">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/longitude" data-toggle="tooltip" data-content="http://schema.org/longitude" data-placement="right">
-                            longitude</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The longitude.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Geometry%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right">
-                            wkt</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The well-known text representation string describing the point, line or polygon.</td>
-                        <td property="skos:scopeNote">Use "http://www.opengis.net/ont/geosparql#wktLiteral" as type for the literal.</td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
             </div>
             
               <div class="region region--no-space-top">
@@ -1189,7 +967,6 @@ representative of it, can be contacted.</td>
                       <a href="#Identifier%3Adate%20of%20issue">date of issue</a>, 
                       <a href="#Identifier%3Aidentifier">identifier</a>, 
                       <a href="#Identifier%3Aissuing%20authority%20name">issuing authority name</a>, 
-                      <a href="#Identifier%3Aissuing%20authority%20URI">issuing authority URI</a>, 
                       <a href="#Identifier%3Ascheme%20name">scheme name</a>, 
                       <a href="#Identifier%3Ascheme%20URI">scheme URI</a>.</dd>
                     
@@ -1220,7 +997,7 @@ representative of it, can be contacted.</td>
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a>
                             
                           
                         </td>
@@ -1267,25 +1044,6 @@ representative of it, can be contacted.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Identifier%3Aissuing%20authority%20URI" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">
-                            issuing authority URI</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The URI of the issuing authority.</td>
-                        <td property="skos:scopeNote">Example: <https://belgium.be/id/organizations/1233>.</td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Identifier%3Ascheme%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/conformsTo">
                         <td>
                           <code property="rdfs:label">
@@ -1315,7 +1073,7 @@ representative of it, can be contacted.</td>
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -1357,50 +1115,12 @@ The European Council's invitation to introduce the European Legislation Identifi
                     
 		    
                     <dt>Properties</dt>
-		     
-                    <dd>For this entity the following properties are defined:
-                      <a href="#Legal%20resource%3Aimplements">implements</a>.</dd>
+		    
+                    <dd>No properties have been defined for this entity.</dd>
                     
                   </dl>
                 </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expected Range</th>
-                        <th class="data-table__header-title--sortable">Definition</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                    
-                      <tr id="Legal%20resource%3Aimplements" typeof="rdfs:Property" resource="http://purl.org/vocab/cpsv#implements">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/vocab/cpsv#implements" data-toggle="tooltip" data-content="http://purl.org/vocab/cpsv#implements" data-placement="right">
-                            implements</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Change Event" data-placement="right">Change Event</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">The implements property links a Change Event to relevant legislation or policy documents i.e. the formal framework under which the Change Event is defined.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                    </tbody>
-                  </table>
-                </div>
-      			  
+		
             </div>
             
               <div class="region region--no-space-top">
@@ -1616,26 +1336,20 @@ by the State, regional or local authorities or by other bodies governed by publi
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Public%20Organisation%3A"></a>, 
+                      <a href="#Public%20Organisation%3A"></a>, 
                       <a href="#Public%20Organisation%3Aaddress">address</a>, 
                       <a href="#Public%20Organisation%3Aalternative%20label">alternative label</a>, 
                       <a href="#Public%20Organisation%3Achanged%20by">changed by</a>, 
-                      <a href="#Public%20Organisation%3Aclassification">classification</a>, 
                       <a href="#Public%20Organisation%3Acontact%20point">contact point</a>, 
                       <a href="#Public%20Organisation%3Adescription">description</a>, 
-                      <a href="#Public%20Organisation%3Ahas%20member">has member</a>, 
-                      <a href="#Public%20Organisation%3Ahas%20sub%20organization">has sub organization</a>, 
                       <a href="#Public%20Organisation%3Ahas%20unit">has unit</a>, 
                       <a href="#Public%20Organisation%3Ahomepage">homepage</a>, 
                       <a href="#Public%20Organisation%3Aidentifier">identifier</a>, 
                       <a href="#Public%20Organisation%3Alogo">logo</a>, 
-                      <a href="#Public%20Organisation%3Amember%20of">member of</a>, 
-                      <a href="#Public%20Organisation%3Anext">next</a>, 
                       <a href="#Public%20Organisation%3Apreferred%20label">preferred label</a>, 
-                      <a href="#Public%20Organisation%3Aprev">prev</a>, 
-                      <a href="#Public%20Organisation%3Apurpose">purpose</a>, 
                       <a href="#Public%20Organisation%3Aresulted%20from">resulted from</a>, 
-                      <a href="#Public%20Organisation%3Aspatial">spatial</a>, 
-                      <a href="#Public%20Organisation%3Asub%20organization%20of">sub organization of</a>.</dd>
+                      <a href="#Public%20Organisation%3Aspatial">spatial</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1653,6 +1367,44 @@ by the State, regional or local authorities or by other bodies governed by publi
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Public%20Organisation%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/classification">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/classification" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/classification" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Public%20Organisation%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/purpose">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/purpose" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/purpose" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Public%20Organisation%3Aaddress" typeof="rdfs:Property" resource="http://w3.org/ns/locn#address">
                         <td>
@@ -1712,27 +1464,6 @@ the Location Core Vocabulary's Address class should be used.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Organisation%3Aclassification" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#classification">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#classification" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#classification" data-placement="right">
-                            classification</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Concept" data-placement="right">Concept</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">This property links an organization to a SKOS Concept that provides a classification.</td>
-                        <td property="skos:scopeNote">As an example, the Publications Office of the European Union provides a Named
-Authority list of Organization Types which is appropriate for European institutions.
-Other classification schemes should be used at other levels of Public Organization.</td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Public%20Organisation%3Acontact%20point" typeof="rdfs:Property" resource="https://schema.org/contactPoint">
                         <td>
                           <code property="rdfs:label">
@@ -1771,54 +1502,6 @@ information.</td>
                           
                         </td>
                         <td property="rdfs:comment">This property provides a textual description of the organization.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Organisation%3Ahas%20member" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#hasMember">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#hasMember" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#hasMember" data-placement="right">
-                            has member</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Public Organisation" data-placement="right">Public Organisation</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">One Organization may be a member of another without being a sub organization, i.e.
-they are independent entities.</td>
-                        <td property="skos:scopeNote">The memberOf and hasMember properties are very simple and don't support
-statements describing the nature of the membership. The W3C Organization Ontology
-provides both this simple method and a more sophisticated model25 that does make
-it possible to, for example, provide information about the period of time in which one
-Organization was a member of another, the level of membership etc. That more
-sophisticated model should be used where necessary and may be used in addition to
-the simple memberOf/hasMember properties.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Organisation%3Ahas%20sub%20organization" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#hasSubOrganization">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#hasSubOrganization" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#hasSubOrganization" data-placement="right">
-                            has sub organization</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Public Organisation" data-placement="right">Public Organisation</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">Public Organizations are often large and complex and may be a collection of smaller
-Organizations, each of which has a specific identity that may be legally defined. The
-hasSubOrganization and subOrganizationOf properties express the relationships
-between Organizations in a hierarchical structure. </td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1901,54 +1584,6 @@ hasUnit and to the parent with unitOf.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Public%20Organisation%3Amember%20of" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#memberOf">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#memberOf" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#memberOf" data-placement="right">
-                            member of</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Public Organisation" data-placement="right">Public Organisation</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">One Organization may be a member of another without being a sub organization, i.e.
-they are independent entities.</td>
-                        <td property="skos:scopeNote">The memberOf and hasMember properties are very simple and don't support
-statements describing the nature of the membership. The W3C Organization Ontology
-provides both this simple method and a more sophisticated model25 that does make
-it possible to, for example, provide information about the period of time in which one
-Organization was a member of another, the level of membership etc. That more
-sophisticated model should be used where necessary and may be used in addition to
-the simple memberOf/hasMember properties.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Organisation%3Anext" typeof="rdfs:Property" resource="http://www.w3.org/1999/xhtml/vocab#next">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/1999/xhtml/vocab#next" data-toggle="tooltip" data-content="http://www.w3.org/1999/xhtml/vocab#next" data-placement="right">
-                            next</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Public Organisation" data-placement="right">Public Organisation</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">In some cases, it is necessary to be able to create an ordered sequence of
-organizations that precede and succeed each other. To support this, the CPOV
-includes the well-known relationships of previous and next to allow such sequences
-to be captured and computed.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Public%20Organisation%3Apreferred%20label" typeof="rdfs:Property" resource="http://www.w3.org/2004/02/skos/core#prefLabel">
                         <td>
                           <code property="rdfs:label">
@@ -1965,50 +1600,6 @@ to be captured and computed.</td>
                         </td>
                         <td property="rdfs:comment">As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization</td>
                         <td property="skos:scopeNote">An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Organisation%3Aprev" typeof="rdfs:Property" resource="http://www.w3.org/1999/xhtml/vocab#prev">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/1999/xhtml/vocab#prev" data-toggle="tooltip" data-content="http://www.w3.org/1999/xhtml/vocab#prev" data-placement="right">
-                            prev</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Public Organisation" data-placement="right">Public Organisation</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">In some cases, it is necessary to be able to create an ordered sequence of
-organizations that precede and succeed each other. To support this, the CPOV
-includes the well-known relationships of previous and next to allow such sequences
-to be captured and computed.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Organisation%3Apurpose" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#purpose">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#purpose" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#purpose" data-placement="right">
-                            purpose</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Concept" data-placement="right">Concept</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">This property links an organization to its function(s) which are expressed as a SKOS
-Concept Scheme. The ORG ontology suggests that this property can also be thought
-of as meaning &#39;remit&#39; or &#39;responsibility.&#39; Ideally this will link to a COFOG code but
-where this isn&#39;t possible or appropriate, other controlled vocabularies may be used.</td>
-                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
@@ -2059,28 +1650,6 @@ geometries are available for the Public Organization's territory, they can be li
 from the territorial unit using the Core Location Vocabulary's locn:geometry
 property.
 </p></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Public%20Organisation%3Asub%20organization%20of" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#subOrganizationOf">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#subOrganizationOf" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#subOrganizationOf" data-placement="right">
-                            sub organization of</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Public Organisation" data-placement="right">Public Organisation</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">Public Organizations are often large and complex and may be a collection of smaller
-Organizations, each of which has a specific identity that may be legally defined. The
-hasSubOrganization and subOrganizationOf properties express the relationships
-between Organizations in a hierarchical structure. </td>
-                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     

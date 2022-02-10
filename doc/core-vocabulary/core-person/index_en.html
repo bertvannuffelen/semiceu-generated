@@ -132,6 +132,15 @@
                         
                           <dd inlist="" rel="bibo:editor" class="p-author h-card vcard">
                               <span typeof="foaf:Person">
+                              <span class="p-name fn" property="foaf:lastName">PwC EU Services</span>,
+                              <span class="p-name fn" property="foaf:firstName">Nathan Ghesquière</span>
+                              
+                							
+                							</span>
+                          </dd>
+                        
+                          <dd inlist="" rel="bibo:editor" class="p-author h-card vcard">
+                              <span typeof="foaf:Person">
                               <span class="p-name fn" property="foaf:lastName">Schepers</span>,
                               <span class="p-name fn" property="foaf:firstName">Dimitri</span>
                               
@@ -191,7 +200,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><a href="https://github.com/SEMICeu/Core-Person-Vocabulary/tree/master/releases/2.00">https://github.com/SEMICeu/Core-Person-Vocabulary/tree/master/releases/2.00</a></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/b32da714c1267498b1c3cfdff6b8de125589654c/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/b32da714c1267498b1c3cfdff6b8de125589654c/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/89234fb55233d4475f07951f55039726bea67ee3/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/89234fb55233d4475f07951f55039726bea67ee3/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/SEMICeu/Core-Person-Vocabulary/issues">https://github.com/SEMICeu/Core-Person-Vocabulary/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="Core-Person-Vocabulary">Core-Person-Vocabulary</a></dd>-->
 
@@ -262,7 +271,7 @@
                       <br />
                       |
                       <a href="#Address">Address</a> |
-                      <a href="#Concept">Concept</a> |
+                      <a href="#Agent">Agent</a> |
                       <a href="#Identifier">Identifier</a> |
                       <a href="#Jurisdiction">Jurisdiction</a> |
                       <a href="#Location">Location</a> |
@@ -320,8 +329,8 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                     <dd>For this entity the following properties are defined:
                       <a href="#Address%3Aaddress%20area">address area</a>, 
                       <a href="#Address%3Aaddress%20ID">address ID</a>, 
+                      <a href="#Address%3Aadmin%20unit%20L2%20(country%2Fregion%2Fstate)">admin unit L2 (country/region/state)</a>, 
                       <a href="#Address%3Aadministrative%20unit%20level%201%20(country)">administrative unit level 1 (country)</a>, 
-                      <a href="#Address%3Aadministrative%20unit%20level%202%20(country%2Fregion%2Fstate)">administrative unit level 2 (country/region/state)</a>, 
                       <a href="#Address%3Afull%20address">full address</a>, 
                       <a href="#Address%3Alocator%20designator">locator designator</a>, 
                       <a href="#Address%3Alocator%20name">locator name</a>, 
@@ -397,6 +406,28 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td></td>
                       </tr>
                     
+                      <tr id="Address%3Aadmin%20unit%20L2%20(country%2Fregion%2Fstate)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right">
+                            admin unit L2 (country/region/state)</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
+                        <td property="skos:scopeNote">Some recommended codelists from the EU Publications Office include:
+<a href="http://publications.europa.eu/resource/authority/atu">Administrative Territorial Units (ATU)</a>,
+<a href="https://ec.europa.eu/eurostat/web/nuts/background">NUTS</a> and
+<a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as "http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01" in the ATU controlled vocabulary.</td>
+                        <td></td>
+                      </tr>
+                    
                       <tr id="Address%3Aadministrative%20unit%20level%201%20(country)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
                         <td>
                           <code property="rdfs:label">
@@ -406,31 +437,13 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         </td>
                         <td>
                           
-                        </td>
-                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
-                        <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href="http://publications.europa.eu/resource/dataset/country">Country controlled vocabulary from the Publications Office can be reused for this.</td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Address%3Aadministrative%20unit%20level%202%20(country%2Fregion%2Fstate)" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right">
-                            administrative unit level 2 (country/region/state)</a>
-                          </code>
-                        </td>
-                        <td>
-                          
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
                             
                           
                         </td>
-                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.</td>
-                        <td property="skos:scopeNote">Some recommended codelists from the EU Publications Office include:
-<a href="http://publications.europa.eu/resource/authority/atu">Administrative Territorial Units (ATU)</a>,
-<a href="https://ec.europa.eu/eurostat/web/nuts/background">NUTS</a> and
-<a href="https://ec.europa.eu/eurostat/web/nuts/local-administrative-units">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as "http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01" in the ATU controlled vocabulary.</td>
+                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.</td>
+                        <td property="skos:scopeNote">Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href="http://publications.europa.eu/resource/dataset/country">Country controlled vocabulary</a> from the Publications Office can be reused for this.</td>
                         <td></td>
                       </tr>
                     
@@ -579,10 +592,12 @@ The key difference between a locator and a locator name is that the latter is a 
             </div>
             
               <div class="region region--no-space-top">
-              <h3 class="h3" id="Concept"><a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Concept</a></h3>
+              <h3 class="h3" id="Agent"><a href="http://xmlns.com/foaf/0.1/Agent" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Agent" data-placement="right">Agent</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Definition</dt><dd>A SKOS Concept can be viewed as an idea or notion; a unit of thought. However,what constitutes a unit of thought is subjective,and this definition is meant to be suggestive,rather than restrictive.</dd>
+                    <dt>Definition</dt><dd>Entity that is able to carry out action</dd>
+                    
+                    <dt>Usage</dt><dd>In compliance with the description from FOAF, an Agent is considered as any entity that is able to carry out actions. The Agent class acts as a generic element which can be further specified by implementers for their usages, for example by defining the Person class from the Core Person Vocabulary or Organization from W3C's Organization Ontology as subclasses of Agent. This Person or Organization can then issue a certain Requirement or be concerned by an Evidence provided.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -610,7 +625,6 @@ The key difference between a locator and a locator name is that the latter is a 
                       <a href="#Identifier%3Aidentifier">identifier</a>, 
                       <a href="#Identifier%3Aidentifies">identifies</a>, 
                       <a href="#Identifier%3Aissuing%20authority%20name">issuing authority name</a>, 
-                      <a href="#Identifier%3Aissuing%20authority%20URI">issuing authority URI</a>, 
                       <a href="#Identifier%3Ascheme%20name">scheme name</a>, 
                       <a href="#Identifier%3Ascheme%20URI">scheme URI</a>.</dd>
                     
@@ -641,7 +655,7 @@ The key difference between a locator and a locator name is that the latter is a 
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a>
                             
                           
                         </td>
@@ -707,25 +721,6 @@ The key difference between a locator and a locator name is that the latter is a 
                         <td></td>
                       </tr>
                     
-                      <tr id="Identifier%3Aissuing%20authority%20URI" typeof="rdfs:Property" resource="http://purl.org/dc/terms/creator">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://purl.org/dc/terms/creator" data-toggle="tooltip" data-content="http://purl.org/dc/terms/creator" data-placement="right">
-                            issuing authority URI</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
-                            
-                          
-                        </td>
-                        <td property="rdfs:comment">The URI of the issuing authority.</td>
-                        <td property="skos:scopeNote">Example: <https://belgium.be/id/organizations/1233>.</td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Identifier%3Ascheme%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/conformsTo">
                         <td>
                           <code property="rdfs:label">
@@ -755,7 +750,7 @@ The key difference between a locator and a locator name is that the latter is a 
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#anyURI" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#anyURI" data-placement="right">URI</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -848,7 +843,7 @@ The key difference between a locator and a locator name is that the latter is a 
               <h3 class="h3" id="Location"><a href="http://purl.org/dc/terms/Location" data-toggle="tooltip" data-content="http://purl.org/dc/terms/Location" data-placement="right">Location</a></h3>
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Definition</dt><dd>An identifiable geographic place or named place.</dd>
+                    <dt>Definition</dt><dd>Identifiable geographic place or named place.</dd>
                     
 		    
                     <dt>Properties</dt>
@@ -979,6 +974,8 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Person%3A"></a>, 
+                      <a href="#Person%3A"></a>, 
                       <a href="#Person%3Aalternative%20name">alternative name</a>, 
                       <a href="#Person%3Abirth%20name">birth name</a>, 
                       <a href="#Person%3Acitizenship">citizenship</a>, 
@@ -988,7 +985,6 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                       <a href="#Person%3Adate%20of%20death">date of death</a>, 
                       <a href="#Person%3Afamily%20name%20(surname)">family name (surname)</a>, 
                       <a href="#Person%3Afull%20name">full name</a>, 
-                      <a href="#Person%3Agender">gender</a>, 
                       <a href="#Person%3Agiven%20name%20(forename)">given name (forename)</a>, 
                       <a href="#Person%3Aidentifier">identifier</a>, 
                       <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
@@ -1012,6 +1008,44 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Person%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/gender">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/gender" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/gender" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/matronymicName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/matronymicName" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/matronymicName" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Person%3Aalternative%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/alternative">
                         <td>
@@ -1121,7 +1155,7 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a>
                             
                           
                         </td>
@@ -1140,7 +1174,7 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a>
                             
                           
                         </td>
@@ -1194,25 +1228,6 @@ Note that the vocabulary provides an alternative name property. This allows name
 
 A name usually sticks with a person for a long time period. In some European countries a name may only be changed according to certain laws and life events, e.g. marriage. The name denominates a natural person even if he/she changes their address. Documents like birth certificate or diploma usually don't carry an address but always the name. Thus the name is one of the core attributes. However it is not sufficient to identify a person since there are combinations of very common names like Smith in the UK, Meier in Germany, or Li in China.
 </p></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Person%3Agender" typeof="rdfs:Property" resource="http://schema.org/gender">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/gender" data-toggle="tooltip" data-content="http://schema.org/gender" data-placement="right">
-                            gender</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Concept" data-placement="right">Concept</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">Gender of the Person.</td>
-                        <td property="skos:scopeNote">The gender of an individual should be recorded using a controlled vocabulary that is appropriate for the specific context. In some cases the chromosomal or physical state of an individual will be more important than the gender that they express, in others the reverse will be true. What is always important is that the controlled vocabulary used to describe an individual's gender is stated explicitly.</td>
                         <td></td>
                       </tr>
                     
@@ -1294,10 +1309,10 @@ Note that patronymic names refer to a father's given name, not the family name i
                         <td></td>
                       </tr>
                     
-                      <tr id="Person%3Aplace%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                      <tr id="Person%3Aplace%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#placeOfDeath">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            <a href="http://www.w3.org/ns/person#placeOfDeath" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#placeOfDeath" data-placement="right">
                             place of death</a>
                           </code>
                         </td>
@@ -1309,7 +1324,7 @@ Note that patronymic names refer to a father's given name, not the family name i
                           
                         </td>
                         <td property="rdfs:comment">The Location where a Person died.</td>
-                        <td property="skos:scopeNote">NOTE</td>
+                        <td property="skos:scopeNote">When geographic identifiers are used, the associated country of death property is unnecessary. When geographic names are used, however, it is recommended to also provide the country of death property as there might be some disambiguity, e.g. Paris in France or Paris in Texas, USA.</td>
                         <td></td>
                       </tr>
                     
@@ -1345,10 +1360,16 @@ A Person has one, multiple or even no residency status. Multiple residencies are
                   <dl>
                     <dt>Definition</dt><dd>A person that is alive, dead, real, or imaginary.</dd>
                     
-		    
+		     
+		    <dt>Subclass of<dt><dd>
+                        <a href="#Agent">Agent</a>
+		   </dd>
+                    
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
+                      <a href="#Person%3A"></a>, 
+                      <a href="#Person%3A"></a>, 
                       <a href="#Person%3Aalternative%20name">alternative name</a>, 
                       <a href="#Person%3Abirth%20name">birth name</a>, 
                       <a href="#Person%3Acitizenship">citizenship</a>, 
@@ -1358,7 +1379,6 @@ A Person has one, multiple or even no residency status. Multiple residencies are
                       <a href="#Person%3Adate%20of%20death">date of death</a>, 
                       <a href="#Person%3Afamily%20name%20(surname)">family name (surname)</a>, 
                       <a href="#Person%3Afull%20name">full name</a>, 
-                      <a href="#Person%3Agender">gender</a>, 
                       <a href="#Person%3Agiven%20name%20(forename)">given name (forename)</a>, 
                       <a href="#Person%3Aidentifier">identifier</a>, 
                       <a href="#Person%3Apatronymic%20name">patronymic name</a>, 
@@ -1382,6 +1402,44 @@ A Person has one, multiple or even no residency status. Multiple residencies are
                     </thead>
 
                     <tbody class="supertype">
+                    
+                      <tr id="Person%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/gender">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/gender" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/gender" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Person%3A" typeof="rdfs:Property" resource="https://data.europa.eu/m8g/matronymicName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://data.europa.eu/m8g/matronymicName" data-toggle="tooltip" data-content="https://data.europa.eu/m8g/matronymicName" data-placement="right">
+                            </a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+                            
+                          
+                        </td>
+                        <td property="rdfs:comment"></td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
                     
                       <tr id="Person%3Aalternative%20name" typeof="rdfs:Property" resource="http://purl.org/dc/terms/alternative">
                         <td>
@@ -1491,7 +1549,7 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a>
                             
                           
                         </td>
@@ -1510,7 +1568,7 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#dateTime" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#dateTime" data-placement="right">DateTime</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#date" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#date" data-placement="right">Date</a>
                             
                           
                         </td>
@@ -1564,25 +1622,6 @@ Note that the vocabulary provides an alternative name property. This allows name
 
 A name usually sticks with a person for a long time period. In some European countries a name may only be changed according to certain laws and life events, e.g. marriage. The name denominates a natural person even if he/she changes their address. Documents like birth certificate or diploma usually don't carry an address but always the name. Thus the name is one of the core attributes. However it is not sufficient to identify a person since there are combinations of very common names like Smith in the UK, Meier in Germany, or Li in China.
 </p></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Person%3Agender" typeof="rdfs:Property" resource="http://schema.org/gender">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://schema.org/gender" data-toggle="tooltip" data-content="http://schema.org/gender" data-placement="right">
-                            gender</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Concept" data-placement="right">Concept</a>
-			    
-                          
-                        </td>
-                        <td property="rdfs:comment">Gender of the Person.</td>
-                        <td property="skos:scopeNote">The gender of an individual should be recorded using a controlled vocabulary that is appropriate for the specific context. In some cases the chromosomal or physical state of an individual will be more important than the gender that they express, in others the reverse will be true. What is always important is that the controlled vocabulary used to describe an individual's gender is stated explicitly.</td>
                         <td></td>
                       </tr>
                     
@@ -1664,10 +1703,10 @@ Note that patronymic names refer to a father's given name, not the family name i
                         <td></td>
                       </tr>
                     
-                      <tr id="Person%3Aplace%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#countryOfBirth">
+                      <tr id="Person%3Aplace%20of%20death" typeof="rdfs:Property" resource="http://www.w3.org/ns/person#placeOfDeath">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/person#countryOfBirth" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#countryOfBirth" data-placement="right">
+                            <a href="http://www.w3.org/ns/person#placeOfDeath" data-toggle="tooltip" data-content="http://www.w3.org/ns/person#placeOfDeath" data-placement="right">
                             place of death</a>
                           </code>
                         </td>
@@ -1679,7 +1718,7 @@ Note that patronymic names refer to a father's given name, not the family name i
                           
                         </td>
                         <td property="rdfs:comment">The Location where a Person died.</td>
-                        <td property="skos:scopeNote">NOTE</td>
+                        <td property="skos:scopeNote">When geographic identifiers are used, the associated country of death property is unnecessary. When geographic names are used, however, it is recommended to also provide the country of death property as there might be some disambiguity, e.g. Paris in France or Paris in Texas, USA.</td>
                         <td></td>
                       </tr>
                     
