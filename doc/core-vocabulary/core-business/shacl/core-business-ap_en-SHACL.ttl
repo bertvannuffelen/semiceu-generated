@@ -115,17 +115,8 @@
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
  [
-    shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:definition "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it."@en;
-    shacl:name "identifier"@en;
-    shacl:path dc:identifier
-  ] .
-
- [
-    shacl:datatype rdf:langString;
-    shacl:definition "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name."@en;
-    shacl:name "alternative name"@en;
-    shacl:path dc:alternative
+    shacl:class skos:Concept;
+    shacl:path <https://data.europa.eu/m8g/legalentityActivity>
   ] .
 
  [
@@ -153,13 +144,22 @@
   ] .
 
  [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it."@en;
+    shacl:name "identifier"@en;
+    shacl:path dc:identifier
+  ] .
+
+ [
+    shacl:datatype rdf:langString;
+    shacl:definition "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name."@en;
+    shacl:name "alternative name"@en;
+    shacl:path dc:alternative
+  ] .
+
+ [
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:definition "In almost all jurisdictions, Legal Entities must register a public address. This may or may not be the actual address at which the Legal Entity does its business, it is commonly the address of their lawyer or accountant, but it is the address to which formal communications can be sent."@en;
     shacl:name "registered address"@en;
     shacl:path <http://www.w3.org/ns/legal#registeredAddress>
-  ] .
-
- [
-    shacl:class skos:Concept;
-    shacl:path <https://data.europa.eu/m8g/legalentityActivity>
   ] .
