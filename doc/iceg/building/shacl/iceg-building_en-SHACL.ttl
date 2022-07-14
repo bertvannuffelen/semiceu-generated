@@ -10,7 +10,7 @@
     <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometry3DLoD1Shape>,
     <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometry3DLoD2Shape>,
     <https://semiceu.github.io/shacl/iceg-building_en#BuildingNatureValueShape>,
-    <https://semiceu.github.io/shacl/iceg-building_en#BuildingunitShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#BuildingUnitShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#ConditionOfConstructionValueShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#ElevationShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#ElevationReferenceValueShape>,
@@ -18,14 +18,18 @@
     <https://semiceu.github.io/shacl/iceg-building_en#EventDateShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#FunctionValueShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#HorizontalGeometryReferenceValueShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#LangstringShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#LengthShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#MeasuringMethodShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#3DobjectShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#PointShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#PolygonShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#BooleanShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#DateTimeShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#IntegerShape>,
-    <https://semiceu.github.io/shacl/iceg-building_en#AddressrepresentationShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#TextShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#IdentifierShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#GeometryShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#DirectPositionShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#MulticurveShape>,
@@ -36,34 +40,40 @@
   shacl:closed false;
   shacl:targetClass <http://www.opengis.net/ont/gml#Solid> .
 
-<https://semiceu.github.io/shacl/iceg-building_en#AddressrepresentationShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/iceg-building_en#AddressRepresentationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "Name of a geographical area or locality that groups a number of addressable objects for the purpose of addressing them without the area or locality being an administrative unit."@en;
     shacl:maxCount 1;
     shacl:name "addressArea"@en;
     shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "Highest Administrative Unit of address, usually a country."@en;
     shacl:maxCount 1;
     shacl:name "administrativeUnitLevel1"@en;
     shacl:path <http://www.w3.org/ns/locn#adminUnitL1>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "The region of the address, usually a province or state or similar area typically comprising several towns."@en;
     shacl:maxCount 1;
     shacl:name "administrativeUnitLevel2"@en;
     shacl:path <http://www.w3.org/ns/locn#adminUnitL2>
   ], [
     shacl:datatype xsd:string;
+    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:name "boxNumber"@en;
     shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "Country in which the address is located."@en;
     shacl:maxCount 1;
     shacl:name "country"@en;
     shacl:path <https://data.vlaanderen.be/ns/adres#country>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "The complete address in one string, formatted or not."@en;
     shacl:maxCount 1;
     shacl:name "fullAddress"@en;
@@ -75,6 +85,7 @@
     shacl:name "housenumber"@en;
     shacl:path <https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "Name or description of the geographic object that the address locator identifies."@en;
     shacl:name "locationName"@en;
     shacl:path <http://www.w3.org/ns/locn#locatorName>
@@ -84,6 +95,7 @@
     shacl:name "locatordesignator"@en;
     shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "Municipal name of the address."@en;
     shacl:maxCount 1;
     shacl:name "municipalityName"@en;
@@ -95,6 +107,7 @@
     shacl:name "poBox"@en;
     shacl:path <http://www.w3.org/ns/locn#poBox>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "Name designating the geographical area that groups addresses for postal purposes."@en;
     shacl:maxCount 1;
     shacl:name "postName"@en;
@@ -107,10 +120,12 @@
     shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
     shacl:class <https://data.vlaanderen.be/ns/adres#Address>;
+    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:name "reference"@en;
     shacl:path <https://data.vlaanderen.be/ns/adres#reference>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#Langstring>;
     shacl:definition "Streetname of the address"@en;
     shacl:maxCount 1;
     shacl:name "streetname"@en;
@@ -247,6 +262,7 @@
 <https://semiceu.github.io/shacl/iceg-building_en#BuildingShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/adms#identifier>;
     shacl:definition "Identifier of the Building."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -272,7 +288,7 @@
     shacl:name "conditionOfConstruction"@en;
     shacl:path <http://vocab.belgif.be/ns/building#conditionOfConstruction>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#Buildingunit>;
+    shacl:class <http://vocab.belgif.be/ns/building#BuildingUnit>;
     shacl:definition "The building units belonging to the building."@en;
     shacl:name "consistsOf"@en;
     shacl:path <http://vocab.belgif.be/ns/building#consistsOf>
@@ -312,6 +328,7 @@
     shacl:name "geometry"@en;
     shacl:path <http://vocab.belgif.be/ns/building#Building.geometry>
   ], [
+    shacl:class xsd:string;
     shacl:definition "Name of the building"@en;
     shacl:name "name"@en;
     shacl:path <http://vocab.belgif.be/ns/building#name>
@@ -330,9 +347,10 @@
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/building#Building> .
 
-<https://semiceu.github.io/shacl/iceg-building_en#BuildingunitShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/iceg-building_en#BuildingUnitShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class <http://www.w3.org/ns/adms#identifier>;
     shacl:definition "The unique identifier of a building unit."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -367,7 +385,7 @@
     shacl:name "isPartOf"@en;
     shacl:path <http://vocab.belgif.be/ns/building#isPartOf>
   ];
-  shacl:targetClass <http://vocab.belgif.be/ns/building#Buildingunit> .
+  shacl:targetClass <http://vocab.belgif.be/ns/building#BuildingUnit> .
 
 <https://semiceu.github.io/shacl/iceg-building_en#CadastralParcelShape> a shacl:NodeShape;
   shacl:closed false;
@@ -385,16 +403,20 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdfs:Literal;
+    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:name "gml"@en;
     shacl:path <https://data.vlaanderen.be/ns/generiek#gml>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/building#MeasuringMethod>;
+    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "methode"@en;
-    shacl:path <https://data.vlaanderen.be/ns/generiek#methode>
+    shacl:name "method"@en;
+    shacl:path <https://data.vlaanderen.be/ns/generiek#method>
   ], [
     shacl:datatype rdfs:Literal;
+    shacl:definition "TO DO"@en;
     shacl:maxCount 1;
     shacl:name "wkt"@en;
     shacl:path <https://data.vlaanderen.be/ns/generiek#wkt>
@@ -428,6 +450,7 @@
   shacl:closed false;
   shacl:property [
     shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "The address linked to the location of the entrance."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "address"@en;
@@ -492,13 +515,25 @@
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue> .
 
+<https://semiceu.github.io/shacl/iceg-building_en#IdentifierShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://www.w3.org/ns/adms#identifier> .
+
 <https://semiceu.github.io/shacl/iceg-building_en#IntegerShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass xsd:integer .
 
+<https://semiceu.github.io/shacl/iceg-building_en#LangstringShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/building#Langstring> .
+
 <https://semiceu.github.io/shacl/iceg-building_en#LengthShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/building#Length> .
+
+<https://semiceu.github.io/shacl/iceg-building_en#MeasuringMethodShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/building#MeasuringMethod> .
 
 <https://semiceu.github.io/shacl/iceg-building_en#MulticurveShape> a shacl:NodeShape;
   shacl:closed false;
@@ -515,3 +550,7 @@
 <https://semiceu.github.io/shacl/iceg-building_en#PolygonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://www.opengis.net/ont/sf#Polygon> .
+
+<https://semiceu.github.io/shacl/iceg-building_en#TextShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:string .

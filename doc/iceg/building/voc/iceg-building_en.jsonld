@@ -94,7 +94,7 @@
       "parents": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#Buildingunit",
+      "@id": "http://vocab.belgif.be/ns/building#BuildingUnit",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "The smallest unit within a building that is suitable and adapted for residential, commercial or recreational purposes and which is accessible from the outside or from a common area. A building unit is atomic, functionally independent, and may be separately sold, rented out, inherited, etc. In addition, a building unit can also be a common part."
@@ -151,11 +151,21 @@
       "parents": []
     },
     {
+      "@id": "http://vocab.belgif.be/ns/building#Langstring",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "parents": []
+    },
+    {
       "@id": "http://vocab.belgif.be/ns/building#Length",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "The measure of distance as an integral, i.e. the limit of an infinite sum of distances between points on a curve.  For example the length of curve, the perimeter of a polygon as the length of the boundary."
       },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#MeasuringMethod",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
       "parents": []
     }
   ],
@@ -179,6 +189,20 @@
         "en": "Integer"
       },
       "@id": "http://www.w3.org/2001/XMLSchema#integer",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Text"
+      },
+      "@id": "http://www.w3.org/2001/XMLSchema#string",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Identifier"
+      },
+      "@id": "http://www.w3.org/ns/adms#identifier",
       "@type": "rdfs:Class"
     }
   ],
@@ -232,7 +256,7 @@
         "en": "Function for which the building unit is used in reality (as determined on site)."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#Buildingunit"
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
       ],
       "range": [
         "http://vocab.belgif.be/ns/building#FunctionValue"
@@ -246,7 +270,7 @@
         "en": "Shape and position characteristics of a building unit."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#Buildingunit"
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
       ],
       "range": [
         "http://www.w3.org/ns/locn#Geometry"
@@ -256,6 +280,9 @@
     {
       "@id": "http://vocab.belgif.be/ns/building#address",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The address linked to the location of the entrance."
+      },
       "domain": [
         "http://vocab.belgif.be/ns/building#EntranceLocation"
       ],
@@ -319,7 +346,7 @@
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#Buildingunit"
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
       ],
       "generalization": []
     },
@@ -414,7 +441,7 @@
         "en": "The location where the building unit can be entered."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#Buildingunit"
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
       ],
       "range": [
         "http://vocab.belgif.be/ns/building#EntranceLocation"
@@ -563,7 +590,7 @@
       "@id": "http://vocab.belgif.be/ns/building#isPartOf",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
-        "http://vocab.belgif.be/ns/building#Buildingunit"
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
       ],
       "range": [
         "http://vocab.belgif.be/ns/building#Building"
@@ -572,14 +599,16 @@
     },
     {
       "@id": "http://vocab.belgif.be/ns/building#name",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Name of the building"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#Building"
       ],
-      "range": [],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
       "generalization": []
     },
     {

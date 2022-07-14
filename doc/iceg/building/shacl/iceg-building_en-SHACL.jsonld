@@ -45,6 +45,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/ns/adms#identifier",
           "sh:definition": {
             "en": "Identifier of the Building."
           },
@@ -90,7 +91,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#conditionOfConstruction"
         },
         {
-          "sh:class": "http://vocab.belgif.be/ns/building#Buildingunit",
+          "sh:class": "http://vocab.belgif.be/ns/building#BuildingUnit",
           "sh:definition": {
             "en": "The building units belonging to the building."
           },
@@ -165,6 +166,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#Building.geometry"
         },
         {
+          "sh:class": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "Name of the building"
           },
@@ -414,11 +416,12 @@
       "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingNatureValue"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#BuildingunitShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#BuildingUnitShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://www.w3.org/ns/adms#identifier",
           "sh:definition": {
             "en": "The unique identifier of a building unit."
           },
@@ -481,7 +484,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#isPartOf"
         }
       ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#Buildingunit"
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingUnit"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#ConditionOfConstructionValueShape",
@@ -536,6 +539,9 @@
       "sh:property": [
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "The address linked to the location of the entrance."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -614,11 +620,25 @@
       "sh:targetClass": "http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#LangstringShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#Langstring"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#LengthShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#Length"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#MeasuringMethodShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#MeasuringMethod"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#3DobjectShape",
@@ -663,11 +683,26 @@
       "sh:targetClass": "http://www.w3.org/2001/XMLSchema#integer"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#AddressrepresentationShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#TextShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#IdentifierShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/ns/adms#identifier"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#AddressRepresentationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "Name of a geographical area or locality that groups a number of addressable objects for the purpose of addressing them without the area or locality being an administrative unit."
           },
@@ -678,6 +713,7 @@
           "sh:path": "http://www.w3.org/ns/locn#addressArea"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "Highest Administrative Unit of address, usually a country."
           },
@@ -688,6 +724,7 @@
           "sh:path": "http://www.w3.org/ns/locn#adminUnitL1"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "The region of the address, usually a province or state or similar area typically comprising several towns."
           },
@@ -699,6 +736,9 @@
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "TO DO"
+          },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "boxNumber"
@@ -706,6 +746,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "Country in which the address is located."
           },
@@ -716,6 +757,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#country"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "The complete address in one string, formatted or not."
           },
@@ -737,6 +779,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "Name or description of the geographic object that the address locator identifies."
           },
@@ -756,6 +799,7 @@
           "sh:path": "http://www.w3.org/ns/locn#locatorDesignator"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "Municipal name of the address."
           },
@@ -777,6 +821,7 @@
           "sh:path": "http://www.w3.org/ns/locn#poBox"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "Name designating the geographical area that groups addresses for postal purposes."
           },
@@ -799,6 +844,9 @@
         },
         {
           "sh:class": "https://data.vlaanderen.be/ns/adres#Address",
+          "sh:definition": {
+            "en": "TO DO"
+          },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "reference"
@@ -806,6 +854,7 @@
           "sh:path": "https://data.vlaanderen.be/ns/adres#reference"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#Langstring",
           "sh:definition": {
             "en": "Streetname of the address"
           },
@@ -857,6 +906,9 @@
       "sh:property": [
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "TO DO"
+          },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "gml"
@@ -864,15 +916,22 @@
           "sh:path": "https://data.vlaanderen.be/ns/generiek#gml"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#MeasuringMethod",
+          "sh:definition": {
+            "en": "TO DO"
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "methode"
+            "en": "method"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/generiek#methode"
+          "sh:path": "https://data.vlaanderen.be/ns/generiek#method"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "TO DO"
+          },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "wkt"
