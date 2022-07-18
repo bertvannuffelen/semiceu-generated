@@ -32,8 +32,8 @@
     <https://semiceu.github.io/shacl/iceg-building_en#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#GeometryShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#DirectPositionShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#MultiSurfaceShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#MulticurveShape>,
-    <https://semiceu.github.io/shacl/iceg-building_en#MultivlakShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#CadastralParcelShape> .
 
 <https://semiceu.github.io/shacl/iceg-building_en#3DobjectShape> a shacl:NodeShape;
@@ -213,7 +213,7 @@
 <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometry3DLoDShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype <https://data.vlaanderen.be/ns/generiek#Multivlak>;
+    shacl:datatype <https://data.vlaanderen.be/ns/generiek#MultiSurface>;
     shacl:definition "Representation of the outer boundary by a Multi Surface, which may - in contrast to a solid representation - not be topologically clean. In particular, the ground surface may be missing."@en;
     shacl:maxCount 1;
     shacl:name "geometryMultiSurface"@en;
@@ -316,12 +316,6 @@
     shacl:minCount 1;
     shacl:name "elevation"@en;
     shacl:path <http://vocab.belgif.be/ns/building#Building.elevation>
-  ], [
-    shacl:class <http://vocab.belgif.be/ns/building#FunctionValue>;
-    shacl:definition "Function for which the building is used in reality (as determined on site)."@en;
-    shacl:maxCount 1;
-    shacl:name "Function"@en;
-    shacl:path <http://vocab.belgif.be/ns/building#Building.function>
   ], [
     shacl:datatype <http://vocab.belgif.be/ns/building#BuildingGeometry>;
     shacl:definition "Shape and position characteristics of a building"@en;
@@ -535,13 +529,13 @@
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/building#MeasuringMethod> .
 
+<https://semiceu.github.io/shacl/iceg-building_en#MultiSurfaceShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <https://data.vlaanderen.be/ns/generiek#MultiSurface> .
+
 <https://semiceu.github.io/shacl/iceg-building_en#MulticurveShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/generiek#Multicurve> .
-
-<https://semiceu.github.io/shacl/iceg-building_en#MultivlakShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/generiek#Multivlak> .
 
 <https://semiceu.github.io/shacl/iceg-building_en#PointShape> a shacl:NodeShape;
   shacl:closed false;
