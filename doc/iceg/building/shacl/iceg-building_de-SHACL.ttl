@@ -1,26 +1,21 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schemas: <https://schema.org/> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://semiceu.github.io/shacl/iceg-building_de> <https://semiceu.github.io/shacl/iceg-building_deshapes> <https://semiceu.github.io/shacl/iceg-building_de#BuildingShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometryShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry2DShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry3DLoDShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry3DLoD1Shape>,
     <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry3DLoD2Shape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#BuildingNatureValueShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#BuildingUnitShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#ConditionOfConstructionValueShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#ElevationShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#ElevationReferenceValueShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#EntranceLocationShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#EventDateShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#FunctionValueShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#HorizontalGeometryReferenceValueShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#LengthShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#MeasuringMethodShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#3DobjectShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#MulticurveShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#MultiSurfaceShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#PointShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#PolygonShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#LangstringShape>,
@@ -28,13 +23,20 @@
     <https://semiceu.github.io/shacl/iceg-building_de#DateTimeShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#IntegerShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#TextShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#BuildingNatureValueShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#FunctionValueShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#ConditionOfConstructionValueShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#ElevationReferenceValueShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#HorizontalGeometryReferenceValueShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#IdentifierShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#GeometryShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry2DShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#DirectPositionShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#MultiSurfaceShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#MulticurveShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#CadastralParcelShape> .
+    <https://semiceu.github.io/shacl/iceg-building_de#EventDateShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#CadastralParcelShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#LengthShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#ElevationShape> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#3DobjectShape> a shacl:NodeShape;
   shacl:closed false;
@@ -147,19 +149,19 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#geometry>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#Length>;
+    shacl:datatype <https://data.vlaanderen.be/ns/weg#Lengte>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#horizontalGeometryReference>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#horizontaleReferentie>
   ], [
     shacl:datatype xsd:boolean;
     shacl:definition "Enter your translation here"@de;
@@ -168,30 +170,30 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#referenceGeometry>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#Length>;
+    shacl:datatype <https://data.vlaanderen.be/ns/weg#Lengte>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#ElevationReferenceValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#verticalGeometryReference>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#verticaleReferentie>
   ];
-  shacl:targetClass <http://vocab.belgif.be/ns/building#BuildingGeometry2D> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry3DLoD1Shape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#horizontalGeometryReference>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#ElevationReferenceValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -202,7 +204,7 @@
 <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry3DLoD2Shape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -213,7 +215,7 @@
 <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometry3DLoDShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype <https://data.vlaanderen.be/ns/generiek#MultiSurface>;
+    shacl:datatype <http://www.opengis.net/ont/sf#MultiSurface>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -225,25 +227,25 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#geometrySolid>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#Length>;
+    shacl:datatype <https://data.vlaanderen.be/ns/weg#Lengte>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy>
   ], [
-    shacl:datatype <https://data.vlaanderen.be/ns/generiek#Multicurve>;
+    shacl:datatype <http://www.opengis.net/ont/sf#MultiCurve>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#terrainIntersection>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#Length>;
+    shacl:datatype <https://data.vlaanderen.be/ns/weg#Lengte>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#ElevationReferenceValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -257,7 +259,7 @@
 
 <https://semiceu.github.io/shacl/iceg-building_de#BuildingNatureValueShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://vocab.belgif.be/ns/building#BuildingNatureValue> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/iceg-building_de#BuildingShape> a shacl:NodeShape;
   shacl:closed false;
@@ -274,70 +276,70 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <https://www.w3.org/ns/locn#Address>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#BuildingNatureValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#buildingNature>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#ConditionOfConstructionValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#conditionOfConstruction>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#Gebouw.status>
   ], [
     shacl:class <http://vocab.belgif.be/ns/building#BuildingUnit>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#consistsOf>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#EventDate>;
+    shacl:datatype <https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#dateOfConstruction>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#EventDate>;
+    shacl:datatype <https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#dateOfDemolition>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#EventDate>;
+    shacl:datatype <https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#dateOfRenovation>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#Elevation>;
+    shacl:datatype schemas:elevation;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#Building.elevation>
+    shacl:path schemas:elevation
   ], [
     shacl:datatype <http://vocab.belgif.be/ns/building#BuildingGeometry>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#Building.geometry>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#geometrie>
   ], [
     shacl:datatype xsd:string;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#name>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#gebouwnaam>
   ], [
     shacl:datatype xsd:integer;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#numberOfFloorsAboveGround>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#aantalBovengrondseVerdiepingen>
   ], [
     shacl:datatype xsd:integer;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#numberOfFloorsUnderGround>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#aantalOndergrondseVerdiepingen>
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/building#Building> .
 
@@ -362,11 +364,11 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#entranceLocation>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/building#FunctionValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#Buildingunit.function>
+    shacl:path <https://data.vlaanderen.be/ns/gebouw#functie>
   ], [
     shacl:datatype <http://www.w3.org/ns/locn#Geometry>;
     shacl:definition "Enter your translation here"@de;
@@ -383,11 +385,11 @@
 
 <https://semiceu.github.io/shacl/iceg-building_de#CadastralParcelShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/perceel#CadastralParcel> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/perceel#KadastraalPlanperceel> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#ConditionOfConstructionValueShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://vocab.belgif.be/ns/building#ConditionOfConstructionValue> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/iceg-building_de#DateTimeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -400,7 +402,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <https://data.vlaanderen.be/ns/generiek#gml>
+    shacl:path <http://www.opengis.net/ont/geosparql#asGML>
   ], [
     shacl:datatype <http://vocab.belgif.be/ns/building#MeasuringMethod>;
     shacl:definition "Enter your translation here"@de;
@@ -413,18 +415,18 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <https://data.vlaanderen.be/ns/generiek#wkt>
+    shacl:path <http://www.opengis.net/ont/geosparql#asWKT>
   ];
   shacl:targetClass <https://data.vlaanderen.be/ns/generiek#DirectPosition> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#ElevationReferenceValueShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://vocab.belgif.be/ns/building#ElevationReferenceValue> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/iceg-building_de#ElevationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://vocab.belgif.be/ns/building#ElevationReferenceValue>;
+    shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -438,7 +440,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#elevationValue>
   ];
-  shacl:targetClass <http://vocab.belgif.be/ns/building#Elevation> .
+  shacl:targetClass schemas:elevation .
 
 <https://semiceu.github.io/shacl/iceg-building_de#EntranceLocationShape> a shacl:NodeShape;
   shacl:closed false;
@@ -448,14 +450,14 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#address>
+    shacl:path <http://www.w3.org/ns/locn#Address>
   ], [
     shacl:datatype <https://data.vlaanderen.be/ns/generiek#DirectPosition>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#geoCoordinates>
+    shacl:path schemas:GeoCoordinates
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/building#EntranceLocation> .
 
@@ -466,25 +468,25 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#anyPoint>
+    shacl:path <https://data.vlaanderen.be/ns/generiek#tussentijdstip>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#endDate>
+    shacl:path <https://data.vlaanderen.be/ns/generiek#einde>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#startDate>
+    shacl:path <https://data.vlaanderen.be/ns/generiek#begin>
   ];
-  shacl:targetClass <http://vocab.belgif.be/ns/building#EventDate> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#FunctionValueShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://vocab.belgif.be/ns/building#FunctionValue> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/iceg-building_de#GeometryShape> a shacl:NodeShape;
   shacl:closed false;
@@ -507,7 +509,7 @@
 
 <https://semiceu.github.io/shacl/iceg-building_de#HorizontalGeometryReferenceValueShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue> .
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/iceg-building_de#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
@@ -523,7 +525,7 @@
 
 <https://semiceu.github.io/shacl/iceg-building_de#LengthShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <http://vocab.belgif.be/ns/building#Length> .
+  shacl:targetClass <https://data.vlaanderen.be/ns/weg#Lengte> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#MeasuringMethodShape> a shacl:NodeShape;
   shacl:closed false;
@@ -531,11 +533,11 @@
 
 <https://semiceu.github.io/shacl/iceg-building_de#MultiSurfaceShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/generiek#MultiSurface> .
+  shacl:targetClass <http://www.opengis.net/ont/sf#MultiSurface> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#MulticurveShape> a shacl:NodeShape;
   shacl:closed false;
-  shacl:targetClass <https://data.vlaanderen.be/ns/generiek#Multicurve> .
+  shacl:targetClass <http://www.opengis.net/ont/sf#MultiCurve> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#PointShape> a shacl:NodeShape;
   shacl:closed false;

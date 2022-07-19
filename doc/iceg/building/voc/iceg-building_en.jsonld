@@ -36,7 +36,7 @@
   "issued": "TBD",
   "navigation": {},
   "publication-state": "Working Draft",
-  "publication-date": "2022-07-15",
+  "publication-date": "2022-07-19",
   "classes": [
     {
       "@id": "http://vocab.belgif.be/ns/building#Building",
@@ -55,16 +55,6 @@
         "en": "This data types includes the geometry of the building and metadata information about which element of the building was captured and how."
       },
       "parents": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#BuildingGeometry2D",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "This data types includes the geometry in 2D or 2.5D of the building and metadata information about which element of the building was captured and how."
-      },
-      "parents": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry"
-      ]
     },
     {
       "@id": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD",
@@ -97,11 +87,6 @@
       ]
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#BuildingNatureValue",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "parents": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/building#BuildingUnit",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -112,57 +97,10 @@
       ]
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#ConditionOfConstructionValue",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Values indicating the condition of a construction."
-      },
-      "parents": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#Elevation",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Vertically-constrained dimensional property consisting of an absolute measure referenced to a well-defined surface which is commonly taken as origin (geoïd, water level, etc.)."
-      },
-      "parents": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#ElevationReferenceValue",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "parents": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/building#EntranceLocation",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "The location where the building unit can be entered."
-      },
-      "parents": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#EventDate",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "This data type includes the different possible ways to define the date of an event."
-      },
-      "parents": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#FunctionValue",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "parents": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "parents": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#Length",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "The measure of distance as an integral, i.e. the limit of an infinite sum of distances between points on a curve.  For example the length of curve, the perimeter of a polygon as the length of the boundary."
       },
       "parents": []
     },
@@ -213,55 +151,74 @@
     },
     {
       "name": {
+        "en": "BuildingNatureValue"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "FunctionValue"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "ConditionOfConstructionValue"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "HorizontalGeometryReferenceValue"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
         "en": "Identifier"
       },
       "@id": "http://www.w3.org/ns/adms#Identifier",
       "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "BuildingGeometry2D"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "EventDate"
+      },
+      "@id": "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Length"
+      },
+      "@id": "https://data.vlaanderen.be/ns/weg#Lengte",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Elevation"
+      },
+      "@id": "https://schema.org/elevation",
+      "@type": "rdfs:Class"
     }
   ],
   "properties": [
-    {
-      "@id": "http://vocab.belgif.be/ns/building#Building.elevation",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Vertically-constrained dimensional property consisting of an absolute measure referenced to a well-defined surface which is commonly taken as origin (geoïd, water level, etc.)."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#Elevation"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#Building.geometry",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Shape and position characteristics of a building"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#Buildingunit.function",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Function for which the building unit is used in reality (as determined on site)."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingUnit"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#FunctionValue"
-      ],
-      "generalization": []
-    },
     {
       "@id": "http://vocab.belgif.be/ns/building#Buildingunit.geometry",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
@@ -273,34 +230,6 @@
       ],
       "range": [
         "http://www.w3.org/ns/locn#Geometry"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#address",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "The address linked to the location of the entrance."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#EntranceLocation"
-      ],
-      "range": [
-        "http://www.w3.org/ns/locn#Address"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#anyPoint",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "A date and time of any point of the event, between its beginning and its end."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#EventDate"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#dateTime"
       ],
       "generalization": []
     },
@@ -317,21 +246,7 @@
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#BuildingNatureValue"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#conditionOfConstruction",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Status of the construction."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#ConditionOfConstructionValue"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -359,7 +274,7 @@
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#EventDate"
+        "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
       ],
       "generalization": []
     },
@@ -373,7 +288,7 @@
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#EventDate"
+        "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
       ],
       "generalization": []
     },
@@ -387,7 +302,7 @@
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#EventDate"
+        "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
       ],
       "generalization": []
     },
@@ -398,10 +313,10 @@
         "en": "Element where the elevation was measured."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#Elevation"
+        "https://schema.org/elevation"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#ElevationReferenceValue"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -412,24 +327,10 @@
         "en": "Value of the elevation."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#Elevation"
+        "https://schema.org/elevation"
       ],
       "range": [
         "https://data.vlaanderen.be/ns/generiek#DirectPosition"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#endDate",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Date and time when the event ended."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#EventDate"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#dateTime"
       ],
       "generalization": []
     },
@@ -448,27 +349,13 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#geoCoordinates",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Holder of the coordinates of a position in a coordinate reference system."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#EntranceLocation"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/generiek#DirectPosition"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/building#geometry",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "2D or 2.5D geometric representation of the building."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry2D"
+        "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
       ],
       "range": [
         "http://www.w3.org/ns/locn#Geometry"
@@ -485,7 +372,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/generiek#MultiSurface"
+        "http://www.opengis.net/ont/sf#MultiSurface"
       ],
       "generalization": []
     },
@@ -513,10 +400,10 @@
         "en": "Absolute positional accuracy is defined as the mean value of the positional uncertainties for a set of positions where the positional uncertainties are defined as the distance between a measured position and what is considered as the corresponding true position."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry2D"
+        "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#Length"
+        "https://data.vlaanderen.be/ns/weg#Lengte"
       ],
       "generalization": []
     },
@@ -533,21 +420,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#Length"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#horizontalGeometryReference",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Element of the building that was captured by (X,Y) coordinates"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry2D"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue"
+        "https://data.vlaanderen.be/ns/weg#Lengte"
       ],
       "generalization": []
     },
@@ -564,7 +437,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -581,7 +454,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#HorizontalGeometryReferenceValue"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -597,72 +470,16 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#name",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Name of the building"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#numberOfFloorsAboveGround",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Total number of building layers above ground, viewed across all building sections."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#numberOfFloorsUnderGround",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Total number of building layers under ground, viewed across all building sections."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#integer"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/building#referenceGeometry",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The geometry to be taken into account by view services, for portrayal."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry2D"
+        "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#startDate",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Date and time when the event begun."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#EventDate"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#dateTime"
       ],
       "generalization": []
     },
@@ -676,7 +493,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/generiek#Multicurve"
+        "http://www.opengis.net/ont/sf#MultiCurve"
       ],
       "generalization": []
     },
@@ -690,10 +507,10 @@
         "en": "Absolute positional accuracy is defined as the mean value of the positional uncertainties for a set of positions where the positional uncertainties are defined as the distance between a measured position and what is considered as the corresponding true position."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry2D"
+        "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#Length"
+        "https://data.vlaanderen.be/ns/weg#Lengte"
       ],
       "generalization": []
     },
@@ -710,21 +527,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#Length"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#verticalGeometryReference",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Element of the building that was captured by vertical coordinates."
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry2D"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#ElevationReferenceValue"
+        "https://data.vlaanderen.be/ns/weg#Lengte"
       ],
       "generalization": []
     },
@@ -738,7 +541,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#ElevationReferenceValue"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -755,7 +558,7 @@
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#ElevationReferenceValue"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     }
@@ -773,6 +576,104 @@
         "en": "^identifier"
       },
       "@id": "http://www.w3.org/ns/adms#identifier",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "address"
+      },
+      "@id": "http://www.w3.org/ns/locn#Address",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "conditionOfConstruction"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#Gebouw.status",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "numberOfFloorsAboveGround"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#aantalBovengrondseVerdiepingen",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "numberOfFloorsUnderGround"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#aantalOndergrondseVerdiepingen",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "function"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#functie",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "name"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#gebouwnaam",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "geometry"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#geometrie",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "horizontalGeometryReference"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#horizontaleReferentie",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "verticalGeometryReference"
+      },
+      "@id": "https://data.vlaanderen.be/ns/gebouw#verticaleReferentie",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "startDate"
+      },
+      "@id": "https://data.vlaanderen.be/ns/generiek#begin",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "endDate"
+      },
+      "@id": "https://data.vlaanderen.be/ns/generiek#einde",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "anyPoint"
+      },
+      "@id": "https://data.vlaanderen.be/ns/generiek#tussentijdstip",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "geoCoordinates"
+      },
+      "@id": "https://schema.org/GeoCoordinates",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "elevation"
+      },
+      "@id": "https://schema.org/elevation",
       "@type": "rdf:Property"
     },
     {
