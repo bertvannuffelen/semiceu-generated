@@ -101,6 +101,16 @@
           "sh:path": "http://vocab.belgif.be/ns/building#consistsOf"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#CurrentUse",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#currentUse"
+        },
+        {
           "sh:datatype": "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -145,6 +155,16 @@
           "sh:path": "https://schema.org/elevation"
         },
         {
+          "sh:class": "http://vocab.belgif.be/ns/building#ExternalReference",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#externalReference"
+        },
+        {
           "sh:datatype": "http://vocab.belgif.be/ns/building#BuildingGeometry",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -155,7 +175,17 @@
           "sh:path": "https://data.vlaanderen.be/ns/gebouw#geometrie"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:class": "http://vocab.belgif.be/ns/building#HeightAboveGround",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#heightAboveGround"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -163,6 +193,17 @@
             "de": "Enter your translation here"
           },
           "sh:path": "https://data.vlaanderen.be/ns/gebouw#gebouwnaam"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#numberOfDwellings"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
@@ -193,7 +234,30 @@
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometryShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy"
+        },
+        {
+          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy"
+        }
+      ],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingGeometry"
     },
     {
@@ -224,17 +288,6 @@
           "sh:path": "http://vocab.belgif.be/ns/building#geometrySolid"
         },
         {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy"
-        },
-        {
           "sh:datatype": "http://www.opengis.net/ont/sf#MultiCurve",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -244,17 +297,6 @@
             "de": "Enter your translation here"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#terrainIntersection"
-        },
-        {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -347,6 +389,10 @@
           "sh:path": "https://www.w3.org/ns/locn#Address"
         },
         {
+          "sh:datatype": "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum",
+          "sh:path": "http://vocab.belgif.be/ns/building#dateOfRenovation"
+        },
+        {
           "sh:datatype": "http://vocab.belgif.be/ns/building#EntranceLocation",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -358,11 +404,10 @@
           "sh:path": "http://vocab.belgif.be/ns/building#entranceLocation"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:class": "http://vocab.belgif.be/ns/building#CurrentUse",
           "sh:definition": {
             "de": "Enter your translation here"
           },
-          "sh:minCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
@@ -389,6 +434,37 @@
         }
       ],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingUnit"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#CurrentUseShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#currentUse"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#percentage"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#CurrentUse"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#EntranceLocationShape",
@@ -421,6 +497,127 @@
         }
       ],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#EntranceLocation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#ExternalReferenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#informationSystem"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#informationSystemName"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#reference"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#ExternalReference"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#GeographicalNameShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#GeographicalName"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#HeightAboveGroundShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#heightReference"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#lowReference"
+        },
+        {
+          "sh:class": "http://vocab.belgif.be/ns/building#HeightStatusValue",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#status"
+        },
+        {
+          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#value"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#HeightAboveGround"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#HeightStatusValueShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#HeightStatusValue"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#LiteralShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#Literal"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#MeasuringMethodShape",
@@ -465,7 +662,7 @@
       "sh:targetClass": "http://www.opengis.net/ont/sf#Polygon"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_de#LangstringShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#LangStringShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -556,6 +753,17 @@
             "de": "Enter your translation here"
           },
           "sh:path": "http://www.w3.org/ns/locn#addressArea"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/adres#adminUnit"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
@@ -762,18 +970,6 @@
           "sh:path": "http://vocab.belgif.be/ns/building#geometry"
         },
         {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy"
-        },
-        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "de": "Enter your translation here"
@@ -796,17 +992,6 @@
             "de": "Enter your translation here"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#referenceGeometry"
-        },
-        {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
