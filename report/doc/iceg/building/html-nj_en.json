@@ -2,17 +2,17 @@
   "metadata": {
     "title": "Building",
     "uri": "http://vocab.belgif.be/ns/building",
-    "issued": "2022-10-20",
+    "issued": "2022-11-17",
     "baseURI": "http://vocab.belgif.be/ns/building#",
     "filename": "iceg-building",
     "navigation": {
       "self": "https://semiceu.github.io/doc/iceg/building"
     },
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
-    "status": "Working Draft",
+    "status": "Public Review",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/9fedf40f0d69bd6c77cc1ab0f2b261ce48222687",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/9fedf40f0d69bd6c77cc1ab0f2b261ce48222687/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/08b7a64fd08ea778b612844c8f2a941b7178ff84",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/08b7a64fd08ea778b612844c8f2a941b7178ff84/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -30,16 +30,43 @@
         "en": "An enclosed and/or covered structure, above and/or below ground, intended either for the shelter of persons, animals or things, or for the production of economic goods or the provision of services, and refers to any structure permanently constructed or erected on its site."
       },
       "usage": {},
-      "parents": [
-        {
-          "label": "Object",
-          "name": "Object",
-          "package": "OSLO-Generiek",
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
-          "scoped_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
-        }
-      ],
+      "parents": [],
       "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/building#Building.geometry",
+          "name": "geometry",
+          "sort": "geometry",
+          "label": {
+            "en": "geometry"
+          },
+          "description": {
+            "en": "Shape and position characteristics of a building"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Building",
+              "uri": "http://vocab.belgif.be/ns/building#Building"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "BuildingGeometry",
+              "range_uri": "http://vocab.belgif.be/ns/building#BuildingGeometry"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#BuildingGeometry",
+              "range_puri": "http://vocab.belgif.be/ns/building#BuildingGeometry",
+              "range_label": {
+                "en": "BuildingGeometry"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://vocab.belgif.be/ns/building#buildingNature",
           "name": "buildingNature",
@@ -74,6 +101,41 @@
               }
             }
           ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#conditionOfConstruction",
+          "name": "conditionOfConstruction",
+          "sort": "conditionOfConstruction",
+          "label": {
+            "en": "conditionOfConstruction"
+          },
+          "description": {
+            "en": "Values indicating the condition of a construction"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Building",
+              "uri": "http://vocab.belgif.be/ns/building#Building"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ConditionOfConstructionValue",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ConditionOfConstructionValue",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "ConditionOfConstructionValue"
+              }
+            }
+          ],
           "cardinality": "1",
           "codelist_uri": ""
         },
@@ -85,7 +147,7 @@
             "en": "consistsOf"
           },
           "description": {
-            "en": "The building units belonging to the building."
+            "en": "The building unit(s) being part of the building."
           },
           "usage": {},
           "domain": [
@@ -325,6 +387,43 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://vocab.belgif.be/ns/building#name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "Name of the building"
+          },
+          "usage": {
+            "en": "EXAMPLES: Big Ben, Eiffel Tower, Sacrada Familia"
+          },
+          "domain": [
+            {
+              "EA-Name": "Building",
+              "uri": "http://vocab.belgif.be/ns/building#Building"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://vocab.belgif.be/ns/building#numberOfDwellings",
           "name": "numberOfDwellings",
           "sort": "numberOfDwellings",
@@ -349,7 +448,77 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#numberOfFloorsAboveGround",
+          "name": "numberOfFloorsAboveGround",
+          "sort": "numberOfFloorsAboveGround",
+          "label": {
+            "en": "numberOfFloorsAboveGround"
+          },
+          "description": {
+            "en": "Total number of building layers above ground, viewed across all building sections."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Building",
+              "uri": "http://vocab.belgif.be/ns/building#Building"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#numberOfFloorsUnderGround",
+          "name": "numberOfFloorsUnderGround",
+          "sort": "numberOfFloorsUnderGround",
+          "label": {
+            "en": "numberOfFloorsUnderGround"
+          },
+          "description": {
+            "en": "Total number of building layers under ground, viewed across all building sections."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Building",
+              "uri": "http://vocab.belgif.be/ns/building#Building"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
               "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
               "range_label": {
                 "en": "Integer"
@@ -361,10 +530,10 @@
         },
         {
           "uri": "http://www.w3.org/ns/adms#Identifier",
-          "name": "^identifier",
-          "sort": "^identifier",
+          "name": "identifier",
+          "sort": "identifier",
           "label": {
-            "en": "^identifier"
+            "en": "identifier"
           },
           "description": {
             "en": "Identifier of the Building."
@@ -392,183 +561,6 @@
             }
           ],
           "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#Gebouw.status",
-          "name": "conditionOfConstruction",
-          "sort": "conditionOfConstruction",
-          "label": {
-            "en": "conditionOfConstruction"
-          },
-          "description": {
-            "en": "Status of the construction."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Building",
-              "uri": "http://vocab.belgif.be/ns/building#Building"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ConditionOfConstructionValue",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ConditionOfConstructionValue",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "ConditionOfConstructionValue"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#aantalBovengrondseVerdiepingen",
-          "name": "numberOfFloorsAboveGround",
-          "sort": "numberOfFloorsAboveGround",
-          "label": {
-            "en": "numberOfFloorsAboveGround"
-          },
-          "description": {
-            "en": "Total number of building layers above ground, viewed across all building sections."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Building",
-              "uri": "http://vocab.belgif.be/ns/building#Building"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "en": "Integer"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#aantalOndergrondseVerdiepingen",
-          "name": "numberOfFloorsUnderGround",
-          "sort": "numberOfFloorsUnderGround",
-          "label": {
-            "en": "numberOfFloorsUnderGround"
-          },
-          "description": {
-            "en": "Total number of building layers under ground, viewed across all building sections."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Building",
-              "uri": "http://vocab.belgif.be/ns/building#Building"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "en": "Integer"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#gebouwnaam",
-          "name": "name",
-          "sort": "name",
-          "label": {
-            "en": "name"
-          },
-          "description": {
-            "en": "Name of the building"
-          },
-          "usage": {
-            "en": "EXAMPLES: Big Ben, Eiffel Tower, Sacrada Familia"
-          },
-          "domain": [
-            {
-              "EA-Name": "Building",
-              "uri": "http://vocab.belgif.be/ns/building#Building"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Langstring"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#geometrie",
-          "name": "geometry",
-          "sort": "geometry",
-          "label": {
-            "en": "geometry"
-          },
-          "description": {
-            "en": "Shape and position characteristics of a building"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Building",
-              "uri": "http://vocab.belgif.be/ns/building#Building"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "BuildingGeometry",
-              "range_uri": "http://vocab.belgif.be/ns/building#BuildingGeometry"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#BuildingGeometry",
-              "range_puri": "http://vocab.belgif.be/ns/building#BuildingGeometry",
-              "range_label": {
-                "en": "BuildingGeometry"
-              }
-            }
-          ],
-          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -603,7 +595,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -614,7 +606,7 @@
             "en": "address"
           },
           "description": {
-            "en": "Addressrepresentation beloning to the building."
+            "en": "The address representation that corresponds to the building."
           },
           "usage": {},
           "domain": [
@@ -654,16 +646,43 @@
         "en": "The smallest unit within a building that is suitable and adapted for residential, commercial or recreational purposes and which is accessible from the outside or from a common area. A building unit is atomic, functionally independent, and may be separately sold, rented out, inherited, etc. In addition, a building unit can also be a common part."
       },
       "usage": {},
-      "parents": [
-        {
-          "label": "Object",
-          "name": "Object",
-          "package": "OSLO-Generiek",
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
-          "scoped_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
-        }
-      ],
+      "parents": [],
       "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/building#Buildingunit.currentUse",
+          "name": "currentUse",
+          "sort": "currentUse",
+          "label": {
+            "en": "currentUse"
+          },
+          "description": {
+            "en": "Activity hosted within the building unit. This attribute addresses mainly the building units hosting human activities."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "BuildingUnit",
+              "uri": "http://vocab.belgif.be/ns/building#BuildingUnit"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CurrentUse",
+              "range_uri": "http://vocab.belgif.be/ns/building#CurrentUse"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#CurrentUse",
+              "range_puri": "http://vocab.belgif.be/ns/building#CurrentUse",
+              "range_label": {
+                "en": "CurrentUse"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://vocab.belgif.be/ns/building#Buildingunit.geometry",
           "name": "geometry",
@@ -776,7 +795,9 @@
           "label": {
             "en": "isPartOf"
           },
-          "description": {},
+          "description": {
+            "en": "The building of which building unit(s) are being a part."
+          },
           "usage": {},
           "domain": [
             {
@@ -804,10 +825,10 @@
         },
         {
           "uri": "http://www.w3.org/ns/adms#identifier",
-          "name": "^identifier",
-          "sort": "^identifier",
+          "name": "identifier",
+          "sort": "identifier",
           "label": {
-            "en": "^identifier"
+            "en": "identifier"
           },
           "description": {
             "en": "The unique identifier of a building unit."
@@ -838,41 +859,6 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#functie",
-          "name": "function",
-          "sort": "function",
-          "label": {
-            "en": "function"
-          },
-          "description": {
-            "en": "Function for which the building unit is used in reality (as determined on site)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "BuildingUnit",
-              "uri": "http://vocab.belgif.be/ns/building#BuildingUnit"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "CurrentUse",
-              "range_uri": "http://vocab.belgif.be/ns/building#CurrentUse"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#CurrentUse",
-              "range_puri": "http://vocab.belgif.be/ns/building#CurrentUse",
-              "range_label": {
-                "en": "CurrentUse"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "https://www.w3.org/ns/locn#Address",
           "name": "address",
           "sort": "address",
@@ -880,7 +866,7 @@
             "en": "address"
           },
           "description": {
-            "en": "Addressrepresentation belonging to the building unit."
+            "en": "The address representation that corresponds to the building unit."
           },
           "usage": {},
           "domain": [
@@ -917,27 +903,49 @@
       },
       "sort": "CadastralParcel",
       "description": {
-        "en": "Areas defined by cadastral registers or equivalent."
+        "en": "A portion of Belgian territory, geographically demarcated and identified by the AAPD on the cadastral plot plan, corresponding to the land area of one or more cadastral patrimonial plots."
       },
       "usage": {},
-      "parents": [
-        {
-          "label": "Object",
-          "name": "Object",
-          "package": "OSLO-Generiek",
-          "uri": "http://www.w3.org/2000/01/rdf-schema#Resource",
-          "scoped_uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
-        }
-      ],
+      "parents": [],
       "properties": []
     }
   ],
   "properties": [
     {
+      "uri": "http://vocab.belgif.be/ns/building#Buildingunit.currentUse",
+      "name": {
+        "en": "currentUse",
+        "undefined": "currentUse"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "http://vocab.belgif.be/ns/building#buildingNature",
       "name": {
         "en": "buildingNature",
         "undefined": "buildingNature"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://vocab.belgif.be/ns/building#conditionOfConstruction",
+      "name": {
+        "en": "conditionOfConstruction",
+        "undefined": "conditionOfConstruction"
       },
       "description": {},
       "domain": [
@@ -1084,6 +1092,36 @@
       "parents": []
     },
     {
+      "uri": "http://vocab.belgif.be/ns/building#horizontalGeometryReference",
+      "name": {
+        "en": "horizontalGeometryReference",
+        "undefined": "horizontalGeometryReference"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://vocab.belgif.be/ns/building#informationSystem",
+      "name": {
+        "en": "informationSystem",
+        "undefined": "informationSystem"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "http://vocab.belgif.be/ns/building#isPartOf",
       "name": {
         "en": "isPartOf",
@@ -1114,10 +1152,40 @@
       "parents": []
     },
     {
+      "uri": "http://vocab.belgif.be/ns/building#name",
+      "name": {
+        "en": "name",
+        "undefined": "name"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
       "uri": "http://vocab.belgif.be/ns/building#status",
       "name": {
         "en": "status",
         "undefined": "status"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://vocab.belgif.be/ns/building#verticalGeometryReference",
+      "name": {
+        "en": "verticalGeometryReference",
+        "undefined": "verticalGeometryReference"
       },
       "description": {},
       "domain": [
@@ -1165,7 +1233,15 @@
       "first_name": "Christophe",
       "last_name": "Bahim",
       "affiliation": {
-        "name": "PwC EU Services"
+        "name": "PwC"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Florian",
+      "last_name": "Barthelemy",
+      "affiliation": {
+        "name": "PwC"
       }
     },
     {
@@ -1173,7 +1249,287 @@
       "first_name": "Yaron",
       "last_name": "Dassonneville",
       "affiliation": {
-        "name": "PwC EU Services"
+        "name": "PwC"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Jan",
+      "last_name": "Laporte",
+      "affiliation": {
+        "name": "Vlaanderen"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Tom",
+      "last_name": "Bols",
+      "affiliation": {
+        "name": "National Registry"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Ralph",
+      "last_name": "Boswell",
+      "affiliation": {
+        "name": "Perspective.brussels"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Bart",
+      "last_name": "Boute",
+      "affiliation": {
+        "name": "WVI"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Marc",
+      "last_name": "Bruyland",
+      "affiliation": {
+        "name": "FOD BOSA"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Yahsmeen",
+      "last_name": "Coulon",
+      "affiliation": {
+        "name": "Fednot"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Nathalie",
+      "last_name": "Delattre",
+      "affiliation": {
+        "name": "Nationaal Geografisch Instituut (NGI)"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Evy",
+      "last_name": "Dewinter",
+      "affiliation": {
+        "name": "FOD Finance"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Liesbet",
+      "last_name": "D’Hondt",
+      "affiliation": {
+        "name": "FOD BOSA"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Martin",
+      "last_name": "Erpicum",
+      "affiliation": {
+        "name": "CFWB"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Benoît",
+      "last_name": "Fricheteau",
+      "affiliation": {
+        "name": "CIRB/CIBG/BRIC"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Leticia",
+      "last_name": "Garcia",
+      "affiliation": {
+        "name": "CFWB"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Claude",
+      "last_name": "Hannecart",
+      "affiliation": {
+        "name": "CIRB/CIBG/BRIC"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Jordan",
+      "last_name": "Ikalulu",
+      "affiliation": {
+        "name": "Nationaal Geografisch Instituut (NGI)"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Jean-Claude",
+      "last_name": "Jasselette",
+      "affiliation": {
+        "name": "SPW"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Gael",
+      "last_name": "Kruwialis",
+      "affiliation": {
+        "name": "Nationaal Geografisch Instituut (NGI)"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Fabien",
+      "last_name": "Krzewinski",
+      "affiliation": {
+        "name": "CIRB/CIBG/BRIC"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Johan",
+      "last_name": "Boogaerts",
+      "affiliation": {
+        "name": "Fednot"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Raphaël",
+      "last_name": "Lebrun",
+      "affiliation": {
+        "name": "Proximus"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Hugues",
+      "last_name": "Lorent",
+      "affiliation": {
+        "name": "Nationaal Geografisch Instituut (NGI)"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Nathalie",
+      "last_name": "Mertens",
+      "affiliation": {
+        "name": "FOD Financiën - Patrimoniumdocumentatie"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Joris",
+      "last_name": "Pasgang",
+      "affiliation": {
+        "name": "National Registry"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Daniel",
+      "last_name": "Reuviaux",
+      "affiliation": {
+        "name": "SPW"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Thomas",
+      "last_name": "Ruhl",
+      "affiliation": {
+        "name": "CIRB/CIBG/BRIC"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Mieke",
+      "last_name": "Ryckoort",
+      "affiliation": {
+        "name": "Stad Kortrijk"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Geert",
+      "last_name": "Thijs",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Catalin",
+      "last_name": "Turlica",
+      "affiliation": {
+        "name": "CIRB/CIBG/BRIC"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Cindy",
+      "last_name": "Valvekens",
+      "affiliation": {
+        "name": "Stad Leuven"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Stefan",
+      "last_name": "Van De Venster",
+      "affiliation": {
+        "name": "National Registry"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Geert",
+      "last_name": "Van Haute",
+      "affiliation": {
+        "name": "Departement Omgeving (Flanders)"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Paul",
+      "last_name": "Van Lindt",
+      "affiliation": {
+        "name": "Vlaanderen"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Christophe",
+      "last_name": "Van Loo",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Grégoire",
+      "last_name": "Verhulst",
+      "affiliation": {
+        "name": "Belgian Buildings Agency"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Christophe",
+      "last_name": "Verschoore",
+      "affiliation": {
+        "name": "National Registry"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Hendrik",
+      "last_name": "van Hemelryck",
+      "affiliation": {
+        "name": "Digitaal Vlaanderen"
       }
     }
   ],
@@ -1619,16 +1975,16 @@
           ],
           "range": [
             {
-              "range_label": "FunctionValue",
+              "range_label": "CurrentUseValue",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#FunctionValue",
+              "range_uri": "#CurrentUseValue",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "FunctionValue"
+                "en": "CurrentUseValue"
               }
             }
           ],
@@ -1660,7 +2016,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
               "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
               "range_label": {
                 "en": "Integer"
@@ -1740,13 +2096,13 @@
           "range": [
             {
               "range_label": "DirectPosition",
-              "range_uri": "https://data.vlaanderen.be/ns/generiek#DirectPosition"
+              "range_uri": "http://www.opengis.net/ont/sf#DirectPosition"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#DirectPosition",
-              "range_puri": "https://data.vlaanderen.be/ns/generiek#DirectPosition",
+              "range_puri": "http://www.opengis.net/ont/sf#DirectPosition",
               "range_label": {
                 "en": "DirectPosition"
               }
@@ -1861,16 +2217,16 @@
           ],
           "range": [
             {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Text",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "#Langstring",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
-                "en": "Text"
+                "en": "Langstring"
               }
             }
           ],
@@ -1886,10 +2242,57 @@
         "en": "GeographicalName"
       },
       "sort": "GeographicalName",
-      "description": {},
+      "description": {
+        "en": "Proper noun applied to a real world entity."
+      },
       "usage": {},
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/building#language",
+          "name": "language",
+          "sort": "language",
+          "label": {
+            "en": "language"
+          },
+          "description": {
+            "en": "Language of the name, given as a three letters code, in accordance with either ISO 639-3 or ISO 639-5."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GeographicalName",
+              "uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#spelling",
+          "name": "spelling",
+          "sort": "spelling",
+          "label": {
+            "en": "spelling"
+          },
+          "description": {
+            "en": "A proper way of writing the geographical name."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "GeographicalName",
+              "uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://vocab.belgif.be/ns/building#HeightAboveGround",
@@ -2058,7 +2461,7 @@
       },
       "sort": "MeasuringMethod",
       "description": {
-        "en": "TO DO"
+        "en": "The way something is measured."
       },
       "usage": {},
       "parents": [],
@@ -2079,12 +2482,132 @@
         {
           "label": "Geometry",
           "name": "Geometry",
-          "package": "OSLO-Generiek",
+          "package": "OpenGIS",
           "uri": "http://www.w3.org/ns/locn#Geometry",
           "scoped_uri": "#Geometry"
         }
       ],
       "properties": []
+    },
+    {
+      "uri": "http://www.opengis.net/ont/sf#DirectPosition",
+      "name": "DirectPosition",
+      "label": {
+        "en": "DirectPosition"
+      },
+      "sort": "DirectPosition",
+      "description": {
+        "en": "Holder of the coordinates of a position in a coordinate reference system."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.opengis.net/ont/geosparql#asGML",
+          "name": "gml",
+          "sort": "gml",
+          "label": {
+            "en": "gml"
+          },
+          "description": {
+            "en": "Direct position expressed in gml format."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DirectPosition",
+              "uri": "http://www.opengis.net/ont/sf#DirectPosition"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.opengis.net/ont/geosparql#asWKT",
+          "name": "wkt",
+          "sort": "wkt",
+          "label": {
+            "en": "wkt"
+          },
+          "description": {
+            "en": "Direct position expressed in wkt format."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DirectPosition",
+              "uri": "http://www.opengis.net/ont/sf#DirectPosition"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.opengis.net/ont/sf#method",
+          "name": "method",
+          "sort": "method",
+          "label": {
+            "en": "method"
+          },
+          "description": {
+            "en": "The way the point was determined."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "DirectPosition",
+              "uri": "http://www.opengis.net/ont/sf#DirectPosition"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "MeasuringMethod",
+              "range_uri": "http://vocab.belgif.be/ns/building#MeasuringMethod"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#MeasuringMethod",
+              "range_puri": "http://vocab.belgif.be/ns/building#MeasuringMethod",
+              "range_label": {
+                "en": "MeasuringMethod"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.opengis.net/ont/sf#MultiCurve",
@@ -2101,7 +2624,7 @@
         {
           "label": "Geometry",
           "name": "Geometry",
-          "package": "OSLO-Generiek",
+          "package": "OpenGIS",
           "uri": "http://www.w3.org/ns/locn#Geometry",
           "scoped_uri": "#Geometry"
         }
@@ -2123,7 +2646,7 @@
         {
           "label": "Geometry",
           "name": "Geometry",
-          "package": "OSLO-Generiek",
+          "package": "OpenGIS",
           "uri": "http://www.w3.org/ns/locn#Geometry",
           "scoped_uri": "#Geometry"
         }
@@ -2145,7 +2668,7 @@
         {
           "label": "Geometry",
           "name": "Geometry",
-          "package": "OSLO-Generiek",
+          "package": "OpenGIS",
           "uri": "http://www.w3.org/ns/locn#Geometry",
           "scoped_uri": "#Geometry"
         }
@@ -2167,7 +2690,7 @@
         {
           "label": "Geometry",
           "name": "Geometry",
-          "package": "OSLO-Generiek",
+          "package": "OpenGIS",
           "uri": "http://www.w3.org/ns/locn#Geometry",
           "scoped_uri": "#Geometry"
         }
@@ -2203,48 +2726,6 @@
       "properties": []
     },
     {
-      "uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-      "name": "DateTime",
-      "label": {
-        "en": "DateTime"
-      },
-      "sort": "DateTime",
-      "description": {
-        "en": "dateTime represents instants of time, optionally marked with a particular time zone offset.  Values representing the same instant but having different time zone offsets are equal but not identical."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "http://www.w3.org/2001/XMLSchema#integer",
-      "name": "Integer",
-      "label": {
-        "en": "Integer"
-      },
-      "sort": "Integer",
-      "description": {
-        "en": "A number which is not a fraction; a whole number."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
-      "uri": "http://www.w3.org/2001/XMLSchema#string",
-      "name": "Text",
-      "label": {
-        "en": "Text"
-      },
-      "sort": "Text",
-      "description": {
-        "en": "A linear sequence of characters, words, or other data."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": []
-    },
-    {
       "uri": "http://www.w3.org/ns/adms#Identifier",
       "name": "Identifier",
       "label": {
@@ -2252,11 +2733,178 @@
       },
       "sort": "Identifier",
       "description": {
-        "en": "The unique identifier of something."
+        "en": "Information used to uniquely identify an object."
       },
-      "usage": {},
+      "usage": {
+        "en": "The basic assumption here is that this string is assigned by an organization and that this is done according to a well-defined system."
+      },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/building#structuredIdentificator",
+          "name": "structuredIdentifier",
+          "sort": "structuredIdentifier",
+          "label": {
+            "en": "structuredIdentifier"
+          },
+          "description": {
+            "en": "Identifier of the object broken down into its parts."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "assignedBy",
+          "sort": "assignedBy",
+          "label": {
+            "en": "assignedBy"
+          },
+          "description": {
+            "en": "Link to the agent who issued the identifier."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://purl.org/dc/terms/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://purl.org/dc/terms/Agent",
+              "range_puri": "http://purl.org/dc/terms/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "name": "assignedOn",
+          "sort": "assignedOn",
+          "label": {
+            "en": "assignedOn"
+          },
+          "description": {
+            "en": "Time when the identifier was issued."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "String used to uniquely identify the object. "
+          },
+          "usage": {
+            "en": "Type of the string refers to the identifier (incl its version), the string itself to the actual identifier."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Langstring",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Langstring"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/adms#schemaAgency",
+          "name": "assignedBy (String)",
+          "sort": "assignedBy (String)",
+          "label": {
+            "en": "assignedBy (String)"
+          },
+          "description": {
+            "en": "Name of the agent who assigned the identifier."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Langstring",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Langstring"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "http://www.w3.org/ns/locn#Address",
@@ -2290,16 +2938,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2325,16 +2973,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2360,16 +3008,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2395,16 +3043,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2465,16 +3113,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2570,16 +3218,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2605,16 +3253,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2629,7 +3277,7 @@
             "en": "boxNumber"
           },
           "description": {
-            "en": "TO DO"
+            "en": "Officially assigned alphanumeric code added to the house number to distinguish multiple building units, pitches, moorings or plots that have the same house number."
           },
           "usage": {},
           "domain": [
@@ -2710,16 +3358,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2745,16 +3393,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2780,16 +3428,16 @@
           ],
           "range": [
             {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Langstring",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
               "range_label": {
-                "en": "Langstring"
+                "en": "GeographicalName"
               }
             }
           ],
@@ -2804,7 +3452,7 @@
             "en": "reference"
           },
           "description": {
-            "en": "TO DO"
+            "en": "Address from which the address representation is derived."
           },
           "usage": {},
           "domain": [
@@ -2975,42 +3623,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://vocab.belgif.be/ns/building#referenceGeometry",
-          "name": "referenceGeometry",
-          "sort": "referenceGeometry",
-          "label": {
-            "en": "referenceGeometry"
-          },
-          "description": {
-            "en": "The geometry to be taken into account by view services, for portrayal."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "BuildingGeometry2D",
-              "uri": "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Boolean",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Boolean",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
-              "range_label": {
-                "en": "Boolean"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#horizontaleReferentie",
+          "uri": "http://vocab.belgif.be/ns/building#horizontalGeometryReference",
           "name": "horizontalGeometryReference",
           "sort": "horizontalGeometryReference",
           "label": {
@@ -3045,7 +3658,42 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/gebouw#verticaleReferentie",
+          "uri": "http://vocab.belgif.be/ns/building#referenceGeometry",
+          "name": "referenceGeometry",
+          "sort": "referenceGeometry",
+          "label": {
+            "en": "referenceGeometry"
+          },
+          "description": {
+            "en": "The geometry to be taken into account by view services, for portrayal."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "BuildingGeometry2D",
+              "uri": "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Boolean",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#boolean",
+              "range_label": {
+                "en": "Boolean"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#verticalGeometryReference",
           "name": "verticalGeometryReference",
           "sort": "verticalGeometryReference",
           "label": {
@@ -3077,126 +3725,6 @@
             }
           ],
           "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/generiek#DirectPosition",
-      "name": "DirectPosition",
-      "label": {
-        "en": "DirectPosition"
-      },
-      "sort": "DirectPosition",
-      "description": {
-        "en": "Holder of the coordinates of a position in a coordinate reference system."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://www.opengis.net/ont/geosparql#asGML",
-          "name": "gml",
-          "sort": "gml",
-          "label": {
-            "en": "gml"
-          },
-          "description": {
-            "en": "Direct position expressed in gml format."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DirectPosition",
-              "uri": "https://data.vlaanderen.be/ns/generiek#DirectPosition"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.opengis.net/ont/geosparql#asWKT",
-          "name": "wkt",
-          "sort": "wkt",
-          "label": {
-            "en": "wkt"
-          },
-          "description": {
-            "en": "Direct position expressed in wkt format."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DirectPosition",
-              "uri": "https://data.vlaanderen.be/ns/generiek#DirectPosition"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/generiek#method",
-          "name": "method",
-          "sort": "method",
-          "label": {
-            "en": "method"
-          },
-          "description": {
-            "en": "The way the point was determined."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "DirectPosition",
-              "uri": "https://data.vlaanderen.be/ns/generiek#DirectPosition"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "MeasuringMethod",
-              "range_uri": "http://vocab.belgif.be/ns/building#MeasuringMethod"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#MeasuringMethod",
-              "range_puri": "http://vocab.belgif.be/ns/building#MeasuringMethod",
-              "range_label": {
-                "en": "MeasuringMethod"
-              }
-            }
-          ],
-          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -3239,7 +3767,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
                 "en": "DateTime"
@@ -3274,7 +3802,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
                 "en": "DateTime"
@@ -3309,7 +3837,7 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
                 "en": "DateTime"
@@ -3403,13 +3931,13 @@
           "range": [
             {
               "range_label": "DirectPosition",
-              "range_uri": "https://data.vlaanderen.be/ns/generiek#DirectPosition"
+              "range_uri": "http://www.opengis.net/ont/sf#DirectPosition"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#DirectPosition",
-              "range_puri": "https://data.vlaanderen.be/ns/generiek#DirectPosition",
+              "range_puri": "http://www.opengis.net/ont/sf#DirectPosition",
               "range_label": {
                 "en": "DirectPosition"
               }
