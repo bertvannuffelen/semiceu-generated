@@ -349,6 +349,9 @@
       "definition": {
         "de": "A translation has yet to be added"
       },
+      "usage": {
+        "de": "A translation has yet to be added"
+      },
       "parents": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry"
       ]
@@ -364,7 +367,7 @@
       ]
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2",
+      "@id": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2.horizontalGeometryReference",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "de": "A translation has yet to be added"
@@ -383,6 +386,22 @@
     },
     {
       "@id": "http://vocab.belgif.be/ns/building#CurrentUse",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#DateOfEvent",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#Elevation",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "de": "A translation has yet to be added"
@@ -430,11 +449,8 @@
       "parents": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#MeasuringMethod",
+      "@id": "http://vocab.belgif.be/ns/building#LangCode",
       "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
       "parents": []
     }
   ],
@@ -453,6 +469,14 @@
         "en": "Literal"
       },
       "@id": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "Text"
+      },
+      "@id": "http://www.w3.org/2001/XMLSchema#string",
       "@type": "rdfs:Class"
     },
     {
@@ -495,6 +519,35 @@
     {
       "name": {
         "de": "Enter your translation here",
+        "en": "MeasuringMethod"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "NameStatusValue"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {},
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "NativenessValue"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
         "en": "Identifier"
       },
       "@id": "http://www.w3.org/ns/adms#Identifier",
@@ -511,9 +564,9 @@
     {
       "name": {
         "de": "Enter your translation here",
-        "en": "EventDate"
+        "en": "StructuredIdentificator"
       },
-      "@id": "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum",
+      "@id": "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator",
       "@type": "rdfs:Class"
     },
     {
@@ -527,15 +580,32 @@
     {
       "name": {
         "de": "Enter your translation here",
-        "en": "Elevation"
+        "en": "Document"
       },
-      "@id": "https://schema.org/elevation",
+      "@id": "https://schema.org/DigitalDocument",
       "@type": "rdfs:Class"
     }
   ],
   "properties": [
     {
-      "@id": "http://vocab.belgif.be/ns/building#Building.geometry",
+      "@id": "http://vocab.belgif.be/ns/building#Building.currentUse",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "usage": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#Building"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#CurrentUse"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#Building.dateOfConstruction",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "de": "A translation has yet to be added"
@@ -544,7 +614,122 @@
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry"
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#Building.dateOfDemolition",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#Building"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#Building.dateOfRenovation",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#Building"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#Building.elevation",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#Building"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#Elevation"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#BuildingGeometry2D.horizontalGeometryReference",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1.horizontalGeometryReference",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "usage": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#BuildingUnit.dateOfConstruction",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#BuildingUnit.dateOfDemolition",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#BuildingUnit.dateOfRenovation",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
       ],
       "generalization": []
     },
@@ -563,16 +748,33 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#Buildingunit.geometry",
+      "@id": "http://vocab.belgif.be/ns/building#anyPoint",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#building",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "usage": {
         "de": "A translation has yet to be added"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingUnit"
       ],
       "range": [
-        "http://www.w3.org/ns/locn#Geometry"
+        "http://vocab.belgif.be/ns/building#Building"
       ],
       "generalization": []
     },
@@ -594,6 +796,20 @@
       "generalization": []
     },
     {
+      "@id": "http://vocab.belgif.be/ns/building#buildingUnit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#Building"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#BuildingUnit"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "http://vocab.belgif.be/ns/building#conditionOfConstruction",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -608,22 +824,8 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#consistsOf",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#BuildingUnit"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#currentUse",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "@id": "http://vocab.belgif.be/ns/building#date",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "de": "A translation has yet to be added"
       },
@@ -631,75 +833,30 @@
         "de": "A translation has yet to be added"
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
+        "https://schema.org/DigitalDocument"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#CurrentUse"
+        "http://www.w3.org/2001/XMLSchema#dateTime"
       ],
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#currentUse",
+      "@id": "http://vocab.belgif.be/ns/building#document",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "de": "A translation has yet to be added"
       },
-      "usage": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#CurrentUse"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#dateOfConstruction",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
       "domain": [
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
+        "https://schema.org/DigitalDocument"
       ],
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#dateOfDemolition",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#dateOfRenovation",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#Building"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#dateOfRenovation",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "@id": "http://vocab.belgif.be/ns/building#document",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "de": "A translation has yet to be added"
       },
@@ -707,7 +864,21 @@
         "http://vocab.belgif.be/ns/building#BuildingUnit"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/generiek#Gebeurtenisdatum"
+        "https://schema.org/DigitalDocument"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#documentDescription",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "https://schema.org/DigitalDocument"
+      ],
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
       "generalization": []
     },
@@ -718,7 +889,7 @@
         "de": "A translation has yet to be added"
       },
       "domain": [
-        "https://schema.org/elevation"
+        "http://vocab.belgif.be/ns/building#Elevation"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -732,10 +903,38 @@
         "de": "A translation has yet to be added"
       },
       "domain": [
-        "https://schema.org/elevation"
+        "http://vocab.belgif.be/ns/building#Elevation"
       ],
       "range": [
         "http://www.opengis.net/ont/sf#DirectPosition"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#endDate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#entranceLocation",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#Building"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/building#EntranceLocation"
       ],
       "generalization": []
     },
@@ -863,42 +1062,11 @@
       "definition": {
         "de": "A translation has yet to be added"
       },
-      "domain": [
-        "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#horizontalGeometryReference",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
       "usage": {
         "de": "A translation has yet to be added"
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#horizontalGeometryReference",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "usage": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2"
+        "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2.horizontalGeometryReference"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -937,29 +1105,17 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#isPartOf",
+      "@id": "http://vocab.belgif.be/ns/building#language",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "de": "A translation has yet to be added"
       },
       "domain": [
-        "http://vocab.belgif.be/ns/building#BuildingUnit"
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#Building"
+        "http://vocab.belgif.be/ns/building#LangCode"
       ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#language",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "http://vocab.belgif.be/ns/building#GeographicalName"
-      ],
-      "range": [],
       "generalization": []
     },
     {
@@ -985,14 +1141,39 @@
       "definition": {
         "de": "A translation has yet to be added"
       },
-      "usage": {
-        "de": "A translation has yet to be added"
-      },
       "domain": [
         "http://vocab.belgif.be/ns/building#Building"
       ],
       "range": [
         "http://vocab.belgif.be/ns/building#GeographicalName"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#nameStatus",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#GeographicalName"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#nativeness",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#GeographicalName"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -1016,6 +1197,9 @@
       "definition": {
         "de": "A translation has yet to be added"
       },
+      "usage": {
+        "de": "A translation has yet to be added"
+      },
       "domain": [
         "http://vocab.belgif.be/ns/building#Building"
       ],
@@ -1028,6 +1212,9 @@
       "@id": "http://vocab.belgif.be/ns/building#numberOfFloorsUnderGround",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "usage": {
         "de": "A translation has yet to be added"
       },
       "domain": [
@@ -1073,7 +1260,7 @@
         "de": "A translation has yet to be added"
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+        "http://vocab.belgif.be/ns/building#BuildingGeometry"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#boolean"
@@ -1081,15 +1268,59 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#spelling",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@id": "http://vocab.belgif.be/ns/building#sourceOfName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "de": "A translation has yet to be added"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#GeographicalName"
       ],
-      "range": [],
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#sourceStatus",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "https://schema.org/DigitalDocument"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#spelling",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#GeographicalName"
+      ],
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#startDate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#DateOfEvent"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
       "generalization": []
     },
     {
@@ -1107,15 +1338,28 @@
       "generalization": []
     },
     {
+      "@id": "http://vocab.belgif.be/ns/building#string",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "domain": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": []
+    },
+    {
       "@id": "http://vocab.belgif.be/ns/building#structuredIdentificator",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "de": "A translation has yet to be added"
       },
       "domain": [
         "http://www.w3.org/ns/adms#Identifier"
       ],
-      "range": [],
+      "range": [
+        "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
+      ],
       "generalization": []
     },
     {
@@ -1129,6 +1373,23 @@
       ],
       "range": [
         "http://www.opengis.net/ont/sf#MultiCurve"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/building#type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "usage": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/building#CurrentUse"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
@@ -1266,41 +1527,25 @@
     {
       "name": {
         "de": "Enter your translation here",
-        "en": "startDate"
+        "en": "geometry"
       },
-      "@id": "https://data.vlaanderen.be/ns/generiek#begin",
+      "@id": "http://www.w3.org/ns/locn#Geometry",
       "@type": "rdf:Property"
     },
     {
       "name": {
         "de": "Enter your translation here",
-        "en": "endDate"
+        "en": "geometry"
       },
-      "@id": "https://data.vlaanderen.be/ns/generiek#einde",
+      "@id": "http://www.w3.org/ns/locn#Geometry",
       "@type": "rdf:Property"
     },
     {
       "name": {
         "de": "Enter your translation here",
-        "en": "anyPoint"
+        "en": "position"
       },
-      "@id": "https://data.vlaanderen.be/ns/generiek#tussentijdstip",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "de": "Enter your translation here",
-        "en": "geoCoordinates"
-      },
-      "@id": "https://schema.org/GeoCoordinates",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "de": "Enter your translation here",
-        "en": "elevation"
-      },
-      "@id": "https://schema.org/elevation",
+      "@id": "http://www.w3.org/ns/locn#Geometry",
       "@type": "rdf:Property"
     },
     {
