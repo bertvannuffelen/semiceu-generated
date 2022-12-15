@@ -134,7 +134,7 @@
             "en": "Any document providing information about the building."
           },
           "sh:name": {
-            "en": "Document"
+            "en": "document"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#document"
         },
@@ -250,7 +250,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
           "sh:definition": {
             "en": "The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.\t"
           },
@@ -273,7 +272,6 @@
           "sh:path": "http://vocab.belgif.be/ns/building#referenceGeometry"
         },
         {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
           "sh:definition": {
             "en": "The estimated absolute positional accuracy of the Z-coordinate of the building geometry.\t"
           },
@@ -462,7 +460,7 @@
             "en": "Any document providing information about the building unit."
           },
           "sh:name": {
-            "en": "Document"
+            "en": "document"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#document"
         },
@@ -722,7 +720,6 @@
             "en": "A proper way of writing the geographical name."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "spelling"
           },
@@ -898,7 +895,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "LangString"
+            "en": "langString"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#language"
         },
@@ -907,7 +904,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "String"
+            "en": "string"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#string"
         }
@@ -1079,7 +1076,7 @@
           "sh:name": {
             "en": "adminUnit"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/adres#adminUnit"
+          "sh:path": "http://vocab.belgif.be/ns/building#adminUnit"
         },
         {
           "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
@@ -1112,7 +1109,7 @@
           "sh:name": {
             "en": "boxNumber"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer"
+          "sh:path": "http://vocab.belgif.be/ns/building#Adresvoorstelling.busnummer"
         },
         {
           "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
@@ -1123,7 +1120,7 @@
           "sh:name": {
             "en": "country"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/adres#country"
+          "sh:path": "http://vocab.belgif.be/ns/building#country"
         },
         {
           "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
@@ -1145,7 +1142,7 @@
           "sh:name": {
             "en": "housenumber"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer"
+          "sh:path": "http://vocab.belgif.be/ns/building#Adresvoorstelling.huisnummer"
         },
         {
           "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
@@ -1176,7 +1173,7 @@
           "sh:name": {
             "en": "municipalityName"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/adres#municipalityName"
+          "sh:path": "http://vocab.belgif.be/ns/building#municipalityName"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1212,7 +1209,7 @@
           "sh:path": "http://www.w3.org/ns/locn#postCode"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/adres#Address",
+          "sh:class": "http://vocab.belgif.be/ns/building#Address",
           "sh:definition": {
             "en": "Address from which the address representation is derived."
           },
@@ -1220,7 +1217,7 @@
           "sh:name": {
             "en": "reference"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/adres#reference"
+          "sh:path": "http://vocab.belgif.be/ns/building#reference"
         },
         {
           "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
@@ -1331,10 +1328,33 @@
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#LengthShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#Base:MeasureShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "uom"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#uom"
+        },
+        {
+          "sh:definition": {
+            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#value"
+        }
+      ],
       "sh:targetClass": "https://data.vlaanderen.be/ns/weg#Lengte"
     },
     {
@@ -1349,7 +1369,7 @@
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "Date"
+            "en": "date"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#date"
         },

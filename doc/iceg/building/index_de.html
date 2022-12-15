@@ -515,7 +515,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <!--<dt>Source</dt><dd><br></dd>-->
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/18637fa70e3ec2f9a9e497bd7f61c0264a40120f/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/18637fa70e3ec2f9a9e497bd7f61c0264a40120f/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -585,6 +585,7 @@ TBD
                       <a href="#Building">Building</a> |
                       <a href="#BuildingUnit">BuildingUnit</a> |
                       <a href="#CadastralParcel">CadastralParcel</a> |
+                      <a href="#AddressRepresentation">AddressRepresentation</a> |
                     </p>
                   </div>
                   
@@ -593,8 +594,8 @@ TBD
                     <p> This document describes the usage of the following datatypes for a correct usage of the Core Vocabulary:
                       <br />
                       |
-                      <a href="#"></a> |
-                      <a href="#MultiCurve">MultiCurve</a> |
+                      <a href="#DirectPosition">DirectPosition</a> |
+                      <a href="#BuildingGeometry">BuildingGeometry</a> |
                       <a href="#BuildingGeometry3DLoD1">BuildingGeometry3DLoD1</a> |
                       <a href="#BuildingGeometry3DLoD2">BuildingGeometry3DLoD2</a> |
                       <a href="#CurrentUse">CurrentUse</a> |
@@ -604,10 +605,10 @@ TBD
                       <a href="#ExternalReference">ExternalReference</a> |
                       <a href="#GeographicalName">GeographicalName</a> |
                       <a href="#HeightAboveGround">HeightAboveGround</a> |
-                      <a href="#BuildingGeometry">BuildingGeometry</a> |
+                      <a href="#LangCode">LangCode</a> |
                       <a href="#3Dobject">3Dobject</a> |
-                      <a href="#DirectPosition">DirectPosition</a> |
                       <a href="#BuildingGeometry3DLoD">BuildingGeometry3DLoD</a> |
+                      <a href="#MultiCurve">MultiCurve</a> |
                       <a href="#MultiSurface">MultiSurface</a> |
                       <a href="#Point">Point</a> |
                       <a href="#Polygon">Polygon</a> |
@@ -615,7 +616,6 @@ TBD
                       <a href="#Literal">Literal</a> |
                       <a href="#Text">Text</a> |
                       <a href="#Identifier">Identifier</a> |
-                      <a href="#AddressRepresentation">AddressRepresentation</a> |
                       <a href="#Geometry">Geometry</a> |
                       <a href="#BuildingGeometry2D">BuildingGeometry2D</a> |
                       <a href="#StructuredIdentificator">StructuredIdentificator</a> |
@@ -655,7 +655,7 @@ TBD
                       <a href="#Building%3AbuildingNature">buildingNature</a>, 
                       <a href="#Building%3AbuildingUnit">buildingUnit</a>, 
                       <a href="#Building%3AconditionOfConstruction">conditionOfConstruction</a>, 
-                      <a href="#Building%3ADocument">Document</a>, 
+                      <a href="#Building%3Adocument">document</a>, 
                       <a href="#Building%3AdateOfConstruction">dateOfConstruction</a>, 
                       <a href="#Building%3AexternalReference">externalReference</a>, 
                       <a href="#Building%3AheightAboveGround">heightAboveGround</a>, 
@@ -845,11 +845,11 @@ TBD
                         <td></td>
                       </tr>
                     
-                      <tr id="Building%3ADocument" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#document">
+                      <tr id="Building%3Adocument" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#document">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://vocab.belgif.be/ns/building#document" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#document" data-placement="right">
-                            Document</a>
+                            document</a>
                           </code>
                         </td>
                         <td>
@@ -1086,7 +1086,7 @@ TBD
                       <a href="#BuildingUnit%3AdateOfRenovation">dateOfRenovation</a>, 
                       <a href="#BuildingUnit%3AcurrentUse">currentUse</a>, 
                       <a href="#BuildingUnit%3Abuilding">building</a>, 
-                      <a href="#BuildingUnit%3ADocument">Document</a>, 
+                      <a href="#BuildingUnit%3Adocument">document</a>, 
                       <a href="#BuildingUnit%3AentranceLocation">entranceLocation</a>, 
                       <a href="#BuildingUnit%3Aidentifier">identifier</a>, 
                       <a href="#BuildingUnit%3Ageometry">geometry</a>, 
@@ -1210,11 +1210,11 @@ TBD
                         <td></td>
                       </tr>
                     
-                      <tr id="BuildingUnit%3ADocument" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#document">
+                      <tr id="BuildingUnit%3Adocument" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#document">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://vocab.belgif.be/ns/building#document" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#document" data-placement="right">
-                            Document</a>
+                            document</a>
                           </code>
                         </td>
                         <td>
@@ -1332,6 +1332,377 @@ TBD
 		
             </div>
             
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="AddressRepresentation"><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">AddressRepresentation</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>More readable representation with only the basic data of the address, intended to use an address as an attribute of another object.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#AddressRepresentation%3AadministrativeUnitLevel2">administrativeUnitLevel2</a>, 
+                      <a href="#AddressRepresentation%3AboxNumber">boxNumber</a>, 
+                      <a href="#AddressRepresentation%3AadminUnit">adminUnit</a>, 
+                      <a href="#AddressRepresentation%3Acountry">country</a>, 
+                      <a href="#AddressRepresentation%3AmunicipalityName">municipalityName</a>, 
+                      <a href="#AddressRepresentation%3Areference">reference</a>, 
+                      <a href="#AddressRepresentation%3AaddressArea">addressArea</a>, 
+                      <a href="#AddressRepresentation%3AadministrativeUnitLevel1">administrativeUnitLevel1</a>, 
+                      <a href="#AddressRepresentation%3Ahousenumber">housenumber</a>, 
+                      <a href="#AddressRepresentation%3AfullAddress">fullAddress</a>, 
+                      <a href="#AddressRepresentation%3AlocatorDesignator">locatorDesignator</a>, 
+                      <a href="#AddressRepresentation%3AlocationName">locationName</a>, 
+                      <a href="#AddressRepresentation%3ApoBox">poBox</a>, 
+                      <a href="#AddressRepresentation%3Apostalcode">postalcode</a>, 
+                      <a href="#AddressRepresentation%3ApostName">postName</a>, 
+                      <a href="#AddressRepresentation%3Astreetname">streetname</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="AddressRepresentation%3AadministrativeUnitLevel2" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right">
+                            administrativeUnitLevel2</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The region of the address, usually a province or state or similar area typically comprising several towns.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AboxNumber" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#Adresvoorstelling.busnummer">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#Adresvoorstelling.busnummer" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#Adresvoorstelling.busnummer" data-placement="right">
+                            boxNumber</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Officially assigned alphanumeric code added to the house number to distinguish multiple building units, pitches, moorings or plots that have the same house number.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AadminUnit" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#adminUnit">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#adminUnit" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#adminUnit" data-placement="right">
+                            adminUnit</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>1..*</td>
+                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3Acountry" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#country">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#country" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#country" data-placement="right">
+                            country</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Country in which the address is located.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AmunicipalityName" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#municipalityName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#municipalityName" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#municipalityName" data-placement="right">
+                            municipalityName</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Municipal name of the address.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3Areference" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#reference">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#reference" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#reference" data-placement="right">
+                            reference</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://vocab.belgif.be/ns/building#Address" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#Address" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Address from which the address representation is derived.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AaddressArea" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#addressArea">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#addressArea" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#addressArea" data-placement="right">
+                            addressArea</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Name of a geographical area or locality that groups a number of addressable objects for the purpose of addressing them without the area or locality being an administrative unit.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AadministrativeUnitLevel1" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#adminUnitL1" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL1" data-placement="right">
+                            administrativeUnitLevel1</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Highest Administrative Unit of address, usually a country.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3Ahousenumber" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#Adresvoorstelling.huisnummer">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#Adresvoorstelling.huisnummer" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#Adresvoorstelling.huisnummer" data-placement="right">
+                            housenumber</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Alphanumeric code officially assigned to building units, berths, pitches or parcels.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AfullAddress" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#fullAddress">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#fullAddress" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#fullAddress" data-placement="right">
+                            fullAddress</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The complete address in one string, formatted or not.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AlocatorDesignator" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#locatorDesignator">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#locatorDesignator" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#locatorDesignator" data-placement="right">
+                            locatorDesignator</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">Alphanumeric code that uniquely identifies the address locator within the street, administrative unit, etc.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3AlocationName" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#locatorName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#locatorName" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#locatorName" data-placement="right">
+                            locationName</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">Name or description of the geographic object that the address locator identifies.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3ApoBox" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#poBox">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#poBox" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#poBox" data-placement="right">
+                            poBox</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">PO Box number in a post office.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3Apostalcode" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#postCode">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#postCode" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#postCode" data-placement="right">
+                            postalcode</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Code designating the geographical area that groups addresses for postal purposes.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3ApostName" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#postName">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#postName" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#postName" data-placement="right">
+                            postName</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Name designating the geographical area that groups addresses for postal purposes.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="AddressRepresentation%3Astreetname" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#thoroughfare">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/locn#thoroughfare" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#thoroughfare" data-placement="right">
+                            streetname</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Streetname of the address</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
 
             
             <div class="region region--no-space-top">
@@ -1340,42 +1711,188 @@ TBD
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id=""><a href="http://vocab.belgif.be/ns/building#LangCode" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#LangCode" data-placement="right"></a></h3>
+              <h3 class="h3" id="DirectPosition"><a href="http://www.opengis.net/ont/sf#DirectPosition" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#DirectPosition" data-placement="right">DirectPosition</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd></dd>
+                    <dt>Description</dt><dd>Holder of the coordinates of a position in a coordinate reference system.</dd>
                     
 		    
                     <dt>Properties</dt>
-		    
-                    <dd>There are no properties defined for this datatype.</dd>
+		     
+                    <dd>we have defined the following properties for this datatype:
+                      <a href="#DirectPosition%3Agml">gml</a>, 
+                      <a href="#DirectPosition%3Awkt">wkt</a>, 
+                      <a href="#DirectPosition%3Amethod">method</a>.</dd>
                     
                   </dl>
                 </div>
-		
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expects Type</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="DirectPosition%3Agml" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right">gml</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Literal</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Direct position expressed in gml format.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="DirectPosition%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right">wkt</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">Literal</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Direct position expressed in wkt format.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="DirectPosition%3Amethod" typeof="rdfs:Property" resource="http://www.opengis.net/ont/sf#method">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.opengis.net/ont/sf#method" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#method" data-placement="right">method</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">MeasuringMethod</a>
+			    
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">The way the point was determined.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
             </div>
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="MultiCurve"><a href="http://www.opengis.net/ont/sf#MultiCurve" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#MultiCurve" data-placement="right">MultiCurve</a></h3>
+              <h3 class="h3" id="BuildingGeometry"><a href="http://vocab.belgif.be/ns/building#BuildingGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#BuildingGeometry" data-placement="right">BuildingGeometry</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.</dd>
+                    <dt>Description</dt><dd>This data types includes the geometry of the building and metadata information about which element of the building was captured and how.</dd>
                     
-		     
-		    <dt>Subclass of <dt><dd>
-                        <a href="#Geometry">Geometry</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
 		    
-                    <dd>There are no properties defined for this datatype.</dd>
+                    <dt>Properties</dt>
+		     
+                    <dd>we have defined the following properties for this datatype:
+                      <a href="#BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy">horizontalGeometryEstimatedAccuracy</a>, 
+                      <a href="#BuildingGeometry%3AreferenceGeometry">referenceGeometry</a>, 
+                      <a href="#BuildingGeometry%3AverticalGeometryEstimatedAccuracy">verticalGeometryEstimatedAccuracy</a>.</dd>
                     
                   </dl>
                 </div>
-		
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expects Type</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-placement="right">horizontalGeometryEstimatedAccuracy</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.	</td>
+                        <td property="skos:scopeNote">	</td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="BuildingGeometry%3AreferenceGeometry" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#referenceGeometry">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#referenceGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#referenceGeometry" data-placement="right">referenceGeometry</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">The geometry to be taken into account by view services, for portrayal.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="BuildingGeometry%3AverticalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-placement="right">verticalGeometryEstimatedAccuracy</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The estimated absolute positional accuracy of the Z-coordinate of the building geometry.	</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
             </div>
             
             <div class="region region--no-space-top">
@@ -1443,7 +1960,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#ElevationReferenceValue" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
 			    
                           
                         </td>
@@ -1736,7 +2253,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#ElevationReferenceValue" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
 			    
                           
                         </td>
@@ -2050,7 +2567,7 @@ TBD
 			    
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A proper way of writing the geographical name.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -2106,7 +2623,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#ElevationReferenceValue" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
 			    
                           
                         </td>
@@ -2125,7 +2642,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#ElevationReferenceValue" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
 			    
                           
                         </td>
@@ -2181,99 +2698,20 @@ TBD
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="BuildingGeometry"><a href="http://vocab.belgif.be/ns/building#BuildingGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#BuildingGeometry" data-placement="right">BuildingGeometry</a></h3>
+              <h3 class="h3" id="LangCode"><a href="http://vocab.belgif.be/ns/building#LangCode" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#LangCode" data-placement="right">LangCode</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>This data types includes the geometry of the building and metadata information about which element of the building was captured and how.</dd>
+                    <dt>Description</dt><dd></dd>
                     
 		    
                     <dt>Properties</dt>
-		     
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy">horizontalGeometryEstimatedAccuracy</a>, 
-                      <a href="#BuildingGeometry%3AreferenceGeometry">referenceGeometry</a>, 
-                      <a href="#BuildingGeometry%3AverticalGeometryEstimatedAccuracy">verticalGeometryEstimatedAccuracy</a>.</dd>
+		    
+                    <dd>There are no properties defined for this datatype.</dd>
                     
                   </dl>
                 </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-placement="right">horizontalGeometryEstimatedAccuracy</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Length</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.	</td>
-                        <td property="skos:scopeNote">	</td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="BuildingGeometry%3AreferenceGeometry" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#referenceGeometry">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#referenceGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#referenceGeometry" data-placement="right">referenceGeometry</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">The geometry to be taken into account by view services, for portrayal.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="BuildingGeometry%3AverticalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-placement="right">verticalGeometryEstimatedAccuracy</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Length</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">The estimated absolute positional accuracy of the Z-coordinate of the building geometry.	</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
+		
             </div>
             
             <div class="region region--no-space-top">
@@ -2296,103 +2734,6 @@ TBD
                   </dl>
                 </div>
 		
-            </div>
-            
-            <div class="region region--no-space-top">
-              
-              <h3 class="h3" id="DirectPosition"><a href="http://www.opengis.net/ont/sf#DirectPosition" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#DirectPosition" data-placement="right">DirectPosition</a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>Holder of the coordinates of a position in a coordinate reference system.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#DirectPosition%3Agml">gml</a>, 
-                      <a href="#DirectPosition%3Awkt">wkt</a>, 
-                      <a href="#DirectPosition%3Amethod">method</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="DirectPosition%3Agml" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right">gml</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Literal</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Direct position expressed in gml format.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="DirectPosition%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right">wkt</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Literal</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Direct position expressed in wkt format.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="DirectPosition%3Amethod" typeof="rdfs:Property" resource="http://www.opengis.net/ont/sf#method">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/sf#method" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#method" data-placement="right">method</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">MeasuringMethod</a>
-			    
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">The way the point was determined.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
             </div>
             
             <div class="region region--no-space-top">
@@ -2502,7 +2843,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#ElevationReferenceValue" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
 			    
                           
                         </td>
@@ -2516,6 +2857,28 @@ TBD
                   </table>
                 </div>
                 
+            </div>
+            
+            <div class="region region--no-space-top">
+              
+              <h3 class="h3" id="MultiCurve"><a href="http://www.opengis.net/ont/sf#MultiCurve" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#MultiCurve" data-placement="right">MultiCurve</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A MultiCurve is a 1-dimensional GeometryCollection whose elements are Curves.</dd>
+                    
+		     
+		    <dt>Subclass of <dt><dd>
+                        <a href="#Geometry">Geometry</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>There are no properties defined for this datatype.</dd>
+                    
+                  </dl>
+                </div>
+		
             </div>
             
             <div class="region region--no-space-top">
@@ -2596,8 +2959,8 @@ TBD
                     <dt>Properties</dt>
 		     
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#Langstring%3ALangString">LangString</a>, 
-                      <a href="#Langstring%3AString">String</a>.</dd>
+                      <a href="#Langstring%3AlangString">langString</a>, 
+                      <a href="#Langstring%3Astring">string</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2617,16 +2980,16 @@ TBD
 
                     <tbody class="supertype">
                       
-                      <tr id="Langstring%3ALangString" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#language">
+                      <tr id="Langstring%3AlangString" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#language">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#language" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#language" data-placement="right">LangString</a>
+                            <a href="http://vocab.belgif.be/ns/building#language" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#language" data-placement="right">langString</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#LangCode" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">LangCode</a>
 			    
                           
                         </td>
@@ -2636,10 +2999,10 @@ TBD
                         <td></td>
                       </tr>
                       
-                      <tr id="Langstring%3AString" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#string">
+                      <tr id="Langstring%3Astring" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#string">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#string" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#string" data-placement="right">String</a>
+                            <a href="http://vocab.belgif.be/ns/building#string" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#string" data-placement="right">string</a>
                           </code>
                         </td>
                         <td>
@@ -2838,363 +3201,6 @@ TBD
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="AddressRepresentation"><a href="http://www.w3.org/ns/locn#Address" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Address" data-placement="right">AddressRepresentation</a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>More readable representation with only the basic data of the address, intended to use an address as an attribute of another object.</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#AddressRepresentation%3ApostName">postName</a>, 
-                      <a href="#AddressRepresentation%3AaddressArea">addressArea</a>, 
-                      <a href="#AddressRepresentation%3AadministrativeUnitLevel2">administrativeUnitLevel2</a>, 
-                      <a href="#AddressRepresentation%3AfullAddress">fullAddress</a>, 
-                      <a href="#AddressRepresentation%3AlocatorDesignator">locatorDesignator</a>, 
-                      <a href="#AddressRepresentation%3AlocationName">locationName</a>, 
-                      <a href="#AddressRepresentation%3ApoBox">poBox</a>, 
-                      <a href="#AddressRepresentation%3Apostalcode">postalcode</a>, 
-                      <a href="#AddressRepresentation%3AadministrativeUnitLevel1">administrativeUnitLevel1</a>, 
-                      <a href="#AddressRepresentation%3Astreetname">streetname</a>, 
-                      <a href="#AddressRepresentation%3AboxNumber">boxNumber</a>, 
-                      <a href="#AddressRepresentation%3Ahousenumber">housenumber</a>, 
-                      <a href="#AddressRepresentation%3AadminUnit">adminUnit</a>, 
-                      <a href="#AddressRepresentation%3Acountry">country</a>, 
-                      <a href="#AddressRepresentation%3AmunicipalityName">municipalityName</a>, 
-                      <a href="#AddressRepresentation%3Areference">reference</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="AddressRepresentation%3ApostName" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#postName">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#postName" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#postName" data-placement="right">postName</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Name designating the geographical area that groups addresses for postal purposes.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AaddressArea" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#addressArea">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#addressArea" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#addressArea" data-placement="right">addressArea</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Name of a geographical area or locality that groups a number of addressable objects for the purpose of addressing them without the area or locality being an administrative unit.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AadministrativeUnitLevel2" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL2">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#adminUnitL2" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL2" data-placement="right">administrativeUnitLevel2</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">The region of the address, usually a province or state or similar area typically comprising several towns.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AfullAddress" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#fullAddress">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#fullAddress" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#fullAddress" data-placement="right">fullAddress</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">The complete address in one string, formatted or not.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AlocatorDesignator" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#locatorDesignator">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#locatorDesignator" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#locatorDesignator" data-placement="right">locatorDesignator</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">Alphanumeric code that uniquely identifies the address locator within the street, administrative unit, etc.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AlocationName" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#locatorName">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#locatorName" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#locatorName" data-placement="right">locationName</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">Name or description of the geographic object that the address locator identifies.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3ApoBox" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#poBox">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#poBox" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#poBox" data-placement="right">poBox</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">PO Box number in a post office.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3Apostalcode" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#postCode">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#postCode" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#postCode" data-placement="right">postalcode</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Code designating the geographical area that groups addresses for postal purposes.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AadministrativeUnitLevel1" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#adminUnitL1">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#adminUnitL1" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#adminUnitL1" data-placement="right">administrativeUnitLevel1</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Highest Administrative Unit of address, usually a country.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3Astreetname" typeof="rdfs:Property" resource="http://www.w3.org/ns/locn#thoroughfare">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/locn#thoroughfare" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#thoroughfare" data-placement="right">streetname</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Streetname of the address</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AboxNumber" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer" data-placement="right">boxNumber</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Officially assigned alphanumeric code added to the house number to distinguish multiple building units, pitches, moorings or plots that have the same house number.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3Ahousenumber" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer" data-placement="right">housenumber</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Alphanumeric code officially assigned to building units, berths, pitches or parcels.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AadminUnit" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#adminUnit">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#adminUnit" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#adminUnit" data-placement="right">adminUnit</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>1..*</td>
-                        <td property="rdfs:comment">The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3Acountry" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#country">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#country" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#country" data-placement="right">country</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Country in which the address is located.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3AmunicipalityName" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#municipalityName">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#municipalityName" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#municipalityName" data-placement="right">municipalityName</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">GeographicalName</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Municipal name of the address.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="AddressRepresentation%3Areference" typeof="rdfs:Property" resource="https://data.vlaanderen.be/ns/adres#reference">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://data.vlaanderen.be/ns/adres#reference" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#reference" data-placement="right">reference</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="https://data.vlaanderen.be/ns/adres#Address" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/adres#Address" data-placement="right"></a>
-                            
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Address from which the address representation is derived.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
-            </div>
-            
-            <div class="region region--no-space-top">
-              
               <h3 class="h3" id="Geometry"><a href="http://www.w3.org/ns/locn#Geometry" data-toggle="tooltip" data-content="http://www.w3.org/ns/locn#Geometry" data-placement="right">Geometry</a></h3>
 	      
                 <div class="region region--no-space-top">
@@ -3375,7 +3381,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#ElevationReferenceValue" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
 			    
                           
                         </td>
@@ -3421,12 +3427,63 @@ TBD
                     
 		    
                     <dt>Properties</dt>
-		    
-                    <dd>There are no properties defined for this datatype.</dd>
+		     
+                    <dd>we have defined the following properties for this datatype:
+                      <a href="#Length%3Auom">uom</a>, 
+                      <a href="#Length%3Avalue">value</a>.</dd>
                     
                   </dl>
                 </div>
-		
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expects Type</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="Length%3Auom" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#uom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#uom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#uom" data-placement="right">uom</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">Standard units of measurements used when accounting for stock, and expressing them in quantities.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Length%3Avalue" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#value">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#value" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#value" data-placement="right">value</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
             </div>
             
             <div class="region region--no-space-top">
@@ -3443,7 +3500,7 @@ TBD
                     <dt>Properties</dt>
 		     
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#Document%3ADate">Date</a>, 
+                      <a href="#Document%3Adate">date</a>, 
                       <a href="#Document%3AdocumentDescription">documentDescription</a>, 
                       <a href="#Document%3AsourceStatus">sourceStatus</a>.</dd>
                     
@@ -3465,10 +3522,10 @@ TBD
 
                     <tbody class="supertype">
                       
-                      <tr id="Document%3ADate" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#date">
+                      <tr id="Document%3Adate" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#date">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#date" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#date" data-placement="right">Date</a>
+                            <a href="http://vocab.belgif.be/ns/building#date" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#date" data-placement="right">date</a>
                           </code>
                         </td>
                         <td>
@@ -3512,7 +3569,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#SourceStatusValue" data-placement="right"></a>
+			    <a href="#Enter your translation here" data-placement="right">SourceStatusValue</a>
 			    
                           
                         </td>

@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Public Review",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/18637fa70e3ec2f9a9e497bd7f61c0264a40120f",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/18637fa70e3ec2f9a9e497bd7f61c0264a40120f/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/8d7804a226043b67d93eb4f888b324bf6f3ef3c6",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -318,10 +318,10 @@
         },
         {
           "uri": "http://vocab.belgif.be/ns/building#document",
-          "name": "Document",
-          "sort": "Document",
+          "name": "document",
+          "sort": "document",
           "label": {
-            "en": "Document"
+            "en": "document"
           },
           "description": {
             "en": "Any document providing information about the building."
@@ -899,10 +899,10 @@
         },
         {
           "uri": "http://vocab.belgif.be/ns/building#document",
-          "name": "Document",
-          "sort": "Document",
+          "name": "document",
+          "sort": "document",
           "label": {
-            "en": "Document"
+            "en": "document"
           },
           "description": {
             "en": "Any document providing information about the building unit."
@@ -1087,6 +1087,581 @@
       "usage": {},
       "parents": [],
       "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/locn#Address",
+      "name": "AddressRepresentation",
+      "label": {
+        "en": "AddressRepresentation"
+      },
+      "sort": "AddressRepresentation",
+      "description": {
+        "en": "More readable representation with only the basic data of the address, intended to use an address as an attribute of another object."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/building#Adresvoorstelling.busnummer",
+          "name": "boxNumber",
+          "sort": "boxNumber",
+          "label": {
+            "en": "boxNumber"
+          },
+          "description": {
+            "en": "Officially assigned alphanumeric code added to the house number to distinguish multiple building units, pitches, moorings or plots that have the same house number."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#Adresvoorstelling.huisnummer",
+          "name": "housenumber",
+          "sort": "housenumber",
+          "label": {
+            "en": "housenumber"
+          },
+          "description": {
+            "en": "Alphanumeric code officially assigned to building units, berths, pitches or parcels."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#adminUnit",
+          "name": "adminUnit",
+          "sort": "adminUnit",
+          "label": {
+            "en": "adminUnit"
+          },
+          "description": {
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#country",
+          "name": "country",
+          "sort": "country",
+          "label": {
+            "en": "country"
+          },
+          "description": {
+            "en": "Country in which the address is located."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#municipalityName",
+          "name": "municipalityName",
+          "sort": "municipalityName",
+          "label": {
+            "en": "municipalityName"
+          },
+          "description": {
+            "en": "Municipal name of the address."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#reference",
+          "name": "reference",
+          "sort": "reference",
+          "label": {
+            "en": "reference"
+          },
+          "description": {
+            "en": "Address from which the address representation is derived."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Address",
+              "range_uri": "http://vocab.belgif.be/ns/building#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://vocab.belgif.be/ns/building#Address",
+              "range_puri": "http://vocab.belgif.be/ns/building#Address",
+              "range_label": {
+                "en": "Address"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#addressArea",
+          "name": "addressArea",
+          "sort": "addressArea",
+          "label": {
+            "en": "addressArea"
+          },
+          "description": {
+            "en": "Name of a geographical area or locality that groups a number of addressable objects for the purpose of addressing them without the area or locality being an administrative unit."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "administrativeUnitLevel1",
+          "sort": "administrativeUnitLevel1",
+          "label": {
+            "en": "administrativeUnitLevel1"
+          },
+          "description": {
+            "en": "Highest Administrative Unit of address, usually a country."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
+          "name": "administrativeUnitLevel2",
+          "sort": "administrativeUnitLevel2",
+          "label": {
+            "en": "administrativeUnitLevel2"
+          },
+          "description": {
+            "en": "The region of the address, usually a province or state or similar area typically comprising several towns."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#fullAddress",
+          "name": "fullAddress",
+          "sort": "fullAddress",
+          "label": {
+            "en": "fullAddress"
+          },
+          "description": {
+            "en": "The complete address in one string, formatted or not."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
+          "name": "locatorDesignator",
+          "sort": "locatorDesignator",
+          "label": {
+            "en": "locatorDesignator"
+          },
+          "description": {
+            "en": "Alphanumeric code that uniquely identifies the address locator within the street, administrative unit, etc."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorName",
+          "name": "locationName",
+          "sort": "locationName",
+          "label": {
+            "en": "locationName"
+          },
+          "description": {
+            "en": "Name or description of the geographic object that the address locator identifies."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#poBox",
+          "name": "poBox",
+          "sort": "poBox",
+          "label": {
+            "en": "poBox"
+          },
+          "description": {
+            "en": "PO Box number in a post office."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postCode",
+          "name": "postalcode",
+          "sort": "postalcode",
+          "label": {
+            "en": "postalcode"
+          },
+          "description": {
+            "en": "Code designating the geographical area that groups addresses for postal purposes."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postName",
+          "name": "postName",
+          "sort": "postName",
+          "label": {
+            "en": "postName"
+          },
+          "description": {
+            "en": "Name designating the geographical area that groups addresses for postal purposes."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#thoroughfare",
+          "name": "streetname",
+          "sort": "streetname",
+          "label": {
+            "en": "streetname"
+          },
+          "description": {
+            "en": "Streetname of the address"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "AddressRepresentation",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "GeographicalName",
+              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#GeographicalName",
+              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
+              "range_label": {
+                "en": "GeographicalName"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
     }
   ],
   "properties": [
@@ -1213,8 +1788,8 @@
     {
       "uri": "http://vocab.belgif.be/ns/building#document",
       "name": {
-        "en": "Document",
-        "undefined": "Document"
+        "en": "document",
+        "undefined": "document"
       },
       "description": {},
       "domain": [
@@ -1228,8 +1803,8 @@
     {
       "uri": "http://vocab.belgif.be/ns/building#document",
       "name": {
-        "en": "Document",
-        "undefined": "Document"
+        "en": "document",
+        "undefined": "document"
       },
       "description": {},
       "domain": [
@@ -1333,8 +1908,8 @@
     {
       "uri": "http://vocab.belgif.be/ns/building#language",
       "name": {
-        "en": "LangString",
-        "undefined": "LangString"
+        "en": "langString",
+        "undefined": "langString"
       },
       "description": {},
       "domain": [
@@ -1850,21 +2425,8 @@
               "uri": "http://vocab.belgif.be/ns/building#BuildingGeometry"
             }
           ],
-          "range": [
-            {
-              "range_label": "Length",
-              "range_uri": "https://data.vlaanderen.be/ns/weg#Lengte"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Length",
-              "range_puri": "https://data.vlaanderen.be/ns/weg#Lengte",
-              "range_label": {
-                "en": "Length"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
@@ -1920,21 +2482,8 @@
               "uri": "http://vocab.belgif.be/ns/building#BuildingGeometry"
             }
           ],
-          "range": [
-            {
-              "range_label": "Length",
-              "range_uri": "https://data.vlaanderen.be/ns/weg#Lengte"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Length",
-              "range_puri": "https://data.vlaanderen.be/ns/weg#Lengte",
-              "range_label": {
-                "en": "Length"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         }
@@ -2093,10 +2642,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ElevationReferenceValue",
+              "range_uri": "#Elevation reference value",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "ElevationReferenceValue"
+                "en": "Elevation reference value"
               }
             }
           ],
@@ -2190,10 +2739,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ElevationReferenceValue",
+              "range_uri": "#Elevation reference value",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "ElevationReferenceValue"
+                "en": "Elevation reference value"
               }
             }
           ],
@@ -2507,10 +3056,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ElevationReferenceValue",
+              "range_uri": "#Elevation reference value",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "ElevationReferenceValue"
+                "en": "Elevation reference value"
               }
             }
           ],
@@ -2911,7 +3460,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -2956,10 +3505,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ElevationReferenceValue",
+              "range_uri": "#Elevation reference value",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "ElevationReferenceValue"
+                "en": "Elevation reference value"
               }
             }
           ],
@@ -2993,10 +3542,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ElevationReferenceValue",
+              "range_uri": "#Elevation reference value",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "ElevationReferenceValue"
+                "en": "Elevation reference value"
               }
             }
           ],
@@ -3057,7 +3606,7 @@
           ],
           "range": [
             {
-              "range_label": "Length",
+              "range_label": "Base:Measure",
               "range_uri": "https://data.vlaanderen.be/ns/weg#Lengte"
             }
           ],
@@ -3077,9 +3626,11 @@
     },
     {
       "uri": "http://vocab.belgif.be/ns/building#LangCode",
-      "name": "",
-      "label": {},
-      "sort": "",
+      "name": "LangCode",
+      "label": {
+        "en": "LangCode"
+      },
+      "sort": "LangCode",
       "description": {},
       "usage": {},
       "parents": [],
@@ -3330,10 +3881,10 @@
       "properties": [
         {
           "uri": "http://vocab.belgif.be/ns/building#language",
-          "name": "LangString",
-          "sort": "LangString",
+          "name": "langString",
+          "sort": "langString",
           "label": {
-            "en": "LangString"
+            "en": "langString"
           },
           "description": {
             "en": "Language code of the string."
@@ -3365,10 +3916,10 @@
         },
         {
           "uri": "http://vocab.belgif.be/ns/building#string",
-          "name": "String",
-          "sort": "String",
+          "name": "string",
+          "sort": "string",
           "label": {
-            "en": "String"
+            "en": "string"
           },
           "description": {},
           "usage": {},
@@ -3621,581 +4172,6 @@
       ]
     },
     {
-      "uri": "http://www.w3.org/ns/locn#Address",
-      "name": "AddressRepresentation",
-      "label": {
-        "en": "AddressRepresentation"
-      },
-      "sort": "AddressRepresentation",
-      "description": {
-        "en": "More readable representation with only the basic data of the address, intended to use an address as an attribute of another object."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://www.w3.org/ns/locn#addressArea",
-          "name": "addressArea",
-          "sort": "addressArea",
-          "label": {
-            "en": "addressArea"
-          },
-          "description": {
-            "en": "Name of a geographical area or locality that groups a number of addressable objects for the purpose of addressing them without the area or locality being an administrative unit."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
-          "name": "administrativeUnitLevel1",
-          "sort": "administrativeUnitLevel1",
-          "label": {
-            "en": "administrativeUnitLevel1"
-          },
-          "description": {
-            "en": "Highest Administrative Unit of address, usually a country."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
-          "name": "administrativeUnitLevel2",
-          "sort": "administrativeUnitLevel2",
-          "label": {
-            "en": "administrativeUnitLevel2"
-          },
-          "description": {
-            "en": "The region of the address, usually a province or state or similar area typically comprising several towns."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#fullAddress",
-          "name": "fullAddress",
-          "sort": "fullAddress",
-          "label": {
-            "en": "fullAddress"
-          },
-          "description": {
-            "en": "The complete address in one string, formatted or not."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
-          "name": "locatorDesignator",
-          "sort": "locatorDesignator",
-          "label": {
-            "en": "locatorDesignator"
-          },
-          "description": {
-            "en": "Alphanumeric code that uniquely identifies the address locator within the street, administrative unit, etc."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#locatorName",
-          "name": "locationName",
-          "sort": "locationName",
-          "label": {
-            "en": "locationName"
-          },
-          "description": {
-            "en": "Name or description of the geographic object that the address locator identifies."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#poBox",
-          "name": "poBox",
-          "sort": "poBox",
-          "label": {
-            "en": "poBox"
-          },
-          "description": {
-            "en": "PO Box number in a post office."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#postCode",
-          "name": "postalcode",
-          "sort": "postalcode",
-          "label": {
-            "en": "postalcode"
-          },
-          "description": {
-            "en": "Code designating the geographical area that groups addresses for postal purposes."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#postName",
-          "name": "postName",
-          "sort": "postName",
-          "label": {
-            "en": "postName"
-          },
-          "description": {
-            "en": "Name designating the geographical area that groups addresses for postal purposes."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#thoroughfare",
-          "name": "streetname",
-          "sort": "streetname",
-          "label": {
-            "en": "streetname"
-          },
-          "description": {
-            "en": "Streetname of the address"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.busnummer",
-          "name": "boxNumber",
-          "sort": "boxNumber",
-          "label": {
-            "en": "boxNumber"
-          },
-          "description": {
-            "en": "Officially assigned alphanumeric code added to the house number to distinguish multiple building units, pitches, moorings or plots that have the same house number."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#Adresvoorstelling.huisnummer",
-          "name": "housenumber",
-          "sort": "housenumber",
-          "label": {
-            "en": "housenumber"
-          },
-          "description": {
-            "en": "Alphanumeric code officially assigned to building units, berths, pitches or parcels."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#adminUnit",
-          "name": "adminUnit",
-          "sort": "adminUnit",
-          "label": {
-            "en": "adminUnit"
-          },
-          "description": {
-            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "1..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#country",
-          "name": "country",
-          "sort": "country",
-          "label": {
-            "en": "country"
-          },
-          "description": {
-            "en": "Country in which the address is located."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#municipalityName",
-          "name": "municipalityName",
-          "sort": "municipalityName",
-          "label": {
-            "en": "municipalityName"
-          },
-          "description": {
-            "en": "Municipal name of the address."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "GeographicalName",
-              "range_uri": "http://vocab.belgif.be/ns/building#GeographicalName"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#GeographicalName",
-              "range_puri": "http://vocab.belgif.be/ns/building#GeographicalName",
-              "range_label": {
-                "en": "GeographicalName"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/adres#reference",
-          "name": "reference",
-          "sort": "reference",
-          "label": {
-            "en": "reference"
-          },
-          "description": {
-            "en": "Address from which the address representation is derived."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "AddressRepresentation",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Address",
-              "range_uri": "https://data.vlaanderen.be/ns/adres#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "https://data.vlaanderen.be/ns/adres#Address",
-              "range_puri": "https://data.vlaanderen.be/ns/adres#Address",
-              "range_label": {
-                "en": "Address"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
       "uri": "http://www.w3.org/ns/locn#Geometry",
       "name": "Geometry",
       "label": {
@@ -4431,10 +4407,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#ElevationReferenceValue",
+              "range_uri": "#Elevation reference value",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "ElevationReferenceValue"
+                "en": "Elevation reference value"
               }
             }
           ],
@@ -4471,7 +4447,52 @@
         "en": "This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum"
       },
       "parents": [],
-      "properties": []
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/building#uom",
+          "name": "uom",
+          "sort": "uom",
+          "label": {
+            "en": "uom"
+          },
+          "description": {
+            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Base:Measure",
+              "uri": "https://data.vlaanderen.be/ns/weg#Lengte"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/building#value",
+          "name": "value",
+          "sort": "value",
+          "label": {
+            "en": "value"
+          },
+          "description": {
+            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Base:Measure",
+              "uri": "https://data.vlaanderen.be/ns/weg#Lengte"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
     },
     {
       "uri": "https://schema.org/DigitalDocument",
@@ -4490,10 +4511,10 @@
       "properties": [
         {
           "uri": "http://vocab.belgif.be/ns/building#date",
-          "name": "Date",
-          "sort": "Date",
+          "name": "date",
+          "sort": "date",
           "label": {
-            "en": "Date"
+            "en": "date"
           },
           "description": {
             "en": "Date of validity of the document."
