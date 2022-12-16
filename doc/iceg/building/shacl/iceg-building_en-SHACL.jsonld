@@ -40,37 +40,6 @@
   "@id": "https://semiceu.github.io/shacl/iceg-building_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#Base:MeasureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:definition": {
-            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "uom"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#uom"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
-          "sh:definition": {
-            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "value"
-          },
-          "sh:path": "https://qudt.org/schema/qudt/value"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#Base:Measure"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#BuildingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -281,6 +250,7 @@
       "sh:closed": false,
       "sh:property": [
         {
+          "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
             "en": "The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.\t"
           },
@@ -303,6 +273,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#referenceGeometry"
         },
         {
+          "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
             "en": "The estimated absolute positional accuracy of the Z-coordinate of the building geometry.\t"
           },
@@ -801,7 +772,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#status"
         },
         {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#Base:Measure",
+          "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
             "en": "Value of the height above ground."
           },
@@ -821,6 +792,38 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#LangCode"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#MeasureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "uom"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#uom"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:definition": {
+            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "https://qudt.org/schema/qudt/value"
+        }
+      ],
+      "sh:targetClass": "http://inspire.ec.europa.eu/ont/base#Measure"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#CadastralParcelShape",
@@ -905,42 +908,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.opengis.net/ont/sf#Polygon"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#LangStringShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#LangCode",
-          "sh:definition": {
-            "en": "Language code of the string."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "language"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#language"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "string"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#string"
-        }
-      ],
-      "sh:targetClass": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#LiteralShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#TextShape",

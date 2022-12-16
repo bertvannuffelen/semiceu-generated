@@ -6,8 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/iceg-building_en> <https://semiceu.github.io/shacl/iceg-building_enshapes> <https://semiceu.github.io/shacl/iceg-building_en#Base:MeasureShape>,
-    <https://semiceu.github.io/shacl/iceg-building_en#BuildingShape>,
+<https://semiceu.github.io/shacl/iceg-building_en> <https://semiceu.github.io/shacl/iceg-building_enshapes> <https://semiceu.github.io/shacl/iceg-building_en#BuildingShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometryShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometry3DLoDShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometry3DLoD1Shape>,
@@ -21,6 +20,7 @@
     <https://semiceu.github.io/shacl/iceg-building_en#GeographicalNameShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#HeightAboveGroundShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#LangCodeShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#MeasureShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#CadastralParcelShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#3DobjectShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#DirectPositionShape>,
@@ -28,8 +28,6 @@
     <https://semiceu.github.io/shacl/iceg-building_en#MultiSurfaceShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#PointShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#PolygonShape>,
-    <https://semiceu.github.io/shacl/iceg-building_en#LangStringShape>,
-    <https://semiceu.github.io/shacl/iceg-building_en#LiteralShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#TextShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#BuildingNatureValueShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#CurrentUseValueShape>,
@@ -146,24 +144,6 @@
   ];
   shacl:targetClass <http://www.w3.org/ns/locn#Address> .
 
-<https://semiceu.github.io/shacl/iceg-building_en#Base:MeasureShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:definition "Standard units of measurements used when accounting for stock, and expressing them in quantities."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "uom"@en;
-    shacl:path <http://vocab.belgif.be/ns/building#uom>
-  ], [
-    shacl:datatype xsd:double;
-    shacl:definition "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "value"@en;
-    shacl:path <https://qudt.org/schema/qudt/value>
-  ];
-  shacl:targetClass <http://vocab.belgif.be/ns/building#Base:Measure> .
-
 <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometry2DShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -249,6 +229,7 @@
 <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometryShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
     shacl:definition """The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.	"""@en;
     shacl:maxCount 1;
     shacl:name "horizontalGeometryEstimatedAccuracy"@en;
@@ -261,6 +242,7 @@
     shacl:name "referenceGeometry"@en;
     shacl:path <http://vocab.belgif.be/ns/building#referenceGeometry>
   ], [
+    shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
     shacl:definition """The estimated absolute positional accuracy of the Z-coordinate of the building geometry.	"""@en;
     shacl:maxCount 1;
     shacl:name "verticalGeometryEstimatedAccuracy"@en;
@@ -677,7 +659,7 @@
     shacl:name "status"@en;
     shacl:path <http://vocab.belgif.be/ns/building#status>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#Base:Measure>;
+    shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
     shacl:definition "Value of the height above ground."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -725,27 +707,24 @@
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/building#LangCode> .
 
-<https://semiceu.github.io/shacl/iceg-building_en#LangStringShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/iceg-building_en#MeasureShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://vocab.belgif.be/ns/building#LangCode>;
-    shacl:definition "Language code of the string."@en;
+    shacl:class skos:Concept;
+    shacl:definition "Standard units of measurements used when accounting for stock, and expressing them in quantities."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "language"@en;
-    shacl:path <http://vocab.belgif.be/ns/building#language>
+    shacl:name "uom"@en;
+    shacl:path <http://vocab.belgif.be/ns/building#uom>
   ], [
-    shacl:datatype xsd:string;
+    shacl:datatype xsd:double;
+    shacl:definition "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "string"@en;
-    shacl:path <http://vocab.belgif.be/ns/building#string>
+    shacl:name "value"@en;
+    shacl:path <https://qudt.org/schema/qudt/value>
   ];
-  shacl:targetClass rdf:langString .
-
-<https://semiceu.github.io/shacl/iceg-building_en#LiteralShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:targetClass rdfs:Literal .
+  shacl:targetClass <http://inspire.ec.europa.eu/ont/base#Measure> .
 
 <https://semiceu.github.io/shacl/iceg-building_en#MeasuringMethodShape> a shacl:NodeShape;
   shacl:closed false;

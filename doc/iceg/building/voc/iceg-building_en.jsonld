@@ -325,19 +325,8 @@
   "issued": "TBD",
   "navigation": {},
   "publication-state": "Public Review",
-  "publication-date": "2022-11-17",
+  "publication-date": "2022-12-19",
   "classes": [
-    {
-      "@id": "http://vocab.belgif.be/ns/building#Base:Measure",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "A representation of a measure value. The decimal value is followed by a space and the unit of the measure."
-      },
-      "usage": {
-        "en": "This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum"
-      },
-      "parents": []
-    },
     {
       "@id": "http://vocab.belgif.be/ns/building#Building",
       "@type": "http://www.w3.org/2002/07/owl#Class",
@@ -460,16 +449,9 @@
   "externals": [
     {
       "name": {
-        "en": "LangString"
+        "en": "Measure"
       },
-      "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "Literal"
-      },
-      "@id": "http://www.w3.org/2000/01/rdf-schema#Literal",
+      "@id": "http://inspire.ec.europa.eu/ont/base#Measure",
       "@type": "rdfs:Class"
     },
     {
@@ -638,7 +620,7 @@
         "en": "Element of the real world object that was captured by the (X,Y) coordinates of the LoD1 Multisurface or Solid geometry."
       },
       "usage": {
-        "en": "Example: footprint, roof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">v</a>"
+        "en": "Example: footprint, roof edge.\r\n<br/><br/>\r\nConcepts of this codelist should be used from the INSPIRE <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">Horizontal Geometry Reference</a> code list."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
@@ -725,7 +707,7 @@
         "en": "Building of which building unit(s) are being a part."
       },
       "usage": {
-        "en": "$ea_notes=The set of two distinct volumes united by a gallery/walkway is nevertheless considered as a single building. Two volumes separated by a footbridge (which is above a public road) are considered as two separate buildings which are located in different sites (because they are different plots)."
+        "en": "The set of two distinct volumes united by a gallery/walkway is nevertheless considered as a single building. Two volumes separated by a footbridge (which is above a public road) are considered as two separate buildings which are located in different sites (because they are different plots)."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingUnit"
@@ -742,7 +724,7 @@
         "en": "Characteristic of the building that makes it generally of interest for mappings applications. The characteristic may be related to the physical aspect and/or to the function of the building."
       },
       "usage": {
-        "en": "This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.\r\n\r\nMore information about the enumerations can be found: <a href=\"https://inspire.ec.europa.eu/codelist/BuildingNatureValue\">https://inspire.ec.europa.eu/codelist/BuildingNatureValue</a>"
+        "en": "This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.\r\n<br/><br/>\r\nMore information about the enumerations can be found on the INSPIRE <a href=\"https://inspire.ec.europa.eu/codelist/BuildingNatureValue\">Building Nature</a> code list."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#Building"
@@ -771,6 +753,9 @@
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Values indicating the condition of a construction"
+      },
+      "usage": {
+        "en": "Concepts of this codelist should be used from the INSPIRE <a href=\"https://inspire.ec.europa.eu/codelist/ConditionOfConstructionValue/\">Condition of Construction/</a>code list."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#Building"
@@ -1001,14 +986,19 @@
     },
     {
       "@id": "http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.\t"
+      },
+      "usage": {
+        "en": "NOTE\t"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry"
       ],
-      "range": [],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
       "generalization": []
     },
     {
@@ -1018,7 +1008,7 @@
         "en": "Element that was captured by the (X,Y) coordinates of the LoD2 MultiSurface or Solid geometry."
       },
       "usage": {
-        "en": "Example: footprint, roof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">v</a>"
+        "en": "Example: footprint, roof edge.\r\n<br/><br/>\r\nConcepts of this codelist should be used from the INSPIRE <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">Horizontal Geometry Reference</a> code list"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2.horizontalGeometryReference"
@@ -1056,20 +1046,6 @@
       ],
       "range": [
         "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#language",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Language code of the string."
-      },
-      "domain": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "range": [
-        "http://vocab.belgif.be/ns/building#LangCode"
       ],
       "generalization": []
     },
@@ -1296,17 +1272,6 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#string",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "domain": [
-        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/building#structuredIdentificator",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -1341,7 +1306,7 @@
         "en": "The current use of a building"
       },
       "usage": {
-        "en": "EXAMPLE: trade, entertainment, ..."
+        "en": "Example: trade, entertainment, ..."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#CurrentUse"
@@ -1353,14 +1318,19 @@
     },
     {
       "@id": "http://vocab.belgif.be/ns/building#uom",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
       },
+      "usage": {
+        "en": "Concepts of this codelist should be used from the EU Vocabulary <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/measurement-unit\">Measurement unit</a>."
+      },
       "domain": [
-        "http://vocab.belgif.be/ns/building#Base:Measure"
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
-      "range": [],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
       "generalization": []
     },
     {
@@ -1373,20 +1343,25 @@
         "http://vocab.belgif.be/ns/building#HeightAboveGround"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/building#Base:Measure"
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     },
     {
       "@id": "http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The estimated absolute positional accuracy of the Z-coordinate of the building geometry.\t"
+      },
+      "usage": {
+        "en": "Absolute positional accuracy is defined as the mean value of the positional uncertainties for a set of positions where the positional uncertainties are defined as the distance between a measured position and what is considered as the corresponding true position."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry"
       ],
-      "range": [],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
       "generalization": []
     },
     {
@@ -1396,7 +1371,7 @@
         "en": "Element of the building that was captured by vertical coordinates."
       },
       "usage": {
-        "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
+        "en": "Concepts of this codelist should be used from the INSPIRE <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">Elevation Reference</a> code list."
       },
       "domain": [
         "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
@@ -1413,7 +1388,7 @@
         "en": "Height level to which the lower height of the model (Z-value of the lower horizontal polygon) refers to."
       },
       "usage": {
-        "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
+        "en": "Concepts of this codelist should be used from the INSPIRE <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">Elevation Reference</a> code list."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
@@ -1430,7 +1405,7 @@
         "en": "Height level to which the upper height of the model (Z-value of the upper horizontal polygon) refers to."
       },
       "usage": {
-        "en": "Example: generalRoof, lowestRoof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
+        "en": "Example: generalRoof, lowestRoof edge.\r\n<br/><br/>\r\nConcepts of this codelist should be used from the INSPIRE <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">Elevation Reference</a> code list."
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
