@@ -40,6 +40,37 @@
   "@id": "https://semiceu.github.io/shacl/iceg-building_en",
   "shapes": [
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#Base:MeasureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "uom"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#uom"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:definition": {
+            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "value"
+          },
+          "sh:path": "https://qudt.org/schema/qudt/value"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#Base:Measure"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#BuildingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -770,7 +801,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#status"
         },
         {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
+          "sh:datatype": "http://vocab.belgif.be/ns/building#Base:Measure",
           "sh:definition": {
             "en": "Value of the height above ground."
           },
@@ -783,13 +814,6 @@
         }
       ],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#HeightAboveGround"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#HeightStatusValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#HeightStatusValue"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#LangCodeShape",
@@ -895,7 +919,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "langString"
+            "en": "language"
           },
           "sh:path": "http://vocab.belgif.be/ns/building#language"
         },
@@ -940,27 +964,6 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#ConditionOfConstructionValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#ElevationReferenceValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#HorizontalGeometryReferenceValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#MeasuringMethodShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -976,13 +979,6 @@
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#SourceStatusValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#NativenessValueShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -1326,36 +1322,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#Base:MeasureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:definition": {
-            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "uom"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#uom"
-        },
-        {
-          "sh:definition": {
-            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "value"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#value"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/weg#Lengte"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#DocumentShape",

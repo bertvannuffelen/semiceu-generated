@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Public Review",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/8d7804a226043b67d93eb4f888b324bf6f3ef3c6",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/c352af57ea481e4e5b5e6ddb19ed8653a3a5da60",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/c352af57ea481e4e5b5e6ddb19ed8653a3a5da60/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -241,7 +241,7 @@
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings."
+            "en": "This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.\r\n\r\nMore information about the enumerations can be found: <a href=\"https://inspire.ec.europa.eu/codelist/BuildingNatureValue\">https://inspire.ec.europa.eu/codelist/BuildingNatureValue</a>"
           },
           "domain": [
             {
@@ -333,11 +333,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "ConditionOfConstructionValue"
+                "de": "ConditionOfConstructionValue"
               }
             }
           ],
@@ -2064,8 +2063,8 @@
       "uri": "http://vocab.belgif.be/ns/building#language",
       "name": {
         "de": "Enter your translation here",
-        "en": "langString",
-        "undefined": "langString"
+        "en": "language",
+        "undefined": "language"
       },
       "description": {},
       "domain": [
@@ -2561,6 +2560,87 @@
   ],
   "datatypes": [
     {
+      "uri": "http://vocab.belgif.be/ns/building#Base:Measure",
+      "name": "Base:Measure",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Base:Measure"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "A representation of a measure value. The decimal value is followed by a space and the unit of the measure."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/building#uom",
+          "name": "uom",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "uom"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Base:Measure",
+              "uri": "http://vocab.belgif.be/ns/building#Base:Measure"
+            }
+          ],
+          "range": [],
+          "scopedrange": [],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://qudt.org/schema/qudt/value",
+          "name": "value",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "value"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Base:Measure",
+              "uri": "http://vocab.belgif.be/ns/building#Base:Measure"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Double",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_label": {
+                "de": "Double"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://vocab.belgif.be/ns/building#BuildingGeometry",
       "name": "BuildingGeometry",
       "label": {
@@ -2817,7 +2897,10 @@
             "de": "Enter your translation here",
             "en": "Height level to which the lower height of the model (Z-value of the lower horizontal polygon) refers to."
           },
-          "usage": {},
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
+          },
           "domain": [
             {
               "EA-Name": "BuildingGeometry3DLoD",
@@ -2832,11 +2915,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Elevation reference value"
+                "de": "ElevationReferenceValue"
               }
             }
           ],
@@ -2882,7 +2964,7 @@
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "Example: footprint, roof edge"
+            "en": "Example: footprint, roof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">v</a>"
           },
           "domain": [
             {
@@ -2898,11 +2980,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "HorizontalGeometryReferenceValue"
+                "de": "HorizontalGeometryReferenceValue"
               }
             }
           ],
@@ -2923,7 +3004,7 @@
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "Example: generalRoof, lowestRoof edge"
+            "en": "Example: generalRoof, lowestRoof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
           },
           "domain": [
             {
@@ -2939,11 +3020,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Elevation reference value"
+                "de": "ElevationReferenceValue"
               }
             }
           ],
@@ -2989,7 +3069,7 @@
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "Example: footprint, roof edge"
+            "en": "Example: footprint, roof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">v</a>"
           },
           "domain": [
             {
@@ -3005,11 +3085,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "HorizontalGeometryReferenceValue"
+                "de": "HorizontalGeometryReferenceValue"
               }
             }
           ],
@@ -3268,7 +3347,10 @@
             "de": "Enter your translation here",
             "en": "Element where the elevation was measured."
           },
-          "usage": {},
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
+          },
           "domain": [
             {
               "EA-Name": "Elevation",
@@ -3283,11 +3365,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Elevation reference value"
+                "de": "ElevationReferenceValue"
               }
             }
           ],
@@ -3514,7 +3595,7 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Langstring"
+                "en": "LangString"
               }
             }
           ],
@@ -3552,7 +3633,7 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Langstring"
+                "en": "LangString"
               }
             }
           ],
@@ -3626,7 +3707,10 @@
             "de": "Enter your translation here",
             "en": "Information enabling to acknowledge if the name is the one that is/was used in the area where the spatial object is situated at the instant when the name is/was in use."
           },
-          "usage": {},
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/NativenessValue\">http://inspire.ec.europa.eu/codelist/NativenessValue</a>"
+          },
           "domain": [
             {
               "EA-Name": "GeographicalName",
@@ -3641,11 +3725,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "NativenessValue"
+                "de": "NativenessValue"
               }
             }
           ],
@@ -3683,7 +3766,7 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Langstring"
+                "en": "LangString"
               }
             }
           ],
@@ -3721,7 +3804,7 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Langstring"
+                "en": "LangString"
               }
             }
           ],
@@ -3759,7 +3842,7 @@
           },
           "usage": {
             "de": "Enter your translation here",
-            "en": "EXAMPLE: The height of the building has been captured up to the top of building."
+            "en": "EXAMPLE: The height of the building has been captured up to the top of building. - Concepts of this codelist should be used: http://inspire.ec.europa.eu/codelist/ElevationReferenceValue"
           },
           "domain": [
             {
@@ -3775,11 +3858,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Elevation reference value"
+                "de": "ElevationReferenceValue"
               }
             }
           ],
@@ -3816,11 +3898,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Elevation reference value"
+                "de": "ElevationReferenceValue"
               }
             }
           ],
@@ -3854,11 +3935,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://vocab.belgif.be/ns/building#HeightStatusValue",
               "range_puri": "http://vocab.belgif.be/ns/building#HeightStatusValue",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Height status value"
+                "de": "HeightStatusValue"
               }
             }
           ],
@@ -3887,16 +3967,16 @@
           "range": [
             {
               "range_label": "Base:Measure",
-              "range_uri": "https://data.vlaanderen.be/ns/weg#Lengte"
+              "range_uri": "http://vocab.belgif.be/ns/building#Base:Measure"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/weg#Lengte",
+              "range_puri": "http://vocab.belgif.be/ns/building#Base:Measure",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Length"
+                "en": "Base:Measure"
               }
             }
           ],
@@ -4171,10 +4251,10 @@
     },
     {
       "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-      "name": "Langstring",
+      "name": "LangString",
       "label": {
         "de": "Enter your translation here",
-        "en": "Langstring"
+        "en": "LangString"
       },
       "sort": "Enter your translation here",
       "description": {
@@ -4186,11 +4266,11 @@
       "properties": [
         {
           "uri": "http://vocab.belgif.be/ns/building#language",
-          "name": "langString",
+          "name": "language",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "langString"
+            "en": "language"
           },
           "description": {
             "de": "Enter your translation here",
@@ -4492,7 +4572,7 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Langstring"
+                "en": "LangString"
               }
             }
           ],
@@ -4682,11 +4762,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "HorizontalGeometryReferenceValue"
+                "de": "HorizontalGeometryReferenceValue"
               }
             }
           ],
@@ -4743,7 +4822,10 @@
             "de": "Enter your translation here",
             "en": "Element of the building that was captured by vertical coordinates."
           },
-          "usage": {},
+          "usage": {
+            "de": "Enter your translation here",
+            "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
+          },
           "domain": [
             {
               "EA-Name": "BuildingGeometry2D",
@@ -4758,11 +4840,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#Enter your translation here",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "de": "Enter your translation here",
-                "en": "Elevation reference value"
+                "de": "ElevationReferenceValue"
               }
             }
           ],
@@ -4786,74 +4867,6 @@
       "usage": {},
       "parents": [],
       "properties": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/weg#Lengte",
-      "name": "Length",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Length"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "The measure of distance as an integral, i.e. the limit of an infinite sum of distances between points on a curve.  For example the length of curve, the perimeter of a polygon as the length of the boundary."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum"
-      },
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://vocab.belgif.be/ns/building#uom",
-          "name": "uom",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "uom"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Base:Measure",
-              "uri": "https://data.vlaanderen.be/ns/weg#Lengte"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://vocab.belgif.be/ns/building#value",
-          "name": "value",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "value"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Base:Measure",
-              "uri": "https://data.vlaanderen.be/ns/weg#Lengte"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
     },
     {
       "uri": "https://schema.org/DigitalDocument",
@@ -4944,7 +4957,7 @@
               "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Langstring"
+                "en": "LangString"
               }
             }
           ],

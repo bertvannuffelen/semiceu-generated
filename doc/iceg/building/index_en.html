@@ -515,7 +515,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <!--<dt>Source</dt><dd><br></dd>-->
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/c352af57ea481e4e5b5e6ddb19ed8653a3a5da60/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/c352af57ea481e4e5b5e6ddb19ed8653a3a5da60/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -687,6 +687,7 @@
                       <br />
                       |
                       <a href="#3Dobject">3Dobject</a> |
+                      <a href="#Base:Measure">Base:Measure</a> |
                       <a href="#BuildingGeometry">BuildingGeometry</a> |
                       <a href="#BuildingGeometry2D">BuildingGeometry2D</a> |
                       <a href="#BuildingGeometry3DLoD">BuildingGeometry3DLoD</a> |
@@ -704,8 +705,7 @@
                       <a href="#HeightAboveGround">HeightAboveGround</a> |
                       <a href="#Identifier">Identifier</a> |
                       <a href="#LangCode">LangCode</a> |
-                      <a href="#Langstring">Langstring</a> |
-                      <a href="#Length">Length</a> |
+                      <a href="#LangString">LangString</a> |
                       <a href="#Literal">Literal</a> |
                       <a href="#MultiCurve">MultiCurve</a> |
                       <a href="#MultiSurface">MultiSurface</a> |
@@ -1184,7 +1184,9 @@
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">Characteristic of the building that makes it generally of interest for mappings applications. The characteristic may be related to the physical aspect and/or to the function of the building.</td>
-                        <td property="skos:scopeNote">This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.</td>
+                        <td property="skos:scopeNote">This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.
+
+More information about the enumerations can be found: <a href="https://inspire.ec.europa.eu/codelist/BuildingNatureValue">https://inspire.ec.europa.eu/codelist/BuildingNatureValue</a></td>
                         <td></td>
                       </tr>
                     
@@ -1217,9 +1219,9 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#ConditionOfConstructionValue" data-placement="right">ConditionOfConstructionValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">ConditionOfConstructionValue</a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -1825,6 +1827,81 @@
             
             <div class="region region--no-space-top">
               
+              <h3 class="h3" id="Base:Measure"><a href="http://vocab.belgif.be/ns/building#Base:Measure" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#Base:Measure" data-placement="right">Base:Measure</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A representation of a measure value. The decimal value is followed by a space and the unit of the measure.</dd>
+                    
+                    <dt>Usage</dt><dd>This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>we have defined the following properties for this datatype:
+                      <a href="#Base%3AMeasure%3Auom">uom</a>, 
+                      <a href="#Base%3AMeasure%3Avalue">value</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expects Type</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="Base%3AMeasure%3Auom" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#uom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#uom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#uom" data-placement="right">uom</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">Standard units of measurements used when accounting for stock, and expressing them in quantities.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Base%3AMeasure%3Avalue" typeof="rdfs:Property" resource="https://qudt.org/schema/qudt/value">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://qudt.org/schema/qudt/value" data-toggle="tooltip" data-content="https://qudt.org/schema/qudt/value" data-placement="right">value</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#double" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#double" data-placement="right">Double</a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              
               <h3 class="h3" id="BuildingGeometry"><a href="http://vocab.belgif.be/ns/building#BuildingGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#BuildingGeometry" data-placement="right">BuildingGeometry</a></h3>
 	      
                 <div class="region region--no-space-top">
@@ -1977,9 +2054,9 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#HorizontalGeometryReferenceValue" data-placement="right">HorizontalGeometryReferenceValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">HorizontalGeometryReferenceValue</a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -1996,14 +2073,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Elevation reference value" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">ElevationReferenceValue</a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Element of the building that was captured by vertical coordinates.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2119,14 +2196,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Elevation reference value" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">ElevationReferenceValue</a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Height level to which the lower height of the model (Z-value of the lower horizontal polygon) refers to.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2181,14 +2258,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#HorizontalGeometryReferenceValue" data-placement="right">HorizontalGeometryReferenceValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">HorizontalGeometryReferenceValue</a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Element of the real world object that was captured by the (X,Y) coordinates of the LoD1 Multisurface or Solid geometry.</td>
-                        <td property="skos:scopeNote">Example: footprint, roof edge</td>
+                        <td property="skos:scopeNote">Example: footprint, roof edge - Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/">v</a></td>
                         <td></td>
                       </tr>
                       
@@ -2200,14 +2277,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Elevation reference value" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">ElevationReferenceValue</a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Height level to which the upper height of the model (Z-value of the upper horizontal polygon) refers to.</td>
-                        <td property="skos:scopeNote">Example: generalRoof, lowestRoof edge</td>
+                        <td property="skos:scopeNote">Example: generalRoof, lowestRoof edge - Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2261,14 +2338,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#HorizontalGeometryReferenceValue" data-placement="right">HorizontalGeometryReferenceValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">HorizontalGeometryReferenceValue</a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Element that was captured by the (X,Y) coordinates of the LoD2 MultiSurface or Solid geometry.</td>
-                        <td property="skos:scopeNote">Example: footprint, roof edge</td>
+                        <td property="skos:scopeNote">Example: footprint, roof edge - Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/">v</a></td>
                         <td></td>
                       </tr>
                       
@@ -2613,7 +2690,7 @@
                         <td>
                           
 			    
-			    <a href="#Langstring" data-placement="right">Langstring</a>
+			    <a href="#LangString" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -2689,14 +2766,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Elevation reference value" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">ElevationReferenceValue</a>
+                            
                           
                         </td>
 			<td>1</td>
                         <td property="rdfs:comment">Element where the elevation was measured.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2864,7 +2941,7 @@
                         <td>
                           
 			    
-			    <a href="#Langstring" data-placement="right">Langstring</a>
+			    <a href="#LangString" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -2883,7 +2960,7 @@
                         <td>
                           
 			    
-			    <a href="#Langstring" data-placement="right">Langstring</a>
+			    <a href="#LangString" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -2961,14 +3038,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#NativenessValue" data-placement="right">NativenessValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">NativenessValue</a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Information enabling to acknowledge if the name is the one that is/was used in the area where the spatial object is situated at the instant when the name is/was in use.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/NativenessValue">http://inspire.ec.europa.eu/codelist/NativenessValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2981,7 +3058,7 @@
                         <td>
                           
 			    
-			    <a href="#Langstring" data-placement="right">Langstring</a>
+			    <a href="#LangString" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -3000,7 +3077,7 @@
                         <td>
                           
 			    
-			    <a href="#Langstring" data-placement="right">Langstring</a>
+			    <a href="#LangString" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -3156,14 +3233,14 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Elevation reference value" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">ElevationReferenceValue</a>
+                            
                           
                         </td>
 			<td>1</td>
                         <td property="rdfs:comment">Element used as the high reference.</td>
-                        <td property="skos:scopeNote">EXAMPLE: The height of the building has been captured up to the top of building.</td>
+                        <td property="skos:scopeNote">EXAMPLE: The height of the building has been captured up to the top of building. - Concepts of this codelist should be used: http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</td>
                         <td></td>
                       </tr>
                       
@@ -3175,9 +3252,9 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Elevation reference value" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">ElevationReferenceValue</a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -3194,9 +3271,9 @@
                         </td>
                         <td>
                           
-			    
-			    <a href="#Height status value" data-placement="right">Height status value</a>
-			    
+			     
+			    <a href="http://vocab.belgif.be/ns/building#HeightStatusValue" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#HeightStatusValue" data-placement="right">HeightStatusValue</a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -3214,7 +3291,7 @@
                         <td>
                           
 			    
-			    <a href="#Length" data-placement="right">Length</a>
+			    <a href="#Base:Measure" data-placement="right">Base:Measure</a>
 			    
                           
                         </td>
@@ -3296,7 +3373,7 @@
                         <td>
                           
 			    
-			    <a href="#Langstring" data-placement="right">Langstring</a>
+			    <a href="#LangString" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -3389,7 +3466,7 @@
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="Langstring"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Langstring</a></h3>
+              <h3 class="h3" id="LangString"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
@@ -3399,8 +3476,8 @@
                     <dt>Properties</dt>
 		     
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#Langstring%3AlangString">langString</a>, 
-                      <a href="#Langstring%3Astring">string</a>.</dd>
+                      <a href="#LangString%3Alanguage">language</a>, 
+                      <a href="#LangString%3Astring">string</a>.</dd>
                     
                   </dl>
                 </div>
@@ -3420,10 +3497,10 @@
 
                     <tbody class="supertype">
                       
-                      <tr id="Langstring%3AlangString" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#language">
+                      <tr id="LangString%3Alanguage" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#language">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#language" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#language" data-placement="right">langString</a>
+                            <a href="http://vocab.belgif.be/ns/building#language" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#language" data-placement="right">language</a>
                           </code>
                         </td>
                         <td>
@@ -3439,7 +3516,7 @@
                         <td></td>
                       </tr>
                       
-                      <tr id="Langstring%3Astring" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#string">
+                      <tr id="LangString%3Astring" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#string">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://vocab.belgif.be/ns/building#string" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#string" data-placement="right">string</a>
@@ -3454,77 +3531,6 @@
                         </td>
 			<td>1</td>
                         <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
-            </div>
-            
-            <div class="region region--no-space-top">
-              
-              <h3 class="h3" id="Length"><a href="https://data.vlaanderen.be/ns/weg#Lengte" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/weg#Lengte" data-placement="right">Length</a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>The measure of distance as an integral, i.e. the limit of an infinite sum of distances between points on a curve.  For example the length of curve, the perimeter of a polygon as the length of the boundary.</dd>
-                    
-                    <dt>Usage</dt><dd>This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#Length%3Auom">uom</a>, 
-                      <a href="#Length%3Avalue">value</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="Length%3Auom" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#uom">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#uom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#uom" data-placement="right">uom</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">Standard units of measurements used when accounting for stock, and expressing them in quantities.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Length%3Avalue" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#value">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#value" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#value" data-placement="right">value</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>

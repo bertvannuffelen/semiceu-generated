@@ -40,6 +40,37 @@
   "@id": "https://semiceu.github.io/shacl/iceg-building_de",
   "shapes": [
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_de#Base:MeasureShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#uom"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://qudt.org/schema/qudt/value"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#Base:Measure"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#BuildingShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -770,7 +801,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#status"
         },
         {
-          "sh:datatype": "https://data.vlaanderen.be/ns/weg#Lengte",
+          "sh:datatype": "http://vocab.belgif.be/ns/building#Base:Measure",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -783,13 +814,6 @@
         }
       ],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#HeightAboveGround"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_de#HeightStatusValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#HeightStatusValue"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#LangCodeShape",
@@ -940,27 +964,6 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_de#ConditionOfConstructionValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_de#ElevationReferenceValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_de#HorizontalGeometryReferenceValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#MeasuringMethodShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -976,13 +979,6 @@
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#SourceStatusValueShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_de#NativenessValueShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -1326,36 +1322,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_de#Base:MeasureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#uom"
-        },
-        {
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#value"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/weg#Lengte"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_de#DocumentShape",

@@ -515,7 +515,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <!--<dt>Source</dt><dd><br></dd>-->
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/8d7804a226043b67d93eb4f888b324bf6f3ef3c6/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/c352af57ea481e4e5b5e6ddb19ed8653a3a5da60/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/c352af57ea481e4e5b5e6ddb19ed8653a3a5da60/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -594,8 +594,9 @@ TBD
                     <p> This document describes the usage of the following datatypes for a correct usage of the Core Vocabulary:
                       <br />
                       |
-                      <a href="#DirectPosition">DirectPosition</a> |
-                      <a href="#BuildingGeometry">BuildingGeometry</a> |
+                      <a href="#3Dobject">3Dobject</a> |
+                      <a href="#Base:Measure">Base:Measure</a> |
+                      <a href="#BuildingGeometry3DLoD">BuildingGeometry3DLoD</a> |
                       <a href="#BuildingGeometry3DLoD1">BuildingGeometry3DLoD1</a> |
                       <a href="#BuildingGeometry3DLoD2">BuildingGeometry3DLoD2</a> |
                       <a href="#CurrentUse">CurrentUse</a> |
@@ -606,20 +607,19 @@ TBD
                       <a href="#GeographicalName">GeographicalName</a> |
                       <a href="#HeightAboveGround">HeightAboveGround</a> |
                       <a href="#LangCode">LangCode</a> |
-                      <a href="#3Dobject">3Dobject</a> |
-                      <a href="#BuildingGeometry3DLoD">BuildingGeometry3DLoD</a> |
+                      <a href="#BuildingGeometry">BuildingGeometry</a> |
+                      <a href="#DirectPosition">DirectPosition</a> |
                       <a href="#MultiCurve">MultiCurve</a> |
                       <a href="#MultiSurface">MultiSurface</a> |
                       <a href="#Point">Point</a> |
                       <a href="#Polygon">Polygon</a> |
-                      <a href="#Langstring">Langstring</a> |
+                      <a href="#LangString">LangString</a> |
                       <a href="#Literal">Literal</a> |
                       <a href="#Text">Text</a> |
                       <a href="#Identifier">Identifier</a> |
                       <a href="#Geometry">Geometry</a> |
                       <a href="#BuildingGeometry2D">BuildingGeometry2D</a> |
                       <a href="#StructuredIdentificator">StructuredIdentificator</a> |
-                      <a href="#Length">Length</a> |
                       <a href="#Document">Document</a> |
                     </p>
                   </div>
@@ -801,7 +801,9 @@ TBD
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">Characteristic of the building that makes it generally of interest for mappings applications. The characteristic may be related to the physical aspect and/or to the function of the building.</td>
-                        <td property="skos:scopeNote">This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.</td>
+                        <td property="skos:scopeNote">This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.
+
+More information about the enumerations can be found: <a href="https://inspire.ec.europa.eu/codelist/BuildingNatureValue">https://inspire.ec.europa.eu/codelist/BuildingNatureValue</a></td>
                         <td></td>
                       </tr>
                     
@@ -834,9 +836,9 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">ConditionOfConstructionValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -1711,19 +1713,42 @@ TBD
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="DirectPosition"><a href="http://www.opengis.net/ont/sf#DirectPosition" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#DirectPosition" data-placement="right">DirectPosition</a></h3>
+              <h3 class="h3" id="3Dobject"><a href="http://www.opengis.net/ont/gml#Solid" data-toggle="tooltip" data-content="http://www.opengis.net/ont/gml#Solid" data-placement="right">3Dobject</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>Holder of the coordinates of a position in a coordinate reference system.</dd>
+                    <dt>Description</dt><dd>A 3-dimensional geometric primitive.</dd>
+                    
+		     
+		    <dt>Subclass of <dt><dd>
+                        <a href="#Geometry">Geometry</a>
+		   </dd>
+                    
+                    <dt>Properties</dt>
+		    
+                    <dd>There are no properties defined for this datatype.</dd>
+                    
+                  </dl>
+                </div>
+		
+            </div>
+            
+            <div class="region region--no-space-top">
+              
+              <h3 class="h3" id="Base:Measure"><a href="http://vocab.belgif.be/ns/building#Base:Measure" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#Base:Measure" data-placement="right">Base:Measure</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A representation of a measure value. The decimal value is followed by a space and the unit of the measure.</dd>
+                    
+                    <dt>Usage</dt><dd>This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum</dd>
                     
 		    
                     <dt>Properties</dt>
 		     
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#DirectPosition%3Agml">gml</a>, 
-                      <a href="#DirectPosition%3Awkt">wkt</a>, 
-                      <a href="#DirectPosition%3Amethod">method</a>.</dd>
+                      <a href="#Base%3AMeasure%3Auom">uom</a>, 
+                      <a href="#Base%3AMeasure%3Avalue">value</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1743,59 +1768,36 @@ TBD
 
                     <tbody class="supertype">
                       
-                      <tr id="DirectPosition%3Agml" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
+                      <tr id="Base%3AMeasure%3Auom" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#uom">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right">gml</a>
+                            <a href="http://vocab.belgif.be/ns/building#uom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#uom" data-placement="right">uom</a>
                           </code>
                         </td>
                         <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Literal</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Direct position expressed in gml format.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="DirectPosition%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right">wkt</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">Literal</a>
-			    
-                          
-                        </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">Direct position expressed in wkt format.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="DirectPosition%3Amethod" typeof="rdfs:Property" resource="http://www.opengis.net/ont/sf#method">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.opengis.net/ont/sf#method" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#method" data-placement="right">method</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Enter your translation here" data-placement="right">MeasuringMethod</a>
-			    
                           
                         </td>
 			<td>1</td>
-                        <td property="rdfs:comment">The way the point was determined.</td>
+                        <td property="rdfs:comment">Standard units of measurements used when accounting for stock, and expressing them in quantities.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="Base%3AMeasure%3Avalue" typeof="rdfs:Property" resource="https://qudt.org/schema/qudt/value">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://qudt.org/schema/qudt/value" data-toggle="tooltip" data-content="https://qudt.org/schema/qudt/value" data-placement="right">value</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#double" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#double" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1808,19 +1810,26 @@ TBD
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="BuildingGeometry"><a href="http://vocab.belgif.be/ns/building#BuildingGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#BuildingGeometry" data-placement="right">BuildingGeometry</a></h3>
+              <h3 class="h3" id="BuildingGeometry3DLoD"><a href="http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD" data-placement="right">BuildingGeometry3DLoD</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>This data types includes the geometry of the building and metadata information about which element of the building was captured and how.</dd>
+                    <dt>Description</dt><dd>Data type grouping the 3D geometry of a building or building part and the metadata information attached to this geometry.</dd>
                     
-		    
+                    <dt>Usage</dt><dd>More information about LoD can be found via this link: https://docs.ogc.org/is/20-010/20-010.html#toc0</dd>
+                    
+		     
+		    <dt>Subclass of <dt><dd>
+                        <a href="#BuildingGeometry">BuildingGeometry</a>
+		   </dd>
+                    
                     <dt>Properties</dt>
 		     
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy">horizontalGeometryEstimatedAccuracy</a>, 
-                      <a href="#BuildingGeometry%3AreferenceGeometry">referenceGeometry</a>, 
-                      <a href="#BuildingGeometry%3AverticalGeometryEstimatedAccuracy">verticalGeometryEstimatedAccuracy</a>.</dd>
+                      <a href="#BuildingGeometry3DLoD%3AgeometryMultiSurface">geometryMultiSurface</a>, 
+                      <a href="#BuildingGeometry3DLoD%3AgeometrySolid">geometrySolid</a>, 
+                      <a href="#BuildingGeometry3DLoD%3AterrainIntersection">terrainIntersection</a>, 
+                      <a href="#BuildingGeometry3DLoD%3AverticalGeometryReference3DBottom">verticalGeometryReference3DBottom</a>.</dd>
                     
                   </dl>
                 </div>
@@ -1840,52 +1849,79 @@ TBD
 
                     <tbody class="supertype">
                       
-                      <tr id="BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy">
+                      <tr id="BuildingGeometry3DLoD%3AgeometryMultiSurface" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#geometryMultiSurface">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-placement="right">horizontalGeometryEstimatedAccuracy</a>
+                            <a href="http://vocab.belgif.be/ns/building#geometryMultiSurface" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#geometryMultiSurface" data-placement="right">geometryMultiSurface</a>
                           </code>
                         </td>
                         <td>
                           
+			    
+			    <a href="#Enter your translation here" data-placement="right">MultiSurface</a>
+			    
+                          
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.	</td>
-                        <td property="skos:scopeNote">	</td>
+                        <td property="rdfs:comment">Representation of the outer boundary by a Multi Surface, which may - in contrast to a solid representation - not be topologically clean. In particular, the ground surface may be missing.</td>
+                        <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                       
-                      <tr id="BuildingGeometry%3AreferenceGeometry" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#referenceGeometry">
+                      <tr id="BuildingGeometry3DLoD%3AgeometrySolid" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#geometrySolid">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#referenceGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#referenceGeometry" data-placement="right">referenceGeometry</a>
+                            <a href="http://vocab.belgif.be/ns/building#geometrySolid" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#geometrySolid" data-placement="right">geometrySolid</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">3Dobject</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Representation of the outer boundary by a solid.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="BuildingGeometry3DLoD%3AterrainIntersection" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#terrainIntersection">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#terrainIntersection" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#terrainIntersection" data-placement="right">terrainIntersection</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">MultiCurve</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Line or multi-line where the spatial object touches the terrain representation.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="BuildingGeometry3DLoD%3AverticalGeometryReference3DBottom" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#verticalGeometryReference3DBottom">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#verticalGeometryReference3DBottom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#verticalGeometryReference3DBottom" data-placement="right">verticalGeometryReference3DBottom</a>
                           </code>
                         </td>
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right"></a>
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
                             
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment">The geometry to be taken into account by view services, for portrayal.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="BuildingGeometry%3AverticalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-placement="right">verticalGeometryEstimatedAccuracy</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">The estimated absolute positional accuracy of the Z-coordinate of the building geometry.	</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="rdfs:comment">Height level to which the lower height of the model (Z-value of the lower horizontal polygon) refers to.</td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -1940,14 +1976,14 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">HorizontalGeometryReferenceValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Element of the real world object that was captured by the (X,Y) coordinates of the LoD1 Multisurface or Solid geometry.</td>
-                        <td property="skos:scopeNote">Example: footprint, roof edge</td>
+                        <td property="skos:scopeNote">Example: footprint, roof edge - Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/">v</a></td>
                         <td></td>
                       </tr>
                       
@@ -1959,14 +1995,14 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Height level to which the upper height of the model (Z-value of the upper horizontal polygon) refers to.</td>
-                        <td property="skos:scopeNote">Example: generalRoof, lowestRoof edge</td>
+                        <td property="skos:scopeNote">Example: generalRoof, lowestRoof edge - Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2020,14 +2056,14 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">HorizontalGeometryReferenceValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Element that was captured by the (X,Y) coordinates of the LoD2 MultiSurface or Solid geometry.</td>
-                        <td property="skos:scopeNote">Example: footprint, roof edge</td>
+                        <td property="skos:scopeNote">Example: footprint, roof edge - Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/">v</a></td>
                         <td></td>
                       </tr>
                       
@@ -2252,14 +2288,14 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>1</td>
                         <td property="rdfs:comment">Element where the elevation was measured.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2427,7 +2463,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Langstring</a>
+			    <a href="#Enter your translation here" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -2446,7 +2482,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Langstring</a>
+			    <a href="#Enter your translation here" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -2524,14 +2560,14 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">NativenessValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Information enabling to acknowledge if the name is the one that is/was used in the area where the spatial object is situated at the instant when the name is/was in use.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/NativenessValue">http://inspire.ec.europa.eu/codelist/NativenessValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -2544,7 +2580,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Langstring</a>
+			    <a href="#Enter your translation here" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -2563,7 +2599,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Langstring</a>
+			    <a href="#Enter your translation here" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -2622,14 +2658,14 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>1</td>
                         <td property="rdfs:comment">Element used as the high reference.</td>
-                        <td property="skos:scopeNote">EXAMPLE: The height of the building has been captured up to the top of building.</td>
+                        <td property="skos:scopeNote">EXAMPLE: The height of the building has been captured up to the top of building. - Concepts of this codelist should be used: http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</td>
                         <td></td>
                       </tr>
                       
@@ -2641,9 +2677,9 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -2660,9 +2696,9 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Height status value</a>
-			    
+			     
+			    <a href="http://vocab.belgif.be/ns/building#HeightStatusValue" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#HeightStatusValue" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -2680,7 +2716,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Length</a>
+			    <a href="#Enter your translation here" data-placement="right">Base:Measure</a>
 			    
                           
                         </td>
@@ -2716,48 +2752,19 @@ TBD
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="3Dobject"><a href="http://www.opengis.net/ont/gml#Solid" data-toggle="tooltip" data-content="http://www.opengis.net/ont/gml#Solid" data-placement="right">3Dobject</a></h3>
+              <h3 class="h3" id="BuildingGeometry"><a href="http://vocab.belgif.be/ns/building#BuildingGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#BuildingGeometry" data-placement="right">BuildingGeometry</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
-                    <dt>Description</dt><dd>A 3-dimensional geometric primitive.</dd>
+                    <dt>Description</dt><dd>This data types includes the geometry of the building and metadata information about which element of the building was captured and how.</dd>
                     
-		     
-		    <dt>Subclass of <dt><dd>
-                        <a href="#Geometry">Geometry</a>
-		   </dd>
-                    
-                    <dt>Properties</dt>
 		    
-                    <dd>There are no properties defined for this datatype.</dd>
-                    
-                  </dl>
-                </div>
-		
-            </div>
-            
-            <div class="region region--no-space-top">
-              
-              <h3 class="h3" id="BuildingGeometry3DLoD"><a href="http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD" data-placement="right">BuildingGeometry3DLoD</a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>Data type grouping the 3D geometry of a building or building part and the metadata information attached to this geometry.</dd>
-                    
-                    <dt>Usage</dt><dd>More information about LoD can be found via this link: https://docs.ogc.org/is/20-010/20-010.html#toc0</dd>
-                    
-		     
-		    <dt>Subclass of <dt><dd>
-                        <a href="#BuildingGeometry">BuildingGeometry</a>
-		   </dd>
-                    
                     <dt>Properties</dt>
 		     
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#BuildingGeometry3DLoD%3AgeometryMultiSurface">geometryMultiSurface</a>, 
-                      <a href="#BuildingGeometry3DLoD%3AgeometrySolid">geometrySolid</a>, 
-                      <a href="#BuildingGeometry3DLoD%3AterrainIntersection">terrainIntersection</a>, 
-                      <a href="#BuildingGeometry3DLoD%3AverticalGeometryReference3DBottom">verticalGeometryReference3DBottom</a>.</dd>
+                      <a href="#BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy">horizontalGeometryEstimatedAccuracy</a>, 
+                      <a href="#BuildingGeometry%3AreferenceGeometry">referenceGeometry</a>, 
+                      <a href="#BuildingGeometry%3AverticalGeometryEstimatedAccuracy">verticalGeometryEstimatedAccuracy</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2777,78 +2784,148 @@ TBD
 
                     <tbody class="supertype">
                       
-                      <tr id="BuildingGeometry3DLoD%3AgeometryMultiSurface" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#geometryMultiSurface">
+                      <tr id="BuildingGeometry%3AhorizontalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#geometryMultiSurface" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#geometryMultiSurface" data-placement="right">geometryMultiSurface</a>
+                            <a href="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy" data-placement="right">horizontalGeometryEstimatedAccuracy</a>
                           </code>
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">MultiSurface</a>
-			    
-                          
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">Representation of the outer boundary by a Multi Surface, which may - in contrast to a solid representation - not be topologically clean. In particular, the ground surface may be missing.</td>
+                        <td property="rdfs:comment">The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.	</td>
+                        <td property="skos:scopeNote">	</td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="BuildingGeometry%3AreferenceGeometry" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#referenceGeometry">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/building#referenceGeometry" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#referenceGeometry" data-placement="right">referenceGeometry</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right"></a>
+                            
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">The geometry to be taken into account by view services, for portrayal.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                       
-                      <tr id="BuildingGeometry3DLoD%3AgeometrySolid" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#geometrySolid">
+                      <tr id="BuildingGeometry%3AverticalGeometryEstimatedAccuracy" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#geometrySolid" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#geometrySolid" data-placement="right">geometrySolid</a>
+                            <a href="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy" data-placement="right">verticalGeometryEstimatedAccuracy</a>
                           </code>
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">3Dobject</a>
-			    
-                          
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">Representation of the outer boundary by a solid.</td>
+                        <td property="rdfs:comment">The estimated absolute positional accuracy of the Z-coordinate of the building geometry.	</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                       
-                      <tr id="BuildingGeometry3DLoD%3AterrainIntersection" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#terrainIntersection">
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            
+            <div class="region region--no-space-top">
+              
+              <h3 class="h3" id="DirectPosition"><a href="http://www.opengis.net/ont/sf#DirectPosition" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#DirectPosition" data-placement="right">DirectPosition</a></h3>
+	      
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>Holder of the coordinates of a position in a coordinate reference system.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>we have defined the following properties for this datatype:
+                      <a href="#DirectPosition%3Agml">gml</a>, 
+                      <a href="#DirectPosition%3Awkt">wkt</a>, 
+                      <a href="#DirectPosition%3Amethod">method</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expects Type</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                      
+                      <tr id="DirectPosition%3Agml" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asGML">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#terrainIntersection" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#terrainIntersection" data-placement="right">terrainIntersection</a>
+                            <a href="http://www.opengis.net/ont/geosparql#asGML" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asGML" data-placement="right">gml</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">MultiCurve</a>
+			    <a href="#Enter your translation here" data-placement="right">Literal</a>
 			    
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">Line or multi-line where the spatial object touches the terrain representation.</td>
+                        <td property="rdfs:comment">Direct position expressed in gml format.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                       
-                      <tr id="BuildingGeometry3DLoD%3AverticalGeometryReference3DBottom" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#verticalGeometryReference3DBottom">
+                      <tr id="DirectPosition%3Awkt" typeof="rdfs:Property" resource="http://www.opengis.net/ont/geosparql#asWKT">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#verticalGeometryReference3DBottom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#verticalGeometryReference3DBottom" data-placement="right">verticalGeometryReference3DBottom</a>
+                            <a href="http://www.opengis.net/ont/geosparql#asWKT" data-toggle="tooltip" data-content="http://www.opengis.net/ont/geosparql#asWKT" data-placement="right">wkt</a>
                           </code>
                         </td>
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
+			    <a href="#Enter your translation here" data-placement="right">Literal</a>
 			    
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">Height level to which the lower height of the model (Z-value of the lower horizontal polygon) refers to.</td>
+                        <td property="rdfs:comment">Direct position expressed in wkt format.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                      
+                      <tr id="DirectPosition%3Amethod" typeof="rdfs:Property" resource="http://www.opengis.net/ont/sf#method">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.opengis.net/ont/sf#method" data-toggle="tooltip" data-content="http://www.opengis.net/ont/sf#method" data-placement="right">method</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#Enter your translation here" data-placement="right">MeasuringMethod</a>
+			    
+                          
+                        </td>
+			<td>1</td>
+                        <td property="rdfs:comment">The way the point was determined.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -2949,7 +3026,7 @@ TBD
             
             <div class="region region--no-space-top">
               
-              <h3 class="h3" id="Langstring"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Langstring</a></h3>
+              <h3 class="h3" id="LangString"><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">LangString</a></h3>
 	      
                 <div class="region region--no-space-top">
                   <dl>
@@ -2959,8 +3036,8 @@ TBD
                     <dt>Properties</dt>
 		     
                     <dd>we have defined the following properties for this datatype:
-                      <a href="#Langstring%3AlangString">langString</a>, 
-                      <a href="#Langstring%3Astring">string</a>.</dd>
+                      <a href="#LangString%3Alanguage">language</a>, 
+                      <a href="#LangString%3Astring">string</a>.</dd>
                     
                   </dl>
                 </div>
@@ -2980,10 +3057,10 @@ TBD
 
                     <tbody class="supertype">
                       
-                      <tr id="Langstring%3AlangString" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#language">
+                      <tr id="LangString%3Alanguage" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#language">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#language" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#language" data-placement="right">langString</a>
+                            <a href="http://vocab.belgif.be/ns/building#language" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#language" data-placement="right">language</a>
                           </code>
                         </td>
                         <td>
@@ -2999,7 +3076,7 @@ TBD
                         <td></td>
                       </tr>
                       
-                      <tr id="Langstring%3Astring" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#string">
+                      <tr id="LangString%3Astring" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#string">
                         <td>
                           <code property="rdfs:label">
                             <a href="http://vocab.belgif.be/ns/building#string" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#string" data-placement="right">string</a>
@@ -3183,7 +3260,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Langstring</a>
+			    <a href="#Enter your translation here" data-placement="right">LangString</a>
 			    
                           
                         </td>
@@ -3342,9 +3419,9 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">HorizontalGeometryReferenceValue</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>1</td>
@@ -3380,14 +3457,14 @@ TBD
                         </td>
                         <td>
                           
-			    
-			    <a href="#Enter your translation here" data-placement="right">Elevation reference value</a>
-			    
+			     
+			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right"></a>
+                            
                           
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">Element of the building that was captured by vertical coordinates.</td>
-                        <td property="skos:scopeNote"></td>
+                        <td property="skos:scopeNote">Concepts of this codelist should be used: <a href="http://inspire.ec.europa.eu/codelist/ElevationReferenceValue">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a></td>
                         <td></td>
                       </tr>
                       
@@ -3413,77 +3490,6 @@ TBD
                   </dl>
                 </div>
 		
-            </div>
-            
-            <div class="region region--no-space-top">
-              
-              <h3 class="h3" id="Length"><a href="https://data.vlaanderen.be/ns/weg#Lengte" data-toggle="tooltip" data-content="https://data.vlaanderen.be/ns/weg#Lengte" data-placement="right">Length</a></h3>
-	      
-                <div class="region region--no-space-top">
-                  <dl>
-                    <dt>Description</dt><dd>The measure of distance as an integral, i.e. the limit of an infinite sum of distances between points on a curve.  For example the length of curve, the perimeter of a polygon as the length of the boundary.</dd>
-                    
-                    <dt>Usage</dt><dd>This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum</dd>
-                    
-		    
-                    <dt>Properties</dt>
-		     
-                    <dd>we have defined the following properties for this datatype:
-                      <a href="#Length%3Auom">uom</a>, 
-                      <a href="#Length%3Avalue">value</a>.</dd>
-                    
-                  </dl>
-                </div>
-		 
-                <div class="u-table-overflow">
-                  <table class="data-table">
-                    <thead>
-                      <tr class="data-table__header">
-                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
-                        <th class="data-table__header-title--sortable">Expects Type</th>
-			<th class="data-table__header-title--sortable">Cardinality</th>
-                        <th class="data-table__header-title--sortable">Description</th>
-                        <th class="data-table__header-title--sortable">Usage</th>
-                        <th class="data-table__header-title--sortable">Codelist</th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="supertype">
-                      
-                      <tr id="Length%3Auom" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#uom">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#uom" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#uom" data-placement="right">uom</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">Standard units of measurements used when accounting for stock, and expressing them in quantities.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                      <tr id="Length%3Avalue" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/building#value">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/building#value" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/building#value" data-placement="right">value</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-                </div>
-                
             </div>
             
             <div class="region region--no-space-top">
@@ -3550,7 +3556,7 @@ TBD
                         <td>
                           
 			    
-			    <a href="#Enter your translation here" data-placement="right">Langstring</a>
+			    <a href="#Enter your translation here" data-placement="right">LangString</a>
 			    
                           
                         </td>

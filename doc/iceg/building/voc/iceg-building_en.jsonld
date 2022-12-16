@@ -328,6 +328,17 @@
   "publication-date": "2022-11-17",
   "classes": [
     {
+      "@id": "http://vocab.belgif.be/ns/building#Base:Measure",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A representation of a measure value. The decimal value is followed by a space and the unit of the measure."
+      },
+      "usage": {
+        "en": "This can be substituted by other classes like udt:Quantity, qudt:QuantityValue or ucum"
+      },
+      "parents": []
+    },
+    {
       "@id": "http://vocab.belgif.be/ns/building#Building",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
@@ -441,17 +452,6 @@
       "parents": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/building#HeightStatusValue",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Values indicating the method used to capture a height."
-      },
-      "usage": {
-        "en": "Concepts of this codelist should be used: http://inspire.ec.europa.eu/codelist/HeightStatusValue"
-      },
-      "parents": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/building#LangCode",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "parents": []
@@ -460,7 +460,7 @@
   "externals": [
     {
       "name": {
-        "en": "Langstring"
+        "en": "LangString"
       },
       "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
       "@type": "rdfs:Class"
@@ -495,27 +495,6 @@
     },
     {
       "name": {
-        "en": "ConditionOfConstructionValue"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "Elevation reference value"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "HorizontalGeometryReferenceValue"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
         "en": "MeasuringMethod"
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -531,13 +510,6 @@
     {
       "name": {
         "en": "SourceStatusValue"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "NativenessValue"
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class"
@@ -561,13 +533,6 @@
         "en": "StructuredIdentificator"
       },
       "@id": "https://data.vlaanderen.be/ns/generiek#GestructureerdeIdentificator",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "Length"
-      },
-      "@id": "https://data.vlaanderen.be/ns/weg#Lengte",
       "@type": "rdfs:Class"
     },
     {
@@ -673,7 +638,7 @@
         "en": "Element of the real world object that was captured by the (X,Y) coordinates of the LoD1 Multisurface or Solid geometry."
       },
       "usage": {
-        "en": "Example: footprint, roof edge"
+        "en": "Example: footprint, roof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">v</a>"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
@@ -777,7 +742,7 @@
         "en": "Characteristic of the building that makes it generally of interest for mappings applications. The characteristic may be related to the physical aspect and/or to the function of the building."
       },
       "usage": {
-        "en": "This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings."
+        "en": "This attribute focuses on the physical aspect (facade) of the building; however, this physical aspect is often expressed as a function (e.g. stadium, silo, windmill); this attribute aims to fulfil mainly mapping purposes and addresses only specific, noticeable buildings.\r\n\r\nMore information about the enumerations can be found: <a href=\"https://inspire.ec.europa.eu/codelist/BuildingNatureValue\">https://inspire.ec.europa.eu/codelist/BuildingNatureValue</a>"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#Building"
@@ -879,6 +844,9 @@
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Element where the elevation was measured."
+      },
+      "usage": {
+        "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#Elevation"
@@ -1021,7 +989,7 @@
         "en": "Element used as the high reference."
       },
       "usage": {
-        "en": "EXAMPLE: The height of the building has been captured up to the top of building."
+        "en": "EXAMPLE: The height of the building has been captured up to the top of building. - Concepts of this codelist should be used: http://inspire.ec.europa.eu/codelist/ElevationReferenceValue"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#HeightAboveGround"
@@ -1050,7 +1018,7 @@
         "en": "Element that was captured by the (X,Y) coordinates of the LoD2 MultiSurface or Solid geometry."
       },
       "usage": {
-        "en": "Example: footprint, roof edge"
+        "en": "Example: footprint, roof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/HorizontalGeometryReferenceValue/\">v</a>"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2.horizontalGeometryReference"
@@ -1155,6 +1123,9 @@
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Information enabling to acknowledge if the name is the one that is/was used in the area where the spatial object is situated at the instant when the name is/was in use."
+      },
+      "usage": {
+        "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/NativenessValue\">http://inspire.ec.europa.eu/codelist/NativenessValue</a>"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#GeographicalName"
@@ -1387,19 +1358,7 @@
         "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/weg#Lengte"
-      ],
-      "range": [],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/building#value",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
-      "definition": {
-        "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/weg#Lengte"
+        "http://vocab.belgif.be/ns/building#Base:Measure"
       ],
       "range": [],
       "generalization": []
@@ -1414,7 +1373,7 @@
         "http://vocab.belgif.be/ns/building#HeightAboveGround"
       ],
       "range": [
-        "https://data.vlaanderen.be/ns/weg#Lengte"
+        "http://vocab.belgif.be/ns/building#Base:Measure"
       ],
       "generalization": []
     },
@@ -1436,6 +1395,9 @@
       "definition": {
         "en": "Element of the building that was captured by vertical coordinates."
       },
+      "usage": {
+        "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
+      },
       "domain": [
         "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
       ],
@@ -1449,6 +1411,9 @@
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "en": "Height level to which the lower height of the model (Z-value of the lower horizontal polygon) refers to."
+      },
+      "usage": {
+        "en": "Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
@@ -1465,7 +1430,7 @@
         "en": "Height level to which the upper height of the model (Z-value of the upper horizontal polygon) refers to."
       },
       "usage": {
-        "en": "Example: generalRoof, lowestRoof edge"
+        "en": "Example: generalRoof, lowestRoof edge - Concepts of this codelist should be used: <a href=\"http://inspire.ec.europa.eu/codelist/ElevationReferenceValue\">http://inspire.ec.europa.eu/codelist/ElevationReferenceValue</a>"
       },
       "domain": [
         "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
@@ -1545,6 +1510,13 @@
         "en": "position"
       },
       "@id": "http://www.w3.org/ns/locn#Geometry",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "value"
+      },
+      "@id": "https://qudt.org/schema/qudt/value",
       "@type": "rdf:Property"
     },
     {
