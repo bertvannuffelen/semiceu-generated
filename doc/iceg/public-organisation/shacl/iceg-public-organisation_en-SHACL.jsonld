@@ -71,16 +71,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://data.europa.eu/88u/dataset/atu-type",
-          "sh:definition": {
-            "en": "This property links an Organization to the Administrative Region(s) that it covers."
-          },
-          "sh:name": {
-            "en": "jurisdiction"
-          },
-          "sh:path": "http://purl.org/dc/terms/spatial"
-        },
-        {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "The type of entity as defined by the Belgian law"
@@ -90,6 +80,16 @@
             "en": "legal form"
           },
           "sh:path": "http://vocab.belgif.be/ns/publicorganization#legalForm"
+        },
+        {
+          "sh:class": "http://data.europa.eu/88u/dataset/atu-type",
+          "sh:definition": {
+            "en": "This property links an Organization to the Administrative Region(s) that it covers."
+          },
+          "sh:name": {
+            "en": "jurisdiction"
+          },
+          "sh:path": "http://purl.org/dc/terms/spatial"
         }
       ],
       "sh:targetClass": "http://data.europa.eu/m8g/PublicOrganisation"
@@ -216,7 +216,6 @@
           "sh:path": "http://www.w3.org/ns/locn#addressArea"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "A globally unique identifier for each instance of an Address."
           },
@@ -227,7 +226,7 @@
           "sh:path": "http://www.w3.org/ns/locn#addressID"
         },
         {
-          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
           },
@@ -264,7 +263,6 @@
           "sh:definition": {
             "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
           },
-          "sh:maxCount": "1",
           "sh:name": {
             "en": "locator designator"
           },
@@ -275,7 +273,6 @@
           "sh:definition": {
             "en": "Proper noun(s) applied to the real world entity identified by the locator."
           },
-          "sh:maxCount": "1",
           "sh:name": {
             "en": "locator name"
           },
@@ -494,7 +491,6 @@
           "sh:definition": {
             "en": "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."
           },
-          "sh:maxCount": "1",
           "sh:name": {
             "en": "alternative label"
           },
@@ -587,7 +583,6 @@
           "sh:definition": {
             "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
           },
-          "sh:minCount": "1",
           "sh:name": {
             "en": "has site"
           },
@@ -618,7 +613,7 @@
           "sh:definition": {
             "en": "Many organizations are referred to by an acronym or some other identifier\r\n"
           },
-          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "en": "identifier"
           },
@@ -712,7 +707,6 @@
           "sh:definition": {
             "en": "Entity status, e.g. active, closed, cancelled, identified\r\nlegal creation, stopped"
           },
-          "sh:maxCount": "1",
           "sh:name": {
             "en": "status"
           },
@@ -811,7 +805,7 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "Any name by which an individual is known other than their full name."
           },
@@ -822,7 +816,7 @@
           "sh:path": "http://purl.org/dc/terms/alternative"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "Full name of the Person given upon their birth."
           },
@@ -855,7 +849,7 @@
           "sh:path": "https://schema.org/deathDate"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "A family name is usually shared by members of a family."
           },
@@ -867,7 +861,7 @@
           "sh:path": "http://xmlns.com/foaf/0.1/familyName"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "The full name contains the complete name of a person as one string."
           },
@@ -879,11 +873,10 @@
           "sh:path": "http://xmlns.com/foaf/0.1/name"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "A given name, or multiple given names, are the denominator(s) that identify an individual within a family."
           },
-          "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "given name (forename)"
@@ -906,7 +899,6 @@
           "sh:definition": {
             "en": "The identifier relation is used to link a Person to any formally issued Identifier for that Person."
           },
-          "sh:maxCount": "1",
           "sh:name": {
             "en": "identifier"
           },
@@ -923,7 +915,7 @@
           "sh:path": "https://schema.org/memberOf"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "Name based on the given name of the Person's father."
           },
@@ -949,7 +941,6 @@
           "sh:definition": {
             "en": "The approriate values for title are not formally constrained, and will vary across community and context. Values such as 'Mr', 'Mrs', 'Ms', 'Dr' etc. are expected."
           },
-          "sh:maxCount": "1",
           "sh:name": {
             "en": "title"
           },
@@ -1008,15 +999,15 @@
           "sh:path": "https://schema.org/openingHours"
         },
         {
-          "sh:datatype": "https://schema.org/url",
+          "sh:class": "http://xmlns.com/foaf/0.1/Document",
           "sh:definition": {
-            "en": "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs."
+            "en": "The foaf:page property relates a thing to a document about that thing."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "website"
+            "en": "page"
           },
-          "sh:path": "https://schema.org/WebSite"
+          "sh:path": "http://xmlns.com/foaf/0.1/#term_page"
         }
       ],
       "sh:targetClass": "https://schema.org/ContactPoint"

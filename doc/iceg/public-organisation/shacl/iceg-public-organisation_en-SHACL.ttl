@@ -37,13 +37,12 @@
     shacl:name "address area"@en;
     shacl:path <http://www.w3.org/ns/locn#addressArea>
   ], [
-    shacl:datatype xsd:string;
     shacl:definition "A globally unique identifier for each instance of an Address."@en;
     shacl:maxCount 1;
     shacl:name "address ID"@en;
     shacl:path <http://www.w3.org/ns/locn#addressID>
   ], [
-    shacl:datatype skos:Concept;
+    shacl:datatype rdf:langString;
     shacl:definition "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."@en;
     shacl:maxCount 1;
     shacl:name "administrative unit level 1 (country)"@en;
@@ -63,13 +62,11 @@
   ], [
     shacl:datatype xsd:string;
     shacl:definition "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."@en;
-    shacl:maxCount 1;
     shacl:name "locator designator"@en;
     shacl:path <http://www.w3.org/ns/locn#locatorDesignator>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Proper noun(s) applied to the real world entity identified by the locator."@en;
-    shacl:maxCount 1;
     shacl:name "locator name"@en;
     shacl:path <http://www.w3.org/ns/locn#locatorName>
   ], [
@@ -176,11 +173,11 @@ representative of it, can be contacted."""@en;
     shacl:name "opening hours"@en;
     shacl:path schemas:openingHours
   ], [
-    shacl:datatype schemas:url;
-    shacl:definition "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs."@en;
+    shacl:class foaf:Document;
+    shacl:definition "The foaf:page property relates a thing to a document about that thing."@en;
     shacl:maxCount 1;
-    shacl:name "website"@en;
-    shacl:path schemas:WebSite
+    shacl:name "page"@en;
+    shacl:path foaf:\#term_page
   ];
   shacl:targetClass schemas:ContactPoint .
 
@@ -312,7 +309,6 @@ representative of it, can be contacted."""@en;
   shacl:property [
     shacl:datatype rdf:langString;
     shacl:definition "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."@en;
-    shacl:maxCount 1;
     shacl:name "alternative label"@en;
     shacl:path skos:altLabel
   ], [
@@ -362,7 +358,6 @@ they are independent entities."""@en;
   ], [
     shacl:class org:Site;
     shacl:definition "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."@en;
-    shacl:minCount 1;
     shacl:name "has site"@en;
     shacl:path org:hasSite
   ], [
@@ -382,7 +377,7 @@ between Organizations in a hierarchical structure. """@en;
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition """Many organizations are referred to by an acronym or some other identifier
 """@en;
-    shacl:maxCount 1;
+    shacl:minCount 1;
     shacl:name "identifier"@en;
     shacl:path <https://www.w3.org/ns/adms#Identifier>
   ], [
@@ -439,7 +434,6 @@ to be captured and computed."""@en;
     shacl:datatype skos:Concept;
     shacl:definition """Entity status, e.g. active, closed, cancelled, identified
 legal creation, stopped"""@en;
-    shacl:maxCount 1;
     shacl:name "status"@en;
     shacl:path <http://vocab.belgif.be/ns/publicorganization#status>
   ], [
@@ -466,13 +460,13 @@ between Organizations in a hierarchical structure. """@en;
 <https://semiceu.github.io/shacl/iceg-public-organisation_en#PersonShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "Any name by which an individual is known other than their full name."@en;
     shacl:maxCount 1;
     shacl:name "alternative name"@en;
     shacl:path dc:alternative
   ], [
-    shacl:datatype rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "Full name of the Person given upon their birth."@en;
     shacl:maxCount 1;
     shacl:name "birth name"@en;
@@ -490,23 +484,22 @@ between Organizations in a hierarchical structure. """@en;
     shacl:name "date of death"@en;
     shacl:path schemas:deathDate
   ], [
-    shacl:datatype rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "A family name is usually shared by members of a family."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "family name (surname)"@en;
     shacl:path foaf:familyName
   ], [
-    shacl:datatype rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "The full name contains the complete name of a person as one string."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "full name"@en;
     shacl:path foaf:name
   ], [
-    shacl:datatype rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "A given name, or multiple given names, are the denominator(s) that identify an individual within a family."@en;
-    shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "given name (forename)"@en;
     shacl:path foaf:givenName
@@ -519,7 +512,6 @@ between Organizations in a hierarchical structure. """@en;
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "The identifier relation is used to link a Person to any formally issued Identifier for that Person."@en;
-    shacl:maxCount 1;
     shacl:name "identifier"@en;
     shacl:path <https://dublincore.org/specifications/dublin-core/dcmi-terms/#identifier>
   ], [
@@ -528,7 +520,7 @@ between Organizations in a hierarchical structure. """@en;
     shacl:name "member of"@en;
     shacl:path schemas:memberOf
   ], [
-    shacl:datatype rdf:langString;
+    shacl:datatype xsd:string;
     shacl:definition "Name based on the given name of the Person's father."@en;
     shacl:maxCount 1;
     shacl:name "patronymic name"@en;
@@ -543,7 +535,6 @@ between Organizations in a hierarchical structure. """@en;
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "The approriate values for title are not formally constrained, and will vary across community and context. Values such as 'Mr', 'Mrs', 'Ms', 'Dr' etc. are expected."@en;
-    shacl:maxCount 1;
     shacl:name "title"@en;
     shacl:path foaf:title
   ];
@@ -568,16 +559,16 @@ between Organizations in a hierarchical structure. """@en;
 <https://semiceu.github.io/shacl/iceg-public-organisation_en#PublicOrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/88u/dataset/atu-type>;
-    shacl:definition "This property links an Organization to the Administrative Region(s) that it covers."@en;
-    shacl:name "jurisdiction"@en;
-    shacl:path dc:spatial
-  ], [
     shacl:datatype rdf:langString;
     shacl:definition "The type of entity as defined by the Belgian law"@en;
     shacl:maxCount 1;
     shacl:name "legal form"@en;
     shacl:path <http://vocab.belgif.be/ns/publicorganization#legalForm>
+  ], [
+    shacl:class <http://data.europa.eu/88u/dataset/atu-type>;
+    shacl:definition "This property links an Organization to the Administrative Region(s) that it covers."@en;
+    shacl:name "jurisdiction"@en;
+    shacl:path dc:spatial
   ];
   shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
 

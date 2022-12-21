@@ -121,7 +121,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <dt>Source</dt><dd><br></dd>
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/710946ac973e8d5d8b01eaeacea6075f223edbe0/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/710946ac973e8d5d8b01eaeacea6075f223edbe0/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/69217cecd505e6868eb2a2e3ae3f955e9768ede4/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/69217cecd505e6868eb2a2e3ae3f955e9768ede4/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -393,10 +393,6 @@ The addressID is part of the INSPIRE guidelines and provides a hook that can be 
                         </td>
                         <td>
                           
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
-                            
-                          
                         </td>
 			<td>0..1</td>
                         <td property="rdfs:comment">A globally unique identifier for each instance of an Address.</td>
@@ -426,7 +422,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/2004/02/skos/core#Concept" data-toggle="tooltip" data-content="http://www.w3.org/2004/02/skos/core#Concept" data-placement="right">Code</a>
+			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
                             
                           
                         </td>
@@ -493,7 +489,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>0..1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.</td>
                         <td property="skos:scopeNote">In simpler terms, this is the building number, apartment number, etc. For an address such as "Flat 3, 17 Bridge Street", the locator is "flat 3, 17".</td>
                         <td></td>
@@ -513,7 +509,7 @@ To provide maximum flexibility in the Core Vocabulary, whilst remaining interope
                             
                           
                         </td>
-			<td>0..1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">Proper noun(s) applied to the real world entity identified by the locator.</td>
                         <td property="skos:scopeNote"><p>
 The locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.
@@ -847,7 +843,7 @@ that some implementations may find useful.</dd>
                       <a href="#Contact%20Point%3Ahas%20email">has email</a>, 
                       <a href="#Contact%20Point%3Ahas%20telephone">has telephone</a>, 
                       <a href="#Contact%20Point%3Aopening%20hours">opening hours</a>, 
-                      <a href="#Contact%20Point%3Awebsite">website</a>.</dd>
+                      <a href="#Contact%20Point%3Apage">page</a>.</dd>
                     
                   </dl>
                 </div>
@@ -948,22 +944,22 @@ representative of it, can be contacted.</td>
                         <td></td>
                       </tr>
                     
-                      <tr id="Contact%20Point%3Awebsite" typeof="rdfs:Property" resource="https://schema.org/WebSite">
+                      <tr id="Contact%20Point%3Apage" typeof="rdfs:Property" resource="http://xmlns.com/foaf/0.1/#term_page">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://schema.org/WebSite" data-toggle="tooltip" data-content="https://schema.org/WebSite" data-placement="right">
-                            website</a>
+                            <a href="http://xmlns.com/foaf/0.1/#term_page" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/#term_page" data-placement="right">
+                            page</a>
                           </code>
                         </td>
                         <td>
                           
 			     
-			    <a href="https://schema.org/url" data-toggle="tooltip" data-content="https://schema.org/url" data-placement="right">URL</a>
+			    <a href="http://xmlns.com/foaf/0.1/Document" data-toggle="tooltip" data-content="http://xmlns.com/foaf/0.1/Document" data-placement="right">Document</a>
                             
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.</td>
+                        <td property="rdfs:comment">The foaf:page property relates a thing to a document about that thing.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1523,7 +1519,7 @@ representative of it, can be contacted.</td>
                             
                           
                         </td>
-			<td>0..1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -1714,7 +1710,7 @@ the simple memberOf/hasMember properties.</td>
 			    
                           
                         </td>
-			<td>1..*</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company).</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -1779,7 +1775,7 @@ hasUnit and to the parent with unitOf.</td>
 			    
                           
                         </td>
-			<td>0..1</td>
+			<td>1..*</td>
                         <td property="rdfs:comment">Many organizations are referred to by an acronym or some other identifier
 </td>
                         <td property="skos:scopeNote"></td>
@@ -1973,7 +1969,7 @@ to be captured and computed.</td>
                             
                           
                         </td>
-			<td>0..1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">Entity status, e.g. active, closed, cancelled, identified
 legal creation, stopped</td>
                         <td property="skos:scopeNote"></td>
@@ -2134,7 +2130,7 @@ The Person Class is a subclass of the more general 'Agent' class that encompasse
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
                             
                           
                         </td>
@@ -2157,7 +2153,7 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
                             
                           
                         </td>
@@ -2217,7 +2213,7 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
                             
                           
                         </td>
@@ -2237,7 +2233,7 @@ Alternative name gives a means of recording names by which an individual is gene
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
                             
                           
                         </td>
@@ -2267,11 +2263,11 @@ A name usually sticks with a person for a long time period. In some European cou
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
                             
                           
                         </td>
-			<td>1</td>
+			<td>1..*</td>
                         <td property="rdfs:comment">A given name, or multiple given names, are the denominator(s) that identify an individual within a family.</td>
                         <td property="skos:scopeNote">These are given to a person by his or her parents at birth or may be legally recognised as 'given names' through a formal process. All given names are ordered in one property so that, for example, the given name for Johann Sebastian Bach is "Johann Sebastian".</td>
                         <td></td>
@@ -2311,7 +2307,7 @@ A name usually sticks with a person for a long time period. In some European cou
 			    
                           
                         </td>
-			<td>0..1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">The identifier relation is used to link a Person to any formally issued Identifier for that Person.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -2347,7 +2343,7 @@ A name usually sticks with a person for a long time period. In some European cou
                         <td>
                           
 			     
-			    <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-toggle="tooltip" data-content="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString" data-placement="right">Text</a>
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
                             
                           
                         </td>
@@ -2394,7 +2390,7 @@ Note that patronymic names refer to a father's given name, not the family name i
                             
                           
                         </td>
-			<td>0..1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">The approriate values for title are not formally constrained, and will vary across community and context. Values such as &#39;Mr&#39;, &#39;Mrs&#39;, &#39;Ms&#39;, &#39;Dr&#39; etc. are expected.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
