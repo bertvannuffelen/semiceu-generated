@@ -19,9 +19,9 @@
     <https://semiceu.github.io/shacl/iceg-building_de#ExternalReferenceShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#GeographicalNameShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#HeightAboveGroundShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#ICEG-UnitShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#LangCodeShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#StructuredIdentificatorShape>,
-    <https://semiceu.github.io/shacl/iceg-building_de#MeasureShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#CadastralParcelShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#3DobjectShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#DirectPositionShape>,
@@ -29,6 +29,7 @@
     <https://semiceu.github.io/shacl/iceg-building_de#MultiSurfaceShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#PointShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#PolygonShape>,
+    <https://semiceu.github.io/shacl/iceg-building_de#URIShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#TextShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#BuildingNatureValueShape>,
     <https://semiceu.github.io/shacl/iceg-building_de#CurrentUseValueShape>,
@@ -228,7 +229,7 @@
 <https://semiceu.github.io/shacl/iceg-building_de#BuildingGeometryShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
+    shacl:datatype <http://vocab.belgif.be/ns/building#ICEG-Unit>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -241,7 +242,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#referenceGeometry>
   ], [
-    shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
+    shacl:datatype <http://vocab.belgif.be/ns/building#ICEG-Unit>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -668,7 +669,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#status>
   ], [
-    shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
+    shacl:datatype <http://vocab.belgif.be/ns/building#ICEG-Unit>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -676,6 +677,24 @@
     shacl:path <http://vocab.belgif.be/ns/building#value>
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/building#HeightAboveGround> .
+
+<https://semiceu.github.io/shacl/iceg-building_de#ICEG-UnitShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/building#uom>
+  ], [
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <https://qudt.org/schema/qudt/value>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/building#ICEG-Unit> .
 
 <https://semiceu.github.io/shacl/iceg-building_de#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
@@ -716,25 +735,6 @@
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/building#LangCode> .
 
-<https://semiceu.github.io/shacl/iceg-building_de#MeasureShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class skos:Concept;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/building#uom>
-  ], [
-    shacl:datatype xsd:double;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <https://qudt.org/schema/qudt/value>
-  ];
-  shacl:targetClass <http://inspire.ec.europa.eu/ont/base#Measure> .
-
 <https://semiceu.github.io/shacl/iceg-building_de#MeasuringMethodShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
@@ -766,3 +766,7 @@
 <https://semiceu.github.io/shacl/iceg-building_de#TextShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass xsd:string .
+
+<https://semiceu.github.io/shacl/iceg-building_de#URIShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass xsd:anyURI .
