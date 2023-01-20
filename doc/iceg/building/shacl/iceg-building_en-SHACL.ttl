@@ -19,9 +19,9 @@
     <https://semiceu.github.io/shacl/iceg-building_en#ExternalReferenceShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#GeographicalNameShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#HeightAboveGroundShape>,
-    <https://semiceu.github.io/shacl/iceg-building_en#ICEG-UnitShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#LangCodeShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#StructuredIdentificatorShape>,
+    <https://semiceu.github.io/shacl/iceg-building_en#MeasureShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#CadastralParcelShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#3DobjectShape>,
     <https://semiceu.github.io/shacl/iceg-building_en#DirectPositionShape>,
@@ -229,7 +229,7 @@
 <https://semiceu.github.io/shacl/iceg-building_en#BuildingGeometryShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:datatype <http://vocab.belgif.be/ns/building#ICEG-Unit>;
+    shacl:datatype <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure>;
     shacl:definition """The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.	"""@en;
     shacl:maxCount 1;
     shacl:name "horizontalGeometryEstimatedAccuracy"@en;
@@ -242,7 +242,7 @@
     shacl:name "referenceGeometry"@en;
     shacl:path <http://vocab.belgif.be/ns/building#referenceGeometry>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#ICEG-Unit>;
+    shacl:datatype <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure>;
     shacl:definition """The estimated absolute positional accuracy of the Z-coordinate of the building geometry.	"""@en;
     shacl:maxCount 1;
     shacl:name "verticalGeometryEstimatedAccuracy"@en;
@@ -669,7 +669,7 @@
     shacl:name "status"@en;
     shacl:path <http://vocab.belgif.be/ns/building#status>
   ], [
-    shacl:datatype <http://vocab.belgif.be/ns/building#ICEG-Unit>;
+    shacl:datatype <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure>;
     shacl:definition "Value of the height above ground."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -677,24 +677,6 @@
     shacl:path <http://vocab.belgif.be/ns/building#value>
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/building#HeightAboveGround> .
-
-<https://semiceu.github.io/shacl/iceg-building_en#ICEG-UnitShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:datatype xsd:anyURI;
-    shacl:definition "Standard units of measurements used when accounting for stock, and expressing them in quantities."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "uom"@en;
-    shacl:path <http://vocab.belgif.be/ns/building#uom>
-  ], [
-    shacl:definition "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "value"@en;
-    shacl:path <https://qudt.org/schema/qudt/value>
-  ];
-  shacl:targetClass <http://vocab.belgif.be/ns/building#ICEG-Unit> .
 
 <https://semiceu.github.io/shacl/iceg-building_en#IdentifierShape> a shacl:NodeShape;
   shacl:closed false;
@@ -734,6 +716,24 @@
 <https://semiceu.github.io/shacl/iceg-building_en#LangCodeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/building#LangCode> .
+
+<https://semiceu.github.io/shacl/iceg-building_en#MeasureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:anyURI;
+    shacl:definition "Standard units of measurements used when accounting for stock, and expressing them in quantities."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uom"@en;
+    shacl:path <http://vocab.belgif.be/ns/building#uom>
+  ], [
+    shacl:definition "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "value"@en;
+    shacl:path <https://qudt.org/schema/qudt/value>
+  ];
+  shacl:targetClass <http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure> .
 
 <https://semiceu.github.io/shacl/iceg-building_en#MeasuringMethodShape> a shacl:NodeShape;
   shacl:closed false;
