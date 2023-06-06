@@ -1,0 +1,382 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix schemas: <https://schema.org/> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://semiceu.github.io/shacl/iceg-person_de> <https://semiceu.github.io/shacl/iceg-person_deshapes> <https://semiceu.github.io/shacl/iceg-person_de#AfstammingShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#BurgerlijkeStaatShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#DomicilieShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#GeboorteShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#GeenInwonerShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#GeregistreerdPersoonShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#GezinShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#GezinsrelatieShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#HuwelijkShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#InwonerShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#InwonerschapShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#NationaliteitShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#OverlijdenShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#PermanentInwonerShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#PersoonsgebeurtenisShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#PersoonsrelatieShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#SamenwonenShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#StaatsburgerShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#StaatsburgerschapShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#TijdelijkInwonerShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#VerblijfplaatsShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#VoogdijShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#VreemdelingShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#AgentShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#JurisdictieShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#PlaatsShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#NationaliteitscodeShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#BurgerlijkeStaatTypeShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#GezinsrelatietypeShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#AfstammingstypeShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#GeslachtShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#AdresvoorstellingShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#OrganisatieShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#PersonShape>,
+    <https://semiceu.github.io/shacl/iceg-person_de#ContactInfoShape> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#AdresvoorstellingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://www.w3.org/ns/locn#Address> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#AfstammingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#afstammingsType>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#datumVanAfstamming>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Afstamming> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#AfstammingstypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/iceg-person_de#AgentShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass dc:Agent .
+
+<https://semiceu.github.io/shacl/iceg-person_de#BurgerlijkeStaatShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#type>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#BurgerlijkeStaat> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#BurgerlijkeStaatTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/iceg-person_de#ContactInfoShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass schemas:ContactPoint .
+
+<https://semiceu.github.io/shacl/iceg-person_de#DomicilieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Domicilie> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#GeboorteShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Geboorte> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#GeenInwonerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#GeenInwoner> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#GeregistreerdPersoonShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#registratie>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#GeregistreerdPersoon> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#GeslachtShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/iceg-person_de#GezinShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:maxCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#gezinsadres>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#gezinshoofd>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#gezinshoofd>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#gezinslid>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#gezinslid>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Gezin> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#GezinsrelatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#gezinsrelatietype>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Gezinsrelatie> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#GezinsrelatietypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/iceg-person_de#HuwelijkShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Huwelijk> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#InwonerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Inwoner> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#InwonerschapShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class dc:Jurisdiction;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#Inwonerschap.jurisdictie>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#Inwonerschap.person>
+  ], [
+    shacl:class <http://vocab.belgif.be/ns/person#Verblijfplaats>;
+    shacl:path <http://vocab.belgif.be/ns/person#heeftVerblijfplaats>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Inwonerschap> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#JurisdictieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class dc:Location;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <https://data.vlaanderen.be/ns/generiek#plaats>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Staatsburgerschap.jurisdictie> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#NationaliteitShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class skos:Concept;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#nationaliteit>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Nationaliteit> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#NationaliteitscodeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/iceg-person_de#OrganisatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass org:Organization .
+
+<https://semiceu.github.io/shacl/iceg-person_de#OverlijdenShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Overlijden> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#PermanentInwonerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#PermanentInwoner> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#PersonShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:string;
+    shacl:path <https://data.vlaanderen.be/ns/persoon#alternatieveNaam>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path <http://www.w3.org/ns/person#birthName>
+  ], [
+    shacl:class schemas:ContactPoint;
+    shacl:maxCount 1;
+    shacl:path schema:contactPoint
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path foaf:familyName
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path <https://data.vlaanderen.be/ns/persoon#gebruikteVoornaam>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#fullName>
+  ], [
+    shacl:class skos:Concept;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path foaf:\#term_gender
+  ], [
+    shacl:datatype xsd:string;
+    shacl:minCount 1;
+    shacl:path foaf:givenName
+  ], [
+    shacl:class <http://vocab.belgif.be/ns/person#BurgerlijkeStaat>;
+    shacl:maxCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#heeftBurgerlijkeStaat>
+  ], [
+    shacl:class <http://vocab.belgif.be/ns/person#Geboorte>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#heeftGeboorte>
+  ], [
+    shacl:class <http://vocab.belgif.be/ns/person#Nationaliteit>;
+    shacl:path <http://vocab.belgif.be/ns/person#heeftNationaliteit>
+  ], [
+    shacl:class <http://vocab.belgif.be/ns/person#Overlijden>;
+    shacl:maxCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#heeftOverlijden>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:path <http://vocab.belgif.be/ns/person#heeftRelatieMet>
+  ], [
+    shacl:class dc:Jurisdiction;
+    shacl:path <http://www.w3.org/ns/person#residency>
+  ], [
+    shacl:datatype xsd:string;
+    shacl:maxCount 1;
+    shacl:path <http://www.w3.org/ns/person#patronymicName>
+  ], [
+    shacl:class dc:Jurisdiction;
+    shacl:path <http://www.w3.org/ns/person#citizenship>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Staatsburgerschap.person> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#PersoonsgebeurtenisShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:dateTime;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#datum>
+  ], [
+    shacl:class dc:Location;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#land>
+  ], [
+    shacl:class dc:Location;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#plaats>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Persoonsgebeurtenis> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#PersoonsrelatieShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#Persoonsrelatie.person.source>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#Persoonsrelatie.person.source>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Persoonsrelatie> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#PlaatsShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Geometry>;
+    shacl:maxCount 1;
+    shacl:path <http://www.w3.org/ns/locn#geometry>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path rdfs:label
+  ];
+  shacl:targetClass dc:Location .
+
+<https://semiceu.github.io/shacl/iceg-person_de#SamenwonenShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Samenwonen> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#StaatsburgerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Staatsburger> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#StaatsburgerschapShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class dc:Jurisdiction;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#Staatsburgerschap.jurisdictie>
+  ], [
+    shacl:class <http://www.w3.org/ns/person#Person>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#Staatsburgerschap.person>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Staatsburgerschap> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#TijdelijkInwonerShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#TijdelijkInwoner> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#VerblijfplaatsShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://vocab.belgif.be/ns/person#verblijfsadres>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Verblijfplaats> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#VoogdijShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Voogdij> .
+
+<https://semiceu.github.io/shacl/iceg-person_de#VreemdelingShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Vreemdeling> .
