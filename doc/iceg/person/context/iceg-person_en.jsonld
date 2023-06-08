@@ -1,83 +1,85 @@
 {
   "@context": {
-    "Adresvoorstelling": "http://www.w3.org/ns/locn#Address",
-    "Afstamming": "http://vocab.belgif.be/ns/person#Afstamming",
-    "Afstamming.afstammingsType": {
-      "@id": "http://vocab.belgif.be/ns/person#afstammingsType",
-      "@type": "@id"
-    },
-    "Afstamming.datumVanAfstamming": {
-      "@id": "http://vocab.belgif.be/ns/person#datumVanAfstamming",
-      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
-    },
+    "AddressRepresentation": "http://www.w3.org/ns/locn#Address",
     "Afstammingstype": "http://www.w3.org/2004/02/skos/core#Concept",
     "Agent": "http://purl.org/dc/terms/Agent",
-    "BurgerlijkeStaat": "http://vocab.belgif.be/ns/person#BurgerlijkeStaat",
-    "BurgerlijkeStaat.type": {
-      "@id": "http://vocab.belgif.be/ns/person#type",
-      "@type": "@id"
-    },
+    "Birth": "https://data.vlaanderen.be/ns/persoon#Geboorte",
     "BurgerlijkeStaatType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "Citizen": "https://data.vlaanderen.be/ns/persoon#Staatsburger",
+    "Citizenship": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap",
+    "Citizenship.Jurisdictie": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.jurisdictie",
+      "@type": "@id"
+    },
+    "Citizenship.Persoon": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.persoon",
+      "@type": "@id"
+    },
+    "CivilState": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat",
+    "CivilState.type": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#type",
+      "@type": "@id"
+    },
+    "Cohabitation": "https://data.vlaanderen.be/ns/persoon#Samenwonen",
     "ContactInfo": "https://schema.org/ContactPoint",
-    "Domicilie": "http://vocab.belgif.be/ns/person#Domicilie",
-    "Geboorte": "http://vocab.belgif.be/ns/person#Geboorte",
-    "GeenInwoner": "http://vocab.belgif.be/ns/person#GeenInwoner",
-    "GeregistreerdPersoon": "http://vocab.belgif.be/ns/person#GeregistreerdPersoon",
-    "GeregistreerdPersoon.registratie": {
-      "@id": "http://vocab.belgif.be/ns/person#registratie",
+    "Decease": "https://data.vlaanderen.be/ns/persoon#Overlijden",
+    "Descent": "https://data.vlaanderen.be/ns/persoon#Afstamming",
+    "Descent.dateOfDescent": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#datumVanAfstamming",
+      "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "Descent.descentType": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#afstammingsType",
       "@type": "@id"
     },
+    "Domicile": "https://data.vlaanderen.be/ns/persoon#Domicilie",
+    "Foreigner": "https://data.vlaanderen.be/ns/persoon#Vreemdeling",
     "Geslacht": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Gezin": "http://vocab.belgif.be/ns/person#Gezin",
-    "Gezin.gezinsadres": {
-      "@id": "http://vocab.belgif.be/ns/person#gezinsadres",
-      "@type": "@id"
-    },
-    "Gezin.gezinshoofd": {
-      "@id": "http://vocab.belgif.be/ns/person#gezinshoofd",
-      "@type": "@id"
-    },
-    "Gezin.gezinslid": {
-      "@container": "@set",
-      "@id": "http://vocab.belgif.be/ns/person#gezinslid",
-      "@type": "@id"
-    },
-    "Gezinsrelatie": "http://vocab.belgif.be/ns/person#Gezinsrelatie",
-    "Gezinsrelatie.gezinsrelatietype": {
-      "@id": "http://vocab.belgif.be/ns/person#gezinsrelatietype",
-      "@type": "@id"
-    },
     "Gezinsrelatietype": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Huwelijk": "http://vocab.belgif.be/ns/person#Huwelijk",
-    "Inwoner": "http://vocab.belgif.be/ns/person#Inwoner",
-    "Inwonerschap": "http://vocab.belgif.be/ns/person#Inwonerschap",
-    "Inwonerschap.Jurisdictie": {
-      "@id": "http://vocab.belgif.be/ns/person#Inwonerschap.jurisdictie",
+    "Guardianship": "https://data.vlaanderen.be/ns/persoon#Voogdij",
+    "Household": "https://data.vlaanderen.be/ns/persoon#Gezin",
+    "Household.householdAddress": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#gezinsadres",
       "@type": "@id"
     },
-    "Inwonerschap.Person": {
-      "@id": "http://vocab.belgif.be/ns/person#Inwonerschap.person",
-      "@type": "@id"
-    },
-    "Inwonerschap.heeftVerblijfplaats": {
+    "Household.householdMember": {
       "@container": "@set",
-      "@id": "http://vocab.belgif.be/ns/person#heeftVerblijfplaats",
+      "@id": "https://data.vlaanderen.be/ns/persoon#gezinslid",
       "@type": "@id"
     },
-    "Jurisdictie": "http://purl.org/dc/terms/Jurisdiction",
-    "Jurisdictie.plaats": {
+    "Household.householder": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#gezinshoofd",
+      "@type": "@id"
+    },
+    "HouseholdRelation": "https://data.vlaanderen.be/ns/persoon#Gezinsrelatie",
+    "HouseholdRelation.typeOfHouseholdRelation": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#gezinsrelatietype",
+      "@type": "@id"
+    },
+    "Jurisdiction": "http://purl.org/dc/terms/Jurisdiction",
+    "Jurisdiction.place": {
       "@id": "https://data.vlaanderen.be/ns/generiek#plaats",
       "@type": "@id"
     },
-    "Nationaliteit": "http://vocab.belgif.be/ns/person#Nationaliteit",
-    "Nationaliteit.nationaliteit": {
-      "@id": "http://vocab.belgif.be/ns/person#nationaliteit",
+    "Location": "http://purl.org/dc/terms/Location",
+    "Location.geometry": {
+      "@id": "http://www.w3.org/ns/locn#geometry",
       "@type": "@id"
     },
+    "Location.label": {
+      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
+      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+    },
+    "Marriage": "https://data.vlaanderen.be/ns/persoon#Huwelijk",
     "Nationaliteitscode": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Organisatie": "http://www.w3.org/ns/org#Organization",
-    "Overlijden": "http://vocab.belgif.be/ns/person#Overlijden",
-    "PermanentInwoner": "http://vocab.belgif.be/ns/person#PermanentInwoner",
+    "Nationality": "https://data.vlaanderen.be/ns/persoon#Nationaliteit",
+    "Nationality.nationality": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#nationaliteit",
+      "@type": "@id"
+    },
+    "NonResident": "https://data.vlaanderen.be/ns/persoon#GeenInwoner",
+    "Organization": "http://www.w3.org/ns/org#Organization",
+    "PermantResident": "https://data.vlaanderen.be/ns/persoon#PermanentInwoner",
     "Person": "http://www.w3.org/ns/person#Person",
     "Person.alternativeName": {
       "@container": "@set",
@@ -87,6 +89,11 @@
     "Person.birthName": {
       "@id": "http://www.w3.org/ns/person#birthName",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Person.citizenship": {
+      "@container": "@set",
+      "@id": "http://www.w3.org/ns/person#citizenship",
+      "@type": "@id"
     },
     "Person.contactInfo": {
       "@id": "http://schema.org/contactPoint",
@@ -101,11 +108,11 @@
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Person.fullName": {
-      "@id": "http://vocab.belgif.be/ns/person#fullName",
+      "@id": "https://data.vlaanderen.be/ns/persoon#volledigeNaam",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Person.gender": {
-      "@id": "http://xmlns.com/foaf/0.1/#term_gender",
+    "Person.geslacht": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#geslacht",
       "@type": "@id"
     },
     "Person.givenName": {
@@ -113,87 +120,88 @@
       "@id": "http://xmlns.com/foaf/0.1/givenName",
       "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
-    "Person.heeftBurgerlijkeStaat": {
-      "@id": "http://vocab.belgif.be/ns/person#heeftBurgerlijkeStaat",
+    "Person.hasBirth": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#heeftGeboorte",
       "@type": "@id"
     },
-    "Person.heeftGeboorte": {
-      "@id": "http://vocab.belgif.be/ns/person#heeftGeboorte",
+    "Person.hasCivilState": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#heeftBurgerlijkeStaat",
       "@type": "@id"
     },
-    "Person.heeftNationaliteit": {
+    "Person.hasDecease": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#heeftOverlijden",
+      "@type": "@id"
+    },
+    "Person.hasNationality": {
       "@container": "@set",
-      "@id": "http://vocab.belgif.be/ns/person#heeftNationaliteit",
+      "@id": "https://data.vlaanderen.be/ns/persoon#heeftNationaliteit",
       "@type": "@id"
     },
-    "Person.heeftOverlijden": {
-      "@id": "http://vocab.belgif.be/ns/person#heeftOverlijden",
-      "@type": "@id"
-    },
-    "Person.heeftRelatieMet": {
+    "Person.hasRelationWith": {
       "@container": "@set",
-      "@id": "http://vocab.belgif.be/ns/person#heeftRelatieMet",
+      "@id": "https://data.vlaanderen.be/ns/persoon#heeftRelatieMet",
       "@type": "@id"
     },
-    "Person.inwonerschap": {
+    "Person.headOf": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#isHoofdVan",
+      "@type": "@id"
+    },
+    "Person.memberOf": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/persoon#isLidVan",
+      "@type": "@id"
+    },
+    "Person.patronymic": {
+      "@id": "http://www.w3.org/ns/person#patronymicName",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
+    },
+    "Person.residency": {
       "@container": "@set",
       "@id": "http://www.w3.org/ns/person#residency",
       "@type": "@id"
     },
-    "Person.patronymicName": {
-      "@id": "http://www.w3.org/ns/person#patronymicName",
-      "@type": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    "Person.staatburgerschap": {
-      "@container": "@set",
-      "@id": "http://www.w3.org/ns/person#citizenship",
+    "PersonalEvent": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis",
+    "PersonalEvent.country": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#land",
       "@type": "@id"
     },
-    "Persoonsgebeurtenis": "http://vocab.belgif.be/ns/person#Persoonsgebeurtenis",
-    "Persoonsgebeurtenis.datum": {
-      "@id": "http://vocab.belgif.be/ns/person#datum",
+    "PersonalEvent.date": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#datum",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
-    "Persoonsgebeurtenis.land": {
-      "@id": "http://vocab.belgif.be/ns/person#land",
+    "PersonalEvent.place": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#plaats",
       "@type": "@id"
     },
-    "Persoonsgebeurtenis.plaats": {
-      "@id": "http://vocab.belgif.be/ns/person#plaats",
+    "PersonalRelation": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
+    "PersonalRelation.Persoon": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source",
       "@type": "@id"
     },
-    "Persoonsrelatie": "http://vocab.belgif.be/ns/person#Persoonsrelatie",
-    "Persoonsrelatie.Person": {
-      "@id": "http://vocab.belgif.be/ns/person#Persoonsrelatie.person.source",
+    "RegisteredPerson": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon",
+    "RegisteredPerson.registration": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#registratie",
       "@type": "@id"
     },
-    "Plaats": "http://purl.org/dc/terms/Location",
-    "Plaats.geometrie": {
-      "@id": "http://www.w3.org/ns/locn#geometry",
+    "Residency": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats",
+    "Residency.Jurisdictie": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.jurisdictie",
       "@type": "@id"
     },
-    "Plaats.plaatsnaam": {
-      "@id": "http://www.w3.org/2000/01/rdf-schema#label",
-      "@type": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-    },
-    "Samenwonen": "http://vocab.belgif.be/ns/person#Samenwonen",
-    "Staatsburger": "http://vocab.belgif.be/ns/person#Staatsburger",
-    "Staatsburgerschap": "http://vocab.belgif.be/ns/person#Staatsburgerschap",
-    "Staatsburgerschap.Jurisdictie": {
-      "@id": "http://vocab.belgif.be/ns/person#Staatsburgerschap.jurisdictie",
+    "Residency.Persoon": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.persoon",
       "@type": "@id"
     },
-    "Staatsburgerschap.Person": {
-      "@id": "http://vocab.belgif.be/ns/person#Staatsburgerschap.person",
+    "Residency.hasResidence": {
+      "@container": "@set",
+      "@id": "https://data.vlaanderen.be/ns/persoon#heeftVerblijfplaats",
       "@type": "@id"
     },
-    "TijdelijkInwoner": "http://vocab.belgif.be/ns/person#TijdelijkInwoner",
-    "Verblijfplaats": "http://vocab.belgif.be/ns/person#Verblijfplaats",
-    "Verblijfplaats.verblijfsadres": {
-      "@id": "http://vocab.belgif.be/ns/person#verblijfsadres",
+    "Residency.residenceAddress": {
+      "@id": "https://data.vlaanderen.be/ns/persoon#verblijfsadres",
       "@type": "@id"
     },
-    "Voogdij": "http://vocab.belgif.be/ns/person#Voogdij",
-    "Vreemdeling": "http://vocab.belgif.be/ns/person#Vreemdeling"
+    "Resident": "https://data.vlaanderen.be/ns/persoon#Inwoner",
+    "TemporaryResident": "https://data.vlaanderen.be/ns/persoon#TijdelijkInwoner"
   }
 }
