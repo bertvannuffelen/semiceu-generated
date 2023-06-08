@@ -40,6 +40,7 @@
     <https://semiceu.github.io/shacl/iceg-person_en#GezinsrelatietypeShape>,
     <https://semiceu.github.io/shacl/iceg-person_en#AfstammingstypeShape>,
     <https://semiceu.github.io/shacl/iceg-person_en#GeslachtShape>,
+    <https://semiceu.github.io/shacl/iceg-person_en#IdentificatorShape>,
     <https://semiceu.github.io/shacl/iceg-person_en#AdresvoorstellingShape>,
     <https://semiceu.github.io/shacl/iceg-person_en#OrganisatieShape>,
     <https://semiceu.github.io/shacl/iceg-person_en#PersoonShape>,
@@ -167,6 +168,31 @@
 <https://semiceu.github.io/shacl/iceg-person_en#HuwelijkShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <https://data.vlaanderen.be/ns/persoon#Huwelijk> .
+
+<https://semiceu.github.io/shacl/iceg-person_en#IdentificatorShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype rdfs:Literal;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path skos:notation
+  ], [
+    shacl:class dc:Agent;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path dc:creator
+  ], [
+    shacl:class dc:Agent;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path <http://www.w3.org/ns/adms#schemaAgency>
+  ], [
+    shacl:datatype xsd:dateTime;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:path dc:issued
+  ];
+  shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
 <https://semiceu.github.io/shacl/iceg-person_en#InwonerShape> a shacl:NodeShape;
   shacl:closed false;
