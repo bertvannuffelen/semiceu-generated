@@ -1,0 +1,940 @@
+{
+  "dcterms:license": "https://creativecommons.org/licenses/by/4.0/",
+  "dcterms:mediator": {
+    "foaf:homepage": "https://semic.eu",
+    "foaf:mbox": "mailto: contact@semic.eu",
+    "foaf:name": "Semantic Interoperability Community (SEMIC)"
+  },
+  "@id": "http://vocab.belgif.be/ns/person",
+  "@type": "http://www.w3.org/2002/07/owl#Ontology",
+  "label": {
+    "en": "iceg-person-voc",
+    "nl": "iceg-person-voc"
+  },
+  "authors": [],
+  "editors": [
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "FOD BOSA"
+      },
+      "foaf:firstName": "Liesbet",
+      "foaf:lastName": "D’Hondt"
+    },
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "Digitaal Vlaanderen"
+      },
+      "foaf:firstName": "Geert",
+      "foaf:lastName": "Thijs"
+    }
+  ],
+  "contributors": [],
+  "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
+  "issued": "TODO",
+  "navigation": {},
+  "publication-state": "Draft",
+  "publication-date": "2023-06-06",
+  "classes": [
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Birth",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "The person being born."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#PersonalEvent"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Citizen",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person legally associated with a state."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#Citizenship"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Citizenship",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Legal connection of a Person with a state, with which certain rights and obligations are attached."
+      },
+      "usage": {
+        "en": "Usually derives from the Nationality of the Person. The rights and obligations in question are civil rights (eg freedom of religion) or of a political (eg right to vote) or social nature (eg right to benefits)."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#CivilState",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Status of a person according to civil law."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Cohabitation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Arrangement whereby two people who are not married live together. Can, just like a marriage, form the basis of a household. Can be legally registered."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#PersonalRelation"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Decease",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "death of a person."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#PersonalEvent"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Descent",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Descent is the descending line of blood relationship between different generations."
+      },
+      "usage": {
+        "en": "The descent can be biological as well as non-biological, eg adoption. Descent can also be viewed in the ascending line. The concept is narrower than kinship that also includes marriage. There must be a direct link between the persons (no link between child and grandparent)."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#PersonalRelation"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Domicilie",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Primary residence of a person."
+      },
+      "usage": {
+        "en": "Place where the person resides most of the time within the jurisdiction of which he is a resident. This is usually officially established and registered in the population register. May differ from the actual place of residence."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#residence"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Foreigner",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person who does not have the nationality of the country where he resides."
+      },
+      "usage": {
+        "en": "Therefore, the person cannot be called a citizen. As a resident however the foreigner enjoys at least a subset of the civil rights that a citizen has. Freedom of religion, for example, but not necessarily the right to vote."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#Citizenship"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Guardianship",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Situation where a person acting as guardian serves another person and in that capacity is responsible for this person and his goods."
+      },
+      "usage": {
+        "en": "This is the case, for example, for minors who have lost their parents or for adults who have lost their intellectual faculties."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#PersonalRelation"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Household",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Form of cooperation that forms a recognizable social unit (eg through marriage), with persons who are blood relatives or not, who have lasting ties and provide mutual support and care."
+      },
+      "usage": {
+        "en": "It is a broader concept than family where the family consists not solely of close relatives, eg a single-person family or living separately together. Household members usually share the same residence."
+      },
+      "parents": [
+        "http://www.w3.org/ns/org#Organization"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#HouseholdRelation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Relation between members of the same household."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#PersonalRelation"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Marriage",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "A form of cohabitation of two persons, organized by civil or religious law."
+      },
+      "usage": {
+        "en": "Can, just like living together, form the basis of a household."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#PersonalRelation"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Nationality",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "The relationship between a person and a state, culture or loyalty."
+      },
+      "usage": {
+        "en": "Note that this concept is broader than citizenship (which is limited to the relationship with a state). Anyone who has the nationality of a particular country is usually automatically a citizen. Nationality is usually obtained automatically by birth: one gets either the nationality of his parents or one gets it from the country where one is a resident. One can also obtain a certain nationality through naturalization. In principle, peoplethen lose their original nationality, but that is not always the case (multiple nationality)."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#NonResident",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person not residing in a certain place or country."
+      },
+      "usage": {
+        "en": "Place or country is represented here by the jurisdiction entity."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#Residency"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#PermanentResident",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person who permanently resides in a particular place or country."
+      },
+      "usage": {
+        "en": "Is a right of residence that must in principle be officially granted if the person is not a citizen."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#Resident"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#PersonalEvent",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Significant event in the life of a person."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#PersonalRelation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Relation between two or more persons."
+      },
+      "usage": {
+        "en": "Typically these are civil law relationships (see civil status) but not necessarily limited thereto."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#RegisteredPerson",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person whose details are officially listed in a register."
+      },
+      "usage": {
+        "en": "This register is usually a population register, but it can also be an electoral register, for example. The registered data relates to the identity (e.g. surname and first name) and the place of residence of the person and to important life events such as birth, marriage, decease, etc. These data are typically registered by the government, they offer the registered person legal protection and they allow the government to compile basic statistics about its population."
+      },
+      "parents": [
+        "http://www.w3.org/ns/person#Person"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Residency",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "The fact that a person resides in a place or country."
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Resident",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person who lives in a certain place or country."
+      },
+      "usage": {
+        "en": "This place or country is represented here by the jurisdiction entity."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#Residency"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#TemporaryResident",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person who temporarily lives in a place or country."
+      },
+      "usage": {
+        "en": "Is a right of residence that is in principle only granted for very specific reasons, eg work or study. Does not apply to a short stay, eg as a tourist."
+      },
+      "parents": [
+        "http://vocab.belgif.be/ns/person#Resident"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#residence",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Place where a Person lives or stays permanently or temporarily."
+      },
+      "parents": []
+    }
+  ],
+  "externals": [
+    {
+      "name": {
+        "en": "Nationality code"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Civil state type"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Household relation type"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Descent type"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Gender"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "en": "Person"
+      },
+      "@id": "http://www.w3.org/ns/person#Person",
+      "@type": "rdfs:Class"
+    }
+  ],
+  "properties": [
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Citizenship.jurisdiction",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Citizenship"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Jurisdiction"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Citizenship.person",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Citizenship"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#PersonalRelation.person.source",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://vocab.belgif.be/ns/person#PersonalRelation"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#PersonalRelation.person.source",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://vocab.belgif.be/ns/person#PersonalRelation"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Residency.jurisdiction",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Residency"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Jurisdiction"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#Residency.person",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Residency"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#alternativeName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Alternative name of the Person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": [
+        "http://xmlns.com/foaf/0.1/name"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#country",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Country where the event took place."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#PersonalEvent"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Location"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/place"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#date",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Date the event took place."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#PersonalEvent"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/date"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#dateOfDescent",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The date on which yhe descent is registered."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Descent"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": [
+        "http://purl.org/dc/terms/date"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#descentType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of descent."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Descent"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#firstGivenName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Most important of the given names of the person (aka first name)."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": [
+        "http://xmlns.com/foaf/0.1/givenName"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#fullName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The full name of the person, usually the combination of given names and family name."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "generalization": [
+        "http://xmlns.com/foaf/0.1/name"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#gender",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The administrative gender of the person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#hasBirth",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Birth data of a person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/person#Birth"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/birth"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#hasCivilState",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Civil status of the person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/person#CivilState"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#hasDecease",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Decease data of a person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/person#Decease"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/death"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#hasRelationWith",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Other person with which the person is related."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#hasResidence",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Place where the person resides."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Residency"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/person#residence"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#headOf",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Person who usually represents the household."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/person#Household"
+      ],
+      "generalization": [
+        "https://data.vlaanderen.be/ns/persoon#isLidVan"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#heeftNationaliteit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Nationality of a person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/person#Nationality"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#householdAddress",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Address of the residence of the household."
+      },
+      "usage": {
+        "en": "Often a criterion to determine whether persons are part of the same household."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Household"
+      ],
+      "range": [
+        "http://www.w3.org/ns/locn#Address"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#householdMember",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Member of the household."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Household"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#householder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Designated head of the household."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Household"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#memberOf",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Household that a person is member of."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://vocab.belgif.be/ns/person#Household"
+      ],
+      "generalization": [
+        "http://www.w3.org/ns/org#memberOf"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#nationality",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The nationality of the person."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#Nationality"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#place",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Place in the country where the event took place."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#PersonalEvent"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Location"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/place"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#registration",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Identification code of the person in the register."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#RegisteredPerson"
+      ],
+      "range": [
+        "http://www.w3.org/ns/adms#Identifier"
+      ],
+      "generalization": [
+        "http://www.w3.org/ns/adms#Identifier"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#residenceAddress",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Address of the place of residence."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#residence"
+      ],
+      "range": [
+        "http://www.w3.org/ns/locn#Address"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of civil status."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#CivilState"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": [
+        "http://purl.org/dc/elements/1.1/type"
+      ]
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/person#typeOfHouseholdRelation",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of the relation."
+      },
+      "usage": {
+        "en": "Is typically determined relative to the head of the family. For example, if the father is a head of the family and a family member is a son, then if the grandfather were the head of the household the same family member would be a grandson."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/person#HouseholdRelation"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    }
+  ],
+  "externalproperties": [
+    {
+      "name": {
+        "en": "contact point"
+      },
+      "@id": "http://schema.org/contactPoint",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "birth name"
+      },
+      "@id": "http://www.w3.org/ns/person#birthName",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "patronymic"
+      },
+      "@id": "http://www.w3.org/ns/person#patronymicName",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "family name"
+      },
+      "@id": "http://xmlns.com/foaf/0.1/familyName",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "given name"
+      },
+      "@id": "http://xmlns.com/foaf/0.1/givenName",
+      "@type": "rdf:Property"
+    }
+  ],
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "void": "http://rdfs.org/ns/void#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "person": "http://www.w3.org/ns/person#",
+    "rec": "http://www.w3.org/2001/02pd/rec54#",
+    "vann": "http://purl.org/vocab/vann/",
+    "sh": "http://w3.org/ns/shacl#",
+    "label": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "license": {
+      "@id": "dcterms:license",
+      "@type": "@id"
+    },
+    "issued": {
+      "@id": "dcterms:issued"
+    },
+    "authors": {
+      "@type": "person:Person",
+      "@id": "foaf:maker"
+    },
+    "editors": {
+      "@type": "person:Person",
+      "@id": "rec:editor"
+    },
+    "contributors": {
+      "@type": "person:Person",
+      "@id": "dcterms:contributor"
+    },
+    "affiliation": {
+      "@id": "http://schema.org/affiliation"
+    },
+    "classes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "datatypes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "name": {
+      "@id": "rdfs:label",
+      "@container": "@language"
+    },
+    "description": {
+      "@id": "rdfs:comment",
+      "@container": "@language"
+    },
+    "properties": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "domain": {
+      "@id": "rdfs:domain",
+      "@type": "@id"
+    },
+    "range": {
+      "@id": "rdfs:range",
+      "@type": "@id"
+    },
+    "minCardinality": {
+      "@id": "sh:minCount"
+    },
+    "maxCardinality": {
+      "@id": "sh:maxCount"
+    },
+    "generalization": {
+      "@id": "rdfs:subPropertyOf",
+      "@type": "@id"
+    },
+    "externals": {
+      "@id": "rdfs:seeAlso"
+    },
+    "externalproperties": {
+      "@id": "rdfs:seeAlso"
+    },
+    "usage": {
+      "@id": "skos:scopeNote",
+      "@container": "@language"
+    },
+    "parents": {
+      "@id": "rdfs:subClassOf",
+      "@type": "@id"
+    },
+    "foaf:homepage": {
+      "@id": "foaf:homepage",
+      "@type": "@id"
+    },
+    "foaf:mbox": {
+      "@id": "foaf:mbox",
+      "@type": "@id"
+    },
+    "equivalent": {
+      "@id": "owl:equivalentClass",
+      "@type": "@id"
+    }
+  }
+}
