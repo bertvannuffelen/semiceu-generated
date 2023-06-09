@@ -40,7 +40,66 @@
   "publication-date": "2023-06-06",
   "classes": [
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Afstamming",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Birth",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "The person being born."
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Citizen",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person legally associated with a state."
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/persoon#Citizenship"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Citizenship",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Legal connection of a Person with a state, with which certain rights and obligations are attached."
+      },
+      "usage": {
+        "en": "Usually derives from the Nationality of the Person. The rights and obligations in question are civil rights (eg freedom of religion) or of a political (eg right to vote) or social nature (eg right to benefits)."
+      },
+      "parents": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#CivilState",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Status of a person according to civil law."
+      },
+      "parents": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Cohabitation",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Arrangement whereby two people who are not married live together. Can, just like a marriage, form the basis of a household. Can be legally registered."
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Decease",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "death of a person."
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Descent",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Descent is the descending line of blood relationship between different generations."
@@ -49,16 +108,8 @@
         "en": "The descent can be biological as well as non-biological, eg adoption. Descent can also be viewed in the ascending line. The concept is narrower than kinship that also includes marriage. There must be a direct link between the persons (no link between child and grandparent)."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+        "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
       ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Status of a person according to civil law."
-      },
-      "parents": []
     },
     {
       "@id": "https://data.vlaanderen.be/ns/persoon#Domicilie",
@@ -70,47 +121,37 @@
         "en": "Place where the person resides most of the time within the jurisdiction of which he is a resident. This is usually officially established and registered in the population register. May differ from the actual place of residence."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Verblijfplaats"
+        "https://data.vlaanderen.be/ns/persoon#residence"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Geboorte",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Foreigner",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "The person being born."
-      },
-      "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#GeenInwoner",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Person not residing in a certain place or country."
+        "en": "Person who does not have the nationality of the country where he resides."
       },
       "usage": {
-        "en": "Place or country is represented here by the jurisdiction entity."
+        "en": "Therefore, the person cannot be called a citizen. As a resident however the foreigner enjoys at least a subset of the civil rights that a citizen has. Freedom of religion, for example, but not necessarily the right to vote."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
+        "https://data.vlaanderen.be/ns/persoon#Citizenship"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Guardianship",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "Person whose details are officially listed in a register."
+        "en": "Situation where a person acting as guardian serves another person and in that capacity is responsible for this person and his goods."
       },
       "usage": {
-        "en": "This register is usually a population register, but it can also be an electoral register, for example. The registered data relates to the identity (e.g. surname and first name) and the place of residence of the person and to important life events such as birth, marriage, decease, etc. These data are typically registered by the government, they offer the registered person legal protection and they allow the government to compile basic statistics about its population."
+        "en": "This is the case, for example, for minors who have lost their parents or for adults who have lost their intellectual faculties."
       },
       "parents": [
-        "http://www.w3.org/ns/person#Person"
+        "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Gezin",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Household",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Form of cooperation that forms a recognizable social unit (eg through marriage), with persons who are blood relatives or not, who have lasting ties and provide mutual support and care."
@@ -123,17 +164,17 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Gezinsrelatie",
+      "@id": "https://data.vlaanderen.be/ns/persoon#HouseholdRelation",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Relation between members of the same household."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+        "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Huwelijk",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Marriage",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "A form of cohabitation of two persons, organized by civil or religious law."
@@ -142,32 +183,11 @@
         "en": "Can, just like living together, form the basis of a household."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+        "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Inwoner",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Person who lives in a certain place or country."
-      },
-      "usage": {
-        "en": "This place or country is represented here by the jurisdiction entity."
-      },
-      "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Inwonerschap",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "The fact that a person resides in a place or country."
-      },
-      "parents": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Nationaliteit",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Nationality",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "The relationship between a person and a state, culture or loyalty."
@@ -178,17 +198,20 @@
       "parents": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Overlijden",
+      "@id": "https://data.vlaanderen.be/ns/persoon#NonResident",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "death of a person."
+        "en": "Person not residing in a certain place or country."
+      },
+      "usage": {
+        "en": "Place or country is represented here by the jurisdiction entity."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
+        "https://data.vlaanderen.be/ns/persoon#Residency"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#PermanentInwoner",
+      "@id": "https://data.vlaanderen.be/ns/persoon#PermanentResident",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Person who permanently resides in a particular place or country."
@@ -197,11 +220,11 @@
         "en": "Is a right of residence that must in principle be officially granted if the person is not a citizen."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Inwoner"
+        "https://data.vlaanderen.be/ns/persoon#Resident"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis",
+      "@id": "https://data.vlaanderen.be/ns/persoon#PersonalEvent",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Significant event in the life of a person."
@@ -209,7 +232,7 @@
       "parents": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
+      "@id": "https://data.vlaanderen.be/ns/persoon#PersonalRelation",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Relation between two or more persons."
@@ -220,38 +243,41 @@
       "parents": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Samenwonen",
+      "@id": "https://data.vlaanderen.be/ns/persoon#RegisteredPerson",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "Arrangement whereby two people who are not married live together. Can, just like a marriage, form the basis of a household. Can be legally registered."
-      },
-      "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Staatsburger",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Person legally associated with a state."
-      },
-      "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Legal connection of a Person with a state, with which certain rights and obligations are attached."
+        "en": "Person whose details are officially listed in a register."
       },
       "usage": {
-        "en": "Usually derives from the Nationality of the Person. The rights and obligations in question are civil rights (eg freedom of religion) or of a political (eg right to vote) or social nature (eg right to benefits)."
+        "en": "This register is usually a population register, but it can also be an electoral register, for example. The registered data relates to the identity (e.g. surname and first name) and the place of residence of the person and to important life events such as birth, marriage, decease, etc. These data are typically registered by the government, they offer the registered person legal protection and they allow the government to compile basic statistics about its population."
+      },
+      "parents": [
+        "http://www.w3.org/ns/person#Person"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#Residency",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "The fact that a person resides in a place or country."
       },
       "parents": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#TijdelijkInwoner",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Resident",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "en": "Person who lives in a certain place or country."
+      },
+      "usage": {
+        "en": "This place or country is represented here by the jurisdiction entity."
+      },
+      "parents": [
+        "https://data.vlaanderen.be/ns/persoon#Residency"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#TemporaryResident",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Person who temporarily lives in a place or country."
@@ -260,42 +286,16 @@
         "en": "Is a right of residence that is in principle only granted for very specific reasons, eg work or study. Does not apply to a short stay, eg as a tourist."
       },
       "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Inwoner"
+        "https://data.vlaanderen.be/ns/persoon#Resident"
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats",
+      "@id": "https://data.vlaanderen.be/ns/persoon#residence",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "en": "Place where a Person lives or stays permanently or temporarily."
       },
       "parents": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Voogdij",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Situation where a person acting as guardian serves another person and in that capacity is responsible for this person and his goods."
-      },
-      "usage": {
-        "en": "This is the case, for example, for minors who have lost their parents or for adults who have lost their intellectual faculties."
-      },
-      "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Vreemdeling",
-      "@type": "http://www.w3.org/2002/07/owl#Class",
-      "definition": {
-        "en": "Person who does not have the nationality of the country where he resides."
-      },
-      "usage": {
-        "en": "Therefore, the person cannot be called a citizen. As a resident however the foreigner enjoys at least a subset of the civil rights that a citizen has. Freedom of religion, for example, but not necessarily the right to vote."
-      },
-      "parents": [
-        "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap"
-      ]
     }
   ],
   "externals": [
@@ -344,10 +344,10 @@
   ],
   "properties": [
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.jurisdictie",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Citizenship.jurisdiction",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
+        "https://data.vlaanderen.be/ns/persoon#Citizenship"
       ],
       "range": [
         "http://purl.org/dc/terms/Jurisdiction"
@@ -355,10 +355,10 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.persoon",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Citizenship.person",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
+        "https://data.vlaanderen.be/ns/persoon#Citizenship"
       ],
       "range": [
         "http://www.w3.org/ns/person#Person"
@@ -366,10 +366,10 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source",
+      "@id": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+        "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
       ],
       "range": [
         "http://www.w3.org/ns/person#Person"
@@ -377,10 +377,10 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source",
+      "@id": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+        "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
       ],
       "range": [
         "http://www.w3.org/ns/person#Person"
@@ -388,10 +388,10 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.jurisdictie",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Residency.jurisdiction",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap"
+        "https://data.vlaanderen.be/ns/persoon#Residency"
       ],
       "range": [
         "http://purl.org/dc/terms/Jurisdiction"
@@ -399,10 +399,10 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.persoon",
+      "@id": "https://data.vlaanderen.be/ns/persoon#Residency.person",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap"
+        "https://data.vlaanderen.be/ns/persoon#Residency"
       ],
       "range": [
         "http://www.w3.org/ns/person#Person"
@@ -410,21 +410,7 @@
       "generalization": []
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#afstammingsType",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Type of descent."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Afstamming"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#alternatieveNaam",
+      "@id": "https://data.vlaanderen.be/ns/persoon#alternativeName",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "Alternative name of the Person."
@@ -440,13 +426,29 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#datum",
+      "@id": "https://data.vlaanderen.be/ns/persoon#country",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Country where the event took place."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Location"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/place"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#date",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "Date the event took place."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
+        "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -456,13 +458,13 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#datumVanAfstamming",
+      "@id": "https://data.vlaanderen.be/ns/persoon#dateOfDescent",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The date on which yhe descent is registered."
       },
       "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Afstamming"
+        "https://data.vlaanderen.be/ns/persoon#Descent"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#dateTime"
@@ -472,7 +474,21 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#gebruikteVoornaam",
+      "@id": "https://data.vlaanderen.be/ns/persoon#descentType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of descent."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#Descent"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#firstGivenName",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "Most important of the given names of the person (aka first name)."
@@ -488,295 +504,7 @@
       ]
     },
     {
-      "@id": "https://data.vlaanderen.be/ns/persoon#geslacht",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The administrative gender of the person."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#gezinsadres",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Address of the residence of the household."
-      },
-      "usage": {
-        "en": "Often a criterion to determine whether persons are part of the same household."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Gezin"
-      ],
-      "range": [
-        "http://www.w3.org/ns/locn#Address"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#gezinshoofd",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Designated head of the household."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Gezin"
-      ],
-      "range": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#gezinslid",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Member of the household."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Gezin"
-      ],
-      "range": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#gezinsrelatietype",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Type of the relation."
-      },
-      "usage": {
-        "en": "Is typically determined relative to the head of the family. For example, if the father is a head of the family and a family member is a son, then if the grandfather were the head of the household the same family member would be a grandson."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Gezinsrelatie"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#heeftBurgerlijkeStaat",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Civil status of the person."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#heeftGeboorte",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Birth data of a person."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/persoon#Geboorte"
-      ],
-      "generalization": [
-        "http://purl.org/vocab/bio/0.1/birth"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#heeftNationaliteit",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Nationality of a person."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/persoon#Nationaliteit"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#heeftOverlijden",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Decease data of a person."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/persoon#Overlijden"
-      ],
-      "generalization": [
-        "http://purl.org/vocab/bio/0.1/death"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#heeftRelatieMet",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Other person with which the person is related."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#heeftVerblijfplaats",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Place where the person resides."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/persoon#Verblijfplaats"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#isHoofdVan",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Person who usually represents the household."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/persoon#Gezin"
-      ],
-      "generalization": [
-        "https://data.vlaanderen.be/ns/persoon#isLidVan"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#isLidVan",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Household that a person is member of."
-      },
-      "domain": [
-        "http://www.w3.org/ns/person#Person"
-      ],
-      "range": [
-        "https://data.vlaanderen.be/ns/persoon#Gezin"
-      ],
-      "generalization": [
-        "http://www.w3.org/ns/org#memberOf"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#land",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Country where the event took place."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Location"
-      ],
-      "generalization": [
-        "http://purl.org/vocab/bio/0.1/place"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#nationaliteit",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "The nationality of the person."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Nationaliteit"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#plaats",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Place in the country where the event took place."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
-      ],
-      "range": [
-        "http://purl.org/dc/terms/Location"
-      ],
-      "generalization": [
-        "http://purl.org/vocab/bio/0.1/place"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#registratie",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Identification code of the person in the register."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon"
-      ],
-      "range": [
-        "http://www.w3.org/ns/adms#Identifier"
-      ],
-      "generalization": [
-        "http://www.w3.org/ns/adms#Identifier"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#type",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Type of civil status."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": [
-        "http://purl.org/dc/elements/1.1/type"
-      ]
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#verblijfsadres",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "en": "Address of the place of residence."
-      },
-      "domain": [
-        "https://data.vlaanderen.be/ns/persoon#Verblijfplaats"
-      ],
-      "range": [
-        "http://www.w3.org/ns/locn#Address"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "https://data.vlaanderen.be/ns/persoon#volledigeNaam",
+      "@id": "https://data.vlaanderen.be/ns/persoon#fullName",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "en": "The full name of the person, usually the combination of given names and family name."
@@ -790,6 +518,278 @@
       "generalization": [
         "http://xmlns.com/foaf/0.1/name"
       ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#gender",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The administrative gender of the person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#hasBirth",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Birth data of a person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/persoon#Birth"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/birth"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#hasCivilState",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Civil status of the person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/persoon#CivilState"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#hasDecease",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Decease data of a person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/persoon#Decease"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/death"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#hasRelationWith",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Other person with which the person is related."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#hasResidence",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Place where the person resides."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#Residency"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/persoon#residence"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#headOf",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Person who usually represents the household."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/persoon#Household"
+      ],
+      "generalization": [
+        "https://data.vlaanderen.be/ns/persoon#isLidVan"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#heeftNationaliteit",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Nationality of a person."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/persoon#Nationality"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#householdAddress",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Address of the residence of the household."
+      },
+      "usage": {
+        "en": "Often a criterion to determine whether persons are part of the same household."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#Household"
+      ],
+      "range": [
+        "http://www.w3.org/ns/locn#Address"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#householdMember",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Member of the household."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#Household"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#householder",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Designated head of the household."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#Household"
+      ],
+      "range": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#memberOf",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Household that a person is member of."
+      },
+      "domain": [
+        "http://www.w3.org/ns/person#Person"
+      ],
+      "range": [
+        "https://data.vlaanderen.be/ns/persoon#Household"
+      ],
+      "generalization": [
+        "http://www.w3.org/ns/org#memberOf"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#nationality",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The nationality of the person."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#Nationality"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#place",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Place in the country where the event took place."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
+      ],
+      "range": [
+        "http://purl.org/dc/terms/Location"
+      ],
+      "generalization": [
+        "http://purl.org/vocab/bio/0.1/place"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#registration",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Identification code of the person in the register."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#RegisteredPerson"
+      ],
+      "range": [
+        "http://www.w3.org/ns/adms#Identifier"
+      ],
+      "generalization": [
+        "http://www.w3.org/ns/adms#Identifier"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#residenceAddress",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Address of the place of residence."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#residence"
+      ],
+      "range": [
+        "http://www.w3.org/ns/locn#Address"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#type",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of civil status."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#CivilState"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": [
+        "http://purl.org/dc/elements/1.1/type"
+      ]
+    },
+    {
+      "@id": "https://data.vlaanderen.be/ns/persoon#typeOfHouseholdRelation",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "Type of the relation."
+      },
+      "usage": {
+        "en": "Is typically determined relative to the head of the family. For example, if the father is a head of the family and a family member is a son, then if the grandfather were the head of the household the same family member would be a grandson."
+      },
+      "domain": [
+        "https://data.vlaanderen.be/ns/persoon#HouseholdRelation"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
     }
   ],
   "externalproperties": [
@@ -809,23 +809,9 @@
     },
     {
       "name": {
-        "en": "citizenship"
-      },
-      "@id": "http://www.w3.org/ns/person#citizenship",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
         "en": "patronymic"
       },
       "@id": "http://www.w3.org/ns/person#patronymicName",
-      "@type": "rdf:Property"
-    },
-    {
-      "name": {
-        "en": "residency"
-      },
-      "@id": "http://www.w3.org/ns/person#residency",
       "@type": "rdf:Property"
     },
     {

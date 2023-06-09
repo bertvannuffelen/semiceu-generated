@@ -12,8 +12,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/628a650ca2a8ef564d518553c457b69db79d138e",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/628a650ca2a8ef564d518553c457b69db79d138e/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/166ed6fe1dd1e2fde9abb8c41903a41de3b8794b",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/166ed6fe1dd1e2fde9abb8c41903a41de3b8794b/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -21,63 +21,97 @@
   },
   "classes": [
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Afstamming",
-      "name": "Descent",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Birth",
+      "name": "Birth",
       "label": {
         "de": "Enter your translation here",
-        "en": "Descent"
+        "en": "Birth"
       },
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "Descent is the descending line of blood relationship between different generations."
+        "en": "The person being born."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Personal event",
+          "name": "PersonalEvent",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalEvent",
+          "scoped_uri": "#Personal event"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#Citizen",
+      "name": "Citizen",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Citizen"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "Person legally associated with a state."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Citizenship",
+          "name": "Citizenship",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship",
+          "scoped_uri": "#Citizenship"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship",
+      "name": "Citizenship",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Citizenship"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "Legal connection of a Person with a state, with which certain rights and obligations are attached."
       },
       "usage": {
         "de": "Enter your translation here",
-        "en": "The descent can be biological as well as non-biological, eg adoption. Descent can also be viewed in the ascending line. The concept is narrower than kinship that also includes marriage. There must be a direct link between the persons (no link between child and grandparent)."
+        "en": "Usually derives from the Nationality of the Person. The rights and obligations in question are civil rights (eg freedom of religion) or of a political (eg right to vote) or social nature (eg right to benefits)."
       },
-      "parents": [
-        {
-          "label": "Personal relation",
-          "name": "Persoonsrelatie",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
-          "scoped_uri": "#Personal relation"
-        }
-      ],
+      "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#afstammingsType",
-          "name": "descent type",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "descent type"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Type of descent."
-          },
+          "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship.jurisdiction",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Afstamming",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Afstamming"
+              "EA-Name": "Citizenship",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship"
             }
           ],
           "range": [
             {
-              "range_label": "Afstammingstype",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "Jurisdiction",
+              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
               "range_label": {
                 "de": "Enter your translation here",
-                "en": "Descent type"
+                "en": "Jurisdiction"
               }
             }
           ],
@@ -85,36 +119,31 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#datumVanAfstamming",
-          "name": "date of descent",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "date of descent"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The date on which yhe descent is registered."
-          },
+          "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship.person",
+          "name": "",
+          "sort": "",
+          "label": {},
+          "description": {},
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Afstamming",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Afstamming"
+              "EA-Name": "Citizenship",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship"
             }
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "Person",
+              "range_uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/person#Person",
               "range_label": {
-                "de": "DateTime"
+                "de": "Enter your translation here",
+                "en": "Person"
               }
             }
           ],
@@ -124,7 +153,7 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat",
+      "uri": "https://data.vlaanderen.be/ns/persoon#CivilState",
       "name": "Civil State",
       "label": {
         "de": "Enter your translation here",
@@ -153,13 +182,13 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "BurgerlijkeStaat",
-              "uri": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat"
+              "EA-Name": "CivilState",
+              "uri": "https://data.vlaanderen.be/ns/persoon#CivilState"
             }
           ],
           "range": [
             {
-              "range_label": "BurgerlijkeStaatType",
+              "range_label": "CivilStateType",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -170,6 +199,157 @@
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Civil state type"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#Cohabitation",
+      "name": "Cohabitation",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Cohabitation"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "Arrangement whereby two people who are not married live together. Can, just like a marriage, form the basis of a household. Can be legally registered."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Personal relation",
+          "name": "PersonalRelation",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation",
+          "scoped_uri": "#Personal relation"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#Decease",
+      "name": "Decease",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Decease"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "death of a person."
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Personal event",
+          "name": "PersonalEvent",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalEvent",
+          "scoped_uri": "#Personal event"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#Descent",
+      "name": "Descent",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Descent"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "Descent is the descending line of blood relationship between different generations."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "The descent can be biological as well as non-biological, eg adoption. Descent can also be viewed in the ascending line. The concept is narrower than kinship that also includes marriage. There must be a direct link between the persons (no link between child and grandparent)."
+      },
+      "parents": [
+        {
+          "label": "Personal relation",
+          "name": "PersonalRelation",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation",
+          "scoped_uri": "#Personal relation"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#dateOfDescent",
+          "name": "date of descent",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "date of descent"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The date on which yhe descent is registered."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Descent",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Descent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "de": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#descentType",
+          "name": "descent type",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "descent type"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Type of descent."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Descent",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Descent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DescentType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Descent type"
               }
             }
           ],
@@ -197,133 +377,70 @@
       "parents": [
         {
           "label": "Residence",
-          "name": "Verblijfplaats",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats",
+          "name": "residence",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#residence",
           "scoped_uri": "#Residence"
         }
       ],
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Geboorte",
-      "name": "Birth",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Foreigner",
+      "name": "Foreigner",
       "label": {
         "de": "Enter your translation here",
-        "en": "Birth"
+        "en": "Foreigner"
       },
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "The person being born."
+        "en": "Person who does not have the nationality of the country where he resides."
       },
-      "usage": {},
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "Therefore, the person cannot be called a citizen. As a resident however the foreigner enjoys at least a subset of the civil rights that a citizen has. Freedom of religion, for example, but not necessarily the right to vote."
+      },
       "parents": [
         {
-          "label": "Personal event",
-          "name": "Persoonsgebeurtenis",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis",
-          "scoped_uri": "#Personal event"
+          "label": "Citizenship",
+          "name": "Citizenship",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship",
+          "scoped_uri": "#Citizenship"
         }
       ],
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#GeenInwoner",
-      "name": "Non resident",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Guardianship",
+      "name": "Guardianship",
       "label": {
         "de": "Enter your translation here",
-        "en": "Non resident"
+        "en": "Guardianship"
       },
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "Person not residing in a certain place or country."
+        "en": "Situation where a person acting as guardian serves another person and in that capacity is responsible for this person and his goods."
       },
       "usage": {
         "de": "Enter your translation here",
-        "en": "Place or country is represented here by the jurisdiction entity."
+        "en": "This is the case, for example, for minors who have lost their parents or for adults who have lost their intellectual faculties."
       },
       "parents": [
         {
-          "label": "Residency",
-          "name": "Inwonerschap",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap",
-          "scoped_uri": "#Residency"
+          "label": "Personal relation",
+          "name": "PersonalRelation",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation",
+          "scoped_uri": "#Personal relation"
         }
       ],
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon",
-      "name": "Registered person",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Registered person"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Person whose details are officially listed in a register."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "This register is usually a population register, but it can also be an electoral register, for example. The registered data relates to the identity (e.g. surname and first name) and the place of residence of the person and to important life events such as birth, marriage, decease, etc. These data are typically registered by the government, they offer the registered person legal protection and they allow the government to compile basic statistics about its population."
-      },
-      "parents": [
-        {
-          "label": "Person",
-          "name": "Persoon",
-          "package": "OSLO-Persoon",
-          "uri": "http://www.w3.org/ns/person#Person",
-          "scoped_uri": "#Person"
-        }
-      ],
-      "properties": [
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#registratie",
-          "name": "registration",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "registration"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Identification code of the person in the register."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "GeregistreerdPersoon",
-              "uri": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identificator",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Identifier"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Gezin",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Household",
       "name": "Household",
       "label": {
         "de": "Enter your translation here",
@@ -341,15 +458,15 @@
       "parents": [
         {
           "label": "Organization",
-          "name": "Organisatie",
-          "package": "OSLO-Organisatie",
+          "name": "Organization",
+          "package": "org",
           "uri": "http://www.w3.org/ns/org#Organization",
           "scoped_uri": "#Organization"
         }
       ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#gezinsadres",
+          "uri": "https://data.vlaanderen.be/ns/persoon#householdAddress",
           "name": "household address",
           "sort": "Enter your translation here",
           "label": {
@@ -366,13 +483,13 @@
           },
           "domain": [
             {
-              "EA-Name": "Gezin",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Gezin"
+              "EA-Name": "Household",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Household"
             }
           ],
           "range": [
             {
-              "range_label": "Adresvoorstelling",
+              "range_label": "AddressRepresentation",
               "range_uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
@@ -390,45 +507,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#gezinshoofd",
-          "name": "householder",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "householder"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Designated head of the household."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Gezin",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Gezin"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Persoon",
-              "range_uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Person (D)",
-              "range_puri": "http://www.w3.org/ns/person#Person",
-              "range_label": {
-                "de": "Person (D)",
-                "en": "Person"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#gezinslid",
+          "uri": "https://data.vlaanderen.be/ns/persoon#householdMember",
           "name": "household member",
           "sort": "Enter your translation here",
           "label": {
@@ -442,33 +521,71 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Gezin",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Gezin"
+              "EA-Name": "Household",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Household"
             }
           ],
           "range": [
             {
-              "range_label": "Persoon",
+              "range_label": "Person",
               "range_uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Person (D)",
+              "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/ns/person#Person",
               "range_label": {
-                "de": "Person (D)",
+                "de": "Enter your translation here",
                 "en": "Person"
               }
             }
           ],
           "cardinality": "1..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#householder",
+          "name": "householder",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "householder"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Designated head of the household."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Household",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Household"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Person",
+              "range_uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/person#Person",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Person"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Gezinsrelatie",
+      "uri": "https://data.vlaanderen.be/ns/persoon#HouseholdRelation",
       "name": "Household relation",
       "label": {
         "de": "Enter your translation here",
@@ -483,15 +600,15 @@
       "parents": [
         {
           "label": "Personal relation",
-          "name": "Persoonsrelatie",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
+          "name": "PersonalRelation",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation",
           "scoped_uri": "#Personal relation"
         }
       ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#gezinsrelatietype",
+          "uri": "https://data.vlaanderen.be/ns/persoon#typeOfHouseholdRelation",
           "name": "type of household relation",
           "sort": "Enter your translation here",
           "label": {
@@ -508,13 +625,13 @@
           },
           "domain": [
             {
-              "EA-Name": "Gezinsrelatie",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Gezinsrelatie"
+              "EA-Name": "HouseholdRelation",
+              "uri": "https://data.vlaanderen.be/ns/persoon#HouseholdRelation"
             }
           ],
           "range": [
             {
-              "range_label": "Gezinsrelatietype",
+              "range_label": "HouseholdRelationType",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -534,7 +651,7 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Huwelijk",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Marriage",
       "name": "Marriage",
       "label": {
         "de": "Enter your translation here",
@@ -552,162 +669,16 @@
       "parents": [
         {
           "label": "Personal relation",
-          "name": "Persoonsrelatie",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
+          "name": "PersonalRelation",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation",
           "scoped_uri": "#Personal relation"
         }
       ],
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Inwoner",
-      "name": "Resident",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Resident"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Person who lives in a certain place or country."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "This place or country is represented here by the jurisdiction entity."
-      },
-      "parents": [
-        {
-          "label": "Residency",
-          "name": "Inwonerschap",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap",
-          "scoped_uri": "#Residency"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap",
-      "name": "Residency",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Residency"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "The fact that a person resides in a place or country."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.jurisdictie",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Inwonerschap",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Jurisdictie",
-              "range_uri": "http://purl.org/dc/terms/Jurisdiction"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://purl.org/dc/terms/Jurisdiction",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Jurisdiction"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.persoon",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Inwonerschap",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Persoon",
-              "range_uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Person (D)",
-              "range_puri": "http://www.w3.org/ns/person#Person",
-              "range_label": {
-                "de": "Person (D)",
-                "en": "Person"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#heeftVerblijfplaats",
-          "name": "has residence",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has residence"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Place where the person resides."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Inwonerschap",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Verblijfplaats",
-              "range_uri": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Residence"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Nationaliteit",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Nationality",
       "name": "Nationality",
       "label": {
         "de": "Enter your translation here",
@@ -725,7 +696,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#nationaliteit",
+          "uri": "https://data.vlaanderen.be/ns/persoon#nationality",
           "name": "nationality",
           "sort": "Enter your translation here",
           "label": {
@@ -739,13 +710,13 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Nationaliteit",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Nationaliteit"
+              "EA-Name": "Nationality",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Nationality"
             }
           ],
           "range": [
             {
-              "range_label": "Nationaliteitscode",
+              "range_label": "NationalityCode",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -765,31 +736,34 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Overlijden",
-      "name": "Decease",
+      "uri": "https://data.vlaanderen.be/ns/persoon#NonResident",
+      "name": "Non resident",
       "label": {
         "de": "Enter your translation here",
-        "en": "Decease"
+        "en": "Non resident"
       },
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "death of a person."
+        "en": "Person not residing in a certain place or country."
       },
-      "usage": {},
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "Place or country is represented here by the jurisdiction entity."
+      },
       "parents": [
         {
-          "label": "Personal event",
-          "name": "Persoonsgebeurtenis",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis",
-          "scoped_uri": "#Personal event"
+          "label": "Residency",
+          "name": "Residency",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Residency",
+          "scoped_uri": "#Residency"
         }
       ],
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#PermanentInwoner",
+      "uri": "https://data.vlaanderen.be/ns/persoon#PermanentResident",
       "name": "Permant resident",
       "label": {
         "de": "Enter your translation here",
@@ -807,16 +781,16 @@
       "parents": [
         {
           "label": "Resident",
-          "name": "Inwoner",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Inwoner",
+          "name": "Resident",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Resident",
           "scoped_uri": "#Resident"
         }
       ],
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis",
+      "uri": "https://data.vlaanderen.be/ns/persoon#PersonalEvent",
       "name": "Personal event",
       "label": {
         "de": "Enter your translation here",
@@ -831,7 +805,45 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#datum",
+          "uri": "https://data.vlaanderen.be/ns/persoon#country",
+          "name": "country",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "country"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Country where the event took place."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PersonalEvent",
+              "uri": "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Place",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Place"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#date",
           "name": "date",
           "sort": "Enter your translation here",
           "label": {
@@ -845,8 +857,8 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoonsgebeurtenis",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
+              "EA-Name": "PersonalEvent",
+              "uri": "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
             }
           ],
           "range": [
@@ -868,45 +880,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#land",
-          "name": "country",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "country"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Country where the event took place."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Persoonsgebeurtenis",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Plaats",
-              "range_uri": "http://purl.org/dc/terms/Location"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "http://purl.org/dc/terms/Location",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Place"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#plaats",
+          "uri": "https://data.vlaanderen.be/ns/persoon#place",
           "name": "place",
           "sort": "Enter your translation here",
           "label": {
@@ -920,13 +894,13 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoonsgebeurtenis",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
+              "EA-Name": "PersonalEvent",
+              "uri": "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
             }
           ],
           "range": [
             {
-              "range_label": "Plaats",
+              "range_label": "Place",
               "range_uri": "http://purl.org/dc/terms/Location"
             }
           ],
@@ -946,7 +920,7 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
+      "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation",
       "name": "Personal relation",
       "label": {
         "de": "Enter your translation here",
@@ -964,7 +938,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source",
           "name": "",
           "sort": "",
           "label": {},
@@ -972,22 +946,22 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoonsrelatie",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+              "EA-Name": "PersonalRelation",
+              "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
             }
           ],
           "range": [
             {
-              "range_label": "Persoon",
+              "range_label": "Person",
               "range_uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Person (D)",
+              "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/ns/person#Person",
               "range_label": {
-                "de": "Person (D)",
+                "de": "Enter your translation here",
                 "en": "Person"
               }
             }
@@ -996,7 +970,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source",
+          "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source",
           "name": "",
           "sort": "",
           "label": {},
@@ -1004,22 +978,22 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoonsrelatie",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+              "EA-Name": "PersonalRelation",
+              "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
             }
           ],
           "range": [
             {
-              "range_label": "Persoon",
+              "range_label": "Person",
               "range_uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Person (D)",
+              "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/ns/person#Person",
               "range_label": {
-                "de": "Person (D)",
+                "de": "Enter your translation here",
                 "en": "Person"
               }
             }
@@ -1030,73 +1004,88 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Samenwonen",
-      "name": "Cohabitation",
+      "uri": "https://data.vlaanderen.be/ns/persoon#RegisteredPerson",
+      "name": "Registered person",
       "label": {
         "de": "Enter your translation here",
-        "en": "Cohabitation"
+        "en": "Registered person"
       },
       "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
-        "en": "Arrangement whereby two people who are not married live together. Can, just like a marriage, form the basis of a household. Can be legally registered."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "label": "Personal relation",
-          "name": "Persoonsrelatie",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
-          "scoped_uri": "#Personal relation"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburger",
-      "name": "Citizen",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Citizen"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Person legally associated with a state."
-      },
-      "usage": {},
-      "parents": [
-        {
-          "label": "Citizenship",
-          "name": "Staatsburgerschap",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap",
-          "scoped_uri": "#Citizenship"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap",
-      "name": "Citizenship",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Citizenship"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Legal connection of a Person with a state, with which certain rights and obligations are attached."
+        "en": "Person whose details are officially listed in a register."
       },
       "usage": {
         "de": "Enter your translation here",
-        "en": "Usually derives from the Nationality of the Person. The rights and obligations in question are civil rights (eg freedom of religion) or of a political (eg right to vote) or social nature (eg right to benefits)."
+        "en": "This register is usually a population register, but it can also be an electoral register, for example. The registered data relates to the identity (e.g. surname and first name) and the place of residence of the person and to important life events such as birth, marriage, decease, etc. These data are typically registered by the government, they offer the registered person legal protection and they allow the government to compile basic statistics about its population."
       },
+      "parents": [
+        {
+          "label": "Person",
+          "name": "Person",
+          "package": "ICEG-Person",
+          "uri": "http://www.w3.org/ns/person#Person",
+          "scoped_uri": "#Person"
+        }
+      ],
+      "properties": [
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#registration",
+          "name": "registration",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "registration"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Identification code of the person in the register."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "RegisteredPerson",
+              "uri": "https://data.vlaanderen.be/ns/persoon#RegisteredPerson"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#Residency",
+      "name": "Residency",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Residency"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "The fact that a person resides in a place or country."
+      },
+      "usage": {},
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.jurisdictie",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Residency.jurisdiction",
           "name": "",
           "sort": "",
           "label": {},
@@ -1104,13 +1093,13 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Staatsburgerschap",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap"
+              "EA-Name": "Residency",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Residency"
             }
           ],
           "range": [
             {
-              "range_label": "Jurisdictie",
+              "range_label": "Jurisdiction",
               "range_uri": "http://purl.org/dc/terms/Jurisdiction"
             }
           ],
@@ -1128,7 +1117,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.persoon",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Residency.person",
           "name": "",
           "sort": "",
           "label": {},
@@ -1136,33 +1125,98 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Staatsburgerschap",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap"
+              "EA-Name": "Residency",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Residency"
             }
           ],
           "range": [
             {
-              "range_label": "Persoon",
+              "range_label": "Person",
               "range_uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Person (D)",
+              "range_uri": "#Enter your translation here",
               "range_puri": "http://www.w3.org/ns/person#Person",
               "range_label": {
-                "de": "Person (D)",
+                "de": "Enter your translation here",
                 "en": "Person"
               }
             }
           ],
           "cardinality": "1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#hasResidence",
+          "name": "has residence",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has residence"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Place where the person resides."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Residency",
+              "uri": "https://data.vlaanderen.be/ns/persoon#Residency"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "residence",
+              "range_uri": "https://data.vlaanderen.be/ns/persoon#residence"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://data.vlaanderen.be/ns/persoon#residence",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Residence"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#TijdelijkInwoner",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Resident",
+      "name": "Resident",
+      "label": {
+        "de": "Enter your translation here",
+        "en": "Resident"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "de": "Enter your translation here",
+        "en": "Person who lives in a certain place or country."
+      },
+      "usage": {
+        "de": "Enter your translation here",
+        "en": "This place or country is represented here by the jurisdiction entity."
+      },
+      "parents": [
+        {
+          "label": "Residency",
+          "name": "Residency",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Residency",
+          "scoped_uri": "#Residency"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#TemporaryResident",
       "name": "Temporary resident",
       "label": {
         "de": "Enter your translation here",
@@ -1180,16 +1234,16 @@
       "parents": [
         {
           "label": "Resident",
-          "name": "Inwoner",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Inwoner",
+          "name": "Resident",
+          "package": "ICEG-Person",
+          "uri": "https://data.vlaanderen.be/ns/persoon#Resident",
           "scoped_uri": "#Resident"
         }
       ],
       "properties": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats",
+      "uri": "https://data.vlaanderen.be/ns/persoon#residence",
       "name": "Residence",
       "label": {
         "de": "Enter your translation here",
@@ -1204,7 +1258,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#verblijfsadres",
+          "uri": "https://data.vlaanderen.be/ns/persoon#residenceAddress",
           "name": "residence address",
           "sort": "Enter your translation here",
           "label": {
@@ -1218,13 +1272,13 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Verblijfplaats",
-              "uri": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats"
+              "EA-Name": "residence",
+              "uri": "https://data.vlaanderen.be/ns/persoon#residence"
             }
           ],
           "range": [
             {
-              "range_label": "Adresvoorstelling",
+              "range_label": "AddressRepresentation",
               "range_uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
@@ -1242,60 +1296,6 @@
           "codelist_uri": ""
         }
       ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Voogdij",
-      "name": "Guardianship",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Guardianship"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Situation where a person acting as guardian serves another person and in that capacity is responsible for this person and his goods."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "This is the case, for example, for minors who have lost their parents or for adults who have lost their intellectual faculties."
-      },
-      "parents": [
-        {
-          "label": "Personal relation",
-          "name": "Persoonsrelatie",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie",
-          "scoped_uri": "#Personal relation"
-        }
-      ],
-      "properties": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Vreemdeling",
-      "name": "Foreigner",
-      "label": {
-        "de": "Enter your translation here",
-        "en": "Foreigner"
-      },
-      "sort": "Enter your translation here",
-      "description": {
-        "de": "Enter your translation here",
-        "en": "Person who does not have the nationality of the country where he resides."
-      },
-      "usage": {
-        "de": "Enter your translation here",
-        "en": "Therefore, the person cannot be called a citizen. As a resident however the foreigner enjoys at least a subset of the civil rights that a citizen has. Freedom of religion, for example, but not necessarily the right to vote."
-      },
-      "parents": [
-        {
-          "label": "Citizenship",
-          "name": "Staatsburgerschap",
-          "package": "OSLO-Persoon",
-          "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap",
-          "scoped_uri": "#Citizenship"
-        }
-      ],
-      "properties": []
     },
     {
       "uri": "http://purl.org/dc/terms/Agent",
@@ -1329,7 +1329,7 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/generiek#plaats",
+          "uri": "http://fixme.com#place",
           "name": "place",
           "sort": "Enter your translation here",
           "label": {
@@ -1343,13 +1343,13 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Jurisdictie",
+              "EA-Name": "Jurisdiction",
               "uri": "http://purl.org/dc/terms/Jurisdiction"
             }
           ],
           "range": [
             {
-              "range_label": "Plaats",
+              "range_label": "Place",
               "range_uri": "http://purl.org/dc/terms/Location"
             }
           ],
@@ -1385,11 +1385,11 @@
       "properties": [
         {
           "uri": "http://www.w3.org/2000/01/rdf-schema#label",
-          "name": "label",
+          "name": "place name",
           "sort": "Enter your translation here",
           "label": {
             "de": "Enter your translation here",
-            "en": "label"
+            "en": "place name"
           },
           "description": {
             "de": "Enter your translation here",
@@ -1398,7 +1398,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Plaats",
+              "EA-Name": "Place",
               "uri": "http://purl.org/dc/terms/Location"
             }
           ],
@@ -1442,7 +1442,7 @@
         {
           "label": "Agent",
           "name": "Agent",
-          "package": "OSLO-Generiek",
+          "package": "dcterms",
           "uri": "http://purl.org/dc/terms/Agent",
           "scoped_uri": "#Agent"
         }
@@ -1453,30 +1453,30 @@
       "uri": "http://www.w3.org/ns/person#Person",
       "name": "Person",
       "label": {
-        "de": "Person (D)",
+        "de": "Enter your translation here",
         "en": "Person"
       },
-      "sort": "Person (D)",
+      "sort": "Enter your translation here",
       "description": {
         "de": "Enter your translation here",
         "en": "A natural person."
       },
       "usage": {
-        "de": "[UPDATED] TODO (D)",
+        "de": "Enter your translation here",
         "en": "In case law, it concerns a person (in the legal sense, ie with its own legal personality) of the human species, ie a physical person. The counterpart is the legal person, a legal construction that gives a private or public organization the same legal personality as a natural person (eg can also have debts, conclude contracts, be sued, etc.)."
       },
       "parents": [
         {
           "label": "Agent",
           "name": "Agent",
-          "package": "OSLO-Generiek",
+          "package": "dcterms",
           "uri": "http://purl.org/dc/terms/Agent",
           "scoped_uri": "#Agent"
         }
       ],
       "properties": [
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#alternatieveNaam",
+          "uri": "https://data.vlaanderen.be/ns/persoon#alternativeName",
           "name": "alternative name",
           "sort": "Enter your translation here",
           "label": {
@@ -1490,7 +1490,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
@@ -1513,7 +1513,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#gebruikteVoornaam",
+          "uri": "https://data.vlaanderen.be/ns/persoon#firstGivenName",
           "name": "first given name",
           "sort": "Enter your translation here",
           "label": {
@@ -1527,7 +1527,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
@@ -1550,7 +1550,44 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#geslacht",
+          "uri": "https://data.vlaanderen.be/ns/persoon#fullName",
+          "name": "full name",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "full name"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "The full name of the person, usually the combination of given names and family name."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "de": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#gender",
           "name": "gender",
           "sort": "Enter your translation here",
           "label": {
@@ -1564,13 +1601,13 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Geslacht",
+              "range_label": "Gender",
               "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
@@ -1588,45 +1625,7 @@
           "codelist_uri": "http://publications.europa.eu/mdr/authority/human-sex/"
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#heeftBurgerlijkeStaat",
-          "name": "has civil state",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has civil state"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Civil status of the person."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Persoon",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "BurgerlijkeStaat",
-              "range_uri": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Civil State"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#heeftGeboorte",
+          "uri": "https://data.vlaanderen.be/ns/persoon#hasBirth",
           "name": "has birth",
           "sort": "Enter your translation here",
           "label": {
@@ -1640,20 +1639,20 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Geboorte",
-              "range_uri": "https://data.vlaanderen.be/ns/persoon#Geboorte"
+              "range_label": "Birth",
+              "range_uri": "https://data.vlaanderen.be/ns/persoon#Birth"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/persoon#Geboorte",
+              "range_puri": "https://data.vlaanderen.be/ns/persoon#Birth",
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Birth"
@@ -1661,6 +1660,158 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#hasCivilState",
+          "name": "has civil state",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has civil state"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Civil status of the person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "CivilState",
+              "range_uri": "https://data.vlaanderen.be/ns/persoon#CivilState"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://data.vlaanderen.be/ns/persoon#CivilState",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Civil State"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#hasDecease",
+          "name": "has decease",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has decease"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Decease data of a person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Decease",
+              "range_uri": "https://data.vlaanderen.be/ns/persoon#Decease"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://data.vlaanderen.be/ns/persoon#Decease",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Decease"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#hasRelationWith",
+          "name": "has relation with",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "has relation with"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Other person with which the person is related."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Person",
+              "range_uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/person#Person",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Person"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.vlaanderen.be/ns/persoon#headOf",
+          "name": "head of",
+          "sort": "Enter your translation here",
+          "label": {
+            "de": "Enter your translation here",
+            "en": "head of"
+          },
+          "description": {
+            "de": "Enter your translation here",
+            "en": "Person who usually represents the household."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Household",
+              "range_uri": "https://data.vlaanderen.be/ns/persoon#Household"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://data.vlaanderen.be/ns/persoon#Household",
+              "range_label": {
+                "de": "Enter your translation here",
+                "en": "Household"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -1678,20 +1829,20 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Nationaliteit",
-              "range_uri": "https://data.vlaanderen.be/ns/persoon#Nationaliteit"
+              "range_label": "Nationality",
+              "range_uri": "https://data.vlaanderen.be/ns/persoon#Nationality"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/persoon#Nationaliteit",
+              "range_puri": "https://data.vlaanderen.be/ns/persoon#Nationality",
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Nationality"
@@ -1702,121 +1853,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.vlaanderen.be/ns/persoon#heeftOverlijden",
-          "name": "has decease",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has decease"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Decease data of a person."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Persoon",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Overlijden",
-              "range_uri": "https://data.vlaanderen.be/ns/persoon#Overlijden"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/persoon#Overlijden",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Decease"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#heeftRelatieMet",
-          "name": "has relation with",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "has relation with"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Other person with which the person is related."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Persoon",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Persoon",
-              "range_uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Person (D)",
-              "range_puri": "http://www.w3.org/ns/person#Person",
-              "range_label": {
-                "de": "Person (D)",
-                "en": "Person"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#isHoofdVan",
-          "name": "head of",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "head of"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "Person who usually represents the household."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Persoon",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Gezin",
-              "range_uri": "https://data.vlaanderen.be/ns/persoon#Gezin"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/persoon#Gezin",
-              "range_label": {
-                "de": "Enter your translation here",
-                "en": "Household"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#isLidVan",
+          "uri": "https://data.vlaanderen.be/ns/persoon#memberOf",
           "name": "member of",
           "sort": "Enter your translation here",
           "label": {
@@ -1830,20 +1867,20 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Gezin",
-              "range_uri": "https://data.vlaanderen.be/ns/persoon#Gezin"
+              "range_label": "Household",
+              "range_uri": "https://data.vlaanderen.be/ns/persoon#Household"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Enter your translation here",
-              "range_puri": "https://data.vlaanderen.be/ns/persoon#Gezin",
+              "range_puri": "https://data.vlaanderen.be/ns/persoon#Household",
               "range_label": {
                 "de": "Enter your translation here",
                 "en": "Household"
@@ -1851,43 +1888,6 @@
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://data.vlaanderen.be/ns/persoon#volledigeNaam",
-          "name": "full name",
-          "sort": "Enter your translation here",
-          "label": {
-            "de": "Enter your translation here",
-            "en": "full name"
-          },
-          "description": {
-            "de": "Enter your translation here",
-            "en": "The full name of the person, usually the combination of given names and family name."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Persoon",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "de": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -1905,7 +1905,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
@@ -1946,7 +1946,7 @@
           },
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
@@ -1986,13 +1986,13 @@
           },
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Jurisdictie",
+              "range_label": "Jurisdiction",
               "range_uri": "http://purl.org/dc/terms/Jurisdiction"
             }
           ],
@@ -2024,7 +2024,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
@@ -2064,13 +2064,13 @@
           },
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
           "range": [
             {
-              "range_label": "Jurisdictie",
+              "range_label": "Jurisdiction",
               "range_uri": "http://purl.org/dc/terms/Jurisdiction"
             }
           ],
@@ -2105,7 +2105,7 @@
           },
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
@@ -2142,7 +2142,7 @@
           "usage": {},
           "domain": [
             {
-              "EA-Name": "Persoon",
+              "EA-Name": "Person",
               "uri": "http://www.w3.org/ns/person#Person"
             }
           ],
@@ -2169,7 +2169,7 @@
   ],
   "properties": [
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.jurisdictie",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship.jurisdiction",
       "name": {
         "undefined": ""
       },
@@ -2183,7 +2183,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.persoon",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Citizenship.person",
       "name": {
         "undefined": ""
       },
@@ -2197,7 +2197,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source",
+      "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source",
       "name": {
         "undefined": ""
       },
@@ -2211,7 +2211,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source",
+      "uri": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source",
       "name": {
         "undefined": ""
       },
@@ -2225,7 +2225,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.jurisdictie",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Residency.jurisdiction",
       "name": {
         "undefined": ""
       },
@@ -2239,7 +2239,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.persoon",
+      "uri": "https://data.vlaanderen.be/ns/persoon#Residency.person",
       "name": {
         "undefined": ""
       },
@@ -2253,7 +2253,25 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#afstammingsType",
+      "uri": "https://data.vlaanderen.be/ns/persoon#country",
+      "name": {
+        "de": "Enter your translation here",
+        "en": "country",
+        "undefined": "country"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "http://purl.org/vocab/bio/0.1/place"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#descentType",
       "name": {
         "de": "Enter your translation here",
         "en": "descent type",
@@ -2269,7 +2287,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#geslacht",
+      "uri": "https://data.vlaanderen.be/ns/persoon#gender",
       "name": {
         "de": "Enter your translation here",
         "en": "gender",
@@ -2285,11 +2303,11 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#gezinsadres",
+      "uri": "https://data.vlaanderen.be/ns/persoon#hasBirth",
       "name": {
         "de": "Enter your translation here",
-        "en": "household address",
-        "undefined": "household address"
+        "en": "has birth",
+        "undefined": "has birth"
       },
       "description": {},
       "domain": [
@@ -2298,58 +2316,12 @@
       "range": [
         null
       ],
-      "parents": []
+      "parents": [
+        "http://purl.org/vocab/bio/0.1/birth"
+      ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#gezinshoofd",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "householder",
-        "undefined": "householder"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#gezinslid",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "household member",
-        "undefined": "household member"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#gezinsrelatietype",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "type of household relation",
-        "undefined": "type of household relation"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#heeftBurgerlijkeStaat",
+      "uri": "https://data.vlaanderen.be/ns/persoon#hasCivilState",
       "name": {
         "de": "Enter your translation here",
         "en": "has civil state",
@@ -2365,11 +2337,11 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#heeftGeboorte",
+      "uri": "https://data.vlaanderen.be/ns/persoon#hasDecease",
       "name": {
         "de": "Enter your translation here",
-        "en": "has birth",
-        "undefined": "has birth"
+        "en": "has decease",
+        "undefined": "has decease"
       },
       "description": {},
       "domain": [
@@ -2379,7 +2351,57 @@
         null
       ],
       "parents": [
-        "http://purl.org/vocab/bio/0.1/birth"
+        "http://purl.org/vocab/bio/0.1/death"
+      ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#hasRelationWith",
+      "name": {
+        "de": "Enter your translation here",
+        "en": "has relation with",
+        "undefined": "has relation with"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#hasResidence",
+      "name": {
+        "de": "Enter your translation here",
+        "en": "has residence",
+        "undefined": "has residence"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#headOf",
+      "name": {
+        "de": "Enter your translation here",
+        "en": "head of",
+        "undefined": "head of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": [
+        "https://data.vlaanderen.be/ns/persoon#isLidVan"
       ]
     },
     {
@@ -2399,29 +2421,11 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#heeftOverlijden",
+      "uri": "https://data.vlaanderen.be/ns/persoon#householdAddress",
       "name": {
         "de": "Enter your translation here",
-        "en": "has decease",
-        "undefined": "has decease"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": [
-        "http://purl.org/vocab/bio/0.1/death"
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#heeftRelatieMet",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "has relation with",
-        "undefined": "has relation with"
+        "en": "household address",
+        "undefined": "household address"
       },
       "description": {},
       "domain": [
@@ -2433,11 +2437,11 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#heeftVerblijfplaats",
+      "uri": "https://data.vlaanderen.be/ns/persoon#householdMember",
       "name": {
         "de": "Enter your translation here",
-        "en": "has residence",
-        "undefined": "has residence"
+        "en": "household member",
+        "undefined": "household member"
       },
       "description": {},
       "domain": [
@@ -2449,11 +2453,11 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#isHoofdVan",
+      "uri": "https://data.vlaanderen.be/ns/persoon#householder",
       "name": {
         "de": "Enter your translation here",
-        "en": "head of",
-        "undefined": "head of"
+        "en": "householder",
+        "undefined": "householder"
       },
       "description": {},
       "domain": [
@@ -2462,12 +2466,10 @@
       "range": [
         null
       ],
-      "parents": [
-        "https://data.vlaanderen.be/ns/persoon#isLidVan"
-      ]
+      "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#isLidVan",
+      "uri": "https://data.vlaanderen.be/ns/persoon#memberOf",
       "name": {
         "de": "Enter your translation here",
         "en": "member of",
@@ -2485,25 +2487,7 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#land",
-      "name": {
-        "de": "Enter your translation here",
-        "en": "country",
-        "undefined": "country"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": [
-        "http://purl.org/vocab/bio/0.1/place"
-      ]
-    },
-    {
-      "uri": "https://data.vlaanderen.be/ns/persoon#nationaliteit",
+      "uri": "https://data.vlaanderen.be/ns/persoon#nationality",
       "name": {
         "de": "Enter your translation here",
         "en": "nationality",
@@ -2519,7 +2503,7 @@
       "parents": []
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#plaats",
+      "uri": "https://data.vlaanderen.be/ns/persoon#place",
       "name": {
         "de": "Enter your translation here",
         "en": "place",
@@ -2537,7 +2521,7 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#registratie",
+      "uri": "https://data.vlaanderen.be/ns/persoon#registration",
       "name": {
         "de": "Enter your translation here",
         "en": "registration",
@@ -2553,6 +2537,22 @@
       "parents": [
         "http://www.w3.org/ns/adms#Identifier"
       ]
+    },
+    {
+      "uri": "https://data.vlaanderen.be/ns/persoon#residenceAddress",
+      "name": {
+        "de": "Enter your translation here",
+        "en": "residence address",
+        "undefined": "residence address"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
     },
     {
       "uri": "https://data.vlaanderen.be/ns/persoon#type",
@@ -2573,11 +2573,11 @@
       ]
     },
     {
-      "uri": "https://data.vlaanderen.be/ns/persoon#verblijfsadres",
+      "uri": "https://data.vlaanderen.be/ns/persoon#typeOfHouseholdRelation",
       "name": {
         "de": "Enter your translation here",
-        "en": "residence address",
-        "undefined": "residence address"
+        "en": "type of household relation",
+        "undefined": "type of household relation"
       },
       "description": {},
       "domain": [

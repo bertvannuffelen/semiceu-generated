@@ -40,39 +40,41 @@
   "@id": "https://semiceu.github.io/shacl/iceg-person_de",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#AfstammingShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#BirthShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Birth"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#CitizenShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Citizen"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#CitizenshipShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
+          "sh:class": "http://purl.org/dc/terms/Jurisdiction",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#afstammingsType"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#Citizenship.jurisdiction"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
+          "sh:class": "http://www.w3.org/ns/person#Person",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#datumVanAfstamming"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#Citizenship.person"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Afstamming"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Citizenship"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#BurgerlijkeStaatShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#CivilStateShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -89,191 +91,24 @@
           "sh:path": "https://data.vlaanderen.be/ns/persoon#type"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#CivilState"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#DomicilieShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#CohabitationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Domicilie"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Cohabitation"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GeboorteShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#DeceaseShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Geboorte"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Decease"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GeenInwonerShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#GeenInwoner"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GeregistreerdPersoonShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#registratie"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#GeregistreerdPersoon"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GezinShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#gezinsadres"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/person#Person",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#gezinshoofd"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/person#Person",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#gezinslid"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Gezin"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GezinsrelatieShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#gezinsrelatietype"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Gezinsrelatie"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#HuwelijkShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Huwelijk"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#InwonerShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Inwoner"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#InwonerschapShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://purl.org/dc/terms/Jurisdiction",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.jurisdictie"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/person#Person",
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#Inwonerschap.persoon"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#heeftVerblijfplaats"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Inwonerschap"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#NationaliteitShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#nationaliteit"
-        }
-      ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Nationaliteit"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#OverlijdenShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Overlijden"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PermanentInwonerShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#PermanentInwoner"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PersoonsgebeurtenisShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#DescentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -287,10 +122,10 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#datum"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#dateOfDescent"
         },
         {
-          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -299,25 +134,181 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#land"
-        },
-        {
-          "sh:class": "http://purl.org/dc/terms/Location",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#plaats"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#descentType"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Persoonsgebeurtenis"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Descent"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PersoonsrelatieShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#DomicilieShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Domicilie"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#ForeignerShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Foreigner"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GuardianshipShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Guardianship"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#HouseholdShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#householdAddress"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/person#Person",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#householdMember"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/person#Person",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#householder"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Household"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#HouseholdRelationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#typeOfHouseholdRelation"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#HouseholdRelation"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#MarriageShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Marriage"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#NationalityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#nationality"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Nationality"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#NonResidentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#NonResident"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PermanentResidentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#PermanentResident"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PersonalEventShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#country"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#date"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Location",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#place"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#PersonalEvent"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PersonalRelationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -325,33 +316,39 @@
           "sh:class": "http://www.w3.org/ns/person#Person",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source"
         },
         {
           "sh:class": "http://www.w3.org/ns/person#Person",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie.persoon.source"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#PersonalRelation.person.source"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Persoonsrelatie"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#PersonalRelation"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#SamenwonenShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#RegisteredPersonShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Samenwonen"
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/adms#Identifier",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#registration"
+        }
+      ],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#RegisteredPerson"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#StaatsburgerShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Staatsburger"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#StaatsburgerschapShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#ResidencyShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -359,26 +356,43 @@
           "sh:class": "http://purl.org/dc/terms/Jurisdiction",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.jurisdictie"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#Residency.jurisdiction"
         },
         {
           "sh:class": "http://www.w3.org/ns/person#Person",
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.persoon"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#Residency.person"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/persoon#residence",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#hasResidence"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Residency"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#TijdelijkInwonerShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#ResidentShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#TijdelijkInwoner"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Resident"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#VerblijfplaatsShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#TemporaryResidentShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#TemporaryResident"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#residenceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -392,24 +406,10 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#verblijfsadres"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#residenceAddress"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Verblijfplaats"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#VoogdijShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Voogdij"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#VreemdelingShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Vreemdeling"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#residence"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-person_de#AgentShape",
@@ -419,7 +419,7 @@
       "sh:targetClass": "http://purl.org/dc/terms/Agent"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#JurisdictieShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#JurisdictionShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -433,13 +433,13 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/generiek#plaats"
+          "sh:path": "http://fixme.com#place"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.jurisdictie"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Residency.jurisdiction"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PlaatsShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PlaceShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -459,63 +459,63 @@
       "sh:targetClass": "http://purl.org/dc/terms/Location"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#NationaliteitscodeShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#NationalityCodeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#BurgerlijkeStaatTypeShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#CivilStateTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GezinsrelatietypeShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#HouseholdRelationTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#AfstammingstypeShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#DescentTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GeslachtShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#GenderShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#IdentificatorShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#IdentifierShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#AdresvoorstellingShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#AddressRepresentationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/ns/locn#Address"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#OrganisatieShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#OrganizationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/ns/org#Organization"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PersoonShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-person_de#PersonShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
@@ -524,22 +524,31 @@
           "sh:definition": {
             "de": "Enter your translation here"
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "http://xmlns.com/foaf/0.1/familyName"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#alternativeName"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "de": "Enter your translation here"
           },
+          "sh:maxCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#alternatieveNaam"
+          "sh:path": "http://www.w3.org/ns/person#birthName"
+        },
+        {
+          "sh:class": "http://purl.org/dc/terms/Jurisdiction",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "http://www.w3.org/ns/person#citizenship"
         },
         {
           "sh:class": "https://schema.org/ContactPoint",
@@ -558,10 +567,11 @@
             "de": "Enter your translation here"
           },
           "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "http://www.w3.org/ns/person#birthName"
+          "sh:path": "http://xmlns.com/foaf/0.1/familyName"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -572,7 +582,19 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#gebruikteVoornaam"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#firstGivenName"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#fullName"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -584,21 +606,21 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#geslacht"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#gender"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/persoon#BurgerlijkeStaat",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "de": "Enter your translation here"
           },
-          "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#heeftBurgerlijkeStaat"
+          "sh:path": "http://xmlns.com/foaf/0.1/givenName"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/persoon#Geboorte",
+          "sh:class": "https://data.vlaanderen.be/ns/persoon#Birth",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -607,20 +629,10 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#heeftGeboorte"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#hasBirth"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/persoon#Nationaliteit",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#heeftNationaliteit"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/persoon#Overlijden",
+          "sh:class": "https://data.vlaanderen.be/ns/persoon#CivilState",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -628,7 +640,18 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#heeftOverlijden"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#hasCivilState"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/persoon#Decease",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#hasDecease"
         },
         {
           "sh:class": "http://www.w3.org/ns/person#Person",
@@ -638,20 +661,10 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#heeftRelatieMet"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#hasRelationWith"
         },
         {
-          "sh:class": "http://purl.org/dc/terms/Jurisdiction",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://www.w3.org/ns/person#residency"
-        },
-        {
-          "sh:class": "https://data.vlaanderen.be/ns/persoon#Gezin",
+          "sh:class": "https://data.vlaanderen.be/ns/persoon#Household",
           "sh:definition": {
             "de": "Enter your translation here"
           },
@@ -659,17 +672,27 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#isHoofdVan"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#headOf"
         },
         {
-          "sh:class": "https://data.vlaanderen.be/ns/persoon#Gezin",
+          "sh:class": "https://data.vlaanderen.be/ns/persoon#Nationality",
           "sh:definition": {
             "de": "Enter your translation here"
           },
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#isLidVan"
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#heeftNationaliteit"
+        },
+        {
+          "sh:class": "https://data.vlaanderen.be/ns/persoon#Household",
+          "sh:definition": {
+            "de": "Enter your translation here"
+          },
+          "sh:name": {
+            "de": "Enter your translation here"
+          },
+          "sh:path": "https://data.vlaanderen.be/ns/persoon#memberOf"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -690,33 +713,10 @@
           "sh:name": {
             "de": "Enter your translation here"
           },
-          "sh:path": "http://www.w3.org/ns/person#citizenship"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "https://data.vlaanderen.be/ns/persoon#volledigeNaam"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "de": "Enter your translation here"
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "de": "Enter your translation here"
-          },
-          "sh:path": "http://xmlns.com/foaf/0.1/givenName"
+          "sh:path": "http://www.w3.org/ns/person#residency"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Staatsburgerschap.persoon"
+      "sh:targetClass": "https://data.vlaanderen.be/ns/persoon#Residency.person"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-person_de#ContactInfoShape",
