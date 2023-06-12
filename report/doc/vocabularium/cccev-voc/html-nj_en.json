@@ -5,9 +5,11 @@
     "issued": "2021-06-30",
     "filename": "cccev",
     "navigation": {
-      "self": "https://semiceu.github.io/doc/vocabularium/cccev-voc"
+      "self": "https://vocab.belgif.be//doc/vocabularium/cccev-voc"
     },
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
+    "documenttype": "voc",
+    "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
     "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/77337b82023e37e2700d13191dd868cb5c493b6e",
@@ -189,17 +191,59 @@
   ],
   "properties": [
     {
-      "uri": "http://data.europa.eu/m8g/bias",
-      "name": "bias",
+      "uri": "http://data.europa.eu/m8g/weightingType",
+      "name": "weighting type",
       "label": {
-        "en": "bias"
+        "en": "weighting type"
       },
-      "sort": "bias",
+      "sort": "weighting type",
       "description": {
-        "en": "Parameter used to adjust the evaluation of the Criterion."
+        "en": "Indication of how the weight should be interpreted in a complex evaluation expression, e.g. as a percentage in an evaluation expression."
       },
       "usage": {
-        "en": "The bias parameter tries to correct a systematic error. For example in procurement, a home bias corresponds to the \"presence of local preferences distorting international specialisation and resource allocation\". [https://trade.ec.europa.eu/doclib/docs/2018/september/tradoc_157319.pdf]\nWhen quantified, this systematic error can be removed."
+        "en": "An existing codelist http://publications.europa.eu/resource/authority/number-weight\nExample see: https://docs.ted.europa.eu/eforms/0.3.0/index.html#awardCriteriaSection"
+      },
+      "domain": [
+        "http://data.europa.eu/m8g/Criterion"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/weightingConsiderationDescription",
+      "name": "weighting consideration description",
+      "label": {
+        "en": "weighting consideration description"
+      },
+      "sort": "weighting consideration description",
+      "description": {
+        "en": "Explanation of how the weighting of a Criterion is to be used."
+      },
+      "usage": {
+        "en": "This description gives the view of the creator of the Criterion weights on how to interpret and use them during the evaluation process."
+      },
+      "domain": [
+        "http://data.europa.eu/m8g/Criterion"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#string"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/weight",
+      "name": "weight",
+      "label": {
+        "en": "weight"
+      },
+      "sort": "weight",
+      "description": {
+        "en": "Relative importance of the Criterion."
+      },
+      "usage": {
+        "en": "The weight must be between 0 and 1. Usually, all Criteria can be integrated within a weighted sum equal to 1."
       },
       "domain": [
         "http://data.europa.eu/m8g/Criterion"
@@ -210,62 +254,18 @@
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
-      "name": "confidentiality level type",
+      "uri": "http://data.europa.eu/m8g/value",
+      "name": "value",
       "label": {
-        "en": "confidentiality level type"
+        "en": "value"
       },
-      "sort": "confidentiality level type",
+      "sort": "value",
       "description": {
-        "en": "Security classification assigned to an Evidence e.g. classified, sensitive, public."
+        "en": "Value for the Information Concept that the Evidence supports."
       },
-      "usage": {
-        "en": "Classifications should be defined by an organisation/country as an outcome of a security assessment."
-      },
+      "usage": {},
       "domain": [
-        "http://data.europa.eu/m8g/Evidence"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/evidenceTypeClassification",
-      "name": "evidence type classification",
-      "label": {
-        "en": "evidence type classification"
-      },
-      "sort": "evidence type classification",
-      "description": {
-        "en": "Category to which the Evidence Type belongs."
-      },
-      "usage": {
-        "en": "The categories agreed are left open but could for example specify the layout and content expected for an Evidence."
-      },
-      "domain": [
-        "http://data.europa.eu/m8g/EvidenceType"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/expressionOfExpectedValue",
-      "name": "expression of expected value",
-      "label": {
-        "en": "expression of expected value"
-      },
-      "sort": "expression of expected value",
-      "description": {
-        "en": "Formulation in a formal language of the expected value(s) for the Information Concept which is aligned with the concepts from the Requirements defined and must be respected by the supplied Supported Values ."
-      },
-      "usage": {
-        "en": "The property encapsulates all kind of expectations on the required and provided values one could have. \nThis may range from representational expectations such as the type (e.g. the value is expected to be a xsd:decimal) to expectations that reduce the allowed value range. Commonly this is done using min or max bounderary expressions (e.g. the maximum value is 1 Million Euro).\nOther usage could be to harmonise the supplied values (e.g. rounding, turning to percentages) to facilitate further processing.\n\nImplementers are free to use their own approach for defining the expected values in more details. For instance, this can be by defining their own datatypes extending or encapsulating common xsd datatypes. But also by using more complex languages such as XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF).\nBecause of this freedom, implementers are recommended to well-document their usage of this property (and related information). \n\n\n  \n\n"
-      },
-      "domain": [
-        "http://data.europa.eu/m8g/InformationConcept"
+        "http://data.europa.eu/m8g/SupportedValue"
       ],
       "range": [
         "http://www.w3.org/2000/01/rdf-schema#Literal"
@@ -273,17 +273,173 @@
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
-      "name": "has qualified relation",
+      "uri": "http://data.europa.eu/m8g/validityPeriodConstraint",
+      "name": "validity period constraint",
       "label": {
-        "en": "has qualified relation"
+        "en": "validity period constraint"
       },
-      "sort": "has qualified relation",
+      "sort": "validity period constraint",
       "description": {
-        "en": "Described and/or categorised relation to another Requirement."
+        "en": "Temporal condition on the validity period of the Evidence Type."
       },
       "usage": {
-        "en": "This property leaves the possiblity to define a qualified relation from Requirement to Information Requirement or Constraint as well as a qualified relation from Requirement to Requirement.  A use case would be to specialize an EU requirement in Member States' specific requirements."
+        "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class."
+      },
+      "domain": [
+        "http://data.europa.eu/m8g/EvidenceType"
+      ],
+      "range": [
+        "http://www.w3.org/2006/time#ProperInterval"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/validityPeriod",
+      "name": "validity period",
+      "label": {
+        "en": "validity period"
+      },
+      "sort": "validity period",
+      "description": {
+        "en": "Period of Time during which the Evidence holds true or has force."
+      },
+      "usage": {},
+      "domain": [
+        "http://data.europa.eu/m8g/Evidence"
+      ],
+      "range": [
+        "http://www.w3.org/2006/time#ProperInterval"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/supportsValue",
+      "name": "supports value",
+      "label": {
+        "en": "supports value"
+      },
+      "sort": "supports value",
+      "description": {
+        "en": "Supported Value that the Evidence contains."
+      },
+      "usage": {},
+      "domain": [
+        "http://data.europa.eu/m8g/Evidence"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/SupportedValue"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/supportsRequirement",
+      "name": "supports requirement",
+      "label": {
+        "en": "supports requirement"
+      },
+      "sort": "supports requirement",
+      "description": {
+        "en": "Requirement for which the Evidence provides proof."
+      },
+      "usage": {},
+      "domain": [
+        "http://data.europa.eu/m8g/Evidence"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/Requirement"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/specifiesEvidenceType",
+      "name": "specifies evidence type",
+      "label": {
+        "en": "specifies evidence type"
+      },
+      "sort": "specifies evidence type",
+      "description": {
+        "en": "Evidence Type included in this Evidence Type List."
+      },
+      "usage": {},
+      "domain": [
+        "http://data.europa.eu/m8g/EvidenceTypeList"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/EvidenceType"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/query",
+      "name": "query",
+      "label": {
+        "en": "query"
+      },
+      "sort": "query",
+      "description": {
+        "en": "Search statement that allows the value for the Information Concept to be retrieved from the Evidence data."
+      },
+      "usage": {
+        "en": "The query must be executed on the business data provided by the supporting Evidence. In order to be able to evaluate the query on the provided data, the format of the provided data must be aligned with the query expression. For instance if the provided data is XML, a query in XPath could be expected. This alignment is part of the implementation agreements that implementors must make."
+      },
+      "domain": [
+        "http://data.europa.eu/m8g/SupportedValue"
+      ],
+      "range": [
+        "http://www.w3.org/2000/01/rdf-schema#Literal"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/providesValueFor",
+      "name": "provides value for",
+      "label": {
+        "en": "provides value for"
+      },
+      "sort": "provides value for",
+      "description": {
+        "en": "Information Concept for which the Supported Value provides a value."
+      },
+      "usage": {},
+      "domain": [
+        "http://data.europa.eu/m8g/SupportedValue"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/InformationConcept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/isSpecifiedIn",
+      "name": "is specified in",
+      "label": {
+        "en": "is specified in"
+      },
+      "sort": "is specified in",
+      "description": {
+        "en": "Evidence Type List in which the Evidence Type is included."
+      },
+      "usage": {},
+      "domain": [
+        "http://data.europa.eu/m8g/EvidenceType"
+      ],
+      "range": [
+        "http://data.europa.eu/m8g/EvidenceTypeList"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/isRequirementOf",
+      "name": "is requirement of",
+      "label": {
+        "en": "is requirement of"
+      },
+      "sort": "is requirement of",
+      "description": {
+        "en": "A reference between a sub-Requirement and its parent Requirement."
+      },
+      "usage": {
+        "en": "The relation between a parent Requirement and a sub-Requirement can be complex. Therefore, qualified relations (see hasQualifiedRelation) can be used to represent this relationship on its own and qualify it with additional information such as a date, a place. This is left to implementers.\n\nIn the case where the purpose is to link the two Requirements without additional information, the simple relationship as proposed here can be directly used."
       },
       "domain": [
         "http://data.europa.eu/m8g/Requirement"
@@ -313,17 +469,17 @@
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/isRequirementOf",
-      "name": "is requirement of",
+      "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
+      "name": "has qualified relation",
       "label": {
-        "en": "is requirement of"
+        "en": "has qualified relation"
       },
-      "sort": "is requirement of",
+      "sort": "has qualified relation",
       "description": {
-        "en": "A reference between a sub-Requirement and its parent Requirement."
+        "en": "Described and/or categorised relation to another Requirement."
       },
       "usage": {
-        "en": "The relation between a parent Requirement and a sub-Requirement can be complex. Therefore, qualified relations (see hasQualifiedRelation) can be used to represent this relationship on its own and qualify it with additional information such as a date, a place. This is left to implementers.\n\nIn the case where the purpose is to link the two Requirements without additional information, the simple relationship as proposed here can be directly used."
+        "en": "This property leaves the possiblity to define a qualified relation from Requirement to Information Requirement or Constraint as well as a qualified relation from Requirement to Requirement.  A use case would be to specialize an EU requirement in Member States' specific requirements."
       },
       "domain": [
         "http://data.europa.eu/m8g/Requirement"
@@ -334,240 +490,86 @@
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/isSpecifiedIn",
-      "name": "is specified in",
+      "uri": "http://data.europa.eu/m8g/expressionOfExpectedValue",
+      "name": "expression of expected value",
       "label": {
-        "en": "is specified in"
+        "en": "expression of expected value"
       },
-      "sort": "is specified in",
+      "sort": "expression of expected value",
       "description": {
-        "en": "Evidence Type List in which the Evidence Type is included."
+        "en": "Formulation in a formal language of the expected value(s) for the Information Concept which is aligned with the concepts from the Requirements defined and must be respected by the supplied Supported Values ."
       },
-      "usage": {},
+      "usage": {
+        "en": "The property encapsulates all kind of expectations on the required and provided values one could have. \nThis may range from representational expectations such as the type (e.g. the value is expected to be a xsd:decimal) to expectations that reduce the allowed value range. Commonly this is done using min or max bounderary expressions (e.g. the maximum value is 1 Million Euro).\nOther usage could be to harmonise the supplied values (e.g. rounding, turning to percentages) to facilitate further processing.\n\nImplementers are free to use their own approach for defining the expected values in more details. For instance, this can be by defining their own datatypes extending or encapsulating common xsd datatypes. But also by using more complex languages such as XPath, Object Constraint Language (OCL), JavaScript and Rule Interchange Format (RIF).\nBecause of this freedom, implementers are recommended to well-document their usage of this property (and related information). \n\n\n  \n\n"
+      },
       "domain": [
-        "http://data.europa.eu/m8g/EvidenceType"
-      ],
-      "range": [
-        "http://data.europa.eu/m8g/EvidenceTypeList"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/providesValueFor",
-      "name": "provides value for",
-      "label": {
-        "en": "provides value for"
-      },
-      "sort": "provides value for",
-      "description": {
-        "en": "Information Concept for which the Supported Value provides a value."
-      },
-      "usage": {},
-      "domain": [
-        "http://data.europa.eu/m8g/SupportedValue"
-      ],
-      "range": [
         "http://data.europa.eu/m8g/InformationConcept"
       ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/query",
-      "name": "query",
-      "label": {
-        "en": "query"
-      },
-      "sort": "query",
-      "description": {
-        "en": "Search statement that allows the value for the Information Concept to be retrieved from the Evidence data."
-      },
-      "usage": {
-        "en": "The query must be executed on the business data provided by the supporting Evidence. In order to be able to evaluate the query on the provided data, the format of the provided data must be aligned with the query expression. For instance if the provided data is XML, a query in XPath could be expected. This alignment is part of the implementation agreements that implementors must make."
-      },
-      "domain": [
-        "http://data.europa.eu/m8g/SupportedValue"
-      ],
       "range": [
         "http://www.w3.org/2000/01/rdf-schema#Literal"
       ],
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/specifiesEvidenceType",
-      "name": "specifies evidence type",
+      "uri": "http://data.europa.eu/m8g/evidenceTypeClassification",
+      "name": "evidence type classification",
       "label": {
-        "en": "specifies evidence type"
+        "en": "evidence type classification"
       },
-      "sort": "specifies evidence type",
+      "sort": "evidence type classification",
       "description": {
-        "en": "Evidence Type included in this Evidence Type List."
-      },
-      "usage": {},
-      "domain": [
-        "http://data.europa.eu/m8g/EvidenceTypeList"
-      ],
-      "range": [
-        "http://data.europa.eu/m8g/EvidenceType"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/supportsRequirement",
-      "name": "supports requirement",
-      "label": {
-        "en": "supports requirement"
-      },
-      "sort": "supports requirement",
-      "description": {
-        "en": "Requirement for which the Evidence provides proof."
-      },
-      "usage": {},
-      "domain": [
-        "http://data.europa.eu/m8g/Evidence"
-      ],
-      "range": [
-        "http://data.europa.eu/m8g/Requirement"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/supportsValue",
-      "name": "supports value",
-      "label": {
-        "en": "supports value"
-      },
-      "sort": "supports value",
-      "description": {
-        "en": "Supported Value that the Evidence contains."
-      },
-      "usage": {},
-      "domain": [
-        "http://data.europa.eu/m8g/Evidence"
-      ],
-      "range": [
-        "http://data.europa.eu/m8g/SupportedValue"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/validityPeriod",
-      "name": "validity period",
-      "label": {
-        "en": "validity period"
-      },
-      "sort": "validity period",
-      "description": {
-        "en": "Period of Time during which the Evidence holds true or has force."
-      },
-      "usage": {},
-      "domain": [
-        "http://data.europa.eu/m8g/Evidence"
-      ],
-      "range": [
-        "http://www.w3.org/2006/time#ProperInterval"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/validityPeriodConstraint",
-      "name": "validity period constraint",
-      "label": {
-        "en": "validity period constraint"
-      },
-      "sort": "validity period constraint",
-      "description": {
-        "en": "Temporal condition on the validity period of the Evidence Type."
+        "en": "Category to which the Evidence Type belongs."
       },
       "usage": {
-        "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class."
+        "en": "The categories agreed are left open but could for example specify the layout and content expected for an Evidence."
       },
       "domain": [
         "http://data.europa.eu/m8g/EvidenceType"
       ],
       "range": [
-        "http://www.w3.org/2006/time#ProperInterval"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/value",
-      "name": "value",
+      "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
+      "name": "confidentiality level type",
       "label": {
-        "en": "value"
+        "en": "confidentiality level type"
       },
-      "sort": "value",
+      "sort": "confidentiality level type",
       "description": {
-        "en": "Value for the Information Concept that the Evidence supports."
-      },
-      "usage": {},
-      "domain": [
-        "http://data.europa.eu/m8g/SupportedValue"
-      ],
-      "range": [
-        "http://www.w3.org/2000/01/rdf-schema#Literal"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/weight",
-      "name": "weight",
-      "label": {
-        "en": "weight"
-      },
-      "sort": "weight",
-      "description": {
-        "en": "Relative importance of the Criterion."
+        "en": "Security classification assigned to an Evidence e.g. classified, sensitive, public."
       },
       "usage": {
-        "en": "The weight must be between 0 and 1. Usually, all Criteria can be integrated within a weighted sum equal to 1."
+        "en": "Classifications should be defined by an organisation/country as an outcome of a security assessment."
+      },
+      "domain": [
+        "http://data.europa.eu/m8g/Evidence"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/bias",
+      "name": "bias",
+      "label": {
+        "en": "bias"
+      },
+      "sort": "bias",
+      "description": {
+        "en": "Parameter used to adjust the evaluation of the Criterion."
+      },
+      "usage": {
+        "en": "The bias parameter tries to correct a systematic error. For example in procurement, a home bias corresponds to the \"presence of local preferences distorting international specialisation and resource allocation\". [https://trade.ec.europa.eu/doclib/docs/2018/september/tradoc_157319.pdf]\nWhen quantified, this systematic error can be removed."
       },
       "domain": [
         "http://data.europa.eu/m8g/Criterion"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#decimal"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/weightingConsiderationDescription",
-      "name": "weighting consideration description",
-      "label": {
-        "en": "weighting consideration description"
-      },
-      "sort": "weighting consideration description",
-      "description": {
-        "en": "Explanation of how the weighting of a Criterion is to be used."
-      },
-      "usage": {
-        "en": "This description gives the view of the creator of the Criterion weights on how to interpret and use them during the evaluation process."
-      },
-      "domain": [
-        "http://data.europa.eu/m8g/Criterion"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/weightingType",
-      "name": "weighting type",
-      "label": {
-        "en": "weighting type"
-      },
-      "sort": "weighting type",
-      "description": {
-        "en": "Indication of how the weight should be interpreted in a complex evaluation expression, e.g. as a percentage in an evaluation expression."
-      },
-      "usage": {
-        "en": "An existing codelist http://publications.europa.eu/resource/authority/number-weight\nExample see: https://docs.ted.europa.eu/eforms/0.3.0/index.html#awardCriteriaSection"
-      },
-      "domain": [
-        "http://data.europa.eu/m8g/Criterion"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "parents": []
     }
@@ -580,16 +582,24 @@
     },
     {
       "role": "E",
-      "first_name": "Florian",
-      "last_name": "Barthelemy",
+      "first_name": "Bert",
+      "last_name": "Van Nuffelen",
       "affiliation": {
-        "name": "PwC"
+        "name": "TenForce"
       }
     },
     {
       "role": "E",
-      "first_name": "Michiel",
-      "last_name": "De Keyzer",
+      "first_name": "Emidio",
+      "last_name": "Stani",
+      "affiliation": {
+        "name": "PwC EU Services"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Dimitri",
+      "last_name": "Schepers",
       "affiliation": {
         "name": "PwC EU Services"
       }
@@ -604,26 +614,18 @@
     },
     {
       "role": "E",
-      "first_name": "Dimitri",
-      "last_name": "Schepers",
+      "first_name": "Michiel",
+      "last_name": "De Keyzer",
       "affiliation": {
         "name": "PwC EU Services"
       }
     },
     {
       "role": "E",
-      "first_name": "Emidio",
-      "last_name": "Stani",
+      "first_name": "Florian",
+      "last_name": "Barthelemy",
       "affiliation": {
-        "name": "PwC EU Services"
-      }
-    },
-    {
-      "role": "E",
-      "first_name": "Bert",
-      "last_name": "Van Nuffelen",
-      "affiliation": {
-        "name": "TenForce"
+        "name": "PwC"
       }
     },
     {
@@ -655,178 +657,136 @@
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/constrains",
-      "name": "constrains",
+      "uri": "http://www.w3.org/2006/time#hasXSDDuration",
+      "name": "duration",
       "label": {
-        "en": "constrains"
+        "en": "duration"
       },
       "description": {
-        "en": "Information Concept about which a Constraint expresses a limitation."
+        "en": "Extent of the Period of Time."
       },
       "usage": {
-        "en": "Information Concepts are tools to make Requirements more machine processable: they allow to provide more detail about a Requirement. This way, Constraints can be made very precise, namely the limit that must be achieved, is a limit on the value for the associated Information Concept. For example, the Information Concept would be the age of a person and the Constraint would be the required age in the context of a specific evaluation."
+        "en": "Amount of time between start time and end time."
       },
-      "sort": "constrains",
+      "sort": "duration",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/hasConcept",
-      "name": "has concept",
+      "uri": "http://www.w3.org/2006/time#hasEnd",
+      "name": "endtime",
       "label": {
-        "en": "has concept"
+        "en": "endtime"
       },
       "description": {
-        "en": "Information Concept for which a value is expected by the Requirement."
+        "en": "Time instant at which the Period was terminated."
       },
       "usage": {
-        "en": "Information Concepts defined for specific Requirements also represent the basis for specifying the Supported Value an Evidence should provide."
+        "en": "For example, the property ends the duration during which an Evidence Type or an Evidence is considered valid. The duration must be equal to the time between the starttime and endtime."
       },
-      "sort": "has concept",
+      "sort": "endtime",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/hasEvidenceTypeList",
-      "name": "has evidence type list",
+      "uri": "http://www.w3.org/2006/time#hasBeginning",
+      "name": "starttime",
       "label": {
-        "en": "has evidence type list"
+        "en": "starttime"
       },
       "description": {
-        "en": "Evidence Type List that specifies the Evidence Types that are needed to meet the Requirement."
+        "en": "Time instant at which the Period was initiated."
       },
       "usage": {
-        "en": "One or several Lists of Evidence Types can support a Requirement. At least  one of them must be satisfied by the response to the Requirement."
+        "en": "For example, the property starts the duration during which an Evidence Type or an Evidence is considered valid. The duration must be equal to the time between the starttime and endtime."
       },
-      "sort": "has evidence type list",
+      "sort": "starttime",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/hasSupportingEvidence",
-      "name": "has supporting evidence",
+      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "name": "name",
       "label": {
-        "en": "has supporting evidence"
+        "en": "name"
       },
       "description": {
-        "en": "Evidence that supplies information, proof or support for the Requirement."
+        "en": "Name of the Evidence Type List."
       },
       "usage": {},
-      "sort": "has supporting evidence",
+      "sort": "name",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/isDerivedFrom",
-      "name": "is derived from",
+      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "name": "name",
       "label": {
-        "en": "is derived from"
+        "en": "name"
       },
       "description": {
-        "en": "Reference Framework on which the Requirement is based, such as a law or regulation."
+        "en": "Name of the Information Concept."
       },
-      "usage": {
-        "en": "Note that a Requirement can have several Reference Frameworks from which it is derived."
-      },
-      "sort": "is derived from",
+      "usage": {},
+      "sort": "name",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://data.europa.eu/m8g/supportsConcept",
-      "name": "supports concept",
+      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+      "name": "name",
       "label": {
-        "en": "supports concept"
+        "en": "name"
       },
       "description": {
-        "en": "Information Concept providing facts found/inferred from the Evidence."
+        "en": "Name of the Requirement."
       },
-      "usage": {
-        "en": "Examples of Information Concepts are values found explictly in the evidence such as a birth date or information derived from the Evidence such as \"I am older that 18 years\"."
-      },
-      "sort": "supports concept",
+      "usage": {},
+      "sort": "name",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/conformsTo",
-      "name": "is conformant to",
+      "uri": "http://purl.org/dc/terms/type",
+      "name": "type",
       "label": {
-        "en": "is conformant to"
+        "en": "type"
       },
       "description": {
-        "en": "Evidence Type that specifies characteristics of the Evidence."
+        "en": "Category to which the Information Concept belongs."
       },
       "usage": {
-        "en": "Examples of characteristics could be the layout or the configuration of the Evidence."
+        "en": "In addition to the expression of the expected value, the type classification can be used to express the kind of value the information concept is processing. This can be primitive tupes such as a date or a string, but also more business domain terminology such as age or number of employees. It is recommended to well-document the usage of the property. "
       },
-      "sort": "is conformant to",
+      "sort": "type",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/description",
-      "name": "description",
+      "uri": "http://purl.org/dc/terms/type",
+      "name": "type",
       "label": {
-        "en": "description"
+        "en": "type"
       },
       "description": {
-        "en": "Short explanation supporting the understanding of the Evidence Type List."
+        "en": "Category to which the Requirement belongs."
       },
-      "usage": {
-        "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Evidence Type List."
-      },
-      "sort": "description",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/description",
-      "name": "description",
-      "label": {
-        "en": "description"
-      },
-      "description": {
-        "en": "Short explanation supporting the understanding of the Information Concept."
-      },
-      "usage": {
-        "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Information Concept."
-      },
-      "sort": "description",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://purl.org/dc/terms/description",
-      "name": "description",
-      "label": {
-        "en": "description"
-      },
-      "description": {
-        "en": "A short explanation supporting the understanding of the Requirement."
-      },
-      "usage": {
-        "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Requirement."
-      },
-      "sort": "description",
+      "usage": {},
+      "sort": "type",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
@@ -913,136 +873,178 @@
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/type",
-      "name": "type",
+      "uri": "http://purl.org/dc/terms/description",
+      "name": "description",
       "label": {
-        "en": "type"
+        "en": "description"
       },
       "description": {
-        "en": "Category to which the Information Concept belongs."
+        "en": "Short explanation supporting the understanding of the Evidence Type List."
       },
       "usage": {
-        "en": "In addition to the expression of the expected value, the type classification can be used to express the kind of value the information concept is processing. This can be primitive tupes such as a date or a string, but also more business domain terminology such as age or number of employees. It is recommended to well-document the usage of the property. "
+        "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Evidence Type List."
       },
-      "sort": "type",
+      "sort": "description",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://purl.org/dc/terms/type",
-      "name": "type",
+      "uri": "http://purl.org/dc/terms/description",
+      "name": "description",
       "label": {
-        "en": "type"
+        "en": "description"
       },
       "description": {
-        "en": "Category to which the Requirement belongs."
-      },
-      "usage": {},
-      "sort": "type",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "description": {
-        "en": "Name of the Evidence Type List."
-      },
-      "usage": {},
-      "sort": "name",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "description": {
-        "en": "Name of the Information Concept."
-      },
-      "usage": {},
-      "sort": "name",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-      "name": "name",
-      "label": {
-        "en": "name"
-      },
-      "description": {
-        "en": "Name of the Requirement."
-      },
-      "usage": {},
-      "sort": "name",
-      "inscope": true,
-      "indvl": false,
-      "inpackage": false,
-      "show": true
-    },
-    {
-      "uri": "http://www.w3.org/2006/time#hasBeginning",
-      "name": "starttime",
-      "label": {
-        "en": "starttime"
-      },
-      "description": {
-        "en": "Time instant at which the Period was initiated."
+        "en": "Short explanation supporting the understanding of the Information Concept."
       },
       "usage": {
-        "en": "For example, the property starts the duration during which an Evidence Type or an Evidence is considered valid. The duration must be equal to the time between the starttime and endtime."
+        "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Information Concept."
       },
-      "sort": "starttime",
+      "sort": "description",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/2006/time#hasEnd",
-      "name": "endtime",
+      "uri": "http://purl.org/dc/terms/description",
+      "name": "description",
       "label": {
-        "en": "endtime"
+        "en": "description"
       },
       "description": {
-        "en": "Time instant at which the Period was terminated."
+        "en": "A short explanation supporting the understanding of the Requirement."
       },
       "usage": {
-        "en": "For example, the property ends the duration during which an Evidence Type or an Evidence is considered valid. The duration must be equal to the time between the starttime and endtime."
+        "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Requirement."
       },
-      "sort": "endtime",
+      "sort": "description",
       "inscope": true,
       "indvl": false,
       "inpackage": false,
       "show": true
     },
     {
-      "uri": "http://www.w3.org/2006/time#hasXSDDuration",
-      "name": "duration",
+      "uri": "http://purl.org/dc/terms/conformsTo",
+      "name": "is conformant to",
       "label": {
-        "en": "duration"
+        "en": "is conformant to"
       },
       "description": {
-        "en": "Extent of the Period of Time."
+        "en": "Evidence Type that specifies characteristics of the Evidence."
       },
       "usage": {
-        "en": "Amount of time between start time and end time."
+        "en": "Examples of characteristics could be the layout or the configuration of the Evidence."
       },
-      "sort": "duration",
+      "sort": "is conformant to",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/supportsConcept",
+      "name": "supports concept",
+      "label": {
+        "en": "supports concept"
+      },
+      "description": {
+        "en": "Information Concept providing facts found/inferred from the Evidence."
+      },
+      "usage": {
+        "en": "Examples of Information Concepts are values found explictly in the evidence such as a birth date or information derived from the Evidence such as \"I am older that 18 years\"."
+      },
+      "sort": "supports concept",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/isDerivedFrom",
+      "name": "is derived from",
+      "label": {
+        "en": "is derived from"
+      },
+      "description": {
+        "en": "Reference Framework on which the Requirement is based, such as a law or regulation."
+      },
+      "usage": {
+        "en": "Note that a Requirement can have several Reference Frameworks from which it is derived."
+      },
+      "sort": "is derived from",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/hasSupportingEvidence",
+      "name": "has supporting evidence",
+      "label": {
+        "en": "has supporting evidence"
+      },
+      "description": {
+        "en": "Evidence that supplies information, proof or support for the Requirement."
+      },
+      "usage": {},
+      "sort": "has supporting evidence",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/hasEvidenceTypeList",
+      "name": "has evidence type list",
+      "label": {
+        "en": "has evidence type list"
+      },
+      "description": {
+        "en": "Evidence Type List that specifies the Evidence Types that are needed to meet the Requirement."
+      },
+      "usage": {
+        "en": "One or several Lists of Evidence Types can support a Requirement. At least  one of them must be satisfied by the response to the Requirement."
+      },
+      "sort": "has evidence type list",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/hasConcept",
+      "name": "has concept",
+      "label": {
+        "en": "has concept"
+      },
+      "description": {
+        "en": "Information Concept for which a value is expected by the Requirement."
+      },
+      "usage": {
+        "en": "Information Concepts defined for specific Requirements also represent the basis for specifying the Supported Value an Evidence should provide."
+      },
+      "sort": "has concept",
+      "inscope": true,
+      "indvl": false,
+      "inpackage": false,
+      "show": true
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/constrains",
+      "name": "constrains",
+      "label": {
+        "en": "constrains"
+      },
+      "description": {
+        "en": "Information Concept about which a Constraint expresses a limitation."
+      },
+      "usage": {
+        "en": "Information Concepts are tools to make Requirements more machine processable: they allow to provide more detail about a Requirement. This way, Constraints can be made very precise, namely the limit that must be achieved, is a limit on the value for the associated Information Concept. For example, the Information Concept would be the age of a person and the Constraint would be the required age in the context of a specific evaluation."
+      },
+      "sort": "constrains",
       "inscope": true,
       "indvl": false,
       "inpackage": false,

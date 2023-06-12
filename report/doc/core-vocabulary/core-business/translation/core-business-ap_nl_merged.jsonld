@@ -1,0 +1,2942 @@
+{
+  "@context": {
+    "affiliation": {
+      "@id": "http://schema.org/affiliation"
+    },
+    "authors": {
+      "@id": "foaf:maker",
+      "@type": "foaf:Person"
+    },
+    "classes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "contributors": {
+      "@id": "dcterms:contributor",
+      "@type": "foaf:Person"
+    },
+    "datatypes": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "domain": {
+      "@id": "rdfs:domain"
+    },
+    "editors": {
+      "@id": "rec:editor",
+      "@type": "foaf:Person"
+    },
+    "externals": {
+      "@id": "rdfs:seeAlso",
+      "@type": "http://www.w3.org/2000/01/rdf-schema#Class"
+    },
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "generalization": {
+      "@id": "rdfs:subPropertyOf"
+    },
+    "issued": {
+      "@id": "dcterms:issued"
+    },
+    "label": {
+      "@container": "@language",
+      "@id": "rdfs:label"
+    },
+    "maxCardinality": {
+      "@id": "sh:maxCount"
+    },
+    "minCardinality": {
+      "@id": "sh:minCount"
+    },
+    "modified": {
+      "@id": "dcterms:modified",
+      "@type": "xsd:date"
+    },
+    "name": {
+      "@id": "rdfs:label"
+    },
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "person": "http://www.w3.org/ns/person#",
+    "properties": {
+      "@reverse": "rdfs:isDefinedBy"
+    },
+    "qb": "http://purl.org/linked-data/cube#",
+    "range": {
+      "@id": "rdfs:range"
+    },
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "rec": "http://www.w3.org/2001/02pd/rec54#",
+    "sdmx-attribute": "http://purl.org/linked-data/sdmx/2009/attribute#",
+    "sdmx-concept": "http://purl.org/linked-data/sdmx/2009/concept#",
+    "sdmx-dimension": "http://purl.org/linked-data/sdmx/2009/dimension#",
+    "sh": "http://w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "vann": "http://purl.org/vocab/vann/",
+    "vlaanderen": "http://data.vlaanderen.be/ns/",
+    "void": "http://rdfs.org/ns/void#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@id": "https://data.europa.eu/m8g",
+  "@type": "http://www.w3.org/2002/07/owl#Ontology",
+  "authors": [
+    {
+      "@type": "foaf:Person",
+      "foaf:firstName": "Core Vocabularies Working Group"
+    }
+  ],
+  "baseURI": "https://data.europa.eu/m8g/",
+  "branchtag": "master",
+  "classes": [],
+  "config": "config/config-ap.json",
+  "contributors": [
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "European Commission"
+      },
+      "foaf:firstName": "Seth",
+      "foaf:lastName": "van Hooland"
+    }
+  ],
+  "contributors-column": "CoreVoc",
+  "contributors-file": "stakeholders.csv",
+  "diagram": "Core_Business",
+  "documentcommit": "77337b82023e37e2700d13191dd868cb5c493b6e",
+  "dummy": "dimi-22",
+  "eap": "CoreVocabularies.EAP",
+  "editors": [
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "TenForce"
+      },
+      "foaf:firstName": "Bert",
+      "foaf:lastName": "Van Nuffelen"
+    },
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "PwC EU Services"
+      },
+      "foaf:firstName": "Emidio",
+      "foaf:lastName": "Stani"
+    },
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "PwC EU Services"
+      },
+      "foaf:firstName": "Dimitri",
+      "foaf:lastName": "Schepers"
+    },
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "European Commission"
+      },
+      "foaf:firstName": "Pavlina",
+      "foaf:lastName": "Fragkou"
+    },
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "PwC EU Services"
+      },
+      "foaf:firstName": "Michiel",
+      "foaf:lastName": "De Keyzer"
+    },
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "PwC EU Services"
+      },
+      "foaf:firstName": "Alexandre",
+      "foaf:lastName": "Beaufays"
+    },
+    {
+      "@type": "foaf:Person",
+      "affiliation": {
+        "foaf:name": "PwC"
+      },
+      "foaf:firstName": "Florian",
+      "foaf:lastName": "Barthelemy"
+    }
+  ],
+  "externalproperties": [
+    {
+      "@id": "http://www.w3.org/ns/locn#thoroughfare",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{2D384BE4-CFED-4f52-B1EC-3C84511ACCC6}",
+      "ap-definition-en": {
+        "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+      },
+      "ap-label-en": {
+        "en": "thoroughfare"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{2D384BE4-CFED-4f52-B1EC-3C84511ACCC6}",
+        "EA-Name": "thoroughfare",
+        "EA-Package": "Core Location",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#thoroughfare"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "thoroughfare"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "For example, \"Avenue des Champs-Élysées\"."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+        },
+        "ap-label-en": {
+          "en": "thoroughfare"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+        },
+        "label": {
+          "en": "thoroughfare"
+        },
+        "usage": {
+          "en": "For example, \"Avenue des Champs-Élysées\"."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "thoroughfare",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "thoroughfare",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "usage": {
+        "en": "For example, \"Avenue des Champs-Élysées\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#postName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{F0699A53-4F4C-4e83-AF49-34E33744BF36}",
+      "ap-definition-en": {
+        "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
+      },
+      "ap-label-en": {
+        "en": "post name (city)"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\".",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{F0699A53-4F4C-4e83-AF49-34E33744BF36}",
+        "EA-Name": "postName",
+        "EA-Package": "Core Location",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#postName"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "post name (city)"
+          },
+          {
+            "key": "definition-en",
+            "note": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\".",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
+        },
+        "ap-label-en": {
+          "en": "post name (city)"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
+        },
+        "label": {
+          "en": "post name (city)"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "post name (city)",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "post name (city)",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ]
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#postCode",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{2EF6D767-8E3F-461c-AC37-772819BA21B6}",
+      "ap-definition-en": {
+        "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
+      },
+      "ap-label-en": {
+        "en": "post code"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{2EF6D767-8E3F-461c-AC37-772819BA21B6}",
+        "EA-Name": "postCode",
+        "EA-Package": "Core Location",
+        "EA-Range": "String",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#postCode"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "post code"
+          },
+          {
+            "key": "definition-en",
+            "note": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
+        },
+        "ap-label-en": {
+          "en": "post code"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
+        },
+        "label": {
+          "en": "post code"
+        },
+        "usage": {
+          "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "post code",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "post code",
+      "range": [
+        {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "usage": {
+        "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#poBox",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{BD696942-96FF-49f8-9712-8C00CAC1493B}",
+      "ap-definition-en": {
+        "en": "The Post Office Box number."
+      },
+      "ap-label-en": {
+        "en": "post office box"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The Post Office Box number.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{BD696942-96FF-49f8-9712-8C00CAC1493B}",
+        "EA-Name": "poBox",
+        "EA-Package": "Core Location",
+        "EA-Range": "String",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#poBox"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "post office box"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The Post Office Box number."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\".",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The Post Office Box number."
+        },
+        "ap-label-en": {
+          "en": "post office box"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The Post Office Box number."
+        },
+        "label": {
+          "en": "post office box"
+        },
+        "usage": {
+          "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\"."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "post office box",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "post office box",
+      "range": [
+        {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "usage": {
+        "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#locatorName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{BD85C372-1378-4b22-9DA6-B4897A7F0106}",
+      "ap-definition-en": {
+        "en": "Proper noun(s) applied to the real world entity identified by the locator."
+      },
+      "ap-label-en": {
+        "en": "locator name"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Proper noun(s) applied to the real world entity identified by the locator.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{BD85C372-1378-4b22-9DA6-B4897A7F0106}",
+        "EA-Name": "locatorName",
+        "EA-Package": "Core Location",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#locatorName"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "locator name"
+          },
+          {
+            "key": "definition-en",
+            "note": "Proper noun(s) applied to the real world entity identified by the locator.",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Proper noun(s) applied to the real world entity identified by the locator."
+        },
+        "ap-label-en": {
+          "en": "locator name"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Proper noun(s) applied to the real world entity identified by the locator."
+        },
+        "label": {
+          "en": "locator name"
+        },
+        "usage": {
+          "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>"
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "locator name",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "locator name",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "usage": {
+        "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#locatorDesignator",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{509BF1D0-4E76-4bee-B17F-AC883B236548}",
+      "ap-definition-en": {
+        "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
+      },
+      "ap-label-en": {
+        "en": "locator designator"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{509BF1D0-4E76-4bee-B17F-AC883B236548}",
+        "EA-Name": "locatorDesignator",
+        "EA-Package": "Core Location",
+        "EA-Range": "String",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#locatorDesignator"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "locator designator"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\".",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
+        },
+        "ap-label-en": {
+          "en": "locator designator"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
+        },
+        "label": {
+          "en": "locator designator"
+        },
+        "usage": {
+          "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\"."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "locator designator",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "locator designator",
+      "range": [
+        {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "usage": {
+        "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#fullAddress",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{CACD1A53-7E91-4570-BE69-F842DE505549}",
+      "ap-definition-en": {
+        "en": "The complete address written as a formatted string."
+      },
+      "ap-label-en": {
+        "en": "full address"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The complete address written as a formatted string.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{CACD1A53-7E91-4570-BE69-F842DE505549}",
+        "EA-Name": "fullAddress",
+        "EA-Package": "Core Location",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#fullAddress"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "full address"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The complete address written as a formatted string."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\".",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The complete address written as a formatted string."
+        },
+        "ap-label-en": {
+          "en": "full address"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The complete address written as a formatted string."
+        },
+        "label": {
+          "en": "full address"
+        },
+        "usage": {
+          "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\"."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "full address",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "full address",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "usage": {
+        "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#adminUnitL2",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{FE32C615-1979-4110-86B2-BF3C6C469968}",
+      "ap-definition-en": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+      },
+      "ap-label-en": {
+        "en": "administrative unit level 2 (country/region/state)"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{FE32C615-1979-4110-86B2-BF3C6C469968}",
+        "EA-Name": "adminUnitL2",
+        "EA-Package": "Core Location",
+        "EA-Range": "Code",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "administrative unit level 2 (country/region/state)"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#adminUnitL2"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+        },
+        "ap-label-en": {
+          "en": "administrative unit level 2 (country/region/state)"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+        },
+        "label": {
+          "en": "administrative unit level 2 (country/region/state)"
+        },
+        "usage": {
+          "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "administrative unit level 2 (country/region/state)",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "administrative unit level 2 (country/region/state)",
+      "range": [
+        {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "usage": {
+        "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#adminUnitL1",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{2A176EB4-5D2B-41f1-A938-FF286CD39790}",
+      "ap-definition-en": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+      },
+      "ap-label-en": {
+        "en": "administrative unit level 1 (country)"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{2A176EB4-5D2B-41f1-A938-FF286CD39790}",
+        "EA-Name": "adminUnitL1",
+        "EA-Package": "Core Location",
+        "EA-Range": "Code",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "administrative unit level 1 (country)"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#adminUnitL1"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+        },
+        "ap-label-en": {
+          "en": "administrative unit level 1 (country)"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+        },
+        "label": {
+          "en": "administrative unit level 1 (country)"
+        },
+        "usage": {
+          "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "administrative unit level 1 (country)",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "administrative unit level 1 (country)",
+      "range": [
+        {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ],
+      "usage": {
+        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#addressID",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{54C88647-E707-48f6-8433-7328EB434759}",
+      "ap-definition-en": {
+        "en": "A globally unique identifier for each instance of an Address."
+      },
+      "ap-label-en": {
+        "en": "address ID"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "A globally unique identifier for each instance of an Address.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{54C88647-E707-48f6-8433-7328EB434759}",
+        "EA-Name": "addressID",
+        "EA-Package": "Core Location",
+        "EA-Range": "String",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#addressID"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "address ID"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "A globally unique identifier for each instance of an Address."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "A globally unique identifier for each instance of an Address."
+        },
+        "ap-label-en": {
+          "en": "address ID"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "A globally unique identifier for each instance of an Address."
+        },
+        "label": {
+          "en": "address ID"
+        },
+        "usage": {
+          "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>"
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "address ID",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "address ID",
+      "range": [
+        {
+          "EA-Name": "String",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ],
+      "usage": {
+        "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#addressArea",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{42A3291F-2C59-4432-9003-3E6719430A52}",
+      "ap-definition-en": {
+        "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+      },
+      "ap-label-en": {
+        "en": "address area"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Address",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Address",
+        "EA-Domain-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Guid": "{42A3291F-2C59-4432-9003-3E6719430A52}",
+        "EA-Name": "addressArea",
+        "EA-Package": "Core Location",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#addressArea"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "address area"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+        },
+        "ap-label-en": {
+          "en": "address area"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+        },
+        "label": {
+          "en": "address area"
+        },
+        "usage": {
+          "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "address area",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "address area",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "usage": {
+        "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/legal#registeredAddress",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{7B139EB4-12C1-4210-8A05-9E0C5716EA8B}",
+      "ap-definition-en": {
+        "en": "In almost all jurisdictions, Legal Entities must register a public address. This may or may not be the actual address at which the Legal Entity does its business, it is commonly the address of their lawyer or accountant, but it is the address to which formal communications can be sent."
+      },
+      "ap-label-en": {
+        "en": "registered address"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "In almost all jurisdictions, Legal Entities must register a public address. This may or may not be the actual address at which the Legal Entity does its business, it is commonly the address of their lawyer or accountant, but it is the address to which formal communications can be sent.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "DestRoleTags": [
+          {
+            "key": "uri",
+            "note": "http://www.w3.org/ns/legal#registeredAddress",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "The registered address property points to the Address of the Registered Site. This property can be seen as a shorthand for this property path.",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "In almost all jurisdictions, Legal Entities must register a public address. This may or may not be the actual address at which the Legal Entity does its business, it is commonly the address of their lawyer or accountant, but it is the address to which formal communications can be sent.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "registered address",
+            "value": "NOTE"
+          }
+        ],
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{7B139EB4-12C1-4210-8A05-9E0C5716EA8B}",
+        "EA-Name": "registeredAddress",
+        "EA-Package": "",
+        "EA-Range": "Address",
+        "EA-Type": "connector",
+        "RangeData": {
+          "EA-GUID": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+          "EA-Name": "Address",
+          "EA-Package": "Core Location",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "http://www.w3.org/ns/legal#registeredAddress",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "The registered address property points to the Address of the Registered Site. This property can be seen as a shorthand for this property path.",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "In almost all jurisdictions, Legal Entities must register a public address. This may or may not be the actual address at which the Legal Entity does its business, it is commonly the address of their lawyer or accountant, but it is the address to which formal communications can be sent.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "registered address",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "In almost all jurisdictions, Legal Entities must register a public address. This may or may not be the actual address at which the Legal Entity does its business, it is commonly the address of their lawyer or accountant, but it is the address to which formal communications can be sent."
+        },
+        "ap-label-en": {
+          "en": "registered address"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "In almost all jurisdictions, Legal Entities must register a public address. This may or may not be the actual address at which the Legal Entity does its business, it is commonly the address of their lawyer or accountant, but it is the address to which formal communications can be sent."
+        },
+        "derived": "false",
+        "destRole": "registeredAddress",
+        "label": {
+          "en": "registered address"
+        },
+        "sourceRole": "null",
+        "usage": {
+          "en": "The registered address property points to the Address of the Registered Site. This property can be seen as a shorthand for this property path."
+        }
+      },
+      "generalization": [],
+      "inpackage": "UNKNOWN",
+      "label": {
+        "en": "registered address",
+        "nl": "Enter your translation here"
+      },
+      "name": "registered address",
+      "range": [
+        {
+          "EA-GUID": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+          "EA-Name": "Address",
+          "EA-Package": "Core Location",
+          "uri": "http://www.w3.org/ns/locn#Address"
+        }
+      ],
+      "usage": {
+        "en": "The registered address property points to the Address of the Registered Site. This property can be seen as a shorthand for this property path.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/legal#legalName",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{E451B1AC-A4D0-40e4-8A8E-0A0B0087918A}",
+      "ap-definition-en": {
+        "en": "The legal name of the business."
+      },
+      "ap-label-en": {
+        "en": "legal name"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The legal name of the business.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{E451B1AC-A4D0-40e4-8A8E-0A0B0087918A}",
+        "EA-Name": "legalName",
+        "EA-Package": "Core Business",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/legal#legalName"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "legal name"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The legal name of the business."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "A business might have more than one legal name, particularly in countries with more than one official language. In such cases, and where the encoding technology allows, the language of the string should be identified."
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The legal name of the business."
+        },
+        "ap-label-en": {
+          "en": "legal name"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The legal name of the business."
+        },
+        "label": {
+          "en": "legal name"
+        },
+        "usage": {
+          "en": "A business might have more than one legal name, particularly in countries with more than one official language. In such cases, and where the encoding technology allows, the language of the string should be identified."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "legal name",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "legal name",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "usage": {
+        "en": "A business might have more than one legal name, particularly in countries with more than one official language. In such cases, and where the encoding technology allows, the language of the string should be identified.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/legal#legalIdentifier",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{5D92B6B4-7710-4778-983A-8C8E7D1EB06F}",
+      "ap-definition-en": {
+        "en": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered."
+      },
+      "ap-label-en": {
+        "en": "legal identifier"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "DestRoleTags": [
+          {
+            "key": "usageNote-en",
+            "note": "The details of the registration are provided as properties of the Identifier class. The Core vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's identifier is the relevant data point.",
+            "value": "NOTE"
+          },
+          {
+            "key": "uri",
+            "note": "http://www.w3.org/ns/legal#legalIdentifier",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "legal identifier",
+            "value": "NOTE"
+          }
+        ],
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{5D92B6B4-7710-4778-983A-8C8E7D1EB06F}",
+        "EA-Name": "legalIdentifier",
+        "EA-Package": "",
+        "EA-Range": "Identifier",
+        "EA-Type": "connector",
+        "RangeData": {
+          "EA-GUID": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+          "EA-Name": "Identifier",
+          "EA-Package": "adms",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        },
+        "RawTags": [
+          {
+            "key": "usageNote-en",
+            "note": "The details of the registration are provided as properties of the Identifier class. The Core vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's identifier is the relevant data point.",
+            "value": "NOTE"
+          },
+          {
+            "key": "uri",
+            "note": "http://www.w3.org/ns/legal#legalIdentifier",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered.",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "legal identifier",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered."
+        },
+        "ap-label-en": {
+          "en": "legal identifier"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The legal status of a business is conferred on it by an authority within a given jurisdiction. The legal identifier is therefore a fundamental relationship between a Legal Entity and the authority with which it is registered."
+        },
+        "derived": "false",
+        "destRole": "legalIdentifier",
+        "label": {
+          "en": "legal identifier"
+        },
+        "sourceRole": "null",
+        "usage": {
+          "en": "The details of the registration are provided as properties of the Identifier class. The Core vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's identifier is the relevant data point."
+        }
+      },
+      "generalization": [],
+      "inpackage": "UNKNOWN",
+      "label": {
+        "en": "legal identifier",
+        "nl": "Enter your translation here"
+      },
+      "name": "legal identifier",
+      "range": [
+        {
+          "EA-GUID": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+          "EA-Name": "Identifier",
+          "EA-Package": "adms",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "usage": {
+        "en": "The details of the registration are provided as properties of the Identifier class. The Core vocabulary sets no restriction on the type of legal identifier. In many countries, the business register's identifier is the relevant data point.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/adms#schemeAgency",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{898C9352-2AE7-446e-9F20-26A8DBD97C02}",
+      "ap-definition-en": {
+        "en": "The name of the agency responsible for issuing the Identifier."
+      },
+      "ap-label-en": {
+        "en": "issuing authority name"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The name of the agency responsible for issuing the Identifier.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+        "EA-Guid": "{898C9352-2AE7-446e-9F20-26A8DBD97C02}",
+        "EA-Name": "issuingAuthorityName",
+        "EA-Package": "adms",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "issuing authority name"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/adms#schemeAgency"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The name of the agency responsible for issuing the Identifier."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "Example: \"Federal Public Service Interior\"@en."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The name of the agency responsible for issuing the Identifier."
+        },
+        "ap-label-en": {
+          "en": "issuing authority name"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The name of the agency responsible for issuing the Identifier."
+        },
+        "label": {
+          "en": "issuing authority name"
+        },
+        "usage": {
+          "en": "Example: \"Federal Public Service Interior\"@en."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "issuing authority name",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "issuing authority name",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "usage": {
+        "en": "Example: \"Federal Public Service Interior\"@en.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#notation",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{1387E307-13D3-40fd-B618-26538B4FF177}",
+      "ap-definition-en": {
+        "en": "The value of this property is the Identifier itself."
+      },
+      "ap-label-en": {
+        "en": "identifier"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The value of this property is the Identifier itself.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+        "EA-Guid": "{1387E307-13D3-40fd-B618-26538B4FF177}",
+        "EA-Name": "identifier",
+        "EA-Package": "adms",
+        "EA-Range": "Literal",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "Literal",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/2004/02/skos/core#notation"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "identifier"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The value of this property is the Identifier itself."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Example: \"abc-12345-de\"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The value of this property is the Identifier itself."
+        },
+        "ap-label-en": {
+          "en": "identifier"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The value of this property is the Identifier itself."
+        },
+        "label": {
+          "en": "identifier"
+        },
+        "usage": {
+          "en": "Example: \"abc-12345-de\"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "identifier",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "identifier",
+      "range": [
+        {
+          "EA-Name": "Literal",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ],
+      "usage": {
+        "en": "Example: \"abc-12345-de\"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/issued",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{DF953D05-18CC-40fd-A09C-3ED1D82948E5}",
+      "ap-definition-en": {
+        "en": "The date on which the Identifier was assigned."
+      },
+      "ap-label-en": {
+        "en": "date of issue"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The date on which the Identifier was assigned.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+        "EA-Guid": "{DF953D05-18CC-40fd-A09C-3ED1D82948E5}",
+        "EA-Name": "dateOfIssue",
+        "EA-Package": "adms",
+        "EA-Range": "Date",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-Name": "Date",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#date"
+        },
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "date of issue"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/terms/issued"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The date on which the Identifier was assigned."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The date on which the Identifier was assigned."
+        },
+        "ap-label-en": {
+          "en": "date of issue"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The date on which the Identifier was assigned."
+        },
+        "label": {
+          "en": "date of issue"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "date of issue",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "date of issue",
+      "range": [
+        {
+          "EA-Name": "Date",
+          "EA-Package": "",
+          "uri": "http://www.w3.org/2001/XMLSchema#date"
+        }
+      ]
+    },
+    {
+      "@id": "http://purl.org/dc/terms/identifier",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{6810E12D-C741-4da7-B9EB-2B2AD14127BF}",
+      "ap-definition-en": {
+        "en": "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it."
+      },
+      "ap-label-en": {
+        "en": "identifier"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "DestRoleTags": [
+          {
+            "key": "uri",
+            "note": "http://purl.org/dc/terms/identifier",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "identifier",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Legal Entities, people, organisations and other Agents may have any number of identifiers (but only one legal identifier). For example, in many jurisdictions, a business will have one or more tax numbers associated with them which do not, by themselves, confer legal entity status. An individual may be issued with identifiers for everything from social security to club membership. The identifier relationship must not be used to link to the identifier issued by the authority that conferred legal entity status on a business.",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it.",
+            "value": "NOTE"
+          }
+        ],
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{6810E12D-C741-4da7-B9EB-2B2AD14127BF}",
+        "EA-Name": "identifier",
+        "EA-Package": "",
+        "EA-Range": "Identifier",
+        "EA-Type": "connector",
+        "RangeData": {
+          "EA-GUID": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+          "EA-Name": "Identifier",
+          "EA-Package": "adms",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "http://purl.org/dc/terms/identifier",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "identifier",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Legal Entities, people, organisations and other Agents may have any number of identifiers (but only one legal identifier). For example, in many jurisdictions, a business will have one or more tax numbers associated with them which do not, by themselves, confer legal entity status. An individual may be issued with identifiers for everything from social security to club membership. The identifier relationship must not be used to link to the identifier issued by the authority that conferred legal entity status on a business.",
+            "value": "NOTE"
+          },
+          {
+            "key": "definition-en",
+            "note": "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it."
+        },
+        "ap-label-en": {
+          "en": "identifier"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The identifier relation links a Resource to any formally issued Identifier for that Resource other than the one that confers legal status upon it."
+        },
+        "derived": "false",
+        "destRole": "identifier",
+        "label": {
+          "en": "identifier"
+        },
+        "sourceRole": "null",
+        "usage": {
+          "en": "Legal Entities, people, organisations and other Agents may have any number of identifiers (but only one legal identifier). For example, in many jurisdictions, a business will have one or more tax numbers associated with them which do not, by themselves, confer legal entity status. An individual may be issued with identifiers for everything from social security to club membership. The identifier relationship must not be used to link to the identifier issued by the authority that conferred legal entity status on a business."
+        }
+      },
+      "generalization": [],
+      "inpackage": "UNKNOWN",
+      "label": {
+        "en": "identifier",
+        "nl": "Enter your translation here"
+      },
+      "name": "identifier",
+      "range": [
+        {
+          "EA-GUID": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+          "EA-Name": "Identifier",
+          "EA-Package": "adms",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "usage": {
+        "en": "Legal Entities, people, organisations and other Agents may have any number of identifiers (but only one legal identifier). For example, in many jurisdictions, a business will have one or more tax numbers associated with them which do not, by themselves, confer legal entity status. An individual may be issued with identifiers for everything from social security to club membership. The identifier relationship must not be used to link to the identifier issued by the authority that conferred legal entity status on a business.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{F9250A30-C64A-4cf8-B6E9-A15F1441C964}",
+      "ap-definition-en": {
+        "en": "Name of the scheme used to construct the identifier."
+      },
+      "ap-label-en": {
+        "en": "scheme name"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Name of the scheme used to construct the identifier.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+        "EA-Guid": "{F9250A30-C64A-4cf8-B6E9-A15F1441C964}",
+        "EA-Name": "schemeName",
+        "EA-Package": "adms",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/terms/conformsTo"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "scheme name"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Name of the scheme used to construct the identifier."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Name of the scheme used to construct the identifier."
+        },
+        "ap-label-en": {
+          "en": "scheme name"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Name of the scheme used to construct the identifier."
+        },
+        "label": {
+          "en": "scheme name"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "scheme name",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "scheme name",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ]
+    },
+    {
+      "@id": "http://purl.org/dc/terms/conformsTo",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{A145710E-6B8F-4a53-B0F3-3AB50C244C08}",
+      "ap-definition-en": {
+        "en": "URI of the scheme used to construct the identifier."
+      },
+      "ap-label-en": {
+        "en": "scheme URI"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "URI of the scheme used to construct the identifier.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+        "EA-Guid": "{A145710E-6B8F-4a53-B0F3-3AB50C244C08}",
+        "EA-Name": "schemeURI",
+        "EA-Package": "adms",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "URI of the scheme used to construct the identifier."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "scheme URI"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/terms/conformsTo"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "URI of the scheme used to construct the identifier."
+        },
+        "ap-label-en": {
+          "en": "scheme URI"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "URI of the scheme used to construct the identifier."
+        },
+        "label": {
+          "en": "scheme URI"
+        },
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "scheme URI",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "scheme URI",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ]
+    },
+    {
+      "@id": "http://purl.org/dc/terms/alternative",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "EA-Guid": "{534623F3-14F8-4493-801A-E5ED524636BB}",
+      "ap-definition-en": {
+        "en": "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name."
+      },
+      "ap-label-en": {
+        "en": "alternative name"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{534623F3-14F8-4493-801A-E5ED524636BB}",
+        "EA-Name": "alternativeName",
+        "EA-Package": "Core Business",
+        "EA-Range": "Text",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        },
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://purl.org/dc/terms/alternative"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "alternative name"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "Where more than one legal name \nexists and where they have equal standing but are expressed in different languages, identify the language used in each of the multiple legal names.",
+            "value": "Where more than one legal name exists and where they have equal standing but are expressed in different languages, identify the language used in each of the multiple legal names."
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name."
+        },
+        "ap-label-en": {
+          "en": "alternative name"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "Some jurisdictions recognise concepts such as a trading name or alternative forms of a legal entity's name. The alternative name property can be used to record such names but should not be used to record translations of the primary legal name."
+        },
+        "label": {
+          "en": "alternative name"
+        },
+        "usage": {
+          "en": "Where more than one legal name exists and where they have equal standing but are expressed in different languages, identify the language used in each of the multiple legal names."
+        }
+      },
+      "generalization": [],
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "alternative name",
+        "nl": "Enter your translation here"
+      },
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "alternative name",
+      "range": [
+        {
+          "EA-GUID": "{01DDF84E-BA04-467c-B657-9A8877C293F9}",
+          "EA-Name": "Text",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+        }
+      ],
+      "usage": {
+        "en": "Where more than one legal name exists and where they have equal standing but are expressed in different languages, identify the language used in each of the multiple legal names.",
+        "nl": "Enter your translation here"
+      }
+    }
+  ],
+  "externals": [
+    {
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{E537CD26-90D7-47e6-859F-D083793E1CCB}",
+      "ap-definition-en": {
+        "en": "A SKOS Concept can be viewed as an idea or notion; a unit of thought. However,what constitutes a unit of thought is subjective,and this definition is meant to be suggestive,rather than restrictive."
+      },
+      "ap-label-en": {
+        "en": "Concept"
+      },
+      "definition": {
+        "en": "A SKOS Concept can be viewed as an idea or notion; a unit of thought. However,what constitutes a unit of thought is subjective,and this definition is meant to be suggestive,rather than restrictive.",
+        "nl": "Enter your translation here"
+      },
+      "extra": {
+        "EA-Guid": "{E537CD26-90D7-47e6-859F-D083793E1CCB}",
+        "EA-Name": "Concept",
+        "EA-Package": "skos",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "A SKOS Concept can be viewed as an idea or notion; a unit of thought. However,what constitutes a unit of thought is subjective,and this definition is meant to be suggestive,rather than restrictive."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Concept"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/2004/02/skos/core#Concept"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "A SKOS Concept can be viewed as an idea or notion; a unit of thought. However,what constitutes a unit of thought is subjective,and this definition is meant to be suggestive,rather than restrictive."
+        },
+        "ap-label-en": {
+          "en": "Concept"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "A SKOS Concept can be viewed as an idea or notion; a unit of thought. However,what constitutes a unit of thought is subjective,and this definition is meant to be suggestive,rather than restrictive."
+        },
+        "label": {
+          "en": "Concept"
+        },
+        "parentclasses": "",
+        "usage": ""
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Concept",
+        "nl": "Enter your translation here"
+      },
+      "name": "Concept"
+    },
+    {
+      "@id": "http://www.w3.org/ns/adms#Identifier",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+      "ap-definition-en": {
+        "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+      },
+      "ap-label-en": {
+        "en": "Identifier"
+      },
+      "definition": {
+        "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued.",
+        "nl": "Enter your translation here"
+      },
+      "extra": {
+        "EA-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+        "EA-Name": "Identifier",
+        "EA-Package": "adms",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/adms#Identifier"
+          },
+          {
+            "key": "definition-en",
+            "note": "null",
+            "value": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Identifier"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "The Identifier class is based on the UN/CEFACT class of the same name and is defined under the ADMS namespace."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+        },
+        "ap-label-en": {
+          "en": "Identifier"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+        },
+        "label": {
+          "en": "Identifier"
+        },
+        "parentclasses": "",
+        "usage": {
+          "en": "The Identifier class is based on the UN/CEFACT class of the same name and is defined under the ADMS namespace."
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Identifier",
+        "nl": "Enter your translation here"
+      },
+      "name": "Identifier",
+      "usage": {
+        "en": "The Identifier class is based on the UN/CEFACT class of the same name and is defined under the ADMS namespace.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/legal#LegalEntity",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+      "ap-definition-en": {
+        "en": "A Formal Organization able to transact business, typically registered with a body able to confer legal status such as a national business register."
+      },
+      "ap-label-en": {
+        "en": "Legal Entity"
+      },
+      "definition": {
+        "en": "A Formal Organization able to transact business, typically registered with a body able to confer legal status such as a national business register.",
+        "nl": "Enter your translation here"
+      },
+      "extra": {
+        "EA-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Name": "Legal Entity",
+        "EA-Package": "Core Business",
+        "EA-Parents": "FormalOrganization",
+        "EA-Parents2": [
+          {
+            "label": "Formal Organization",
+            "name": "FormalOrganization",
+            "package": "org",
+            "uri": "http://www.w3.org/ns/org#FormalOrganization"
+          }
+        ],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/legal#LegalEntity"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Legal Entity"
+          },
+          {
+            "key": "definition-en",
+            "note": "A legal entity able to transact business, typically registered with a body able to confer legal status such as a national business register.\nIn RDF terms, a legal entity is a sub class of dcterms:Agent and foaf:Agent.\nIn XML terms, this is equivalent to the UN/CEFACT term 'Business profile",
+            "value": "A Formal Organization able to transact business, typically registered with a body able to confer legal status such as a national business register."
+          },
+          {
+            "key": "usageNote-en",
+            "note": "A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. This makes Legal Entities distinct from the concept of organisations, groups or sole traders. Many organisations exist that are not Legal Entities, yet to the outside world they have staff, hierarchies, locations etc. Other organisations exist that are an umbrella for several Legal Entities (universities are often good examples of this). This vocabulary is concerned solely with registered Legal Entities and does not attempt to cover all possible trading bodies.",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "TRANSLATIONS_ONLY",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "A Formal Organization able to transact business, typically registered with a body able to confer legal status such as a national business register."
+        },
+        "ap-label-en": {
+          "en": "Legal Entity"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "A Formal Organization able to transact business, typically registered with a body able to confer legal status such as a national business register."
+        },
+        "label": {
+          "en": "Legal Entity"
+        },
+        "parentclasses": "http://www.w3.org/ns/org#FormalOrganization",
+        "usage": {
+          "en": "A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. This makes Legal Entities distinct from the concept of organisations, groups or sole traders. Many organisations exist that are not Legal Entities, yet to the outside world they have staff, hierarchies, locations etc. Other organisations exist that are an umbrella for several Legal Entities (universities are often good examples of this). This vocabulary is concerned solely with registered Legal Entities and does not attempt to cover all possible trading bodies."
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Legal Entity",
+        "nl": "Enter your translation here"
+      },
+      "name": "Legal Entity",
+      "usage": {
+        "en": "A Legal Entity is able to trade, is legally liable for its actions, accounts, tax affairs etc. This makes Legal Entities distinct from the concept of organisations, groups or sole traders. Many organisations exist that are not Legal Entities, yet to the outside world they have staff, hierarchies, locations etc. Other organisations exist that are an umbrella for several Legal Entities (universities are often good examples of this). This vocabulary is concerned solely with registered Legal Entities and does not attempt to cover all possible trading bodies.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/locn#Address",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+      "ap-definition-en": {
+        "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
+      },
+      "ap-label-en": {
+        "en": "Address"
+      },
+      "definition": {
+        "en": "A spatial object that in a human-readable way identifies a fixed location of a property.",
+        "nl": "Enter your translation here"
+      },
+      "extra": {
+        "EA-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+        "EA-Name": "Address",
+        "EA-Package": "Core Location",
+        "EA-Parents": "",
+        "EA-Parents2": [],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/locn#Address"
+          },
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Address"
+          },
+          {
+            "key": "definition-en",
+            "note": "A spatial object that in a human-readable way identifies a fixed location of a property.",
+            "value": "NOTE"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
+        },
+        "ap-label-en": {
+          "en": "Address"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "A spatial object that in a human-readable way identifies a fixed location of a property."
+        },
+        "label": {
+          "en": "Address"
+        },
+        "parentclasses": "",
+        "usage": {
+          "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>"
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Address",
+        "nl": "Enter your translation here"
+      },
+      "name": "Address",
+      "usage": {
+        "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "@id": "http://www.w3.org/ns/org#FormalOrganization",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "EA-Guid": "{AAF8A024-C524-49f1-B64A-7B964F652639}",
+      "ap-definition-en": {
+        "en": "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities."
+      },
+      "ap-label-en": {
+        "en": "Formal Organization"
+      },
+      "definition": {
+        "en": "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities.",
+        "nl": "Enter your translation here"
+      },
+      "extra": {
+        "EA-Guid": "{AAF8A024-C524-49f1-B64A-7B964F652639}",
+        "EA-Name": "FormalOrganization",
+        "EA-Package": "org",
+        "EA-Parents": "",
+        "EA-Parents2": [
+          {
+            "label": "",
+            "name": "Organization",
+            "package": "foaf",
+            "uri": "http://fixme.com#Organization"
+          }
+        ],
+        "EA-Type": "CLASS",
+        "RawTags": [
+          {
+            "key": "label-en",
+            "note": "null",
+            "value": "Formal Organization"
+          },
+          {
+            "key": "definition-en",
+            "note": "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities.",
+            "value": "NOTE"
+          },
+          {
+            "key": "uri",
+            "note": "null",
+            "value": "http://www.w3.org/ns/org#FormalOrganization"
+          },
+          {
+            "key": "usageNote-en",
+            "note": "null",
+            "value": "Examples include a corporation, charity, government or church."
+          }
+        ],
+        "Scope": "NOTHING",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities."
+        },
+        "ap-label-en": {
+          "en": "Formal Organization"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "An Organization which is recognized in the world at large, in particular in legal jurisdictions, with associated rights and responsibilities."
+        },
+        "label": {
+          "en": "Formal Organization"
+        },
+        "parentclasses": "http://fixme.com#Organization",
+        "usage": {
+          "en": "Examples include a corporation, charity, government or church."
+        }
+      },
+      "inpackage": "OTHER_PACKAGE",
+      "label": {
+        "en": "Formal Organization",
+        "nl": "Enter your translation here"
+      },
+      "name": "Formal Organization",
+      "usage": {
+        "en": "Examples include a corporation, charity, government or church.",
+        "nl": "Enter your translation here"
+      }
+    }
+  ],
+  "extra": {
+    "EA-Guid": "{3A57525E-DA41-4170-9BBA-60D19ACB774E}",
+    "EA-Name": "Core Business",
+    "RawTags": [
+      {
+        "key": "baseURI",
+        "note": "null",
+        "value": "https://data.europa.eu/m8g/"
+      }
+    ],
+    "baseURI": "https://data.europa.eu/m8g/",
+    "issued": "TODO",
+    "license": "TODO"
+  },
+  "feedbackurl": "https://github.com/SEMICeu/Core-Business-Vocabulary/issues",
+  "filename": "config/core-business.json",
+  "hostname": "https://vocab.belgif.be/",
+  "issued": "TODO",
+  "label": {
+    "en": "core-business-ap",
+    "nl": "core-business-ap"
+  },
+  "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
+  "name": "core-business-ap",
+  "navigation": {},
+  "properties": [
+    {
+      "@id": "https://data.europa.eu/m8g/legalentityActivity",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{13BEF094-EA35-4354-921E-B51158D339F1}",
+      "ap-definition-en": {
+        "en": "TODO"
+      },
+      "codelist": [],
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{13BEF094-EA35-4354-921E-B51158D339F1}",
+        "EA-Name": "legalentityActivity",
+        "EA-Package": "Core Business",
+        "EA-Range": "Code",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        "RawTags": [],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "TODO"
+        },
+        "ap-label-en": "",
+        "ap-usageNote-en": "",
+        "definition": "",
+        "label": "",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "",
+      "range": [
+        {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.europa.eu/m8g/legalFormType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{04972544-8E2B-424a-9875-91E6D2307DDE}",
+      "ap-definition-en": {
+        "en": "TODO"
+      },
+      "codelist": [],
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{04972544-8E2B-424a-9875-91E6D2307DDE}",
+        "EA-Name": "legalFormType",
+        "EA-Package": "Core Business",
+        "EA-Range": "Code",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        "RawTags": [],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "TODO"
+        },
+        "ap-label-en": "",
+        "ap-usageNote-en": "",
+        "definition": "",
+        "label": "",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "",
+      "range": [
+        {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.europa.eu/m8g/legalEntityStatus",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{96FAFB64-B572-4db2-8463-F473B98C5D50}",
+      "ap-definition-en": {
+        "en": "TODO"
+      },
+      "codelist": [],
+      "domain": [
+        {
+          "EA-Name": "Legal Entity",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ],
+      "extra": {
+        "EA-Domain": "Legal Entity",
+        "EA-Domain-Guid": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+        "EA-Guid": "{96FAFB64-B572-4db2-8463-F473B98C5D50}",
+        "EA-Name": "legalEntityStatus",
+        "EA-Package": "Core Business",
+        "EA-Range": "Code",
+        "EA-Type": "attribute",
+        "RangeData": {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        },
+        "RawTags": [],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "TODO"
+        },
+        "ap-label-en": "",
+        "ap-usageNote-en": "",
+        "definition": "",
+        "label": "",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "maxCardinality": "*",
+      "minCardinality": "0",
+      "name": "",
+      "range": [
+        {
+          "EA-GUID": "{30CD7894-2AB0-450c-BE9F-0DDB947550B7}",
+          "EA-Name": "Code",
+          "EA-Package": "Core Vocabulary",
+          "uri": "http://www.w3.org/2004/02/skos/core#Concept"
+        }
+      ]
+    },
+    {
+      "@id": "https://data.europa.eu/m8g/identifies",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "EA-Guid": "{8A33E202-AD87-47c2-B452-5899AE4A1E21}",
+      "ap-definition-en": {
+        "en": "The identifies relationship links an Identifier class to the resource it identifies."
+      },
+      "ap-label-en": {
+        "en": "identifies"
+      },
+      "codelist": [],
+      "definition": {
+        "en": "The identifies relationship links an Identifier class to the resource it identifies.",
+        "nl": "Enter your translation here"
+      },
+      "domain": [
+        {
+          "EA-Name": "Identifier",
+          "uri": "http://www.w3.org/ns/adms#Identifier"
+        }
+      ],
+      "extra": {
+        "DestRoleTags": [
+          {
+            "key": "definition-en",
+            "note": "The identifies relationship links an Identifier class to the resource it identifies.",
+            "value": "NOTE"
+          },
+          {
+            "key": "package",
+            "note": "Core Business",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "identifies",
+            "value": "NOTE"
+          }
+        ],
+        "EA-Domain": "Identifier",
+        "EA-Domain-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+        "EA-Guid": "{8A33E202-AD87-47c2-B452-5899AE4A1E21}",
+        "EA-Name": "identifies",
+        "EA-Package": "",
+        "EA-Range": "Legal Entity",
+        "EA-Type": "connector",
+        "RangeData": {
+          "EA-GUID": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+          "EA-Name": "Legal Entity",
+          "EA-Package": "Core Business",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        },
+        "RawTags": [
+          {
+            "key": "definition-en",
+            "note": "The identifies relationship links an Identifier class to the resource it identifies.",
+            "value": "NOTE"
+          },
+          {
+            "key": "package",
+            "note": "Core Business",
+            "value": "NOTE"
+          },
+          {
+            "key": "label-en",
+            "note": "identifies",
+            "value": "NOTE"
+          }
+        ],
+        "Scope": "FULL_DEFINITON",
+        "ap-codelist": "",
+        "ap-definition-en": {
+          "en": "The identifies relationship links an Identifier class to the resource it identifies."
+        },
+        "ap-label-en": {
+          "en": "identifies"
+        },
+        "ap-usageNote-en": "",
+        "definition": {
+          "en": "The identifies relationship links an Identifier class to the resource it identifies."
+        },
+        "derived": "false",
+        "destRole": "identifies",
+        "label": {
+          "en": "identifies"
+        },
+        "sourceRole": "null",
+        "usage": ""
+      },
+      "generalization": [],
+      "inpackage": "ACTIVE_PACKAGE",
+      "label": {
+        "en": "identifies",
+        "nl": "Enter your translation here"
+      },
+      "name": "identifies",
+      "range": [
+        {
+          "EA-GUID": "{FAFDAEBD-DC17-48ab-B8A3-B2311DA155BE}",
+          "EA-Name": "Legal Entity",
+          "EA-Package": "Core Business",
+          "uri": "http://www.w3.org/ns/legal#LegalEntity"
+        }
+      ]
+    }
+  ],
+  "publication-date": "2021-04-01",
+  "publication-state": "Working Draft",
+  "repository": "https://github.com/bertvannuffelen/semiceuthema",
+  "repourl": "https://github.com/SEMICeu/Core-Business-Vocabulary/tree/master/releases/2.00",
+  "site": "site-skeleton/core-business",
+  "standaardregisterurl": "Core-Business-Vocabulary",
+  "template": "core-business-ap_nl.j2",
+  "title": "TODO Core Business Vocabularium",
+  "toolchaincommit": "33f8ecf09058f146fd010b9d5657ce4b28cdd7f2",
+  "translation": [
+    {
+      "language": "en",
+      "mergefile": "core-business-ap_en_merged.jsonld",
+      "template": "core-business-ap_en.j2",
+      "title": "Core Business Vocabulary",
+      "translationjson": "core-business-ap_en.json"
+    },
+    {
+      "language": "de",
+      "mergefile": "core-business-ap_de_merged.jsonld",
+      "template": "core-business-ap_de.j2",
+      "title": "TODO Core Business Vocabulary",
+      "translationjson": "core-business-ap_de.json"
+    },
+    {
+      "language": "nl",
+      "mergefile": "core-business-ap_nl_merged.jsonld",
+      "template": "core-business-ap_nl.j2",
+      "title": "TODO Core Business Vocabularium",
+      "translationjson": "core-business-ap_nl.json"
+    }
+  ],
+  "type": "ap",
+  "urlref": "/doc/core-vocabulary/core-business",
+  "versionurl": "https://semiceu.github.io/Core-Business-Vocabulary/releases/2.00"
+}

@@ -6,9 +6,11 @@
     "baseURI": "https://data.europa.eu/m8g/",
     "filename": "core-location-ap",
     "navigation": {
-      "self": "https://semiceu.github.io/doc/core-vocabulary/core-location"
+      "self": "https://vocab.belgif.be//doc/core-vocabulary/core-location"
     },
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
+    "documenttype": "ap",
+    "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
     "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/77337b82023e37e2700d13191dd868cb5c493b6e",
@@ -32,43 +34,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
-          "name": "geographic identifier",
-          "sort": "geographic identifier",
-          "label": {
-            "en": "geographic identifier"
-          },
-          "description": {
-            "en": "A URI that identifies the Location."
-          },
-          "usage": {
-            "en": "<p>\r\nGeoNames.org provides stable, widely recognised identifiers for more than 10 million geographical names that can be used as links to further information. For example, http://sws.geonames.org/593116/ identifies the Lithuanian capital Vilnius. Unfortunately these URIs cannot easily be automatically deduced since the URI scheme uses simple numeric codes. Finding a GeoNames identifier for a Location is almost always a manual process. Where such identifiers are known or can be found, however, it is recommended that they be used.\r\n</p></br>\r\n\r\n<p>\r\nWhere the Location Class is used to identify a country, if the geonames URI is not known, the recommendation is to use DBpedia URIs of the form http://dbpedia.org/resource/ISO_3166-1:XX where XX is the ISO 3166 two character code for the country.\r\n</p></br>\r\n\r\n<p>\r\nThe EU's Publication Office diverges from ISO 3166-1 and uses EL and UK for Greece and the United Kingdom respectively. DBpedia sticks to\r\nthe ISO codes and so the correct URIs for these countries are:\r\n<ul>\r\n  <li>- http://dbpedia.org/resource/ISO_3166-1:GR</li>\r\n  <li>- http://dbpedia.org/resource/ISO_3166-1:GB</li>\r\n<ul>\r\neven when the geographic name is given as EL or UK.\r\n</p></br>\r\n\r\n<p>\r\nThe use of a URIs has added advantages:\r\n<ul>\r\n  <li>- it can be used by automated systems to look up additional data (linked data);</li>\r\n  <li>- a triple store may store only one copy of the URI, whereas if a string is used, a copy of that string is always stored for each and every person in the database. Thus, in large data sets, the saving on memory capacity and the improvement in transmission efficiency can be substantial.</li>\r\n</ul>\r\n</p>"
-          },
-          "domain": [
-            {
-              "EA-Name": "Location",
-              "uri": "http://purl.org/dc/terms/Location"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "en": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://www.w3.org/ns/locn#geographicName",
           "name": "geographic name",
@@ -105,6 +70,43 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "name": "geographic identifier",
+          "sort": "geographic identifier",
+          "label": {
+            "en": "geographic identifier"
+          },
+          "description": {
+            "en": "A URI that identifies the Location."
+          },
+          "usage": {
+            "en": "<p>\r\nGeoNames.org provides stable, widely recognised identifiers for more than 10 million geographical names that can be used as links to further information. For example, http://sws.geonames.org/593116/ identifies the Lithuanian capital Vilnius. Unfortunately these URIs cannot easily be automatically deduced since the URI scheme uses simple numeric codes. Finding a GeoNames identifier for a Location is almost always a manual process. Where such identifiers are known or can be found, however, it is recommended that they be used.\r\n</p></br>\r\n\r\n<p>\r\nWhere the Location Class is used to identify a country, if the geonames URI is not known, the recommendation is to use DBpedia URIs of the form http://dbpedia.org/resource/ISO_3166-1:XX where XX is the ISO 3166 two character code for the country.\r\n</p></br>\r\n\r\n<p>\r\nThe EU's Publication Office diverges from ISO 3166-1 and uses EL and UK for Greece and the United Kingdom respectively. DBpedia sticks to\r\nthe ISO codes and so the correct URIs for these countries are:\r\n<ul>\r\n  <li>- http://dbpedia.org/resource/ISO_3166-1:GR</li>\r\n  <li>- http://dbpedia.org/resource/ISO_3166-1:GB</li>\r\n<ul>\r\neven when the geographic name is given as EL or UK.\r\n</p></br>\r\n\r\n<p>\r\nThe use of a URIs has added advantages:\r\n<ul>\r\n  <li>- it can be used by automated systems to look up additional data (linked data);</li>\r\n  <li>- a triple store may store only one copy of the URI, whereas if a string is used, a copy of that string is always stored for each and every person in the database. Thus, in large data sets, the saving on memory capacity and the improvement in transmission efficiency can be substantial.</li>\r\n</ul>\r\n</p>"
+          },
+          "domain": [
+            {
+              "EA-Name": "Location",
+              "uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
         }
       ]
     },
@@ -121,43 +123,6 @@
       "usage": {},
       "parents": [],
       "properties": [
-        {
-          "uri": "https://data.europa.eu/m8g/address",
-          "name": "address",
-          "sort": "address",
-          "label": {
-            "en": "address"
-          },
-          "description": {
-            "en": "The address relationship associates any Resource with the Address class (i.e. anything can be\r\nlinked to its address using this property)."
-          },
-          "usage": {
-            "en": "Asserting the address relationship implies that the\r\n Resource has an Address."
-          },
-          "domain": [
-            {
-              "EA-Name": "Resource",
-              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Address",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Address",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "en": "Address"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
         {
           "uri": "https://data.europa.eu/m8g/location",
           "name": "location",
@@ -189,6 +154,43 @@
               "range_puri": "http://purl.org/dc/terms/Location",
               "range_label": {
                 "en": "Location"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://data.europa.eu/m8g/address",
+          "name": "address",
+          "sort": "address",
+          "label": {
+            "en": "address"
+          },
+          "description": {
+            "en": "The address relationship associates any Resource with the Address class (i.e. anything can be\r\nlinked to its address using this property)."
+          },
+          "usage": {
+            "en": "Asserting the address relationship implies that the\r\n Resource has an Address."
+          },
+          "domain": [
+            {
+              "EA-Name": "Resource",
+              "uri": "http://www.w3.org/2000/01/rdf-schema#Resource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Address",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address"
               }
             }
           ],
@@ -250,17 +252,17 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://www.w3.org/ns/locn#addressArea",
-          "name": "address area",
-          "sort": "address area",
+          "uri": "http://www.w3.org/ns/locn#thoroughfare",
+          "name": "thoroughfare",
+          "sort": "thoroughfare",
           "label": {
-            "en": "address area"
+            "en": "thoroughfare"
           },
           "description": {
-            "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+            "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
           },
           "usage": {
-            "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre."
+            "en": "For example, \"Avenue des Champs-Élysées\"."
           },
           "domain": [
             {
@@ -287,17 +289,52 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#addressID",
-          "name": "address ID",
-          "sort": "address ID",
+          "uri": "http://www.w3.org/ns/locn#postName",
+          "name": "post name (city)",
+          "sort": "post name (city)",
           "label": {
-            "en": "address ID"
+            "en": "post name (city)"
           },
           "description": {
-            "en": "A globally unique identifier for each instance of an Address."
+            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postCode",
+          "name": "post code",
+          "sort": "post code",
+          "label": {
+            "en": "post code"
+          },
+          "description": {
+            "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
           },
           "usage": {
-            "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>"
+            "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
           },
           "domain": [
             {
@@ -324,128 +361,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
-          "name": "administrative unit level 1 (country)",
-          "sort": "administrative unit level 1 (country)",
+          "uri": "http://www.w3.org/ns/locn#poBox",
+          "name": "post office box",
+          "sort": "post office box",
           "label": {
-            "en": "administrative unit level 1 (country)"
+            "en": "post office box"
           },
           "description": {
-            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+            "en": "The Post Office Box number."
           },
           "usage": {
-            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this."
-          },
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
-          "name": "administrative unit level 2 (country/region/state)",
-          "sort": "administrative unit level 2 (country/region/state)",
-          "label": {
-            "en": "administrative unit level 2 (country/region/state)"
-          },
-          "description": {
-            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
-          },
-          "usage": {
-            "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary."
-          },
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#fullAddress",
-          "name": "full address",
-          "sort": "full address",
-          "label": {
-            "en": "full address"
-          },
-          "description": {
-            "en": "The complete address written as a formatted string."
-          },
-          "usage": {
-            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\"."
-          },
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
-          "name": "locator designator",
-          "sort": "locator designator",
-          "label": {
-            "en": "locator designator"
-          },
-          "description": {
-            "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
-          },
-          "usage": {
-            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\"."
+            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\"."
           },
           "domain": [
             {
@@ -509,17 +435,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#poBox",
-          "name": "post office box",
-          "sort": "post office box",
+          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
+          "name": "locator designator",
+          "sort": "locator designator",
           "label": {
-            "en": "post office box"
+            "en": "locator designator"
           },
           "description": {
-            "en": "The Post Office Box number."
+            "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
           },
           "usage": {
-            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\"."
+            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\"."
           },
           "domain": [
             {
@@ -546,53 +472,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#postCode",
-          "name": "post code",
-          "sort": "post code",
+          "uri": "http://www.w3.org/ns/locn#fullAddress",
+          "name": "full address",
+          "sort": "full address",
           "label": {
-            "en": "post code"
+            "en": "full address"
           },
           "description": {
-            "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
+            "en": "The complete address written as a formatted string."
           },
           "usage": {
-            "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
+            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\"."
           },
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#postName",
-          "name": "post name (city)",
-          "sort": "post name (city)",
-          "label": {
-            "en": "post name (city)"
-          },
-          "description": {
-            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
-          },
-          "usage": {},
           "domain": [
             {
               "EA-Name": "Address",
@@ -618,17 +509,128 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#thoroughfare",
-          "name": "thoroughfare",
-          "sort": "thoroughfare",
+          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
+          "name": "administrative unit level 2 (country/region/state)",
+          "sort": "administrative unit level 2 (country/region/state)",
           "label": {
-            "en": "thoroughfare"
+            "en": "administrative unit level 2 (country/region/state)"
           },
           "description": {
-            "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
           },
           "usage": {
-            "en": "For example, \"Avenue des Champs-Élysées\"."
+            "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "administrative unit level 1 (country)",
+          "sort": "administrative unit level 1 (country)",
+          "label": {
+            "en": "administrative unit level 1 (country)"
+          },
+          "description": {
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+          },
+          "usage": {
+            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#addressID",
+          "name": "address ID",
+          "sort": "address ID",
+          "label": {
+            "en": "address ID"
+          },
+          "description": {
+            "en": "A globally unique identifier for each instance of an Address."
+          },
+          "usage": {
+            "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#addressArea",
+          "name": "address area",
+          "sort": "address area",
+          "label": {
+            "en": "address area"
+          },
+          "description": {
+            "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+          },
+          "usage": {
+            "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre."
           },
           "domain": [
             {
@@ -672,14 +674,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://data.europa.eu/m8g/coordinates",
-          "name": "coordinates",
-          "sort": "coordinates",
+          "uri": "https://data.europa.eu/m8g/geometryType",
+          "name": "geometry type",
+          "sort": "geometry type",
           "label": {
-            "en": "coordinates"
+            "en": "geometry type"
           },
           "description": {
-            "en": "The coordinate list."
+            "en": "The geometry type, e.g. point, line or polygon."
           },
           "usage": {},
           "domain": [
@@ -690,16 +692,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "String"
+                "en": "Code"
               }
             }
           ],
@@ -742,49 +744,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://data.europa.eu/m8g/geometryType",
-          "name": "geometry type",
-          "sort": "geometry type",
+          "uri": "https://data.europa.eu/m8g/coordinates",
+          "name": "coordinates",
+          "sort": "coordinates",
           "label": {
-            "en": "geometry type"
+            "en": "coordinates"
           },
           "description": {
-            "en": "The geometry type, e.g. point, line or polygon."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Geometry",
-              "uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://schema.org/latitude",
-          "name": "latitude",
-          "sort": "latitude",
-          "label": {
-            "en": "latitude"
-          },
-          "description": {
-            "en": "The latitude."
+            "en": "The coordinate list."
           },
           "usage": {},
           "domain": [
@@ -812,16 +779,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://schema.org/longitude",
-          "name": "longitude",
-          "sort": "longitude",
+          "uri": "http://www.opengis.net/ont/geosparql#asWKT",
+          "name": "wkt",
+          "sort": "wkt",
           "label": {
-            "en": "longitude"
+            "en": "wkt"
           },
           "description": {
-            "en": "The longitude."
+            "en": "The well-known text representation string describing the point, line or polygon."
           },
-          "usage": {},
+          "usage": {
+            "en": "Use \"http://www.opengis.net/ont/geosparql#wktLiteral\" as type for the literal."
+          },
           "domain": [
             {
               "EA-Name": "Geometry",
@@ -830,16 +799,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "en": "String"
+                "en": "Literal"
               }
             }
           ],
@@ -884,18 +853,16 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.opengis.net/ont/geosparql#asWKT",
-          "name": "wkt",
-          "sort": "wkt",
+          "uri": "http://schema.org/longitude",
+          "name": "longitude",
+          "sort": "longitude",
           "label": {
-            "en": "wkt"
+            "en": "longitude"
           },
           "description": {
-            "en": "The well-known text representation string describing the point, line or polygon."
+            "en": "The longitude."
           },
-          "usage": {
-            "en": "Use \"http://www.opengis.net/ont/geosparql#wktLiteral\" as type for the literal."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Geometry",
@@ -904,16 +871,51 @@
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "Literal"
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://schema.org/latitude",
+          "name": "latitude",
+          "sort": "latitude",
+          "label": {
+            "en": "latitude"
+          },
+          "description": {
+            "en": "The latitude."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Geometry",
+              "uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
               }
             }
           ],
@@ -925,10 +927,10 @@
   ],
   "properties": [
     {
-      "uri": "https://data.europa.eu/m8g/address",
+      "uri": "https://data.europa.eu/m8g/location",
       "name": {
-        "en": "address",
-        "undefined": "address"
+        "en": "location",
+        "undefined": "location"
       },
       "description": {},
       "domain": [
@@ -937,9 +939,7 @@
       "range": [
         null
       ],
-      "parents": [
-        "http://w3.org/ns/locn#address"
-      ]
+      "parents": []
     },
     {
       "uri": "https://data.europa.eu/m8g/geometryType",
@@ -957,10 +957,10 @@
       "parents": []
     },
     {
-      "uri": "https://data.europa.eu/m8g/location",
+      "uri": "https://data.europa.eu/m8g/address",
       "name": {
-        "en": "location",
-        "undefined": "location"
+        "en": "address",
+        "undefined": "address"
       },
       "description": {},
       "domain": [
@@ -969,7 +969,9 @@
       "range": [
         null
       ],
-      "parents": []
+      "parents": [
+        "http://w3.org/ns/locn#address"
+      ]
     }
   ],
   "contributors": [
@@ -980,24 +982,24 @@
     },
     {
       "role": "E",
-      "first_name": "Florian",
-      "last_name": "Barthelemy",
+      "first_name": "Bert",
+      "last_name": "Van Nuffelen",
       "affiliation": {
-        "name": "PwC"
+        "name": "TenForce"
       }
     },
     {
       "role": "E",
-      "first_name": "Alexandre",
-      "last_name": "Beaufays",
+      "first_name": "Emidio",
+      "last_name": "Stani",
       "affiliation": {
         "name": "PwC EU Services"
       }
     },
     {
       "role": "E",
-      "first_name": "Michiel",
-      "last_name": "De Keyzer",
+      "first_name": "Dimitri",
+      "last_name": "Schepers",
       "affiliation": {
         "name": "PwC EU Services"
       }
@@ -1012,26 +1014,26 @@
     },
     {
       "role": "E",
-      "first_name": "Dimitri",
-      "last_name": "Schepers",
+      "first_name": "Michiel",
+      "last_name": "De Keyzer",
       "affiliation": {
         "name": "PwC EU Services"
       }
     },
     {
       "role": "E",
-      "first_name": "Emidio",
-      "last_name": "Stani",
+      "first_name": "Alexandre",
+      "last_name": "Beaufays",
       "affiliation": {
         "name": "PwC EU Services"
       }
     },
     {
       "role": "E",
-      "first_name": "Bert",
-      "last_name": "Van Nuffelen",
+      "first_name": "Florian",
+      "last_name": "Barthelemy",
       "affiliation": {
-        "name": "TenForce"
+        "name": "PwC"
       }
     },
     {

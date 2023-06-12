@@ -6,9 +6,11 @@
     "baseURI": "http://data.europa.eu/m8g/",
     "filename": "cccev-ap",
     "navigation": {
-      "self": "https://semiceu.github.io/doc/core-vocabulary/cccev"
+      "self": "https://vocab.belgif.be//doc/core-vocabulary/cccev"
     },
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
+    "documenttype": "ap",
+    "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
     "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/77337b82023e37e2700d13191dd868cb5c493b6e",
@@ -105,17 +107,17 @@
       ],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/bias",
-          "name": "bias",
-          "sort": "bias",
+          "uri": "http://data.europa.eu/m8g/weightingType",
+          "name": "weighting type",
+          "sort": "weighting type",
           "label": {
-            "en": "bias"
+            "en": "weighting type"
           },
           "description": {
-            "en": "Parameter used to adjust the evaluation of the Criterion."
+            "en": "Indication of how the weight should be interpreted in a complex evaluation expression, e.g. as a percentage in an evaluation expression."
           },
           "usage": {
-            "en": "The bias parameter tries to correct a systematic error. For example in procurement, a home bias corresponds to the \"presence of local preferences distorting international specialisation and resource allocation\". [https://trade.ec.europa.eu/doclib/docs/2018/september/tradoc_157319.pdf]\nWhen quantified, this systematic error can be removed."
+            "en": "An existing codelist http://publications.europa.eu/resource/authority/number-weight\nExample see: https://docs.ted.europa.eu/eforms/0.3.0/index.html#awardCriteriaSection"
           },
           "domain": [
             {
@@ -125,53 +127,16 @@
           ],
           "range": [
             {
-              "range_label": "Decimal",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal"
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#decimal",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Decimal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/weight",
-          "name": "weight",
-          "sort": "weight",
-          "label": {
-            "en": "weight"
-          },
-          "description": {
-            "en": "Relative importance of the Criterion."
-          },
-          "usage": {
-            "en": "The weight must be between 0 and 1. Usually, all Criteria can be integrated within a weighted sum equal to 1."
-          },
-          "domain": [
-            {
-              "EA-Name": "Criterion",
-              "uri": "http://data.europa.eu/m8g/Criterion"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Decimal",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#decimal",
-              "range_label": {
-                "en": "Decimal"
+                "en": "Code"
               }
             }
           ],
@@ -216,17 +181,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/weightingType",
-          "name": "weighting type",
-          "sort": "weighting type",
+          "uri": "http://data.europa.eu/m8g/weight",
+          "name": "weight",
+          "sort": "weight",
           "label": {
-            "en": "weighting type"
+            "en": "weight"
           },
           "description": {
-            "en": "Indication of how the weight should be interpreted in a complex evaluation expression, e.g. as a percentage in an evaluation expression."
+            "en": "Relative importance of the Criterion."
           },
           "usage": {
-            "en": "An existing codelist http://publications.europa.eu/resource/authority/number-weight\nExample see: https://docs.ted.europa.eu/eforms/0.3.0/index.html#awardCriteriaSection"
+            "en": "The weight must be between 0 and 1. Usually, all Criteria can be integrated within a weighted sum equal to 1."
           },
           "domain": [
             {
@@ -236,16 +201,53 @@
           ],
           "range": [
             {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "Decimal",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#decimal",
               "range_label": {
-                "en": "Code"
+                "en": "Decimal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/bias",
+          "name": "bias",
+          "sort": "bias",
+          "label": {
+            "en": "bias"
+          },
+          "description": {
+            "en": "Parameter used to adjust the evaluation of the Criterion."
+          },
+          "usage": {
+            "en": "The bias parameter tries to correct a systematic error. For example in procurement, a home bias corresponds to the \"presence of local preferences distorting international specialisation and resource allocation\". [https://trade.ec.europa.eu/doclib/docs/2018/september/tradoc_157319.pdf]\nWhen quantified, this systematic error can be removed."
+          },
+          "domain": [
+            {
+              "EA-Name": "Criterion",
+              "uri": "http://data.europa.eu/m8g/Criterion"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Decimal",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#decimal",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#decimal",
+              "range_label": {
+                "en": "Decimal"
               }
             }
           ],
@@ -278,51 +280,14 @@
       ],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
-          "name": "confidentiality level type",
-          "sort": "confidentiality level type",
+          "uri": "http://data.europa.eu/m8g/validityPeriod",
+          "name": "validity period",
+          "sort": "validity period",
           "label": {
-            "en": "confidentiality level type"
+            "en": "validity period"
           },
           "description": {
-            "en": "Security classification assigned to an Evidence e.g. classified, sensitive, public."
-          },
-          "usage": {
-            "en": "Classifications should be defined by an organisation/country as an outcome of a security assessment."
-          },
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "http://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/supportsRequirement",
-          "name": "supports requirement",
-          "sort": "supports requirement",
-          "label": {
-            "en": "supports requirement"
-          },
-          "description": {
-            "en": "Requirement for which the Evidence provides proof."
+            "en": "Period of Time during which the Evidence holds true or has force."
           },
           "usage": {},
           "domain": [
@@ -333,16 +298,16 @@
           ],
           "range": [
             {
-              "range_label": "Requirement",
-              "range_uri": "http://data.europa.eu/m8g/Requirement"
+              "range_label": "PeriodOfTime",
+              "range_uri": "http://www.w3.org/2006/time#ProperInterval"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Requirement",
-              "range_puri": "http://data.europa.eu/m8g/Requirement",
+              "range_uri": "#Period of Time",
+              "range_puri": "http://www.w3.org/2006/time#ProperInterval",
               "range_label": {
-                "en": "Requirement"
+                "en": "Period of Time"
               }
             }
           ],
@@ -385,14 +350,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/validityPeriod",
-          "name": "validity period",
-          "sort": "validity period",
+          "uri": "http://data.europa.eu/m8g/supportsRequirement",
+          "name": "supports requirement",
+          "sort": "supports requirement",
           "label": {
-            "en": "validity period"
+            "en": "supports requirement"
           },
           "description": {
-            "en": "Period of Time during which the Evidence holds true or has force."
+            "en": "Requirement for which the Evidence provides proof."
           },
           "usage": {},
           "domain": [
@@ -403,16 +368,16 @@
           ],
           "range": [
             {
-              "range_label": "PeriodOfTime",
-              "range_uri": "http://www.w3.org/2006/time#ProperInterval"
+              "range_label": "Requirement",
+              "range_uri": "http://data.europa.eu/m8g/Requirement"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Period of Time",
-              "range_puri": "http://www.w3.org/2006/time#ProperInterval",
+              "range_uri": "#Requirement",
+              "range_puri": "http://data.europa.eu/m8g/Requirement",
               "range_label": {
-                "en": "Period of Time"
+                "en": "Requirement"
               }
             }
           ],
@@ -420,17 +385,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/isProvidedBy",
-          "name": "is provided by",
-          "sort": "is provided by",
+          "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
+          "name": "confidentiality level type",
+          "sort": "confidentiality level type",
           "label": {
-            "en": "is provided by"
+            "en": "confidentiality level type"
           },
           "description": {
-            "en": "Agent that transmits the Evidence."
+            "en": "Security classification assigned to an Evidence e.g. classified, sensitive, public."
           },
           "usage": {
-            "en": "Agents transmitting Evidence are usually the Agents requesting the Evidence or service providers acting on behalf of the requesting Agents such as software developer companies."
+            "en": "Classifications should be defined by an organisation/country as an outcome of a security assessment."
           },
           "domain": [
             {
@@ -440,109 +405,33 @@
           ],
           "range": [
             {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Agent"
+                "en": "Code"
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "1",
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/supportsConcept",
-          "name": "supports concept",
-          "sort": "supports concept",
+          "uri": "http://purl.org/dc/terms/subject",
+          "name": "is about",
+          "sort": "is about",
           "label": {
-            "en": "supports concept"
+            "en": "is about"
           },
           "description": {
-            "en": "Information Concept providing facts found/inferred from the Evidence."
+            "en": "Agent that is the subject in the provided Evidence."
           },
-          "usage": {
-            "en": "Examples of Information Concepts are values found explictly in the evidence such as a birth date or information derived from the Evidence such as \"I am older that 18 years\"."
-          },
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "http://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "InformationConcept",
-              "range_uri": "http://data.europa.eu/m8g/InformationConcept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Information Concept",
-              "range_puri": "http://data.europa.eu/m8g/InformationConcept",
-              "range_label": {
-                "en": "Information Concept"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/conformsTo",
-          "name": "is conformant to",
-          "sort": "is conformant to",
-          "label": {
-            "en": "is conformant to"
-          },
-          "description": {
-            "en": "Evidence Type that specifies characteristics of the Evidence."
-          },
-          "usage": {
-            "en": "Examples of characteristics could be the layout or the configuration of the Evidence."
-          },
-          "domain": [
-            {
-              "EA-Name": "Evidence",
-              "uri": "http://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "EvidenceType",
-              "range_uri": "http://data.europa.eu/m8g/EvidenceType"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Evidence Type",
-              "range_puri": "http://data.europa.eu/m8g/EvidenceType",
-              "range_label": {
-                "en": "Evidence Type"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/creator",
-          "name": "is created by",
-          "sort": "is created by",
-          "label": {
-            "en": "is created by"
-          },
-          "description": {
-            "en": "Agent that produces the Evidence."
-          },
-          "usage": {
-            "en": "The production of evidence could involve the generation of a document or the extraction of data from a database."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Evidence",
@@ -605,16 +494,129 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/subject",
-          "name": "is about",
-          "sort": "is about",
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "is created by",
+          "sort": "is created by",
           "label": {
-            "en": "is about"
+            "en": "is created by"
           },
           "description": {
-            "en": "Agent that is the subject in the provided Evidence."
+            "en": "Agent that produces the Evidence."
           },
-          "usage": {},
+          "usage": {
+            "en": "The production of evidence could involve the generation of a document or the extraction of data from a database."
+          },
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/conformsTo",
+          "name": "is conformant to",
+          "sort": "is conformant to",
+          "label": {
+            "en": "is conformant to"
+          },
+          "description": {
+            "en": "Evidence Type that specifies characteristics of the Evidence."
+          },
+          "usage": {
+            "en": "Examples of characteristics could be the layout or the configuration of the Evidence."
+          },
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "EvidenceType",
+              "range_uri": "http://data.europa.eu/m8g/EvidenceType"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Evidence Type",
+              "range_puri": "http://data.europa.eu/m8g/EvidenceType",
+              "range_label": {
+                "en": "Evidence Type"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/supportsConcept",
+          "name": "supports concept",
+          "sort": "supports concept",
+          "label": {
+            "en": "supports concept"
+          },
+          "description": {
+            "en": "Information Concept providing facts found/inferred from the Evidence."
+          },
+          "usage": {
+            "en": "Examples of Information Concepts are values found explictly in the evidence such as a birth date or information derived from the Evidence such as \"I am older that 18 years\"."
+          },
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "InformationConcept",
+              "range_uri": "http://data.europa.eu/m8g/InformationConcept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Information Concept",
+              "range_puri": "http://data.europa.eu/m8g/InformationConcept",
+              "range_label": {
+                "en": "Information Concept"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isProvidedBy",
+          "name": "is provided by",
+          "sort": "is provided by",
+          "label": {
+            "en": "is provided by"
+          },
+          "description": {
+            "en": "Agent that transmits the Evidence."
+          },
+          "usage": {
+            "en": "Agents transmitting Evidence are usually the Agents requesting the Evidence or service providers acting on behalf of the requesting Agents such as software developer companies."
+          },
           "domain": [
             {
               "EA-Name": "Evidence",
@@ -657,17 +659,17 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/evidenceTypeClassification",
-          "name": "evidence type classification",
-          "sort": "evidence type classification",
+          "uri": "http://data.europa.eu/m8g/validityPeriodConstraint",
+          "name": "validity period constraint",
+          "sort": "validity period constraint",
           "label": {
-            "en": "evidence type classification"
+            "en": "validity period constraint"
           },
           "description": {
-            "en": "Category to which the Evidence Type belongs."
+            "en": "Temporal condition on the validity period of the Evidence Type."
           },
           "usage": {
-            "en": "The categories agreed are left open but could for example specify the layout and content expected for an Evidence."
+            "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class."
           },
           "domain": [
             {
@@ -677,20 +679,20 @@
           ],
           "range": [
             {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "PeriodOfTime",
+              "range_uri": "http://www.w3.org/2006/time#ProperInterval"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "#Period of Time",
+              "range_puri": "http://www.w3.org/2006/time#ProperInterval",
               "range_label": {
-                "en": "Code"
+                "en": "Period of Time"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -729,17 +731,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/validityPeriodConstraint",
-          "name": "validity period constraint",
-          "sort": "validity period constraint",
+          "uri": "http://data.europa.eu/m8g/evidenceTypeClassification",
+          "name": "evidence type classification",
+          "sort": "evidence type classification",
           "label": {
-            "en": "validity period constraint"
+            "en": "evidence type classification"
           },
           "description": {
-            "en": "Temporal condition on the validity period of the Evidence Type."
+            "en": "Category to which the Evidence Type belongs."
           },
           "usage": {
-            "en": "E.g. A Belgian birth evidence is valid for X months after emission. To express constraints on the validity period that must hold when assessing the evidence (e.g. the certificate of good conduct cannot be issued more than 3 months ago), we refer to the Constraint class."
+            "en": "The categories agreed are left open but could for example specify the layout and content expected for an Evidence."
           },
           "domain": [
             {
@@ -749,20 +751,55 @@
           ],
           "range": [
             {
-              "range_label": "PeriodOfTime",
-              "range_uri": "http://www.w3.org/2006/time#ProperInterval"
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Period of Time",
-              "range_puri": "http://www.w3.org/2006/time#ProperInterval",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "Period of Time"
+                "en": "Code"
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "Unambiguous reference to the Evidence Type."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "EvidenceType",
+              "uri": "http://data.europa.eu/m8g/EvidenceType"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -800,41 +837,6 @@
             }
           ],
           "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "Unambiguous reference to the Evidence Type."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "EvidenceType",
-              "uri": "http://data.europa.eu/m8g/EvidenceType"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -890,18 +892,16 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "description",
-          "sort": "description",
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "name",
+          "sort": "name",
           "label": {
-            "en": "description"
+            "en": "name"
           },
           "description": {
-            "en": "Short explanation supporting the understanding of the Evidence Type List."
+            "en": "Name of the Evidence Type List."
           },
-          "usage": {
-            "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Evidence Type List."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "EvidenceTypeList",
@@ -962,16 +962,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-          "name": "name",
-          "sort": "name",
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
           "label": {
-            "en": "name"
+            "en": "description"
           },
           "description": {
-            "en": "Name of the Evidence Type List."
+            "en": "Short explanation supporting the understanding of the Evidence Type List."
           },
-          "usage": {},
+          "usage": {
+            "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Evidence Type List."
+          },
           "domain": [
             {
               "EA-Name": "EvidenceTypeList",
@@ -1051,18 +1053,16 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "description",
-          "sort": "description",
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "name",
+          "sort": "name",
           "label": {
-            "en": "description"
+            "en": "name"
           },
           "description": {
-            "en": "Short explanation supporting the understanding of the Information Concept."
+            "en": "Name of the Information Concept."
           },
-          "usage": {
-            "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Information Concept."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "InformationConcept",
@@ -1081,41 +1081,6 @@
               "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
                 "en": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "Unambiguous reference to the Information Concept."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "InformationConcept",
-              "uri": "http://data.europa.eu/m8g/InformationConcept"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
               }
             }
           ],
@@ -1160,16 +1125,53 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-          "name": "name",
-          "sort": "name",
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
           "label": {
-            "en": "name"
+            "en": "identifier"
           },
           "description": {
-            "en": "Name of the Information Concept."
+            "en": "Unambiguous reference to the Information Concept."
           },
           "usage": {},
+          "domain": [
+            {
+              "EA-Name": "InformationConcept",
+              "uri": "http://data.europa.eu/m8g/InformationConcept"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "Short explanation supporting the understanding of the Information Concept."
+          },
+          "usage": {
+            "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Information Concept."
+          },
           "domain": [
             {
               "EA-Name": "InformationConcept",
@@ -1288,17 +1290,17 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
-          "name": "has qualified relation",
-          "sort": "has qualified relation",
+          "uri": "http://data.europa.eu/m8g/isRequirementOf",
+          "name": "is requirement of",
+          "sort": "is requirement of",
           "label": {
-            "en": "has qualified relation"
+            "en": "is requirement of"
           },
           "description": {
-            "en": "Described and/or categorised relation to another Requirement."
+            "en": "A reference between a sub-Requirement and its parent Requirement."
           },
           "usage": {
-            "en": "This property leaves the possiblity to define a qualified relation from Requirement to Information Requirement or Constraint as well as a qualified relation from Requirement to Requirement.  A use case would be to specialize an EU requirement in Member States' specific requirements."
+            "en": "The relation between a parent Requirement and a sub-Requirement can be complex. Therefore, qualified relations (see hasQualifiedRelation) can be used to represent this relationship on its own and qualify it with additional information such as a date, a place. This is left to implementers.\n\nIn the case where the purpose is to link the two Requirements without additional information, the simple relationship as proposed here can be directly used."
           },
           "domain": [
             {
@@ -1360,17 +1362,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/isRequirementOf",
-          "name": "is requirement of",
-          "sort": "is requirement of",
+          "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
+          "name": "has qualified relation",
+          "sort": "has qualified relation",
           "label": {
-            "en": "is requirement of"
+            "en": "has qualified relation"
           },
           "description": {
-            "en": "A reference between a sub-Requirement and its parent Requirement."
+            "en": "Described and/or categorised relation to another Requirement."
           },
           "usage": {
-            "en": "The relation between a parent Requirement and a sub-Requirement can be complex. Therefore, qualified relations (see hasQualifiedRelation) can be used to represent this relationship on its own and qualify it with additional information such as a date, a place. This is left to implementers.\n\nIn the case where the purpose is to link the two Requirements without additional information, the simple relationship as proposed here can be directly used."
+            "en": "This property leaves the possiblity to define a qualified relation from Requirement to Information Requirement or Constraint as well as a qualified relation from Requirement to Requirement.  A use case would be to specialize an EU requirement in Member States' specific requirements."
           },
           "domain": [
             {
@@ -1397,17 +1399,157 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/hasConcept",
-          "name": "has concept",
-          "sort": "has concept",
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "name",
+          "sort": "name",
           "label": {
-            "en": "has concept"
+            "en": "name"
           },
           "description": {
-            "en": "Information Concept for which a value is expected by the Requirement."
+            "en": "Name of the Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "type",
+          "label": {
+            "en": "type"
+          },
+          "description": {
+            "en": "Category to which the Requirement belongs."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/publisher",
+          "name": "is issued by",
+          "sort": "is issued by",
+          "label": {
+            "en": "is issued by"
+          },
+          "description": {
+            "en": "Agent that has published the Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Agent",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "Unambiguous reference to a Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "A short explanation supporting the understanding of the Requirement."
           },
           "usage": {
-            "en": "Information Concepts defined for specific Requirements also represent the basis for specifying the Supported Value an Evidence should provide."
+            "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Requirement."
           },
           "domain": [
             {
@@ -1417,16 +1559,88 @@
           ],
           "range": [
             {
-              "range_label": "InformationConcept",
-              "range_uri": "http://data.europa.eu/m8g/InformationConcept"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Information Concept",
-              "range_puri": "http://data.europa.eu/m8g/InformationConcept",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "Information Concept"
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isDerivedFrom",
+          "name": "is derived from",
+          "sort": "is derived from",
+          "label": {
+            "en": "is derived from"
+          },
+          "description": {
+            "en": "Reference Framework on which the Requirement is based, such as a law or regulation."
+          },
+          "usage": {
+            "en": "Note that a Requirement can have several Reference Frameworks from which it is derived."
+          },
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ReferenceFramework",
+              "range_uri": "http://data.europa.eu/m8g/ReferenceFramework"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Reference Framework",
+              "range_puri": "http://data.europa.eu/m8g/ReferenceFramework",
+              "range_label": {
+                "en": "Reference Framework"
+              }
+            }
+          ],
+          "cardinality": "",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasSupportingEvidence",
+          "name": "has supporting evidence",
+          "sort": "has supporting evidence",
+          "label": {
+            "en": "has supporting evidence"
+          },
+          "description": {
+            "en": "Evidence that supplies information, proof or support for the Requirement."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Requirement",
+              "uri": "http://data.europa.eu/m8g/Requirement"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Evidence",
+              "range_uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Evidence",
+              "range_puri": "http://data.europa.eu/m8g/Evidence",
+              "range_label": {
+                "en": "Evidence"
               }
             }
           ],
@@ -1471,52 +1685,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/hasSupportingEvidence",
-          "name": "has supporting evidence",
-          "sort": "has supporting evidence",
+          "uri": "http://data.europa.eu/m8g/hasConcept",
+          "name": "has concept",
+          "sort": "has concept",
           "label": {
-            "en": "has supporting evidence"
+            "en": "has concept"
           },
           "description": {
-            "en": "Evidence that supplies information, proof or support for the Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Evidence",
-              "range_uri": "http://data.europa.eu/m8g/Evidence"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Evidence",
-              "range_puri": "http://data.europa.eu/m8g/Evidence",
-              "range_label": {
-                "en": "Evidence"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/isDerivedFrom",
-          "name": "is derived from",
-          "sort": "is derived from",
-          "label": {
-            "en": "is derived from"
-          },
-          "description": {
-            "en": "Reference Framework on which the Requirement is based, such as a law or regulation."
+            "en": "Information Concept for which a value is expected by the Requirement."
           },
           "usage": {
-            "en": "Note that a Requirement can have several Reference Frameworks from which it is derived."
+            "en": "Information Concepts defined for specific Requirements also represent the basis for specifying the Supported Value an Evidence should provide."
           },
           "domain": [
             {
@@ -1526,197 +1705,20 @@
           ],
           "range": [
             {
-              "range_label": "ReferenceFramework",
-              "range_uri": "http://data.europa.eu/m8g/ReferenceFramework"
+              "range_label": "InformationConcept",
+              "range_uri": "http://data.europa.eu/m8g/InformationConcept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Reference Framework",
-              "range_puri": "http://data.europa.eu/m8g/ReferenceFramework",
+              "range_uri": "#Information Concept",
+              "range_puri": "http://data.europa.eu/m8g/InformationConcept",
               "range_label": {
-                "en": "Reference Framework"
+                "en": "Information Concept"
               }
             }
           ],
           "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "description",
-          "sort": "description",
-          "label": {
-            "en": "description"
-          },
-          "description": {
-            "en": "A short explanation supporting the understanding of the Requirement."
-          },
-          "usage": {
-            "en": "The explanation can include information about the nature, attributes, uses or any other additional information about the Requirement."
-          },
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "Unambiguous reference to a Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/publisher",
-          "name": "is issued by",
-          "sort": "is issued by",
-          "label": {
-            "en": "is issued by"
-          },
-          "description": {
-            "en": "Agent that has published the Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Agent",
-              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Agent",
-              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
-              "range_label": {
-                "en": "Agent"
-              }
-            }
-          ],
-          "cardinality": "",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/type",
-          "name": "type",
-          "sort": "type",
-          "label": {
-            "en": "type"
-          },
-          "description": {
-            "en": "Category to which the Requirement belongs."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-          "name": "name",
-          "sort": "name",
-          "label": {
-            "en": "name"
-          },
-          "description": {
-            "en": "Name of the Requirement."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Requirement",
-              "uri": "http://data.europa.eu/m8g/Requirement"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "1",
           "codelist_uri": ""
         }
       ]
@@ -1737,14 +1739,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/providesValueFor",
-          "name": "provides value for",
-          "sort": "provides value for",
+          "uri": "http://data.europa.eu/m8g/value",
+          "name": "value",
+          "sort": "value",
           "label": {
-            "en": "provides value for"
+            "en": "value"
           },
           "description": {
-            "en": "Information Concept for which the Supported Value provides a value."
+            "en": "Value for the Information Concept that the Evidence supports."
           },
           "usage": {},
           "domain": [
@@ -1755,20 +1757,20 @@
           ],
           "range": [
             {
-              "range_label": "InformationConcept",
-              "range_uri": "http://data.europa.eu/m8g/InformationConcept"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Information Concept",
-              "range_puri": "http://data.europa.eu/m8g/InformationConcept",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "en": "Information Concept"
+                "en": "Literal"
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "1",
           "codelist_uri": ""
         },
         {
@@ -1809,14 +1811,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/value",
-          "name": "value",
-          "sort": "value",
+          "uri": "http://data.europa.eu/m8g/providesValueFor",
+          "name": "provides value for",
+          "sort": "provides value for",
           "label": {
-            "en": "value"
+            "en": "provides value for"
           },
           "description": {
-            "en": "Value for the Information Concept that the Evidence supports."
+            "en": "Information Concept for which the Supported Value provides a value."
           },
           "usage": {},
           "domain": [
@@ -1827,20 +1829,20 @@
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+              "range_label": "InformationConcept",
+              "range_uri": "http://data.europa.eu/m8g/InformationConcept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_uri": "#Information Concept",
+              "range_puri": "http://data.europa.eu/m8g/InformationConcept",
               "range_label": {
-                "en": "Literal"
+                "en": "Information Concept"
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "",
           "codelist_uri": ""
         }
       ]
@@ -1875,17 +1877,17 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://www.w3.org/2006/time#hasBeginning",
-          "name": "starttime",
-          "sort": "starttime",
+          "uri": "http://www.w3.org/2006/time#hasXSDDuration",
+          "name": "duration",
+          "sort": "duration",
           "label": {
-            "en": "starttime"
+            "en": "duration"
           },
           "description": {
-            "en": "Time instant at which the Period was initiated."
+            "en": "Extent of the Period of Time."
           },
           "usage": {
-            "en": "For example, the property starts the duration during which an Evidence Type or an Evidence is considered valid. The duration must be equal to the time between the starttime and endtime."
+            "en": "Amount of time between start time and end time."
           },
           "domain": [
             {
@@ -1895,16 +1897,16 @@
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
               "range_label": {
-                "en": "DateTime"
+                "en": "Duration"
               }
             }
           ],
@@ -1949,17 +1951,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/2006/time#hasXSDDuration",
-          "name": "duration",
-          "sort": "duration",
+          "uri": "http://www.w3.org/2006/time#hasBeginning",
+          "name": "starttime",
+          "sort": "starttime",
           "label": {
-            "en": "duration"
+            "en": "starttime"
           },
           "description": {
-            "en": "Extent of the Period of Time."
+            "en": "Time instant at which the Period was initiated."
           },
           "usage": {
-            "en": "Amount of time between start time and end time."
+            "en": "For example, the property starts the duration during which an Evidence Type or an Evidence is considered valid. The duration must be equal to the time between the starttime and endtime."
           },
           "domain": [
             {
@@ -1969,16 +1971,16 @@
           ],
           "range": [
             {
-              "range_label": "Duration",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "en": "Duration"
+                "en": "DateTime"
               }
             }
           ],
@@ -2058,190 +2060,10 @@
   ],
   "properties": [
     {
-      "uri": "http://data.europa.eu/m8g/bias",
+      "uri": "http://data.europa.eu/m8g/weightingType",
       "name": {
-        "en": "bias",
-        "undefined": "bias"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
-      "name": {
-        "en": "confidentiality level type",
-        "undefined": "confidentiality level type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/evidenceTypeClassification",
-      "name": {
-        "en": "evidence type classification",
-        "undefined": "evidence type classification"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
-      "name": {
-        "en": "has qualified relation",
-        "undefined": "has qualified relation"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/hasRequirement",
-      "name": {
-        "en": "has requirement",
-        "undefined": "has requirement"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/isRequirementOf",
-      "name": {
-        "en": "is requirement of",
-        "undefined": "is requirement of"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/isSpecifiedIn",
-      "name": {
-        "en": "is specified in",
-        "undefined": "is specified in"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/providesValueFor",
-      "name": {
-        "en": "provides value for",
-        "undefined": "provides value for"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/specifiesEvidenceType",
-      "name": {
-        "en": "specifies evidence type",
-        "undefined": "specifies evidence type"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/supportsRequirement",
-      "name": {
-        "en": "supports requirement",
-        "undefined": "supports requirement"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/supportsValue",
-      "name": {
-        "en": "supports value",
-        "undefined": "supports value"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/validityPeriod",
-      "name": {
-        "en": "validity period",
-        "undefined": "validity period"
-      },
-      "description": {},
-      "domain": [
-        null
-      ],
-      "range": [
-        null
-      ],
-      "parents": []
-    },
-    {
-      "uri": "http://data.europa.eu/m8g/validityPeriodConstraint",
-      "name": {
-        "en": "validity period constraint",
-        "undefined": "validity period constraint"
+        "en": "weighting type",
+        "undefined": "weighting type"
       },
       "description": {},
       "domain": [
@@ -2268,10 +2090,190 @@
       "parents": []
     },
     {
-      "uri": "http://data.europa.eu/m8g/weightingType",
+      "uri": "http://data.europa.eu/m8g/validityPeriodConstraint",
       "name": {
-        "en": "weighting type",
-        "undefined": "weighting type"
+        "en": "validity period constraint",
+        "undefined": "validity period constraint"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/validityPeriod",
+      "name": {
+        "en": "validity period",
+        "undefined": "validity period"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/supportsValue",
+      "name": {
+        "en": "supports value",
+        "undefined": "supports value"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/supportsRequirement",
+      "name": {
+        "en": "supports requirement",
+        "undefined": "supports requirement"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/specifiesEvidenceType",
+      "name": {
+        "en": "specifies evidence type",
+        "undefined": "specifies evidence type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/providesValueFor",
+      "name": {
+        "en": "provides value for",
+        "undefined": "provides value for"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/isSpecifiedIn",
+      "name": {
+        "en": "is specified in",
+        "undefined": "is specified in"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/isRequirementOf",
+      "name": {
+        "en": "is requirement of",
+        "undefined": "is requirement of"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/hasRequirement",
+      "name": {
+        "en": "has requirement",
+        "undefined": "has requirement"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/hasQualifiedRelation",
+      "name": {
+        "en": "has qualified relation",
+        "undefined": "has qualified relation"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/evidenceTypeClassification",
+      "name": {
+        "en": "evidence type classification",
+        "undefined": "evidence type classification"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/confidentialityLevelType",
+      "name": {
+        "en": "confidentiality level type",
+        "undefined": "confidentiality level type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/bias",
+      "name": {
+        "en": "bias",
+        "undefined": "bias"
       },
       "description": {},
       "domain": [
@@ -2291,16 +2293,24 @@
     },
     {
       "role": "E",
-      "first_name": "Florian",
-      "last_name": "Barthelemy",
+      "first_name": "Bert",
+      "last_name": "Van Nuffelen",
       "affiliation": {
-        "name": "PwC"
+        "name": "TenForce"
       }
     },
     {
       "role": "E",
-      "first_name": "Michiel",
-      "last_name": "De Keyzer",
+      "first_name": "Emidio",
+      "last_name": "Stani",
+      "affiliation": {
+        "name": "PwC EU Services"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Dimitri",
+      "last_name": "Schepers",
       "affiliation": {
         "name": "PwC EU Services"
       }
@@ -2315,26 +2325,18 @@
     },
     {
       "role": "E",
-      "first_name": "Dimitri",
-      "last_name": "Schepers",
+      "first_name": "Michiel",
+      "last_name": "De Keyzer",
       "affiliation": {
         "name": "PwC EU Services"
       }
     },
     {
       "role": "E",
-      "first_name": "Emidio",
-      "last_name": "Stani",
+      "first_name": "Florian",
+      "last_name": "Barthelemy",
       "affiliation": {
-        "name": "PwC EU Services"
-      }
-    },
-    {
-      "role": "E",
-      "first_name": "Bert",
-      "last_name": "Van Nuffelen",
-      "affiliation": {
-        "name": "TenForce"
+        "name": "PwC"
       }
     },
     {

@@ -1,0 +1,697 @@
+{
+  "baseURI": "https://data.europa.eu/m8g/",
+  "classes": [],
+  "properties": [],
+  "externals": [
+    {
+      "EA-Guid": "{1F35C0ED-487E-44cf-B155-FAA631266668}",
+      "name": "Jurisdiction",
+      "label": {
+        "en": "Jurisdiction",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The extent or range of judicial, law enforcement, or other authority.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C893D9C5-F21F-401b-A896-22D5EB56D6A7}",
+      "name": "Location",
+      "label": {
+        "en": "Location",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Identifiable geographic place or named place.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{4252FD49-50E1-4fa8-AE37-1FE59010D3AB}",
+      "name": "Identifier",
+      "label": {
+        "en": "Identifier",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The Identifier class is based on the UN/CEFACT class of the same name and is defined under the ADMS namespace.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+      "name": "Address",
+      "label": {
+        "en": "Address",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A spatial object that in a human-readable way identifies a fixed location of a property.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A0ECD6E2-3D19-4928-8FAC-33C504817515}",
+      "name": "Person",
+      "label": {
+        "en": "Person",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An individual person who may be dead or alive, but not imaginary.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The fact that a person in the context of Core Person Vocabulary cannot be imaginary makes person:Person a subclass of both foaf:Person and schema:Person which both cover imaginary characters as well as real people.\n\nThe Person Class is a subclass of the more general 'Agent' class that encompasses organisations, legal entities, groups etc. - any entity that is able to carry out actions.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F41DDB41-25B4-4b39-88FD-7B1D1D8D373A}",
+      "name": "Agent",
+      "label": {
+        "en": "Agent",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Entity that is able to carry out action",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In compliance with the description from FOAF, an Agent is considered as any entity that is able to carry out actions. The Agent class acts as a generic element which can be further specified by implementers for their usages, for example by defining the Person class from the Core Person Vocabulary or Organization from W3C's Organization Ontology as subclasses of Agent. This Person or Organization can then issue a certain Requirement or be concerned by an Evidence provided.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D862BFE3-8B9A-4715-96CD-14BE188AFF56}",
+      "name": "Person",
+      "label": {
+        "en": "Person",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A person that is alive, dead, real, or imaginary.",
+        "nl": "Enter your translation here"
+      }
+    }
+  ],
+  "externalproperties": [
+    {
+      "EA-Guid": "{5F497151-9F47-4ed9-9949-80D79100C084}",
+      "name": "full name",
+      "label": {
+        "en": "full name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The full name contains the complete name of a person as one string.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>In addition to the content of given name, family name and, in some systems, patronymic name, this can carry additional parts of a person's name such as titles, middle names or suffixes like \"the third\" or names which are neither a given nor a family name.\nThe full name is the most reliable label for an individual and as such its use is strongly encouraged, irrespective of whether that name is broken down using the more granular elements.\r\n</p></br>\r\n<p>\r\nIt is anticipated that some systems will only provide or process the full name of a person. Where an individual has more than one full legal name (a relatively rare but not unknown phenomenon), the full name property can be used more than once. In this case, however, the granular name elements should not be used since the intention is that these provide a breakdown of the full name and it will not be clear of which full name this is true. \nNote that the vocabulary provides an alternative name property. This allows name(s) to be recorded that have no legal status but that nevertheless are the names by which an individual is generally known.\r\n</p></br>\r\n<p>\r\n\nA name usually sticks with a person for a long time period. In some European countries a name may only be changed according to certain laws and life events, e.g. marriage. The name denominates a natural person even if he/she changes their address. Documents like birth certificate or diploma usually don't carry an address but always the name. Thus the name is one of the core attributes. However it is not sufficient to identify a person since there are combinations of very common names like Smith in the UK, Meier in Germany, or Li in China.\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{B1835408-1E96-4393-8D60-9B77399F3A77}",
+      "name": "given name (forename)",
+      "label": {
+        "en": "given name (forename)",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A given name, or multiple given names, are the denominator(s) that identify an individual within a family.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "These are given to a person by his or her parents at birth or may be legally recognised as 'given names' through a formal process. All given names are ordered in one property so that, for example, the given name for Johann Sebastian Bach is \"Johann Sebastian\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A7C32827-DBF1-44fa-86CC-F45B7DAA6746}",
+      "name": "family name (surname)",
+      "label": {
+        "en": "family name (surname)",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A family name is usually shared by members of a family.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This attribute also carries prefixes or suffixes which are part of the family name, e.g. \"de Boer\", \"van de Putte\", \"von und zu Orlow\". Multiple family names, such as are commonly found in Hispanic countries, are recorded in the single family name property so that, for example, Miguel de Cervantes Saavedra's family name would be recorded as \"de Cervantes Saavedra\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{1D50BD42-0B62-4267-AA9E-D6D5B8769F9C}",
+      "name": "place of death",
+      "label": {
+        "en": "place of death",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Location where a Person died.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "When geographic identifiers are used, the associated country of death property is unnecessary. When geographic names are used, however, it is recommended to also provide the country of death property as there might be some disambiguity, e.g. Paris in France or Paris in Texas, USA.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{27689A5A-510A-4f2b-9384-F6EE5C04AE07}",
+      "name": "place of birth",
+      "label": {
+        "en": "place of birth",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Location where the Person was born.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "When geographic identifiers are used, the associated country of birth property is unnecessary. When geographic names are used, however, it is recommended to also provide the country of birth property as there might be some disambiguity, e.g. Paris in France or Paris in Texas, USA.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{88587974-F8D9-41e9-B7E3-DC06E31F18CE}",
+      "name": "patronymic name",
+      "label": {
+        "en": "patronymic name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Name based on the given name of the Person's father.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Patronymic names are important in some countries. Iceland does not have a concept of 'family name' in the way that many other European countries do, for example. Erik Magnusson and Erika Magnusdottir are siblings, both offspring of Magnus, irrespective of his patronymic name.\nIn Bulgaria and Russia, patronymic names are in everyday usage, for example, the \"Sergeyevich\" in \"Mikhail Sergeyevich Gorbachev\".\nNote that patronymic names refer to a father's given name, not the family name inherited from the mother and father as is the case in countries such as Spain and Portugal. Again referring to the example of Miguel de Cervantes Saavedra's, the patronymic name element would be unused.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{232EE47F-54C4-4e6a-9C3B-EEC2239993F0}",
+      "name": "country of death",
+      "label": {
+        "en": "country of death",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The country in which a Person died.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "When geographic identifiers are used, the country of death property is unnecessary if the place of death property is used. When geographic names are used, however, it is recommended to also provide the country of death property as there might be some disambiguity, e.g. Paris in France or Paris in Texas, USA.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{433608C6-124D-4e06-9D37-A1D69C594FC3}",
+      "name": "country of birth",
+      "label": {
+        "en": "country of birth",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The country in which a Person was born.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "When geographic identifiers are used, the country of birth property is unnecessary if the place of birth property is used. When geographic names are used, however, it is recommended to also provide the country of birth property as there might be some disambiguity, e.g. Paris in France or Paris in Texas, USA.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C4D475F6-818A-4a41-9AAB-80257138150F}",
+      "name": "residency",
+      "label": {
+        "en": "residency",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Residency typically provides an individual with a subset of the rights of a citizen.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "\nA Person has one, multiple or even no residency status. Multiple residencies are recorded as multiple instances of the residency relationship.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{3FC64146-99E6-4c46-82E2-B89FFB2B6E36}",
+      "name": "birth name",
+      "label": {
+        "en": "birth name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Full name of the Person given upon their birth.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "All data associated with an individual are subject to change. Names can change for a variety of reasons, either formally or informally, and new information may come to light that means that a correction or clarification can be made to an existing record. Birth names tend to be persistent however and for this reason they are recorded by some public sector information systems. There is no granularity for birth name - the full name should be recorded in a single field.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2D384BE4-CFED-4f52-B1EC-3C84511ACCC6}",
+      "name": "thoroughfare",
+      "label": {
+        "en": "thoroughfare",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "For example, \"Avenue des Champs-Élysées\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F0699A53-4F4C-4e83-AF49-34E33744BF36}",
+      "name": "post name (city)",
+      "label": {
+        "en": "post name (city)",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2EF6D767-8E3F-461c-AC37-772819BA21B6}",
+      "name": "post code",
+      "label": {
+        "en": "post code",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BD696942-96FF-49f8-9712-8C00CAC1493B}",
+      "name": "post office box",
+      "label": {
+        "en": "post office box",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Post Office Box number.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BD85C372-1378-4b22-9DA6-B4897A7F0106}",
+      "name": "locator name",
+      "label": {
+        "en": "locator name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Proper noun(s) applied to the real world entity identified by the locator.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{509BF1D0-4E76-4bee-B17F-AC883B236548}",
+      "name": "locator designator",
+      "label": {
+        "en": "locator designator",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{773B9A30-8874-4c47-9ECF-97324E0EC181}",
+      "name": "geographic name",
+      "label": {
+        "en": "geographic name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A geographic name is a proper noun applied to a spatial object.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>The <a href=\"https://inspire.ec.europa.eu/Themes/132/2892\">INSPIRE Data Specification on Geographical Names</a> provides a detailed model for describing a 'named place', including methods for providing multiple names in multiple scripts. This is beyond what is necessary for the Core Location Vocabulary but, importantly, the concept of a geographic name used here is consistent.</p></br>\r\n\r\n<p>\r\nA geographic name is a proper noun applied to a spatial object. Taking the example used in the INSPIRE document (page 15), the following are all valid geographic names for the Greek capital:\r\n<ul>\r\n  <li>- \"A?n?a\"@gr-Grek (the Greek endonym written in the Greek script)</li>\r\n  <li>- \"Athína\"@gr-Latn (the standard Romanisation of the endonym)</li>\r\n  <li>- \"Athens\"@en (the English language exonym)</li>\r\n</ul>\r\nINSPIRE has a detailed (XML-based) method of providing metadata about a geographic name and in XML-data sets that may be the most appropriate method to follow. When using the Core Location Vocabulary in data sets that are not focussed on environmental/geographical\r\ndata (the use case for INSPIRE), the Code datatype or a simple language identifier may be used to provide such metadata.\r\n</p></br>\r\n\r\n<p>\r\nThe country codes defined in <a href=\"https://www.iso.org/iso-3166-country-codes.html\">ISO 3166</a> may be used as geographic names and these are generally preferred over either the long form or short form of a country's name (as they are less error prone). The Publications Office of the European Union recommends the use of ISO 3166-1 codes for countries in all cases except two:\r\n<ul>\r\n  <li>- use 'UK' in preference to the ISO 3166 code GB for the United Kingdom;</li>\r\n  <li>- use 'EL' in preference to the ISO 3166 code GR for Greece.</li>\r\nWhere a country has changed its name or no longer exists (such as Czechoslovakia, Yugoslavia etc.) use the ISO 3166-3 code.\r\n</p>\r",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{CACD1A53-7E91-4570-BE69-F842DE505549}",
+      "name": "full address",
+      "label": {
+        "en": "full address",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The complete address written as a formatted string.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{FE32C615-1979-4110-86B2-BF3C6C469968}",
+      "name": "administrative unit level 2 (country/region/state)",
+      "label": {
+        "en": "administrative unit level 2 (country/region/state)",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2A176EB4-5D2B-41f1-A938-FF286CD39790}",
+      "name": "administrative unit level 1 (country)",
+      "label": {
+        "en": "administrative unit level 1 (country)",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{54C88647-E707-48f6-8433-7328EB434759}",
+      "name": "address ID",
+      "label": {
+        "en": "address ID",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A globally unique identifier for each instance of an Address.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{42A3291F-2C59-4432-9003-3E6719430A52}",
+      "name": "address area",
+      "label": {
+        "en": "address area",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{898C9352-2AE7-446e-9F20-26A8DBD97C02}",
+      "name": "issuing authority name",
+      "label": {
+        "en": "issuing authority name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name of the agency responsible for issuing the Identifier.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Example: \"Federal Public Service Interior\"@en.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F1960C10-04AE-4f8a-89EE-1ED9424B37E0}",
+      "name": "identifies",
+      "label": {
+        "en": "identifies",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The identifies relationship links an Identifier class to the resource it identifies.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{1387E307-13D3-40fd-B618-26538B4FF177}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The value of this property is the Identifier itself.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Example: \"abc-12345-de\"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{18B1572F-CC98-472c-8363-43739E1F52DA}",
+      "name": "geographic identifier",
+      "label": {
+        "en": "geographic identifier",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A URI that identifies the Location.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nGeoNames.org provides stable, widely recognised identifiers for more than 10 million geographical names that can be used as links to further information. For example, http://sws.geonames.org/593116/ identifies the Lithuanian capital Vilnius. Unfortunately these URIs cannot easily be automatically deduced since the URI scheme uses simple numeric codes. Finding a GeoNames identifier for a Location is almost always a manual process. Where such identifiers are known or can be found, however, it is recommended that they be used.\r\n</p></br>\r\n\r\n<p>\r\nWhere the Location Class is used to identify a country, if the geonames URI is not known, the recommendation is to use DBpedia URIs of the form http://dbpedia.org/resource/ISO_3166-1:XX where XX is the ISO 3166 two character code for the country.\r\n</p></br>\r\n\r\n<p>\r\nThe EU's Publication Office diverges from ISO 3166-1 and uses EL and UK for Greece and the United Kingdom respectively. DBpedia sticks to\r\nthe ISO codes and so the correct URIs for these countries are:\r\n<ul>\r\n  <li>- http://dbpedia.org/resource/ISO_3166-1:GR</li>\r\n  <li>- http://dbpedia.org/resource/ISO_3166-1:GB</li>\r\n<ul>\r\neven when the geographic name is given as EL or UK.\r\n</p></br>\r\n\r\n<p>\r\nThe use of a URIs has added advantages:\r\n<ul>\r\n  <li>- it can be used by automated systems to look up additional data (linked data);</li>\r\n  <li>- a triple store may store only one copy of the URI, whereas if a string is used, a copy of that string is always stored for each and every person in the database. Thus, in large data sets, the saving on memory capacity and the improvement in transmission efficiency can be substantial.</li>\r\n</ul>\r\n</p>",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2396D9EF-E00E-42ad-9F3F-BCD5B7112D5B}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name is simply a string that identifies the Jurisdiction, typically a country, with or without a language tag.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{DF953D05-18CC-40fd-A09C-3ED1D82948E5}",
+      "name": "date of issue",
+      "label": {
+        "en": "date of issue",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The date on which the Identifier was assigned.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{65D836C7-63CE-4888-B742-5B14EC72C697}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An Identifier for the Person.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Examples include a national identification number, a student ID, national fiscal number, etc. We also refer to <a href=\"http://data.europa.eu/eli/reg/2014/910/oj\">the eIDAS regulation</a> on \"electronic identification and trust services\" and its <a href=\"https://ec.europa.eu/cefdigital/wiki/download/attachments/82773108/eIDAS%20SAML%20Attribute%20Profile%20v1.1_2.pdf?version=3&modificationDate=1528362598014&api=v2\">mapping</a> to the Core Person Vocabulary.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{21E06F91-BEE4-4ce8-BE8F-2A3D3AC2A367}",
+      "name": "id",
+      "label": {
+        "en": "id",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The value for the id property is a URI for that Jurisdiction.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F41A0156-324A-4648-A6E8-F50E0A5E6ED4}",
+      "name": "issuing authority URI",
+      "label": {
+        "en": "issuing authority URI",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The URI of the issuing authority.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Example: \"https://belgium.be/id/organizations/1233\".",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F9250A30-C64A-4cf8-B6E9-A15F1441C964}",
+      "name": "scheme name",
+      "label": {
+        "en": "scheme name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Name of the scheme used to construct the identifier.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A145710E-6B8F-4a53-B0F3-3AB50C244C08}",
+      "name": "scheme URI",
+      "label": {
+        "en": "scheme URI",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "URI of the scheme used to construct the identifier.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{0ACB7958-D4C3-4cee-AE1C-AFD35C31074B}",
+      "name": "citizenship",
+      "label": {
+        "en": "citizenship",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The citizenship relationship links a Person to a Jurisdiction that has conferred citizenship rights on the individual such as the right to vote, to receive certain protection from the community or the issuance of a passport.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Citizenship is information needed by many cross-border use cases and is a legal status as opposed to the more culturally-focussed and less well-defined term \"nationality\". A Person has one, multiple or even no citizenship status. Multiple citizenships are recorded as multiple instances of the citizenship relationship.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{66096EA6-6E71-4645-B320-B2CA36192ACE}",
+      "name": "alternative name",
+      "label": {
+        "en": "alternative name",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Any name by which an individual is known other than their full name.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Many individuals use a short form of their name, a 'middle' name as a 'first' name or a professional name. For example, the British politician and former UN High Representative for Bosnia and Herzegovina, Jeremy John Durham Ashdown, Baron Ashdown of Norton-sub-Hamdon, is usually referred to simply as 'Paddy Ashdown' or 'Lord Ashdown.' \nIt is not the role of the alternative name property to record nick names, pet names or other 'familiar names' that will be of no consequence in public sector data exchange.\nFurthermore, some individuals have more than one legal name in which case the full name property should be used multiple times. \nAlternative name gives a means of recording names by which an individual is generally known, or professionally known, even though such names are no more than secondary from a legal point of view.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{E1C358E5-1249-4a9d-AB1E-2D97917A467E}",
+      "name": ""
+    },
+    {
+      "EA-Guid": "{9EBC5954-B7E9-4264-A91C-A6854A86ACB5}",
+      "name": "gender",
+      "label": {
+        "en": "gender",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Gender of the Person.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The gender of an individual should be recorded using a controlled vocabulary that is appropriate for the specific context. In some cases the chromosomal or physical state of an individual will be more important than the gender that they express, in others the reverse will be true. What is always important is that the controlled vocabulary used to describe an individual's gender is stated explicitly.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{3F371DFF-875B-4d96-802F-A4E7CCDA8024}",
+      "name": "domicile",
+      "label": {
+        "en": "domicile",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The place that a person treats as their permanent home",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{56AD65A9-282B-41f4-91CB-D4164FF48280}",
+      "name": "date of birth",
+      "label": {
+        "en": "date of birth",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The day on which the Person was born.",
+        "nl": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{FB55B6A4-83A7-4f4d-925A-44CD35B2D54E}",
+      "name": "date of death",
+      "label": {
+        "en": "date of death",
+        "nl": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The day on which the Person died.",
+        "nl": "Enter your translation here"
+      }
+    }
+  ]
+}

@@ -6,9 +6,11 @@
     "baseURI": "https://vocab.belgif.be/ns/publicorganization#",
     "filename": "iceg-public-organisation",
     "navigation": {
-      "self": "https://semiceu.github.io/doc/iceg/public-organisation"
+      "self": "https://vocab.belgif.be//doc/iceg/public-organisation"
     },
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
+    "documenttype": "ap",
+    "documentconfig": {},
     "status": "Working Draft",
     "statuslabel": "Onbekend",
     "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/77337b82023e37e2700d13191dd868cb5c493b6e",
@@ -115,6 +117,41 @@
       ],
       "properties": [
         {
+          "uri": "http://vocab.belgif.be/ns/publicorganization#legalForm",
+          "name": "legal form",
+          "sort": "legal form",
+          "label": {
+            "en": "legal form"
+          },
+          "description": {
+            "en": "The type of entity as defined by the Belgian law"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://purl.org/dc/terms/spatial",
           "name": "jurisdiction",
           "sort": "jurisdiction",
@@ -150,41 +187,6 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://vocab.belgif.be/ns/publicorganization#legalForm",
-          "name": "legal form",
-          "sort": "legal form",
-          "label": {
-            "en": "legal form"
-          },
-          "description": {
-            "en": "The type of entity as defined by the Belgian law"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "PublicOrganization",
-              "uri": "http://data.europa.eu/m8g/PublicOrganisation"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -203,41 +205,6 @@
       },
       "parents": [],
       "properties": [
-        {
-          "uri": "http://purl.org/dc/terms/identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "An unambiguous reference to a Reference Framework."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ReferenceFramework",
-              "uri": "http://data.europa.eu/m8g/ReferenceFramework"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
         {
           "uri": "http://purl.org/vocab/cpsv#implements",
           "name": "implements",
@@ -272,6 +239,41 @@
           ],
           "cardinality": "0..*",
           "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "An unambiguous reference to a Reference Framework."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ReferenceFramework",
+              "uri": "http://data.europa.eu/m8g/ReferenceFramework"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -290,6 +292,150 @@
       },
       "parents": [],
       "properties": [
+        {
+          "uri": "http://www.w3.org/ns/adms#schemeAgency",
+          "name": "issuing authority name",
+          "sort": "issuing authority name",
+          "label": {
+            "en": "issuing authority name"
+          },
+          "description": {
+            "en": "The name of the agency responsible for issuing the Identifier."
+          },
+          "usage": {
+            "en": "Example: \"Federal Public Service Interior\"@en."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#notation",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "The value of this property is the Identifier itself."
+          },
+          "usage": {
+            "en": "Example: \"abc-12345-de\"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;."
+          },
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/issued",
+          "name": "date of issue",
+          "sort": "date of issue",
+          "label": {
+            "en": "date of issue"
+          },
+          "description": {
+            "en": "The date on which the Identifier was assigned."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/creator",
+          "name": "issuing authority URI",
+          "sort": "issuing authority URI",
+          "label": {
+            "en": "issuing authority URI"
+          },
+          "description": {
+            "en": "The URI of the issuing authority."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Identifier",
+              "uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
         {
           "uri": "http://purl.org/dc/terms/conformsTo",
           "name": "scheme name",
@@ -359,150 +505,6 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/creator",
-          "name": "issuing authority URI",
-          "sort": "issuing authority URI",
-          "label": {
-            "en": "issuing authority URI"
-          },
-          "description": {
-            "en": "The URI of the issuing authority."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Identifier",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_label": {
-                "en": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://purl.org/dc/terms/issued",
-          "name": "date of issue",
-          "sort": "date of issue",
-          "label": {
-            "en": "date of issue"
-          },
-          "description": {
-            "en": "The date on which the Identifier was assigned."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Identifier",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#notation",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "The value of this property is the Identifier itself."
-          },
-          "usage": {
-            "en": "Example: \"abc-12345-de\"^^&lt;https://belgium.be/scheme/nationalIDnumber&gt;."
-          },
-          "domain": [
-            {
-              "EA-Name": "Identifier",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/adms#schemeAgency",
-          "name": "issuing authority name",
-          "sort": "issuing authority name",
-          "label": {
-            "en": "issuing authority name"
-          },
-          "description": {
-            "en": "The name of the agency responsible for issuing the Identifier."
-          },
-          "usage": {
-            "en": "Example: \"Federal Public Service Interior\"@en."
-          },
-          "domain": [
-            {
-              "EA-Name": "Identifier",
-              "uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
         }
       ]
     },
@@ -522,17 +524,17 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://www.w3.org/ns/locn#addressArea",
-          "name": "address area",
-          "sort": "address area",
+          "uri": "http://www.w3.org/ns/locn#thoroughfare",
+          "name": "thoroughfare",
+          "sort": "thoroughfare",
           "label": {
-            "en": "address area"
+            "en": "thoroughfare"
           },
           "description": {
-            "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
+            "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
           },
           "usage": {
-            "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre."
+            "en": "For example, \"Avenue des Champs-Élysées\"."
           },
           "domain": [
             {
@@ -559,17 +561,52 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#addressID",
-          "name": "address ID",
-          "sort": "address ID",
+          "uri": "http://www.w3.org/ns/locn#postName",
+          "name": "post name (city)",
+          "sort": "post name (city)",
           "label": {
-            "en": "address ID"
+            "en": "post name (city)"
           },
           "description": {
-            "en": "A globally unique identifier for each instance of an Address."
+            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postCode",
+          "name": "post code",
+          "sort": "post code",
+          "label": {
+            "en": "post code"
+          },
+          "description": {
+            "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
           },
           "usage": {
-            "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>"
+            "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
           },
           "domain": [
             {
@@ -577,23 +614,147 @@
               "uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
-          "range": [],
-          "scopedrange": [],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
-          "name": "administrative unit level 1 (country)",
-          "sort": "administrative unit level 1 (country)",
+          "uri": "http://www.w3.org/ns/locn#poBox",
+          "name": "post office box",
+          "sort": "post office box",
           "label": {
-            "en": "administrative unit level 1 (country)"
+            "en": "post office box"
           },
           "description": {
-            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
+            "en": "The Post Office Box number."
           },
           "usage": {
-            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary from the Publications Office can be reused for this."
+            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\"."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorName",
+          "name": "locator name",
+          "sort": "locator name",
+          "label": {
+            "en": "locator name"
+          },
+          "description": {
+            "en": "Proper noun(s) applied to the real world entity identified by the locator."
+          },
+          "usage": {
+            "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
+          "name": "locator designator",
+          "sort": "locator designator",
+          "label": {
+            "en": "locator designator"
+          },
+          "description": {
+            "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
+          },
+          "usage": {
+            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\"."
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#fullAddress",
+          "name": "full address",
+          "sort": "full address",
+          "label": {
+            "en": "full address"
+          },
+          "description": {
+            "en": "The complete address written as a formatted string."
+          },
+          "usage": {
+            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\"."
           },
           "domain": [
             {
@@ -657,17 +818,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#fullAddress",
-          "name": "full address",
-          "sort": "full address",
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "administrative unit level 1 (country)",
+          "sort": "administrative unit level 1 (country)",
           "label": {
-            "en": "full address"
+            "en": "administrative unit level 1 (country)"
           },
           "description": {
-            "en": "The complete address written as a formatted string."
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country."
           },
           "usage": {
-            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\"."
+            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary from the Publications Office can be reused for this."
           },
           "domain": [
             {
@@ -694,17 +855,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
-          "name": "locator designator",
-          "sort": "locator designator",
+          "uri": "http://www.w3.org/ns/locn#addressID",
+          "name": "address ID",
+          "sort": "address ID",
           "label": {
-            "en": "locator designator"
+            "en": "address ID"
           },
           "description": {
-            "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators."
+            "en": "A globally unique identifier for each instance of an Address."
           },
           "usage": {
-            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\"."
+            "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>"
           },
           "domain": [
             {
@@ -712,182 +873,23 @@
               "uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#locatorName",
-          "name": "locator name",
-          "sort": "locator name",
-          "label": {
-            "en": "locator name"
-          },
-          "description": {
-            "en": "Proper noun(s) applied to the real world entity identified by the locator."
-          },
-          "usage": {
-            "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Shumann, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>"
-          },
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#poBox",
-          "name": "post office box",
-          "sort": "post office box",
-          "label": {
-            "en": "post office box"
-          },
-          "description": {
-            "en": "The Post Office Box number."
-          },
-          "usage": {
-            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\"."
-          },
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
+          "range": [],
+          "scopedrange": [],
           "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/locn#postCode",
-          "name": "post code",
-          "sort": "post code",
+          "uri": "http://www.w3.org/ns/locn#addressArea",
+          "name": "address area",
+          "sort": "address area",
           "label": {
-            "en": "post code"
+            "en": "address area"
           },
           "description": {
-            "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")"
+            "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit."
           },
           "usage": {
-            "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\"."
-          },
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#postName",
-          "name": "post name (city)",
-          "sort": "post name (city)",
-          "label": {
-            "en": "post name (city)"
-          },
-          "description": {
-            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r For example, \"Paris\"."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Address",
-              "uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#thoroughfare",
-          "name": "thoroughfare",
-          "sort": "thoroughfare",
-          "label": {
-            "en": "thoroughfare"
-          },
-          "description": {
-            "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature."
-          },
-          "usage": {
-            "en": "For example, \"Avenue des Champs-Élysées\"."
+            "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre."
           },
           "domain": [
             {
@@ -931,14 +933,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/coordinates",
-          "name": "coordinates",
-          "sort": "coordinates",
+          "uri": "https://schema.org/longitude",
+          "name": "longitude",
+          "sort": "longitude",
           "label": {
-            "en": "coordinates"
+            "en": "longitude"
           },
           "description": {
-            "en": "The coordinate list."
+            "en": "The longitude."
           },
           "usage": {},
           "domain": [
@@ -966,14 +968,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://data.europa.eu/m8g/crs",
-          "name": "crs",
-          "sort": "crs",
+          "uri": "https://schema.org/latitude",
+          "name": "latitude",
+          "sort": "latitude",
           "label": {
-            "en": "crs"
+            "en": "latitude"
           },
           "description": {
-            "en": "An identifier for the coordinate reference system."
+            "en": "The latitude."
           },
           "usage": {},
           "domain": [
@@ -984,88 +986,16 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "URI"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://data.europa.eu/m8g/geometryType",
-          "name": "geometry type",
-          "sort": "geometry type",
-          "label": {
-            "en": "geometry type"
-          },
-          "description": {
-            "en": "The geometry type, e.g. point, line or polygon."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Geometry",
-              "uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.opengis.net/ont/geosparql#asGML",
-          "name": "gml",
-          "sort": "gml",
-          "label": {
-            "en": "gml"
-          },
-          "description": {
-            "en": "The geometry written in Geography Markup Language."
-          },
-          "usage": {
-            "en": "Use \"http://www.opengis.net/ont/geosparql#gmlLiteral\" as type for the literal."
-          },
-          "domain": [
-            {
-              "EA-Name": "Geometry",
-              "uri": "http://www.w3.org/ns/locn#Geometry"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
+                "en": "String"
               }
             }
           ],
@@ -1110,14 +1040,51 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/latitude",
-          "name": "latitude",
-          "sort": "latitude",
+          "uri": "http://www.opengis.net/ont/geosparql#asGML",
+          "name": "gml",
+          "sort": "gml",
           "label": {
-            "en": "latitude"
+            "en": "gml"
           },
           "description": {
-            "en": "The latitude."
+            "en": "The geometry written in Geography Markup Language."
+          },
+          "usage": {
+            "en": "Use \"http://www.opengis.net/ont/geosparql#gmlLiteral\" as type for the literal."
+          },
+          "domain": [
+            {
+              "EA-Name": "Geometry",
+              "uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_label": {
+                "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/geometryType",
+          "name": "geometry type",
+          "sort": "geometry type",
+          "label": {
+            "en": "geometry type"
+          },
+          "description": {
+            "en": "The geometry type, e.g. point, line or polygon."
           },
           "usage": {},
           "domain": [
@@ -1128,16 +1095,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "String"
+                "en": "Code"
               }
             }
           ],
@@ -1145,14 +1112,49 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/longitude",
-          "name": "longitude",
-          "sort": "longitude",
+          "uri": "http://data.europa.eu/m8g/crs",
+          "name": "crs",
+          "sort": "crs",
           "label": {
-            "en": "longitude"
+            "en": "crs"
           },
           "description": {
-            "en": "The longitude."
+            "en": "An identifier for the coordinate reference system."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Geometry",
+              "uri": "http://www.w3.org/ns/locn#Geometry"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_label": {
+                "en": "URI"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/coordinates",
+          "name": "coordinates",
+          "sort": "coordinates",
+          "label": {
+            "en": "coordinates"
+          },
+          "description": {
+            "en": "The coordinate list."
           },
           "usage": {},
           "domain": [
@@ -1195,14 +1197,51 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/hasFormalFramework",
-          "name": "has formal framework",
-          "sort": "has formal framework",
+          "uri": "http://www.w3.org/ns/prov#startedAtTime",
+          "name": "started at time",
+          "sort": "started at time",
           "label": {
-            "en": "has formal framework"
+            "en": "started at time"
           },
           "description": {
-            "en": "The property hasFormalFramework links a Change Event or Foundation Event to a piece of legislation or a policy document that prompted the change."
+            "en": "The time at which the Change Event started."
+          },
+          "usage": {
+            "en": "If only one time is known and it is unclear whether it represents the start or end time, use only the startedAtTime property."
+          },
+          "domain": [
+            {
+              "EA-Name": "ChangeEvent",
+              "uri": "http://www.w3.org/ns/org#ChangeEvent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/prov#endedAtTime",
+          "name": "ended at time",
+          "sort": "ended at time",
+          "label": {
+            "en": "ended at time"
+          },
+          "description": {
+            "en": "The time at which the Change Event ended."
           },
           "usage": {},
           "domain": [
@@ -1213,16 +1252,86 @@
           ],
           "range": [
             {
-              "range_label": "ReferenceFramework",
-              "range_uri": "http://data.europa.eu/m8g/ReferenceFramework"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Reference Framework",
-              "range_puri": "http://data.europa.eu/m8g/ReferenceFramework",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "en": "Reference Framework"
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#resultingOrganization",
+          "name": "resulting organization",
+          "sort": "resulting organization",
+          "label": {
+            "en": "resulting organization"
+          },
+          "description": {
+            "en": "This property links a Change Event or a Foundation Event to the Organization that resulted from it."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ChangeEvent",
+              "uri": "http://www.w3.org/ns/org#ChangeEvent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_label": {
+                "en": "Organization"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#originalOrganization",
+          "name": "original organization",
+          "sort": "original organization",
+          "label": {
+            "en": "original organization"
+          },
+          "description": {
+            "en": "The original organization property links a Change Event to the Organization that existed before the change. Although the Foundation Event class is defined as a subclass of Change Event, it is inappropriate to use the original organization property with the Foundation Event class."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ChangeEvent",
+              "uri": "http://www.w3.org/ns/org#ChangeEvent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_label": {
+                "en": "Organization"
               }
             }
           ],
@@ -1265,14 +1374,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#originalOrganization",
-          "name": "original organization",
-          "sort": "original organization",
+          "uri": "http://data.europa.eu/m8g/hasFormalFramework",
+          "name": "has formal framework",
+          "sort": "has formal framework",
           "label": {
-            "en": "original organization"
+            "en": "has formal framework"
           },
           "description": {
-            "en": "The original organization property links a Change Event to the Organization that existed before the change. Although the Foundation Event class is defined as a subclass of Change Event, it is inappropriate to use the original organization property with the Foundation Event class."
+            "en": "The property hasFormalFramework links a Change Event or Foundation Event to a piece of legislation or a policy document that prompted the change."
           },
           "usage": {},
           "domain": [
@@ -1283,127 +1392,20 @@
           ],
           "range": [
             {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#Organization"
+              "range_label": "ReferenceFramework",
+              "range_uri": "http://data.europa.eu/m8g/ReferenceFramework"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_uri": "#Reference Framework",
+              "range_puri": "http://data.europa.eu/m8g/ReferenceFramework",
               "range_label": {
-                "en": "Organization"
+                "en": "Reference Framework"
               }
             }
           ],
           "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#resultingOrganization",
-          "name": "resulting organization",
-          "sort": "resulting organization",
-          "label": {
-            "en": "resulting organization"
-          },
-          "description": {
-            "en": "This property links a Change Event or a Foundation Event to the Organization that resulted from it."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ChangeEvent",
-              "uri": "http://www.w3.org/ns/org#ChangeEvent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#Organization",
-              "range_label": {
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/prov#endedAtTime",
-          "name": "ended at time",
-          "sort": "ended at time",
-          "label": {
-            "en": "ended at time"
-          },
-          "description": {
-            "en": "The time at which the Change Event ended."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ChangeEvent",
-              "uri": "http://www.w3.org/ns/org#ChangeEvent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/prov#startedAtTime",
-          "name": "started at time",
-          "sort": "started at time",
-          "label": {
-            "en": "started at time"
-          },
-          "description": {
-            "en": "The time at which the Change Event started."
-          },
-          "usage": {
-            "en": "If only one time is known and it is unclear whether it represents the start or end time, use only the startedAtTime property."
-          },
-          "domain": [
-            {
-              "EA-Name": "ChangeEvent",
-              "uri": "http://www.w3.org/ns/org#ChangeEvent"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1422,14 +1424,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://purl.org/dc/terms/description",
-          "name": "description",
-          "sort": "description",
+          "uri": "https://www.w3.org/ns/adms#Identifier",
+          "name": "identifier",
+          "sort": "identifier",
           "label": {
-            "en": "description"
+            "en": "identifier"
           },
           "description": {
-            "en": "Statement or account giving the characteristics of the company."
+            "en": "Many organizations are referred to by an acronym or some other identifier\r\n"
           },
           "usage": {},
           "domain": [
@@ -1440,69 +1442,34 @@
           ],
           "range": [
             {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "#Identifier",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
               "range_label": {
-                "en": "Text"
+                "en": "Identifier"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
-          "uri": "http://vocab.belgif.be/ns/publicorganization#certification",
-          "name": "certification",
-          "sort": "certification",
+          "uri": "https://schema.org/logo",
+          "name": "logo",
+          "sort": "logo",
           "label": {
-            "en": "certification"
+            "en": "logo"
           },
           "description": {
-            "en": "Certifications, licences or registrations that are of importance for third parties or whose publication is mandatory"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://vocab.belgif.be/ns/publicorganization#exOfficioStrikingOff",
-          "name": "ex officio striking off",
-          "sort": "ex officio striking off",
-          "label": {
-            "en": "ex officio striking off"
-          },
-          "description": {
-            "en": "Ex officio striking off of the entity for failure to submit their financial statements"
+            "en": "A property to link an Organization to its logo."
           },
           "usage": {
-            "en": "Companies which have not complied with the obligation to deposit their annual accounts with the National Bank of Belgium for at least three consecutive accounting years can be struck off ex officio"
+            "en": "The value of this property can simply be the URL of the logo but it is better for developers if it links to an object that provides the URL of the image and essential metadata about it, notably its dimensions.\r"
           },
           "domain": [
             {
@@ -1512,51 +1479,16 @@
           ],
           "range": [
             {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+              "range_label": "ImageObject",
+              "range_uri": "https://schema.org/ImageObject"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_uri": "#Image Object",
+              "range_puri": "https://schema.org/ImageObject",
               "range_label": {
-                "en": "Code"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://vocab.belgif.be/ns/publicorganization#linksToDatabase",
-          "name": "links to database",
-          "sort": "links to database",
-          "label": {
-            "en": "links to database"
-          },
-          "description": {
-            "en": "Links to databases containing data not recorded in the CBE/KBO"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
+                "en": "Image Object"
               }
             }
           ],
@@ -1564,16 +1496,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://vocab.belgif.be/ns/publicorganization#startDateOfThisData",
-          "name": "start date of this data",
-          "sort": "start date of this data",
+          "uri": "https://schema.org/contactPoint",
+          "name": "contact point",
+          "sort": "contact point",
           "label": {
-            "en": "start date of this data"
+            "en": "contact point"
           },
           "description": {
-            "en": "\tThe date on which the Organization-related information was provided."
+            "en": "The contact point property links to a Contact Point that provides contact\r\ninformation, in particular a phone number and e-mail address."
           },
-          "usage": {},
+          "usage": {
+            "en": "Other contact methods\r\nmay be included, including online contact information, but this is conceptually distinct\r\nfrom the organization's homepage that may or may not provide contact\r\ninformation."
+          },
           "domain": [
             {
               "EA-Name": "Organization",
@@ -1582,51 +1516,16 @@
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "ContactPoint",
+              "range_uri": "https://schema.org/ContactPoint"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "#Contact Point",
+              "range_puri": "https://schema.org/ContactPoint",
               "range_label": {
-                "en": "DateTime"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://vocab.belgif.be/ns/publicorganization#status",
-          "name": "status",
-          "sort": "status",
-          "label": {
-            "en": "status"
-          },
-          "description": {
-            "en": "Entity status, e.g. active, closed, cancelled, identified\r\nlegal creation, stopped"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Code",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Code"
+                "en": "Contact Point"
               }
             }
           ],
@@ -1634,49 +1533,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.iceg.be/Organization.hasMember",
-          "name": "has member",
-          "sort": "has member",
+          "uri": "http://www.w3.org/ns/org#subOrganizationOf",
+          "name": "sub organization of",
+          "sort": "sub organization of",
           "label": {
-            "en": "has member"
+            "en": "sub organization of"
           },
           "description": {
-            "en": "Indicates that Person is a member of the Organization with no indication of the nature of that membership or the role played"
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Person",
-              "range_uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Person",
-              "range_puri": "http://www.w3.org/ns/person#Person",
-              "range_label": {
-                "en": "Person"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/1999/xhtml/vocab#next",
-          "name": "next",
-          "sort": "next",
-          "label": {
-            "en": "next"
-          },
-          "description": {
-            "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
+            "en": "Public Organizations are often large and complex and may be a collection of smaller\r\nOrganizations, each of which has a specific identity that may be legally defined. The\r\nhasSubOrganization and subOrganizationOf properties express the relationships\r\nbetween Organizations in a hierarchical structure. "
           },
           "usage": {},
           "domain": [
@@ -1704,121 +1568,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/1999/xhtml/vocab#prev",
-          "name": "prev",
-          "sort": "prev",
+          "uri": "http://www.w3.org/ns/org#resultedFrom",
+          "name": "resulted from",
+          "sort": "resulted from",
           "label": {
-            "en": "prev"
+            "en": "resulted from"
           },
           "description": {
-            "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#Organization",
-              "range_label": {
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
-          "name": "alternative label",
-          "sort": "alternative label",
-          "label": {
-            "en": "alternative label"
-          },
-          "description": {
-            "en": "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
-          "name": "preferred label",
-          "sort": "preferred label",
-          "label": {
-            "en": "preferred label"
-          },
-          "description": {
-            "en": "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization"
-          },
-          "usage": {
-            "en": "An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property."
-          },
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#changedBy",
-          "name": "changed by",
-          "sort": "changed by",
-          "label": {
-            "en": "changed by"
-          },
-          "description": {
-            "en": "The changed by organization property links an Organization to the Change Event that changed the Organization."
+            "en": "This property link an Organization to the Change Event it resulted from."
           },
           "usage": {},
           "domain": [
@@ -1846,11 +1603,11 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#hasMember",
-          "name": "has member",
-          "sort": "has member",
+          "uri": "http://www.w3.org/ns/org#memberOf",
+          "name": "member of",
+          "sort": "member of",
           "label": {
-            "en": "has member"
+            "en": "member of"
           },
           "description": {
             "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
@@ -1858,111 +1615,6 @@
           "usage": {
             "en": "The memberOf and hasMember properties are very simple and don't support\r\nstatements describing the nature of the membership. The W3C Organization Ontology\r\nprovides both this simple method and a more sophisticated model25 that does make\r\nit possible to, for example, provide information about the period of time in which one\r\nOrganization was a member of another, the level of membership etc. That more\r\nsophisticated model should be used where necessary and may be used in addition to\r\nthe simple memberOf/hasMember properties."
           },
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#Organization",
-              "range_label": {
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#hasPost",
-          "name": "has post",
-          "sort": "has post",
-          "label": {
-            "en": "has post"
-          },
-          "description": {
-            "en": "Indicates the post that belongs to the Organization."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Post",
-              "range_uri": "http://www.w3.org/ns/org#Post"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Post",
-              "range_puri": "http://www.w3.org/ns/org#Post",
-              "range_label": {
-                "en": "Post"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#hasSite",
-          "name": "has site",
-          "sort": "has site",
-          "label": {
-            "en": "has site"
-          },
-          "description": {
-            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Site",
-              "range_uri": "http://www.w3.org/ns/org#Site"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Site",
-              "range_puri": "http://www.w3.org/ns/org#Site",
-              "range_label": {
-                "en": "Site"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#hasSubOrganization",
-          "name": "has sub organization",
-          "sort": "has sub organization",
-          "label": {
-            "en": "has sub organization"
-          },
-          "description": {
-            "en": "Public Organizations are often large and complex and may be a collection of smaller\r\nOrganizations, each of which has a specific identity that may be legally defined. The\r\nhasSubOrganization and subOrganizationOf properties express the relationships\r\nbetween Organizations in a hierarchical structure. "
-          },
-          "usage": {},
           "domain": [
             {
               "EA-Name": "Organization",
@@ -2025,11 +1677,116 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#memberOf",
-          "name": "member of",
-          "sort": "member of",
+          "uri": "http://www.w3.org/ns/org#hasSubOrganization",
+          "name": "has sub organization",
+          "sort": "has sub organization",
           "label": {
-            "en": "member of"
+            "en": "has sub organization"
+          },
+          "description": {
+            "en": "Public Organizations are often large and complex and may be a collection of smaller\r\nOrganizations, each of which has a specific identity that may be legally defined. The\r\nhasSubOrganization and subOrganizationOf properties express the relationships\r\nbetween Organizations in a hierarchical structure. "
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_label": {
+                "en": "Organization"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#hasSite",
+          "name": "has site",
+          "sort": "has site",
+          "label": {
+            "en": "has site"
+          },
+          "description": {
+            "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company)."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Site",
+              "range_uri": "http://www.w3.org/ns/org#Site"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Site",
+              "range_puri": "http://www.w3.org/ns/org#Site",
+              "range_label": {
+                "en": "Site"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#hasPost",
+          "name": "has post",
+          "sort": "has post",
+          "label": {
+            "en": "has post"
+          },
+          "description": {
+            "en": "Indicates the post that belongs to the Organization."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Post",
+              "range_uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Post",
+              "range_puri": "http://www.w3.org/ns/org#Post",
+              "range_label": {
+                "en": "Post"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#hasMember",
+          "name": "has member",
+          "sort": "has member",
+          "label": {
+            "en": "has member"
           },
           "description": {
             "en": "One Organization may be a member of another without being a sub organization, i.e.\r\nthey are independent entities."
@@ -2062,14 +1819,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#resultedFrom",
-          "name": "resulted from",
-          "sort": "resulted from",
+          "uri": "http://www.w3.org/ns/org#changedBy",
+          "name": "changed by",
+          "sort": "changed by",
           "label": {
-            "en": "resulted from"
+            "en": "changed by"
           },
           "description": {
-            "en": "This property link an Organization to the Change Event it resulted from."
+            "en": "The changed by organization property links an Organization to the Change Event that changed the Organization."
           },
           "usage": {},
           "domain": [
@@ -2097,14 +1854,86 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#subOrganizationOf",
-          "name": "sub organization of",
-          "sort": "sub organization of",
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "preferred label",
+          "sort": "preferred label",
           "label": {
-            "en": "sub organization of"
+            "en": "preferred label"
           },
           "description": {
-            "en": "Public Organizations are often large and complex and may be a collection of smaller\r\nOrganizations, each of which has a specific identity that may be legally defined. The\r\nhasSubOrganization and subOrganizationOf properties express the relationships\r\nbetween Organizations in a hierarchical structure. "
+            "en": "As defined in the ORG Ontology, a preferred label is used to provide the primary, legally recognised name of the organization"
+          },
+          "usage": {
+            "en": "An organization may only have one such name in any given language. Primary names may be provided in multiple languages with multiple instances of the preferred label property."
+          },
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#altLabel",
+          "name": "alternative label",
+          "sort": "alternative label",
+          "label": {
+            "en": "alternative label"
+          },
+          "description": {
+            "en": "In line with ORG and SKOS itself, an organization may have any number of alternative or informal names, irrespective of language."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/1999/xhtml/vocab#prev",
+          "name": "prev",
+          "sort": "prev",
+          "label": {
+            "en": "prev"
+          },
+          "description": {
+            "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
           },
           "usage": {},
           "domain": [
@@ -2132,88 +1961,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/contactPoint",
-          "name": "contact point",
-          "sort": "contact point",
+          "uri": "http://www.w3.org/1999/xhtml/vocab#next",
+          "name": "next",
+          "sort": "next",
           "label": {
-            "en": "contact point"
+            "en": "next"
           },
           "description": {
-            "en": "The contact point property links to a Contact Point that provides contact\r\ninformation, in particular a phone number and e-mail address."
-          },
-          "usage": {
-            "en": "Other contact methods\r\nmay be included, including online contact information, but this is conceptually distinct\r\nfrom the organization's homepage that may or may not provide contact\r\ninformation."
-          },
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ContactPoint",
-              "range_uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Contact Point",
-              "range_puri": "https://schema.org/ContactPoint",
-              "range_label": {
-                "en": "Contact Point"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/logo",
-          "name": "logo",
-          "sort": "logo",
-          "label": {
-            "en": "logo"
-          },
-          "description": {
-            "en": "A property to link an Organization to its logo."
-          },
-          "usage": {
-            "en": "The value of this property can simply be the URL of the logo but it is better for developers if it links to an object that provides the URL of the image and essential metadata about it, notably its dimensions.\r"
-          },
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ImageObject",
-              "range_uri": "https://schema.org/ImageObject"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Image Object",
-              "range_puri": "https://schema.org/ImageObject",
-              "range_label": {
-                "en": "Image Object"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://www.w3.org/ns/adms#Identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "Many organizations are referred to by an acronym or some other identifier\r\n"
+            "en": "In some cases, it is necessary to be able to create an ordered sequence of\r\norganizations that precede and succeed each other. To support this, the CPOV\r\nincludes the well-known relationships of previous and next to allow such sequences\r\nto be captured and computed."
           },
           "usage": {},
           "domain": [
@@ -2224,20 +1979,267 @@
           ],
           "range": [
             {
-              "range_label": "Identifier",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Identifier",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
               "range_label": {
-                "en": "Identifier"
+                "en": "Organization"
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.iceg.be/Organization.hasMember",
+          "name": "has member",
+          "sort": "has member",
+          "label": {
+            "en": "has member"
+          },
+          "description": {
+            "en": "Indicates that Person is a member of the Organization with no indication of the nature of that membership or the role played"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Person",
+              "range_uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Person",
+              "range_puri": "http://www.w3.org/ns/person#Person",
+              "range_label": {
+                "en": "Person"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/publicorganization#status",
+          "name": "status",
+          "sort": "status",
+          "label": {
+            "en": "status"
+          },
+          "description": {
+            "en": "Entity status, e.g. active, closed, cancelled, identified\r\nlegal creation, stopped"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/publicorganization#startDateOfThisData",
+          "name": "start date of this data",
+          "sort": "start date of this data",
+          "label": {
+            "en": "start date of this data"
+          },
+          "description": {
+            "en": "\tThe date on which the Organization-related information was provided."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/publicorganization#linksToDatabase",
+          "name": "links to database",
+          "sort": "links to database",
+          "label": {
+            "en": "links to database"
+          },
+          "description": {
+            "en": "Links to databases containing data not recorded in the CBE/KBO"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/publicorganization#exOfficioStrikingOff",
+          "name": "ex officio striking off",
+          "sort": "ex officio striking off",
+          "label": {
+            "en": "ex officio striking off"
+          },
+          "description": {
+            "en": "Ex officio striking off of the entity for failure to submit their financial statements"
+          },
+          "usage": {
+            "en": "Companies which have not complied with the obligation to deposit their annual accounts with the National Bank of Belgium for at least three consecutive accounting years can be struck off ex officio"
+          },
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/publicorganization#certification",
+          "name": "certification",
+          "sort": "certification",
+          "label": {
+            "en": "certification"
+          },
+          "description": {
+            "en": "Certifications, licences or registrations that are of importance for third parties or whose publication is mandatory"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "description",
+          "label": {
+            "en": "description"
+          },
+          "description": {
+            "en": "Statement or account giving the characteristics of the company."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -2318,41 +2320,6 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://www.w3.org/ns/org#postIn",
-          "name": "post in",
-          "sort": "post in",
-          "label": {
-            "en": "post in"
-          },
-          "description": {
-            "en": "Indicates the Organization whose post belongs to."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Post",
-              "uri": "http://www.w3.org/ns/org#Post"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#Organization",
-              "range_label": {
-                "en": "Organization"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
           "uri": "http://www.w3.org/ns/org#role",
           "name": "role",
           "sort": "role",
@@ -2385,6 +2352,41 @@
             }
           ],
           "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#postIn",
+          "name": "post in",
+          "sort": "post in",
+          "label": {
+            "en": "post in"
+          },
+          "description": {
+            "en": "Indicates the Organization whose post belongs to."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Post",
+              "uri": "http://www.w3.org/ns/org#Post"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_label": {
+                "en": "Organization"
+              }
+            }
+          ],
+          "cardinality": "0..*",
           "codelist_uri": ""
         }
       ]
@@ -2479,51 +2481,14 @@
       ],
       "properties": [
         {
-          "uri": "http://purl.org/dc/terms/alternative",
-          "name": "alternative name",
-          "sort": "alternative name",
+          "uri": "https://www.w3.org/ns/org#holds",
+          "name": "holds",
+          "sort": "holds",
           "label": {
-            "en": "alternative name"
+            "en": "holds"
           },
           "description": {
-            "en": "Any name by which an individual is known other than their full name."
-          },
-          "usage": {
-            "en": "Many individuals use a short form of their name, a 'middle' name as a 'first' name or a professional name. For example, the British politician and former UN High Representative for Bosnia and Herzegovina, Jeremy John Durham Ashdown, Baron Ashdown of Norton-sub-Hamdon, is usually referred to simply as 'Paddy Ashdown' or 'Lord Ashdown.' \nIt is not the role of the alternative name property to record nick names, pet names or other 'familiar names' that will be of no consequence in public sector data exchange.\nFurthermore, some individuals have more than one legal name in which case the full name property should be used multiple times. \nAlternative name gives a means of recording names by which an individual is generally known, or professionally known, even though such names are no more than secondary from a legal point of view."
-          },
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_label": {
-                "en": "String"
-              }
-            }
-          ],
-          "cardinality": "0..1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/locn#address",
-          "name": "registered address\r\n",
-          "sort": "registered address\r\n",
-          "label": {
-            "en": "registered address\r\n"
-          },
-          "description": {
-            "en": "The registered address of the Person."
+            "en": "Indicates a Post held by a Person."
           },
           "usage": {},
           "domain": [
@@ -2534,35 +2499,33 @@
           ],
           "range": [
             {
-              "range_label": "Address",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
+              "range_label": "Post",
+              "range_uri": "http://www.w3.org/ns/org#Post"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Address",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_uri": "#Post",
+              "range_puri": "http://www.w3.org/ns/org#Post",
               "range_label": {
-                "en": "Address"
+                "en": "Post"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "1..*",
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/person#birthName",
-          "name": "birth name",
-          "sort": "birth name",
+          "uri": "https://schema.org/memberOf",
+          "name": "member of",
+          "sort": "member of",
           "label": {
-            "en": "birth name"
+            "en": "member of"
           },
           "description": {
-            "en": "Full name of the Person given upon their birth."
+            "en": "Indicates a Person who is a member of the subject Organization"
           },
-          "usage": {
-            "en": "All data associated with an individual are subject to change. Names can change for a variety of reasons, either formally or informally, and new information may come to light that means that a correction or clarification can be made to an existing record. Birth names tend to be persistent however and for this reason they are recorded by some public sector information systems. There is no granularity for birth name - the full name should be recorded in a single field."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Person",
@@ -2571,35 +2534,33 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "Organization",
+              "range_uri": "http://www.w3.org/ns/org#Organization"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
               "range_label": {
-                "en": "String"
+                "en": "Organization"
               }
             }
           ],
-          "cardinality": "0..1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/person#patronymicName",
-          "name": "patronymic name",
-          "sort": "patronymic name",
+          "uri": "https://schema.org/deathDate",
+          "name": "date of death",
+          "sort": "date of death",
           "label": {
-            "en": "patronymic name"
+            "en": "date of death"
           },
           "description": {
-            "en": "Name based on the given name of the Person's father."
+            "en": "The day on which the Person died."
           },
-          "usage": {
-            "en": "Patronymic names are important in some countries. Iceland does not have a concept of 'family name' in the way that many other European countries do, for example. Erik Magnusson and Erika Magnusdottir are siblings, both offspring of Magnus, irrespective of his patronymic name.\nIn Bulgaria and Russia, patronymic names are in everyday usage, for example, the \"Sergeyevich\" in \"Mikhail Sergeyevich Gorbachev\".\nNote that patronymic names refer to a father's given name, not the family name inherited from the mother and father as is the case in countries such as Spain and Portugal. Again referring to the example of Miguel de Cervantes Saavedra's, the patronymic name element would be unused."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "Person",
@@ -2608,16 +2569,16 @@
           ],
           "range": [
             {
-              "range_label": "String",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "en": "String"
+                "en": "DateTime"
               }
             }
           ],
@@ -2625,17 +2586,122 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://xmlns.com/foaf/0.1/familyName",
-          "name": "family name (surname)",
-          "sort": "family name (surname)",
+          "uri": "https://schema.org/birthDate",
+          "name": "date of birth",
+          "sort": "date of birth",
           "label": {
-            "en": "family name (surname)"
+            "en": "date of birth"
           },
           "description": {
-            "en": "A family name is usually shared by members of a family."
+            "en": "The day on which the Person was born."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_label": {
+                "en": "DateTime"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://dublincore.org/specifications/dublin-core/dcmi-terms/#identifier",
+          "name": "identifier",
+          "sort": "identifier",
+          "label": {
+            "en": "identifier"
+          },
+          "description": {
+            "en": "The identifier relation is used to link a Person to any formally issued Identifier for that Person."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Identifier",
+              "range_uri": "http://www.w3.org/ns/adms#Identifier"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Identifier",
+              "range_puri": "http://www.w3.org/ns/adms#Identifier",
+              "range_label": {
+                "en": "Identifier"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://xmlns.com/foaf/0.1/title",
+          "name": "title",
+          "sort": "title",
+          "label": {
+            "en": "title"
+          },
+          "description": {
+            "en": "The approriate values for title are not formally constrained, and will vary across community and context. Values such as 'Mr', 'Mrs', 'Ms', 'Dr' etc. are expected."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Person",
+              "uri": "http://www.w3.org/ns/person#Person"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://xmlns.com/foaf/0.1/name",
+          "name": "full name",
+          "sort": "full name",
+          "label": {
+            "en": "full name"
+          },
+          "description": {
+            "en": "The full name contains the complete name of a person as one string."
           },
           "usage": {
-            "en": "This attribute also carries prefixes or suffixes which are part of the family name, e.g. \"de Boer\", \"van de Putte\", \"von und zu Orlow\". Multiple family names, such as are commonly found in Hispanic countries, are recorded in the single family name property so that, for example, Miguel de Cervantes Saavedra's family name would be recorded as \"de Cervantes Saavedra\"."
+            "en": "<p>In addition to the content of given name, family name and, in some systems, patronymic name, this can carry additional parts of a person's name such as titles, middle names or suffixes like \"the third\" or names which are neither a given nor a family name.\nThe full name is the most reliable label for an individual and as such its use is strongly encouraged, irrespective of whether that name is broken down using the more granular elements.\r\n</p></br>\r\n<p>\r\nIt is anticipated that some systems will only provide or process the full name of a person. Where an individual has more than one full legal name (a relatively rare but not unknown phenomenon), the full name property can be used more than once. In this case, however, the granular name elements should not be used since the intention is that these provide a breakdown of the full name and it will not be clear of which full name this is true. \nNote that the vocabulary provides an alternative name property. This allows name(s) to be recorded that have no legal status but that nevertheless are the names by which an individual is generally known.\r\n</p></br>\r\n<p>\r\n\nA name usually sticks with a person for a long time period. In some European countries a name may only be changed according to certain laws and life events, e.g. marriage. The name denominates a natural person even if he/she changes their address. Documents like birth certificate or diploma usually don't carry an address but always the name. Thus the name is one of the core attributes. However it is not sufficient to identify a person since there are combinations of very common names like Smith in the UK, Meier in Germany, or Li in China.\r\n</p>"
           },
           "domain": [
             {
@@ -2699,17 +2765,17 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://xmlns.com/foaf/0.1/name",
-          "name": "full name",
-          "sort": "full name",
+          "uri": "http://xmlns.com/foaf/0.1/familyName",
+          "name": "family name (surname)",
+          "sort": "family name (surname)",
           "label": {
-            "en": "full name"
+            "en": "family name (surname)"
           },
           "description": {
-            "en": "The full name contains the complete name of a person as one string."
+            "en": "A family name is usually shared by members of a family."
           },
           "usage": {
-            "en": "<p>In addition to the content of given name, family name and, in some systems, patronymic name, this can carry additional parts of a person's name such as titles, middle names or suffixes like \"the third\" or names which are neither a given nor a family name.\nThe full name is the most reliable label for an individual and as such its use is strongly encouraged, irrespective of whether that name is broken down using the more granular elements.\r\n</p></br>\r\n<p>\r\nIt is anticipated that some systems will only provide or process the full name of a person. Where an individual has more than one full legal name (a relatively rare but not unknown phenomenon), the full name property can be used more than once. In this case, however, the granular name elements should not be used since the intention is that these provide a breakdown of the full name and it will not be clear of which full name this is true. \nNote that the vocabulary provides an alternative name property. This allows name(s) to be recorded that have no legal status but that nevertheless are the names by which an individual is generally known.\r\n</p></br>\r\n<p>\r\n\nA name usually sticks with a person for a long time period. In some European countries a name may only be changed according to certain laws and life events, e.g. marriage. The name denominates a natural person even if he/she changes their address. Documents like birth certificate or diploma usually don't carry an address but always the name. Thus the name is one of the core attributes. However it is not sufficient to identify a person since there are combinations of very common names like Smith in the UK, Meier in Germany, or Li in China.\r\n</p>"
+            "en": "This attribute also carries prefixes or suffixes which are part of the family name, e.g. \"de Boer\", \"van de Putte\", \"von und zu Orlow\". Multiple family names, such as are commonly found in Hispanic countries, are recorded in the single family name property so that, for example, Miguel de Cervantes Saavedra's family name would be recorded as \"de Cervantes Saavedra\"."
           },
           "domain": [
             {
@@ -2736,16 +2802,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://xmlns.com/foaf/0.1/title",
-          "name": "title",
-          "sort": "title",
+          "uri": "http://www.w3.org/ns/person#patronymicName",
+          "name": "patronymic name",
+          "sort": "patronymic name",
           "label": {
-            "en": "title"
+            "en": "patronymic name"
           },
           "description": {
-            "en": "The approriate values for title are not formally constrained, and will vary across community and context. Values such as 'Mr', 'Mrs', 'Ms', 'Dr' etc. are expected."
+            "en": "Name based on the given name of the Person's father."
           },
-          "usage": {},
+          "usage": {
+            "en": "Patronymic names are important in some countries. Iceland does not have a concept of 'family name' in the way that many other European countries do, for example. Erik Magnusson and Erika Magnusdottir are siblings, both offspring of Magnus, irrespective of his patronymic name.\nIn Bulgaria and Russia, patronymic names are in everyday usage, for example, the \"Sergeyevich\" in \"Mikhail Sergeyevich Gorbachev\".\nNote that patronymic names refer to a father's given name, not the family name inherited from the mother and father as is the case in countries such as Spain and Portugal. Again referring to the example of Miguel de Cervantes Saavedra's, the patronymic name element would be unused."
+          },
           "domain": [
             {
               "EA-Name": "Person",
@@ -2754,86 +2822,16 @@
           ],
           "range": [
             {
-              "range_label": "Text",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "Text"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://dublincore.org/specifications/dublin-core/dcmi-terms/#identifier",
-          "name": "identifier",
-          "sort": "identifier",
-          "label": {
-            "en": "identifier"
-          },
-          "description": {
-            "en": "The identifier relation is used to link a Person to any formally issued Identifier for that Person."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Identifier",
-              "range_uri": "http://www.w3.org/ns/adms#Identifier"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Identifier",
-              "range_puri": "http://www.w3.org/ns/adms#Identifier",
-              "range_label": {
-                "en": "Identifier"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/birthDate",
-          "name": "date of birth",
-          "sort": "date of birth",
-          "label": {
-            "en": "date of birth"
-          },
-          "description": {
-            "en": "The day on which the Person was born."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Person",
-              "uri": "http://www.w3.org/ns/person#Person"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_label": {
-                "en": "DateTime"
+                "en": "String"
               }
             }
           ],
@@ -2841,16 +2839,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/deathDate",
-          "name": "date of death",
-          "sort": "date of death",
+          "uri": "http://www.w3.org/ns/person#birthName",
+          "name": "birth name",
+          "sort": "birth name",
           "label": {
-            "en": "date of death"
+            "en": "birth name"
           },
           "description": {
-            "en": "The day on which the Person died."
+            "en": "Full name of the Person given upon their birth."
           },
-          "usage": {},
+          "usage": {
+            "en": "All data associated with an individual are subject to change. Names can change for a variety of reasons, either formally or informally, and new information may come to light that means that a correction or clarification can be made to an existing record. Birth names tend to be persistent however and for this reason they are recorded by some public sector information systems. There is no granularity for birth name - the full name should be recorded in a single field."
+          },
           "domain": [
             {
               "EA-Name": "Person",
@@ -2859,16 +2859,16 @@
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "DateTime"
+                "en": "String"
               }
             }
           ],
@@ -2876,14 +2876,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/memberOf",
-          "name": "member of",
-          "sort": "member of",
+          "uri": "http://www.w3.org/ns/locn#address",
+          "name": "registered address\r\n",
+          "sort": "registered address\r\n",
           "label": {
-            "en": "member of"
+            "en": "registered address\r\n"
           },
           "description": {
-            "en": "Indicates a Person who is a member of the subject Organization"
+            "en": "The registered address of the Person."
           },
           "usage": {},
           "domain": [
@@ -2894,33 +2894,35 @@
           ],
           "range": [
             {
-              "range_label": "Organization",
-              "range_uri": "http://www.w3.org/ns/org#Organization"
+              "range_label": "Address",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Organization",
-              "range_puri": "http://www.w3.org/ns/org#Organization",
+              "range_uri": "#Address",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
               "range_label": {
-                "en": "Organization"
+                "en": "Address"
               }
             }
           ],
-          "cardinality": "0..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "https://www.w3.org/ns/org#holds",
-          "name": "holds",
-          "sort": "holds",
+          "uri": "http://purl.org/dc/terms/alternative",
+          "name": "alternative name",
+          "sort": "alternative name",
           "label": {
-            "en": "holds"
+            "en": "alternative name"
           },
           "description": {
-            "en": "Indicates a Post held by a Person."
+            "en": "Any name by which an individual is known other than their full name."
           },
-          "usage": {},
+          "usage": {
+            "en": "Many individuals use a short form of their name, a 'middle' name as a 'first' name or a professional name. For example, the British politician and former UN High Representative for Bosnia and Herzegovina, Jeremy John Durham Ashdown, Baron Ashdown of Norton-sub-Hamdon, is usually referred to simply as 'Paddy Ashdown' or 'Lord Ashdown.' \nIt is not the role of the alternative name property to record nick names, pet names or other 'familiar names' that will be of no consequence in public sector data exchange.\nFurthermore, some individuals have more than one legal name in which case the full name property should be used multiple times. \nAlternative name gives a means of recording names by which an individual is generally known, or professionally known, even though such names are no more than secondary from a legal point of view."
+          },
           "domain": [
             {
               "EA-Name": "Person",
@@ -2929,20 +2931,20 @@
           ],
           "range": [
             {
-              "range_label": "Post",
-              "range_uri": "http://www.w3.org/ns/org#Post"
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "#Post",
-              "range_puri": "http://www.w3.org/ns/org#Post",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
               "range_label": {
-                "en": "Post"
+                "en": "String"
               }
             }
           ],
-          "cardinality": "1..*",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -2963,14 +2965,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://xmlns.com/foaf/0.1/#term_page",
-          "name": "page",
-          "sort": "page",
+          "uri": "https://schema.org/telephone",
+          "name": "has telephone",
+          "sort": "has telephone",
           "label": {
-            "en": "page"
+            "en": "has telephone"
           },
           "description": {
-            "en": "The foaf:page property relates a thing to a document about that thing."
+            "en": "A property through which a phone number for the Public Organization, or a representative of it, can be contacted."
           },
           "usage": {},
           "domain": [
@@ -2981,16 +2983,16 @@
           ],
           "range": [
             {
-              "range_label": "Document",
-              "range_uri": "http://xmlns.com/foaf/0.1/Document"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://xmlns.com/foaf/0.1/Document",
-              "range_puri": "http://xmlns.com/foaf/0.1/Document",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "en": "Document"
+                "en": "Literal"
               }
             }
           ],
@@ -2998,16 +3000,18 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/email",
-          "name": "has email",
-          "sort": "has email",
+          "uri": "https://schema.org/openingHours",
+          "name": "opening hours",
+          "sort": "opening hours",
           "label": {
-            "en": "has email"
+            "en": "opening hours"
           },
           "description": {
-            "en": "A property through which an e-mail address for the Public Organization, or a\r\nrepresentative of it, can be contacted."
+            "en": "The value of this property is structured text that gives the hours at which the contact point is normally available."
           },
-          "usage": {},
+          "usage": {
+            "en": "Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00."
+          },
           "domain": [
             {
               "EA-Name": "ContactPoint",
@@ -3068,18 +3072,16 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/openingHours",
-          "name": "opening hours",
-          "sort": "opening hours",
+          "uri": "https://schema.org/email",
+          "name": "has email",
+          "sort": "has email",
           "label": {
-            "en": "opening hours"
+            "en": "has email"
           },
           "description": {
-            "en": "The value of this property is structured text that gives the hours at which the contact point is normally available."
+            "en": "A property through which an e-mail address for the Public Organization, or a\r\nrepresentative of it, can be contacted."
           },
-          "usage": {
-            "en": "Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00."
-          },
+          "usage": {},
           "domain": [
             {
               "EA-Name": "ContactPoint",
@@ -3105,14 +3107,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/telephone",
-          "name": "has telephone",
-          "sort": "has telephone",
+          "uri": "http://xmlns.com/foaf/0.1/#term_page",
+          "name": "page",
+          "sort": "page",
           "label": {
-            "en": "has telephone"
+            "en": "page"
           },
           "description": {
-            "en": "A property through which a phone number for the Public Organization, or a representative of it, can be contacted."
+            "en": "The foaf:page property relates a thing to a document about that thing."
           },
           "usage": {},
           "domain": [
@@ -3123,16 +3125,16 @@
           ],
           "range": [
             {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
+              "range_label": "Document",
+              "range_uri": "http://xmlns.com/foaf/0.1/Document"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_uri": "http://xmlns.com/foaf/0.1/Document",
+              "range_puri": "http://xmlns.com/foaf/0.1/Document",
               "range_label": {
-                "en": "Literal"
+                "en": "Document"
               }
             }
           ],
@@ -3171,14 +3173,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://schema.org/dayOfWeek",
-          "name": "day of week",
-          "sort": "day of week",
+          "uri": "https://schema.org/validThrough",
+          "name": "valid through",
+          "sort": "valid through",
           "label": {
-            "en": "day of week"
+            "en": "valid through"
           },
           "description": {
-            "en": "The day of the week for which these opening hours are valid."
+            "en": "The date after when the Opening Hours Specification is not valid."
           },
           "usage": {},
           "domain": [
@@ -3189,16 +3191,16 @@
           ],
           "range": [
             {
-              "range_label": "URI",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
+              "range_label": "DateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
               "range_label": {
-                "en": "URI"
+                "en": "DateTime"
               }
             }
           ],
@@ -3241,14 +3243,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/validThrough",
-          "name": "valid through",
-          "sort": "valid through",
+          "uri": "https://schema.org/dayOfWeek",
+          "name": "day of week",
+          "sort": "day of week",
           "label": {
-            "en": "valid through"
+            "en": "day of week"
           },
           "description": {
-            "en": "The date after when the Opening Hours Specification is not valid."
+            "en": "The day of the week for which these opening hours are valid."
           },
           "usage": {},
           "domain": [
@@ -3259,16 +3261,16 @@
           ],
           "range": [
             {
-              "range_label": "DateTime",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime"
+              "range_label": "URI",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#dateTime",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#dateTime",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#anyURI",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#anyURI",
               "range_label": {
-                "en": "DateTime"
+                "en": "URI"
               }
             }
           ],
@@ -3282,10 +3284,10 @@
   "contributors": [
     {
       "role": "E",
-      "first_name": "Christophe",
-      "last_name": "Bahim",
+      "first_name": "Louis",
+      "last_name": "Matha",
       "affiliation": {
-        "name": "PwC"
+        "name": "PwC EU Services"
       }
     },
     {
@@ -3298,10 +3300,10 @@
     },
     {
       "role": "E",
-      "first_name": "Louis",
-      "last_name": "Matha",
+      "first_name": "Christophe",
+      "last_name": "Bahim",
       "affiliation": {
-        "name": "PwC EU Services"
+        "name": "PwC"
       }
     }
   ],

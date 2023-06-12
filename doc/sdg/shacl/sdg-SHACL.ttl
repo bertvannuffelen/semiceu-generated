@@ -1,0 +1,860 @@
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://vocab.belgif.be//doc/sdg> rdfs:member <https://vocab.belgif.be//doc/sdg#EventShape>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape>,
+    <https://vocab.belgif.be//doc/sdg#LinguisticSystemShape>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape> .
+
+<https://vocab.belgif.be//doc/sdg#EventShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://vocab.belgif.be//doc/sdg#EventShape/322371a77364a50f049d46180f6192532eea26dc>,
+    <https://vocab.belgif.be//doc/sdg#EventShape/4f381639bb6e021939f65b4f41409d1edaeade9b>,
+    <https://vocab.belgif.be//doc/sdg#EventShape/5c05b2329b8b6b86a3e412dab53926322de0af61>;
+  shacl:targetClass <http://data.europa.eu/m8g/Event> .
+
+<https://vocab.belgif.be//doc/sdg#EventShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Event%3Atype";
+  shacl:class skos:Concept;
+  shacl:description "The type of the Event as defined in a controlled vocabulary."@en;
+  shacl:name "type"@en;
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#EventShape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Event%3Atype";
+  shacl:description "The type of the Event as defined in a controlled vocabulary."@en;
+  shacl:name "type"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor type is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#EventShape/5c05b2329b8b6b86a3e412dab53926322de0af61> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Event%3Atype";
+  shacl:description "The type of the Event as defined in a controlled vocabulary."@en;
+  shacl:name "type"@en;
+  shacl:node [
+    a shacl:NodeShape;
+    rdfs:comment "codelist restriction";
+    shacl:property [
+      shacl:class skos:ConceptScheme;
+      shacl:minCount 1;
+      shacl:nodeKind shacl:IRI;
+      shacl:path skos:inScheme
+    ]
+  ];
+  shacl:nodeKind shacl:IRI;
+  shacl:path dc:type;
+  shacl:severity shacl:Warning;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> """Enkel waarden uit codelijst <<ul>
+<li>birth</li>
+<li>residence</li>
+<li>studying</li>
+<li>working</li>
+<li>moving</li>
+<li>retiring</li>
+<li>starting running and closing a business</li>
+</ul>> verwacht voor type"""];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LinguisticSystemShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/29ba27566ab1f32c8bb73f3492436d4bd868d3d2>,
+    <https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/7aec081a3157b0088bf876dfe8ba996a07cb6648>,
+    <https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/c674adf5e88a69142ea85b2e59da081d277f7213>,
+    <https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/db878f1cb93930f64561d0504123c66feacfad5a>,
+    <https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/f21e520b7ae1e3707181b7335ef714a1b57d5bcb>;
+  shacl:targetClass dc:LinguisticSystem .
+
+<https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/29ba27566ab1f32c8bb73f3492436d4bd868d3d2> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#LinguisticSystem%3Alanguage";
+  shacl:class skos:Concept;
+  shacl:description "The code which indicates the language."@en;
+  shacl:name "language"@en;
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van language moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/7aec081a3157b0088bf876dfe8ba996a07cb6648> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#LinguisticSystem%3Alanguage";
+  shacl:description "The code which indicates the language."@en;
+  shacl:maxCount 1;
+  shacl:name "language"@en;
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Maximaal 1 waarden toegelaten voor language"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/c674adf5e88a69142ea85b2e59da081d277f7213> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#LinguisticSystem%3Alanguage";
+  shacl:description "The code which indicates the language."@en;
+  shacl:minCount 1;
+  shacl:name "language"@en;
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor language"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/db878f1cb93930f64561d0504123c66feacfad5a> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#LinguisticSystem%3Alanguage";
+  shacl:description "The code which indicates the language."@en;
+  shacl:name "language"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor language is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LinguisticSystemShape/f21e520b7ae1e3707181b7335ef714a1b57d5bcb> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#LinguisticSystem%3Alanguage";
+  shacl:description "The code which indicates the language."@en;
+  shacl:name "language"@en;
+  shacl:node [
+    a shacl:NodeShape;
+    rdfs:comment "codelist restriction";
+    shacl:property [
+      shacl:class skos:ConceptScheme;
+      shacl:minCount 1;
+      shacl:nodeKind shacl:IRI;
+      shacl:path skos:inScheme
+    ]
+  ];
+  shacl:nodeKind shacl:IRI;
+  shacl:path dc:language;
+  shacl:severity shacl:Warning;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Enkel waarden uit codelijst <OP's controlled vocabulary (<a href=\"http://publications.europa.eu/resource/dataset/language\">ISO 639-1</a>)> verwacht voor language"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://vocab.belgif.be//doc/sdg#LocationShape/148d622ad16e8da6972df5a21fd2dd00dbeec964>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/2481cfd943c5249d2ca01949dc073a42a579a3ab>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/338aca3cd5b7361d633d5f3ce8fc0cefd62e04a9>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/33e381ee565d4967597190de5407462136b5201f>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/a9d203d0698c34d933e6f5bba3b3dc84b73e6271>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/b490011f1aa3de386b9f2f58a5454f2f8dbb7312>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/d37a319d7febb8a92871585912a12aef82630c35>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/d6a219123ccb0ea7d47d2653815766c6fab532f5>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/de64768127c2c96295191bbf7ced703cb1b65346>,
+    <https://vocab.belgif.be//doc/sdg#LocationShape/e8ee1e84cb83b9448511b77b2105dcaebb8942df>;
+  shacl:targetClass dc:Location .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/148d622ad16e8da6972df5a21fd2dd00dbeec964> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20name";
+  shacl:description "The geographic name of the Location."@en;
+  shacl:minCount 1;
+  shacl:name "geographic name"@en;
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor geographic name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/2481cfd943c5249d2ca01949dc073a42a579a3ab> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20name";
+  shacl:datatype rdfs:Literal;
+  shacl:description "The geographic name of the Location."@en;
+  shacl:name "geographic name"@en;
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van geographic name moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/338aca3cd5b7361d633d5f3ce8fc0cefd62e04a9> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20name";
+  shacl:description "The geographic name of the Location."@en;
+  shacl:name "geographic name"@en;
+  shacl:node [
+    a shacl:NodeShape;
+    rdfs:comment "codelist restriction";
+    shacl:property [
+      shacl:class skos:ConceptScheme;
+      shacl:minCount 1;
+      shacl:nodeKind shacl:IRI;
+      shacl:path skos:inScheme
+    ]
+  ];
+  shacl:nodeKind shacl:IRI;
+  shacl:path dc:title;
+  shacl:severity shacl:Warning;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Enkel waarden uit codelijst <<a href=\"http://publications.europa.eu/resource/dataset/nuts\">NUTS</a> and <a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">LAU</a> datasets.> verwacht voor geographic name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/33e381ee565d4967597190de5407462136b5201f> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20name";
+  shacl:description "The geographic name of the Location."@en;
+  shacl:name "geographic name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor geographic name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/a9d203d0698c34d933e6f5bba3b3dc84b73e6271> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20identifier";
+  shacl:description "A unique identifier for the Location."@en;
+  shacl:minCount 1;
+  shacl:name "geographic identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor geographic identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/b490011f1aa3de386b9f2f58a5454f2f8dbb7312> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Aadditional%20name";
+  shacl:description "An additional name of the Location."@en;
+  shacl:name "additional name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor additional name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/d37a319d7febb8a92871585912a12aef82630c35> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Aadditional%20name";
+  shacl:datatype rdfs:Literal;
+  shacl:description "An additional name of the Location."@en;
+  shacl:name "additional name"@en;
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van additional name moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/d6a219123ccb0ea7d47d2653815766c6fab532f5> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20identifier";
+  shacl:description "A unique identifier for the Location."@en;
+  shacl:name "geographic identifier"@en;
+  shacl:node [
+    a shacl:NodeShape;
+    rdfs:comment "codelist restriction";
+    shacl:property [
+      shacl:class skos:ConceptScheme;
+      shacl:minCount 1;
+      shacl:nodeKind shacl:IRI;
+      shacl:path skos:inScheme
+    ]
+  ];
+  shacl:nodeKind shacl:IRI;
+  shacl:path dc:identifier;
+  shacl:severity shacl:Warning;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Enkel waarden uit codelijst <<a href=\"http://publications.europa.eu/resource/dataset/nuts\">NUTS</a> and <a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">LAU</a> datasets.> verwacht voor geographic identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/de64768127c2c96295191bbf7ced703cb1b65346> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20identifier";
+  shacl:datatype xsd:anyURI;
+  shacl:description "A unique identifier for the Location."@en;
+  shacl:name "geographic identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van geographic identifier moet van het type <http://www.w3.org/2001/XMLSchema#anyURI> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#LocationShape/e8ee1e84cb83b9448511b77b2105dcaebb8942df> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Location%3Ageographic%20identifier";
+  shacl:description "A unique identifier for the Location."@en;
+  shacl:name "geographic identifier"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor geographic identifier is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://vocab.belgif.be//doc/sdg#OutputShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/322371a77364a50f049d46180f6192532eea26dc>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/4f381639bb6e021939f65b4f41409d1edaeade9b>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/5c05b2329b8b6b86a3e412dab53926322de0af61>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/6cae9880e515253132af1452a38a8a5827165149>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/8f61614144aa7bca188b24f5976593dc08aad0e6>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/96cdcbb0489a41ab01fc39c521f5ed607a0b2c41>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/9caf9e629daa0e64ece77788576468821d7cff8c>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/aadbd67a77a624f073be2076627fb9dc883cbe48>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/d4d4f2399b8cf2f615ac658920373b714726bed0>,
+    <https://vocab.belgif.be//doc/sdg#OutputShape/e2017f72421063cd9ff494011ec78f35f9632a4a>;
+  shacl:targetClass <http://data.europa.eu/m8g/Output> .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Aname";
+  shacl:datatype rdfs:Literal;
+  shacl:description "The name of the Output that is produced by the Public Service."@en;
+  shacl:name "name"@en;
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van name moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Atype";
+  shacl:class skos:Concept;
+  shacl:description "The type of the Output as defined in a controlled vocabulary."@en;
+  shacl:name "type"@en;
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Atype";
+  shacl:description "The type of the Output as defined in a controlled vocabulary."@en;
+  shacl:name "type"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor type is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/5c05b2329b8b6b86a3e412dab53926322de0af61> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Atype";
+  shacl:description "The type of the Output as defined in a controlled vocabulary."@en;
+  shacl:name "type"@en;
+  shacl:node [
+    a shacl:NodeShape;
+    rdfs:comment "codelist restriction";
+    shacl:property [
+      shacl:class skos:ConceptScheme;
+      shacl:minCount 1;
+      shacl:nodeKind shacl:IRI;
+      shacl:path skos:inScheme
+    ]
+  ];
+  shacl:nodeKind shacl:IRI;
+  shacl:path dc:type;
+  shacl:severity shacl:Warning;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Enkel waarden uit codelijst <<a href=\"https://github.com/catalogue-of-services-isa/SDG-search-service-model/blob/master/codelists/Annex%20II%20outputs.xlsx\">Annex II output types</a>> verwacht voor type"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Aidentifier";
+  shacl:description "A unique identifier of the Output produced by the Public Service."@en;
+  shacl:minCount 1;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/6cae9880e515253132af1452a38a8a5827165149> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Adescription";
+  shacl:description "A free text description of the Output."@en;
+  shacl:name "description"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor description is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/8f61614144aa7bca188b24f5976593dc08aad0e6> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Adescription";
+  shacl:description "A free text description of the Output."@en;
+  shacl:minCount 1;
+  shacl:name "description"@en;
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor description"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/96cdcbb0489a41ab01fc39c521f5ed607a0b2c41> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Aname";
+  shacl:description "The name of the Output that is produced by the Public Service."@en;
+  shacl:minCount 1;
+  shacl:name "name"@en;
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/9caf9e629daa0e64ece77788576468821d7cff8c> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Aname";
+  shacl:description "The name of the Output that is produced by the Public Service."@en;
+  shacl:name "name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/aadbd67a77a624f073be2076627fb9dc883cbe48> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Aidentifier";
+  shacl:description "A unique identifier of the Output produced by the Public Service."@en;
+  shacl:name "identifier"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor identifier is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/d4d4f2399b8cf2f615ac658920373b714726bed0> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Adescription";
+  shacl:datatype rdfs:Literal;
+  shacl:description "A free text description of the Output."@en;
+  shacl:name "description"@en;
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van description moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#OutputShape/e2017f72421063cd9ff494011ec78f35f9632a4a> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Output%3Aidentifier";
+  shacl:datatype rdfs:Literal;
+  shacl:description "A unique identifier of the Output produced by the Public Service."@en;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van identifier moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/10dfd2757a1b1830fd182ca42b11fef0a722fdc6>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/322ac30abbb777e02239ab84ebf7d14ebde22688>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/6cd0f0f5e19a1c8dce362ecbe8a196575b9cd85f>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/8fd1cd7a406ec3816234c1ec0c69f985a9117476>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/aadbd67a77a624f073be2076627fb9dc883cbe48>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/b223c357a82a2cc162ac6d68619b41619a63fdbc>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/b93b49bf7122a561ecc9674449665256e441faf5>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/e2017f72421063cd9ff494011ec78f35f9632a4a>,
+    <https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/e4d44fb0d3c41df2a4042ee73fec8d83fc141a60>;
+  shacl:targetClass <http://data.europa.eu/m8g/PublicOrganisation> .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/10dfd2757a1b1830fd182ca42b11fef0a722fdc6> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Aspatial";
+  shacl:description "The Location, or given area, in which the Public Organisation is competent."@en;
+  shacl:minCount 1;
+  shacl:name "spatial"@en;
+  shacl:path dc:spatial;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor spatial"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/322ac30abbb777e02239ab84ebf7d14ebde22688> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Apreferred%20label";
+  shacl:datatype rdfs:Literal;
+  shacl:description "The preferred label of the Public Organisation."@en;
+  shacl:name "preferred label"@en;
+  shacl:path skos:prefLabel;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van preferred label moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Aidentifier";
+  shacl:description "A unique identifier of the Public Organisation."@en;
+  shacl:minCount 1;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/6cd0f0f5e19a1c8dce362ecbe8a196575b9cd85f> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Apreferred%20label";
+  shacl:description "The preferred label of the Public Organisation."@en;
+  shacl:name "preferred label"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path skos:prefLabel;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor preferred label is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/8fd1cd7a406ec3816234c1ec0c69f985a9117476> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Aspatial";
+  shacl:class dc:Location;
+  shacl:description "The Location, or given area, in which the Public Organisation is competent."@en;
+  shacl:name "spatial"@en;
+  shacl:path dc:spatial;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van spatial moet van het type <http://purl.org/dc/terms/Location> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/aadbd67a77a624f073be2076627fb9dc883cbe48> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Aidentifier";
+  shacl:description "A unique identifier of the Public Organisation."@en;
+  shacl:name "identifier"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor identifier is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/b223c357a82a2cc162ac6d68619b41619a63fdbc> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Aspatial";
+  shacl:description "The Location, or given area, in which the Public Organisation is competent."@en;
+  shacl:maxCount 1;
+  shacl:name "spatial"@en;
+  shacl:path dc:spatial;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Maximaal 1 waarden toegelaten voor spatial"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/b93b49bf7122a561ecc9674449665256e441faf5> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Aspatial";
+  shacl:description "The Location, or given area, in which the Public Organisation is competent."@en;
+  shacl:name "spatial"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:spatial;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor spatial is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/e2017f72421063cd9ff494011ec78f35f9632a4a> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Aidentifier";
+  shacl:datatype rdfs:Literal;
+  shacl:description "A unique identifier of the Public Organisation."@en;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van identifier moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicOrganisationShape/e4d44fb0d3c41df2a4042ee73fec8d83fc141a60> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicOrganisation%3Apreferred%20label";
+  shacl:description "The preferred label of the Public Organisation."@en;
+  shacl:minCount 1;
+  shacl:name "preferred label"@en;
+  shacl:path skos:prefLabel;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor preferred label"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://vocab.belgif.be//doc/sdg#PublicServiceShape/065f7ecf83b0778e92d102a30f47a281fa7e2800>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/10dfd2757a1b1830fd182ca42b11fef0a722fdc6>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/1aaa988702b5b8caa5aab67b1bc340dce40a1783>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/214334db6f4278d921777d4569bf5e36552d0d8c>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/2b58b63c3ef8d47cff277ac7788030eda66f766a>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/497c6de486ac96118b6ff37143c25ca06b168a69>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/5393d55899648c3887814c222ea8ff521c2a73b5>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/53bd38e3d33ba488ee41d290d32c1df211accc84>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/63e05cc560c16dca7a31a3c52844d206a245cc69>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/6cae9880e515253132af1452a38a8a5827165149>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/8a3280969b2451d149380977f83dbc56d8f3e851>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/8f61614144aa7bca188b24f5976593dc08aad0e6>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/8fd1cd7a406ec3816234c1ec0c69f985a9117476>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/96cdcbb0489a41ab01fc39c521f5ed607a0b2c41>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/97cb536a995618ef4fcfaeee9f0a23386d47d0d3>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/9caf9e629daa0e64ece77788576468821d7cff8c>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/aadbd67a77a624f073be2076627fb9dc883cbe48>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/b93b49bf7122a561ecc9674449665256e441faf5>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/c1f17dfa64522dea6d80a75645b67a7c6dce8cc3>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/c90e5c04bef13b3fd1b18723bae26a49b7b704c1>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/d3ef634aa1b06aac763c48d5e92a5d81735435e6>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/d4d4f2399b8cf2f615ac658920373b714726bed0>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/e2017f72421063cd9ff494011ec78f35f9632a4a>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/e3b5766ba50799d3ec5bb119b130ffd2b20c2003>,
+    <https://vocab.belgif.be//doc/sdg#PublicServiceShape/f04e304095842b2d788f1262685ae592d4a3f8da>;
+  shacl:targetClass <http://purl.org/vocab/cpsv#PublicService> .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/065f7ecf83b0778e92d102a30f47a281fa7e2800> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ahas%20webpage";
+  shacl:description "The Webpage(s) on which the information is provided about the Public Service."@en;
+  shacl:name "has webpage"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path foaf:Document;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor has webpage is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/10dfd2757a1b1830fd182ca42b11fef0a722fdc6> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aspatial";
+  shacl:description "The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority."@en;
+  shacl:minCount 1;
+  shacl:name "spatial"@en;
+  shacl:path dc:spatial;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor spatial"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/1aaa988702b5b8caa5aab67b1bc340dce40a1783> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ahas%20competent%20authority";
+  shacl:class <http://data.europa.eu/m8g/PublicOrganisation>;
+  shacl:description "Any Member State authority or body established at national, regional or local level with specific responsibilities relating to the information, procedures, assistance and problem-solving services covered by the Single Digital Gateway Regulation."@en;
+  shacl:name "has competent authority"@en;
+  shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van has competent authority moet van het type <http://data.europa.eu/m8g/PublicOrganisation> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/214334db6f4278d921777d4569bf5e36552d0d8c> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Apolicy%20code";
+  shacl:description "Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service."@en;
+  shacl:minCount 1;
+  shacl:name "policy code"@en;
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor policy code"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/263a563c5bed08cdaadf4a0fd0a5fb9874d742bc> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aname";
+  shacl:datatype rdfs:Literal;
+  shacl:description "The official name of the Public Service."@en;
+  shacl:name "name"@en;
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van name moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/2b58b63c3ef8d47cff277ac7788030eda66f766a> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Apolicy%20code";
+  shacl:description "Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service."@en;
+  shacl:name "policy code"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor policy code is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/497c6de486ac96118b6ff37143c25ca06b168a69> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Apolicy%20code";
+  shacl:description "Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service."@en;
+  shacl:name "policy code"@en;
+  shacl:node [
+    a shacl:NodeShape;
+    rdfs:comment "codelist restriction";
+    shacl:property [
+      shacl:class skos:ConceptScheme;
+      shacl:minCount 1;
+      shacl:nodeKind shacl:IRI;
+      shacl:path skos:inScheme
+    ]
+  ];
+  shacl:nodeKind shacl:IRI;
+  shacl:path dc:type;
+  shacl:severity shacl:Warning;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Enkel waarden uit codelijst <<a href=\"https://github.com/catalogue-of-services-isa/SDG-search-service-model/blob/master/codelists/Annex%20I%20and%20II%20policy%20codes.xlsx\">Annex I and II policy codes</a>> verwacht voor policy code"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/5393d55899648c3887814c222ea8ff521c2a73b5> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ahas%20webpage";
+  shacl:class foaf:Document;
+  shacl:description "The Webpage(s) on which the information is provided about the Public Service."@en;
+  shacl:name "has webpage"@en;
+  shacl:path foaf:Document;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van has webpage moet van het type <http://xmlns.com/foaf/0.1/Document> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/53bd38e3d33ba488ee41d290d32c1df211accc84> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aproduces";
+  shacl:class <http://data.europa.eu/m8g/Output>;
+  shacl:description "The Output, or actual result of a Public Service."@en;
+  shacl:name "produces"@en;
+  shacl:path <http://purl.org/vocab/cpsv#produces>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van produces moet van het type <http://data.europa.eu/m8g/Output> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/63e05cc560c16dca7a31a3c52844d206a245cc69> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ais%20grouped%20by";
+  shacl:description "The Event (life/business) that is related to this Public Service."@en;
+  shacl:name "is grouped by"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <http://data.europa.eu/m8g/isGroupedBy>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor is grouped by is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aidentifier";
+  shacl:description "A unique identifier of the Public Service."@en;
+  shacl:minCount 1;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/6cae9880e515253132af1452a38a8a5827165149> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Adescription";
+  shacl:description "A free text description of the Public Service."@en;
+  shacl:name "description"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor description is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/8a3280969b2451d149380977f83dbc56d8f3e851> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ahas%20competent%20authority";
+  shacl:description "Any Member State authority or body established at national, regional or local level with specific responsibilities relating to the information, procedures, assistance and problem-solving services covered by the Single Digital Gateway Regulation."@en;
+  shacl:maxCount 1;
+  shacl:name "has competent authority"@en;
+  shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Maximaal 1 waarden toegelaten voor has competent authority"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/8f61614144aa7bca188b24f5976593dc08aad0e6> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Adescription";
+  shacl:description "A free text description of the Public Service."@en;
+  shacl:minCount 1;
+  shacl:name "description"@en;
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor description"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/8fd1cd7a406ec3816234c1ec0c69f985a9117476> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aspatial";
+  shacl:class dc:Location;
+  shacl:description "The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority."@en;
+  shacl:name "spatial"@en;
+  shacl:path dc:spatial;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van spatial moet van het type <http://purl.org/dc/terms/Location> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/96cdcbb0489a41ab01fc39c521f5ed607a0b2c41> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aname";
+  shacl:description "The official name of the Public Service."@en;
+  shacl:minCount 1;
+  shacl:name "name"@en;
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor name"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/97cb536a995618ef4fcfaeee9f0a23386d47d0d3> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Apolicy%20code";
+  shacl:class skos:Concept;
+  shacl:description "Controlled vocabulary derived from Annexes I and II which determines the procedure(s) or information area(s) relevant for the Public Service."@en;
+  shacl:name "policy code"@en;
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van policy code moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/9caf9e629daa0e64ece77788576468821d7cff8c> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aname";
+  shacl:description "The official name of the Public Service."@en;
+  shacl:name "name"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:title;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor name is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/aadbd67a77a624f073be2076627fb9dc883cbe48> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aidentifier";
+  shacl:description "A unique identifier of the Public Service."@en;
+  shacl:name "identifier"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor identifier is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/b93b49bf7122a561ecc9674449665256e441faf5> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aspatial";
+  shacl:description "The Location, or given area, in which the Public Service is available, typically the area covered by a specific competent authority."@en;
+  shacl:name "spatial"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:spatial;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor spatial is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/c1f17dfa64522dea6d80a75645b67a7c6dce8cc3> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ahas%20webpage";
+  shacl:description "The Webpage(s) on which the information is provided about the Public Service."@en;
+  shacl:minCount 1;
+  shacl:name "has webpage"@en;
+  shacl:path foaf:Document;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor has webpage"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/c90e5c04bef13b3fd1b18723bae26a49b7b704c1> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aproduces";
+  shacl:description "The Output, or actual result of a Public Service."@en;
+  shacl:name "produces"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <http://purl.org/vocab/cpsv#produces>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor produces is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/d3ef634aa1b06aac763c48d5e92a5d81735435e6> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ais%20grouped%20by";
+  shacl:class <http://data.europa.eu/m8g/Event>;
+  shacl:description "The Event (life/business) that is related to this Public Service."@en;
+  shacl:name "is grouped by"@en;
+  shacl:path <http://data.europa.eu/m8g/isGroupedBy>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van is grouped by moet van het type <http://data.europa.eu/m8g/Event> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/d4d4f2399b8cf2f615ac658920373b714726bed0> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Adescription";
+  shacl:datatype rdfs:Literal;
+  shacl:description "A free text description of the Public Service."@en;
+  shacl:name "description"@en;
+  shacl:path dc:description;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van description moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/e2017f72421063cd9ff494011ec78f35f9632a4a> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Aidentifier";
+  shacl:datatype rdfs:Literal;
+  shacl:description "A unique identifier of the Public Service."@en;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van identifier moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/e3b5766ba50799d3ec5bb119b130ffd2b20c2003> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ahas%20competent%20authority";
+  shacl:description "Any Member State authority or body established at national, regional or local level with specific responsibilities relating to the information, procedures, assistance and problem-solving services covered by the Single Digital Gateway Regulation."@en;
+  shacl:name "has competent authority"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor has competent authority is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#PublicServiceShape/f04e304095842b2d788f1262685ae592d4a3f8da> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#PublicService%3Ahas%20competent%20authority";
+  shacl:description "Any Member State authority or body established at national, regional or local level with specific responsibilities relating to the information, procedures, assistance and problem-solving services covered by the Single Digital Gateway Regulation."@en;
+  shacl:minCount 1;
+  shacl:name "has competent authority"@en;
+  shacl:path <http://data.europa.eu/m8g/hasCompetentAuthority>;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor has competent authority"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property <https://vocab.belgif.be//doc/sdg#WebpageShape/0e0a0e811df34fb1bc60a2468c7befb4df86edd9>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/236f0210baaf149903750c43bbe7012c21debb2a>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/322371a77364a50f049d46180f6192532eea26dc>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/356cae961c7f40c9b25ba815edabb1b5ef27d068>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/4f381639bb6e021939f65b4f41409d1edaeade9b>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/57be7b5088aab67ec2ac064340d0977875270f56>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/5baac8cf504c38df125bdad80a5b9e98a8cbded1>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/5c05b2329b8b6b86a3e412dab53926322de0af61>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/73ac04d23d41d598457f7d519aa7fbeb74f18317>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/7f888cdb6048f70a746d79c5f4fd47fe2eee947e>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/87234c26be6f7e5667c84307378606be9b17c748>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/aadbd67a77a624f073be2076627fb9dc883cbe48>,
+    <https://vocab.belgif.be//doc/sdg#WebpageShape/e2017f72421063cd9ff494011ec78f35f9632a4a>;
+  shacl:targetClass foaf:Document .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/0e0a0e811df34fb1bc60a2468c7befb4df86edd9> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Ahas%20language";
+  shacl:description "The Language(s) in which the Webpage is available."@en;
+  shacl:minCount 1;
+  shacl:name "has language"@en;
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor has language"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/236f0210baaf149903750c43bbe7012c21debb2a> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Atype";
+  shacl:description "The kind of information that can be found on the Webpage."@en;
+  shacl:maxCount 2;
+  shacl:name "type"@en;
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Maximaal 2 waarden toegelaten voor type"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/322371a77364a50f049d46180f6192532eea26dc> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Atype";
+  shacl:class skos:Concept;
+  shacl:description "The kind of information that can be found on the Webpage."@en;
+  shacl:name "type"@en;
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van type moet van het type <http://www.w3.org/2004/02/skos/core#Concept> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/356cae961c7f40c9b25ba815edabb1b5ef27d068> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Ahas%20language";
+  shacl:description "The Language(s) in which the Webpage is available."@en;
+  shacl:maxCount 1;
+  shacl:name "has language"@en;
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Maximaal 1 waarden toegelaten voor has language"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/4f381639bb6e021939f65b4f41409d1edaeade9b> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Atype";
+  shacl:description "The kind of information that can be found on the Webpage."@en;
+  shacl:name "type"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:type;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor type is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/57be7b5088aab67ec2ac064340d0977875270f56> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Ahas%20language";
+  shacl:description "The Language(s) in which the Webpage is available."@en;
+  shacl:name "has language"@en;
+  shacl:nodekind "sh:BlankNodeOrIRI";
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor has language is een rdfs:Resource (URI of blank node)"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/5baac8cf504c38df125bdad80a5b9e98a8cbded1> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3AURL";
+  shacl:description "The URL of the webpage."@en;
+  shacl:name "URL"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path foaf:Page;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor URL is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/5c05b2329b8b6b86a3e412dab53926322de0af61> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Atype";
+  shacl:description "The kind of information that can be found on the Webpage."@en;
+  shacl:name "type"@en;
+  shacl:node [
+    a shacl:NodeShape;
+    rdfs:comment "codelist restriction";
+    shacl:property [
+      shacl:class skos:ConceptScheme;
+      shacl:minCount 1;
+      shacl:nodeKind shacl:IRI;
+      shacl:path skos:inScheme
+    ]
+  ];
+  shacl:nodeKind shacl:IRI;
+  shacl:path dc:type;
+  shacl:severity shacl:Warning;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> """Enkel waarden uit codelijst <<ul>
+<li>information</li>
+<li>procedure</li>
+</ul>> verwacht voor type"""];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/6c7c1bd2ab3b7761e5be759a078a9fd93f411a57> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Aidentifier";
+  shacl:description "A unique identifier of the Webpage."@en;
+  shacl:minCount 1;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor identifier"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/73ac04d23d41d598457f7d519aa7fbeb74f18317> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3AURL";
+  shacl:datatype xsd:anyURI;
+  shacl:description "The URL of the webpage."@en;
+  shacl:name "URL"@en;
+  shacl:path foaf:Page;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van URL moet van het type <http://www.w3.org/2001/XMLSchema#anyURI> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/7f888cdb6048f70a746d79c5f4fd47fe2eee947e> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3AURL";
+  shacl:description "The URL of the webpage."@en;
+  shacl:minCount 1;
+  shacl:name "URL"@en;
+  shacl:path foaf:Page;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "Minimaal 1 waarden verwacht voor URL"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/87234c26be6f7e5667c84307378606be9b17c748> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Ahas%20language";
+  shacl:class dc:LinguisticSystem;
+  shacl:description "The Language(s) in which the Webpage is available."@en;
+  shacl:name "has language"@en;
+  shacl:path dc:language;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van has language moet van het type <http://purl.org/dc/terms/LinguisticSystem> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/aadbd67a77a624f073be2076627fb9dc883cbe48> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Aidentifier";
+  shacl:description "A unique identifier of the Webpage."@en;
+  shacl:name "identifier"@en;
+  shacl:nodekind "sh:Literal";
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De verwachte waarde voor identifier is een Literal"];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .
+
+<https://vocab.belgif.be//doc/sdg#WebpageShape/e2017f72421063cd9ff494011ec78f35f9632a4a> rdfs:seeAlso "https://vocab.belgif.be//doc/sdg#Webpage%3Aidentifier";
+  shacl:datatype rdfs:Literal;
+  shacl:description "A unique identifier of the Webpage."@en;
+  shacl:name "identifier"@en;
+  shacl:path dc:identifier;
+  <https://data.vlaanderen.be/ns/shacl#message> [<https://vocab.belgif.be//doc/sdgen> "De range van identifier moet van het type <http://www.w3.org/2000/01/rdf-schema#Literal> zijn."];
+  <https://data.vlaanderen.be/ns/shacl#rule> "" .

@@ -1,0 +1,4021 @@
+{
+  "metadata": {
+    "title": "TODO Core Public Service Vocabulary Application Profile (CPSV-AP)",
+    "uri": "https://data.europa.eu/m8g",
+    "issued": "2021-07-01",
+    "baseURI": "https://data.europa.eu/m8g/",
+    "filename": "cpsv-ap",
+    "navigation": {
+      "self": "https://vocab.belgif.be//doc/application-profile/cpsv-ap"
+    },
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "documenttype": "ap",
+    "documentconfig": {},
+    "status": "Working Draft",
+    "statuslabel": "Onbekend",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/77337b82023e37e2700d13191dd868cb5c493b6e",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/77337b82023e37e2700d13191dd868cb5c493b6e/CHANGELOG",
+    "feedbackurl": "https://github.com/catalogue-of-services-isa/CPSV-AP/issues",
+    "standaardregisterurl": "TODO",
+    "usesVocs": [],
+    "usesAPs": []
+  },
+  "classes": [
+    {
+      "uri": "http://data.europa.eu/eli/ontology#LegalResource",
+      "name": "Legal Resource",
+      "label": {
+        "en": "Legal Resource",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "This class represents the legislation, policy or policies that lie behind the Rules that govern the service.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in \"Council conclusions inviting the introduction of the European Legislation Identifier (ELI)\". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ...) we refer to the ELI ontology.",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": "related",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "related",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "LegalResource",
+              "uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LegalResource",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "en": "Legal Resource",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/BusinessEvent",
+      "name": "Business Event",
+      "label": {
+        "en": "Business Event",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.\r\n\r\nIn other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Event",
+          "name": "Event",
+          "package": "cv",
+          "uri": "http://data.europa.eu/m8g/Event",
+          "scoped_uri": "#Event"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Channel",
+      "name": "Channel",
+      "label": {
+        "en": "Channel",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The Channel class represents the medium through which an Agent provides, uses or interacts in another way with a Public Service. Typical examples include online services, phone, walk-in centres etc.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://schema.org/openingHours",
+          "name": "opening hours",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "opening hours",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the normal opening hours of a channel.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "The value should follow the flexible format defined for schema.org's opening hours property.\r\nFollowing that structure, days of the week are represented by two letter codes (Mo,Tu, We, Th, Fr, Sa, Su).  Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen (for example: Mo-Fr).\r\n\r\nIf it is appropriate to add opening hours then this follows the day so if a phone service is available 08:00-20:00 Monday to Saturday and 08:00-18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00.\r",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/hoursAvailable",
+          "name": "availability restriction",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "availability restriction",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OpeningHoursSpecification",
+              "range_uri": "https://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://schema.org/OpeningHoursSpecification",
+              "range_label": {
+                "en": "Opening Hours Specification",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/vocab/cpsv#hasInput",
+          "name": "has input",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has input",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be\r\nrequired for an online channel, whereas a physical signature may be required for a face to face service provision.\r",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Evidence",
+              "range_uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Evidence",
+              "range_label": {
+                "en": "Evidence",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the type of Channel as defined in a controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "TODO",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Channel.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/ownedBy",
+          "name": "owned by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "owned by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property indicates the owner of a specific Channel through which a Public Service is being delivered.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Channel",
+              "uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicOrganization",
+              "range_uri": "http://data.europa.eu/m8g/PublicOrganization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/PublicOrganization",
+              "range_label": {
+                "en": "Public Organization",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Cost",
+      "name": "Cost",
+      "label": {
+        "en": "Cost",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The Cost class represents any costs related to the execution of a Public Service that the Agent consuming it needs to pay.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Cost.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Cost",
+              "uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a free text description of the Cost.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Cost",
+              "uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/value",
+          "name": "value",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "value",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a numeric value indicating the amount of the Cost.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Cost",
+              "uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Double",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_label": {
+                "nl": "Double"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isDefinedBy",
+          "name": "is defined by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "is defined by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links the Cost class with one or more instances of the Public Organization class. This property indicates which Public Organization is the Competent Authority for defining the costs associated with the delivery of a particular Public Service.\r",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Cost",
+              "uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicOrganization",
+              "range_uri": "http://data.europa.eu/m8g/PublicOrganization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/PublicOrganization",
+              "range_label": {
+                "en": "Public Organization",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/ifAccessedThrough",
+          "name": "if accessed through",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "if accessed through",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Where the cost varies depending on the channel used, for example, if accessed through an online service cf. accessed at a physical location, the cost can be linked to the channel using the If Accessed Through property. ",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Cost",
+              "uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Channel",
+              "range_uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Channel",
+              "range_label": {
+                "en": "Channel",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/currency",
+          "name": "currency",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "currency",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "The possible values for this property are described in the controlled vocabulary \r\n<a href=\"https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/currency\">Currency</a> Authority Table of Publications Office",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Cost",
+              "uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Criterion",
+      "name": "Criterion",
+      "label": {
+        "en": "Criterion",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A Criterion can be expressed as a set of requirements where every requirement must be valid. A Criterion requirement is an atomic requirement. Some criteria can be expressed with several atomic requirements. A Criterion requirement can specify the expected value that the Criterion response has to contain, or a range of threshold values within which the Criterion response has to fit in. The Criterion requirement may apply to a certain period of time. It also can provide a list of candidate evidences that the responder can use to prove the Criterion requirement.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Not all public services are needed or usable by everyone. For example, the visa service operated by European countries is not needed by European citizens but is needed by some citizens from elsewhere, or public services offering unemployment benefits and grants are targeting specific societal groups. The CPSV-AP reuses the Core Criterion and Core Evidence Vocabulary for this class.",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the type of Criterion Requirement as described in a controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Criterion",
+              "uri": "http://data.europa.eu/m8g/Criterion"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the official Name of the Criterion Requirement.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Criterion",
+              "uri": "http://data.europa.eu/m8g/Criterion"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Criterion Requirement.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Criterion",
+              "uri": "http://data.europa.eu/m8g/Criterion"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Event",
+      "name": "Event",
+      "label": {
+        "en": "Event",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service. It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses.\r\r\n\r\nThe Event class is used as a hook either to a single related Public Service, such as diagnosis of illness being related to application for sickness benefit ;\r\nor to a group of Public Services, such as all those related to the establishment of a new business.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.\r",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the Name (or title) of the Event.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": "related service",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "related service",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links an event directly to a public service that is related to it.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicService",
+              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
+              "range_label": {
+                "en": "Public Service",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Event.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Event",
+              "uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Evidence",
+      "name": "Evidence",
+      "label": {
+        "en": "Evidence",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The Evidence class is defined in the Core Criterion and Core Evidence vocabulary (CCCEV) as any resource that can document or support a criterion response. It contains information that proves that a criterion requirement exists or is true, in particular evidences are used to prove that a specific criterion is met.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Although the wording of the definition is different, the semantics are an exact match for CPSV's Input class which it replaces.\r\n\r\nEvidence can be any resource - document, artefact - anything needed for executing the Public Service. In the context of Public Services, Evidence is usually administrative documents or completed application forms. A specific Public Service may require the presence of certain Evidence or combinations of Evidence in order to be delivered.\r\n\r\nIn some cases, the Output of one service will be Evidence for another service. Such relationships should be described in the associated Rule(s).\r",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://xmlns.com/foaf/0.1/page",
+          "name": "related documentation",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "related documentation",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents documentation that contains information related to the Evidence, for instance a particular template for an administrative document, an application or a guide on formatting the Input.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Document",
+              "range_uri": "http://xmlns.com/foaf/0.1/Document"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://xmlns.com/foaf/0.1/Document",
+              "range_label": {
+                "en": "Document",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the type of Evidence as described in a controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the official Name of the piece of Evidence.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/language",
+          "name": "language",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "language",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates the language(s) in which the Evidence must be provided.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "The recommended controlled vocabularies forthis property is the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language\">Language</a> Authority Table of the Publications Office",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LinguisticSystem",
+              "range_uri": "http://purl.org/dc/terms/LinguisticSystem"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/LinguisticSystem",
+              "range_label": {
+                "en": "LinguisticSystem",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the piece of Evidence.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a free text Description of the piece of Evidence.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Evidence",
+              "uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/LifeEvent",
+      "name": "Life Event",
+      "label": {
+        "en": "Life Event",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The Life Event class represents an important event or situations in a citizen's life where public services may be required. Note the scope: an individual will encounter any number of 'events' in the general sense of the word. In the context of the CPSV-AP, the Life Event class only represents an event for which a Public Service is related.\r\n\r\nFor example, a couple becoming engaged is not a CPSV-AP Life Event, getting married is, since only the latter has any relevance to public services.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [
+        {
+          "label": "Event",
+          "name": "Event",
+          "package": "cv",
+          "uri": "http://data.europa.eu/m8g/Event",
+          "scoped_uri": "#Event"
+        }
+      ],
+      "properties": []
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Output",
+      "name": "Output",
+      "label": {
+        "en": "Output",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "An output can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organization) that permits/authorises/entitles an Agent to (do) something.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In some cases, the Output of one Public Service will be used as evidence to fulfil a criterion requirement of another Public Service. Such relationships should be described in the associated Rule(s).",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the type of Output as defined in a controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Possible values of Output types are: Declaration, Physical object, Code, Financial obligation, Financial benefit, Recognition, Permit",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the official Name of the Output.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Output.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a free text Description of the Output.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Output",
+              "uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/Participation",
+      "name": "Participation",
+      "label": {
+        "en": "Participation",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The CPSV-AP recognises a common role connected with public services, i.e. the Competent Authority. However, this simple structure does not allow statements to be made about those participants, such the start and end date of a contract, nor does it support the inclusion of other roles. The Participation class supports this extra complexity if required, for instance, the description of a service user or a service provider. The model is consistent with the CPOV which in turn is based on the W3C Organization Ontology that supports the common cases simply but allows the complex cases where necessary. The Participation class can be mapped to the Organization Ontology's Membership class that allows more complex\r\nrelationships and richer metadata to be applied to a role filled by a given Agent.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Participation.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Participation",
+              "uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "A free text description of the Participation.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Participation",
+              "uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/role",
+          "name": "role",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "role",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Provides the role played. This should be provided using a controlled vocabulary. Since \r\nthis is an extension mechanism for the CSPV-AP, the controlled vocabulary should be decided to suit local implementations.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Participation",
+              "uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://data.europa.eu/m8g/PublicOrganization",
+      "name": "Public Organization",
+      "label": {
+        "en": "Public Organization",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "Any Organization that is defined as being part of the public sector by a legal framework at any level.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Within the CPSV-AP the following properties are mandatory: preferred label and spatial. The value of the latter should be a URI from the Administrative Territorial Units Named Authority List maintained by the Publications Office's Metadata Registry.\r",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#prefLabel",
+          "name": "preferred label",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "preferred label",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The primary (e.g. legally recognized) name.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://data.europa.eu/m8g/PublicOrganization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/spatial",
+          "name": "spatial",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "spatial",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "The value should be a URI from the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/atu\">Administrative Territorial Units</a> Authority Table maintained by the Publications Office.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicOrganization",
+              "uri": "http://data.europa.eu/m8g/PublicOrganization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://purl.org/dc/terms/LinguisticSystem",
+      "name": "LinguisticSystem",
+      "label": {
+        "en": "LinguisticSystem",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A system of signs, symbols, sounds, gestures, or rules used in communication.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://purl.org/dc/terms/Location",
+      "name": "Location",
+      "label": {
+        "en": "Location",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "An identifiable geographic place or named place.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://purl.org/vocab/cpsv#PublicService",
+      "name": "Public Service",
+      "label": {
+        "en": "Public Service",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "This class represents the Public Service itself, as it is described in a public service\r\ncatalogue. A Public Service is a mandatory or discretionary set of activities\r\nperformed, or able to be performed, by or on behalf of a public organisation, publicly\r\nfunded and arise from public policy. Services may be for the benefit of an individual,\r\na business, or other public authority, or groups of any of these. A service exists\r\nwhether it is used or not, and the term 'benefit' may apply in the sense of enabling\r\nthe fulfilment of an obligation. As defined in the revised version of the European\r\nInteroperability Framework, a European public service comprises any service\r\nprovided by public administrations in Europe, or by other organisations on their\r\nbehalf, to businesses, citizens or others public administrations.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/dcat#keyword",
+          "name": "keyword",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "keyword",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a keyword, term or phrase to describe the Public Service.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/adms#status",
+          "name": "status",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "status",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/vocab/cpsv#produces",
+          "name": "produces",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "produces",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service. Outputs can be any resource, for instance a document, artefact or anything else being produced as a result of executing the Public Service.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Output",
+              "range_uri": "http://data.europa.eu/m8g/Output"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Output",
+              "range_label": {
+                "en": "Output",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/vocab/cpsv#hasInput",
+          "name": "has input",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has input",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Has Input property links a Public Service to one or more instances of the Evidence class. A specific Public Service may require the presence of certain pieces of Evidence in order to be delivered. If the evidence required to make use of a service varies according to the channel through which it is accessed, then Has Input should be at the level of the Channel.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Evidence",
+              "range_uri": "http://data.europa.eu/m8g/Evidence"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Evidence",
+              "range_label": {
+                "en": "Evidence",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/vocab/cpsv#follows",
+          "name": "follows",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "follows",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. The CPSV-AP is flexible to allow for significant variation in such a scenario.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Rule",
+              "range_uri": "http://purl.org/vocab/cpsv#Rule"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/vocab/cpsv#Rule",
+              "range_label": {
+                "en": "Rule",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the Type of a Public Service as described in a controlled vocabulary. For the indicating the Type, we are referring to the functions of government to indicate the purpose of a government activity, which the public service is intended for.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the official Name of the Public Service.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/spatial",
+          "name": "spatial",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "spatial",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "A common usage of the spatial property will be to define the Administrative Territorial Unit(s) - typically a country or region - in which a Public Service is available. The Publications Office of the European Union offers <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/atu\">a URI set</a> that is suitable for this purpose, e.g. Malta is identified by\r\nhttp://publications.europa.eu/resource/authority/atu/MLT,\r\nWest Flanders by\r\nhttp://publications.europa.eu/resource/authority/atu/BEL_PR_WVL and so on. In case the ATU code list is not suitable, <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/nuts\">NUTS</a> or <a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">LAU</a>, <a href=\"http://publications.europa.eu/resource/dataset/place\">NAL Place</a> or <a href=\"http://www.geonames.org\">Geonames</a> are recommended to use, in that order. If those are still not sufficient, we recommend to define your own code list.\r\n\r\nN.B. The spatial restriction is not meant to be used to describe eligibility or the speed of operation of the service. These aspects will be covered by the Criterion class.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Location",
+              "range_uri": "http://purl.org/dc/terms/Location"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/Location",
+              "range_label": {
+                "en": "Location",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/requires",
+          "name": "requires",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "requires",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "One Public Service may require, or in some way make use of, the output of one or several other Public Services. In this case, for a Public Service to be executed, another Public Service must be executed beforehand. The nature of the requirement will be described in the associated Rule or Input.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicService",
+              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
+              "range_label": {
+                "en": "Public Service",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/relation",
+          "name": "related",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "related",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a Public Service related to the particular instance of the Public Service class.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicService",
+              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
+              "range_label": {
+                "en": "Public Service",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/language",
+          "name": "language",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "language",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "The recommended controlled vocabularies forthis property is the <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/language\">Language</a> Authority Table of the Publications Office",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LinguisticSystem",
+              "range_uri": "http://purl.org/dc/terms/LinguisticSystem"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/LinguisticSystem",
+              "range_label": {
+                "en": "LinguisticSystem",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a formally-issued Identifier for the Public Service.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a free text Description of the Public Service. The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public administrations are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/thematicArea",
+          "name": "thematic area",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "thematic area",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the Thematic Area of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, family, traveling economic affairs, tax, staff, environment...",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/sector",
+          "name": "sector",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "sector",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/processingTime",
+          "name": "processing time",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "processing time",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. ",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Some examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the <a href=\"https://en.wikipedia.org/wiki/ISO_8601#Durations\">Wikipedia page</a> that references the official <a href=\"https://www.iso.org/standard/40874.htm\">ISO standard</a>.\r\n\r\nThis approach is consistent with both schema.org and the W3C OWL Time Ontology.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Duration",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#duration",
+              "range_label": {
+                "nl": "Duration"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isGroupedBy",
+          "name": "is grouped by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "is grouped by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links the Public Service to the Event class. Several\r\nPublic Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events. ",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Event",
+              "range_uri": "http://data.europa.eu/m8g/Event"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Event",
+              "range_label": {
+                "en": "Event",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isDescribedAt",
+          "name": "is described at",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "is described at",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Is Described At property links a Public Service to the Public Service Dataset(s) in which it is being described.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Dataset",
+              "range_uri": "http://www.w3.org/ns/dcat#Dataset"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/ns/dcat#Dataset",
+              "range_label": {
+                "en": "Dataset",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/isClassifiedBy",
+          "name": "is classified by",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "is classified by",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Is Classified By property allows to classify the Public Service with any Concept other than those already foreseen and defined explicitly in the CPSV-AP (Thematic Area, Sector, ...). It is a generic property which can be further specialised to make the classification explicit, for instance for classifying public services according level of digitisation, type of audience ... The Concept is at its turn related to a Collection, which groups the different concepts into a controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Concept",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Concept",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasParticipation",
+          "name": "has participation",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has participation",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links a Public Service to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Participation",
+              "range_uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Participation",
+              "range_label": {
+                "en": "Participation",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasLegalResource",
+          "name": "has legal resource",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has legal resource",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Has Legal Resource property links a Public Service to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Public Service relates, operates or has its legal basis.\r",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LegalResource",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "en": "Legal Resource",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasCriterion",
+          "name": "has criterion",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has criterion",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Links a Public Service to a class that describes the criteria for needing or using the \r\nservice, such as residency in a given location, being over a certain age etc. The \r\nCriterion class is defined in the Core Criterion and Core Evidence Vocabulary",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Criterion",
+              "range_uri": "http://data.europa.eu/m8g/Criterion"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Criterion",
+              "range_label": {
+                "en": "Criterion",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasCost",
+          "name": "has cost",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has cost",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Has Cost property links a Public Service to one or more instances of the Cost class. It indicates the costs related to the execution of a Public Service for the citizen or business related to the execution of the particular Public Service. Where the cost varies depending on the channel through which the service is accessed, it can be linked to the channel using the If Accessed Through relationship.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Cost",
+              "range_uri": "http://data.europa.eu/m8g/Cost"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Cost",
+              "range_label": {
+                "en": "Cost",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasContactPoint",
+          "name": "has contact point",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has contact point",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "A contact point for the service is almost always helpful. The value of this property, the contact information itself, should be provided using schema:ContactPoint. Note that the contact information should be relevant to the Public Service which may not be the same as contact information for the Competent Authority or any Participant. ",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactPoint",
+              "range_uri": "https://schema.org/ContactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://schema.org/ContactPoint",
+              "range_label": {
+                "en": "Contact Point",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasCompetentAuthority",
+          "name": "has competent authority",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has competent authority",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links a Public Service to a Public Organization, which is the responsible\r\nAgent for the delivery of the Public Service. Whether the particular Public\r\nOrganization provides the public service directly or outsources it is not relevant. The\r\nPublic Organization that is the Competent Authority of the service is the one that is\r\nultimately responsible for managing and providing the public service.\r\n\r\nThe term Competent Authority is defined in the Services Directive (2006/123/EC) in\r\nthe following way:\r\n\"Any body or authority which has a supervisory or regulatory role in a Member State\r\nin relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional\r\nassociations or other professional organisations which, in the exercise of their legal\r\nautonomy, regulate in a collective manner access to service activities or the exercise\r\nthereof\".\r",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicOrganization",
+              "range_uri": "http://data.europa.eu/m8g/PublicOrganization"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/PublicOrganization",
+              "range_label": {
+                "en": "Public Organization",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/hasChannel",
+          "name": "has channel",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has channel",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "PublicService",
+              "uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Channel",
+              "range_uri": "http://data.europa.eu/m8g/Channel"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Channel",
+              "range_label": {
+                "en": "Channel",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://purl.org/vocab/cpsv#Rule",
+      "name": "Rule",
+      "label": {
+        "en": "Rule",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.\r\n\r\nInstances of the Rule class are FRBR Expressions, that is, a concrete expression such\r\nas a document, of the more abstract concept of the rules themselves. The CPSV-AP does not envisage instances of the Rule class as machine-readable business rules.\r\n\r\nDetailed modelling of the rules related to Public Services is out of scope of the CPSV-AP.\r",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/vocab/cpsv#implements",
+          "name": "implements",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "implements",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Implements property links a Rule to relevant legislation or policy documents i.e.\r\nthe Legal Resource under which the Rules are being defined.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rule",
+              "uri": "http://purl.org/vocab/cpsv#Rule"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LegalResource",
+              "range_uri": "http://data.europa.eu/eli/ontology#LegalResource"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/eli/ontology#LegalResource",
+              "range_label": {
+                "en": "Legal Resource",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/type",
+          "name": "type",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "type",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Type of Rule.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rule",
+              "uri": "http://purl.org/vocab/cpsv#Rule"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the Name of the Rule.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rule",
+              "uri": "http://purl.org/vocab/cpsv#Rule"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/language",
+          "name": "language",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "language",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "The possible values for this property are described in the controlled vocabulary <a href=\" https://op.europa.eu/en/web/eu-vocabularies/concept-scheme/-/resource?uri=http://publications.europa.eu/resource/authority/language\">Language</a> Authority Table of the Publications Office. ",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Rule",
+              "uri": "http://purl.org/vocab/cpsv#Rule"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LinguisticSystem",
+              "range_uri": "http://purl.org/dc/terms/LinguisticSystem"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/dc/terms/LinguisticSystem",
+              "range_label": {
+                "en": "LinguisticSystem",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Rule.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rule",
+              "uri": "http://purl.org/vocab/cpsv#Rule"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents a free text Description of the Rule.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Rule",
+              "uri": "http://purl.org/vocab/cpsv#Rule"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/2004/02/skos/core#Collection",
+      "name": "Collection",
+      "label": {
+        "en": "Collection",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "This class represents the Collection to which a Concept belongs. Grouping different concepts defines a controlled vocabulary. In this context, the CPSV-AP reuses the Collection class as defined in the SKOS Simple Knowledge Organization System. For describing the attributes of a Collection (labels, preferred labels, alternative labels, definition ...) we refer to SKOS.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/2004/02/skos/core#member",
+          "name": "member",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "member",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Member property, as defined in SKOS, allows to indicate the Concepts that are part of the Collection.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Collection",
+              "uri": "http://www.w3.org/2004/02/skos/core#Collection"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Concept",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Concept",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/2004/02/skos/core#Concept",
+      "name": "Concept",
+      "label": {
+        "en": "Concept",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "This class represents any concept that can be used for classifying the Public Service and which relates to the Public Service through the property Is Classified By. This class has been added in the CPSV-AP to complement the need for adding other ways of classifying the Public Service, which have not been explicitely defined in the CPSV-AP.\r\n\r\nIn this context the CPSV-AP reuses the Concept class as defined in the SKOS Simple Knowledge Organization System. For describing the attributes of a Concept (labels, preferred labels, alternative labels, definition ...) we refer to SKOS.\r\n\r\nThe Concept may or may not belong to (member) a certain Collection.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "http://www.w3.org/ns/dcat#Dataset",
+      "name": "Dataset",
+      "label": {
+        "en": "Dataset",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The class describes the metada of where the dataset is being described, for instance on a regional public service portal and/or a national eGovernment portal.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/dcat#landingPage",
+          "name": "landing page",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "landing page",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property refers to a web page that provides access to the Dataset, its Distributions and/or additional information.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "It is intended to point to a landing page at the original data provider, not to a page on a site of a third party, such as an aggregator.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Dataset",
+              "uri": "http://www.w3.org/ns/dcat#Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Document",
+              "range_uri": "http://xmlns.com/foaf/0.1/Document"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://xmlns.com/foaf/0.1/Document",
+              "range_label": {
+                "en": "Document",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "title",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "title",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property contains a name given to the Dataset.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "This property can be repeated for parallel language versions of the name.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Dataset",
+              "uri": "http://www.w3.org/ns/dcat#Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/publisher",
+          "name": "publisher",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "publisher",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organisation) responsible for making the Public Service Dataset available.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Dataset",
+              "uri": "http://www.w3.org/ns/dcat#Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Agent",
+              "range_uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://xmlns.com/foaf/0.1/Agent",
+              "range_label": {
+                "en": "Agent",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Dataset",
+              "uri": "http://www.w3.org/ns/dcat#Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/hasPart",
+          "name": "has part",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has part",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The has part property links a Public Service Dataset to the Public Service.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Dataset",
+              "uri": "http://www.w3.org/ns/dcat#Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "PublicService",
+              "range_uri": "http://purl.org/vocab/cpsv#PublicService"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://purl.org/vocab/cpsv#PublicService",
+              "range_label": {
+                "en": "Public Service",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/description",
+          "name": "description",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "description",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Dataset",
+              "uri": "http://www.w3.org/ns/dcat#Dataset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/locn#Address",
+      "name": "Address",
+      "label": {
+        "en": "Address",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A spatial object that identifies a fixed location of a property, in a human-readable way.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type</a>: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p></br>",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://www.w3.org/ns/locn#thoroughfare",
+          "name": "thoroughfare",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "thoroughfare",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "For example, \"Avenue des Champs-Élysées\".",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postName",
+          "name": "post name (city)",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "post name (city)",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r\n For example, \"Paris\".",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#postCode",
+          "name": "post code",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "post code",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\".",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#poBox",
+          "name": "post office box",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "post office box",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The Post Office Box number.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\".",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorName",
+          "name": "locator name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "locator name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "Proper noun(s) applied to the real world entity identified by the locator.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Schuman, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#locatorDesignator",
+          "name": "locator designator",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "locator designator",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\".",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#fullAddress",
+          "name": "full address",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "full address",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The complete address written as a formatted string.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\".",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL2",
+          "name": "administrative unit level 2 (country/region/state)",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "administrative unit level 2 (country/region/state)",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#adminUnitL1",
+          "name": "administrative unit level 1 (country)",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "administrative unit level 1 (country)",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Code",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "nl": "Code"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#addressID",
+          "name": "address ID",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "address ID",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "A globally unique identifier for each instance of an Address.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "nl": "String"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/locn#addressArea",
+          "name": "address area",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "address area",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {
+            "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre.",
+            "nl": "Enter your translation here"
+          },
+          "domain": [
+            {
+              "EA-Name": "Address",
+              "uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://xmlns.com/foaf/0.1/Agent",
+      "name": "Agent",
+      "label": {
+        "en": "Agent",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The Agent class is any resource that acts or has the power to act. This includes people, organisations and groups. The Public Organization class, defined in the Core Public Organisation Vocabulary, is a notable subclass of Agent.\r",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://purl.org/dc/terms/title",
+          "name": "name",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "name",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents the Name of the Agent.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Agent",
+              "uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://purl.org/dc/terms/identifier",
+          "name": "identifier",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "identifier",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property represents an Identifier for the Agent.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Agent",
+              "uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://data.europa.eu/m8g/playsRole",
+          "name": "plays role",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "plays role",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.\r\n",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Agent",
+              "uri": "http://xmlns.com/foaf/0.1/Agent"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Participation",
+              "range_uri": "http://data.europa.eu/m8g/Participation"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "http://data.europa.eu/m8g/Participation",
+              "range_label": {
+                "en": "Participation",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://xmlns.com/foaf/0.1/Document",
+      "name": "Document",
+      "label": {
+        "en": "Document",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "A document.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": []
+    },
+    {
+      "uri": "https://schema.org/ContactPoint",
+      "name": "Contact Point",
+      "label": {
+        "en": "Contact Point",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "This class represents the contact information for a Public Service, Channel, Public Organization, etc.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Similarly to the Channel class, a Contact Point may have regular opening hours that are then overridden by, for example, public holidays, using the Opening Hours Specification class.",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://schema.org/telephone",
+          "name": "has telephone",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has telephone",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "the telephone of the ContactPoint",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "https://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/hoursAvailable",
+          "name": "availability restriction",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "availability restriction",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "This property links a channel to information about when the channel is not available, overriding the general opening hours information. The details are provided using the Opening Hours Specification class.",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "https://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OpeningHoursSpecification",
+              "range_uri": "https://schema.org/OpeningHoursSpecification"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Enter your translation here",
+              "range_puri": "https://schema.org/OpeningHoursSpecification",
+              "range_label": {
+                "en": "Opening Hours Specification",
+                "nl": "Enter your translation here"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://schema.org/email",
+          "name": "has email",
+          "sort": "Enter your translation here",
+          "label": {
+            "en": "has email",
+            "nl": "Enter your translation here"
+          },
+          "description": {
+            "en": "the email of the ContactPoint",
+            "nl": "Enter your translation here"
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "ContactPoint",
+              "uri": "https://schema.org/ContactPoint"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Text",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "nl": "Text"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://schema.org/OpeningHoursSpecification",
+      "name": "Opening Hours Specification",
+      "label": {
+        "en": "Opening Hours Specification",
+        "nl": "Enter your translation here"
+      },
+      "sort": "Enter your translation here",
+      "description": {
+        "en": "The CPSV-AP makes use of schema.org's openingHours property to provide details of regular operations.",
+        "nl": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The Opening Hours Specification class can be used to provide details of exceptional circumstances, such as being closed on public holidays, which is encoded (in Turtle), thus:\r\nex:PublicHolidayClosed a schema:OpeningHoursSpecification;\r\nschema:dayOfWeek <http://schema.org/PublicHoliday>.\r\n\r\nNote that the property schema:opens is not used, therefore the contact point is closed. More specific closures can be indicated by including the schema:validFrom and schema:validThrough properties, for example:\r\nex:ChristmasClosed a schema:OpeningHoursSpecification;\r\nschema:validFrom \"2016-12-24T012:00Z\";\r\nschema:validThrough \"2017-01-02T09:00Z\".\r\n",
+        "nl": "Enter your translation here"
+      },
+      "parents": [],
+      "properties": []
+    }
+  ],
+  "properties": [],
+  "contributors": [
+    {
+      "role": "A",
+      "first_name": "Core Public Service Vocabulary Working Group",
+      "affiliation": {}
+    },
+    {
+      "role": "E",
+      "first_name": "Emidio",
+      "last_name": "Stani",
+      "affiliation": {
+        "name": "PwC EU Services"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Dimitri",
+      "last_name": "Schepers",
+      "affiliation": {
+        "name": "PwC EU Services"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Nathan",
+      "last_name": "Ghesquière",
+      "affiliation": {
+        "name": "PwC EU Services"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Michiel",
+      "last_name": "De Keyzer",
+      "affiliation": {
+        "name": "PwC EU Services"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Alexandre",
+      "last_name": "Beaufays",
+      "affiliation": {
+        "name": "PwC EU Services"
+      }
+    },
+    {
+      "role": "E",
+      "first_name": "Florian",
+      "last_name": "Barthelemy",
+      "affiliation": {
+        "name": "PwC"
+      }
+    },
+    {
+      "role": "C",
+      "first_name": "Miguel",
+      "last_name": "Alvarez Rodriguez",
+      "affiliation": {
+        "name": "European Commission"
+      }
+    }
+  ],
+  "datatypes": [],
+  "parents": [],
+  "documentroot": "/doc/application-profile/cpsv-ap"
+}

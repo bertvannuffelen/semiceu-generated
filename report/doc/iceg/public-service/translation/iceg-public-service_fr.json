@@ -1,0 +1,1801 @@
+{
+  "baseURI": "https://vocab.belgif.be/ns/publicservice#",
+  "classes": [],
+  "properties": [],
+  "externals": [
+    {
+      "EA-Guid": "{40B93801-41E5-41e7-8189-E830062C1134}",
+      "name": "Legal Resource",
+      "label": {
+        "en": "Legal Resource",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents the legislation, policy or policies that lie behind the Rules that govern the service.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The definition and properties of the Legal Resource class in the CPSV-AP are aligned with the ontology included in \"Council conclusions inviting the introduction of the European Legislation Identifier (ELI)\". For describing the attributes of a Legal Resource (labels, preferred labels, alternative labels, definition ...) we refer to the ELI ontology.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{4A24A191-ED73-4cdf-966F-1D75CF037191}",
+      "name": "Business Event",
+      "label": {
+        "en": "Business Event",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents a Business Event, which specialises Event. A Business Event is a specific situation or event in the lifecycle of a business that fulfils one or more needs or (legal) obligations of that business at this specific point in time. A Business Event requires a set of public services to be delivered and consumed in order for the associated business need(s) or obligation(s) to be fulfilled. Business Events are defined within the context of a particular Member State.\r\n\r\nIn other words, a Business Event groups together a number of public services that need to be delivered for completing that particular event.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{7CCC2DFE-AAA4-4d1c-ABE6-CB1EE94C7049}",
+      "name": "Channel",
+      "label": {
+        "en": "Channel",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Channel class represents the medium through which an Agent provides, uses or interacts in another way with a Public Service. Typical examples include online services, phone, walk-in centres etc.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F5796CF3-62ED-4d1d-A2A0-496F9F339946}",
+      "name": "Cost",
+      "label": {
+        "en": "Cost",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Cost class represents any costs related to the execution of a Public Service that the Agent consuming it needs to pay.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D2847FDB-E27B-4057-BF05-089A5CE08EF3}",
+      "name": "Event",
+      "label": {
+        "en": "Event",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents an event that can be of any type that triggers, makes use of, or in some way is related to, a Public Service. It is not expected to be used directly, rather, one or other of its subclasses should be used. The properties of the class are, of course, inherited by those subclasses.\r\r\n\r\nThe Event class is used as a hook either to a single related Public Service, such as diagnosis of illness being related to application for sickness benefit ;\r\nor to a group of Public Services, such as all those related to the establishment of a new business.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F4749871-6F2D-4e38-B207-9CCACE847CF2}",
+      "name": "Evidence",
+      "label": {
+        "en": "Evidence",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Evidence class is defined in the Core Criterion and Core Evidence vocabulary (CCCEV) as any resource that can document or support a response. It contains information that proves that a normal requirement exists or is true, in particular evidences are used to prove that a specific riquerement is met.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Although the wording of the definition is different, the semantics are an exact match for CPSV's Input class which it replaces.\r\n\r\nEvidence can be any resource - document, artefact - anything needed for executing the Public Service. In the context of Public Services, Evidence is usually administrative documents or completed application forms. A specific Public Service may require the presence of certain Evidence or combinations of Evidence in order to be delivered.\r\n\r\nIn some cases, the Output of one service will be Evidence for another service. Such relationships should be described in the associated Rule(s).\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BFBC94C8-9503-4de4-9A43-4D4E200E3317}",
+      "name": "Life Event",
+      "label": {
+        "en": "Life Event",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Life Event class represents an important event or situations in a citizen's life where public services may be required. Note the scope: an individual will encounter any number of 'events' in the general sense of the word. Within this model, the Life Event class only represents an event for which a Public Service is related. For example, a couple becoming engaged is not a  Life Event, getting married is, since only the latter has any relevance to public services.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A6159426-31DC-49d9-8334-8B84AFE562E3}",
+      "name": "Output",
+      "label": {
+        "en": "Output",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An output can be any resource - document, artefact - anything produced by the Public Service. In the context of a Public Service, the output provides an official document or other artefact of the Competent Authority (Public Organization) that permits/authorises/entitles an Agent to (do) something.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In some cases, the Output of one Public Service will be used as evidence to fulfil a normal requirement of another Public Service. Such relationships should be described in the associated Rule(s).",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BDC210FC-7313-4aa8-8731-605BDB52137F}",
+      "name": "Participation",
+      "label": {
+        "en": "Participation",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This model recognises a common role connected with public services, i.e. the Competent Authority. However, this simple structure does not allow statements to be made about those participants, such the start and end date of a contract, nor does it support the inclusion of other roles. The Participation class supports this extra complexity if required, for instance, the description of a service user or a service provider. The model is consistent with the CPOV which in turn is based on the W3C Organization Ontology that supports the common cases simply but allows the complex cases where necessary. The Participation class can be mapped to the Organization Ontology's Membership class that allows more complex\r\nrelationships and richer metadata to be applied to a role filled by a given Agent.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{FD2FE27D-2842-467d-A825-12FAF150DE73}",
+      "name": "Public Organization",
+      "label": {
+        "en": "Public Organization",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Any Organization that is defined as being part of the public sector by a legal framework at any level.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Within this model the following properties are mandatory: preferred label and spatial. The value of the latter should be a URI from the Administrative Territorial Units Named Authority List maintained by the Publications Office's Metadata Registry.\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{4C40BA3A-6C08-4950-8EE2-E9CE8073C616}",
+      "name": "Public Service Dataset",
+      "label": {
+        "en": "Public Service Dataset",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The class describes all the metadata related to a public service. These metadata can be displayed on a regional public service portal and/or a national eGovernment portal.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{EFF3F185-7B5E-4ca0-B12A-A9263F809A11}",
+      "name": "Requirement",
+      "label": {
+        "en": "Requirement",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": " A normal requirement is an atomic requirement. Some criteria can be expressed with several atomic requirements. A normal requirement can specify the expected value that the requirement response has to contain, or a range of threshold values within which the requirement response has to fit in. The normal requirement may apply to a certain period of time. It also can provide a list of candidate evidences that the responder can use to prove the normal requirement.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Not all public services are needed or usable by everyone. For example, the visa service operated by European countries is not needed by European citizens but is needed by some citizens from elsewhere, or public services offering unemployment benefits and grants are targeting specific societal groups. This model reuses the Core Criterion and Core Evidence Vocabulary for this class. The CCCEV provides more details but the Requirement class has three mandatory properties.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{3E6701B2-3846-4b67-99C0-43CFA04AE6DB}",
+      "name": "Public Service",
+      "label": {
+        "en": "Public Service",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents the Public Service itself, as it is described in a public service\r\ncatalogue. A Public Service is a mandatory or discretionary set of activities\r\nperformed, or able to be performed, by or on behalf of a public organization, publicly\r\nfunded and arise from public policy. Services may be for the benefit of an individual,\r\na business, or other public authority, or groups of any of these. A service exists\r\nwhether it is used or not, and the term 'benefit' may apply in the sense of enabling\r\nthe fulfilment of an obligation. As defined in the revised version of the European\r\nInteroperability Framework, a European public service comprises any service\r\nprovided by public administrations in Europe, or by other organizations on their\r\nbehalf, to businesses, citizens or others public administrations.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "For instance, in the description of a public service, the procedure, i.e., actions necessary to apply for a public service, can be described.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{22EC3510-EA42-4ed6-8440-5AFAC32063F6}",
+      "name": "Rule",
+      "label": {
+        "en": "Rule",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Rule class represents a document that sets out the specific rules, guidelines or procedures that the Public Service follows. It includes the terms of service, licence, and authentication requirements of the Public Service.\r\n\r\nInstances of the Rule class are FRBR (Functional Requirements for Bibliographic Records) Expressions, that is, a concrete expression such\r\nas a document, of the more abstract concept of the rules themselves.This model does not envisage instances of the Rule class as machine-readable business rules.\r\n\r\nDetailed modelling of the rules related to Public Services is out of scope of this model.\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BBB9949B-6AFA-4dbf-B8B0-6FE35C0B3EF9}",
+      "name": "Purpose",
+      "label": {
+        "en": "Purpose",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents any concepts that can be used to specify the purpose of the Channel and which relates to the Channel through the properties has Channel and has preferred channel.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This class has been added because different channels serve different purposes : information, activation of the service, assistance, appeal, \r\n\r\nMore specifically:\r\n\r\nEach channel could serve several purposes.\r\n \r\nEach purpose can have one or more preferred channels, and one or more \"deprecated\" channels (ex. you can introduce you tax declaration in paper but you're not encouraged to do so)",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{55E73634-2A60-4584-933C-CA77A91196A6}",
+      "name": "Collection",
+      "label": {
+        "en": "Collection",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents the Collection to which a Concept belongs. Grouping different concepts defines a controlled vocabulary.\r\n\r\nIn this context the CPSV-AP reuses the Collection  class as defined in the SKOS Simple Knowledge Organization System . For describing the attributes of a Collection (labels, preferred labels, alternative labels, definition ) we refer to SKOS.\r\n",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{DD4F46BC-20F9-4af9-8C20-DD47AA3ABD7A}",
+      "name": "Concept",
+      "label": {
+        "en": "Concept",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents any concept that can be used for classifying the Public Service and which relates to the Public Service through the property Is Classified By. This class has been added in the CPSV-AP to complement the need for adding other ways of classifying the Public Service, which have not been explicitely defined in the CPSV-AP. \r\n\r\nIn this context the CPSV-AP reuses the Concept  class as defined in the SKOS Simple Knowledge Organization System . For describing the attributes of a Concept (labels, preferred labels, alternative labels, definition ) we refer to SKOS.\r\n\r\nThe Concept may or may not belong to (member) a certain Collection.\r\n",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{650BCC62-B5E6-4070-8DC6-A39F0953E191}",
+      "name": "Address",
+      "label": {
+        "en": "Address",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A spatial object that identifies a fixed location of a property, in a human-readable way.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nAn \"address representation\" as conceptually defined by the <a href=\"https://inspire-regadmin.jrc.ec.europa.eu/dataspecification/ScopeObjectDetail.action?objectDetailId=9353\r\n\">INSPIRE Address Representation data type</a>: \"Representation of an address spatial object for use in external application schemas that need to include the basic, address information in a readable way.\"\r\n</p></br>\r\n\r\n<p>\r\nThe representation of Addresses varies widely from one country's postal system to another. Even within countries, there are almost always examples of Addresses that do not conform to the stated national standard. At the time of publication, work is progressing on <a href=\"https://www.iso.org/standard/61710.html\">ISO 19160-1</a> that defines a method through which different Addresses can be converted from one conceptual model to another.\r\n</p></br>\r\n\r\n<p>\r\nThis specification was heavily based on the INSPIRE Address Representation data type. It is noteworthy that if an Address is provided using the detailed breakdown suggested by the properties for this class, then it will be INSPIRE-conformant. To this very granular set of\r\nproperties, we add two further properties:\r\n<ul>\r\n  <li>- full address (the complete address as a formatted string)</li>\r\n  <li>- addressID (a unique identifier for the address)</li>\r\n</ul>\r\nThe first of these allows publishers to simply provide the complete Address as one string, with or without formatting. This is analogous to <a href=\"http://www.w3.org/2006/vcard/ns#label\">vCard's label property</a>.\r\n</p></br>\r\n\r\n<p>\r\nThe addressID is part of the INSPIRE guidelines and provides a hook that can be used to link the Address to an alternative representation, such as vCard or OASIS xAL.\r\n</p></br>",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{5CB444A2-393C-45bd-9153-B63F32C49054}",
+      "name": "Site",
+      "label": {
+        "en": "Site",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An office or other premise at which the organization is located. Many organizations are spread across multiple sites and many sites will host multiple locations.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F41DDB41-25B4-4b39-88FD-7B1D1D8D373A}",
+      "name": "Agent",
+      "label": {
+        "en": "Agent",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Agent class is any resource that acts or has the power to act. This includes people, organizations and groups. The Public Organization class, defined in the Public Organization model, is a notable subclass of Agent.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{661C3DCB-ADFB-44ba-AC1D-C341CA2F13E7}",
+      "name": "Group",
+      "label": {
+        "en": "Group",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Group class represents a collection of individual agents (and may itself play the role of a Agent, ie. something that can perform actions).\r\n\r\nThis concept is intentionally quite broad, covering informal and ad-hoc groups, long-lived communities, organizational groups within a workplace, etc. Some such groups may have associated characteristics which could be captured in RDF (perhaps a homepage, name, mailing list etc.).\r\n\r\nWhile a Group has the characteristics of a Agent, it is also associated with a number of other Agents (typically people) who constitute the Group. FOAF provides a mechanism, the membershipClass property, which relates a Group to a sub-class of the class Agent who are members of the group. This is a little complicated, but allows us to make group membership rules explicit.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{AE45F87E-BA1C-4ceb-84AF-69B2FB800CD5}",
+      "name": "Contact Point",
+      "label": {
+        "en": "Contact Point",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This class represents the contact information for a Public Service, Channel, Public Organization, etc. It is defined in the Core Public Organization Vocabulary and is provided as a schema:ContactPoint. Like Channel, a Contact Point may have regular opening hours that are then overridden by, for example, public holidays, using the Opening Hours Specification class.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{721B11C7-A1B2-43a7-AA41-6E02D6CBBB21}",
+      "name": "Opening Hours Specification",
+      "label": {
+        "en": "Opening Hours Specification",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Opening Hours Specification class can be used to provide details of exceptional circumstances, such as being closed on public holidays.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The Core Public Service Vocabulary makes full use of schema.org's openingHours property to provide details of regular operations. The Opening Hours Specification  class can be used to provide details of exceptional circumstances, such as being closed on public holidays. Note that the property schema:opens is not used, therefore the contact point is closed. More specific closures can be indicated by including the schema:validFrom and schema:validThrough properties.",
+        "fr": "Enter your translation here"
+      }
+    }
+  ],
+  "externalproperties": [
+    {
+      "EA-Guid": "{E0B2D398-C12B-44b3-8934-6C6286316B80}",
+      "name": "valid through",
+      "label": {
+        "en": "valid through",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "TThe date after when the Opening Hours Specification is not valid.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{44B3C156-EA79-4139-ADD5-CFD73834FEE4}",
+      "name": "valid from",
+      "label": {
+        "en": "valid from",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The date when the Opening Hours Specification becomes valid.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{ACD7E823-9413-4d33-9817-F814D9F9AF60}",
+      "name": "has telephone",
+      "label": {
+        "en": "has telephone",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A property through which a phone number for the Public Organization, or a representative of it, can be contacted.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{73B36EBB-BC66-47ae-A5FC-83B5BF86E126}",
+      "name": "opening hours",
+      "label": {
+        "en": "opening hours",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the normal opening hours of a channel.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The value should follow the flexible format defined for schema.org's opening hours property.\r\nFollowing that structure, days of the week are represented by two letter codes (Mo,Tu, We, Th, Fr, Sa, Su).  Lists should be comma separated (for example: Mo, We, Fr) and periods separated by a hyphen (for example: Mo-Fr).\r\n\r\nIf it is appropriate to add opening hours then this follows the day so if a phone service is available 08:00-20:00 Monday to Saturday and 08:00-18:00 on Sundays that would be encoded as Mo-Sa 08:00-20:00, Su 08:00-18:00.\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{65B5CE1A-4884-4f14-A7FD-8F2650EE97EC}",
+      "name": "opening hours",
+      "label": {
+        "en": "opening hours",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The value of this property is structured text that gives the hours at which the contact point is normally available.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Days are specified using two-letter combinations: Mo, Tu, We, Th, Fr, Sa, Su. For example, if the contact point is open Monday-Friday, 9 -5, the value of the openingHours property would be Mo-Fr 09:00-17:00. If the Contact Point is only available on Tuesday and Thursday between 6 and 8pm, the value would be Tu,Th 16:00-20:00.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{E3AF3CF1-7185-4860-8615-E6CEE658B7E2}",
+      "name": "availability restriction",
+      "label": {
+        "en": "availability restriction",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The availability restriction property links a Channel  to details of specific details of its opening hours that override the general case.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F71C6A06-957F-4a1b-B624-0383D1F13A4E}",
+      "name": "availability restriction",
+      "label": {
+        "en": "availability restriction",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The availability restriction property links a Contact Point to details of specific details of its opening hours that override the general case.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9F289737-CCB6-4da7-9336-D3B52EB59510}",
+      "name": "has email",
+      "label": {
+        "en": "has email",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A property through which an e-mail address for the Public Organization, or a\r\nrepresentative of it, can be contacted.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9393AFE7-60A1-438c-8C2F-86261B4BC013}",
+      "name": "day of week",
+      "label": {
+        "en": "day of week",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The day of the week for which these opening hours are valid.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{5E6CFF9C-636D-44b7-82B5-028AA2E8B7AC}",
+      "name": "website",
+      "label": {
+        "en": "website",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A WebSite is a set of related web pages and other items typically served from a single web domain and accessible via URLs.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A176FE8A-2942-4c14-B785-313BCA76D1D2}",
+      "name": "member",
+      "label": {
+        "en": "member",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The member property relates a Group to a Agent that is a member of that group.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{85A7BAE7-90C2-483e-9A6A-33869DA779EF}",
+      "name": "has site",
+      "label": {
+        "en": "has site",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Indicates a site at which the Organization has some presence even if only indirect (e.g. virtual office or a professional service which is acting as the registered address for a company).",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2D384BE4-CFED-4f52-B1EC-3C84511ACCC6}",
+      "name": "thoroughfare",
+      "label": {
+        "en": "thoroughfare",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "An address component that represents the name or names of a passage or way through from one location to another. A thoroughfare is not necessarily a road, it might be a waterway or some other feature.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "For example, \"Avenue des Champs-Élysées\".",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F0699A53-4F4C-4e83-AF49-34E33744BF36}",
+      "name": "post name (city)",
+      "label": {
+        "en": "post name (city)",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The key postal division of the address, usually the city. (INSPIRE's definition is \"One or more names created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.)\r\n For example, \"Paris\".",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2EF6D767-8E3F-461c-AC37-772819BA21B6}",
+      "name": "post code",
+      "label": {
+        "en": "post code",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The post/zip code of an address. (INSPIRE's definition is \"A code created and maintained for postal purposes to identify a subdivision of addresses and postal delivery points.\")",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Post codes are common elements in many countries' postal address systems. One of the many post codes of Paris is for example \"75000\".",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BD696942-96FF-49f8-9712-8C00CAC1493B}",
+      "name": "post office box",
+      "label": {
+        "en": "post office box",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Post Office Box number.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "INSPIRE's name for this is \"postalDeliveryIdentifier\" for which it uses the locator designator property with a type attribute of that name. This vocabulary separates out the Post Office Box for greater independence of technology. An example post office box number is \"9383\".",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BD85C372-1378-4b22-9DA6-B4897A7F0106}",
+      "name": "locator name",
+      "label": {
+        "en": "locator name",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Proper noun(s) applied to the real world entity identified by the locator.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nThe locator name could be the name of the property or complex, of the building or part of the building, or it could be the name of a room inside a building.\r\n</p></br>\r\n<p>\r\nThe key difference between a locator and a locator name is that the latter is a proper name and is unlikely to include digits. For example, \"Schuman, Berlaymont\" is a meeting room within the European Commission headquarters for which locator name is more appropriate than locator.\r\n</p>",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{509BF1D0-4E76-4bee-B17F-AC883B236548}",
+      "name": "locator designator",
+      "label": {
+        "en": "locator designator",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A number or a sequence of characters which allows a user or an application to interpret, parse and format the locator within the relevant scope. A locator may include more locator designators.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "In simpler terms, this is the building number, apartment number, etc. For an address such as \"Flat 3, 17 Bridge Street\", the locator is \"flat 3, 17\".",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{CACD1A53-7E91-4570-BE69-F842DE505549}",
+      "name": "full address",
+      "label": {
+        "en": "full address",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The complete address written as a formatted string.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Use of this property is recommended as it will not suffer any misunderstandings that might arise through the breaking up of an address into its component parts. This property is analogous to vCard's label property but with two important differences: (1) formatting is not assumed so that, unlike vCard label, it may not be suitable to print this on an address label, (2) vCard's label property has a domain of vCard Address; the fullAddress property has no such restriction. An example of a full address is \"Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France\".",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{958C6E0B-EB04-416c-BC1A-5B3459FD355A}",
+      "name": "administrative unit level 2 (country/region/state)",
+      "label": {
+        "en": "administrative unit level 2 (country/region/state)",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 2 referst to the region of the address, usually a county, state or other such area that typically encompasses several localities.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Some recommended codelists from the EU Publications Office include:\r\n<a href=\"http://publications.europa.eu/resource/authority/atu\">Administrative Territorial Units (ATU)</a>,\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/background\">NUTS</a> and\r\n<a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">Local Administrative Units (LAU)</a>. The first arrondissement of Paris is for example expressed as \"http://publications.europa.eu/resource/authority/atu/FRA_AR_PAR01\" in the ATU controlled vocabulary.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{0E7A8106-96C3-4db5-99E7-450B9CDF5053}",
+      "name": "country",
+      "label": {
+        "en": "country",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Country where the evidence has been issued.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The Country controlled vocabulary can be reused for this.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{EFCE2B24-F154-487f-BDC4-0C162CA80935}",
+      "name": "administrative unit level 1 (country)",
+      "label": {
+        "en": "administrative unit level 1 (country)",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance. Level 1 refers to the uppermost administrative unit for the address, almost always a country.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Best practice is to use the ISO 3166-1 code but if this is inappropriate for the context, country names should be provided in a consistent manner to reduce ambiguity. For example, either write 'France' or 'FRA' consistently throughout the dataset and avoid mixing the two. The <a href=\"http://publications.europa.eu/resource/dataset/country\">Country controlled vocabulary</a> from the Publications Office can be reused for this.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{54C88647-E707-48f6-8433-7328EB434759}",
+      "name": "address ID",
+      "label": {
+        "en": "address ID",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A globally unique identifier for each instance of an Address.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "<p>\r\nThe concept of adding a globally unique identifier for each instance of an address is a crucial part of the INSPIRE data spec. A number of EU countries have already implemented an ID (a UUID) in their Address Register/gazetteer, among them Denmark. OASIS xAL also includes an\r\naddress identifier. It is the address Identifier that allows an address to be represented in a format other than INSPIRE whilst remaining conformant to the Core Vocabulary.\r\n</p></br>\r\n<p>\r\nThe INSPIRE method of representing addresses is very detailed, designed primarily for use in databases of addresses. Whilst data that is published in full conformance with the INSPIRE data structure can be made available using the Location Core Vocabulary the reverse is not true since the Core Vocabulary allows much greater flexibility.\r\n</p></br>\r\n<p>\r\nMany datasets that include address data as one piece of information about something else are likely to have that data in simpler formats. These might be tailored to the specific need of the dataset, follow a national norm, or make use of a standard like vCard.\r\n</p></br>\r\n<p>\r\nTo provide maximum flexibility in the Core Vocabulary, whilst remaining interoperable with INSPIRE Address Guidelines (which EU Member States are obliged to use), the Location Core Vocabulary provides the extra property of full address and makes use of INSPIRE's addressID.\r\n</p>",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{42A3291F-2C59-4432-9003-3E6719430A52}",
+      "name": "address area",
+      "label": {
+        "en": "address area",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The name or names of a geographic area or locality that groups a number of addressable objects for addressing purposes, without being an administrative unit.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This would typically be part of a city, a neighbourhood or village, e.g. Montmartre.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2870E36F-F42C-4a09-84C8-942985E26EDF}",
+      "name": "has address",
+      "label": {
+        "en": "has address",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Address related to an Agent. Asserting the address relationship implies that the Agent has an Address.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BCF48689-663E-49c3-9598-A057022FCCBC}",
+      "name": "keyword",
+      "label": {
+        "en": "keyword",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a keyword, term or phrase to describe the Public Service.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{5564FDC3-EA77-4633-9C37-E01A21A70F78}",
+      "name": "status",
+      "label": {
+        "en": "status",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Indicates whether a Public Service is active, inactive, under development etc. according to a controlled vocabulary.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{B2EDC755-ACDD-4f7a-94E7-7D5DBE204513}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the official Name of the Requirement.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{540A3C28-D540-4a64-BBF9-6C58A40FE139}",
+      "name": "member",
+      "label": {
+        "en": "member",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Member property, as defined in SKOS, allows to indicate the Concepts that are part of a Collection.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{16858794-612E-4258-828D-DD760B2A0AA5}",
+      "name": "address",
+      "label": {
+        "en": "address",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A property to link an organization to its address.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "For consistency with INSPIRE,\r\nthe Location Core Vocabulary's Address class should be used.\r\n",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A78F6051-2E50-40f4-B635-3D7FCDF607B4}",
+      "name": "response time",
+      "label": {
+        "en": "response time",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The duration necessary for the Public Service to deliver the Output given that the Beneficiary has provided all the Evidences.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F5CCD77F-2922-4d2c-BF03-A5CF33874987}",
+      "name": "lifecycle status",
+      "label": {
+        "en": "lifecycle status",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the status within the lifecycle of the public service (exp: creation, use or deletion of a Public Service). It doesn't refer to the status within the Public Service process.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{6501A109-DA99-4721-B2F4-A1C214F3A670}",
+      "name": "legal form",
+      "label": {
+        "en": "legal form",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The type of entity as defined by the Belgian law",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F017EE3A-50BA-49ca-8D97-697B40CCC7DA}",
+      "name": "is used as",
+      "label": {
+        "en": "is used as",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property describes the case where an Output is considered as one or multiple Evidence. \r\nThis property might be used when a Public Service consumes its own Output as Evidence.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BA36DF36-068C-42ec-A20A-3F5023C97294}",
+      "name": "is legal resource",
+      "label": {
+        "en": "is legal resource",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property must be used if the Output is one or multiple legal resource",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{DA4986E8-F3E4-43c8-A334-7B6EE0CA6D82}",
+      "name": "is about",
+      "label": {
+        "en": "is about",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2B3A50CD-3A2A-40af-A31E-D76F8BEC535A}",
+      "name": "has requirement",
+      "label": {
+        "en": "has requirement",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The term Competent Authority is defined in the Services Directive (2006/123/EC) in the following way: \"Any body or authority which has a supervisory or regulatory role in a Member State in relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional associations or other professional organisations which, in the exercise of their legal autonomy, regulate in a collective manner access to service activities or the exercise thereof.\"\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{4E5B590A-D806-4c2e-A9B5-C0A21D2E1954}",
+      "name": "has purpose",
+      "label": {
+        "en": "has purpose",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property describes the relationship between a purpose and a channel. ",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ...",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{4A65C653-BFE4-447a-B186-0C99188C045F}",
+      "name": "has preferred channel",
+      "label": {
+        "en": "has preferred channel",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This relationship represents the preferred channel for a specific Public Service. ",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Citizen can pay their taxes via paper or via a webpage but the prefereed channel would be the webpage.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F8E73668-6806-488f-843B-AAAC11D6814D}",
+      "name": "has legal resource",
+      "label": {
+        "en": "has legal resource",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Has Legal Resource property links an Output to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Output relates, operates or has its legal basis.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{7D6E26C3-92E9-46e9-AEC5-7A27802D85AD}",
+      "name": "has channel",
+      "label": {
+        "en": "has channel",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property indicates the specific Channel through which a Public Organization delivers a Public Service.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{4E5B590A-D806-4c2e-A9B5-C0A21D2E1954}",
+      "name": "has channel",
+      "label": {
+        "en": "has channel",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property describes the relationship between a purpose and a channel. ",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Different channels serve different purposes : information, activation of the service, assistance, appeal, ...",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{EAE02CEC-CCF5-44f2-89BD-E4394F36BE41}",
+      "name": "cost breakdown",
+      "label": {
+        "en": "cost breakdown",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The cost breakdown property represents as a free text how the cost is calculated. ",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Since the cost calculation can be complex, this property simplifies the possible relationships between cost and other classes by inviting the user to describe the calculation of the cost. \r\nThe cost breakdown property is not to be confused with the description property since the first explains how the cost is calculated and the latter gives a brief description of the cost.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F017EE3A-50BA-49ca-8D97-697B40CCC7DA}",
+      "name": "comes from",
+      "label": {
+        "en": "comes from",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property describes the case where an Evidence is considered as one or multiple Output. \r\nThis property might be used when a Public Service consumes its own Output as Evidence.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C3E03665-F750-4e30-80A7-D80A08DCAD63}",
+      "name": "classification",
+      "label": {
+        "en": "classification",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Classification of the different types of public service.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "The classification of a Public Service can be done via a codelist. As an example, this one can be used: https://inspire.ec.europa.eu/codelist/ServiceTypeValue",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A71EACD9-93C7-47b0-B228-1261C416CA72}",
+      "name": "produces",
+      "label": {
+        "en": "produces",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Produces property links a Public Service to one or more instances of the Output class, describing the actual result of executing a given Public Service. Outputs can be any resource, for instance a document, artefact or anything else being produced as a result of executing the Public Service.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{DF994CEE-A09A-44df-A08A-5E5A21157F79}",
+      "name": "implements",
+      "label": {
+        "en": "implements",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Implements property links a Rule to relevant legislation or policy documents i.e.\r\nthe Legal Resource under which the Rules are being defined (see section 3.16).",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{E3805144-1A9D-4991-9301-5B57069ED00E}",
+      "name": "via channel",
+      "label": {
+        "en": "via channel",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "In the majority of cases, the evidence required to use a Public Service will be independent of the channel through which the service is accessed. The Has Input property should normally be used to link a Public Service directly to one or more pieces of Evidence. However, where the type of Evidence required varies according to the channel used to access the Public Service, then the Has Input property may be used at the Channel level. For example, a digital signature may be\r\nrequired for an online channel, whereas a physical signature may be required for a face to face service provision.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{CF633801-071F-4832-B6D2-1CFD4DAB6236}",
+      "name": "follows",
+      "label": {
+        "en": "follows",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Follows property links a Public Service to the Rule(s) under which it operates. The definition of the Rule class is very broad. In a typical case, the competent authority that provides the public service will also define the rules that will implement its own policies. This model is flexible to allow for significant variation in such a scenario.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{23D7D9EA-E892-4e95-B2B2-0DAA7A0989C7}",
+      "name": "type",
+      "label": {
+        "en": "type",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the type of Output as defined in a controlled vocabulary. ",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BC698852-FD33-41a6-99F5-7C4A0162A1BD}",
+      "name": "type",
+      "label": {
+        "en": "type",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The type property links an Event to a controlled vocabulary of event types and it is the nature of those controlled vocabularies that is the major difference between a business event, such as creating the business in the first place and a life event, such as the birth of a child.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{620119BC-1F82-407e-8C2E-4D4DAF79A509}",
+      "name": "title",
+      "label": {
+        "en": "title",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property contains a name given to the Dataset.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "This property can be repeated for parallel language versions of the name.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D6E8F03C-7B49-4b9c-A607-CBAED050D42B}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the official Name of the Public Service.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{EC63607D-8B4E-4c18-B693-FC34E4C94A38}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the Name of the Rule.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F7715A9C-71D7-4ac8-BE81-ED04A7AE0538}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the official Name of the Output.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{68BE9F04-ED8D-454a-A4CF-F0FA99D430E3}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the Name (or title) of the Event.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A5D54F67-471B-4968-AC02-CC4FE3940082}",
+      "name": "name",
+      "label": {
+        "en": "name",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the Name of the Agent.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{EF1FCBEA-35A1-4ea1-94EA-AC69EA5C22C4}",
+      "name": "is about",
+      "label": {
+        "en": "is about",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Agent that is the main actor in the provided Evidence.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C5E89272-0A56-4a23-8FA1-CB4630DFD7A9}",
+      "name": "spatial",
+      "label": {
+        "en": "spatial",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A Public Service is likely to be available only within a given area, typically the area covered by a particular public authority.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "A common usage of the spatial property will be to define the Administrative Territorial Unit(s) - typically a country or region - in which a Public Service is available. The Publications Office of the European Union offers <a href=\"http://publications.europa.eu/resource/dataset/atu\">a URI set</a> that is suitable for this purpose, e.g. Malta is identified by\r\nhttp://publications.europa.eu/resource/authority/atu/MLT,\r\nWest Flanders by\r\nhttp://publications.europa.eu/resource/authority/atu/BEL_PR_WVL and so on. In case the ATU code list is not suitable, <a href=\"https://op.europa.eu/en/publication-detail/-/publication/f056ba08-ac53-11ea-bb7a-01aa75ed71a1/language-en/format-PDF/source-search\">NUTS</a> or <a href=\"https://ec.europa.eu/eurostat/web/nuts/local-administrative-units\">LAU</a>, <a href=\"http://publications.europa.eu/resource/dataset/place\">NAL Place</a> or <a href=\"http://www.geonames.org\">Geonames</a> are recommended to use, in that order. If those are still not sufficient, we recommend to define your own code list.\r\n\r\nN.B. The spatial restriction is not meant to be used to describe eligibility or the speed of operation of the service.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{E6B04B1F-D080-44ba-A3FE-09E8C5DEE60D}",
+      "name": "requires",
+      "label": {
+        "en": "requires",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "One Public Service may require, or in some way make use of, the output of one or several other Public Services. In this case, for a Public Service to be executed, another Public Service must be executed beforehand. The nature of the requirement will be de",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{58D1DA3E-E7B4-4eb0-8DB4-3960AF4FB6CF}",
+      "name": "related service",
+      "label": {
+        "en": "related service",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property links an event directly to a public service that is related to it.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{177F3705-53E3-4a81-B709-2512F7CCF615}",
+      "name": "related",
+      "label": {
+        "en": "related",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents another instance of the Legal Resource class that is related to the particular Legal Resource being described.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{3843BBCD-1D6E-4c43-B34B-429631D41CB2}",
+      "name": "related",
+      "label": {
+        "en": "related",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a Public Service related to the particular instance of the Public Service class.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Indication of a public service having a relationship with other public services.\r\n\r\nFor example, in Flanders there is a child allowance package, groeipakket. It consists of different services that can be requested together. Those different services are including, but not limited to: \r\n\tBasic benefit for every child\r\n\tDay care benefit\r\n\tSchool benefit\r\n\tAdditional benefit for children that have special needs (e.g., Children with a handicap)\r\n\tAdditional benefit for orphans\r\n\t\r\n\r\n",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BCAC80B5-D86C-4d8f-8256-656ECD37DDE5}",
+      "name": "publisher",
+      "label": {
+        "en": "publisher",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the Publisher of the Public Service Dataset, i.e. an entity  (organization) responsible for making the Public Service Dataset available.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{57413551-2323-437f-835D-55EB742C6C42}",
+      "name": "is issued by",
+      "label": {
+        "en": "is issued by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Agent that has published the Requirement.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{390E7EB8-9BE8-434b-9473-A54E29674610}",
+      "name": "is issued by",
+      "label": {
+        "en": "is issued by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The legal authority responsible for an Evidence.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{97BD4C31-499C-49e0-BE13-4A74F873CBA7}",
+      "name": "is provided by",
+      "label": {
+        "en": "is provided by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Agent that provides the trust and/or certifies that the Evidence is genuine.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BFDC4B1E-8D08-4ea8-B8F5-569D1BADA147}",
+      "name": "language",
+      "label": {
+        "en": "language",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the language(s) in which the Public Service is available. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. The recommended controlled vocabularies are listed in section 4.\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{6AB2CEB9-FCF2-4a56-9B7B-AA6A628AF2F3}",
+      "name": "language",
+      "label": {
+        "en": "language",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the language(s) in which the Rule is available. This could be one or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{65D05BA6-DAC6-4e82-8BE5-3BF4AFDD4A56}",
+      "name": "language",
+      "label": {
+        "en": "language",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the language(s) in which the Evidence is issued. This could be one language or multiple languages, for instance in countries with more than one official language. The possible values for this property are described in a controlled vocabulary. ",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{6AFD1AA9-61EF-4292-A50F-ABB535659710}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a formally-issued Identifier for the Public Service.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{EAFED6C4-086A-46c6-85F1-63CD11F740E6}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Rule.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{5B8283E7-7531-4904-A483-3E4BE6C3BB27}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Output.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{DB668496-5F11-4fa6-B1D5-046540EA2EE2}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Channel.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{17CE8406-B2F4-431b-9EB2-43AC4362FD20}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Event.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{601AE607-9557-4351-B744-A92EDC7CEBE5}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Cost.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{14F0679D-E078-4ce1-B9F7-ED0D5992E3FC}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Participation.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{81808F3F-2474-4291-82EF-0EFAFB72A5B5}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Requirement.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D8F6B8BC-C216-4c49-8FFD-17A89305DDE5}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property contains the main identifier for the Dataset, e.g. the URI or other unique identifier in the context of the Catalogue.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D7E7E096-A2DA-45ea-A517-302C1147447E}",
+      "name": "identifier",
+      "label": {
+        "en": "identifier",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents an Identifier for the Agent.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F42F25CF-BC65-4689-81D8-86C1EF81A54E}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a free text Description of the Public Service. The description is likely to be the text that potential users of the Public Service see in any public service catalogue. Public administrations are encouraged to include a reasonable level of detail in the description, for instance including basic eligibility requirements for the particular Public Service and contact information.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{75472AE3-EC11-48c1-9B05-6A9EAB6E751D}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a free text Description of the Rule.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{B33AFC3F-56D3-4443-AE5C-EF02283B5C15}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a free text Description of the Output.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9C505EEF-831D-4934-ADB5-204C603D56D5}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a free text description of the Channel.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C3900A49-059E-4c6e-9F1D-1FD818A0C52A}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a free text description of the Event. The description is likely to be the text that a business or citizen sees for that specific Event when looking for relevant Public Services. Public administrations are therefore encouraged to include a reasonable level of detail in the description.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{77A6A9A7-6A17-4f9d-A0E4-B92435D0EE5A}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a free text description of the Cost.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D74FA9C1-5500-44e4-91E0-46CF322B0D00}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A free text description of the Participation.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{FAEB20D2-30F1-4bba-B808-84820AFC7D69}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A short explanation about the nature, attributes, uses or any other additional information that helps clarify the understanding of the Requirement being instantiated.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{3AA2B905-12B8-470e-B1F4-C872B0E7AD51}",
+      "name": "description",
+      "label": {
+        "en": "description",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property contains a free-text account of the Dataset. This property can be repeated for parallel language versions of the description.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{162EA2A3-6F60-420e-B852-58BC230AC747}",
+      "name": "is created by",
+      "label": {
+        "en": "is created by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Agent that produces the Evidence.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{3752952E-DDE1-4c83-BDF6-8FF60171148E}",
+      "name": "value",
+      "label": {
+        "en": "value",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents a numeric value indicating the amount of the Cost.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9A274FDC-884B-4f0a-8900-41964DE10AA7}",
+      "name": "thematic area",
+      "label": {
+        "en": "thematic area",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the Thematic Area of a Public Service as described in a controlled vocabulary, for instance social protection, health, recreation, culture and religion, family, traveling economic affairs, tax, staff, environment...",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9930792E-5EEE-4bfb-97B3-535E79DC8FC2}",
+      "name": "supports Requirement",
+      "label": {
+        "en": "supports Requirement",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Requirement for which the Evidence provides information (proof, support).",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{8F61A18D-3566-446b-B265-0B0B022B7345}",
+      "name": "sector",
+      "label": {
+        "en": "sector",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the industry or sector a Public Service relates to, or is intended for. For example: environment, safety, housing. Note that a single Public Service may relate to multiple sectors. The possible values for this property are provided as a controlled vocabulary.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2A06CFAC-50D0-4d5c-A7CD-0675E6FEF021}",
+      "name": "role",
+      "label": {
+        "en": "role",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Provides the role played. This should be provided using a controlled vocabulary. Since \r\nthis is an extension mechanism for the CSPV-AP, the controlled vocabulary should be decided to suit local implementations.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F99D9E09-5EB9-4c02-A5C5-7A65DD287FF6}",
+      "name": "processing time",
+      "label": {
+        "en": "processing time",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The value of this property is the (estimated) time needed for executing a Public Service. The actual information is provided using the ISO8601 syntax for durations. \r\n\r\nSome examples are provided below:\r\nDuration Syntax - Syntax\r\n5 years - P5Y\r\n1 month - P1M\r\n3 days - P3D\r\n2 days 4 hours - P2DT4H\r\n\r\nDurations begin with an uppercase P followed by the number and the relevant designator, formally: P[n]Y[n]M[n]DT[n]H[n]M[n]S, where Y is for years, M for months etc. \r\n\r\nNote that days and times are separated by an uppercase T which also\r\ndisambiguates M as meaning month (P2M means 2 months) or minute (PT2M means 2 minutes). Durations may also be defined as a number of weeks so P4W means 4 weeks. A full explanation is provided in the Wikipedia page16 that references the official ISO standard17.\r\n\r\nThis approach is consistent with both schema.org and the W3C OWL Time Ontology.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{56A422E3-4D87-41a9-938B-DE5F3FCC6CF0}",
+      "name": "plays role",
+      "label": {
+        "en": "plays role",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property links an Agent to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.\r\n",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{7D6E26C3-92E9-46e9-AEC5-7A27802D85AD}",
+      "name": "owned by",
+      "label": {
+        "en": "owned by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property indicates the owner of a specific Channel through which a Public Service is being delivered.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D53AFF09-F4F0-46a5-8113-26C481464C23}",
+      "name": "is requirement of",
+      "label": {
+        "en": "is requirement of",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A reference between a sub-Requirement and its parent, more general, Requirement.",
+        "fr": "Enter your translation here"
+      },
+      "usage": {
+        "en": "Inverse relation from hasRequirement. If there is no hierarchy then this relationship is not needed.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{ECCD75F4-3DAC-4c58-8D40-9A40BF623EF9}",
+      "name": "is grouped by",
+      "label": {
+        "en": "is grouped by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property links the Public Service to the Event class. Several\r\nPublic Services may be associated with a particular Event and, likewise, the same Public Service may be associated with several different Events. ",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{96508F39-23BB-46d7-96E4-13D5652B459B}",
+      "name": "is described at",
+      "label": {
+        "en": "is described at",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Is Described At property links a Public Service to the Public Service Dataset(s) in which it is being described.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{15DDC1B2-C736-4e56-B49E-915BDB8B4D54}",
+      "name": "is derived from",
+      "label": {
+        "en": "is derived from",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Legal Resource that is responsible for the creation/initiation of the Requirement.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{8A6BD96C-7796-4e0e-86AE-EC416839D7BD}",
+      "name": "is defined by",
+      "label": {
+        "en": "is defined by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property links the Cost class with one or more instances of the Public Organization class. This property indicates which Public Organization is the Competent Authority for defining the costs associated with the delivery of a particular Public Service.\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{5151C981-FA56-4125-9797-1CAA625C5F43}",
+      "name": "is classified by",
+      "label": {
+        "en": "is classified by",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Is Classified By property allows to classify the Public Service with any Concept, other than those already foreseen and defined explicitely in the CPSV-AP (Thematic Area, Sector, ). It is a generic property which can be further specialised to make the classification explicit, for instance for classifying public services according level of digitisation, type of audience ",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{C8BC464A-62FE-4148-A638-B0579018C9DD}",
+      "name": "if accessed through",
+      "label": {
+        "en": "if accessed through",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "Where the cost varies depending on the channel used, for example, if accessed through an online service cf. accessed at a physical location, the cost can be linked to the channel using the If Accessed Through property. ",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{9930792E-5EEE-4bfb-97B3-535E79DC8FC2}",
+      "name": "has Supporting Evidence",
+      "label": {
+        "en": "has Supporting Evidence",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Evidence that supplies information (proof, support) for this Requirement.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{D53AFF09-F4F0-46a5-8113-26C481464C23}",
+      "name": "has requirement",
+      "label": {
+        "en": "has requirement",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A sub-Requirement.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{4CC34426-D21E-46e6-A04B-8CC0AD034358}",
+      "name": "has qualified relation",
+      "label": {
+        "en": "has qualified relation",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A described and/or categorised relation to the instance of another Requirement class or subclass.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{944BD5B1-AFA3-48bf-B2EC-C5772A7BF9D4}",
+      "name": "has participation",
+      "label": {
+        "en": "has participation",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property links a Public Service to the Participation class. The Participation class facilitates the detailed description of how an Agent participates in or interacts with a Public Service and may include temporal and spatial information.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{1C47D960-9AEF-400e-B03F-339DBCEB1411}",
+      "name": "has legal resource",
+      "label": {
+        "en": "has legal resource",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Has Legal Resource property links a Public Service to a Legal Resource. It indicates the Legal Resource (e.g. legislation) to which the Public Service relates, operates or has its legal basis.\r",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{A32D989E-444D-410e-937D-AECDB318302C}",
+      "name": "has cost",
+      "label": {
+        "en": "has cost",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The Has Cost property links a Public Service to one or more instances of the Cost class. It indicates the costs related to the execution of a Public Service for the citizen or business related to the execution of the particular Public Service. Where the cost varies depending on the channel through which the service is accessed, it can be linked to the channel using the If Accessed Through relationship.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{F22D1EF9-C3CE-47f5-9B79-9FA6CA864A9F}",
+      "name": "has contact point",
+      "label": {
+        "en": "has contact point",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "A contact point for the service is almost always helpful. The value of this property, the contact information itself, should be provided using schema:ContactPoint. Note that the contact information should be relevant to the Public Service which may not be the same as contact information for the Competent Authority or any Participant.\r\n",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{BD1C3FFD-6FA9-4358-B7ED-A836893BC30F}",
+      "name": "has competent authority",
+      "label": {
+        "en": "has competent authority",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property links a Public Service to a Public Organization, which is the responsible\r\nAgent for the delivery of the Public Service. Whether the particular Public\r\nOrganization provides the public service directly or outsources it is not relevant. The\r\nPublic Organization that is the Competent Authority of the service is the one that is\r\nultimately responsible for managing and providing the public service.\r\n\r\nThe term Competent Authority is defined in the Services Directive (2006/123/EC) in\r\nthe following way:\r\nAny body or authority which has a supervisory or regulatory role in a Member State\r\nin relation to service activities, including, in particular, administrative authorities,\r\nincluding courts acting as such, professional bodies, and those professional\r\nassociations or other professional organizations which, in the exercise of their legal\r\nautonomy, regulate in a collective manner access to service activities or the exercise\r\nthereof.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{689F4190-1856-458c-9C41-92D3572725FD}",
+      "name": "has channel",
+      "label": {
+        "en": "has channel",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property links the Public Service to any Channel through which an Agent provides, uses or otherwise interacts with the Public Service, such as an online service, phone number or office.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{1675C839-F080-469d-87F8-79F6ED96CAE3}",
+      "name": "currency",
+      "label": {
+        "en": "currency",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "This property represents the currency in which the Cost needs to be paid and the value of the Cost is expressed. The possible values for this property are described in a controlled vocabulary.",
+        "fr": "Enter your translation here"
+      }
+    },
+    {
+      "EA-Guid": "{2BED0917-07B8-4123-B65B-E58A30548478}",
+      "name": "confidentiality level type",
+      "label": {
+        "en": "confidentiality level type",
+        "fr": "Enter your translation here"
+      },
+      "definition": {
+        "en": "The security classification assigned to an Evidence or, in general, to a content.",
+        "fr": "Enter your translation here"
+      }
+    }
+  ]
+}
