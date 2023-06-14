@@ -40,653 +40,261 @@
   "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en",
   "shapes": [
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#FireHydrantShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/ns/locn#Address",
+          "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:definition": {
-            "en": "The address representation that corresponds to the building."
+            "en": "The address representation that corresponds to the object."
           },
           "sh:name": {
             "en": "address"
           },
-          "sh:path": "https://www.w3.org/ns/locn#address"
+          "sh:path": "http://fixme.com#address"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
           "sh:definition": {
-            "en": "Characteristic of the building that makes it generally of interest for mappings applications. The characteristic may be related to the physical aspect and/or to the function of the building."
-          },
-          "sh:name": {
-            "en": "buildingNature"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#buildingNature"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#BuildingUnit",
-          "sh:definition": {
-            "en": "Building unit(s) being part of the building."
-          },
-          "sh:name": {
-            "en": "buildingUnit"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#buildingUnit"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#CadastralParcel",
-          "sh:definition": {
-            "en": "The parcel(s) with which the building is officially associated.\t"
-          },
-          "sh:name": {
-            "en": "cadastralParcel"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#cadastralParcel"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Values indicating the condition of a construction"
+            "en": "The nominal rate at which water flows through the hydrant, typically measured in liters per second."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "conditionOfConstruction"
+            "en": "flowRate"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#conditionOfConstruction"
+          "sh:path": "http://fixme.com#flowRate"
         },
         {
-          "sh:class": "http://vocab.belgif.be/ns/building#CurrentUse",
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
           "sh:definition": {
-            "en": "Activity hosted within the building. This attribute addresses mainly the buildings hosting human activities."
-          },
-          "sh:name": {
-            "en": "currentUse"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#Building.currentUse"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#DateOfEvent",
-          "sh:definition": {
-            "en": "Date of construction."
+            "en": "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."
           },
           "sh:maxCount": "1",
-          "sh:name": {
-            "en": "dateOfConstruction"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#Building.dateOfConstruction"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#DateOfEvent",
-          "sh:definition": {
-            "en": "Date of demolition."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "dateOfDemolition"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#Building.dateOfDemolition"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#DateOfEvent",
-          "sh:definition": {
-            "en": "Date of renovation."
-          },
-          "sh:name": {
-            "en": "dateOfRenovation"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#Building.dateOfRenovation"
-        },
-        {
-          "sh:class": "https://schema.org/DigitalDocument",
-          "sh:definition": {
-            "en": "Any document providing information about the building."
-          },
-          "sh:name": {
-            "en": "document"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#document"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#Elevation",
-          "sh:definition": {
-            "en": "Vertically-constrained dimensional property consisting of an absolute measure referenced to a well-defined surface which is commonly taken as origin (geoïd, water level, etc.)."
-          },
-          "sh:name": {
-            "en": "elevation"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#Building.elevation"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#EntranceLocation",
-          "sh:definition": {
-            "en": "The location where the building can be entered or exited."
-          },
-          "sh:name": {
-            "en": "entranceLocation"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#entranceLocation"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#ExternalReference",
-          "sh:definition": {
-            "en": "Reference to an external information system containing any piece of information related to the spatial object."
-          },
-          "sh:name": {
-            "en": "externalReference"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#externalReference"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#BuildingGeometry",
-          "sh:definition": {
-            "en": "Shape and position characteristics of a building"
-          },
           "sh:name": {
             "en": "geometry"
           },
-          "sh:path": "http://www.w3.org/ns/locn#geometry"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#HeightAboveGround",
-          "sh:definition": {
-            "en": "Height above ground."
-          },
-          "sh:name": {
-            "en": "heightAboveGround"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#heightAboveGround"
+          "sh:path": "http://fixme.com#geometry"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:definition": {
-            "en": "Identifier of the Building."
+            "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
           },
+          "sh:maxCount": "1",
           "sh:name": {
             "en": "identifier"
           },
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
+          "sh:path": "http://fixme.com#identifier"
         },
         {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
+          "sh:class": "http://fixme.com#Pipe",
           "sh:definition": {
-            "en": "Name of the building"
+            "en": "A pipe is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure)."
           },
           "sh:name": {
-            "en": "name"
+            "en": "Pipe"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#name"
+          "sh:path": "https://saref.etsi.org/saref4watr/Pipe"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:class": "https://www.w3.org/ns/org#Organization",
           "sh:definition": {
-            "en": "Number of dwellings. A dwelling is a residential unit which may consist of one or several rooms designed for the occupation of households."
+            "en": "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures."
+          },
+          "sh:name": {
+            "en": "Organization"
+          },
+          "sh:path": "https://www.w3.org/ns/org#Organization"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:definition": {
+            "en": "The date of the most recently performed inspection of a hydrant."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "numberOfDwellings"
+            "en": "lastInspectionDate"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#numberOfDwellings"
+          "sh:path": "http://fixme.com#lastInspectionDate"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "Total number of building layers above ground, viewed across all building sections."
+            "en": "Date on which the current version of the area or object starts to be used."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "numberOfFloorsAboveGround"
+            "en": "startDate"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#numberOfFloorsAboveGround"
+          "sh:path": "http://fixme.com#startDate"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "Total number of building layers under ground, viewed across all building sections."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "numberOfFloorsUnderGround"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#numberOfFloorsUnderGround"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#Building"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingGeometryShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure",
-          "sh:definition": {
-            "en": "The estimated absolute positional accuracy of the (X,Y) coordinates of the building geometry.\t"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "horizontalGeometryEstimatedAccuracy"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#horizontalGeometryEstimatedAccuracy"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
-          "sh:definition": {
-            "en": "The geometry to be taken into account by view services, for portrayal."
+            "en": "Entity status."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "referenceGeometry"
+            "en": "status"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#referenceGeometry"
-        },
-        {
-          "sh:datatype": "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure",
-          "sh:definition": {
-            "en": "The estimated absolute positional accuracy of the Z-coordinate of the building geometry.\t"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "verticalGeometryEstimatedAccuracy"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#verticalGeometryEstimatedAccuracy"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingGeometry"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingGeometry3DLoDShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.opengis.net/ont/sf#MultiSurface",
-          "sh:definition": {
-            "en": "Representation of the outer boundary by a Multi Surface, which may - in contrast to a solid representation - not be topologically clean. In particular, the ground surface may be missing."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "geometryMultiSurface"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#geometryMultiSurface"
-        },
-        {
-          "sh:datatype": "http://www.opengis.net/ont/gml#Solid",
-          "sh:definition": {
-            "en": "Representation of the outer boundary by a solid."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "geometrySolid"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#geometrySolid"
-        },
-        {
-          "sh:datatype": "http://www.opengis.net/ont/sf#MultiCurve",
-          "sh:definition": {
-            "en": "Line or multi-line where the spatial object touches the terrain representation."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "terrainIntersection"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#terrainIntersection"
+          "sh:path": "http://fixme.com#status"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "Height level to which the lower height of the model (Z-value of the lower horizontal polygon) refers to."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "verticalGeometryReference3DBottom"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#verticalGeometryReference3DBottom"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingGeometry3DLoD1Shape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Element of the real world object that was captured by the (X,Y) coordinates of the LoD1 Multisurface or Solid geometry."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "horizontalGeometryReference"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1.horizontalGeometryReference"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Height level to which the upper height of the model (Z-value of the upper horizontal polygon) refers to."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "verticalGeometryReference3DTop"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#verticalGeometryReference3DTop"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD1"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingGeometry3DLoD2Shape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Element that was captured by the (X,Y) coordinates of the LoD2 MultiSurface or Solid geometry."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "horizontalGeometryReference"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#horizontalGeometryReference"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingGeometry3DLoD2.horizontalGeometryReference"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingUnitShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/ns/locn#Address",
-          "sh:definition": {
-            "en": "The address representation that corresponds to the building unit."
-          },
-          "sh:name": {
-            "en": "address"
-          },
-          "sh:path": "https://www.w3.org/ns/locn#address"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#Building",
-          "sh:definition": {
-            "en": "Building of which building unit(s) are being a part."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "building"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#building"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#CurrentUse",
-          "sh:definition": {
-            "en": "Activity hosted within the building unit. This attribute addresses mainly the building units hosting human activities."
-          },
-          "sh:name": {
-            "en": "currentUse"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#Buildingunit.currentUse"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#DateOfEvent",
-          "sh:definition": {
-            "en": "Date of construction."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "dateOfConstruction"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#BuildingUnit.dateOfConstruction"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#DateOfEvent",
-          "sh:definition": {
-            "en": "Date of demolition"
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "dateOfDemolition"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#BuildingUnit.dateOfDemolition"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#DateOfEvent",
-          "sh:definition": {
-            "en": "Date of renovation."
-          },
-          "sh:name": {
-            "en": "dateOfRenovation"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#BuildingUnit.dateOfRenovation"
-        },
-        {
-          "sh:class": "https://schema.org/DigitalDocument",
-          "sh:definition": {
-            "en": "Any document providing information about the building unit."
-          },
-          "sh:name": {
-            "en": "document"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#document"
-        },
-        {
-          "sh:datatype": "http://vocab.belgif.be/ns/building#EntranceLocation",
-          "sh:definition": {
-            "en": "The location where the building unit can be entered or exited."
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "entranceLocation"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#entranceLocation"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/ns/locn#Geometry",
-          "sh:definition": {
-            "en": "Shape and position characteristics of a building unit."
-          },
-          "sh:name": {
-            "en": "geometry"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#geometry"
-        },
-        {
-          "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:definition": {
-            "en": "The unique identifier of a building unit."
-          },
-          "sh:name": {
-            "en": "identifier"
-          },
-          "sh:path": "http://www.w3.org/ns/adms#identifier"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingUnit"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#CurrentUseShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:definition": {
-            "en": "The proportion of the building, given as a percentage, devoted to this current use."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "percentage"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#percentage"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "The current use of a building"
+            "en": "The type of hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "type"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#type"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#CurrentUse"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#DateOfEventShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:definition": {
-            "en": "A date and time of any point of the event, between its beginning and its end."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "anyPoint"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#anyPoint"
+          "sh:path": "http://fixme.com#type"
         },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:definition": {
-            "en": "Date and time when the event ended."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "endDate"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#endDate"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
-          "sh:definition": {
-            "en": "Date and time when the event begun."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "startDate"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#startDate"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#DateOfEvent"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#ElevationShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "Element where the elevation was measured."
+            "en": "The permitted usage of the hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "elevationReference"
+            "en": "usage"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#elevationReference"
+          "sh:path": "http://fixme.com#usage"
         },
         {
-          "sh:datatype": "http://www.opengis.net/ont/sf#DirectPosition",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
           "sh:definition": {
-            "en": "Value of the elevation."
+            "en": "The diameter of the valve of a hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "elevationValue"
+            "en": "valveDiameter"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#elevationValue"
+          "sh:path": "http://fixme.com#valveDiameter"
+        },
+        {
+          "sh:definition": {
+            "en": "A valve is a device designed to control water flow, pressure or volume."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "valveType"
+          },
+          "sh:path": "http://fixme.com#valveType"
         }
       ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#Elevation"
+      "sh:targetClass": "http://fixme.com#FireHydrant"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#EntranceLocationShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#PipeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/ns/locn#Address",
+          "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:definition": {
-            "en": "The address linked to the location of the entrance."
+            "en": "The address representation that corresponds to the object."
           },
-          "sh:maxCount": "1",
           "sh:name": {
             "en": "address"
           },
-          "sh:path": "http://www.w3.org/ns/locn#Address"
+          "sh:path": "http://fixme.com#address"
         },
         {
-          "sh:datatype": "http://www.opengis.net/ont/sf#DirectPosition",
+          "sh:class": "http://fixme.com#FireHydrant",
+          "sh:name": {
+            "en": "FireHydrant"
+          },
+          "sh:path": "http://fixme.com#contains"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "Holder of the coordinates of a position in a coordinate reference system."
+            "en": "The diameter of a pipe."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "diameter"
+          },
+          "sh:path": "http://fixme.com#diameter"
+        },
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Geometry",
+          "sh:definition": {
+            "en": "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "position"
+            "en": "geometry"
           },
-          "sh:path": "http://www.w3.org/ns/locn#Geometry"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#EntranceLocation"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#ExternalReferenceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
+          "sh:path": "http://fixme.com#geometry"
+        },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
-          "sh:definition": {
-            "en": "Uniform Resource Identifier of the external information system."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "informationSystem"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#informationSystem"
+          "sh:path": "http://fixme.com#identifier"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:class": "http://fixme.com#Pipe",
           "sh:definition": {
-            "en": "The name of the external information system."
+            "en": "A pipe is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure)."
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "informationSystemName"
+            "en": "Pipe"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#informationSystemName"
+          "sh:path": "https://saref.etsi.org/saref4watr/Pipe"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:class": "https://www.w3.org/ns/org#Organization",
           "sh:definition": {
-            "en": "Thematic identifier of the spatial object or of any piece of information related to the spatial object."
+            "en": "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures."
+          },
+          "sh:name": {
+            "en": "Organization"
+          },
+          "sh:path": "https://www.w3.org/ns/org#Organization"
+        },
+        {
+          "sh:class": "http://fixme.com#FireHydrant",
+          "sh:definition": {
+            "en": "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."
+          },
+          "sh:name": {
+            "en": "FireHydrant"
+          },
+          "sh:path": "https://saref.etsi.org/saref4watr/FireHydrant"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "Entity status."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "reference"
+            "en": "status"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#reference"
+          "sh:path": "http://fixme.com#status"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The type of pipe."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://fixme.com#type"
         }
       ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#ExternalReference"
+      "sh:targetClass": "http://fixme.com#Pipe"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape",
@@ -694,7 +302,6 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Qualitative information enabling to discern which credit should be given to the name with respect to its standardisation and/or its topicality."
           },
@@ -705,7 +312,6 @@
           "sh:path": "http://vocab.belgif.be/ns/building#nameStatus"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "Information enabling to acknowledge if the name is the one that is/was used in the area where the spatial object is situated at the instant when the name is/was in use."
           },
@@ -716,7 +322,6 @@
           "sh:path": "http://vocab.belgif.be/ns/building#nativeness"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
             "en": "Original data source from which the geographical name is taken from and integrated in the data set providing/publishing it. For some named spatial objects it might refer again to the publishing data set if no other information is available."
           },
@@ -741,235 +346,35 @@
       "sh:targetClass": "http://vocab.belgif.be/ns/building#GeographicalName"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#HeightAboveGroundShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Element used as the high reference."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "heightReference"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#heightReference"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "Element as the low reference."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "lowReference"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#lowReference"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#HeightStatusValue",
-          "sh:definition": {
-            "en": "The way the height has been captured."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "status"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#status"
-        },
-        {
-          "sh:datatype": "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure",
-          "sh:definition": {
-            "en": "Value of the height above ground."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "value"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#value"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#HeightAboveGround"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#LangCodeShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#LangCode"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#StructuredIdentificatorShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#StructuredIdentificator"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#MeasureShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
-          "sh:definition": {
-            "en": "Standard units of measurements used when accounting for stock, and expressing them in quantities."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "uom"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#uom"
-        },
-        {
-          "sh:definition": {
-            "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "value"
-          },
-          "sh:path": "https://qudt.org/schema/qudt/value"
-        }
-      ],
-      "sh:targetClass": "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#CadastralParcelShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#Building",
-          "sh:name": {
-            "en": "building"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#building"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/building#CadastralParcel"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#3DobjectShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.opengis.net/ont/gml#Solid"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#DirectPositionShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
-          "sh:definition": {
-            "en": "Direct position expressed in gml format."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "gml"
-          },
-          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "The way the point was determined."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "method"
-          },
-          "sh:path": "http://www.opengis.net/ont/sf#method"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
-          "sh:definition": {
-            "en": "Direct position expressed in wkt format."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "wkt"
-          },
-          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
-        }
-      ],
-      "sh:targetClass": "http://www.opengis.net/ont/sf#DirectPosition"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#MultiCurveShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.opengis.net/ont/sf#MultiCurve"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#MultiSurfaceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.opengis.net/ont/sf#MultiSurface"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#PointShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.opengis.net/ont/sf#Point"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#PolygonShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.opengis.net/ont/sf#Polygon"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#URIShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#anyURI"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#TextShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [],
-      "sh:targetClass": "http://www.w3.org/2001/XMLSchema#string"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingNatureValueShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#HydrantTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#CurrentUseValueShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#PipeTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#MeasuringMethodShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#UsageShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#SourceStatusValueShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#StatusShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#PipeDiameterShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -981,59 +386,71 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://purl.org/dc/terms/Agent",
-          "sh:definition": {
-            "en": "Link to the agent who issued the identifier."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "assignedBy"
-          },
-          "sh:path": "http://purl.org/dc/terms/creator"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "Name of the agent who assigned the identifier."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "assignedByString"
-          },
-          "sh:path": "http://www.w3.org/ns/adms#schemaAgency"
-        },
-        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "Time when the identifier was issued."
+            "en": "The date on which the Identifier was assigned."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "assignedOn"
+            "en": "dateOfIssue"
           },
-          "sh:path": "http://purl.org/dc/terms/issued"
+          "sh:path": "http://www.w3.org/ns/adms#dateOfIssue"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "String used to uniquely identify the object. "
+            "en": "The value of this property is the Identifier itself."
           },
           "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
-            "en": "identifier"
+            "en": "Identifier"
           },
-          "sh:path": "http://www.w3.org/2004/02/skos/core#notation"
+          "sh:path": "http://www.w3.org/ns/adms#identifier"
         },
         {
-          "sh:class": "http://vocab.belgif.be/ns/building#StructuredIdentificator",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "Identifier of the object broken down into its parts."
+            "en": "The name of the agency responsible for issuing the Identifier."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "structuredIdentificator"
+            "en": "issuingAuthorityName"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#structuredIdentificator"
+          "sh:path": "http://www.w3.org/ns/adms#issuingAuthorityName"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "The URI of the issuing authority."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "issuingAuthorityURI"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#issuingAuthorityURI"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "Name of the scheme used to construct the identifier."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "schemeName"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#schemeName"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "URI of the scheme used to construct the identifier."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "schemeURI"
+          },
+          "sh:path": "http://www.w3.org/ns/adms#schemeURI"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/adms#Identifier"
@@ -1044,115 +461,18 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "Name of a geographical area or locality that groups a number of addressable objects for the purpose of addressing them without the area or locality being an administrative unit."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "addressArea"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#addressArea"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "The name or names of a unit of administration where a Member State has and/or exercises jurisdictional rights, for local, regional and national governance."
-          },
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "adminUnit"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#adminUnit"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "Highest Administrative Unit of address, usually a country."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "administrativeUnitLevel1"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#adminUnitL1"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "The region of the address, usually a province or state or similar area typically comprising several towns."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "administrativeUnitLevel2"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#adminUnitL2"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "en": "Officially assigned alphanumeric code added to the house number to distinguish multiple building units, pitches, moorings or plots that have the same house number."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "boxNumber"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#Adresvoorstelling.busnummer"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "Country in which the address is located."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "country"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#country"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "The complete address in one string, formatted or not."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "fullAddress"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#fullAddress"
-        },
-        {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
             "en": "Alphanumeric code officially assigned to building units, berths, pitches or parcels."
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "housenumber"
+            "en": "houseNumber"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#Adresvoorstelling.huisnummer"
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#houseNumber"
         },
         {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "Name or description of the geographic object that the address locator identifies."
-          },
-          "sh:name": {
-            "en": "locationName"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#locatorName"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "en": "Alphanumeric code that uniquely identifies the address locator within the street, administrative unit, etc."
-          },
-          "sh:name": {
-            "en": "locatorDesignator"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#locatorDesignator"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
+          "sh:class": "http://vocab.belgif.be/ns/hydrant#GeographicalName",
           "sh:definition": {
             "en": "Municipal name of the address."
           },
@@ -1160,29 +480,7 @@
           "sh:name": {
             "en": "municipalityName"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#municipalityName"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
-          "sh:definition": {
-            "en": "PO Box number in a post office."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "poBox"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#poBox"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "Name designating the geographical area that groups addresses for postal purposes."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "postName"
-          },
-          "sh:path": "http://www.w3.org/ns/locn#postName"
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#municipalityName"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
@@ -1191,31 +489,20 @@
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "postalcode"
+            "en": "postcode"
           },
-          "sh:path": "http://www.w3.org/ns/locn#postCode"
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#postcode"
         },
         {
-          "sh:class": "http://vocab.belgif.be/ns/building#Address",
+          "sh:class": "http://vocab.belgif.be/ns/hydrant#GeographicalName",
           "sh:definition": {
-            "en": "Address from which the address representation is derived."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "reference"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#reference"
-        },
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#GeographicalName",
-          "sh:definition": {
-            "en": "Streetname of the address"
+            "en": "Streetname of the address."
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "streetname"
           },
-          "sh:path": "http://www.w3.org/ns/locn#thoroughfare"
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#streetname"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/locn#Address"
@@ -1226,128 +513,158 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "Geometry expressed in gml format."
+            "en": "The coordinate list."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
+          "sh:name": {
+            "en": "coordinates"
+          },
+          "sh:path": "https://www.w3.org/ns/locn#coordinates"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#anyURI",
+          "sh:definition": {
+            "en": "An identifier for the coordinate reference system."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "crs"
+          },
+          "sh:path": "https://www.w3.org/ns/locn#crs"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The geometry type, e.g. point, line or polygon."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "geometryType"
+          },
+          "sh:path": "https://www.w3.org/ns/locn#geometryType"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
+          "sh:definition": {
+            "en": "The geometry written in Geography Markup Language."
+          },
+          "sh:maxCount": "1",
           "sh:name": {
             "en": "gml"
           },
-          "sh:path": "http://www.opengis.net/ont/geosparql#asGML"
+          "sh:path": "https://www.w3.org/ns/locn#gml"
         },
         {
-          "sh:datatype": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "The way the point was determined."
+            "en": "The latitude."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "method"
+            "en": "latitude"
           },
-          "sh:path": "http://www.opengis.net/ont/sf#method"
+          "sh:path": "https://www.w3.org/ns/locn#latitude"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "The longitude."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "longitude"
+          },
+          "sh:path": "https://www.w3.org/ns/locn#longitude"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "Geometry expressed in wkt format."
+            "en": "The well-known text representation string describing the point, line or polygon."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "wkt"
           },
-          "sh:path": "http://www.opengis.net/ont/geosparql#asWKT"
+          "sh:path": "https://www.w3.org/ns/locn#wkt"
         }
       ],
       "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#BuildingGeometry2DShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#ContactPointShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/ns/locn#Geometry",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "2D or 2.5D geometric representation of the building."
+            "en": "A property through which an e-mail address for the organisation, or a representative of it, can be contacted."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "geometry"
+            "en": "hasEmail"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#geometry"
+          "sh:path": "https://schema.org/hasEmail"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "Element of the building that was captured by (X,Y) coordinates"
+            "en": "A property through which an emergency phone number for the organisation, or a representative of it, can be contacted."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "horizontalGeometryReference"
+            "en": "hasEmergencyTelephone"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#BuildingGeometry2D.horizontalGeometryReference"
+          "sh:path": "https://schema.org/hasEmergencyTelephone"
         },
         {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "Element of the building that was captured by vertical coordinates."
+            "en": "A property through which a phone number  for the organisation, or a representative of it, can be contacted."
           },
           "sh:maxCount": "1",
+          "sh:minCount": "1",
           "sh:name": {
-            "en": "verticalGeometryReference"
+            "en": "hasTelephone"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#verticalGeometryReference"
+          "sh:path": "https://schema.org/hasTelephone"
         }
       ],
-      "sh:targetClass": "https://data.vlaanderen.be/ns/gebouw#2DGebouwgeometrie"
+      "sh:targetClass": "https://schema.org/ContactPoint"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#DocumentShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#OrganizationShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "sh:class": "https://schema.org/ContactPoint",
           "sh:definition": {
-            "en": "Date of validity of the document."
+            "en": "A class representing a point of contact."
           },
-          "sh:maxCount": "1",
           "sh:name": {
-            "en": "date"
+            "en": "ContactPoint"
           },
-          "sh:path": "http://vocab.belgif.be/ns/building#date"
+          "sh:path": "https://schema.org/ContactPoint"
         },
         {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "A short text providing overview of the document content. May be just title of the document."
-          },
-          "sh:maxCount": "1",
-          "sh:name": {
-            "en": "documentDescription"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#documentDescription"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "The status of the document, i.e. this attribute indicates if the document comes from official source or not."
-          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
-          "sh:name": {
-            "en": "sourceStatus"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#sourceStatus"
+          "sh:path": "http://www.w3.org/ns/org#role"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:path": "http://www.w3.org/ns/org#type"
         }
       ],
-      "sh:targetClass": "https://schema.org/DigitalDocument"
+      "sh:targetClass": "https://www.w3.org/ns/org#Organization"
     }
   ]
 }
