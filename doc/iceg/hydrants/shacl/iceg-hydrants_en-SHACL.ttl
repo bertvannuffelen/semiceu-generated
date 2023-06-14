@@ -6,9 +6,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/iceg-hydrants_en> <https://semiceu.github.io/shacl/iceg-hydrants_enshapes> <https://semiceu.github.io/shacl/iceg-hydrants_en#FireHydrantShape>,
-    <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeShape>,
-    <https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape>,
+<https://semiceu.github.io/shacl/iceg-hydrants_en> <https://semiceu.github.io/shacl/iceg-hydrants_enshapes> <https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#HydrantTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#UsageShape>,
@@ -17,6 +15,8 @@
     <https://semiceu.github.io/shacl/iceg-hydrants_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#GeometryShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#FireHydrantShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#ContactPointShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#OrganizationShape> .
 
@@ -81,28 +81,28 @@
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:definition "The address representation that corresponds to the object."@en;
     shacl:name "address"@en;
-    shacl:path <http://fixme.com#address>
+    shacl:path <https://saref.etsi.org/saref4watr/address>
   ], [
     shacl:datatype xsd:integer;
     shacl:definition "The nominal rate at which water flows through the hydrant, typically measured in liters per second."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "flowRate"@en;
-    shacl:path <http://fixme.com#flowRate>
+    shacl:path <https://saref.etsi.org/saref4watr/flowRate>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
     shacl:definition "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."@en;
     shacl:maxCount 1;
     shacl:name "geometry"@en;
-    shacl:path <http://fixme.com#geometry>
+    shacl:path <https://saref.etsi.org/saref4watr/geometry>
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."@en;
     shacl:maxCount 1;
     shacl:name "identifier"@en;
-    shacl:path <http://fixme.com#identifier>
+    shacl:path <https://saref.etsi.org/saref4watr/identifier>
   ], [
-    shacl:class <http://fixme.com#Pipe>;
+    shacl:class <https://saref.etsi.org/saref4watr/Pipe>;
     shacl:definition "A pipe is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure)."@en;
     shacl:name "is connected"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
@@ -116,49 +116,49 @@
     shacl:definition "The date of the most recently performed inspection of a hydrant."@en;
     shacl:maxCount 1;
     shacl:name "lastInspectionDate"@en;
-    shacl:path <http://fixme.com#lastInspectionDate>
+    shacl:path <https://saref.etsi.org/saref4watr/lastInspectionDate>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Date on which the current version of the area or object starts to be used."@en;
     shacl:maxCount 1;
     shacl:name "startDate"@en;
-    shacl:path <http://fixme.com#startDate>
+    shacl:path <https://saref.etsi.org/saref4watr/startDate>
   ], [
     shacl:class skos:Concept;
     shacl:definition "Entity status."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "status"@en;
-    shacl:path <http://fixme.com#status>
+    shacl:path <https://saref.etsi.org/saref4watr/status>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The type of hydrant."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
+    shacl:path <https://saref.etsi.org/saref4watr/type>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The permitted usage of the hydrant."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "usage"@en;
-    shacl:path <http://fixme.com#usage>
+    shacl:path <https://saref.etsi.org/saref4watr/usage>
   ], [
     shacl:datatype xsd:integer;
     shacl:definition "The diameter of the valve of a hydrant."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "valveDiameter"@en;
-    shacl:path <http://fixme.com#valveDiameter>
+    shacl:path <https://saref.etsi.org/saref4watr/valveDiameter>
   ], [
     shacl:definition "A valve is a device designed to control water flow, pressure or volume."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "valveType"@en;
-    shacl:path <http://fixme.com#valveType>
+    shacl:path <https://saref.etsi.org/saref4watr/valveType>
   ];
-  shacl:targetClass <http://fixme.com#FireHydrant> .
+  shacl:targetClass <https://saref.etsi.org/saref4watr/FireHydrant> .
 
 <https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape> a shacl:NodeShape;
   shacl:closed false;
@@ -309,9 +309,9 @@
     shacl:class <http://www.w3.org/ns/locn#Address>;
     shacl:definition "The address representation that corresponds to the object."@en;
     shacl:name "address"@en;
-    shacl:path <http://fixme.com#address>
+    shacl:path <https://saref.etsi.org/saref4watr/address>
   ], [
-    shacl:class <http://fixme.com#FireHydrant>;
+    shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
     shacl:name "contains"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#contains>
   ], [
@@ -320,18 +320,18 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "diameter"@en;
-    shacl:path <http://fixme.com#diameter>
+    shacl:path <https://saref.etsi.org/saref4watr/diameter>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
     shacl:definition "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."@en;
     shacl:maxCount 1;
     shacl:name "geometry"@en;
-    shacl:path <http://fixme.com#geometry>
+    shacl:path <https://saref.etsi.org/saref4watr/geometry>
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
-    shacl:path <http://fixme.com#identifier>
+    shacl:path <https://saref.etsi.org/saref4watr/identifier>
   ], [
-    shacl:class <http://fixme.com#Pipe>;
+    shacl:class <https://saref.etsi.org/saref4watr/Pipe>;
     shacl:definition "A pipe is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure)."@en;
     shacl:name "is connected"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
@@ -341,7 +341,7 @@
     shacl:name "is managed by"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isManagedBy>
   ], [
-    shacl:class <http://fixme.com#FireHydrant>;
+    shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
     shacl:definition "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."@en;
     shacl:name "is supplied"@en;
     shacl:path <https://saref.etsi.org/saref4watr/FireHydrant>
@@ -350,15 +350,15 @@
     shacl:definition "Entity status."@en;
     shacl:maxCount 1;
     shacl:name "status"@en;
-    shacl:path <http://fixme.com#status>
+    shacl:path <https://saref.etsi.org/saref4watr/status>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The type of pipe."@en;
     shacl:maxCount 1;
     shacl:name "type"@en;
-    shacl:path <http://fixme.com#type>
+    shacl:path <https://saref.etsi.org/saref4watr/type>
   ];
-  shacl:targetClass <http://fixme.com#Pipe> .
+  shacl:targetClass <https://saref.etsi.org/saref4watr/Pipe> .
 
 <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeTypeShape> a shacl:NodeShape;
   shacl:closed false;
