@@ -115,7 +115,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "The date on which yhe descent is registered."
+            "en": "The date on which the descent is registered."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -348,6 +348,26 @@
       "sh:targetClass": "http://vocab.belgif.be/ns/person#RegisteredPerson"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-person-ap_en#ResidenceShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "Address of the place of residence."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "residence address"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/person#residenceAddress"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/person#Residence"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-person-ap_en#ResidencyShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -365,7 +385,7 @@
           "sh:path": "http://vocab.belgif.be/ns/person#Residency.person"
         },
         {
-          "sh:class": "http://vocab.belgif.be/ns/person#residence",
+          "sh:class": "http://vocab.belgif.be/ns/person#Residence",
           "sh:definition": {
             "en": "Place where the person resides."
           },
@@ -390,26 +410,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://vocab.belgif.be/ns/person#TemporaryResident"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-person-ap_en#residenceShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://www.w3.org/ns/locn#Address",
-          "sh:definition": {
-            "en": "Address of the place of residence."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "residence address"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/person#residenceAddress"
-        }
-      ],
-      "sh:targetClass": "http://vocab.belgif.be/ns/person#residence"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-person-ap_en#AgentShape",
@@ -446,7 +446,7 @@
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "Name of the place."
+            "en": "Name of the place or of the aera."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -522,7 +522,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
           "sh:definition": {
-            "en": "Alternative name of the Person."
+            "en": "Alternative name of the person."
           },
           "sh:name": {
             "en": "alternative name"
@@ -666,7 +666,7 @@
         {
           "sh:class": "http://vocab.belgif.be/ns/person#Household",
           "sh:definition": {
-            "en": "Person who usually represents the household."
+            "en": "Household where the person is the head of."
           },
           "sh:maxCount": "1",
           "sh:name": {

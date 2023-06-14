@@ -28,10 +28,10 @@
     <https://semiceu.github.io/shacl/iceg-person-ap_en#PersonalEventShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#PersonalRelationShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#RegisteredPersonShape>,
+    <https://semiceu.github.io/shacl/iceg-person-ap_en#ResidenceShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#ResidencyShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#ResidentShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#TemporaryResidentShape>,
-    <https://semiceu.github.io/shacl/iceg-person-ap_en#residenceShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#AgentShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#JurisdictionShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_en#PlaceShape>,
@@ -109,7 +109,7 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:dateTime;
-    shacl:definition "The date on which yhe descent is registered."@en;
+    shacl:definition "The date on which the descent is registered."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "date of descent"@en;
@@ -236,7 +236,7 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype xsd:string;
-    shacl:definition "Alternative name of the Person."@en;
+    shacl:definition "Alternative name of the person."@en;
     shacl:name "alternative name"@en;
     shacl:path <http://vocab.belgif.be/ns/person#alternativeName>
   ], [
@@ -315,7 +315,7 @@
     shacl:path <http://vocab.belgif.be/ns/person#hasRelationWith>
   ], [
     shacl:class <http://vocab.belgif.be/ns/person#Household>;
-    shacl:definition "Person who usually represents the household."@en;
+    shacl:definition "Household where the person is the head of."@en;
     shacl:maxCount 1;
     shacl:name "head of"@en;
     shacl:path <http://vocab.belgif.be/ns/person#headOf>
@@ -388,7 +388,7 @@
   shacl:closed false;
   shacl:property [
     shacl:datatype rdf:langString;
-    shacl:definition "Name of the place."@en;
+    shacl:definition "Name of the place or of the aera."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "place name"@en;
@@ -408,6 +408,18 @@
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/person#RegisteredPerson> .
 
+<https://semiceu.github.io/shacl/iceg-person-ap_en#ResidenceShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Address of the place of residence."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "residence address"@en;
+    shacl:path <http://vocab.belgif.be/ns/person#residenceAddress>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Residence> .
+
 <https://semiceu.github.io/shacl/iceg-person-ap_en#ResidencyShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -421,7 +433,7 @@
     shacl:minCount 1;
     shacl:path <http://vocab.belgif.be/ns/person#Residency.person>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/person#residence>;
+    shacl:class <http://vocab.belgif.be/ns/person#Residence>;
     shacl:definition "Place where the person resides."@en;
     shacl:name "has residence"@en;
     shacl:path <http://vocab.belgif.be/ns/person#hasResidence>
@@ -435,15 +447,3 @@
 <https://semiceu.github.io/shacl/iceg-person-ap_en#TemporaryResidentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/person#TemporaryResident> .
-
-<https://semiceu.github.io/shacl/iceg-person-ap_en#residenceShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Address of the place of residence."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "residence address"@en;
-    shacl:path <http://vocab.belgif.be/ns/person#residenceAddress>
-  ];
-  shacl:targetClass <http://vocab.belgif.be/ns/person#residence> .

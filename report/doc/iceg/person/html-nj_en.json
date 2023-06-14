@@ -12,8 +12,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/77337b82023e37e2700d13191dd868cb5c493b6e",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/77337b82023e37e2700d13191dd868cb5c493b6e/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/99a642b7391f28aa538c81aaea1b457541b2e8c4",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/99a642b7391f28aa538c81aaea1b457541b2e8c4/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -153,7 +153,9 @@
       "description": {
         "en": "Status of a person according to civil law."
       },
-      "usage": {},
+      "usage": {
+        "en": "Refers to marriage, partner registration, parentage, guardianship, etc. In other words, it is the state of certain relationships between persons."
+      },
       "parents": [],
       "properties": [
         {
@@ -201,9 +203,11 @@
       },
       "sort": "Cohabitation",
       "description": {
-        "en": "Arrangement whereby two people who are not married live together. Can, just like a marriage, form the basis of a household. Can be legally registered."
+        "en": "Arrangement whereby two people who are not married live together."
       },
-      "usage": {},
+      "usage": {
+        "en": "Can, just like a marriage, form the basis of a household. Can be legally registered."
+      },
       "parents": [
         {
           "label": "Personal relation",
@@ -223,7 +227,7 @@
       },
       "sort": "Decease",
       "description": {
-        "en": "death of a person."
+        "en": "Death of a person."
       },
       "usage": {},
       "parents": [
@@ -268,7 +272,7 @@
             "en": "date of descent"
           },
           "description": {
-            "en": "The date on which yhe descent is registered."
+            "en": "The date on which the descent is registered."
           },
           "usage": {},
           "domain": [
@@ -305,7 +309,9 @@
           "description": {
             "en": "Type of descent."
           },
-          "usage": {},
+          "usage": {
+            "en": "E.g. adopted, child from marriage, recognized by the father, etc."
+          },
           "domain": [
             {
               "EA-Name": "Descent",
@@ -348,9 +354,9 @@
       "parents": [
         {
           "label": "Residence",
-          "name": "residence",
+          "name": "Residence",
           "package": "ICEG-Person",
-          "uri": "http://vocab.belgif.be/ns/person#residence",
+          "uri": "http://vocab.belgif.be/ns/person#Residence",
           "scoped_uri": "#Residence"
         }
       ],
@@ -546,7 +552,9 @@
       "description": {
         "en": "Relation between members of the same household."
       },
-      "usage": {},
+      "usage": {
+        "en": "E.g. husband, son, mother-in-law."
+      },
       "parents": [
         {
           "label": "Personal relation",
@@ -980,6 +988,56 @@
       ]
     },
     {
+      "uri": "http://vocab.belgif.be/ns/person#Residence",
+      "name": "Residence",
+      "label": {
+        "en": "Residence"
+      },
+      "sort": "Residence",
+      "description": {
+        "en": "Place where a Person lives or stays permanently or temporarily."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/person#residenceAddress",
+          "name": "residence address",
+          "sort": "residence address",
+          "label": {
+            "en": "residence address"
+          },
+          "description": {
+            "en": "Address of the place of residence."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Residence",
+              "uri": "http://vocab.belgif.be/ns/person#Residence"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AddressRepresentation",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Address representation",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "Address representation"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
       "uri": "http://vocab.belgif.be/ns/person#Residency",
       "name": "Residency",
       "label": {
@@ -1073,14 +1131,14 @@
           ],
           "range": [
             {
-              "range_label": "residence",
-              "range_uri": "http://vocab.belgif.be/ns/person#residence"
+              "range_label": "Residence",
+              "range_uri": "http://vocab.belgif.be/ns/person#Residence"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Residence",
-              "range_puri": "http://vocab.belgif.be/ns/person#residence",
+              "range_puri": "http://vocab.belgif.be/ns/person#Residence",
               "range_label": {
                 "en": "Residence"
               }
@@ -1138,56 +1196,6 @@
         }
       ],
       "properties": []
-    },
-    {
-      "uri": "http://vocab.belgif.be/ns/person#residence",
-      "name": "Residence",
-      "label": {
-        "en": "Residence"
-      },
-      "sort": "Residence",
-      "description": {
-        "en": "Place where a Person lives or stays permanently or temporarily."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://vocab.belgif.be/ns/person#residenceAddress",
-          "name": "residence address",
-          "sort": "residence address",
-          "label": {
-            "en": "residence address"
-          },
-          "description": {
-            "en": "Address of the place of residence."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "residence",
-              "uri": "http://vocab.belgif.be/ns/person#residence"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "AddressRepresentation",
-              "range_uri": "http://www.w3.org/ns/locn#Address"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Address representation",
-              "range_puri": "http://www.w3.org/ns/locn#Address",
-              "range_label": {
-                "en": "Address representation"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
     },
     {
       "uri": "http://purl.org/dc/terms/Agent",
@@ -1274,7 +1282,7 @@
             "en": "place name"
           },
           "description": {
-            "en": "Name of the place."
+            "en": "Name of the place or of the aera."
           },
           "usage": {},
           "domain": [
@@ -1358,7 +1366,7 @@
             "en": "alternative name"
           },
           "description": {
-            "en": "Alternative name of the Person."
+            "en": "Alternative name of the person."
           },
           "usage": {},
           "domain": [
@@ -1638,7 +1646,7 @@
             "en": "head of"
           },
           "description": {
-            "en": "Person who usually represents the household."
+            "en": "Household where the person is the head of."
           },
           "usage": {},
           "domain": [
@@ -1927,7 +1935,7 @@
             "en": "Part of person's full name received from the previous generation."
           },
           "usage": {
-            "en": "Clled family name because it indicates a familial relationship."
+            "en": "Called family name because it indicates a familial relationship."
           },
           "domain": [
             {

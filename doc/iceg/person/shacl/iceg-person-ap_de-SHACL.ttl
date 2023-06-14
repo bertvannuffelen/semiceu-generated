@@ -28,10 +28,10 @@
     <https://semiceu.github.io/shacl/iceg-person-ap_de#PersonalEventShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#PersonalRelationShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#RegisteredPersonShape>,
+    <https://semiceu.github.io/shacl/iceg-person-ap_de#ResidenceShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#ResidencyShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#ResidentShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#TemporaryResidentShape>,
-    <https://semiceu.github.io/shacl/iceg-person-ap_de#residenceShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#AgentShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#JurisdictionShape>,
     <https://semiceu.github.io/shacl/iceg-person-ap_de#PlaceShape>,
@@ -408,6 +408,18 @@
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/person#RegisteredPerson> .
 
+<https://semiceu.github.io/shacl/iceg-person-ap_de#ResidenceShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/person#residenceAddress>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/person#Residence> .
+
 <https://semiceu.github.io/shacl/iceg-person-ap_de#ResidencyShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -421,7 +433,7 @@
     shacl:minCount 1;
     shacl:path <http://vocab.belgif.be/ns/person#Residency.person>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/person#residence>;
+    shacl:class <http://vocab.belgif.be/ns/person#Residence>;
     shacl:definition "Enter your translation here"@de;
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/person#hasResidence>
@@ -435,15 +447,3 @@
 <https://semiceu.github.io/shacl/iceg-person-ap_de#TemporaryResidentShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass <http://vocab.belgif.be/ns/person#TemporaryResident> .
-
-<https://semiceu.github.io/shacl/iceg-person-ap_de#residenceShape> a shacl:NodeShape;
-  shacl:closed false;
-  shacl:property [
-    shacl:class <http://www.w3.org/ns/locn#Address>;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/person#residenceAddress>
-  ];
-  shacl:targetClass <http://vocab.belgif.be/ns/person#residence> .
