@@ -122,7 +122,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <!--<dt>Source</dt><dd><br></dd>-->
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/16e068b5f0dae3dd78186c5df16fb0aa2220ebe7/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/16e068b5f0dae3dd78186c5df16fb0aa2220ebe7/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/5f708d499a3597a09accf9e996a05682d3a02bbe/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/5f708d499a3597a09accf9e996a05682d3a02bbe/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -298,7 +298,10 @@
                       <a href="#ContactPoint">ContactPoint</a> |
                       <a href="#FireHydrant">FireHydrant</a> |
                       <a href="#Organization">Organization</a> |
+                      <a href="#Outlet">Outlet</a> |
                       <a href="#Pipe">Pipe</a> |
+                      <a href="#SourceAsset">SourceAsset</a> |
+                      <a href="#Valve">Valve</a> |
                     </p>
                   </div>
                   
@@ -337,9 +340,8 @@
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#ContactPoint%3AhasEmail">hasEmail</a>, 
-                      <a href="#ContactPoint%3AhasEmergencyTelephone">hasEmergencyTelephone</a>, 
-                      <a href="#ContactPoint%3AhasTelephone">hasTelephone</a>.</dd>
+                      <a href="#ContactPoint%3Ahas%20email">has email</a>, 
+                      <a href="#ContactPoint%3Ahas%20telephone">has telephone</a>.</dd>
                     
                   </dl>
                 </div>
@@ -359,11 +361,11 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="ContactPoint%3AhasEmail" typeof="rdfs:Property" resource="https://schema.org/hasEmail">
+                      <tr id="ContactPoint%3Ahas%20email" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/email">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://schema.org/hasEmail" data-toggle="tooltip" data-content="https://schema.org/hasEmail" data-placement="right">
-                            hasEmail</a>
+                            <a href="http://data.europa.eu/m8g/email" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/email" data-placement="right">
+                            has email</a>
                           </code>
                         </td>
                         <td>
@@ -373,17 +375,17 @@
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A property through which an e-mail address for the organisation, or a representative of it, can be contacted.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="ContactPoint%3AhasEmergencyTelephone" typeof="rdfs:Property" resource="https://schema.org/hasEmergencyTelephone">
+                      <tr id="ContactPoint%3Ahas%20telephone" typeof="rdfs:Property" resource="http://data.europa.eu/m8g/telephone">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://schema.org/hasEmergencyTelephone" data-toggle="tooltip" data-content="https://schema.org/hasEmergencyTelephone" data-placement="right">
-                            hasEmergencyTelephone</a>
+                            <a href="http://data.europa.eu/m8g/telephone" data-toggle="tooltip" data-content="http://data.europa.eu/m8g/telephone" data-placement="right">
+                            has telephone</a>
                           </code>
                         </td>
                         <td>
@@ -393,27 +395,7 @@
                             
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment">A property through which an emergency phone number for the organisation, or a representative of it, can be contacted.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="ContactPoint%3AhasTelephone" typeof="rdfs:Property" resource="https://schema.org/hasTelephone">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://schema.org/hasTelephone" data-toggle="tooltip" data-content="https://schema.org/hasTelephone" data-placement="right">
-                            hasTelephone</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2000/01/rdf-schema#Literal" data-toggle="tooltip" data-content="http://www.w3.org/2000/01/rdf-schema#Literal" data-placement="right">Literal</a>
-                            
-                          
-                        </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">A property through which a phone number  for the organisation, or a representative of it, can be contacted.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -436,18 +418,16 @@
 		     
                     <dd>For this entity the following properties are defined:
                       <a href="#FireHydrant%3Aaddress">address</a>, 
-                      <a href="#FireHydrant%3AflowRate">flowRate</a>, 
+                      <a href="#FireHydrant%3Aflow%20rate">flow rate</a>, 
                       <a href="#FireHydrant%3Ageometry">geometry</a>, 
                       <a href="#FireHydrant%3Aidentifier">identifier</a>, 
                       <a href="#FireHydrant%3Ais%20connected">is connected</a>, 
                       <a href="#FireHydrant%3Ais%20managed%20by">is managed by</a>, 
-                      <a href="#FireHydrant%3AlastInspectionDate">lastInspectionDate</a>, 
-                      <a href="#FireHydrant%3AstartDate">startDate</a>, 
+                      <a href="#FireHydrant%3Alast%20inspection%20date">last inspection date</a>, 
+                      <a href="#FireHydrant%3Aopening%20key">opening key</a>, 
+                      <a href="#FireHydrant%3Astart%20date">start date</a>, 
                       <a href="#FireHydrant%3Astatus">status</a>, 
-                      <a href="#FireHydrant%3Atype">type</a>, 
-                      <a href="#FireHydrant%3Ausage">usage</a>, 
-                      <a href="#FireHydrant%3AvalveDiameter">valveDiameter</a>, 
-                      <a href="#FireHydrant%3AvalveType">valveType</a>.</dd>
+                      <a href="#FireHydrant%3Atype">type</a>.</dd>
                     
                   </dl>
                 </div>
@@ -487,11 +467,11 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="FireHydrant%3AflowRate" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/flowRate">
+                      <tr id="FireHydrant%3Aflow%20rate" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/flowRate">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://saref.etsi.org/saref4watr/flowRate" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/flowRate" data-placement="right">
-                            flowRate</a>
+                            flow rate</a>
                           </code>
                         </td>
                         <td>
@@ -501,7 +481,7 @@
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The nominal rate at which water flows through the hydrant, typically measured in liters per second.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -561,7 +541,7 @@
 			    
                           
                         </td>
-			<td></td>
+			<td>0..*</td>
                         <td property="rdfs:comment">A pipe is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure).</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -581,17 +561,17 @@
 			    
                           
                         </td>
-			<td></td>
+			<td>0..1</td>
                         <td property="rdfs:comment">Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
                     
-                      <tr id="FireHydrant%3AlastInspectionDate" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/lastInspectionDate">
+                      <tr id="FireHydrant%3Alast%20inspection%20date" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/lastInspectionDate">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://saref.etsi.org/saref4watr/lastInspectionDate" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/lastInspectionDate" data-placement="right">
-                            lastInspectionDate</a>
+                            last inspection date</a>
                           </code>
                         </td>
                         <td>
@@ -607,11 +587,31 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="FireHydrant%3AstartDate" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/startDate">
+                      <tr id="FireHydrant%3Aopening%20key" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/openingKey">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://saref.etsi.org/saref4watr/openingKey" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/openingKey" data-placement="right">
+                            opening key</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#OpeningKeyType" data-placement="right">OpeningKeyType</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A usually metal instrument by which the bolt of a lock is turned.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="FireHydrant%3Astart%20date" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/startDate">
                         <td>
                           <code property="rdfs:label">
                             <a href="https://saref.etsi.org/saref4watr/startDate" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/startDate" data-placement="right">
-                            startDate</a>
+                            start date</a>
                           </code>
                         </td>
                         <td>
@@ -641,7 +641,7 @@
 			    
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">Entity status.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -661,64 +661,8 @@
 			    
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment">The type of hydrant.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="FireHydrant%3Ausage" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/usage">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/saref4watr/usage" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/usage" data-placement="right">
-                            usage</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			    
-			    <a href="#Usage" data-placement="right">Usage</a>
-			    
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">The permitted usage of the hydrant.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="FireHydrant%3AvalveDiameter" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/valveDiameter">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/saref4watr/valveDiameter" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/valveDiameter" data-placement="right">
-                            valveDiameter</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#integer" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#integer" data-placement="right">Integer</a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">The diameter of the valve of a hydrant.</td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="FireHydrant%3AvalveType" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/valveType">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/saref4watr/valveType" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/valveType" data-placement="right">
-                            valveType</a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment">A valve is a device designed to control water flow, pressure or volume.</td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The particular kind of hydrant.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -739,9 +683,9 @@
                     <dt>Properties</dt>
 		     
                     <dd>For this entity the following properties are defined:
-                      <a href="#Organization%3A"></a>, 
-                      <a href="#Organization%3A"></a>, 
-                      <a href="#Organization%3Acontact%20point">contact point</a>.</dd>
+                      <a href="#Organization%3Acontact%20point">contact point</a>, 
+                      <a href="#Organization%3Aname">name</a>, 
+                      <a href="#Organization%3Atype">type</a>.</dd>
                     
                   </dl>
                 </div>
@@ -761,42 +705,6 @@
 
                     <tbody class="supertype">
                     
-                      <tr id="Organization%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#role">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#role" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#role" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
-                      <tr id="Organization%3A" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#type">
-                        <td>
-                          <code property="rdfs:label">
-                            <a href="http://www.w3.org/ns/org#type" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#type" data-placement="right">
-                            </a>
-                          </code>
-                        </td>
-                        <td>
-                          
-			     
-			    <a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a>
-                            
-                          
-                        </td>
-			<td>1</td>
-                        <td property="rdfs:comment"></td>
-                        <td property="skos:scopeNote"></td>
-                        <td></td>
-                      </tr>
-                    
                       <tr id="Organization%3Acontact%20point" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#contactPoint">
                         <td>
                           <code property="rdfs:label">
@@ -813,6 +721,144 @@
                         </td>
 			<td>0..*</td>
                         <td property="rdfs:comment">A class representing a point of contact.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Organization%3Aname" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#name">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/org#name" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#name" data-placement="right">
+                            name</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#string" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#string" data-placement="right">String</a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A word or phrase that constitutes the distinctive designation of an organisation.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Organization%3Atype" typeof="rdfs:Property" resource="http://www.w3.org/ns/org#type">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://www.w3.org/ns/org#type" data-toggle="tooltip" data-content="http://www.w3.org/ns/org#type" data-placement="right">
+                            type</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#boolean" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#boolean" data-placement="right">Boolean</a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The distinction between whether an organisation is a private or public entity.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Outlet"><a href="http://vocab.belgif.be/ns/hydrant#Outlet" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#Outlet" data-placement="right">Outlet</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A place or opening through which something is let out.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Outlet%3Adiameter">diameter</a>, 
+                      <a href="#Outlet%3Ahas%20number%20of%20outlet">has number of outlet</a>, 
+                      <a href="#Outlet%3Ais%20connected">is connected</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Outlet%3Adiameter" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#diameter">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/hydrant#diameter" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#diameter" data-placement="right">
+                            diameter</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#integer" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#integer" data-placement="right">Integer</a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The length of a straight line through the center of an object or space.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Outlet%3Ahas%20number%20of%20outlet" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet" data-placement="right">
+                            has number of outlet</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#integer" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#integer" data-placement="right">Integer</a>
+                            
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The number of outlets a given connection has.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Outlet%3Ais%20connected" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#isConnected">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/hydrant#isConnected" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#isConnected" data-placement="right">
+                            is connected</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#FireHydrant" data-placement="right">FireHydrant</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -837,12 +883,14 @@
                       <a href="#Pipe%3Aaddress">address</a>, 
                       <a href="#Pipe%3Acontains">contains</a>, 
                       <a href="#Pipe%3Adiameter">diameter</a>, 
+                      <a href="#Pipe%3Aflow%20pressure">flow pressure</a>, 
                       <a href="#Pipe%3Ageometry">geometry</a>, 
                       <a href="#Pipe%3Ais%20connected">is connected</a>, 
                       <a href="#Pipe%3Ais%20managed%20by">is managed by</a>, 
                       <a href="#Pipe%3Ais%20supplied">is supplied</a>, 
                       <a href="#Pipe%3Astatus">status</a>, 
-                      <a href="#Pipe%3Atype">type</a>.</dd>
+                      <a href="#Pipe%3Atype">type</a>, 
+                      <a href="#Pipe%3Awater%20type">water type</a>.</dd>
                     
                   </dl>
                 </div>
@@ -936,8 +984,28 @@
 			    
                           
                         </td>
-			<td>1</td>
-                        <td property="rdfs:comment">The diameter of a pipe.</td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The nominal diameter of the underground pipe going along the street that feeds (among other things) the hydrant.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Pipe%3Aflow%20pressure" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/flowPressure">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://saref.etsi.org/saref4watr/flowPressure" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/flowPressure" data-placement="right">
+                            flow pressure</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#integer" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#integer" data-placement="right">Integer</a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">Property indicating the pressure of a water flow.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1002,10 +1070,10 @@
                         <td></td>
                       </tr>
                     
-                      <tr id="Pipe%3Ais%20supplied" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/FireHydrant">
+                      <tr id="Pipe%3Ais%20supplied" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#isSupplied">
                         <td>
                           <code property="rdfs:label">
-                            <a href="https://saref.etsi.org/saref4watr/FireHydrant" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/FireHydrant" data-placement="right">
+                            <a href="http://vocab.belgif.be/ns/hydrant#isSupplied" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#isSupplied" data-placement="right">
                             is supplied</a>
                           </code>
                         </td>
@@ -1016,7 +1084,7 @@
 			    
                           
                         </td>
-			<td></td>
+			<td>0..*</td>
                         <td property="rdfs:comment">A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
@@ -1057,7 +1125,181 @@
                           
                         </td>
 			<td>0..1</td>
-                        <td property="rdfs:comment">The type of pipe.</td>
+                        <td property="rdfs:comment">The particular kind of pipe.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Pipe%3Awater%20type" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/waterType">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://saref.etsi.org/saref4watr/waterType" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/waterType" data-placement="right">
+                            water type</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#water type" data-placement="right">water type</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">he particular kind of liquid which is running through a pipe.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="SourceAsset"><a href="https://saref.etsi.org/saref4watr/SourceAsset" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/SourceAsset" data-placement="right">SourceAsset</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A source asset is a water asset that is a natural source of water (e.g., a lake or lagoon).</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#SourceAsset%3Aaddress">address</a>, 
+                      <a href="#SourceAsset%3Aestimated%20quantity">estimated quantity</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="SourceAsset%3Aaddress" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/address">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://saref.etsi.org/saref4watr/address" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/address" data-placement="right">
+                            address</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#AddressRepresentation" data-placement="right">AddressRepresentation</a>
+			    
+                          
+                        </td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">he address representation that corresponds to the object.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="SourceAsset%3Aestimated%20quantity" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/estimatedQuantity">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://saref.etsi.org/saref4watr/estimatedQuantity" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/estimatedQuantity" data-placement="right">
+                            estimated quantity</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#OpenWaterQuantity" data-placement="right">OpenWaterQuantity</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The amount of water which can be extracted from a natural water source.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                    </tbody>
+                  </table>
+                </div>
+      			  
+            </div>
+            
+              <div class="region region--no-space-top">
+              <h3 class="h3" id="Valve"><a href="https://saref.etsi.org/saref4watr/Valve" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/Valve" data-placement="right">Valve</a></h3>
+                <div class="region region--no-space-top">
+                  <dl>
+                    <dt>Description</dt><dd>A valve is a device designed to control water flow, pressure or volume.</dd>
+                    
+		    
+                    <dt>Properties</dt>
+		     
+                    <dd>For this entity the following properties are defined:
+                      <a href="#Valve%3Adiameter">diameter</a>, 
+                      <a href="#Valve%3Ais%20connected">is connected</a>.</dd>
+                    
+                  </dl>
+                </div>
+		 
+                <div class="u-table-overflow">
+                  <table class="data-table">
+                    <thead>
+                      <tr class="data-table__header">
+                        <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Property</th>
+                        <th class="data-table__header-title--sortable">Expected Range</th>
+			<th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">Usage</th>
+                        <th class="data-table__header-title--sortable">Codelist</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="supertype">
+                    
+                      <tr id="Valve%3Adiameter" typeof="rdfs:Property" resource="https://saref.etsi.org/saref4watr/diameter">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="https://saref.etsi.org/saref4watr/diameter" data-toggle="tooltip" data-content="https://saref.etsi.org/saref4watr/diameter" data-placement="right">
+                            diameter</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			     
+			    <a href="http://www.w3.org/2001/XMLSchema#integer" data-toggle="tooltip" data-content="http://www.w3.org/2001/XMLSchema#integer" data-placement="right">Integer</a>
+                            
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The length of a straight line through the center of an object or space.</td>
+                        <td property="skos:scopeNote"></td>
+                        <td></td>
+                      </tr>
+                    
+                      <tr id="Valve%3Ais%20connected" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#isConnected">
+                        <td>
+                          <code property="rdfs:label">
+                            <a href="http://vocab.belgif.be/ns/hydrant#isConnected" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#isConnected" data-placement="right">
+                            is connected</a>
+                          </code>
+                        </td>
+                        <td>
+                          
+			    
+			    <a href="#FireHydrant" data-placement="right">FireHydrant</a>
+			    
+                          
+                        </td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1465,7 +1707,7 @@ Concepts of this codelist should be used from the INSPIRE <a href="https://inspi
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..1</td>
                         <td property="rdfs:comment">The well-known text representation string describing the point, line or polygon.</td>
                         <td property="skos:scopeNote">Use "http://www.opengis.net/ont/geosparql#wktLiteral" as type for the literal.</td>
                         <td></td>
@@ -1546,7 +1788,7 @@ Concepts of this codelist should be used from the INSPIRE <a href="https://inspi
                             
                           
                         </td>
-			<td>1</td>
+			<td>0..*</td>
                         <td property="rdfs:comment">The value of this property is the Identifier itself.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>

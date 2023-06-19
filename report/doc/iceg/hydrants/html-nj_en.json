@@ -11,14 +11,134 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/16e068b5f0dae3dd78186c5df16fb0aa2220ebe7",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/16e068b5f0dae3dd78186c5df16fb0aa2220ebe7/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/5f708d499a3597a09accf9e996a05682d3a02bbe",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/5f708d499a3597a09accf9e996a05682d3a02bbe/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
     "usesAPs": []
   },
   "classes": [
+    {
+      "uri": "http://vocab.belgif.be/ns/hydrant#Outlet",
+      "name": "Outlet",
+      "label": {
+        "en": "Outlet"
+      },
+      "sort": "Outlet",
+      "description": {
+        "en": "A place or opening through which something is let out."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/hydrant#diameter",
+          "name": "diameter",
+          "sort": "diameter",
+          "label": {
+            "en": "diameter"
+          },
+          "description": {
+            "en": "The length of a straight line through the center of an object or space."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Outlet",
+              "uri": "http://vocab.belgif.be/ns/hydrant#Outlet"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet",
+          "name": "has number of outlet",
+          "sort": "has number of outlet",
+          "label": {
+            "en": "has number of outlet"
+          },
+          "description": {
+            "en": "The number of outlets a given connection has."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Outlet",
+              "uri": "http://vocab.belgif.be/ns/hydrant#Outlet"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/hydrant#isConnected",
+          "name": "is connected",
+          "sort": "is connected",
+          "label": {
+            "en": "is connected"
+          },
+          "description": {
+            "en": "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Outlet",
+              "uri": "http://vocab.belgif.be/ns/hydrant#Outlet"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FireHydrant",
+              "range_uri": "https://saref.etsi.org/saref4watr/FireHydrant"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#FireHydrant",
+              "range_puri": "https://saref.etsi.org/saref4watr/FireHydrant",
+              "range_label": {
+                "en": "FireHydrant"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
     {
       "uri": "https://saref.etsi.org/saref4watr/FireHydrant",
       "name": "FireHydrant",
@@ -64,7 +184,7 @@
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -99,7 +219,7 @@
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -139,10 +259,10 @@
         },
         {
           "uri": "https://saref.etsi.org/saref4watr/flowRate",
-          "name": "flowRate",
-          "sort": "flowRate",
+          "name": "flow rate",
+          "sort": "flow rate",
           "label": {
-            "en": "flowRate"
+            "en": "flow rate"
           },
           "description": {
             "en": "The nominal rate at which water flows through the hydrant, typically measured in liters per second."
@@ -169,7 +289,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -244,10 +364,10 @@
         },
         {
           "uri": "https://saref.etsi.org/saref4watr/lastInspectionDate",
-          "name": "lastInspectionDate",
-          "sort": "lastInspectionDate",
+          "name": "last inspection date",
+          "sort": "last inspection date",
           "label": {
-            "en": "lastInspectionDate"
+            "en": "last inspection date"
           },
           "description": {
             "en": "The date of the most recently performed inspection of a hydrant."
@@ -278,11 +398,46 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://saref.etsi.org/saref4watr/startDate",
-          "name": "startDate",
-          "sort": "startDate",
+          "uri": "https://saref.etsi.org/saref4watr/openingKey",
+          "name": "opening key",
+          "sort": "opening key",
           "label": {
-            "en": "startDate"
+            "en": "opening key"
+          },
+          "description": {
+            "en": "A usually metal instrument by which the bolt of a lock is turned."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "FireHydrant",
+              "uri": "https://saref.etsi.org/saref4watr/FireHydrant"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OpeningKeyType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OpeningKeyType",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "OpeningKeyType"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://saref.etsi.org/saref4watr/startDate",
+          "name": "start date",
+          "sort": "start date",
+          "label": {
+            "en": "start date"
           },
           "description": {
             "en": "Date on which the current version of the area or object starts to be used."
@@ -344,7 +499,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -355,7 +510,7 @@
             "en": "type"
           },
           "description": {
-            "en": "The type of hydrant."
+            "en": "The particular kind of hydrant."
           },
           "usage": {},
           "domain": [
@@ -379,99 +534,7 @@
               }
             }
           ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://saref.etsi.org/saref4watr/usage",
-          "name": "usage",
-          "sort": "usage",
-          "label": {
-            "en": "usage"
-          },
-          "description": {
-            "en": "The permitted usage of the hydrant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "FireHydrant",
-              "uri": "https://saref.etsi.org/saref4watr/FireHydrant"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Usage",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#Usage",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Usage"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://saref.etsi.org/saref4watr/valveDiameter",
-          "name": "valveDiameter",
-          "sort": "valveDiameter",
-          "label": {
-            "en": "valveDiameter"
-          },
-          "description": {
-            "en": "The diameter of the valve of a hydrant."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "FireHydrant",
-              "uri": "https://saref.etsi.org/saref4watr/FireHydrant"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Integer",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
-              "range_label": {
-                "en": "Integer"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://saref.etsi.org/saref4watr/valveType",
-          "name": "valveType",
-          "sort": "valveType",
-          "label": {
-            "en": "valveType"
-          },
-          "description": {
-            "en": "A valve is a device designed to control water flow, pressure or volume."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "FireHydrant",
-              "uri": "https://saref.etsi.org/saref4watr/FireHydrant"
-            }
-          ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -593,7 +656,7 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://saref.etsi.org/saref4watr/FireHydrant",
+          "uri": "http://vocab.belgif.be/ns/hydrant#isSupplied",
           "name": "is supplied",
           "sort": "is supplied",
           "label": {
@@ -624,7 +687,7 @@
               }
             }
           ],
-          "cardinality": "",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -670,7 +733,7 @@
             "en": "diameter"
           },
           "description": {
-            "en": "The diameter of a pipe."
+            "en": "The nominal diameter of the underground pipe going along the street that feeds (among other things) the hydrant."
           },
           "usage": {},
           "domain": [
@@ -694,7 +757,42 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://saref.etsi.org/saref4watr/flowPressure",
+          "name": "flow pressure",
+          "sort": "flow pressure",
+          "label": {
+            "en": "flow pressure"
+          },
+          "description": {
+            "en": "Property indicating the pressure of a water flow."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Pipe",
+              "uri": "https://saref.etsi.org/saref4watr/Pipe"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
@@ -806,7 +904,7 @@
             "en": "type"
           },
           "description": {
-            "en": "The type of pipe."
+            "en": "The particular kind of pipe."
           },
           "usage": {},
           "domain": [
@@ -832,6 +930,211 @@
           ],
           "cardinality": "0..1",
           "codelist_uri": ""
+        },
+        {
+          "uri": "https://saref.etsi.org/saref4watr/waterType",
+          "name": "water type",
+          "sort": "water type",
+          "label": {
+            "en": "water type"
+          },
+          "description": {
+            "en": "he particular kind of liquid which is running through a pipe."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Pipe",
+              "uri": "https://saref.etsi.org/saref4watr/Pipe"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "WaterType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#water type",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "water type"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://saref.etsi.org/saref4watr/SourceAsset",
+      "name": "SourceAsset",
+      "label": {
+        "en": "SourceAsset"
+      },
+      "sort": "SourceAsset",
+      "description": {
+        "en": "A source asset is a water asset that is a natural source of water (e.g., a lake or lagoon)."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "https://saref.etsi.org/saref4watr/address",
+          "name": "address",
+          "sort": "address",
+          "label": {
+            "en": "address"
+          },
+          "description": {
+            "en": "he address representation that corresponds to the object."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "SourceAsset",
+              "uri": "https://saref.etsi.org/saref4watr/SourceAsset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "AddressRepresentation",
+              "range_uri": "http://www.w3.org/ns/locn#Address"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#AddressRepresentation",
+              "range_puri": "http://www.w3.org/ns/locn#Address",
+              "range_label": {
+                "en": "AddressRepresentation"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://saref.etsi.org/saref4watr/estimatedQuantity",
+          "name": "estimated quantity",
+          "sort": "estimated quantity",
+          "label": {
+            "en": "estimated quantity"
+          },
+          "description": {
+            "en": "The amount of water which can be extracted from a natural water source."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "SourceAsset",
+              "uri": "https://saref.etsi.org/saref4watr/SourceAsset"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "OpenWaterQuantity",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#OpenWaterQuantity",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "OpenWaterQuantity"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "https://saref.etsi.org/saref4watr/Valve",
+      "name": "Valve",
+      "label": {
+        "en": "Valve"
+      },
+      "sort": "Valve",
+      "description": {
+        "en": "A valve is a device designed to control water flow, pressure or volume."
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://vocab.belgif.be/ns/hydrant#isConnected",
+          "name": "is connected",
+          "sort": "is connected",
+          "label": {
+            "en": "is connected"
+          },
+          "description": {
+            "en": "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Valve",
+              "uri": "https://saref.etsi.org/saref4watr/Valve"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "FireHydrant",
+              "range_uri": "https://saref.etsi.org/saref4watr/FireHydrant"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#FireHydrant",
+              "range_puri": "https://saref.etsi.org/saref4watr/FireHydrant",
+              "range_label": {
+                "en": "FireHydrant"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://saref.etsi.org/saref4watr/diameter",
+          "name": "diameter",
+          "sort": "diameter",
+          "label": {
+            "en": "diameter"
+          },
+          "description": {
+            "en": "The length of a straight line through the center of an object or space."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Valve",
+              "uri": "https://saref.etsi.org/saref4watr/Valve"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Integer",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#integer",
+              "range_label": {
+                "en": "Integer"
+              }
+            }
+          ],
+          "cardinality": "0..1",
+          "codelist_uri": ""
         }
       ]
     },
@@ -849,11 +1152,11 @@
       "parents": [],
       "properties": [
         {
-          "uri": "https://schema.org/hasEmail",
-          "name": "hasEmail",
-          "sort": "hasEmail",
+          "uri": "http://data.europa.eu/m8g/email",
+          "name": "has email",
+          "sort": "has email",
           "label": {
-            "en": "hasEmail"
+            "en": "has email"
           },
           "description": {
             "en": "A property through which an e-mail address for the organisation, or a representative of it, can be contacted."
@@ -880,50 +1183,15 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
-          "uri": "https://schema.org/hasEmergencyTelephone",
-          "name": "hasEmergencyTelephone",
-          "sort": "hasEmergencyTelephone",
+          "uri": "http://data.europa.eu/m8g/telephone",
+          "name": "has telephone",
+          "sort": "has telephone",
           "label": {
-            "en": "hasEmergencyTelephone"
-          },
-          "description": {
-            "en": "A property through which an emergency phone number for the organisation, or a representative of it, can be contacted."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "ContactPoint",
-              "uri": "https://schema.org/ContactPoint"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Literal",
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
-              "range_label": {
-                "en": "Literal"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://schema.org/hasTelephone",
-          "name": "hasTelephone",
-          "sort": "hasTelephone",
-          "label": {
-            "en": "hasTelephone"
+            "en": "has telephone"
           },
           "description": {
             "en": "A property through which a phone number  for the organisation, or a representative of it, can be contacted."
@@ -950,7 +1218,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1004,11 +1272,15 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://www.w3.org/ns/org#role",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "uri": "http://www.w3.org/ns/org#name",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
+          },
           "usage": {},
           "domain": [
             {
@@ -1016,17 +1288,34 @@
               "uri": "https://www.w3.org/ns/org#Organization"
             }
           ],
-          "range": [],
-          "scopedrange": [],
-          "cardinality": "1",
+          "range": [
+            {
+              "range_label": "String",
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_puri": "http://www.w3.org/2001/XMLSchema#string",
+              "range_label": {
+                "en": "String"
+              }
+            }
+          ],
+          "cardinality": "0..1",
           "codelist_uri": ""
         },
         {
           "uri": "http://www.w3.org/ns/org#type",
-          "name": "",
-          "sort": "",
-          "label": {},
-          "description": {},
+          "name": "type",
+          "sort": "type",
+          "label": {
+            "en": "type"
+          },
+          "description": {
+            "en": "The distinction between whether an organisation is a private or public entity."
+          },
           "usage": {},
           "domain": [
             {
@@ -1049,7 +1338,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]
@@ -1316,7 +1605,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..*",
           "codelist_uri": ""
         },
         {
@@ -1875,7 +2164,7 @@
               }
             }
           ],
-          "cardinality": "1",
+          "cardinality": "0..1",
           "codelist_uri": ""
         }
       ]

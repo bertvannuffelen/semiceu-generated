@@ -19,15 +19,11 @@
     },
     "ContactPoint": "https://schema.org/ContactPoint",
     "ContactPoint.hasEmail": {
-      "@id": "https://schema.org/hasEmail",
-      "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
-    },
-    "ContactPoint.hasEmergencyTelephone": {
-      "@id": "https://schema.org/hasEmergencyTelephone",
+      "@id": "http://data.europa.eu/m8g/email",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "ContactPoint.hasTelephone": {
-      "@id": "https://schema.org/hasTelephone",
+      "@id": "http://data.europa.eu/m8g/telephone",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
     "FireHydrant": "https://saref.etsi.org/saref4watr/FireHydrant",
@@ -54,13 +50,16 @@
       "@type": "@id"
     },
     "FireHydrant.isManagedBy": {
-      "@container": "@set",
       "@id": "http://vocab.belgif.be/ns/hydrant#isManagedBy",
       "@type": "@id"
     },
     "FireHydrant.lastInspectionDate": {
       "@id": "https://saref.etsi.org/saref4watr/lastInspectionDate",
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
+    },
+    "FireHydrant.openingKey": {
+      "@id": "https://saref.etsi.org/saref4watr/openingKey",
+      "@type": "@id"
     },
     "FireHydrant.startDate": {
       "@id": "https://saref.etsi.org/saref4watr/startDate",
@@ -73,18 +72,6 @@
     "FireHydrant.type": {
       "@id": "https://saref.etsi.org/saref4watr/type",
       "@type": "@id"
-    },
-    "FireHydrant.usage": {
-      "@id": "https://saref.etsi.org/saref4watr/usage",
-      "@type": "@id"
-    },
-    "FireHydrant.valveDiameter": {
-      "@id": "https://saref.etsi.org/saref4watr/valveDiameter",
-      "@type": "http://www.w3.org/2001/XMLSchema#integer"
-    },
-    "FireHydrant.valveType": {
-      "@id": "https://saref.etsi.org/saref4watr/valveType",
-      "@type": ""
     },
     "GeographicalName": "http://vocab.belgif.be/ns/building#GeographicalName",
     "GeographicalName.nameStatus": {
@@ -139,6 +126,7 @@
       "@type": "http://www.w3.org/2001/XMLSchema#dateTime"
     },
     "Identifier.identifier": {
+      "@container": "@set",
       "@id": "http://www.w3.org/ns/adms#identifier",
       "@type": "http://www.w3.org/2000/01/rdf-schema#Literal"
     },
@@ -158,19 +146,35 @@
       "@id": "http://www.w3.org/ns/adms#schemeURI",
       "@type": "http://www.w3.org/2001/XMLSchema#anyURI"
     },
+    "OpenWaterQuantity": "http://www.w3.org/2004/02/skos/core#Concept",
+    "OpeningKeyType": "http://www.w3.org/2004/02/skos/core#Concept",
     "Organization": "https://www.w3.org/ns/org#Organization",
     "Organization.contactPoint": {
       "@container": "@set",
       "@id": "http://vocab.belgif.be/ns/hydrant#contactPoint",
       "@type": "@id"
     },
-    "Organization.role": {
-      "@id": "http://www.w3.org/ns/org#role",
-      "@type": ""
+    "Organization.name": {
+      "@id": "http://www.w3.org/ns/org#name",
+      "@type": "http://www.w3.org/2001/XMLSchema#string"
     },
     "Organization.type": {
       "@id": "http://www.w3.org/ns/org#type",
       "@type": "http://www.w3.org/2001/XMLSchema#boolean"
+    },
+    "Outlet": "http://vocab.belgif.be/ns/hydrant#Outlet",
+    "Outlet.diameter": {
+      "@id": "http://vocab.belgif.be/ns/hydrant#diameter",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Outlet.hasNumberOfOutlet": {
+      "@container": "@set",
+      "@id": "http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Outlet.isConnected": {
+      "@id": "http://vocab.belgif.be/ns/hydrant#isConnected",
+      "@type": "@id"
     },
     "Pipe": "https://saref.etsi.org/saref4watr/Pipe",
     "Pipe.address": {
@@ -186,6 +190,10 @@
     "Pipe.diameter": {
       "@id": "https://saref.etsi.org/saref4watr/diameter",
       "@type": "@id"
+    },
+    "Pipe.flowPressure": {
+      "@id": "https://saref.etsi.org/saref4watr/flowPressure",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
     },
     "Pipe.geometry": {
       "@id": "https://saref.etsi.org/saref4watr/geometry",
@@ -208,7 +216,7 @@
     },
     "Pipe.isSupplied": {
       "@container": "@set",
-      "@id": "https://saref.etsi.org/saref4watr/FireHydrant",
+      "@id": "http://vocab.belgif.be/ns/hydrant#isSupplied",
       "@type": "@id"
     },
     "Pipe.status": {
@@ -219,9 +227,33 @@
       "@id": "https://saref.etsi.org/saref4watr/type",
       "@type": "@id"
     },
+    "Pipe.waterType": {
+      "@container": "@set",
+      "@id": "https://saref.etsi.org/saref4watr/waterType",
+      "@type": "@id"
+    },
     "PipeDiameter": "http://www.w3.org/2004/02/skos/core#Concept",
     "PipeType": "http://www.w3.org/2004/02/skos/core#Concept",
+    "SourceAsset": "https://saref.etsi.org/saref4watr/SourceAsset",
+    "SourceAsset.address": {
+      "@container": "@set",
+      "@id": "https://saref.etsi.org/saref4watr/address",
+      "@type": "@id"
+    },
+    "SourceAsset.estimatedQuantity": {
+      "@id": "https://saref.etsi.org/saref4watr/estimatedQuantity",
+      "@type": "@id"
+    },
     "Status": "http://www.w3.org/2004/02/skos/core#Concept",
-    "Usage": "http://www.w3.org/2004/02/skos/core#Concept"
+    "Valve": "https://saref.etsi.org/saref4watr/Valve",
+    "Valve.diameter": {
+      "@id": "https://saref.etsi.org/saref4watr/diameter",
+      "@type": "http://www.w3.org/2001/XMLSchema#integer"
+    },
+    "Valve.isConnected": {
+      "@id": "http://vocab.belgif.be/ns/hydrant#isConnected",
+      "@type": "@id"
+    },
+    "WaterType": "http://www.w3.org/2004/02/skos/core#Concept"
   }
 }

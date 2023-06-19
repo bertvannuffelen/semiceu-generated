@@ -40,6 +40,46 @@
   "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en",
   "shapes": [
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#OutletShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "The length of a straight line through the center of an object or space."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "diameter"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#diameter"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "The number of outlets a given connection has."
+          },
+          "sh:name": {
+            "en": "has number of outlet"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet"
+        },
+        {
+          "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
+          "sh:definition": {
+            "en": "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "is connected"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/hydrant#Outlet"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -103,7 +143,7 @@
       "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
     },
     {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#UsageShape",
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#WaterTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -118,6 +158,20 @@
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#PipeDiameterShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#OpenWaterQuantityShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [],
+      "sh:targetClass": "http://www.w3.org/2004/02/skos/core#Concept"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#OpeningKeyTypeShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
       "sh:property": [],
@@ -144,8 +198,6 @@
           "sh:definition": {
             "en": "The value of this property is the Identifier itself."
           },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "Identifier"
           },
@@ -327,7 +379,6 @@
             "en": "The well-known text representation string describing the point, line or polygon."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "wkt"
           },
@@ -357,9 +408,8 @@
             "en": "The nominal rate at which water flows through the hydrant, typically measured in liters per second."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "flowRate"
+            "en": "flow rate"
           },
           "sh:path": "https://saref.etsi.org/saref4watr/flowRate"
         },
@@ -400,6 +450,7 @@
           "sh:definition": {
             "en": "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures."
           },
+          "sh:maxCount": "1",
           "sh:name": {
             "en": "is managed by"
           },
@@ -412,9 +463,20 @@
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "lastInspectionDate"
+            "en": "last inspection date"
           },
           "sh:path": "https://saref.etsi.org/saref4watr/lastInspectionDate"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "A usually metal instrument by which the bolt of a lock is turned."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "opening key"
+          },
+          "sh:path": "https://saref.etsi.org/saref4watr/openingKey"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
@@ -423,7 +485,7 @@
           },
           "sh:maxCount": "1",
           "sh:name": {
-            "en": "startDate"
+            "en": "start date"
           },
           "sh:path": "https://saref.etsi.org/saref4watr/startDate"
         },
@@ -433,7 +495,6 @@
             "en": "Entity status."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "status"
           },
@@ -442,49 +503,13 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "The type of hydrant."
+            "en": "The particular kind of hydrant."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "type"
           },
           "sh:path": "https://saref.etsi.org/saref4watr/type"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "The permitted usage of the hydrant."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "usage"
-          },
-          "sh:path": "https://saref.etsi.org/saref4watr/usage"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
-          "sh:definition": {
-            "en": "The diameter of the valve of a hydrant."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "valveDiameter"
-          },
-          "sh:path": "https://saref.etsi.org/saref4watr/valveDiameter"
-        },
-        {
-          "sh:definition": {
-            "en": "A valve is a device designed to control water flow, pressure or volume."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "valveType"
-          },
-          "sh:path": "https://saref.etsi.org/saref4watr/valveType"
         }
       ],
       "sh:targetClass": "https://saref.etsi.org/saref4watr/FireHydrant"
@@ -514,14 +539,24 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "The diameter of a pipe."
+            "en": "The nominal diameter of the underground pipe going along the street that feeds (among other things) the hydrant."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
             "en": "diameter"
           },
           "sh:path": "https://saref.etsi.org/saref4watr/diameter"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "Property indicating the pressure of a water flow."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "flow pressure"
+          },
+          "sh:path": "https://saref.etsi.org/saref4watr/flowPressure"
         },
         {
           "sh:class": "http://www.w3.org/ns/locn#Geometry",
@@ -566,7 +601,7 @@
           "sh:name": {
             "en": "is supplied"
           },
-          "sh:path": "https://saref.etsi.org/saref4watr/FireHydrant"
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#isSupplied"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -582,16 +617,85 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "The type of pipe."
+            "en": "The particular kind of pipe."
           },
           "sh:maxCount": "1",
           "sh:name": {
             "en": "type"
           },
           "sh:path": "https://saref.etsi.org/saref4watr/type"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "he particular kind of liquid which is running through a pipe."
+          },
+          "sh:name": {
+            "en": "water type"
+          },
+          "sh:path": "https://saref.etsi.org/saref4watr/waterType"
         }
       ],
       "sh:targetClass": "https://saref.etsi.org/saref4watr/Pipe"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#SourceAssetShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://www.w3.org/ns/locn#Address",
+          "sh:definition": {
+            "en": "he address representation that corresponds to the object."
+          },
+          "sh:name": {
+            "en": "address"
+          },
+          "sh:path": "https://saref.etsi.org/saref4watr/address"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The amount of water which can be extracted from a natural water source."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "estimated quantity"
+          },
+          "sh:path": "https://saref.etsi.org/saref4watr/estimatedQuantity"
+        }
+      ],
+      "sh:targetClass": "https://saref.etsi.org/saref4watr/SourceAsset"
+    },
+    {
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#ValveShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#integer",
+          "sh:definition": {
+            "en": "The length of a straight line through the center of an object or space."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "diameter"
+          },
+          "sh:path": "https://saref.etsi.org/saref4watr/diameter"
+        },
+        {
+          "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
+          "sh:definition": {
+            "en": "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."
+          },
+          "sh:maxCount": "1",
+          "sh:name": {
+            "en": "is connected"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
+        }
+      ],
+      "sh:targetClass": "https://saref.etsi.org/saref4watr/Valve"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#ContactPointShape",
@@ -604,23 +708,10 @@
             "en": "A property through which an e-mail address for the organisation, or a representative of it, can be contacted."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "hasEmail"
+            "en": "has email"
           },
-          "sh:path": "https://schema.org/hasEmail"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
-          "sh:definition": {
-            "en": "A property through which an emergency phone number for the organisation, or a representative of it, can be contacted."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "hasEmergencyTelephone"
-          },
-          "sh:path": "https://schema.org/hasEmergencyTelephone"
+          "sh:path": "http://data.europa.eu/m8g/email"
         },
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
@@ -628,11 +719,10 @@
             "en": "A property through which a phone number  for the organisation, or a representative of it, can be contacted."
           },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
           "sh:name": {
-            "en": "hasTelephone"
+            "en": "has telephone"
           },
-          "sh:path": "https://schema.org/hasTelephone"
+          "sh:path": "http://data.europa.eu/m8g/telephone"
         }
       ],
       "sh:targetClass": "https://schema.org/ContactPoint"
@@ -653,14 +743,25 @@
           "sh:path": "http://vocab.belgif.be/ns/hydrant#contactPoint"
         },
         {
+          "sh:datatype": "http://www.w3.org/2001/XMLSchema#string",
+          "sh:definition": {
+            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:path": "http://www.w3.org/ns/org#role"
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "http://www.w3.org/ns/org#name"
         },
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#boolean",
+          "sh:definition": {
+            "en": "The distinction between whether an organisation is a private or public entity."
+          },
           "sh:maxCount": "1",
-          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
           "sh:path": "http://www.w3.org/ns/org#type"
         }
       ],

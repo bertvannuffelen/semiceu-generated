@@ -6,17 +6,22 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/iceg-hydrants_en> <https://semiceu.github.io/shacl/iceg-hydrants_enshapes> <https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape>,
+<https://semiceu.github.io/shacl/iceg-hydrants_en> <https://semiceu.github.io/shacl/iceg-hydrants_enshapes> <https://semiceu.github.io/shacl/iceg-hydrants_en#OutletShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#HydrantTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeTypeShape>,
-    <https://semiceu.github.io/shacl/iceg-hydrants_en#UsageShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#WaterTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#StatusShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeDiameterShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#OpenWaterQuantityShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#OpeningKeyTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#GeometryShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#FireHydrantShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#SourceAssetShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#ValveShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#ContactPointShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#OrganizationShape> .
 
@@ -55,23 +60,14 @@
     shacl:datatype rdfs:Literal;
     shacl:definition "A property through which an e-mail address for the organisation, or a representative of it, can be contacted."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "hasEmail"@en;
-    shacl:path schemas:hasEmail
-  ], [
-    shacl:datatype rdfs:Literal;
-    shacl:definition "A property through which an emergency phone number for the organisation, or a representative of it, can be contacted."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "hasEmergencyTelephone"@en;
-    shacl:path schemas:hasEmergencyTelephone
+    shacl:name "has email"@en;
+    shacl:path <http://data.europa.eu/m8g/email>
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "A property through which a phone number  for the organisation, or a representative of it, can be contacted."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "hasTelephone"@en;
-    shacl:path schemas:hasTelephone
+    shacl:name "has telephone"@en;
+    shacl:path <http://data.europa.eu/m8g/telephone>
   ];
   shacl:targetClass schemas:ContactPoint .
 
@@ -86,8 +82,7 @@
     shacl:datatype xsd:integer;
     shacl:definition "The nominal rate at which water flows through the hydrant, typically measured in liters per second."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "flowRate"@en;
+    shacl:name "flow rate"@en;
     shacl:path <https://saref.etsi.org/saref4watr/flowRate>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
@@ -109,54 +104,39 @@
   ], [
     shacl:class <https://www.w3.org/ns/org#Organization>;
     shacl:definition "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures."@en;
+    shacl:maxCount 1;
     shacl:name "is managed by"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isManagedBy>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "The date of the most recently performed inspection of a hydrant."@en;
     shacl:maxCount 1;
-    shacl:name "lastInspectionDate"@en;
+    shacl:name "last inspection date"@en;
     shacl:path <https://saref.etsi.org/saref4watr/lastInspectionDate>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "A usually metal instrument by which the bolt of a lock is turned."@en;
+    shacl:maxCount 1;
+    shacl:name "opening key"@en;
+    shacl:path <https://saref.etsi.org/saref4watr/openingKey>
   ], [
     shacl:datatype xsd:dateTime;
     shacl:definition "Date on which the current version of the area or object starts to be used."@en;
     shacl:maxCount 1;
-    shacl:name "startDate"@en;
+    shacl:name "start date"@en;
     shacl:path <https://saref.etsi.org/saref4watr/startDate>
   ], [
     shacl:class skos:Concept;
     shacl:definition "Entity status."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "status"@en;
     shacl:path <https://saref.etsi.org/saref4watr/status>
   ], [
     shacl:class skos:Concept;
-    shacl:definition "The type of hydrant."@en;
+    shacl:definition "The particular kind of hydrant."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "type"@en;
     shacl:path <https://saref.etsi.org/saref4watr/type>
-  ], [
-    shacl:class skos:Concept;
-    shacl:definition "The permitted usage of the hydrant."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "usage"@en;
-    shacl:path <https://saref.etsi.org/saref4watr/usage>
-  ], [
-    shacl:datatype xsd:integer;
-    shacl:definition "The diameter of the valve of a hydrant."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "valveDiameter"@en;
-    shacl:path <https://saref.etsi.org/saref4watr/valveDiameter>
-  ], [
-    shacl:definition "A valve is a device designed to control water flow, pressure or volume."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:name "valveType"@en;
-    shacl:path <https://saref.etsi.org/saref4watr/valveType>
   ];
   shacl:targetClass <https://saref.etsi.org/saref4watr/FireHydrant> .
 
@@ -228,7 +208,6 @@
     shacl:datatype rdfs:Literal;
     shacl:definition "The well-known text representation string describing the point, line or polygon."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "wkt"@en;
     shacl:path <https://www.w3.org/ns/locn#wkt>
   ];
@@ -249,8 +228,6 @@
   ], [
     shacl:datatype rdfs:Literal;
     shacl:definition "The value of this property is the Identifier itself."@en;
-    shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Identifier"@en;
     shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
@@ -280,6 +257,14 @@
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
+<https://semiceu.github.io/shacl/iceg-hydrants_en#OpenWaterQuantityShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/iceg-hydrants_en#OpeningKeyTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://semiceu.github.io/shacl/iceg-hydrants_en#OrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -288,16 +273,41 @@
     shacl:name "contact point"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#contactPoint>
   ], [
+    shacl:datatype xsd:string;
+    shacl:definition "A word or phrase that constitutes the distinctive designation of an organisation."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
-    shacl:path org:role
+    shacl:name "name"@en;
+    shacl:path org:name
   ], [
     shacl:datatype xsd:boolean;
+    shacl:definition "The distinction between whether an organisation is a private or public entity."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
+    shacl:name "type"@en;
     shacl:path org:type
   ];
   shacl:targetClass <https://www.w3.org/ns/org#Organization> .
+
+<https://semiceu.github.io/shacl/iceg-hydrants_en#OutletShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:integer;
+    shacl:definition "The length of a straight line through the center of an object or space."@en;
+    shacl:maxCount 1;
+    shacl:name "diameter"@en;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#diameter>
+  ], [
+    shacl:datatype xsd:integer;
+    shacl:definition "The number of outlets a given connection has."@en;
+    shacl:name "has number of outlet"@en;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet>
+  ], [
+    shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
+    shacl:definition "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."@en;
+    shacl:maxCount 1;
+    shacl:name "is connected"@en;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/hydrant#Outlet> .
 
 <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeDiameterShape> a shacl:NodeShape;
   shacl:closed false;
@@ -316,11 +326,16 @@
     shacl:path <http://vocab.belgif.be/ns/hydrant#contains>
   ], [
     shacl:class skos:Concept;
-    shacl:definition "The diameter of a pipe."@en;
+    shacl:definition "The nominal diameter of the underground pipe going along the street that feeds (among other things) the hydrant."@en;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "diameter"@en;
     shacl:path <https://saref.etsi.org/saref4watr/diameter>
+  ], [
+    shacl:datatype xsd:integer;
+    shacl:definition "Property indicating the pressure of a water flow."@en;
+    shacl:maxCount 1;
+    shacl:name "flow pressure"@en;
+    shacl:path <https://saref.etsi.org/saref4watr/flowPressure>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
     shacl:definition "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."@en;
@@ -344,7 +359,7 @@
     shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
     shacl:definition "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."@en;
     shacl:name "is supplied"@en;
-    shacl:path <https://saref.etsi.org/saref4watr/FireHydrant>
+    shacl:path <http://vocab.belgif.be/ns/hydrant#isSupplied>
   ], [
     shacl:class skos:Concept;
     shacl:definition "Entity status."@en;
@@ -353,10 +368,15 @@
     shacl:path <https://saref.etsi.org/saref4watr/status>
   ], [
     shacl:class skos:Concept;
-    shacl:definition "The type of pipe."@en;
+    shacl:definition "The particular kind of pipe."@en;
     shacl:maxCount 1;
     shacl:name "type"@en;
     shacl:path <https://saref.etsi.org/saref4watr/type>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "he particular kind of liquid which is running through a pipe."@en;
+    shacl:name "water type"@en;
+    shacl:path <https://saref.etsi.org/saref4watr/waterType>
   ];
   shacl:targetClass <https://saref.etsi.org/saref4watr/Pipe> .
 
@@ -364,10 +384,43 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://semiceu.github.io/shacl/iceg-hydrants_en#SourceAssetShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <http://www.w3.org/ns/locn#Address>;
+    shacl:definition "he address representation that corresponds to the object."@en;
+    shacl:name "address"@en;
+    shacl:path <https://saref.etsi.org/saref4watr/address>
+  ], [
+    shacl:class skos:Concept;
+    shacl:definition "The amount of water which can be extracted from a natural water source."@en;
+    shacl:maxCount 1;
+    shacl:name "estimated quantity"@en;
+    shacl:path <https://saref.etsi.org/saref4watr/estimatedQuantity>
+  ];
+  shacl:targetClass <https://saref.etsi.org/saref4watr/SourceAsset> .
+
 <https://semiceu.github.io/shacl/iceg-hydrants_en#StatusShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
-<https://semiceu.github.io/shacl/iceg-hydrants_en#UsageShape> a shacl:NodeShape;
+<https://semiceu.github.io/shacl/iceg-hydrants_en#ValveShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:integer;
+    shacl:definition "The length of a straight line through the center of an object or space."@en;
+    shacl:maxCount 1;
+    shacl:name "diameter"@en;
+    shacl:path <https://saref.etsi.org/saref4watr/diameter>
+  ], [
+    shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
+    shacl:definition "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."@en;
+    shacl:maxCount 1;
+    shacl:name "is connected"@en;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
+  ];
+  shacl:targetClass <https://saref.etsi.org/saref4watr/Valve> .
+
+<https://semiceu.github.io/shacl/iceg-hydrants_en#WaterTypeShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
