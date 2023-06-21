@@ -7,6 +7,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <https://semiceu.github.io/shacl/iceg-hydrants_en> <https://semiceu.github.io/shacl/iceg-hydrants_enshapes> <https://semiceu.github.io/shacl/iceg-hydrants_en#OutletShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#MeasureShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#HydrantTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeTypeShape>,
@@ -15,6 +16,8 @@
     <https://semiceu.github.io/shacl/iceg-hydrants_en#PipeDiameterShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#OpenWaterQuantityShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#OpeningKeyTypeShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#NativenessValueShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_en#NameStatusValueShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#IdentifierShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_en#GeometryShape>,
@@ -143,16 +146,19 @@
 <https://semiceu.github.io/shacl/iceg-hydrants_en#GeographicalNameShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
+    shacl:class skos:Concept;
     shacl:definition "Qualitative information enabling to discern which credit should be given to the name with respect to its standardisation and/or its topicality."@en;
     shacl:maxCount 1;
     shacl:name "nameStatus"@en;
     shacl:path <http://vocab.belgif.be/ns/building#nameStatus>
   ], [
+    shacl:class skos:Concept;
     shacl:definition "Information enabling to acknowledge if the name is the one that is/was used in the area where the spatial object is situated at the instant when the name is/was in use."@en;
     shacl:maxCount 1;
     shacl:name "nativeness"@en;
     shacl:path <http://vocab.belgif.be/ns/building#nativeness>
   ], [
+    shacl:datatype rdf:langString;
     shacl:definition "Original data source from which the geographical name is taken from and integrated in the data set providing/publishing it. For some named spatial objects it might refer again to the publishing data set if no other information is available."@en;
     shacl:maxCount 1;
     shacl:name "sourceOfName"@en;
@@ -257,6 +263,33 @@
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
+<https://semiceu.github.io/shacl/iceg-hydrants_en#MeasureShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:class <https://www.w3.org/2009/08/skos-reference/skos.htmlConcept>;
+    shacl:definition "Standard units of measurements used when accounting for stock, and expressing them in quantities."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "uom"@en;
+    shacl:path <http://vocab.belgif.be/ns/building#uom>
+  ], [
+    shacl:datatype xsd:double;
+    shacl:definition "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."@en;
+    shacl:maxCount 1;
+    shacl:minCount 1;
+    shacl:name "value"@en;
+    shacl:path <https://qudt.org/schema/qudt/value>
+  ];
+  shacl:targetClass <http://inspire.ec.europa.eu/ont/base#Measure> .
+
+<https://semiceu.github.io/shacl/iceg-hydrants_en#NameStatusValueShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
+<https://semiceu.github.io/shacl/iceg-hydrants_en#NativenessValueShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
+
 <https://semiceu.github.io/shacl/iceg-hydrants_en#OpenWaterQuantityShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:targetClass skos:Concept .
@@ -273,13 +306,13 @@
     shacl:name "contact point"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#contactPoint>
   ], [
-    shacl:datatype xsd:string;
+    shacl:datatype rdf:langString;
     shacl:definition "A word or phrase that constitutes the distinctive designation of an organisation."@en;
     shacl:maxCount 1;
     shacl:name "name"@en;
     shacl:path org:name
   ], [
-    shacl:datatype xsd:boolean;
+    shacl:class <https://www.w3.org/2009/08/skos-reference/skos.htmlConcept>;
     shacl:definition "The distinction between whether an organisation is a private or public entity."@en;
     shacl:maxCount 1;
     shacl:name "type"@en;
@@ -295,11 +328,6 @@
     shacl:maxCount 1;
     shacl:name "diameter"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#diameter>
-  ], [
-    shacl:datatype xsd:integer;
-    shacl:definition "The number of outlets a given connection has."@en;
-    shacl:name "has number of outlet"@en;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#hasNumerofOutlet>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
     shacl:definition "A fire hydrant is a fitting in a street or other public place with a nozzle by which a fire hose may be attached to a water main."@en;
@@ -344,6 +372,8 @@
     shacl:path <https://saref.etsi.org/saref4watr/geometry>
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
+    shacl:definition "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."@en;
+    shacl:name "identifier"@en;
     shacl:path <https://saref.etsi.org/saref4watr/identifier>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/Pipe>;
@@ -353,6 +383,7 @@
   ], [
     shacl:class <https://www.w3.org/ns/org#Organization>;
     shacl:definition "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures."@en;
+    shacl:maxCount 1;
     shacl:name "is managed by"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isManagedBy>
   ], [
@@ -397,6 +428,12 @@
     shacl:maxCount 1;
     shacl:name "estimated quantity"@en;
     shacl:path <https://saref.etsi.org/saref4watr/estimatedQuantity>
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "A word or phrase that constitutes the distinctive designation of a Source Asset."@en;
+    shacl:maxCount 1;
+    shacl:name "name"@en;
+    shacl:path <https://saref.etsi.org/saref4watr/name>
   ];
   shacl:targetClass <https://saref.etsi.org/saref4watr/SourceAsset> .
 
