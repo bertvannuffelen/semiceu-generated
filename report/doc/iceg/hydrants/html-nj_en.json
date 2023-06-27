@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/5f550c9623e16d3b7cf9e2db984f741d13172683",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/5f550c9623e16d3b7cf9e2db984f741d13172683/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/736df4cd3717f02058703acc07d31cbc0aeba200",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/736df4cd3717f02058703acc07d31cbc0aeba200/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -27,7 +27,7 @@
       },
       "sort": "Outlet",
       "description": {
-        "en": "A circular opening through which water can be discharged from a fire hydrant. This information is a prerequisite for attaching a hose to a fire hydrant."
+        "en": "A circular opening through which water can be discharged from a fire hydrant. "
       },
       "usage": {},
       "parents": [],
@@ -40,7 +40,7 @@
             "en": "diameter"
           },
           "description": {
-            "en": "The measurement of the circular opening through which water can be discharged from a fire hydrant. This information is a prerequisite for attaching a hose to a fire hydrant."
+            "en": "The measurement of the circular opening through which water can be discharged from a fire hydrant."
           },
           "usage": {},
           "domain": [
@@ -69,13 +69,13 @@
         },
         {
           "uri": "http://vocab.belgif.be/ns/hydrant#isConnected",
-          "name": "is connected",
-          "sort": "is connected",
+          "name": "is part of",
+          "sort": "is part of",
           "label": {
-            "en": "is connected"
+            "en": "is part of"
           },
           "description": {
-            "en": "An outlet is a hydrant's exist point for water."
+            "en": "An outlet is a fire hydrant's point exit for water."
           },
           "usage": {},
           "domain": [
@@ -105,14 +105,14 @@
       ]
     },
     {
-      "uri": "http://data.europa.eu/m8g/ContactPointContactPoint",
+      "uri": "http://data.europa.eu/m8g/contactPoint",
       "name": "ContactPoint",
       "label": {
         "en": "ContactPoint"
       },
       "sort": "ContactPoint",
       "description": {
-        "en": "A class representing a point of contact."
+        "en": "Information (e.g. e-mail address, telephone number) of a person or department through which the user can get in touch with."
       },
       "usage": {},
       "parents": [],
@@ -125,13 +125,13 @@
             "en": "has email"
           },
           "description": {
-            "en": "A property through which an e-mail address for the organisation, or a representative of it, can be contacted."
+            "en": "An electronic address through which the Contact Point can be contacted."
           },
           "usage": {},
           "domain": [
             {
               "EA-Name": "ContactPoint",
-              "uri": "http://data.europa.eu/m8g/ContactPointContactPoint"
+              "uri": "http://data.europa.eu/m8g/contactPoint"
             }
           ],
           "range": [
@@ -160,13 +160,13 @@
             "en": "has telephone"
           },
           "description": {
-            "en": "A property through which a phone number  for the organisation, or a representative of it, can be contacted."
+            "en": "A telephone number through which the Contact Point can be contacted."
           },
           "usage": {},
           "domain": [
             {
               "EA-Name": "ContactPoint",
-              "uri": "http://data.europa.eu/m8g/ContactPointContactPoint"
+              "uri": "http://data.europa.eu/m8g/contactPoint"
             }
           ],
           "range": [
@@ -181,6 +181,126 @@
               "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
                 "en": "Literal"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        }
+      ]
+    },
+    {
+      "uri": "http://www.w3.org/ns/org#Organization",
+      "name": "Organization",
+      "label": {
+        "en": "Organization"
+      },
+      "sort": "Organization",
+      "description": {
+        "en": "The legally recognised name of the organization"
+      },
+      "usage": {},
+      "parents": [],
+      "properties": [
+        {
+          "uri": "http://data.europa.eu/m8g/ContactPoint",
+          "name": "contact point",
+          "sort": "contact point",
+          "label": {
+            "en": "contact point"
+          },
+          "description": {
+            "en": "A class representing a point of contact."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "ContactPoint",
+              "range_uri": "http://data.europa.eu/m8g/contactPoint"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#ContactPoint",
+              "range_puri": "http://data.europa.eu/m8g/contactPoint",
+              "range_label": {
+                "en": "ContactPoint"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://www.w3.org/ns/org#classification",
+          "name": "type",
+          "sort": "type",
+          "label": {
+            "en": "type"
+          },
+          "description": {
+            "en": "The distinction between whether an organisation is a private or public entity."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Concept",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "Concept"
+              }
+            }
+          ],
+          "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "https://www.w3.org/2009/08/skos-reference/skos.html#prefLabel",
+          "name": "name",
+          "sort": "name",
+          "label": {
+            "en": "name"
+          },
+          "description": {
+            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Organization",
+              "uri": "http://www.w3.org/ns/org#Organization"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "LangString",
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+              "range_label": {
+                "en": "LangString"
               }
             }
           ],
@@ -210,7 +330,7 @@
             "en": "flow rate"
           },
           "description": {
-            "en": "The nominal rate at which water flows through the hydrant, typically measured in liters per minute."
+            "en": "The nominal rate at which water flows through the hydrant."
           },
           "usage": {},
           "domain": [
@@ -315,7 +435,7 @@
             "en": "last inspection date"
           },
           "description": {
-            "en": "The date of the most recently performed inspection of a hydrant."
+            "en": "The date of the most recently performed inspection of a fire hydrant."
           },
           "usage": {},
           "domain": [
@@ -350,7 +470,7 @@
             "en": "opening key"
           },
           "description": {
-            "en": "A tool used to open a hydrant by removing fire hydrant caps."
+            "en": "A tool used to open a fire hydrant by removing the cover of a fire hydrant's outlet."
           },
           "usage": {},
           "domain": [
@@ -420,7 +540,7 @@
             "en": "status remark"
           },
           "description": {
-            "en": "A hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
+            "en": "A fire hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
           },
           "usage": {},
           "domain": [
@@ -455,7 +575,7 @@
             "en": "is connected"
           },
           "description": {
-            "en": "A fire hydrant is connected to a pipe, which is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure)."
+            "en": "A fire hydrant is connected to an underground network of water conduits."
           },
           "usage": {},
           "domain": [
@@ -500,13 +620,13 @@
           "range": [
             {
               "range_label": "Organization",
-              "range_uri": "https://www.w3.org/ns/org#Organization"
+              "range_uri": "http://www.w3.org/ns/org#Organization"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Organization",
-              "range_puri": "https://www.w3.org/ns/org#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
               "range_label": {
                 "en": "Organization"
               }
@@ -523,7 +643,7 @@
             "en": "address"
           },
           "description": {
-            "en": "The address representation that corresponds to the object."
+            "en": "The address representation that corresponds to the fire hydrant."
           },
           "usage": {},
           "domain": [
@@ -558,7 +678,7 @@
             "en": "identifier"
           },
           "description": {
-            "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+            "en": "Any identifier issued by any authority, whether a government agency or not."
           },
           "usage": {},
           "domain": [
@@ -586,14 +706,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "https://saref.etsi.org/saref4watr/geometry",
+          "uri": "http://www.w3.org/ns/locn#geometry",
           "name": "geometry",
           "sort": "geometry",
           "label": {
             "en": "geometry"
           },
           "description": {
-            "en": "The Geometry class provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The Geometry property provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "usage": {},
           "domain": [
@@ -643,7 +763,7 @@
             "en": "flow pressure"
           },
           "description": {
-            "en": "Property indicating the pressure of a water flow."
+            "en": "The amount of force with which water moves."
           },
           "usage": {},
           "domain": [
@@ -678,7 +798,7 @@
             "en": "diameter"
           },
           "description": {
-            "en": "The nominal diameter of the underground pipe going along the street that feeds (among other things) the hydrant."
+            "en": "The nominal diameter of the underground water pipe going along the street."
           },
           "usage": {},
           "domain": [
@@ -811,6 +931,41 @@
           "codelist_uri": ""
         },
         {
+          "uri": "http://vocab.belgif.be/ns/hydrant#waterType",
+          "name": "water type",
+          "sort": "water type",
+          "label": {
+            "en": "water type"
+          },
+          "description": {
+            "en": "The particular kind of liquid which is running through a pipe."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "Pipe",
+              "uri": "https://saref.etsi.org/saref4watr/Pipe"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "WaterType",
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
+              "range_label": {
+                "en": "WaterType"
+              }
+            }
+          ],
+          "cardinality": "0..*",
+          "codelist_uri": ""
+        },
+        {
           "uri": "http://vocab.belgif.be/ns/hydrant#isConnected",
           "name": "is connected",
           "sort": "is connected",
@@ -818,7 +973,7 @@
             "en": "is connected"
           },
           "description": {
-            "en": "A pipe is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure) and can be connected to other pipes.."
+            "en": "A pipe can be connected to other pipes."
           },
           "usage": {},
           "domain": [
@@ -853,7 +1008,7 @@
             "en": "is operated by"
           },
           "description": {
-            "en": "The pipe is being controlled and maintained by the organisation."
+            "en": "The organization in charge of controlling and maintaining the pipe."
           },
           "usage": {},
           "domain": [
@@ -865,13 +1020,13 @@
           "range": [
             {
               "range_label": "Organization",
-              "range_uri": "https://www.w3.org/ns/org#Organization"
+              "range_uri": "http://www.w3.org/ns/org#Organization"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#Organization",
-              "range_puri": "https://www.w3.org/ns/org#Organization",
+              "range_puri": "http://www.w3.org/ns/org#Organization",
               "range_label": {
                 "en": "Organization"
               }
@@ -923,7 +1078,7 @@
             "en": "address"
           },
           "description": {
-            "en": "The address representation that corresponds to the object."
+            "en": "The address representation that corresponds to the pipe."
           },
           "usage": {},
           "domain": [
@@ -958,7 +1113,7 @@
             "en": "identifier"
           },
           "description": {
-            "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+            "en": "Any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
           },
           "usage": {},
           "domain": [
@@ -993,7 +1148,7 @@
             "en": "geometry"
           },
           "description": {
-            "en": "The Geometry class provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The Geometry property provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "usage": {},
           "domain": [
@@ -1019,41 +1174,6 @@
           ],
           "cardinality": "1",
           "codelist_uri": ""
-        },
-        {
-          "uri": "https://saref.etsi.org/saref4watr/waterType",
-          "name": "water type",
-          "sort": "water type",
-          "label": {
-            "en": "water type"
-          },
-          "description": {
-            "en": "The particular kind of liquid which is running through a pipe."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Pipe",
-              "uri": "https://saref.etsi.org/saref4watr/Pipe"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "WaterType",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "WaterType"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
         }
       ]
     },
@@ -1078,7 +1198,7 @@
             "en": "diameter"
           },
           "description": {
-            "en": "The measurement of the circular opening through which the water flow, pressure or volume can be controlled in a hydrant."
+            "en": "The measurement of the circular opening through which the water flow, pressure or volume can be controlled in a fire hydrant."
           },
           "usage": {},
           "domain": [
@@ -1107,13 +1227,13 @@
         },
         {
           "uri": "http://vocab.belgif.be/ns/hydrant#isConnected",
-          "name": "is connected",
-          "sort": "is connected",
+          "name": "is part of",
+          "sort": "is part of",
           "label": {
-            "en": "is connected"
+            "en": "is part of"
           },
           "description": {
-            "en": "A valve is part of a fire hydrant."
+            "en": "A valve is a feature of a fire hydrant."
           },
           "usage": {},
           "domain": [
@@ -1134,126 +1254,6 @@
               "range_puri": "https://saref.etsi.org/saref4watr/FireHydrant",
               "range_label": {
                 "en": "FireHydrant"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        }
-      ]
-    },
-    {
-      "uri": "https://www.w3.org/ns/org#Organization",
-      "name": "Organization",
-      "label": {
-        "en": "Organization"
-      },
-      "sort": "Organization",
-      "description": {
-        "en": "Represents a collection of people organized together into a community or other social, commercial or political structure. The group has some common purpose or reason for existence which goes beyond the set of people belonging to it and can act as an Agent. Organizations are often decomposable into hierarchical structures."
-      },
-      "usage": {},
-      "parents": [],
-      "properties": [
-        {
-          "uri": "http://data.europa.eu/m8g/ContactPoint",
-          "name": "contact point",
-          "sort": "contact point",
-          "label": {
-            "en": "contact point"
-          },
-          "description": {
-            "en": "A class representing a point of contact."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "https://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "ContactPoint",
-              "range_uri": "http://data.europa.eu/m8g/ContactPointContactPoint"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "#ContactPoint",
-              "range_puri": "http://data.europa.eu/m8g/ContactPointContactPoint",
-              "range_label": {
-                "en": "ContactPoint"
-              }
-            }
-          ],
-          "cardinality": "0..*",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "http://www.w3.org/ns/org#classification",
-          "name": "type",
-          "sort": "type",
-          "label": {
-            "en": "type"
-          },
-          "description": {
-            "en": "The distinction between whether an organisation is a private or public entity."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "https://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "Concept",
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
-              "range_label": {
-                "en": "Concept"
-              }
-            }
-          ],
-          "cardinality": "1",
-          "codelist_uri": ""
-        },
-        {
-          "uri": "https://www.w3.org/2009/08/skos-reference/skos.html#prefLabel",
-          "name": "name",
-          "sort": "name",
-          "label": {
-            "en": "name"
-          },
-          "description": {
-            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
-          },
-          "usage": {},
-          "domain": [
-            {
-              "EA-Name": "Organization",
-              "uri": "https://www.w3.org/ns/org#Organization"
-            }
-          ],
-          "range": [
-            {
-              "range_label": "LangString",
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
-            }
-          ],
-          "scopedrange": [
-            {
-              "range_uri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_puri": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-              "range_label": {
-                "en": "LangString"
               }
             }
           ],
@@ -1329,6 +1329,21 @@
       "name": {
         "en": "type",
         "undefined": "type"
+      },
+      "description": {},
+      "domain": [
+        null
+      ],
+      "range": [
+        null
+      ],
+      "parents": []
+    },
+    {
+      "uri": "http://vocab.belgif.be/ns/hydrant#waterType",
+      "name": {
+        "en": "water type",
+        "undefined": "water type"
       },
       "description": {},
       "domain": [

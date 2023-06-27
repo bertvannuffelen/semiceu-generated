@@ -47,7 +47,7 @@
         {
           "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
-            "en": "The measurement of the circular opening through which water can be discharged from a fire hydrant. This information is a prerequisite for attaching a hose to a fire hydrant."
+            "en": "The measurement of the circular opening through which water can be discharged from a fire hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -59,12 +59,12 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
           "sh:definition": {
-            "en": "An outlet is a hydrant's exist point for water."
+            "en": "An outlet is a fire hydrant's point exit for water."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "is connected"
+            "en": "is part of"
           },
           "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
         }
@@ -79,7 +79,7 @@
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "A property through which an e-mail address for the organisation, or a representative of it, can be contacted."
+            "en": "An electronic address through which the Contact Point can be contacted."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -90,7 +90,7 @@
         {
           "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
-            "en": "A property through which a phone number  for the organisation, or a representative of it, can be contacted."
+            "en": "A telephone number through which the Contact Point can be contacted."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -100,7 +100,7 @@
           "sh:path": "http://data.europa.eu/m8g/telephone"
         }
       ],
-      "sh:targetClass": "http://data.europa.eu/m8g/ContactPointContactPoint"
+      "sh:targetClass": "http://data.europa.eu/m8g/contactPoint"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#MeasureShape",
@@ -437,6 +437,48 @@
       "sh:targetClass": "http://www.w3.org/ns/locn#Geometry"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#OrganizationShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://data.europa.eu/m8g/contactPoint",
+          "sh:definition": {
+            "en": "A class representing a point of contact."
+          },
+          "sh:name": {
+            "en": "contact point"
+          },
+          "sh:path": "http://data.europa.eu/m8g/ContactPoint"
+        },
+        {
+          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
+          "sh:definition": {
+            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "name"
+          },
+          "sh:path": "https://www.w3.org/2009/08/skos-reference/skos.html#prefLabel"
+        },
+        {
+          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
+          "sh:definition": {
+            "en": "The distinction between whether an organisation is a private or public entity."
+          },
+          "sh:maxCount": "1",
+          "sh:minCount": "1",
+          "sh:name": {
+            "en": "type"
+          },
+          "sh:path": "http://www.w3.org/ns/org#classification"
+        }
+      ],
+      "sh:targetClass": "http://www.w3.org/ns/org#Organization"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#FireHydrantShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -444,7 +486,7 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:definition": {
-            "en": "The address representation that corresponds to the object."
+            "en": "The address representation that corresponds to the fire hydrant."
           },
           "sh:name": {
             "en": "address"
@@ -454,7 +496,7 @@
         {
           "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
-            "en": "The nominal rate at which water flows through the hydrant, typically measured in liters per minute."
+            "en": "The nominal rate at which water flows through the hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -466,19 +508,19 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Geometry",
           "sh:definition": {
-            "en": "The Geometry class provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The Geometry property provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "geometry"
           },
-          "sh:path": "https://saref.etsi.org/saref4watr/geometry"
+          "sh:path": "http://www.w3.org/ns/locn#geometry"
         },
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:definition": {
-            "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+            "en": "Any identifier issued by any authority, whether a government agency or not."
           },
           "sh:minCount": "1",
           "sh:name": {
@@ -489,7 +531,7 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/Pipe",
           "sh:definition": {
-            "en": "A fire hydrant is connected to a pipe, which is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure)."
+            "en": "A fire hydrant is connected to an underground network of water conduits."
           },
           "sh:minCount": "1",
           "sh:name": {
@@ -498,7 +540,7 @@
           "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
         },
         {
-          "sh:class": "https://www.w3.org/ns/org#Organization",
+          "sh:class": "http://www.w3.org/ns/org#Organization",
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -509,7 +551,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "The date of the most recently performed inspection of a hydrant."
+            "en": "The date of the most recently performed inspection of a fire hydrant."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -520,7 +562,7 @@
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "A tool used to open a hydrant by removing fire hydrant caps."
+            "en": "A tool used to open a fire hydrant by removing the cover of a fire hydrant's outlet."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -554,7 +596,7 @@
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "A hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
+            "en": "A fire hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -585,7 +627,7 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Address",
           "sh:definition": {
-            "en": "The address representation that corresponds to the object."
+            "en": "The address representation that corresponds to the pipe."
           },
           "sh:name": {
             "en": "address"
@@ -595,7 +637,7 @@
         {
           "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
-            "en": "The nominal diameter of the underground pipe going along the street that feeds (among other things) the hydrant."
+            "en": "The nominal diameter of the underground water pipe going along the street."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -607,7 +649,7 @@
         {
           "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
-            "en": "Property indicating the pressure of a water flow."
+            "en": "The amount of force with which water moves."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -631,7 +673,7 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Geometry",
           "sh:definition": {
-            "en": "The Geometry class provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The Geometry property provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -643,7 +685,7 @@
         {
           "sh:class": "http://www.w3.org/ns/adms#Identifier",
           "sh:definition": {
-            "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+            "en": "Any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
           },
           "sh:minCount": "1",
           "sh:name": {
@@ -654,7 +696,7 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/Pipe",
           "sh:definition": {
-            "en": "A pipe is a passage of water flowing in a closed conduit (i.e., not subject to atmospheric pressure) and can be connected to other pipes.."
+            "en": "A pipe can be connected to other pipes."
           },
           "sh:name": {
             "en": "is connected"
@@ -662,9 +704,9 @@
           "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
         },
         {
-          "sh:class": "https://www.w3.org/ns/org#Organization",
+          "sh:class": "http://www.w3.org/ns/org#Organization",
           "sh:definition": {
-            "en": "The pipe is being controlled and maintained by the organisation."
+            "en": "The organization in charge of controlling and maintaining the pipe."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -714,7 +756,7 @@
           "sh:name": {
             "en": "water type"
           },
-          "sh:path": "https://saref.etsi.org/saref4watr/waterType"
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#waterType"
         }
       ],
       "sh:targetClass": "https://saref.etsi.org/saref4watr/Pipe"
@@ -727,7 +769,7 @@
         {
           "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
-            "en": "The measurement of the circular opening through which the water flow, pressure or volume can be controlled in a hydrant."
+            "en": "The measurement of the circular opening through which the water flow, pressure or volume can be controlled in a fire hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -739,59 +781,17 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
           "sh:definition": {
-            "en": "A valve is part of a fire hydrant."
+            "en": "A valve is a feature of a fire hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "is connected"
+            "en": "is part of"
           },
           "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
         }
       ],
       "sh:targetClass": "https://saref.etsi.org/saref4watr/Valve"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#OrganizationShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://data.europa.eu/m8g/ContactPointContactPoint",
-          "sh:definition": {
-            "en": "A class representing a point of contact."
-          },
-          "sh:name": {
-            "en": "contact point"
-          },
-          "sh:path": "http://data.europa.eu/m8g/ContactPoint"
-        },
-        {
-          "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
-          "sh:definition": {
-            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "name"
-          },
-          "sh:path": "https://www.w3.org/2009/08/skos-reference/skos.html#prefLabel"
-        },
-        {
-          "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
-          "sh:definition": {
-            "en": "The distinction between whether an organisation is a private or public entity."
-          },
-          "sh:maxCount": "1",
-          "sh:minCount": "1",
-          "sh:name": {
-            "en": "type"
-          },
-          "sh:path": "http://www.w3.org/ns/org#classification"
-        }
-      ],
-      "sh:targetClass": "https://www.w3.org/ns/org#Organization"
     }
   ]
 }
