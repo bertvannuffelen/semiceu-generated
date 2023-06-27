@@ -32,7 +32,7 @@
     {
       "@type": "foaf:Person",
       "affiliation": {
-        "foaf:name": "PwC EU Services"
+        "foaf:name": "PwC "
       },
       "foaf:firstName": "Vincent",
       "foaf:lastName": "Feremans"
@@ -44,13 +44,13 @@
   "issued": "TODO",
   "navigation": {},
   "publication-state": "Draft",
-  "publication-date": "2023-06-19",
+  "publication-date": "2023-07-03",
   "classes": [
     {
       "@id": "http://vocab.belgif.be/ns/hydrant#Outlet",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
-        "en": "A place or opening through which something is let out."
+        "en": "A circular opening through which water can be discharged from a fire hydrant. This information is a prerequisite for attaching a hose to a fire hydrant."
       },
       "parents": []
     }
@@ -79,28 +79,7 @@
     },
     {
       "name": {
-        "en": "water type"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
         "en": "status"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "PipeDiameter"
-      },
-      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
-      "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "open water quantity"
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class"
@@ -111,24 +90,17 @@
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class"
-    },
-    {
-      "name": {
-        "en": "AddressRepresentation"
-      },
-      "@id": "http://www.w3.org/ns/locn#Address",
-      "@type": "rdfs:Class"
     }
   ],
   "properties": [
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#diameter",
+      "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantFlowRate",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "en": "The length of a straight line through the center of an object or space."
+        "en": "The nominal rate at which water flows through the hydrant, typically measured in liters per minute."
       },
       "domain": [
-        "http://vocab.belgif.be/ns/hydrant#Outlet"
+        "https://saref.etsi.org/saref4watr/FireHydrant"
       ],
       "range": [
         "http://www.w3.org/2001/XMLSchema#integer"
@@ -136,58 +108,184 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#houseNumber",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Alphanumeric code officially assigned to building units, berths, pitches or parcels."
-      },
-      "domain": [
-        "http://www.w3.org/ns/locn#Address"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/hydrant#municipalityName",
+      "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantStatus",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "Municipal name of the address."
+        "en": "The condition in which a fire hydrant can be found."
       },
       "domain": [
-        "http://www.w3.org/ns/locn#Address"
+        "https://saref.etsi.org/saref4watr/FireHydrant"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/hydrant#GeographicalName"
+        "http://www.w3.org/2004/02/skos/core#Concept"
       ],
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#postcode",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "en": "Code designating the geographical area that groups addresses for postal purposes."
-      },
-      "domain": [
-        "http://www.w3.org/ns/locn#Address"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#string"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/hydrant#streetname",
+      "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "Streetname of the address."
+        "en": "The particular kind of hydrant."
       },
       "domain": [
-        "http://www.w3.org/ns/locn#Address"
+        "https://saref.etsi.org/saref4watr/FireHydrant"
       ],
       "range": [
-        "http://vocab.belgif.be/ns/hydrant#GeographicalName"
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#flowPressure",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Property indicating the pressure of a water flow."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#lastInspectionDate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The date of the most recently performed inspection of a hydrant."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/FireHydrant"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#openingKey",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "A tool used to open a hydrant by removing fire hydrant caps."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/FireHydrant"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#outletDiameter",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The measurement of the circular opening through which water can be discharged from a fire hydrant. This information is a prerequisite for attaching a hose to a fire hydrant."
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/hydrant#Outlet"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#pipeDiameter",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The nominal diameter of the underground pipe going along the street that feeds (among other things) the hydrant."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#pipeFlowRate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The nominal rate at which water flows through the pipe."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#pipeStatus",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The condition in which a pipe can be found."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#pipeType",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "en": "The particular kind of pipe."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#startDate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "Date on which the current version of the area or object starts to be used."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/FireHydrant"
+      ],
+      "range": [
+        "http://www.w3.org/2001/XMLSchema#dateTime"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#statusRemark",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "A hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/FireHydrant"
+      ],
+      "range": [
+        "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#valveDiameter",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The measurement of the circular opening through which the water flow, pressure or volume can be controlled in a hydrant."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Valve"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     }
