@@ -59,14 +59,14 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
           "sh:definition": {
-            "en": "An outlet is a fire hydrant's point exit for water."
+            "en": "The fire hydrant to which the outlet is physically attached."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "is part of"
           },
-          "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
+          "sh:path": " http://purl.org/dc/terms/isPartOf"
         }
       ],
       "sh:targetClass": "http://vocab.belgif.be/ns/hydrant#Outlet"
@@ -100,7 +100,7 @@
           "sh:path": "http://data.europa.eu/m8g/telephone"
         }
       ],
-      "sh:targetClass": "http://data.europa.eu/m8g/contactPoint"
+      "sh:targetClass": "http://data.europa.eu/m8g/ContactPoint"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-hydrants_en#MeasureShape",
@@ -120,7 +120,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#uom"
         },
         {
-          "sh:datatype": "http://www.w3.org/2001/XMLSchema#double",
+          "sh:datatype": "http://www.w3.org/2000/01/rdf-schema#Literal",
           "sh:definition": {
             "en": "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."
           },
@@ -442,19 +442,19 @@
       "sh:closed": false,
       "sh:property": [
         {
-          "sh:class": "http://data.europa.eu/m8g/contactPoint",
+          "sh:class": "http://data.europa.eu/m8g/ContactPoint",
           "sh:definition": {
-            "en": "A class representing a point of contact."
+            "en": "The main contact information of the resource."
           },
           "sh:name": {
             "en": "contact point"
           },
-          "sh:path": "http://data.europa.eu/m8g/ContactPoint"
+          "sh:path": "http://data.europa.eu/m8g/contactPoint"
         },
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
+            "en": "The legally recognised name of the organization"
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -496,7 +496,7 @@
         {
           "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
-            "en": "The nominal rate at which water flows through the hydrant."
+            "en": "The nominal rate at which water flows through the fire hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -508,7 +508,7 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Geometry",
           "sh:definition": {
-            "en": "The Geometry property provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -531,7 +531,7 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/Pipe",
           "sh:definition": {
-            "en": "A fire hydrant is connected to an underground network of water conduits."
+            "en": "The pipe through which the fire hydrant provides water."
           },
           "sh:minCount": "1",
           "sh:name": {
@@ -541,6 +541,9 @@
         },
         {
           "sh:class": "http://www.w3.org/ns/org#Organization",
+          "sh:definition": {
+            "en": "The organization in charge of controlling and maintaining the fire hydrant."
+          },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
@@ -573,7 +576,7 @@
         {
           "sh:datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
           "sh:definition": {
-            "en": "Date on which the current version of the area or object starts to be used."
+            "en": "The date on which the current version of the area or object starts to be used."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -596,7 +599,7 @@
         {
           "sh:datatype": "http://www.w3.org/1999/02/22-rdf-syntax-ns#langString",
           "sh:definition": {
-            "en": "A fire hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
+            "en": "A comment about minor flows affecting the fire hydrant despite being operational."
           },
           "sh:maxCount": "1",
           "sh:name": {
@@ -605,9 +608,19 @@
           "sh:path": "http://vocab.belgif.be/ns/hydrant#statusRemark"
         },
         {
+          "sh:class": "https://saref.etsi.org/saref4watr/Pipe",
+          "sh:definition": {
+            "en": "The pipe providing water to the fire hydrant."
+          },
+          "sh:name": {
+            "en": "supplies"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#supplies"
+        },
+        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
-            "en": "The particular kind of hydrant."
+            "en": "The particular kind of fire hydrant."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -649,7 +662,7 @@
         {
           "sh:datatype": "http://inspire.ec.europa.eu/ont/base#Measure",
           "sh:definition": {
-            "en": "The amount of force with which water moves."
+            "en": "The amount of force with which water moves to a pipe."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -673,7 +686,7 @@
         {
           "sh:class": "http://www.w3.org/ns/locn#Geometry",
           "sh:definition": {
-            "en": "The Geometry property provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The pipe's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
@@ -696,7 +709,7 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/Pipe",
           "sh:definition": {
-            "en": "A pipe can be connected to other pipes."
+            "en": "A pipe can be attached to other pipes."
           },
           "sh:name": {
             "en": "is connected"
@@ -716,6 +729,16 @@
           "sh:path": "http://vocab.belgif.be/ns/hydrant#isOperatedBy"
         },
         {
+          "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
+          "sh:definition": {
+            "en": "The fire hydrant receiving water from the pipe\n."
+          },
+          "sh:name": {
+            "en": "is supplied by"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/hydrant#isSuppliedBy"
+        },
+        {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
           "sh:definition": {
             "en": "The condition in which a pipe can be found."
@@ -726,16 +749,6 @@
             "en": "status"
           },
           "sh:path": "http://vocab.belgif.be/ns/hydrant#pipeStatus"
-        },
-        {
-          "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
-          "sh:definition": {
-            "en": "Water is being transported through a pipe and delivers it to a fire hydrant."
-          },
-          "sh:name": {
-            "en": "is supplied"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/hydrant#isSupplied"
         },
         {
           "sh:class": "http://www.w3.org/2004/02/skos/core#Concept",
@@ -781,14 +794,14 @@
         {
           "sh:class": "https://saref.etsi.org/saref4watr/FireHydrant",
           "sh:definition": {
-            "en": "A valve is a feature of a fire hydrant."
+            "en": "The fire hydrant to which the valve is physically attached."
           },
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
             "en": "is part of"
           },
-          "sh:path": "http://vocab.belgif.be/ns/hydrant#isConnected"
+          "sh:path": " http://purl.org/dc/terms/isPartOf"
         }
       ],
       "sh:targetClass": "https://saref.etsi.org/saref4watr/Valve"

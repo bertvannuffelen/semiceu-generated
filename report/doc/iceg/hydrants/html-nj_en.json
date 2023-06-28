@@ -11,8 +11,8 @@
     "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
     "status": "Draft",
     "statuslabel": "Onbekend",
-    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/736df4cd3717f02058703acc07d31cbc0aeba200",
-    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/736df4cd3717f02058703acc07d31cbc0aeba200/CHANGELOG",
+    "repositoryurl": "https://github.com/bertvannuffelen/semiceuthema/tree/336a543d32ef5c1d776b9f6db3adbcc921a555b4",
+    "changelogurl": "https://github.com/bertvannuffelen/semiceuthema/blob/336a543d32ef5c1d776b9f6db3adbcc921a555b4/CHANGELOG",
     "feedbackurl": "https://github.com/belgif/thematic/issues",
     "standaardregisterurl": "TODO",
     "usesVocs": [],
@@ -68,14 +68,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://vocab.belgif.be/ns/hydrant#isConnected",
+          "uri": " http://purl.org/dc/terms/isPartOf",
           "name": "is part of",
           "sort": "is part of",
           "label": {
             "en": "is part of"
           },
           "description": {
-            "en": "An outlet is a fire hydrant's point exit for water."
+            "en": "The fire hydrant to which the outlet is physically attached."
           },
           "usage": {},
           "domain": [
@@ -105,7 +105,7 @@
       ]
     },
     {
-      "uri": "http://data.europa.eu/m8g/contactPoint",
+      "uri": "http://data.europa.eu/m8g/ContactPoint",
       "name": "ContactPoint",
       "label": {
         "en": "ContactPoint"
@@ -131,7 +131,7 @@
           "domain": [
             {
               "EA-Name": "ContactPoint",
-              "uri": "http://data.europa.eu/m8g/contactPoint"
+              "uri": "http://data.europa.eu/m8g/ContactPoint"
             }
           ],
           "range": [
@@ -166,7 +166,7 @@
           "domain": [
             {
               "EA-Name": "ContactPoint",
-              "uri": "http://data.europa.eu/m8g/contactPoint"
+              "uri": "http://data.europa.eu/m8g/ContactPoint"
             }
           ],
           "range": [
@@ -203,14 +203,14 @@
       "parents": [],
       "properties": [
         {
-          "uri": "http://data.europa.eu/m8g/ContactPoint",
+          "uri": "http://data.europa.eu/m8g/contactPoint",
           "name": "contact point",
           "sort": "contact point",
           "label": {
             "en": "contact point"
           },
           "description": {
-            "en": "A class representing a point of contact."
+            "en": "The main contact information of the resource."
           },
           "usage": {},
           "domain": [
@@ -222,13 +222,13 @@
           "range": [
             {
               "range_label": "ContactPoint",
-              "range_uri": "http://data.europa.eu/m8g/contactPoint"
+              "range_uri": "http://data.europa.eu/m8g/ContactPoint"
             }
           ],
           "scopedrange": [
             {
               "range_uri": "#ContactPoint",
-              "range_puri": "http://data.europa.eu/m8g/contactPoint",
+              "range_puri": "http://data.europa.eu/m8g/ContactPoint",
               "range_label": {
                 "en": "ContactPoint"
               }
@@ -280,7 +280,7 @@
             "en": "name"
           },
           "description": {
-            "en": "A word or phrase that constitutes the distinctive designation of an organisation."
+            "en": "The legally recognised name of the organization"
           },
           "usage": {},
           "domain": [
@@ -330,7 +330,7 @@
             "en": "flow rate"
           },
           "description": {
-            "en": "The nominal rate at which water flows through the hydrant."
+            "en": "The nominal rate at which water flows through the fire hydrant."
           },
           "usage": {},
           "domain": [
@@ -382,10 +382,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#status",
+              "range_uri": "#Status",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "status"
+                "en": "Status"
               }
             }
           ],
@@ -400,7 +400,7 @@
             "en": "type"
           },
           "description": {
-            "en": "The particular kind of hydrant."
+            "en": "The particular kind of fire hydrant."
           },
           "usage": {},
           "domain": [
@@ -505,7 +505,7 @@
             "en": "start date"
           },
           "description": {
-            "en": "Date on which the current version of the area or object starts to be used."
+            "en": "The date on which the current version of the area or object starts to be used."
           },
           "usage": {},
           "domain": [
@@ -540,7 +540,7 @@
             "en": "status remark"
           },
           "description": {
-            "en": "A fire hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
+            "en": "A comment about minor flows affecting the fire hydrant despite being operational."
           },
           "usage": {},
           "domain": [
@@ -575,7 +575,7 @@
             "en": "is connected"
           },
           "description": {
-            "en": "A fire hydrant is connected to an underground network of water conduits."
+            "en": "The pipe through which the fire hydrant provides water."
           },
           "usage": {},
           "domain": [
@@ -609,7 +609,9 @@
           "label": {
             "en": "is operated by"
           },
-          "description": {},
+          "description": {
+            "en": "The organization in charge of controlling and maintaining the fire hydrant."
+          },
           "usage": {},
           "domain": [
             {
@@ -633,6 +635,41 @@
             }
           ],
           "cardinality": "1",
+          "codelist_uri": ""
+        },
+        {
+          "uri": "http://vocab.belgif.be/ns/hydrant#supplies",
+          "name": "supplies",
+          "sort": "supplies",
+          "label": {
+            "en": "supplies"
+          },
+          "description": {
+            "en": "The pipe providing water to the fire hydrant."
+          },
+          "usage": {},
+          "domain": [
+            {
+              "EA-Name": "FireHydrant",
+              "uri": "https://saref.etsi.org/saref4watr/FireHydrant"
+            }
+          ],
+          "range": [
+            {
+              "range_label": "Pipe",
+              "range_uri": "https://saref.etsi.org/saref4watr/Pipe"
+            }
+          ],
+          "scopedrange": [
+            {
+              "range_uri": "#Pipe",
+              "range_puri": "https://saref.etsi.org/saref4watr/Pipe",
+              "range_label": {
+                "en": "Pipe"
+              }
+            }
+          ],
+          "cardinality": "",
           "codelist_uri": ""
         },
         {
@@ -713,7 +750,7 @@
             "en": "geometry"
           },
           "description": {
-            "en": "The Geometry property provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "usage": {},
           "domain": [
@@ -763,7 +800,7 @@
             "en": "flow pressure"
           },
           "description": {
-            "en": "The amount of force with which water moves."
+            "en": "The amount of force with which water moves to a pipe."
           },
           "usage": {},
           "domain": [
@@ -885,10 +922,10 @@
           ],
           "scopedrange": [
             {
-              "range_uri": "#status",
+              "range_uri": "#Status",
               "range_puri": "http://www.w3.org/2004/02/skos/core#Concept",
               "range_label": {
-                "en": "status"
+                "en": "Status"
               }
             }
           ],
@@ -973,7 +1010,7 @@
             "en": "is connected"
           },
           "description": {
-            "en": "A pipe can be connected to other pipes."
+            "en": "A pipe can be attached to other pipes."
           },
           "usage": {},
           "domain": [
@@ -1036,14 +1073,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://vocab.belgif.be/ns/hydrant#isSupplied",
-          "name": "is supplied",
-          "sort": "is supplied",
+          "uri": "http://vocab.belgif.be/ns/hydrant#isSuppliedBy",
+          "name": "is supplied by",
+          "sort": "is supplied by",
           "label": {
-            "en": "is supplied"
+            "en": "is supplied by"
           },
           "description": {
-            "en": "Water is being transported through a pipe and delivers it to a fire hydrant."
+            "en": "The fire hydrant receiving water from the pipe\n."
           },
           "usage": {},
           "domain": [
@@ -1148,7 +1185,7 @@
             "en": "geometry"
           },
           "description": {
-            "en": "The Geometry property provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."
+            "en": "The pipe's location as a point, expressed using coordinates in some coordinate reference system."
           },
           "usage": {},
           "domain": [
@@ -1226,14 +1263,14 @@
           "codelist_uri": ""
         },
         {
-          "uri": "http://vocab.belgif.be/ns/hydrant#isConnected",
+          "uri": " http://purl.org/dc/terms/isPartOf",
           "name": "is part of",
           "sort": "is part of",
           "label": {
             "en": "is part of"
           },
           "description": {
-            "en": "A valve is a feature of a fire hydrant."
+            "en": "The fire hydrant to which the valve is physically attached."
           },
           "usage": {},
           "domain": [
@@ -1355,32 +1392,7 @@
       "parents": []
     }
   ],
-  "contributors": [
-    {
-      "role": "E",
-      "first_name": "Christophe",
-      "last_name": "Bahim",
-      "affiliation": {
-        "name": "PwC"
-      }
-    },
-    {
-      "role": "E",
-      "first_name": "Florian",
-      "last_name": "Barthelemy",
-      "affiliation": {
-        "name": "PwC"
-      }
-    },
-    {
-      "role": "E",
-      "first_name": "Vincent",
-      "last_name": "Feremans",
-      "affiliation": {
-        "name": "PwC "
-      }
-    }
-  ],
+  "contributors": [],
   "datatypes": [
     {
       "uri": "http://inspire.ec.europa.eu/ont/base#Measure",
@@ -1451,16 +1463,16 @@
           ],
           "range": [
             {
-              "range_label": "Double",
-              "range_uri": "http://www.w3.org/2001/XMLSchema#double"
+              "range_label": "Literal",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal"
             }
           ],
           "scopedrange": [
             {
-              "range_uri": "http://www.w3.org/2001/XMLSchema#double",
-              "range_puri": "http://www.w3.org/2001/XMLSchema#double",
+              "range_uri": "http://www.w3.org/2000/01/rdf-schema#Literal",
+              "range_puri": "http://www.w3.org/2000/01/rdf-schema#Literal",
               "range_label": {
-                "en": "Double"
+                "en": "Literal"
               }
             }
           ],

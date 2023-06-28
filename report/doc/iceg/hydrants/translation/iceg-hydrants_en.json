@@ -20,7 +20,7 @@
         "en": "flow rate"
       },
       "definition": {
-        "en": "The nominal rate at which water flows through the hydrant."
+        "en": "The nominal rate at which water flows through the fire hydrant."
       }
     },
     {
@@ -40,7 +40,7 @@
         "en": "type"
       },
       "definition": {
-        "en": "The particular kind of hydrant."
+        "en": "The particular kind of fire hydrant."
       }
     },
     {
@@ -50,7 +50,7 @@
         "en": "flow pressure"
       },
       "definition": {
-        "en": "The amount of force with which water moves."
+        "en": "The amount of force with which water moves to a pipe."
       }
     },
     {
@@ -130,7 +130,7 @@
         "en": "start date"
       },
       "definition": {
-        "en": "Date on which the current version of the area or object starts to be used."
+        "en": "The date on which the current version of the area or object starts to be used."
       }
     },
     {
@@ -140,7 +140,7 @@
         "en": "status remark"
       },
       "definition": {
-        "en": "A fire hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."
+        "en": "A comment about minor flows affecting the fire hydrant despite being operational."
       }
     },
     {
@@ -220,9 +220,9 @@
     },
     {
       "EA-Guid": "{D6B8D879-0403-43ae-8876-46FF38BDE5A2}",
-      "name": "status",
+      "name": "Status",
       "label": {
-        "en": "status"
+        "en": "Status"
       },
       "definition": {
         "en": "Entity status."
@@ -337,13 +337,33 @@
   ],
   "externalproperties": [
     {
+      "EA-Guid": "{F283DF90-8B19-479d-AE85-BDA3A4450C81}",
+      "name": "is part of",
+      "label": {
+        "en": "is part of"
+      },
+      "definition": {
+        "en": "The fire hydrant to which the outlet is physically attached."
+      }
+    },
+    {
+      "EA-Guid": "{6B19DC91-0D54-4792-804B-7D2E9CE3DA27}",
+      "name": "is part of",
+      "label": {
+        "en": "is part of"
+      },
+      "definition": {
+        "en": "The fire hydrant to which the valve is physically attached."
+      }
+    },
+    {
       "EA-Guid": "{E5A6E659-1A13-46db-A2E0-29ECF4ABD882}",
       "name": "contact point",
       "label": {
         "en": "contact point"
       },
       "definition": {
-        "en": "A class representing a point of contact."
+        "en": "The main contact information of the resource."
       }
     },
     {
@@ -486,43 +506,33 @@
       }
     },
     {
-      "EA-Guid": "{6E0577C4-13FB-418a-AA57-551F93FFBF8C}",
-      "name": "is connected",
-      "label": {
-        "en": "is connected"
-      },
-      "definition": {
-        "en": "A pipe can be connected to other pipes."
-      }
-    },
-    {
-      "EA-Guid": "{F283DF90-8B19-479d-AE85-BDA3A4450C81}",
-      "name": "is part of",
-      "label": {
-        "en": "is part of"
-      },
-      "definition": {
-        "en": "An outlet is a fire hydrant's point exit for water."
-      }
-    },
-    {
-      "EA-Guid": "{6B19DC91-0D54-4792-804B-7D2E9CE3DA27}",
-      "name": "is part of",
-      "label": {
-        "en": "is part of"
-      },
-      "definition": {
-        "en": "A valve is a feature of a fire hydrant."
-      }
-    },
-    {
       "EA-Guid": "{40C58437-4226-43d5-A1CE-9A062C80E2CC}",
       "name": "is connected",
       "label": {
         "en": "is connected"
       },
       "definition": {
-        "en": "A fire hydrant is connected to an underground network of water conduits."
+        "en": "The pipe through which the fire hydrant provides water."
+      }
+    },
+    {
+      "EA-Guid": "{6E0577C4-13FB-418a-AA57-551F93FFBF8C}",
+      "name": "is connected",
+      "label": {
+        "en": "is connected"
+      },
+      "definition": {
+        "en": "A pipe can be attached to other pipes."
+      }
+    },
+    {
+      "EA-Guid": "{CC12C5D8-64AF-469e-9418-699EA9D35158}",
+      "name": "is operated by",
+      "label": {
+        "en": "is operated by"
+      },
+      "definition": {
+        "en": "The organization in charge of controlling and maintaining the fire hydrant."
       }
     },
     {
@@ -536,20 +546,23 @@
       }
     },
     {
-      "EA-Guid": "{CC12C5D8-64AF-469e-9418-699EA9D35158}",
-      "name": "is operated by",
+      "EA-Guid": "{869749F2-B146-4d52-AD55-30E7B4E7C649}",
+      "name": "is supplied by",
       "label": {
-        "en": "is operated by"
+        "en": "is supplied by"
+      },
+      "definition": {
+        "en": "The fire hydrant receiving water from the pipe\n."
       }
     },
     {
       "EA-Guid": "{869749F2-B146-4d52-AD55-30E7B4E7C649}",
-      "name": "is supplied",
+      "name": "supplies",
       "label": {
-        "en": "is supplied"
+        "en": "supplies"
       },
       "definition": {
-        "en": "Water is being transported through a pipe and delivers it to a fire hydrant."
+        "en": "The pipe providing water to the fire hydrant."
       }
     },
     {
@@ -619,7 +632,7 @@
         "en": "geometry"
       },
       "definition": {
-        "en": "The Geometry property provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
+        "en": "The fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."
       }
     },
     {
@@ -629,7 +642,7 @@
         "en": "geometry"
       },
       "definition": {
-        "en": "The Geometry property provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."
+        "en": "The pipe's location as a point, expressed using coordinates in some coordinate reference system."
       }
     },
     {
@@ -679,7 +692,7 @@
         "en": "name"
       },
       "definition": {
-        "en": "A word or phrase that constitutes the distinctive designation of an organisation."
+        "en": "The legally recognised name of the organization"
       }
     },
     {

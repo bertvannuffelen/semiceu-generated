@@ -69,7 +69,7 @@
     shacl:name "has telephone"@en;
     shacl:path <http://data.europa.eu/m8g/telephone>
   ];
-  shacl:targetClass <http://data.europa.eu/m8g/contactPoint> .
+  shacl:targetClass <http://data.europa.eu/m8g/ContactPoint> .
 
 <https://semiceu.github.io/shacl/iceg-hydrants_en#FireHydrantShape> a shacl:NodeShape;
   shacl:closed false;
@@ -80,14 +80,14 @@
     shacl:path <http://w3.org/ns/locn#address>
   ], [
     shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
-    shacl:definition "The nominal rate at which water flows through the hydrant."@en;
+    shacl:definition "The nominal rate at which water flows through the fire hydrant."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "flow rate"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#fireHydrantFlowRate>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
-    shacl:definition "The Geometry property provides the means to identify a fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."@en;
+    shacl:definition "The fire hydrant's location as a point, expressed using coordinates in some coordinate reference system."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "geometry"@en;
@@ -100,12 +100,13 @@
     shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/Pipe>;
-    shacl:definition "A fire hydrant is connected to an underground network of water conduits."@en;
+    shacl:definition "The pipe through which the fire hydrant provides water."@en;
     shacl:minCount 1;
     shacl:name "is connected"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
   ], [
     shacl:class org:Organization;
+    shacl:definition "The organization in charge of controlling and maintaining the fire hydrant."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "is operated by"@en;
@@ -124,7 +125,7 @@
     shacl:path <http://vocab.belgif.be/ns/hydrant#openingKey>
   ], [
     shacl:datatype xsd:dateTime;
-    shacl:definition "Date on which the current version of the area or object starts to be used."@en;
+    shacl:definition "The date on which the current version of the area or object starts to be used."@en;
     shacl:maxCount 1;
     shacl:name "start date"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#startDate>
@@ -137,13 +138,18 @@
     shacl:path <http://vocab.belgif.be/ns/hydrant#fireHydrantStatus>
   ], [
     shacl:datatype rdf:langString;
-    shacl:definition "A fire hydrant is still operation but has minor flaws due to which it is scheduled for reparairement."@en;
+    shacl:definition "A comment about minor flows affecting the fire hydrant despite being operational."@en;
     shacl:maxCount 1;
     shacl:name "status remark"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#statusRemark>
   ], [
+    shacl:class <https://saref.etsi.org/saref4watr/Pipe>;
+    shacl:definition "The pipe providing water to the fire hydrant."@en;
+    shacl:name "supplies"@en;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#supplies>
+  ], [
     shacl:class skos:Concept;
-    shacl:definition "The particular kind of hydrant."@en;
+    shacl:definition "The particular kind of fire hydrant."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "type"@en;
@@ -279,7 +285,7 @@
     shacl:name "uom"@en;
     shacl:path <http://vocab.belgif.be/ns/building#uom>
   ], [
-    shacl:datatype xsd:double;
+    shacl:datatype rdfs:Literal;
     shacl:definition "Number with a scale. The value of uom (Units Of Measure) attribute is a reference to a Reference System for the amount, either a ratio or position scale."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
@@ -303,13 +309,13 @@
 <https://semiceu.github.io/shacl/iceg-hydrants_en#OrganizationShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
-    shacl:class <http://data.europa.eu/m8g/contactPoint>;
-    shacl:definition "A class representing a point of contact."@en;
+    shacl:class <http://data.europa.eu/m8g/ContactPoint>;
+    shacl:definition "The main contact information of the resource."@en;
     shacl:name "contact point"@en;
-    shacl:path <http://data.europa.eu/m8g/ContactPoint>
+    shacl:path <http://data.europa.eu/m8g/contactPoint>
   ], [
     shacl:datatype rdf:langString;
-    shacl:definition "A word or phrase that constitutes the distinctive designation of an organisation."@en;
+    shacl:definition "The legally recognised name of the organization"@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "name"@en;
@@ -335,11 +341,10 @@
     shacl:path <http://vocab.belgif.be/ns/hydrant#outletDiameter>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
-    shacl:definition "An outlet is a fire hydrant's point exit for water."@en;
+    shacl:definition "The fire hydrant to which the outlet is physically attached."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "is part of"@en;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
+    shacl:name "is part of"@en
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/hydrant#Outlet> .
 
@@ -359,7 +364,7 @@
     shacl:path <http://vocab.belgif.be/ns/hydrant#pipeDiameter>
   ], [
     shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
-    shacl:definition "The amount of force with which water moves."@en;
+    shacl:definition "The amount of force with which water moves to a pipe."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "flow pressure"@en;
@@ -373,7 +378,7 @@
     shacl:path <http://vocab.belgif.be/ns/hydrant#pipeFlowRate>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
-    shacl:definition "The Geometry property provides the means to identify a pipe's location as a point, expressed using coordinates in some coordinate reference system."@en;
+    shacl:definition "The pipe's location as a point, expressed using coordinates in some coordinate reference system."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "geometry"@en;
@@ -386,7 +391,7 @@
     shacl:path <http://www.w3.org/ns/adms#identifier>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/Pipe>;
-    shacl:definition "A pipe can be connected to other pipes."@en;
+    shacl:definition "A pipe can be attached to other pipes."@en;
     shacl:name "is connected"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
   ], [
@@ -397,17 +402,18 @@
     shacl:name "is operated by"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#isOperatedBy>
   ], [
+    shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
+    shacl:definition """The fire hydrant receiving water from the pipe
+."""@en;
+    shacl:name "is supplied by"@en;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#isSuppliedBy>
+  ], [
     shacl:class skos:Concept;
     shacl:definition "The condition in which a pipe can be found."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "status"@en;
     shacl:path <http://vocab.belgif.be/ns/hydrant#pipeStatus>
-  ], [
-    shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
-    shacl:definition "Water is being transported through a pipe and delivers it to a fire hydrant."@en;
-    shacl:name "is supplied"@en;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#isSupplied>
   ], [
     shacl:class skos:Concept;
     shacl:definition "The particular kind of pipe."@en;
@@ -441,10 +447,9 @@
     shacl:path <http://vocab.belgif.be/ns/hydrant#valveDiameter>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
-    shacl:definition "A valve is a feature of a fire hydrant."@en;
+    shacl:definition "The fire hydrant to which the valve is physically attached."@en;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "is part of"@en;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#isConnected>
+    shacl:name "is part of"@en
   ];
   shacl:targetClass <https://saref.etsi.org/saref4watr/Valve> .
