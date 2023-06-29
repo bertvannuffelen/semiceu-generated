@@ -177,12 +177,12 @@
     },
     {
       "EA-Guid": "{68104B31-0399-443c-9C41-66924D3E0DB6}",
-      "name": "Measure",
+      "name": "ICEG-Unit",
       "label": {
-        "en": "Measure"
+        "en": "ICEG-Unit"
       },
       "definition": {
-        "en": "A representation of a measure value. The decimal value is followed by a space and the unit of the measure."
+        "en": "A representation of a unit."
       }
     },
     {
@@ -271,7 +271,10 @@
         "en": "Identifier"
       },
       "definition": {
-        "en": "The Identifier class represents any identifier issued by any authority, whether a government agency or not. It captures the identifier itself, the type of identifier, and details of the issuing authority, the date on which the identifier was issued."
+        "en": "A structured reference that identifies an entity."
+      },
+      "usage": {
+        "en": "The Identifier class is based on the UN/CEFACT class of the same name and is defined under the ADMS namespace."
       }
     },
     {
@@ -282,16 +285,6 @@
       },
       "definition": {
         "en": "More readable representation with only the basic data of the address, intended to use an address as an attribute of another object."
-      }
-    },
-    {
-      "EA-Guid": "{8D2D3310-0E88-4590-9FCA-08B04F442CED}",
-      "name": "Geometry",
-      "label": {
-        "en": "Geometry"
-      },
-      "definition": {
-        "en": "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."
       }
     },
     {
@@ -333,19 +326,19 @@
       "definition": {
         "en": "A valve is a device designed to control water flow, pressure or volume."
       }
+    },
+    {
+      "EA-Guid": "{8D2D3310-0E88-4590-9FCA-08B04F442CED}",
+      "name": "Geometry",
+      "label": {
+        "en": "Geometry"
+      },
+      "definition": {
+        "en": "The Geometry class provides the means to identify a Location as a point, line, polygon, etc. expressed using coordinates in some coordinate reference system."
+      }
     }
   ],
   "externalproperties": [
-    {
-      "EA-Guid": "{F283DF90-8B19-479d-AE85-BDA3A4450C81}",
-      "name": "is part of",
-      "label": {
-        "en": "is part of"
-      },
-      "definition": {
-        "en": "The fire hydrant to which the outlet is physically attached."
-      }
-    },
     {
       "EA-Guid": "{6B19DC91-0D54-4792-804B-7D2E9CE3DA27}",
       "name": "is part of",
@@ -354,6 +347,16 @@
       },
       "definition": {
         "en": "The fire hydrant to which the valve is physically attached."
+      }
+    },
+    {
+      "EA-Guid": "{F283DF90-8B19-479d-AE85-BDA3A4450C81}",
+      "name": "is part of",
+      "label": {
+        "en": "is part of"
+      },
+      "definition": {
+        "en": "The fire hydrant to which the outlet is physically attached."
       }
     },
     {
@@ -387,43 +390,23 @@
       }
     },
     {
-      "EA-Guid": "{5E65F7B2-DCB1-4ef1-81CF-E3209DBE419A}",
-      "name": "schemeName",
-      "label": {
-        "en": "schemeName"
-      },
-      "definition": {
-        "en": "Name of the scheme used to construct the identifier."
-      }
-    },
-    {
-      "EA-Guid": "{DCD2D21E-B277-47ad-ABB1-AD9B92C085A8}",
-      "name": "schemeURI",
-      "label": {
-        "en": "schemeURI"
-      },
-      "definition": {
-        "en": "URI of the scheme used to construct the identifier."
-      }
-    },
-    {
       "EA-Guid": "{F851959B-EA03-4e18-9814-D4AB5DF8706B}",
-      "name": "issuingAuthorityURI",
+      "name": "assigned by",
       "label": {
-        "en": "issuingAuthorityURI"
+        "en": "assigned by"
       },
       "definition": {
-        "en": "The URI of the issuing authority."
+        "en": "\tLink to the agent who issued the identifier"
       }
     },
     {
       "EA-Guid": "{39ED8CD5-6AFA-4ed1-9A53-76592B8620D3}",
-      "name": "dateOfIssue",
+      "name": "assigned on",
       "label": {
-        "en": "dateOfIssue"
+        "en": "assigned on"
       },
       "definition": {
-        "en": "The date on which the Identifier was assigned."
+        "en": "Time when the identifier was issued."
       }
     },
     {
@@ -493,6 +476,16 @@
       }
     },
     {
+      "EA-Guid": "{5E65F7B2-DCB1-4ef1-81CF-E3209DBE419A}",
+      "name": "structured identificator",
+      "label": {
+        "en": "structured identificator"
+      },
+      "definition": {
+        "en": "Identifier of the object broken down into its parts."
+      }
+    },
+    {
       "EA-Guid": "{157C9C0A-11B7-4aac-A7A2-4DE0EB50BA83}",
       "name": "uom",
       "label": {
@@ -503,16 +496,6 @@
       },
       "usage": {
         "en": "Concepts of this codelist should be used from the EU Vocabulary <a href=\"https://op.europa.eu/en/web/eu-vocabularies/dataset/-/resource?uri=http://publications.europa.eu/resource/dataset/measurement-unit\">Measurement unit</a>."
-      }
-    },
-    {
-      "EA-Guid": "{40C58437-4226-43d5-A1CE-9A062C80E2CC}",
-      "name": "is connected",
-      "label": {
-        "en": "is connected"
-      },
-      "definition": {
-        "en": "The pipe through which the fire hydrant provides water."
       }
     },
     {
@@ -552,7 +535,7 @@
         "en": "is supplied by"
       },
       "definition": {
-        "en": "The fire hydrant receiving water from the pipe\n."
+        "en": "The pipe providing water to the fire hydrant."
       }
     },
     {
@@ -562,7 +545,7 @@
         "en": "supplies"
       },
       "definition": {
-        "en": "The pipe providing water to the fire hydrant."
+        "en": "The fire hydrant receiving water from the pipe\n."
       }
     },
     {
@@ -587,12 +570,15 @@
     },
     {
       "EA-Guid": "{398F8A02-C0D9-4e63-A2FC-84B93E814246}",
-      "name": "Identifier",
+      "name": "identifier",
       "label": {
-        "en": "Identifier"
+        "en": "identifier"
       },
       "definition": {
-        "en": "The value of this property is the Identifier itself."
+        "en": "String used to uniquely identify the object."
+      },
+      "usage": {
+        "en": "Type of the string refers to the identifier (incl its version), the string itself to the actual identifier."
       }
     },
     {
@@ -617,12 +603,12 @@
     },
     {
       "EA-Guid": "{DA7DEC59-D407-4c7c-8F63-7E951091BB3B}",
-      "name": "issuingAuthorityName",
+      "name": "assigned by string",
       "label": {
-        "en": "issuingAuthorityName"
+        "en": "assigned by string"
       },
       "definition": {
-        "en": "The name of the agency responsible for issuing the Identifier."
+        "en": "\tName of the agent who assigned the identifier."
       }
     },
     {
@@ -692,7 +678,7 @@
         "en": "name"
       },
       "definition": {
-        "en": "The legally recognised name of the organization"
+        "en": "The legally recognised name of the organization."
       }
     },
     {
