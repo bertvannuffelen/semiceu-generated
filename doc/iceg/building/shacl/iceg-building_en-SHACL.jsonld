@@ -75,7 +75,7 @@
           "sh:path": "http://vocab.belgif.be/ns/building#buildingUnit"
         },
         {
-          "sh:class": "http://inspire.ec.europa.eu/featureconcept/CadastralParcel",
+          "sh:class": "http://vocab.belgif.be/ns/building#CadastralParcel",
           "sh:definition": {
             "en": "The parcel(s) with which the building is officially associated.\t"
           },
@@ -555,6 +555,24 @@
       "sh:targetClass": "http://vocab.belgif.be/ns/building#BuildingUnit"
     },
     {
+      "@id": "https://semiceu.github.io/shacl/iceg-building_en#CadastralParcelShape",
+      "@type": "sh:NodeShape",
+      "sh:closed": false,
+      "sh:property": [
+        {
+          "sh:class": "http://vocab.belgif.be/ns/building#Building",
+          "sh:definition": {
+            "en": "The Building(s) related to the CadastralParcel."
+          },
+          "sh:name": {
+            "en": "building"
+          },
+          "sh:path": "http://vocab.belgif.be/ns/building#building"
+        }
+      ],
+      "sh:targetClass": "http://vocab.belgif.be/ns/building#CadastralParcel"
+    },
+    {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#CurrentUseShape",
       "@type": "sh:NodeShape",
       "sh:closed": false,
@@ -865,7 +883,7 @@
           "sh:maxCount": "1",
           "sh:minCount": "1",
           "sh:name": {
-            "en": "value"
+            "en": "A property to relate a unit with a value."
           },
           "sh:path": "https://qudt.org/schema/qudt/value"
         }
@@ -927,24 +945,6 @@
       "sh:closed": false,
       "sh:property": [],
       "sh:targetClass": "http://vocab.belgif.be/ns/building#StructuredIdentificator"
-    },
-    {
-      "@id": "https://semiceu.github.io/shacl/iceg-building_en#CadastralParcelShape",
-      "@type": "sh:NodeShape",
-      "sh:closed": false,
-      "sh:property": [
-        {
-          "sh:class": "http://vocab.belgif.be/ns/building#Building",
-          "sh:definition": {
-            "en": "The Building(s) related to the CadastralParcel."
-          },
-          "sh:name": {
-            "en": "building"
-          },
-          "sh:path": "http://vocab.belgif.be/ns/building#building"
-        }
-      ],
-      "sh:targetClass": "http://inspire.ec.europa.eu/featureconcept/CadastralParcel"
     },
     {
       "@id": "https://semiceu.github.io/shacl/iceg-building_en#3DobjectShape",
