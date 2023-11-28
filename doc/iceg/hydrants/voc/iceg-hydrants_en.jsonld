@@ -316,7 +316,7 @@
   "license": "https://joinup.ec.europa.eu/collection/semantic-interoperability-community-semic",
   "issued": "TODO",
   "navigation": {},
-  "publication-state": "under public review",
+  "publication-state": "Under public review",
   "publication-date": "2023-07-03",
   "classes": [
     {
@@ -329,6 +329,13 @@
     }
   ],
   "externals": [
+    {
+      "name": {
+        "en": "Measure"
+      },
+      "@id": "http://inspire.ec.europa.eu/ont/base#Measure",
+      "@type": "rdfs:Class"
+    },
     {
       "name": {
         "en": "HydrantType"
@@ -352,7 +359,7 @@
     },
     {
       "name": {
-        "en": "OpeningKeyType"
+        "en": "opening key type"
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class"
@@ -365,14 +372,11 @@
       "definition": {
         "en": "The nominal rate at which water flows through the fire hydrant."
       },
-      "usage": {
-        "en": "Typically measured in liters per minute (L/min)."
-      },
       "domain": [
         "https://saref.etsi.org/saref4watr/FireHydrant"
       ],
       "range": [
-        "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure"
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     },
@@ -380,7 +384,7 @@
       "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantStatus",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "The current operational state of a fire hydrant."
+        "en": "The condition in which a fire hydrant can be found."
       },
       "domain": [
         "https://saref.etsi.org/saref4watr/FireHydrant"
@@ -394,7 +398,7 @@
       "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "The classification or category of a fire hydrant."
+        "en": "The particular kind of fire hydrant."
       },
       "domain": [
         "https://saref.etsi.org/saref4watr/FireHydrant"
@@ -410,14 +414,11 @@
       "definition": {
         "en": "The amount of force with which water moves to a pipe."
       },
-      "usage": {
-        "en": "Typically measured in Bar."
-      },
       "domain": [
         "https://saref.etsi.org/saref4watr/Pipe"
       ],
       "range": [
-        "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure"
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     },
@@ -442,7 +443,7 @@
         "en": "A tool used to open a fire hydrant by removing the cover of a fire hydrant's outlet."
       },
       "domain": [
-        "https://saref.etsi.org/saref4watr/FireHydrant"
+        "https://saref.etsi.org/saref4watr/Valve"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
@@ -459,7 +460,7 @@
         "http://vocab.belgif.be/ns/hydrant#Outlet"
       ],
       "range": [
-        "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure"
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     },
@@ -473,7 +474,21 @@
         "https://saref.etsi.org/saref4watr/Pipe"
       ],
       "range": [
-        "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure"
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#pipeFlowRate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "en": "The nominal rate at which water flows through the pipe."
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     },
@@ -481,7 +496,7 @@
       "@id": "http://vocab.belgif.be/ns/hydrant#pipeStatus",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "The current operational state of a pipe."
+        "en": "The condition in which a pipe can be found."
       },
       "domain": [
         "https://saref.etsi.org/saref4watr/Pipe"
@@ -495,7 +510,7 @@
       "@id": "http://vocab.belgif.be/ns/hydrant#pipeType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "The classification or category of a pipe."
+        "en": "The particular kind of pipe."
       },
       "domain": [
         "https://saref.etsi.org/saref4watr/Pipe"
@@ -523,7 +538,7 @@
       "@id": "http://vocab.belgif.be/ns/hydrant#statusRemark",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
-        "en": "A comment about minor flaws affecting the fire hydrant."
+        "en": "A comment about minor flows affecting the fire hydrant despite being operational."
       },
       "domain": [
         "https://saref.etsi.org/saref4watr/FireHydrant"
@@ -543,7 +558,7 @@
         "https://saref.etsi.org/saref4watr/Valve"
       ],
       "range": [
-        "http://def.isotc211.org/iso19103/2015/MeasureTypes#Measure"
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     },
@@ -551,7 +566,7 @@
       "@id": "http://vocab.belgif.be/ns/hydrant#waterType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
-        "en": "The classification or category of water."
+        "en": "The particular kind of liquid which is running through a pipe."
       },
       "domain": [
         "https://saref.etsi.org/saref4watr/Pipe"
@@ -562,7 +577,22 @@
       "generalization": []
     }
   ],
-  "externalproperties": [],
+  "externalproperties": [
+    {
+      "name": {
+        "en": "uom"
+      },
+      "@id": "http://vocab.belgif.be/ns/building#uom",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "en": "value"
+      },
+      "@id": "https://qudt.org/schema/qudt/value",
+      "@type": "rdf:Property"
+    }
+  ],
   "@context": {
     "owl": "http://www.w3.org/2002/07/owl#",
     "void": "http://rdfs.org/ns/void#",
