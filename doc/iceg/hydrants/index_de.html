@@ -13,8 +13,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 
-  <link rel="stylesheet" href="https://dij151upo6vad.cloudfront.net/2.latest/css/vlaanderen-ui.css" />
-  <link rel="stylesheet" href="https://dij151upo6vad.cloudfront.net/2.latest/css/vlaanderen-ui-corporate.css" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
   <link rel="stylesheet" type="text/css" href="https://belgif.be/css/font-awesome/all.min.css">
   <link rel="stylesheet" type="text/css" href="https://belgif.be/css/bootstrap/bootstrap.min.css">
@@ -525,7 +523,7 @@
               <div class="head" role="metainfo" id="metainfo">
               <dl>
               <!--<dt>Source</dt><dd><br></dd>-->
-              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/ce4cde2fc8e157fa267470aebf056cba1bb5e43b/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/ce4cde2fc8e157fa267470aebf056cba1bb5e43b/CHANGELOG</a></dd>-->
+              <!--<dt>Changelog</dt><dd><a href="https://github.com/bertvannuffelen/semiceuthema/blob/2e5b3146d5db4bcc0d222a6da5395b9e54a65e35/CHANGELOG">https://github.com/bertvannuffelen/semiceuthema/blob/2e5b3146d5db4bcc0d222a6da5395b9e54a65e35/CHANGELOG</a></dd>-->
               <dt>Feedback</dt><dd><a href="https://github.com/belgif/thematic/issues">https://github.com/belgif/thematic/issues</a></dd>
               <!--<dt>Registry of standards</dt><dd><a href="TODO">TODO</a></dd>-->
 
@@ -904,7 +902,7 @@ TBD
                       <a href="#FireHydrant%3Astatus">status</a>, 
                       <a href="#FireHydrant%3Ais%20connected">is connected</a>, 
                       <a href="#FireHydrant%3Ais%20operated%20by">is operated by</a>, 
-                      <a href="#FireHydrant%3Asupplies">supplies</a>, 
+                      <a href="#FireHydrant%3Ais%20supplied%20by">is supplied by</a>, 
                       <a href="#FireHydrant%3Aaddress">address</a>, 
                       <a href="#FireHydrant%3Aidentifier">identifier</a>, 
                       <a href="#FireHydrant%3Ageometry">geometry</a>.</dd>
@@ -1107,11 +1105,11 @@ TBD
                         <td></td>
                       </tr>
                     
-                      <tr id="FireHydrant%3Asupplies" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#supplies">
+                      <tr id="FireHydrant%3Ais%20supplied%20by" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#isSuppliedBy">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/hydrant#supplies" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#supplies" data-placement="right">
-                            supplies</a>
+                            <a href="http://vocab.belgif.be/ns/hydrant#isSuppliedBy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#isSuppliedBy" data-placement="right">
+                            is supplied by</a>
                           </code>
                         </td>
                         <td>
@@ -1121,8 +1119,8 @@ TBD
 			    
                           
                         </td>
-			<td>0..*</td>
-                        <td property="rdfs:comment">The pipe providing water to the fire hydrant. It is possible that one pipe is connected to several hydrants.</td>
+			<td>0..1</td>
+                        <td property="rdfs:comment">The fire hydrant receiving water from the pipe.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
@@ -1211,7 +1209,7 @@ TBD
                       <a href="#Pipe%3Awater%20type">water type</a>, 
                       <a href="#Pipe%3Adiameter">diameter</a>, 
                       <a href="#Pipe%3Ais%20operated%20by">is operated by</a>, 
-                      <a href="#Pipe%3Ais%20supplied%20by">is supplied by</a>, 
+                      <a href="#Pipe%3Asupplies">supplies</a>, 
                       <a href="#Pipe%3Aaddress">address</a>, 
                       <a href="#Pipe%3Aidentifier">identifier</a>, 
                       <a href="#Pipe%3Ageometry">geometry</a>.</dd>
@@ -1394,11 +1392,11 @@ TBD
                         <td></td>
                       </tr>
                     
-                      <tr id="Pipe%3Ais%20supplied%20by" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#isSuppliedBy">
+                      <tr id="Pipe%3Asupplies" typeof="rdfs:Property" resource="http://vocab.belgif.be/ns/hydrant#supplies">
                         <td>
                           <code property="rdfs:label">
-                            <a href="http://vocab.belgif.be/ns/hydrant#isSuppliedBy" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#isSuppliedBy" data-placement="right">
-                            is supplied by</a>
+                            <a href="http://vocab.belgif.be/ns/hydrant#supplies" data-toggle="tooltip" data-content="http://vocab.belgif.be/ns/hydrant#supplies" data-placement="right">
+                            supplies</a>
                           </code>
                         </td>
                         <td>
@@ -1408,9 +1406,8 @@ TBD
 			    
                           
                         </td>
-			<td>0..1</td>
-                        <td property="rdfs:comment">The fire hydrant receiving water from the pipe
- which is located alongside the street</td>
+			<td>0..*</td>
+                        <td property="rdfs:comment">The pipe providing water to the fire hydrant. It is possible that one pipe is connected to several hydrants.</td>
                         <td property="skos:scopeNote"></td>
                         <td></td>
                       </tr>
