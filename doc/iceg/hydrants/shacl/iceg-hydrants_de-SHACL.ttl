@@ -6,7 +6,10 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://semiceu.github.io/shacl/iceg-hydrants_de> <https://semiceu.github.io/shacl/iceg-hydrants_deshapes> <https://semiceu.github.io/shacl/iceg-hydrants_de#OutletShape>,
+<https://semiceu.github.io/shacl/iceg-hydrants_de> <https://semiceu.github.io/shacl/iceg-hydrants_deshapes> <https://semiceu.github.io/shacl/iceg-hydrants_de#InspectionShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_de#MaintenanceShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_de#OutletShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_de#UsageShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#ContactPointShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#MeasureShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#GeographicalNameShape>,
@@ -16,6 +19,7 @@
     <https://semiceu.github.io/shacl/iceg-hydrants_de#OpeningKeyTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#NativenessValueShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#NameStatusValueShape>,
+    <https://semiceu.github.io/shacl/iceg-hydrants_de#PipeClassificationTypeShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#IdentifierShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#AddressRepresentationShape>,
     <https://semiceu.github.io/shacl/iceg-hydrants_de#GeometryShape>,
@@ -33,7 +37,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/building#Adresvoorstelling.huisnummer>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/hydrant#GeographicalName>;
+    shacl:class <http://vocab.belgif.be/ns/building#GeographicalName>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -45,7 +49,7 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/locn#postCode>
   ], [
-    shacl:class <http://vocab.belgif.be/ns/hydrant#GeographicalName>;
+    shacl:class <http://vocab.belgif.be/ns/building#GeographicalName>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
@@ -83,7 +87,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#fireHydrantFlowRate>
+    shacl:path <http://vocab.belgif.be/ns/hydrant#FireHydrant.flowRate>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
     shacl:definition "Enter your translation here"@de;
@@ -91,11 +95,26 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://www.w3.org/ns/locn#geometry>
   ], [
+    shacl:class <http://vocab.belgif.be/ns/hydrant#Inspection>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#FireHydrant.hasInspection>
+  ], [
+    shacl:class <http://vocab.belgif.be/ns/hydrant#Maintenance>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#FireHydrant.hasMaintenance>
+  ], [
     shacl:class <http://vocab.belgif.be/ns/hydrant#Outlet>;
     shacl:definition "Enter your translation here"@de;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
     shacl:path dc:hasPart
+  ], [
+    shacl:class <http://vocab.belgif.be/ns/hydrant#Usage>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#FireHydrant.hasUsage>
   ], [
     shacl:class <http://www.w3.org/ns/adms#Identifier>;
     shacl:definition "Enter your translation here"@de;
@@ -126,19 +145,13 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#lastInspectionDate>
-  ], [
-    shacl:datatype xsd:dateTime;
-    shacl:definition "Enter your translation here"@de;
-    shacl:maxCount 1;
-    shacl:name "Enter your translation here"@de;
     shacl:path <http://vocab.belgif.be/ns/hydrant#startDate>
   ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#fireHydrantStatus>
+    shacl:path <http://www.w3.org/ns/adms#status>
   ], [
     shacl:datatype rdf:langString;
     shacl:definition "Enter your translation here"@de;
@@ -151,7 +164,7 @@
     shacl:maxCount 1;
     shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#fireHydrantType>
+    shacl:path <http://vocab.belgif.be/ns/hydrant#FireHydrant.type>
   ];
   shacl:targetClass <https://saref.etsi.org/saref4watr/FireHydrant> .
 
@@ -274,6 +287,56 @@
   ];
   shacl:targetClass <http://www.w3.org/ns/adms#Identifier> .
 
+<https://semiceu.github.io/shacl/iceg-hydrants_de#InspectionShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:date
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:description
+  ], [
+    shacl:class org:Organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Inspection.performedBy>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/hydrant#Inspection> .
+
+<https://semiceu.github.io/shacl/iceg-hydrants_de#MaintenanceShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:date
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:description
+  ], [
+    shacl:class org:Organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Maintenance.performedBy>
+  ], [
+    shacl:class org:Organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Maintenance.requestedBy>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/hydrant#Maintenance> .
+
 <https://semiceu.github.io/shacl/iceg-hydrants_de#MeasureShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -342,9 +405,14 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:isPartOf
   ];
   shacl:targetClass <http://vocab.belgif.be/ns/hydrant#Outlet> .
+
+<https://semiceu.github.io/shacl/iceg-hydrants_de#PipeClassificationTypeShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:targetClass skos:Concept .
 
 <https://semiceu.github.io/shacl/iceg-hydrants_de#PipeShape> a shacl:NodeShape;
   shacl:closed false;
@@ -354,12 +422,17 @@
     shacl:name "Enter your translation here"@de;
     shacl:path <http://w3.org/ns/locn#address>
   ], [
+    shacl:class skos:Concept;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Pipe.classification>
+  ], [
     shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
-    shacl:minCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#pipeDiameter>
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Pipe.diameter>
   ], [
     shacl:datatype <http://inspire.ec.europa.eu/ont/base#Measure>;
     shacl:definition "Enter your translation here"@de;
@@ -371,7 +444,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#pipeFlowRate>
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Pipe.flowRate>
   ], [
     shacl:class <http://www.w3.org/ns/locn#Geometry>;
     shacl:definition "Enter your translation here"@de;
@@ -400,7 +473,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#pipeStatus>
+    shacl:path <http://www.w3.org/ns/adms#status>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
     shacl:definition "Enter your translation here"@de;
@@ -411,7 +484,7 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#pipeType>
+    shacl:path dc:type
   ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;
@@ -428,6 +501,34 @@
   shacl:closed false;
   shacl:targetClass skos:Concept .
 
+<https://semiceu.github.io/shacl/iceg-hydrants_de#UsageShape> a shacl:NodeShape;
+  shacl:closed false;
+  shacl:property [
+    shacl:datatype xsd:dateTime;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:date
+  ], [
+    shacl:datatype rdf:langString;
+    shacl:definition "Enter your translation here"@de;
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:description
+  ], [
+    shacl:class <http://www.w3.org/ns/locn#Geometry>;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Usage.location>
+  ], [
+    shacl:class org:Organization;
+    shacl:definition "Enter your translation here"@de;
+    shacl:maxCount 1;
+    shacl:name "Enter your translation here"@de;
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Usage.performedBy>
+  ];
+  shacl:targetClass <http://vocab.belgif.be/ns/hydrant#Usage> .
+
 <https://semiceu.github.io/shacl/iceg-hydrants_de#ValveShape> a shacl:NodeShape;
   shacl:closed false;
   shacl:property [
@@ -435,13 +536,14 @@
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:name "Enter your translation here"@de;
-    shacl:path <http://vocab.belgif.be/ns/hydrant#valveDiameter>
+    shacl:path <http://vocab.belgif.be/ns/hydrant#Valve.diameter>
   ], [
     shacl:class <https://saref.etsi.org/saref4watr/FireHydrant>;
     shacl:definition "Enter your translation here"@de;
     shacl:maxCount 1;
     shacl:minCount 1;
-    shacl:name "Enter your translation here"@de
+    shacl:name "Enter your translation here"@de;
+    shacl:path dc:isPartOf
   ], [
     shacl:class skos:Concept;
     shacl:definition "Enter your translation here"@de;

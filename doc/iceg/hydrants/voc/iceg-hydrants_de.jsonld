@@ -320,7 +320,31 @@
   "publication-date": "2023-12-05",
   "classes": [
     {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Inspection",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Maintenance",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "parents": []
+    },
+    {
       "@id": "http://vocab.belgif.be/ns/hydrant#Outlet",
+      "@type": "http://www.w3.org/2002/07/owl#Class",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "parents": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Usage",
       "@type": "http://www.w3.org/2002/07/owl#Class",
       "definition": {
         "de": "A translation has yet to be added"
@@ -368,11 +392,19 @@
       },
       "@id": "http://www.w3.org/2004/02/skos/core#Concept",
       "@type": "rdfs:Class"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "pipe classification type"
+      },
+      "@id": "http://www.w3.org/2004/02/skos/core#Concept",
+      "@type": "rdfs:Class"
     }
   ],
   "properties": [
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantFlowRate",
+      "@id": "http://vocab.belgif.be/ns/hydrant#FireHydrant.flowRate",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
         "de": "A translation has yet to be added"
@@ -386,7 +418,7 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantStatus",
+      "@id": "http://vocab.belgif.be/ns/hydrant#FireHydrant.type",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "de": "A translation has yet to be added"
@@ -400,16 +432,128 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#fireHydrantType",
+      "@id": "http://vocab.belgif.be/ns/hydrant#Inspection.performedBy",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
         "de": "A translation has yet to be added"
       },
       "domain": [
-        "https://saref.etsi.org/saref4watr/FireHydrant"
+        "http://vocab.belgif.be/ns/hydrant#Inspection"
+      ],
+      "range": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Maintenance.performedBy",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/hydrant#Maintenance"
+      ],
+      "range": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Maintenance.requestedBy",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/hydrant#Maintenance"
+      ],
+      "range": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Pipe.classification",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
       ],
       "range": [
         "http://www.w3.org/2004/02/skos/core#Concept"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Pipe.diameter",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Pipe.flowRate",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Pipe"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Usage.location",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/hydrant#Usage"
+      ],
+      "range": [
+        "http://www.w3.org/ns/locn#Geometry"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Usage.performedBy",
+      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "http://vocab.belgif.be/ns/hydrant#Usage"
+      ],
+      "range": [
+        "http://www.w3.org/ns/org#Organization"
+      ],
+      "generalization": []
+    },
+    {
+      "@id": "http://vocab.belgif.be/ns/hydrant#Valve.diameter",
+      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
+      "definition": {
+        "de": "A translation has yet to be added"
+      },
+      "domain": [
+        "https://saref.etsi.org/saref4watr/Valve"
+      ],
+      "range": [
+        "http://inspire.ec.europa.eu/ont/base#Measure"
       ],
       "generalization": []
     },
@@ -424,20 +568,6 @@
       ],
       "range": [
         "http://inspire.ec.europa.eu/ont/base#Measure"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/hydrant#lastInspectionDate",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "https://saref.etsi.org/saref4watr/FireHydrant"
-      ],
-      "range": [
-        "http://www.w3.org/2001/XMLSchema#dateTime"
       ],
       "generalization": []
     },
@@ -470,62 +600,6 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#pipeDiameter",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "https://saref.etsi.org/saref4watr/Pipe"
-      ],
-      "range": [
-        "http://inspire.ec.europa.eu/ont/base#Measure"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/hydrant#pipeFlowRate",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "https://saref.etsi.org/saref4watr/Pipe"
-      ],
-      "range": [
-        "http://inspire.ec.europa.eu/ont/base#Measure"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/hydrant#pipeStatus",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "https://saref.etsi.org/saref4watr/Pipe"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
-      "@id": "http://vocab.belgif.be/ns/hydrant#pipeType",
-      "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "https://saref.etsi.org/saref4watr/Pipe"
-      ],
-      "range": [
-        "http://www.w3.org/2004/02/skos/core#Concept"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/hydrant#startDate",
       "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
       "definition": {
@@ -554,20 +628,6 @@
       "generalization": []
     },
     {
-      "@id": "http://vocab.belgif.be/ns/hydrant#valveDiameter",
-      "@type": "http://www.w3.org/2002/07/owl#DatatypeProperty",
-      "definition": {
-        "de": "A translation has yet to be added"
-      },
-      "domain": [
-        "https://saref.etsi.org/saref4watr/Valve"
-      ],
-      "range": [
-        "http://inspire.ec.europa.eu/ont/base#Measure"
-      ],
-      "generalization": []
-    },
-    {
       "@id": "http://vocab.belgif.be/ns/hydrant#waterType",
       "@type": "http://www.w3.org/2002/07/owl#ObjectProperty",
       "definition": {
@@ -583,6 +643,54 @@
     }
   ],
   "externalproperties": [
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "date"
+      },
+      "@id": "http://purl.org/dc/terms/date",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "date"
+      },
+      "@id": "http://purl.org/dc/terms/date",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "date"
+      },
+      "@id": "http://purl.org/dc/terms/date",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
+    {
+      "name": {
+        "de": "Enter your translation here",
+        "en": "description"
+      },
+      "@id": "http://purl.org/dc/terms/description",
+      "@type": "rdf:Property"
+    },
     {
       "name": {
         "de": "Enter your translation here",
